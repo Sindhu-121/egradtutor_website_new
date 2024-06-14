@@ -1,8 +1,11 @@
 import React from 'react'
+import PrivacyPolicyEdit from './PrivacyPolicyEdit'
 
 const PrivacyPolicy = () => {
   return (
-    <div>PrivacyPolicy</div>
+    <div>PrivacyPolicy
+        <PrivacyPolicyEdit/>
+    </div>
   )
 }
 

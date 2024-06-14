@@ -1,8 +1,11 @@
 import React from 'react'
+import PricingandRefundPolicyEdit from './PricingandRefundPolicyEdit'
 
 const PricingandRefundPolicy = () => {
   return (
-    <div>PricingandRefundPolicy</div>
+    <div>PricingandRefundPolicy
+        <PricingandRefundPolicyEdit/>
+    </div>
   )
 }
 

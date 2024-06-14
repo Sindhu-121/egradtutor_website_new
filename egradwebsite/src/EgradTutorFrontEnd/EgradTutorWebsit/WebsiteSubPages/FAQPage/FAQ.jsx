@@ -1,8 +1,11 @@
 import React from 'react'
+import FAQEdit from './FAQEdit'
 
 const FAQ = () => {
   return (
-    <div>FAQ</div>
+    <div>FAQ
+        <FAQEdit/>
+    </div>
   )
 }
 

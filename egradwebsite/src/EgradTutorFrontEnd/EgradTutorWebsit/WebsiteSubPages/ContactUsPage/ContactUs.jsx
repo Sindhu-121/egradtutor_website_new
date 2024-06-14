@@ -1,8 +1,11 @@
 import React from 'react'
+import ContactUsEdit from './ContactUsEdit'
 
 const ContactUs = () => {
   return (
-    <div>ContactUs</div>
+    <div>ContactUs
+        <ContactUsEdit/>
+    </div>
   )
 }
 
