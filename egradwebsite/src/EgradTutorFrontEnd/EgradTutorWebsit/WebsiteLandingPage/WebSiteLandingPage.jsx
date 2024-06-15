@@ -7,10 +7,10 @@ import Footer from '../Footer/Footer'
 const WebSiteLandingPage = () => {
   return (
     <div>
-        WebSiteLandingPage
-<LandingPageHeader/>
-<LandingPageExamdata/>
-<Footer/>
+      WebSiteLandingPage
+      <LandingPageHeader /> 
+      <LandingPageExamdata />
+      <Footer />
     </div>
   )
 }
