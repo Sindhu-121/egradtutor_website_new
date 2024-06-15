@@ -4,9 +4,10 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import BASE_URL from '../../../../apiConfig';
 import axios from 'axios';
-import '../styles/Theme2_landingPage_styles.css'
 import { Link } from 'react-router-dom';
-import '../styles/LandingPage_main.css'
+import '../../../../styles/LandingPage_main.css'
+import '../../../../styles/Theme2_landingPage_styles.css'
+
 
 const LandingPageExamdata = () => {
   const [image, setImage] = useState(null);

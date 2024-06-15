@@ -8,14 +8,8 @@ const WebSiteLandingPage = () => {
   return (
     <div>
       WebSiteLandingPage
-
-      {/* each compoent ki 1.edit 2.data  */}
-      
-    {/* <div className="Newlandingpage"> */}
-    <LandingPageHeader /> 
+      <LandingPageHeader /> 
       <LandingPageExamdata />
-      {/* </div> */}
-   
       <Footer />
     </div>
   )

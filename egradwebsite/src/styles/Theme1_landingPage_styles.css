@@ -278,6 +278,16 @@ img.t1LogoImg {
             }
         }
     }
+}
 
 
+/* ************************** For Footer Part ***************************************** */
+.t1FooterMainContainer{
+    background-color: rgb(6, 243, 6) !important;
+} 
+
+.Ug_header_logoIMG {
+    width: 250px;
+    display: flex;
+    padding: 9px;
 }
