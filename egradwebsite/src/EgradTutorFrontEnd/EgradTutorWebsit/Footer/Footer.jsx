@@ -4,12 +4,6 @@ import PrivacyPolicy from "../WebsiteSubPages/PrivacyPolicyPage/PrivacyPolicy";
 import TermsAndCondetions from "../WebsiteSubPages/TermsAndConditionsPage/TermsAndCondetions";
 import FAQ from "../WebsiteSubPages/FAQPage/FAQ";
 
-// import ContactUsFooter from "../WebsiteSubPages/ContactUsPage/ContactUsFooter";
-
-
-import ContactUs from "../WebsiteSubPages/ContactUsPage/ContactUs";
-
-
 const Footer = () => {
   return (
     <div>
@@ -18,8 +12,7 @@ const Footer = () => {
       <PricingandRefundPolicy />
       <TermsAndCondetions />
       <FAQ />
-      {/* <ContactUsFooter/> */}
-      <ContactUs/>
+   
     </div>
   );
 };
