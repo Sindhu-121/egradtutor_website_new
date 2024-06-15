@@ -11,10 +11,10 @@ import ugImg from '../../../../styles/Girl.png'
 
 
 
-const LandingPageExamdata = () => {
+const LandingPageExamdata = ({enableEditFromP}) => {
   const [image, setImage] = useState(null);
   const [branches, setBranches] = useState([]);
-
+  console.log(enableEditFromP,"this is the value that passed from landingPage");
   const themeFromContext = useContext(ThemeContext);
   console.log(themeFromContext, "this is the theme from the context")
   const [welcomeDataList, setWelcomeDataList] = useState([]);
@@ -170,8 +170,6 @@ const LandingPageExamdata = () => {
                   </div>
                 </div>
 
-
-
                 {/* {enableEditcontainer ? (
                 <>
                   <div className="Newlandingpage_branch_boxedit_conatiner">
@@ -195,6 +193,7 @@ const LandingPageExamdata = () => {
         </div>
         {/* =======================Exam cards ends here============================== */}
 
+      {/* <LandingPageExamdataEdit enableEdit="true" /> */}
       <LandingPageExamdataEdit />
     </div>
   )

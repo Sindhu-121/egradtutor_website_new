@@ -1,8 +1,13 @@
 import React from 'react'
 
-const LandingPageExamdataEdit = () => {
+const LandingPageExamdataEdit = ({ enableButton }) => {
   return (
-    <div>LandingPageExamdataEdit</div>
+    <div>
+      {/* LandingPageExamdataEdit */}
+      {enableButton ==='Enable Edit' ?
+        <button>Editing Button..........</button>
+        : null}
+    </div>
   )
 }
 

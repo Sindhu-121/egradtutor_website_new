@@ -155,7 +155,7 @@ const LandingPageHeader = () => {
             )}
 
             <div className={`logoImgContainer ${themeDetails.logoC}`}>
-              {enableEditcontainer ? (
+              {/* {enableEditcontainer ? (
                 <>
                   <button onClick={() => setShowForm(!showForm)}>
                     {showForm ? "Hide" : "logo info"}
@@ -168,7 +168,7 @@ const LandingPageHeader = () => {
                     </div>
                   )}
                 </>
-              ) : null}
+              ) : null} */}
             </div>
           </div>
           {/* // copy after return to rendor on screen when admin in logged in start */}
