@@ -85,6 +85,26 @@ const JSONClasses = {
     themeAboutusinfobox: "t1info-box",
     themeAboutusprofileimg: "t1profile-img",
     themeUgAndPgButtons: "t1UgAndPgButtons",
+// footer classes added by shiva 
+    ThemeFooterMainContainer: "t1FooterMainContainer",
+
+    ThemeFooterSubContainer: "t1FooterSubContainer",
+
+    ThemeFooterSubContainerFirstPart: "t1FooterSubContainerFirstPart",
+
+    ThemeFooterSubContainerSecondtPart: "t1FooterSubContainerSecondtPart",
+
+    ThemeFooterSubContainerFirstPartEGATEData: "t1FooterSubContainerFirstPartEGATEData",
+
+    ThemeFooterSubContainerFirstPartLinksData: "t1FooterSubContainerFirstPartLinksData",
+
+    ThemeFooterSubContainerSecondtPartContactUsData: "t1FooterSubContainerSecondtPartContactUsData",
+
+    ThemeFooterSubContainerCopywriteData: "t1FooterSubContainerCopywriteData",
+
+    ThemeFooterHorizantalLine: "t1FooterHorizantalLine"
+
+
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -121,4 +141,7 @@ const JSONClasses = {
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
   },
 };
+   
+    
+ 
 export default JSONClasses;
