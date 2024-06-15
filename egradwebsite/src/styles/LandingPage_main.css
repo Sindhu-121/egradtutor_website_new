@@ -2,8 +2,9 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
-
 .Newlandingpage {
   /* background: #f7f7f7; */
   /* border: 1px solid rgb(0, 0, 0); */
@@ -203,4 +204,21 @@
 }
 .Newlandingpage_logocontainer.defaultHeaderColor{
   background-color: teal;
+}
+/* extra classes coming from other files which are not present here */
+button {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+button {
+  padding: 0.5rem 1rem;
+  white-space: nowrap;
+  border-radius: 0.3rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
 }

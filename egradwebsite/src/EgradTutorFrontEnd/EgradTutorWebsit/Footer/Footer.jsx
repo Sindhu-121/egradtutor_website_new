@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useContext} from "react";
+import PricingandRefundPolicy from "../WebsiteSubPages/PricingAndRefundPolicyPage/PricingandRefundPolicy";
+import PrivacyPolicy from "../WebsiteSubPages/PrivacyPolicyPage/PrivacyPolicy";
+import TermsAndCondetions from "../WebsiteSubPages/TermsAndConditionsPage/TermsAndCondetions";
+import FAQ from "../WebsiteSubPages/FAQPage/FAQ";
 
 // import './Footer.css'
 import { Link } from "react-router-dom";

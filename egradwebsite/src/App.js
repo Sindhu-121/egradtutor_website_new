@@ -9,6 +9,8 @@ import BranchHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/BranchHomePage
 import ExamHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/ExamHomePage/ExamHomePage"
 import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 
+
+
 function App() {
   return (
     <ThemeProvider>
@@ -19,8 +21,8 @@ function App() {
       <Route path="/ExamHomePage" element={<ExamHomePage />}/>
       </Routes>
     </Router>
-    </ThemeProvider>
-    
+     </ThemeProvider>
+
   );
 }
 
