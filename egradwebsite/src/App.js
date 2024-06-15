@@ -4,13 +4,14 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
-
 import WebSiteLandingPage from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteLandingPage/WebSiteLandingPage";
 import BranchHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/BranchHomePage/BranchHomePage";
 import ExamHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/ExamHomePage/ExamHomePage"
+import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 
 function App() {
   return (
+    <ThemeProvider>
     <Router>
       <Routes>
       <Route path="/" element={<WebSiteLandingPage/>}/>
@@ -18,6 +19,7 @@ function App() {
       <Route path="/ExamHomePage" element={<ExamHomePage />}/>
       </Routes>
     </Router>
+    </ThemeProvider>
     
   );
 }

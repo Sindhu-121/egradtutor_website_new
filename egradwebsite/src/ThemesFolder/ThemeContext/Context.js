@@ -1,6 +1,6 @@
 import React, { createContext, useState, useEffect } from "react";
 import axios from "axios";
-import BASE_URL from "../apiConfig";
+import BASE_URL from "../../apiConfig";
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
