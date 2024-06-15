@@ -12,22 +12,18 @@ import AboutUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/About
 import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 
 
+
 function App() {
   return (
     <ThemeProvider>
     <Router>
       <Routes>
-        <Route path="/" element={<WebSiteLandingPage />} />
-
-        <Route path="/BranchHomePage" element={<BranchHomePage />} />
-
-        <Route path="/ExamHomePage" element={<ExamHomePage />} />
-        <Route path="AboutUs" element={<AboutUs />} />
-        {/* <Route path="/ContactUs" element={<ContactUs />} /> */}
-        <Route />
+      <Route path="/" element={<WebSiteLandingPage/>}/>
+      <Route path="/BranchHomePage" element={<BranchHomePage/>}/>
+      <Route path="/ExamHomePage" element={<ExamHomePage />}/>
       </Routes>
     </Router>
-    </ThemeProvider>
+     </ThemeProvider>
 
   );
 }

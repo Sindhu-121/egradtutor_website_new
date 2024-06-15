@@ -3,7 +3,11 @@ import PricingandRefundPolicy from "../WebsiteSubPages/PricingAndRefundPolicyPag
 import PrivacyPolicy from "../WebsiteSubPages/PrivacyPolicyPage/PrivacyPolicy";
 import TermsAndCondetions from "../WebsiteSubPages/TermsAndConditionsPage/TermsAndCondetions";
 import FAQ from "../WebsiteSubPages/FAQPage/FAQ";
+
 // import ContactUsFooter from "../WebsiteSubPages/ContactUsPage/ContactUsFooter";
+
+
+import ContactUs from "../WebsiteSubPages/ContactUsPage/ContactUs";
 
 
 const Footer = () => {
@@ -15,6 +19,7 @@ const Footer = () => {
       <TermsAndCondetions />
       <FAQ />
       {/* <ContactUsFooter/> */}
+      <ContactUs/>
     </div>
   );
 };
