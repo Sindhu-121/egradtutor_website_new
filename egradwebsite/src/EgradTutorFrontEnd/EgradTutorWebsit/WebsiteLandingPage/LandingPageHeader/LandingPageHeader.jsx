@@ -3,15 +3,14 @@ import BASE_URL from "../../../../apiConfig.js";
 import axios from "axios";
 
 import JSONClasses from "../../JSONForCSS/JSONClasses";
-// import ThemeContext, { ThemeProvider } from "../../../../ThemesFolder/ThemeContext/Context.js";
-import {ThemeContext} from '../../../../ThemesFolder/ThemeContext/Context.js'
+import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context.js'
 
 import LandingPageHeaderEdit from './LandingPageHeaderEdit'
 
-
-
-
-
+import '../../../../styles/Default_landingPage_styles.css'
+import '../../../../styles/Theme1_landingPage_styles.css'
+import '../../../../styles/Theme2_landingPage_styles.css'
+import '../../../../styles/LandingPage_main.css'
 
 const LandingPageHeader = () => {
   const [image, setImage] = useState(null);
@@ -98,7 +97,7 @@ const LandingPageHeader = () => {
 
 
   const userRole = localStorage.getItem("userRole");
- 
+
   useEffect(() => {
     const checkLoggedIn = () => {
       const loggedIn = localStorage.getItem("isLoggedIn");
@@ -145,8 +144,8 @@ const LandingPageHeader = () => {
   console.log(themeDetails, "mapppping from json....")
 
   return (
-    <div>
-         <div className={`Newlandingpage_logocontainer ${themeDetails.themeHeaderColor}`}>
+    <div className="Newlandingpage">
+      <div className={`Newlandingpage_logocontainer ${themeDetails.themeHeaderColor}`}>
         <div className={`Newlandingpage_logosubcontainer ${themeDetails.themeSubContainer}`}>
           <div className={`logo_Img_container ${themeDetails.themeLogoImgC}`}>
             {image ? (
@@ -195,11 +194,10 @@ const LandingPageHeader = () => {
 
         </div>
       </div>
-      
-      
-      LandingPageHeader
 
-        <LandingPageHeaderEdit/>
+
+
+      <LandingPageHeaderEdit />
     </div>
   )
 }

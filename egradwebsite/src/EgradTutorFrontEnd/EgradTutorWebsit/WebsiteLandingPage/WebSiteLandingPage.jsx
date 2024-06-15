@@ -7,8 +7,6 @@ import Footer from '../Footer/Footer'
 const WebSiteLandingPage = () => {
   return (
     <div>
-      WebSiteLandingPage
-      {/* each compoent ki 1.edit 2.data  */}
       <LandingPageHeader /> 
       <LandingPageExamdata />
       <Footer />
