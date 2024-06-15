@@ -65,70 +65,22 @@ const Footer = ({ id, enableEditcontainer }) => {
     }
   }, [enableEditcontainer]);
 
-  const handleThemeChange = (selectedTheme) => {
-    setTheme(selectedTheme);
-  };
+
 
   const [showForm, setShowForm] = useState(false);
   const displayLinksData = () => {
     setShowPreviousLinksData(true);
     setFooterpopupconatiner(true);
   };
-  const handleDeleteFooterItem = async (Link_Id) => {
-    try {
-      const response = await axios.delete(
-        `${BASE_URL}/Admin/footerLinksDeleteData/${Link_Id}`
-      );
-      console.log("Response:", response.data);
-    } catch (error) {
-      console.error("Error deleting data:", error);
-    }
-  };
 
-  const handleEditFooterItemClick = (Link_Id, Link_Item, Link_Routing_Data) => {
-    setEditFooterItemId(Link_Id);
-    setEditedLinkItem(Link_Item);
-    setEditedLinkRoutingData(Link_Routing_Data);
-  };
-
-  const handleCancelFooterItem = () => {
-    setEditFooterItemId(null);
-    setEditedLinkItem("");
-    setEditedLinkRoutingData("");
-  };
-
-  const handleChangeLinkItem = (e) => {
-    setEditedLinkItem(e.target.value);
-  };
-
-  const handleChangeLinkRoutingData = (e) => {
-    setEditedLinkRoutingData(e.target.value);
-  };
-
+ 
   const [showFooterLinksData, setShowFooterLinksData] = useState(false);
   const [formData, setFormData] = useState({
     Link_Item: "",
     Link_Routing_Data: "",
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
 
-  const handleSubmitFooterLinks = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        `${BASE_URL}/FooterPage/footerLinks`,
-        formData
-      );
-      console.log("Response:", response.data);
-      // Add any additional actions after successful submission
-    } catch (error) {
-      console.error("Error submitting data:", error);
-    }
-  };
 
   const toggleForm = () => {
     setShowFooterLinksData(!showFooterLinksData);
@@ -192,28 +144,7 @@ const Footer = ({ id, enableEditcontainer }) => {
 
   const [iconLink, setIconLink] = useState("");
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Make a POST request to the backend API
-      const response = await axios.post(`${BASE_URL}/FooterPage/social-icons`, {
-        iconLink,
-      });
-      if (response.status === 201) {
-        // Handle successful response
-        console.log("Social media link uploaded successfully");
-        // Optionally, you can reset the form fields
-        setIconLink("");
-      }
-    } catch (error) {
-      // Handle errors
-      console.error("Error uploading social media link:", error);
-    }
-  };
 
-  const handleEditClickIcons = () => {
-    setShowForm(true);
-  };
 
   const handleEditClickPopupThree = (content_id, content_name) => {
     setEditItemIdThree(content_id);
@@ -501,382 +432,13 @@ const Footer = ({ id, enableEditcontainer }) => {
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
   return (
-    <div>
+  
        <div>
-      {/* =======================all the pop ups================================== */}
-      {footerpopupconatiner ? (
-        <>
-          <div className="footereditinglandingpart">
-            {popupVisible && (
-              <div className="new_landingfooter_conatinerfristpopup">
-                fristpopup
-                {dataOne.map((item) => (
-                  <li key={item.content_id}>
-                    {item.content}
-                    <div className="new_landingfooter_conatinerfristpopupbtncontiner">
-                      <button
-                        onClick={() =>
-                          handleEditClickPopupOne(item.content_id, item.content)
-                        }
-                      >
-                        <CiEdit />
-                      </button>
-
-                      <button
-                        onClick={() => handleDeleteItemOne(item.content_id)}
-                      >
-                        <MdDelete />
-                      </button>
-                    </div>
-                  </li>
-                ))}
-                {editItemIdOne && editedItemOne && (
-                  <div className="new_landingfooter_conatinerfristpopupsubpart">
-                    <h3>Edit</h3>
-                    <input
-                      type="text"
-                      value={editedItemOne.content}
-                      onChange={handleExistingValueChangeOne}
-                    />
-                    <div className="new_landingfooter_conatinerfristpopupbtncontiner">
-                      <button
-                        onClick={() =>
-                          handleEditSaveOne(
-                            editItemIdOne,
-                            editedItemOne.content,
-                            setDataOne
-                          )
-                        }
-                      >
-                        Save
-                      </button>
-                      <button onClick={() => setEditedItemIdOne(null)}>
-                        Cancel
-                      </button>
-                    </div>
-                  </div>
-                )}
-                <button
-                  onClick={handleCloseClick}
-                  className="new_landingfooter_conatinerfristpopupsubpartclose"
-                >
-                  Close
-                </button>
-              </div>
-            )}
-
-            <div>
-              {showFooterLinksData && (
-                <div className="new_landingfooter_conatinersecondpopup">
-                  <h3>Add Footer Links</h3>
-                  <form onSubmit={handleSubmitFooterLinks}>
-                    <li>
-                      <label>Link Name:</label>
-                      <input
-                        type="text"
-                        name="Link_Item"
-                        value={formData.Link_Item}
-                        onChange={handleChange}
-                        required
-                      />
-                    </li>
-                    <li>
-                      <label>Routing Path Data:</label>
-                      <input
-                        type="text"
-                        name="Link_Routing_Data"
-                        value={formData.Link_Routing_Data}
-                        onChange={handleChange}
-                        required
-                      />
-                    </li>
-                    <div className="new_landingfooter_conatinerfristpopupbtncontiner">
-                      <button type="submit">Submit</button>
-                      <button onClick={handleCancel}>Close</button>
-                    </div>
-                  </form>
-                </div>
-              )}
-            </div>
-
-            <div>
-              {showPreviousLinksData && (
-                <div className="new_landingfooter_conatinersecondpopup_links">
-                  <ul>
-                    {footerLinkData.map((item) => (
-                      <li key={item.Link_Id}>
-                        {editFooterItemId === item.Link_Id ? (
-                          <>
-                            <div className="edittwoinputinlinkscontiner">
-                              <input
-                                type="text"
-                                value={editedLinkItem}
-                                onChange={handleChangeLinkItem}
-                                required
-                              />
-                              <input
-                                type="text"
-                                value={editedLinkRoutingData}
-                                onChange={handleChangeLinkRoutingData}
-                                required
-                              />
-                              <div className="edittwoinputinlinksbtncontiner">
-                                <button
-                                  onClick={() =>
-                                    handleSaveFooterItem(item.Link_Id)
-                                  }
-                                >
-                                  Save
-                                </button>
-                                <button onClick={handleCancelFooterItem}>
-                                  Cancel
-                                </button>
-                              </div>
-                            </div>
-                          </>
-                        ) : (
-                          <>
-                            <Link
-                              to={item.Link_Routing_Data}
-                              style={{ color: "black" }}
-                            >
-                              {item.Link_Item}
-                            </Link>
-                            <div className="new_landingfooter_conatinersecondpopup_linksbtncontiner">
-                              <button
-                                onClick={() =>
-                                  handleEditFooterItemClick(
-                                    item.Link_Id,
-                                    item.Link_Item,
-                                    item.Link_Routing_Data
-                                  )
-                                }
-                              >
-                                <CiEdit />
-                              </button>
-                              <button
-                                onClick={() =>
-                                  handleDeleteFooterItem(item.Link_Id)
-                                }
-                              >
-                                <RiDeleteBin6Line />
-                              </button>
-                            </div>
-                          </>
-                        )}
-                      </li>
-                    ))}
-                  </ul>
-                  <button
-                    className="new_landingfooter_conatinersecondpopup_close"
-                    onClick={handleCloseClickeditlinks}
-                  >
-                    close
-                  </button>
-                </div>
-              )}
-            </div>
-
-
-
-            <div>
-              {contactUsPopup && (
-                <div className="new_landingfooter_conatinerthridpopup">
-                  {dataTwo.map((item) => (
-                    <li key={item.Content_id} className="black-text">
-                      {item.content_name}{" "}
-                      <div className="new_landingfooter_conatinerthridpopupbtncontiner">
-                        <button>
-                          <CiEdit
-                            onClick={() =>
-                              handleEditClickPopup(item.Content_id)
-                            }
-                          />{" "}
-                        </button>
-                        <button>
-                          <MdDelete
-                            onClick={() => handleDeleteItemTwo(item.Content_id)}
-                          />
-                        </button>
-                      </div>
-                    </li>
-                  ))}
-
-                  {editItemId && editedItem && (
-                    <div className="new_landingfooter_conatinerthridpopupsub">
-                      <h3>Edit</h3>
-                      <li>
-                        <input
-                          type="text"
-                          value={editedItem.content_name}
-                          onChange={handleExistingValueChange}
-                        />
-                      </li>
-                      <div className="new_landingfooter_conatinerthridpopupbtncontiner">
-                        <button
-                          onClick={() =>
-                            handleEditSave(
-                              editItemId,
-                              editedItem.content_name,
-                              setDataTwo
-                            )
-                          }
-                        >
-                          Save
-                        </button>
-                        <button onClick={() => setEditItemId(null)}>
-                          Cancel
-                        </button>
-                      </div>
-                    </div>
-                  )}
-                  <button
-                    className="new_landingfooter_conatinerthridpopup_close"
-                    onClick={handleCloseClick}
-                  >
-                    Close
-                  </button>
-                </div>
-              )}
-            </div>
-
-            {copyRightContent && (
-              <div className="new_landingfooter_copyrightpopup">
-                {dataThree.map((item) => (
-                  <li key={item.content_id} className="black-text">
-                    {item.content_name}{" "}
-                    <div className="new_landingfooter_copyrightpopupbtncontainer">
-                      <button>
-                        <CiEdit
-                          onClick={() =>
-                            handleEditClickPopupThree(
-                              item.content_id,
-                              item.content_name
-                            )
-                          }
-                        />
-                      </button>
-                      <button>
-                        {" "}
-                        <MdDelete
-                          onClick={() => handleDeleteItemThree(item.content_id)}
-                        />
-                      </button>
-                    </div>
-                  </li>
-                ))}
-                {isPopupOpen && (
-                  <div className="new_landingfooter_copyrightpopupsub">
-                    <input
-                      type="text"
-                      value={editedValue}
-                      onChange={handleInputChange}
-                    />
-                    <div className="new_landingfooter_copyrightpopupsubbtnconatiner">
-                      <button onClick={handleSave}>Save</button>
-                      <button onClick={handleCancel}>Cancel</button>
-                    </div>
-                  </div>
-                )}
-                <button
-                  onClick={handleCloseClick}
-                  className="new_landingfooter_copyrightpopupclose"
-                >
-                  Close
-                </button>
-              </div>
-            )}
-          </div>
-        </>
-      ) : null}
-
-      {/* {popupVisible && (
-        <div
-          className="popup"
-          style={{
-            backgroundColor: "white",
-            height: "auto",
-            width: "600px",
-          }}
-        >
-          {dataOne.map((item) => (
-            <li key={item.content_id} className="black-text">
-              {item.content}
-              <CiEdit
-                onClick={() =>
-                  handleEditClickPopupOne(item.content_id, item.content)
-                }
-              />
-              fdglkjfd
-              <MdDelete onClick={() => handleDeleteItemOne(item.content_id)} />
-            </li>
-          ))}
-
-          {editItemIdOne && editedItemOne && (
-            <div className="popup">
-              <input
-                type="text"
-                value={editedItemOne.content}
-                onChange={handleExistingValueChangeOne}
-              />
-              <button
-                onClick={() =>
-                  handleEditSaveOne(
-                    editItemIdOne,
-                    editedItemOne.content,
-                    setDataOne
-                  )
-                }
-              >
-                Save Changes
-              </button>
-              <button onClick={() => setEditedItemIdOne(null)}>Cancel</button>
-            </div>
-          )}
-
-          <button onClick={handleCloseClick}>Close</button>
-        </div>
-      )} */}
-      {/* =======================all the pop ups================================== */}
       <div className={`new_landingfooter ${themeDetails.ThemeFooterMainContainer}`}>
         <div className={`${themeDetails.ThemeFooterSubContainer}`}>
           <div className={`new_landingfooter_conatinerfristpart ${themeDetails.ThemeFooterSubContainerFirstPart}`}>
             <div className={`new_landingfooter_conatinersubfristpart1 ${themeDetails.ThemeFooterSubContainerSecondtPart}`}>
-
-              {/* // for edit enableEditcontainer is in ternary oprator start  */}
-              {enableEditcontainer ? (
-                <>
-                  <button onClick={handleEditClick} className="editbtn">
-                    Edit
-                    <LiaEditSolid />
-                  </button>
-                </>
-              ) : null}
-              {/* // for edit enableEditcontainer is in ternary oprator end  */}
-
-
-
-
               <div className={`${themeDetails.ThemeFooterSubContainerFirstPartEGATEData}`}>
-
-                {dataOne.map((item, index) =>
-                  // Render <h3> tag for the first item, and <p> tags for the rest
-                  index === 0 ? (
-                    <div key={item.Content_id}>
-                      <h2 className="new_landingfooter_conatinerfristpart_item">
-                        {item.content}
-                      </h2>
-                    </div>
-                  ) : (
-                    <p
-                      className="new_landingfooter_conatinerfristpart_item"
-                      key={item.Content_id}
-                    >
-                      {item.content}
-                    </p>
-                  )
-                )}
-              </div>
 
             </div>
             <div className="new_landingfooter_conatinersubfristpart2">
@@ -967,7 +529,7 @@ const Footer = ({ id, enableEditcontainer }) => {
               }}
             >
               <h2>Upload Social Media Link</h2>
-              <form onSubmit={handleSubmit}>
+              <form>
                 <div>
                   <label htmlFor="iconLink">Social Media Link:</label>
                   <input
