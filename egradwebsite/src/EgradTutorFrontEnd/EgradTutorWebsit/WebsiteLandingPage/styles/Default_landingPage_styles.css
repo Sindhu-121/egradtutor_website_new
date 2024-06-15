@@ -1,0 +1,290 @@
+.Egate_logo_with_Link {
+    padding: 1rem 0;
+    background-color:white;
+}
+.Egate_landing_header-e6578i {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+}
+.Egate_logo_hjurnfh img {
+    max-width: 350px;
+}
+.Newlandingpage_branchescontainer .EGATE_eLanding_Container {
+    background: #00222c;
+    padding: 3rem 0;
+}
+.Egate_loge_landing img {
+    background: #fff;
+    box-shadow: -1px 1px 20px 6px #fff;
+    max-width: 350px;
+}
+.Egate_landiing_ojnkl {
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ 
+ 
+.landing_content_div_container.EGATE_landingE {
+    display: flex;
+    gap: 4rem;
+    justify-content: center;
+    align-items: center;
+    background-color: #00222c;
+    height: 300px;
+}
+.Egate_landiing_ojnkl h1{
+    color:white;
+}
+ 
+ 
+.Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button {
+    background-color: #00222c !important;
+    text-align: center;
+    box-shadow: 0 0 5px black !important;
+
+/* 
+    background-color: black;
+    box-shadow: 0 0 5px black; */
+}
+ 
+.EGATE_elandUl-pg_Default button:hover {
+    background-color: #062833;
+    text-align: center;
+}
+ 
+.Pg_buttonn_Default_Cards ul li{
+    text-align: left;
+    font-weight: bold;
+    box-shadow: 0 0 1px rgb(83, 81, 81) !important;
+    /* border:2px; */
+}
+.Pg_buttonn_Default_Cards ul li:hover{
+   
+    background-color: 0 0 1px rgb(240, 237, 237) !important;
+    /* border:2px; */
+}
+ 
+.EGATE_elandUl-pg_Default {
+    width: 385px !important;
+    box-shadow: 0 0 10px #00222c !important;
+    padding: 2rem !important;
+}
+.EGATE_eCordsLanding{
+    margin: 25px !important;
+} 
+ 
+
+
+
+@media (max-width: 600px) {
+    .EGATE_elandUl-pg_Default {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        /* width: 290px !important; */
+        box-shadow: 0 0 10px #00222c !important;
+        padding: 2rem !important;
+    }
+
+    .Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button {
+        background-color: #00222c;
+        text-align: center;
+        box-shadow: 0 0 5px black;
+    }
+
+    .Pg_buttonn_Default_Cards ul li {
+        font-size: 20px;
+        text-align: left;
+        font-weight: bold;
+        border: 1px solid gray;
+        box-shadow: 0 0 1px rgb(83, 81, 81) !important;
+    }
+
+    .landing_content_div_container.EGATE_landingE {
+        display: flex;
+        background-color: #00222c;
+        height: 485px;
+    }
+    .Egate_loge_landing img {
+        background: #fff;
+        box-shadow: -1px 1px 20px 6px #fff;
+        max-width: 279px;
+    }
+
+    .landing_content_div_container.EGATE_landingE {
+        display: flex;
+        background-color: #00222c;
+        height: 422px;
+    }
+    .Egate_landiing_ojnkl h1 {
+        color: white;
+        font-size: 28px;
+    }
+    .Egate_landiing_ojnkl p {
+        font-size: 17px;
+        font-weight: bold;
+    }
+    .EGATE_elandUl-pg_Default {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 333px !important;
+        box-shadow: 0 0 10px #00222c !important;
+        padding: 2rem !important;
+    }
+}
+
+
+@media (min-width:600px) and (max-width: 1280px) {
+    .EGATE_elandUl-pg_Default {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 324px !important;
+        box-shadow: 0 0 10px #00222c !important;
+        padding: 2rem !important;
+    }
+
+    .Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button {
+        background-color: #00222c !important;
+        text-align: center;
+        box-shadow: 0 0 5px black;
+    }
+
+    .Pg_buttonn_Default_Cards ul li {
+        font-size:18px;
+        text-align: left;
+        font-weight: bold;
+        border: 1px solid gray;
+        box-shadow: 0 0 1px rgb(83, 81, 81) !important;
+    }
+
+    .landing_content_div_container.EGATE_landingE {
+        display: flex;
+        background-color: #00222c;
+        height: 485px;
+    }
+   
+}
+
+
+/* CSS CODE FOR FOOTER SECTION */
+
+.ThemeFooterMainContainerDefault{
+    padding: 2rem 10rem 0;
+    color: #fff;
+    background-color: rgb(15, 15, 15);
+}
+.ThemeFooterSubContainerDefault{
+    display: flex !important;
+    justify-content: space-evenly;
+}
+.ThemeFooterSubContainerFirstPartEGATEDataDefault h2{
+    color:#279eff;
+/* font-weight: bold; */
+font-size: 25px;
+font-family: Roboto, sans-serif
+}
+.ThemeFooterSubContainerFirstPartEGATEDataDefault p{
+color: white;
+/* font-size:1.1rem; */
+    line-height: 1.5rem;
+    text-align: justify;
+    font-family: Roboto, sans-serif
+}
+
+.ThemeFooterSubContainerFirstPartLinksDataDefault ul {
+    line-height: 1.5rem;
+    display: flex !important;
+    flex-direction: row;
+    /* background-color: green; */
+    /* justify-content: space-evenly; */
+    margin-right: 20px;
+}
+.ThemeFooterSubContainerFirstPartLinksDataDefault ul li{
+    line-height: 1.5rem;
+    margin-right:15px;
+    font-family: Roboto, sans-serif;
+    text-decoration: underline;
+}
+
+.ThemeFooterSubContainerSecondtPartContactUsDataDefault h2{
+    color:#279eff;
+    /* font-weight: bold; */
+    font-size: 25px;
+    font-family: Roboto, sans-serif
+}
+.ThemeFooterSubContainerSecondtPartContactUsDataDefault p {
+    color: white;
+/* font-size:1.1rem; */
+    line-height: 1.5rem;
+    text-align: justify;
+    font-family: Roboto, sans-serif
+}
+.ThemeFooterSubContainerCopywriteDataDefault ul li {
+    text-align: center;
+    margin-top:10px;
+}
+.ThemeFooterHorizantalLineDefault {
+    border: none; /* Remove default border */
+    height: 1px; /* Set the height of the line */
+    background-color: white; /* Set the color of the line */
+    width: 100%; /* Set the width of the line */
+    margin: 20px auto; /* Center the line and add vertical spacing */
+  }
+  .ThemeFooterSubContainerFirstPartDefault {
+    margin-right:6rem;
+  }
+  
+
+
+  @media (max-width: 600px) {
+    .ThemeFooterMainContainerDefault {
+        padding: 2rem ;
+        background-color:white;
+    
+    }
+    .ThemeFooterSubContainerDefault{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        /* margin:10px; */
+    }
+    .ThemeFooterSubContainerFirstPartEGATEDataDefault h2{
+        color:#279eff;
+    /* font-weight: bold; */
+    font-size: 18px;
+    font-family: Roboto, sans-serif
+    }
+    .ThemeFooterSubContainerFirstPartEGATEDataDefault p{
+    color: rgb(3, 3, 3);
+    /* font-size:1.1rem; */
+        line-height: 1.5rem;
+        text-align: justify;
+        font-family: Roboto, sans-serif
+    }
+
+.ThemeFooterSubContainerSecondtPartContactUsDataDefault h2{
+    color:#279eff;
+    /* font-weight: bold; */
+    font-size: 25px;
+    font-family: Roboto, sans-serif
+}
+.ThemeFooterSubContainerSecondtPartContactUsDataDefault p {
+    color: rgb(14, 13, 13);
+/* font-size:1.1rem; */
+    line-height: 1.5rem;
+    text-align: justify;
+    font-family: Roboto, sans-serif
+}
+
+}
+@media (max-width: 1280px) {
+
+}

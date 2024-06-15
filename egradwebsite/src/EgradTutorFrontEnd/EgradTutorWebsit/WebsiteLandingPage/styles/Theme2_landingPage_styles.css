@@ -1,0 +1,224 @@
+.Newlandingpage_logocontainer.t2HeaderColor{
+    background-color: rgb(255, 255, 255);
+    padding: 0 ;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.logo_Img_container.t2ThemeLogoImgC {
+    max-width: 300px;
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox {
+    width: 498px;
+    box-shadow: unset;
+}
+img.t2LogoImg {
+    max-width: 100%;
+}
+.landing_content_div_container.t2LandingParentContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    position: relative; 
+    overflow: hidden;  
+}
+
+.landing_content_div_container.t2LandingParentContainer::before
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1; 
+}
+
+.landing_content_div_container.t2LandingParentContainer::before {
+    width: 100%;
+    position: absolute;
+    top: 174px;
+    background-color: #e8ebf4;
+    display: block;
+}
+
+.t2ExamImageBox img {
+    width: 100%;
+    height: inherit;
+    background-color: #EBEDEF;
+    border-radius: 10px;
+}
+.Newlandingpage_exams_button_box.t2ExamButtonsBox {
+    background-color: #e8ebf4;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.Newlandingpage .Newlandingpage_branchessubcontainer.t2BranchesSubContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90%;
+}
+.NewlandingPage_exams_image.t2ExamImageBox {
+    height: 198px;
+    position: absolute;
+    left: -13%;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+}
+
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox  .Newlandingpage_exams_button_box.t2ExamButtonsBox .t2Landing_branch_box_btns ul li {
+    box-shadow: none;
+    text-align: center;
+    border-radius: 27px;
+    transition: transform 0.3s ease-in-out;
+    background-color: rgb(255, 255, 255);
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox  .Newlandingpage_exams_button_box.t2ExamButtonsBox .t2Landing_branch_box_btns ul li:hover{
+     transform: scale(1.06);
+}
+
+.t2Landing_branch_box_btns {
+    display: flex;
+    justify-content:right;
+    width: 100%;
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox  .Newlandingpage_exams_button_box.t2ExamButtonsBox .t2Landing_branch_box_btns ul{
+    width: 55%;
+}
+
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox .themeUgAndPgButtons{
+    width: 50%;
+    background-color: red;
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox button.t2UgAndPgButtons {
+    background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease-in-out;
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox button.t2UgAndPgButtons:hover{
+    transform: scale(1.03);
+}
+.t2TextContainer div h1 {
+    color: #2f8f94;
+    font-size: 2.5rem;
+    margin-top: 8.5rem;
+}
+.t2TextContainer div p{
+    margin-left: 102px;
+    font-size: 1.25rem;
+
+}
+.Newlandingpage_branchescontainer.t2BranchesContainer{
+    min-height: unset;
+}
+@media screen and (max-width: 1006px){
+    .t2TextContainer div h1 {
+        color: #2f8f94;
+        font-size: 30px;
+        margin-top: 0;
+    }
+    .t2TextContainer div p {
+        font-size: 22px;
+        margin-left: 59px;
+    }
+    .t2TextContainer {
+         padding-bottom: 22px;
+       }
+       .t2TextContainer div h1 {
+        color: #2f8f94;
+        font-size: 2rem;
+        margin-top: 0;
+    }
+}
+@media screen and (max-width: 1069px){
+    .landing_content_div_container.t2LandingParentContainer::before {
+        width: 100%;
+        position: absolute;
+        top: 40%;
+        background-color: #e8ebf4;
+        display: block;
+    }
+    .t2TextContainer div h1 {
+        color: #2f8f94;
+        font-size: 2rem;
+        margin-top: 30%;
+    }
+    .t2TextContainer div p {
+        margin-left: 102px;
+        font-size: 1rem;
+    }
+}
+@media screen and (max-width: 955px){
+    .Newlandingpage_exams_button_box.t2ExamButtonsBox {
+        background-color: #e8ebf4;
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+    }   
+    .t2TextContainer div h1 {
+        color: #2f8f94;
+        font-size: 2.5rem;
+        margin-top: 0;
+    }
+   
+    .Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox  .Newlandingpage_exams_button_box.t2ExamButtonsBox .t2Landing_branch_box_btns ul {
+        width: 85%;
+    }
+   
+    .t2Landing_branch_box_btns {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    .NewlandingPage_exams_image.t2ExamImageBox{
+        display: none;
+    }
+    .landing_content_div_container.t2LandingParentContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        gap: 0px;
+        position: relative;
+        overflow: hidden;
+    }
+    .landing_img_div.t2LCapImgDiv img{
+        width: 80%;
+    }
+}
+
+@media (max-width: 500px) {
+    .t2TextContainer div h1 {
+        color: #2f8f94;
+        font-size: 1.55rem;
+        margin-top: 0;
+    }
+    .t2TextContainer div p {
+        font-size: 15px;
+        margin-left: 59px;
+        padding: 0;
+    }
+    .Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox {
+        width: 498px;
+        box-shadow: unset;
+        padding:  0;
+    }
+}
+@media (max-width: 768px) {
+    .logo_Img_container.t2ThemeLogoImgC {
+       max-width: 180px;
+    }
+}
+@media only screen and (min-width: 1023px) and (max-width: 768px){
+    .logo_Img_container.t2ThemeLogoImgC {
+        max-width: 257px;
+    }
+}
