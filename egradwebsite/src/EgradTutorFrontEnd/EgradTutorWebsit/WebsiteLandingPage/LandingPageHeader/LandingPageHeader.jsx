@@ -3,8 +3,9 @@ import LandingPageHeaderEdit from './LandingPageHeaderEdit'
 
 const LandingPageHeader = () => {
   return (
-    <div>LandingPageHeader
-      
+    <div>
+      LandingPageHeader
+
         <LandingPageHeaderEdit/>
     </div>
   )
