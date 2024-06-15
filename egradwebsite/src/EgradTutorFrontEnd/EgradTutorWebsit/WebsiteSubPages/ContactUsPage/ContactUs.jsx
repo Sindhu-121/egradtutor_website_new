@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
-import ContactUsEdit from "./ContactUsEdit";
+// import ContactUsEdit from "./ContactUsEdit";
 import defaultImage from "../../../../assets/defaultImage.png";
 import Footer from "../../Footer/Footer";
 import { Contact_Map_Data } from "./Contact_map_data";
@@ -113,7 +113,7 @@ const ContactUs = () => {
   return (
     
     <div>
-      <ContactUsEdit />
+      {/* <ContactUsEdit /> */}
       <div>
         {image ? (
           <img src={image} alt="Current" />

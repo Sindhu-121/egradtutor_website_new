@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
-import ContactUsEdit from './ContactUsEdit'
-
-
 const ContactUsFooter = () => {
   const [landingFooterData, setLandingFooterData] = useState([]);
 
