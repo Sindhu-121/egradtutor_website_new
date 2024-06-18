@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Kalam:wght@300;400;700&display=swap');
 
 /* ******************* ?For t1-header css? ********************* */
-.Newlandingpage_logocontainer.t1HeaderColor {
+.Newlandingpage_logocontainer .t1HeaderColor {
     box-shadow: 0px 0px 10px 0px #d7cdcd;
     border: none;
     height: 120px;
@@ -16,16 +16,21 @@
     border: none !important;
 }
 
-.t1ThemeLogoImgC {
+/* .t1ThemeLogoImgC {
+    width: 300px;
+    height: 150px;
+} */
+
+.t1SubContainer  img{
     width: 300px;
     height: 150px;
 }
 
 
-img.t1LogoImg {
+/* img.t1LogoImg {
     height: 100px;
     width: 100%
-}
+} */
 
 
 
