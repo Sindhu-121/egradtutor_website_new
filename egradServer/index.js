@@ -12,7 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+const LandingPageHeader =require("./EgradTutorWebsite/LandingPage/LandingPageHeader");
+app.use("/LandingPageHeader" ,LandingPageHeader)
 
+
+const LandingPageHeaderEdit =require("./EgradTutorWebsite/LandingPage/LandingPageHeaderEdit");
+app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 
 
 const AboutUs =require("./EgradTutorWebsite/AboutUs/AboutUs");
