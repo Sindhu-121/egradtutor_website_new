@@ -78,103 +78,6 @@
 .EGATE_eCordsLanding{
     margin: 25px !important;
 } 
- 
-
-
-
-@media (max-width: 600px) {
-    .EGATE_elandUl-pg_Default {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        /* width: 290px !important; */
-        box-shadow: 0 0 10px #00222c !important;
-        padding: 2rem !important;
-    }
-
-    .Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button {
-        background-color: #00222c;
-        text-align: center;
-        box-shadow: 0 0 5px black;
-    }
-
-    .Pg_buttonn_Default_Cards ul li {
-        font-size: 20px;
-        text-align: left;
-        font-weight: bold;
-        border: 1px solid gray;
-        box-shadow: 0 0 1px rgb(83, 81, 81) !important;
-    }
-
-    .landing_content_div_container.EGATE_landingE {
-        display: flex;
-        background-color: #00222c;
-        height: 485px;
-    }
-    .Egate_loge_landing img {
-        background: #fff;
-        box-shadow: -1px 1px 20px 6px #fff;
-        max-width: 279px;
-    }
-
-    .landing_content_div_container.EGATE_landingE {
-        display: flex;
-        background-color: #00222c;
-        height: 422px;
-    }
-    .Egate_landiing_ojnkl h1 {
-        color: white;
-        font-size: 28px;
-    }
-    .Egate_landiing_ojnkl p {
-        font-size: 17px;
-        font-weight: bold;
-    }
-    .EGATE_elandUl-pg_Default {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 333px !important;
-        box-shadow: 0 0 10px #00222c !important;
-        padding: 2rem !important;
-    }
-}
-.EGATE_elandUl-pg_Default .ugAndPgButtonsDefault a{
-    text-decoration: none!important;
-}
-
-
-@media (min-width:600px) and (max-width: 1280px) {
-    .EGATE_elandUl-pg_Default {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        width: 324px !important;
-        box-shadow: 0 0 10px #00222c !important;
-        padding: 2rem !important;
-    }
-
-    .Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button {
-        background-color: #00222c !important;
-        text-align: center;
-        box-shadow: 0 0 5px black;
-    }
-
-    .Pg_buttonn_Default_Cards ul li {
-        font-size:18px;
-        text-align: left;
-        font-weight: bold;
-        border: 1px solid gray;
-        box-shadow: 0 0 1px rgb(83, 81, 81) !important;
-    }
-
-    .landing_content_div_container.EGATE_landingE {
-        display: flex;
-        background-color: #00222c;
-        height: 485px;
-    }
-   
-}
 
 
 /* CSS CODE FOR FOOTER SECTION */
@@ -247,48 +150,28 @@ color: white;
   
 
 
-  @media (max-width: 600px) {
-    .ThemeFooterMainContainerDefault {
-        padding: 2rem ;
-        background-color:white;
+
+
+
+
+
+
+/* CSS FOR NEW REPOSITORY LANDING PAGE */
+.ThemeExamADD_EDIT_ButtonsDefault span {
+    color:black;
+    font-weight:bold;
+    margin:10px;
+    }
+    .ThemeExamADD_EDIT_ButtonsDefault button {
+      
+        background-color: #00222c;
+        color:white;
+        margin:10px;
+    }
+
+    @media (max-width: 600px) {
+        .Egate_logo_hjurnfh img {
+            max-width: 500px !important;
+        }
+    }
     
-    }
-    .ThemeFooterSubContainerDefault{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        /* margin:10px; */
-    }
-    .ThemeFooterSubContainerFirstPartEGATEDataDefault h2{
-        color:#279eff;
-    /* font-weight: bold; */
-    font-size: 18px;
-    font-family: Roboto, sans-serif
-    }
-    .ThemeFooterSubContainerFirstPartEGATEDataDefault p{
-    color: rgb(3, 3, 3);
-    /* font-size:1.1rem; */
-        line-height: 1.5rem;
-        text-align: justify;
-        font-family: Roboto, sans-serif
-    }
-
-.ThemeFooterSubContainerSecondtPartContactUsDataDefault h2{
-    color:#279eff;
-    /* font-weight: bold; */
-    font-size: 25px;
-    font-family: Roboto, sans-serif
-}
-.ThemeFooterSubContainerSecondtPartContactUsDataDefault p {
-    color: rgb(14, 13, 13);
-/* font-size:1.1rem; */
-    line-height: 1.5rem;
-    text-align: justify;
-    font-family: Roboto, sans-serif
-}
-
-}
-@media (max-width: 1280px) {
-
-}

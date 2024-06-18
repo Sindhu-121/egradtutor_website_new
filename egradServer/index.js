@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+const Logo =require("./EgradTutorWebsite/Logo");
+app.use("/Logo" ,Logo)
+
 const LandingPageHeader =require("./EgradTutorWebsite/LandingPage/LandingPageHeader");
 app.use("/LandingPageHeader" ,LandingPageHeader)
 

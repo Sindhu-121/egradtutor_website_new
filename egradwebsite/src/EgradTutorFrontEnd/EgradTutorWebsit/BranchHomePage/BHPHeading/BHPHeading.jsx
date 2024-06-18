@@ -12,7 +12,7 @@ const BHPHeading = () => {
   // setting an image
   const fetchImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/Main_Header/image`, {
+      const response = await axios.get(`${BASE_URL}/Logo/image`, {
         responseType: "arraybuffer",
       });
       const imageBlob = new Blob([response.data], { type: "image/png" });
