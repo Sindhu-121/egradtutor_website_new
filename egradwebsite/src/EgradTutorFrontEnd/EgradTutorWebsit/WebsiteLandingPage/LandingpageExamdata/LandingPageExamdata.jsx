@@ -80,7 +80,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
                 key={branch.Branch_Id}
               >
                 <button className={`${themeDetails.themeUgAndPgButtons}`} >
-                  <Link to={{ pathname: `/Homepage/${branch.Branch_Id}` }}>
+                  <Link to={{ pathname: `/BranchHomePage` }}>
                     {branch.Branch_Name}{" "}
                   </Link>
                   {/* <MdOutlineTouchApp /> */}
@@ -102,24 +102,6 @@ const LandingPageExamdata = ({enableEditFromP}) => {
                     </ul>
                   </div>
                 </div>
-
-                {/* {enableEditcontainer ? (
-                <>
-                  <div className="Newlandingpage_branch_boxedit_conatiner">
-                    <div className="Newlandingpage_branch_boxedit_buttonconatiner">
-                      <button onClick={() => handleEditClick(branch)}>
-                        <LiaEditSolid />
-                        Edit
-                      </button>
-
-                      <button onClick={() => OpenAddExamForm(branch.Branch_Id)}>
-                        <IoMdAddCircleOutline />
-                        Add
-                      </button>
-                    </div>
-                  </div>
-                </>
-              ) : null} */}
               </div>
             ))}
           </div>
