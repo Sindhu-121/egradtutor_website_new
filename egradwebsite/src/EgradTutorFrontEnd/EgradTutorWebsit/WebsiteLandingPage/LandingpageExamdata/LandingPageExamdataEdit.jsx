@@ -355,16 +355,16 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
       </div>
 
       {branches.map((branch) => (
-        <div>
+        <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
           <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
           <button onClick={() => handleEditClick(branch)}>
             <LiaEditSolid />
-            Edit
+            Edit{branch.Branch_Name}
           </button>
 
           <button onClick={() => OpenAddExamForm(branch.Branch_Id)}>
             <IoMdAddCircleOutline />
-            Add
+            Add{branch.Branch_Name}
           </button>
 
         </div>
