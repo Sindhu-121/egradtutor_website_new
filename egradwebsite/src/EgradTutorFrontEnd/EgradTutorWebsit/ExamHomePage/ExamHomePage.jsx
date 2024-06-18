@@ -6,7 +6,7 @@ import ExamCourse from './ExamCourse/ExamCourse'
 import Footer from '../Footer/Footer'
 const ExamHomePage = () => {
   return (
-    <div>ExamHomePage
+    <div>
       <ExamPageHeader />
       <ExamPageBanner/>
       <ExamInfo/>

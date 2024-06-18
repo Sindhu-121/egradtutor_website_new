@@ -19,7 +19,7 @@ function App() {
       <Routes>
       <Route path="/" element={<WebSiteLandingPage/>}/>
       <Route path="/BranchHomePage" element={<BranchHomePage/>}/>
-      <Route path="/ExamHomePage" element={<ExamHomePage />}/>
+      <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>
       <Route path="/AboutUs" element={<AboutUs/>}/>
       
       </Routes>
