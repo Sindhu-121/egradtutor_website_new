@@ -58,8 +58,9 @@ const ExamPageHeader = () => {
         ) : (
           <img src={defaultImage} alt="Default" />
         )}
+          <Link to="/BranchHomePage"><IoHome />Home</Link>
       </div>
-      <Link to="/BranchHomePage"><IoHome />Home</Link>
+    
       {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
           <div key={exam.EntranceExams_Id} className={`exampage_heading ${themeDetails.themeExamPageHeaderHeading}`}>
