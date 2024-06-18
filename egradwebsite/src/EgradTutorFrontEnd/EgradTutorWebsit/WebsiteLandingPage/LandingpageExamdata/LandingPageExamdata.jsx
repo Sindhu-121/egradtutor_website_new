@@ -87,7 +87,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
 
                 <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
                   <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
-                    <img src={ugImg} alt="" />
+                  
                   </div>
                   <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
                     <ul >

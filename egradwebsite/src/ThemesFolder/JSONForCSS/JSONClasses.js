@@ -34,7 +34,7 @@ const JSONClasses = {
     themeAboutusinfobox: "info-box",
     themeAboutusprofileimg: "profile-img",
 
-    // For practicing Div structure fromate for footer section //
+    // Div structure fromate for footer section //
 
     ThemeFooterMainContainer: "ThemeFooterMainContainerDefault",
     ThemeFooterSubContainer: "ThemeFooterSubContainerDefault",
