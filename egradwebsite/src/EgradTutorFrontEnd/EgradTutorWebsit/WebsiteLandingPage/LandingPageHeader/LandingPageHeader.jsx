@@ -1,17 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import BASE_URL from "../../../../apiConfig.js";
 import axios from "axios";
-
-import JSONClasses from "../../JSONForCSS/JSONClasses";
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context.js'
-
 import LandingPageHeaderEdit from './LandingPageHeaderEdit'
-
 import '../../../../styles/Default_landingPage_styles.css'
 import '../../../../styles/Theme1_landingPage_styles.css'
 import '../../../../styles/Theme2_landingPage_styles.css'
 import '../../../../styles/LandingPage_main.css'
-
+import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
 const LandingPageHeader = () => {
   const [image, setImage] = useState(null);
  

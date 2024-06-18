@@ -7,13 +7,14 @@ import OurCourses from './OurCourses/OurCourses'
 import Footer from '../Footer/Footer'
 const BranchHomePage = () => {
   return (
-    <div>BranchHomePage
-   <BHPHeading />
-   <BHPNavBar/>
-   <BHBanners/>
-   <ExploreExam/>
-   <OurCourses/>
-   <Footer/>
+    <div>
+      {/* header  */}
+      <BHPHeading />
+      <BHPNavBar />
+      <BHBanners />
+      <ExploreExam />
+      <OurCourses />
+      <Footer />
     </div>
   )
 }
