@@ -50,8 +50,11 @@ const JSONClasses = {
     ThemeFooterSubContainerCopywriteData:
       "ThemeFooterSubContainerCopywriteDataDefault",
     ThemeFooterHorizantalLine: "ThemeFooterHorizantalLineDefault",
-
     // End //
+
+    themeExamPageHeaderMainContainer:"themeExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"themeExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"themeExamPageHeaderHeading",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -113,6 +116,9 @@ const JSONClasses = {
     themeUgExploreExamsContent: "t1UgExploreExamsContent",
 
 
+    themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -147,6 +153,10 @@ const JSONClasses = {
     themeUgExploreExamsContainer: "t2UgExploreExamsContainer",
     themeUgExploreExamsSection: "t2UgExploreExamsSection",
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
+
+    themeExamPageHeaderMainContainer:"t2ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"t2ExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"t2ExamPageHeaderHeading",
   },
 };
    
