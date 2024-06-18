@@ -1,6 +1,7 @@
 .Egate_logo_with_Link {
     padding: 1rem 0;
-    background-color:white;
+    background-color: white;
+    height: 63px;
 }
 .Egate_landing_header-e6578i {
     align-items: center;
@@ -10,7 +11,7 @@
     width: 80%;
 }
 .Egate_logo_hjurnfh img {
-    max-width: 350px;
+    max-width: 500px !important;
 }
 .Newlandingpage_branchescontainer .EGATE_eLanding_Container {
     background: #00222c;
@@ -68,11 +69,11 @@
     background-color: 0 0 1px rgb(240, 237, 237) !important;
     /* border:2px; */
 }
- 
 .EGATE_elandUl-pg_Default {
     width: 385px !important;
     box-shadow: 0 0 10px #00222c !important;
     padding: 2rem !important;
+    height: 400px;
 }
 .EGATE_eCordsLanding{
     margin: 25px !important;
@@ -137,6 +138,9 @@
         box-shadow: 0 0 10px #00222c !important;
         padding: 2rem !important;
     }
+}
+.EGATE_elandUl-pg_Default .ugAndPgButtonsDefault a{
+    text-decoration: none!important;
 }
 
 
