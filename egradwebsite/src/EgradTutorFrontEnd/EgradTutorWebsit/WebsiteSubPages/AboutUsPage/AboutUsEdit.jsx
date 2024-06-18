@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
-import { FaRegPenToSquare } from "react-icons/fa6";
-import { IoMdClose } from "react-icons/io";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
 const AboutUsEdit = ({ type }) => {
-  const [showForm, setShowForm] = useState(true);
   const [showAboutUsForm, setShowAboutUsForm] = useState(false);
   const [showAboutEgtForm, setShowAboutEgtForm] = useState(false);
   const [aboutUsTitle, setAboutUsTitle] = useState("");
