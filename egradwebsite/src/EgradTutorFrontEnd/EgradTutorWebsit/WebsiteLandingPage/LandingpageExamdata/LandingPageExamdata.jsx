@@ -11,8 +11,6 @@ import '../../../../styles/Theme1_landingPage_styles.css'
 import '../../../../styles/Default_landingPage_styles.css'
 import ugImg from '../../../../styles/Girl.png'
 
-
-
 const LandingPageExamdata = ({enableEditFromP}) => {
   const [image, setImage] = useState(null);
   const [branches, setBranches] = useState([]);

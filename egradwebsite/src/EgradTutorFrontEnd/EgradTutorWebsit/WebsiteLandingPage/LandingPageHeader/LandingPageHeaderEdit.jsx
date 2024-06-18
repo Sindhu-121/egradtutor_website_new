@@ -19,7 +19,7 @@ const LandingPageHeaderEdit = ({ type }) => {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/Main_Header/welcomeimgupload`,
+        `${BASE_URL}/LandingPageHeaderEdit/welcomeimgupload`,
         formData,
         {
           headers: {
@@ -41,10 +41,10 @@ const LandingPageHeaderEdit = ({ type }) => {
 
     try {
       if (editingId) {
-        await axios.put(`${BASE_URL}/Main_Header/welcome/${editingId}`, data);
+        await axios.put(`${BASE_URL}/LandingPageHeaderEdit/welcome/${editingId}`, data);
         alert("Data updated successfully");
       } else {
-        await axios.post(`${BASE_URL}/Main_Header/welcome`, data);
+        await axios.post(`${BASE_URL}/LandingPageHeaderEdit/welcome`, data);
         alert("Data added successfully");
       }
     } catch (error) {
@@ -67,7 +67,7 @@ const LandingPageHeaderEdit = ({ type }) => {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/Main_Header/upload`,
+        `${BASE_URL}/LandingPageHeaderEdit/upload`,
         formData,
         {
           headers: {
