@@ -21,21 +21,21 @@ const WebSiteLandingPage = () => {
   return (
     <div>
       {/* WebSiteLandingPage */}
-      <button
+      {/* <button
         onClick={()=>{handleenableEdit();console.log(enableEdit,"enable edit value")}}
         className={
           enableEdit === "Disable Edit" ? "disabled-edit" : ""
         }
       >
         {enableEdit}
-      </button>
+      </button> */}
+
+      
       {/* from the button, we have to pass the enable button to all the components from here */}
       {/* so that buttons will be passed to the below children   */}
       <LandingPageHeader />
       {/* <LandingPageExamdata enableEditFromP={enableEdit}/> */}
       <LandingPageExamdata />
-
-
       <Footer />
     </div>
   )

@@ -8,7 +8,7 @@ import '../../../../styles/Theme2_landingPage_styles.css'
 import { Link } from 'react-router-dom';
 import '../../../../styles/LandingPage_main.css'
 import '../../../../styles/Theme2_landingPage_styles.css'
-// import ugImg from '../../../../styles/Girl.png'
+import ugImg from '../../../../styles/Girl.png'
 
 
 
@@ -156,7 +156,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
 
                 <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
                   <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
-                    {/* <img src={ugImg} alt="" /> */}
+                    <img src={ugImg} alt="" />
                   </div>
                   <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
                     <ul >

@@ -14,34 +14,9 @@ import '../../../../styles/LandingPage_main.css'
 
 const LandingPageHeader = () => {
   const [image, setImage] = useState(null);
-  // const [isLoggedIn, setIsLoggedIn] = useState(false);
-  // const [userData, setUserData] = useState({});
-  // const [showForm, setShowForm] = useState(false);
-  // const [enableEdit, setEnableEdit] = useState("Enable Edit");
-  // const [welcomeDataList, setWelcomeDataList] = useState([]);
-  // const [enableEditcontainer, setEnableEditcontainer] = useState(false);
+ 
   const themeFromContext = useContext(ThemeContext);
   console.log(themeFromContext, "this is the theme from the context")
-
-
-  // const fetchData = async () => {
-  //   try {
-  //     const response = await fetch(`${BASE_URL}/Main_Header/welcome`);
-  //     if (!response.ok) {
-  //       throw new Error("Network response was not ok");
-  //     }
-  //     const data = await response.json();
-  //     setWelcomeDataList([data]);
-  //   } catch (error) {
-  //     console.error("Error submitting data:", error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   fetchData();
-  // }, []);
-
-
- 
   const fetchImage = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Main_Header/image`, {
@@ -59,43 +34,7 @@ const LandingPageHeader = () => {
     fetchImage();
   }, []);
 
-  // const userRole = localStorage.getItem("userRole");
-
-  // useEffect(() => {
-  //   const checkLoggedIn = () => {
-  //     const loggedIn = localStorage.getItem("isLoggedIn");
-  //     if (loggedIn === "true") {
-  //       setIsLoggedIn(true);
-  //       fetchUserData();
-  //     }
-  //   };
-  //   checkLoggedIn();
-  // }, []);
-
-  // const fetchUserData = async () => {
-  //   try {
-  //     const token = localStorage.getItem("token");
-  //     const response = await fetch(`${BASE_URL}/ughomepage_banner_login/user`, {
-  //       headers: {
-  //         Authorization: `Bearer ${token}`,
-  //       },
-  //     });
-
-  //     if (!response.ok) {
-  //       localStorage.removeItem("isLoggedIn");
-  //       localStorage.removeItem("token");
-  //       setIsLoggedIn(false);
-  //       return;
-  //     }
-
-  //     if (response.ok) {
-  //       const userData = await response.json();
-  //       setUserData(userData);
-  //     }
-  //   } catch (error) {
-  //     console.error("Error fetching user data:", error);
-  //   }
-  // };
+  
 
   const themeColor = themeFromContext[0]?.current_theme;
   console.log(themeColor, "this is the theme json classesssssss")
@@ -112,50 +51,11 @@ const LandingPageHeader = () => {
             ) : (
               <p>No image available</p>
             )}
-
             <div className={`logoImgContainer ${themeDetails.logoC}`}>
-              {/* {enableEditcontainer ? (
-                <>
-                  <button onClick={() => setShowForm(!showForm)}>
-                    {showForm ? "Hide" : "logo info"}
-                  </button>
-                  {showForm && (
-                    <div>
-                      <h2>Upload Image</h2>
-                      <input type="file" onChange={handleImageChange} />
-                      <button onClick={handleUpload}>Submit</button>
-                    </div>
-                  )}
-                </>
-              ) : null} */}
             </div>
           </div>
-          {/* // copy after return to rendor on screen when admin in logged in start */}
-          {/* {isLoggedIn === true ? (
-            <>
-              {(userRole === "admin" ||
-                userRole === "ugotsadmin" ||
-                userRole === "ugadmin") && (
-                  <>
-                    <button
-                      onClick={handleenableEdit}
-                      className={
-                        enableEdit === "Disable Edit" ? "disabled-edit" : ""
-                      }
-                    >
-                      {enableEdit}
-                    </button>
-                  </>
-                )}
-            </>
-          ) : null} */}
-          {/* // copy after return to rendor on screen when admin in logged in end */}
-
         </div>
       </div>
-
-
-
       <LandingPageHeaderEdit />
     </div>
   )
