@@ -5,6 +5,8 @@ import BASE_URL from '../../../../apiConfig';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import Marquee from "react-fast-marquee";
+
+
 const BHPNavBar = () => {
   const [navItems, setNavItems] = useState([]);
   const [marqueeItems, setMarqueeItems] = useState([]);
@@ -28,6 +30,7 @@ const BHPNavBar = () => {
 
     fetchNavItems();
   }, []);
+
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
   // Listen for messages from other pages
