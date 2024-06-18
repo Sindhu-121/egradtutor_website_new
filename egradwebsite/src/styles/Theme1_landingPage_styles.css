@@ -191,7 +191,7 @@ img.t1LogoImg {
     font-size: 30px;
 }
 
-.Newlandingpage {
+
     & .t1BranchesContainer {
         & .t1BranchesSubContainer {
             display: flex;
@@ -208,6 +208,10 @@ img.t1LogoImg {
                     justify-content: space-around;
                     padding: 0px;
                     margin: 0px;
+                    &
+                    t1ExamImageBox{
+                        height: 240px !important;
+                    }
 
                     & .t1Landing_branch_box_btns {
                         display: flex;
@@ -243,7 +247,7 @@ img.t1LogoImg {
             }
         }
     }
-}
+
 
 
 @media (max-width:450px) {
@@ -280,6 +284,9 @@ img.t1LogoImg {
     }
 }
 
+.NewlandingPage_exams_image.t1ExamImageBox img{
+    height: 240px !important;
+}
 
 /* ************************** For Footer Part ***************************************** */
 .t1FooterMainContainer{
@@ -290,4 +297,15 @@ img.t1LogoImg {
     width: 250px;
     display: flex;
     padding: 9px;
+}
+
+
+
+
+.Newlandingpage_branchescontainer.t1BranchesContainer {
+    width: 100%;
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

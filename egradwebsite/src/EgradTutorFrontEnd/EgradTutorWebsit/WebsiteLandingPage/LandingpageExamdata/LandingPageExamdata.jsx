@@ -4,13 +4,12 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import BASE_URL from '../../../../apiConfig';
 import axios from 'axios';
-import '../../../../styles/Theme2_landingPage_styles.css'
 import { Link } from 'react-router-dom';
-import '../../../../styles/LandingPage_main.css'
+// import '../../../../styles/LandingPage_main.css'
 import '../../../../styles/Theme2_landingPage_styles.css'
+import '../../../../styles/Theme1_landingPage_styles.css'
+import '../../../../styles/Default_landingPage_styles.css'
 import ugImg from '../../../../styles/Girl.png'
-
-
 
 const LandingPageExamdata = ({enableEditFromP}) => {
   const [image, setImage] = useState(null);
@@ -18,9 +17,6 @@ const LandingPageExamdata = ({enableEditFromP}) => {
   console.log(enableEditFromP,"this is the value that passed from landingPage");
   const themeFromContext = useContext(ThemeContext);
   console.log(themeFromContext, "this is the theme from the context")
-  const [welcomeDataList, setWelcomeDataList] = useState([]);
-  const [welcomeimage, setWelcomeImage] = useState(null);
-
   const [enableEdit, setEnableEdit] = useState("Enable Edit");
   const [enableEditcontainer, setEnableEditcontainer] = useState(false);
   // In the page that needs to be refreshed
@@ -35,35 +31,8 @@ const LandingPageExamdata = ({enableEditFromP}) => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
-  //  fetch welcome image
-  const fetchWelcomeImage = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/Main_Header/welcomeimage`, {
-        responseType: "arraybuffer",
-      });
-      const imageBlob = new Blob([response.data], { type: "image/png" });
-      const imageUrl = URL.createObjectURL(imageBlob);
-      setWelcomeImage(imageUrl);
-    } catch (error) {
-      console.error("Error fetching image:", error);
-    }
-  };
-  // fetching the welcome data
-  const fetchData = async () => {
-    try {
-      const response = await fetch(`${BASE_URL}/Main_Header/welcome`);
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-      const data = await response.json();
-      setWelcomeDataList([data]);
-    } catch (error) {
-      console.error("Error submitting data:", error);
-    }
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+
+
 
   // fetching the main header logo image
   const fetchImage = async () => {
@@ -83,10 +52,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
     fetchImage();
   }, []);
 
-  useEffect(() => {
-    fetchWelcomeImage();
-  }, []);
-
+  
   // fetching the branches
   useEffect(() => {
     fetchBranches();
@@ -104,29 +70,6 @@ const LandingPageExamdata = ({enableEditFromP}) => {
 
   return (
     <div className='Newlandingpage' >
-        {/* ======================welcome image with welcome text at UI starts here======================================= */}
-        <div className={`landing_content_div_container ${themeDetails.themeLandingParentContainer}`}>
-          <div className={`landing_img_div ${themeDetails.themeLCapImgDiv}`}>
-            {image ? (
-              <img src={welcomeimage} alt="welcomeCurrent" />
-            ) : (
-              <p>No image available</p>
-            )}
-          </div>
-          <div className={`landing_heading_div_container ${themeDetails.themeCapTextContainer}`}>
-            <div className={`${themeDetails.themeTextContainer}`}>
-
-              {welcomeDataList.map((welcomeData) => (
-                <div key={welcomeData.welcome_id}>
-                  <h1>{welcomeData.welcome_text}</h1>
-                  <p>{welcomeData.welcome_longtext}</p>
-                  {/* Add delete button */}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-        {/* =========================welcome image with welcome text at UI ends here======================================= */}
         {/* =======================Exam cards starts here============================== */}
         <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
           <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>
