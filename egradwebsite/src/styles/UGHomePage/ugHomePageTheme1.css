@@ -40,29 +40,6 @@
 
 
 /* For contact us ,home ........ */
-/* 
-.t1UgHeader{
-  
-}
-
-.t1UgHContainer{
-   
-}
-
-.t1UgNavContainer{
-}
-
-.t1UgHeaderUl{
-
-}
-
-.t1UgHeaderLi{
-
-} */
-
-
-
-/* Style for the header */
 .t1UgHeader {
     color: white;            
     padding: 10px 0;           
@@ -119,3 +96,18 @@
     height: 154px;
   }
 
+/* for exams page */
+
+.t1ExamPageHeaderMainContainer{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+}
+
+.t1ExamPageHeaderContainer{
+    background-color: rgb(253, 246, 246);
+}
+
+.t1ExamPageHeaderHeading{
+background-color: yellow;
+}
