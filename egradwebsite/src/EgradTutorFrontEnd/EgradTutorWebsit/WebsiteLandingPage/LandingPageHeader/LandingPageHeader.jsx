@@ -22,9 +22,10 @@ const LandingPageHeader = () => {
   const themeFromContext = useContext(ThemeContext);
   console.log(themeFromContext, "this is the theme from the context");
 
+  // fetching the logo
   const fetchImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/Main_Header/image`, {
+      const response = await axios.get(`${BASE_URL}/LandingPageHeader/image`, {
         responseType: "arraybuffer",
       });
       const imageBlob = new Blob([response.data], { type: "image/png" });
@@ -38,7 +39,7 @@ const LandingPageHeader = () => {
   // fetching the welcome data
   const fetchData = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/Main_Header/welcome`);
+      const response = await fetch(`${BASE_URL}/LandingPageHeader/welcome`);
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -52,9 +53,12 @@ const LandingPageHeader = () => {
   //  fetch welcome image
   const fetchWelcomeImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/Main_Header/welcomeimage`, {
-        responseType: "arraybuffer",
-      });
+      const response = await axios.get(
+        `${BASE_URL}/LandingPageHeader/welcomeimage`,
+        {
+          responseType: "arraybuffer",
+        }
+      );
       const imageBlob = new Blob([response.data], { type: "image/png" });
       const imageUrl = URL.createObjectURL(imageBlob);
       setWelcomeImage(imageUrl);
@@ -62,6 +66,7 @@ const LandingPageHeader = () => {
       console.error("Error fetching image:", error);
     }
   };
+
   useEffect(() => {
     fetchImage();
     fetchData();
@@ -76,10 +81,14 @@ const LandingPageHeader = () => {
   return (
     <div className="Newlandingpage">
       <div>
-        <button onClick={() => setShowImage(!showImage)}>
-          {showImage ? "Close" : "Add Logo"}
-        </button>
-        {showImage && <LandingPageHeaderEdit type="addLogo" />}
+        {/* Adding Logo button */}
+        <div>
+          <button onClick={() => setShowImage(!showImage)}>
+            {showImage ? "Close" : "Add Logo"}
+          </button>
+          {showImage && <LandingPageHeaderEdit type="addLogo" />}
+        </div>
+        {/* Logo imeage feaching  */}
         <div
           className={`Newlandingpage_logocontainer ${themeDetails.themeHeaderColor}`}
         >
@@ -100,12 +109,17 @@ const LandingPageHeader = () => {
             </div>
           </div>
         </div>
+        {/*  Logo imeage feaching  End */}
       </div>
       <div>
-        <button onClick={() => setShowWelcomeForm(!showwelcomeForm)}>
-          {showwelcomeForm ? "Close" : "Add Welcome info"}
-        </button>
-        {showwelcomeForm && <LandingPageHeaderEdit type="WelcomeForm" />}
+        {/* Adding Welcom info button */}
+        <div>
+          <button onClick={() => setShowWelcomeForm(!showwelcomeForm)}>
+            {showwelcomeForm ? "Close" : "Add Welcome info"}
+          </button>
+          {showwelcomeForm && <LandingPageHeaderEdit type="WelcomeForm" />}
+        </div>
+        {/* Welcom imeage and data feaching */}
         <div
           className={`landing_content_div_container ${themeDetails.themeLandingParentContainer}`}
         >
@@ -129,6 +143,8 @@ const LandingPageHeader = () => {
             </div>
           </div>
         </div>
+
+        {/* Welcom imeage and data feaching end */}
       </div>
     </div>
   );
