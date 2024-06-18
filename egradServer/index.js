@@ -2,7 +2,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
-const port = 5003;
+const port = 5001;
 app.use(bodyParser.json({ limit: '10mb' }));
 app.use(bodyParser.urlencoded({ extended: true, limit: '10mb' }));
 app.use(express.static("public"));
@@ -12,6 +12,13 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+
+
+
+const AboutUs =require("./EgradTutorWebsite/AboutUs/AboutUs");
+app.use("/AboutUs", AboutUs)
+const AboutUsEdit =require("./EgradTutorWebsite/AboutUs/AboutUsEdit");
+app.use("/AboutUsEdit", AboutUsEdit)
 
 
 

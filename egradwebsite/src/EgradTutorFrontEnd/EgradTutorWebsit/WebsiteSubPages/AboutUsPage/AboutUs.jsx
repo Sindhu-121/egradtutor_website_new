@@ -1,14 +1,16 @@
 import React, { useState, useEffect } from "react";
-import AboutUsEdit from './AboutUsEdit';
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import defaultImage from '../../../../assets/defaultImage.png'; 
+import AboutUsEdit from "./AboutUsEdit";
 
 const AboutUs = () => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
   const [image, setImage] = useState(null);
+  const [showAboutUsForm, setShowAboutUsForm] = useState(false);
+  const [showAboutEgradForm, setShowAboutEgradForm] = useState(false);
 
   const fetchImage = async () => {
     try {
@@ -54,21 +56,35 @@ const AboutUs = () => {
         {image ? (
           <img src={image} alt="Current" />
         ) : (
-          <img src={defaultImage} alt="Default" /> // Display default image
+          <img src={defaultImage} alt="Default" />
         )}
       </div>
-      <AboutUsEdit />
-      {aboutEgradData.map((aboutEgrad) => (
-        <div key={aboutEgrad.about_egt_id}>
-          <p>{aboutEgrad.about_egt}</p>
-        </div>
-      ))}
-      {aboutUsData.map((aboutUs) => (
-        <div key={aboutUs.about_us_id}>
-          <h2>{aboutUs.Title}</h2>
-          <p>{aboutUs.Description}</p>
-        </div>
-      ))}
+
+      <div>
+        <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
+          {showAboutEgradForm ? "Close AboutEGT Form" : "Add AboutEGT"}
+        </button>
+        {showAboutEgradForm && <AboutUsEdit type="aboutEgrad" />}
+        {aboutEgradData.map((aboutEgrad) => (
+          <div key={aboutEgrad.about_egt_id}>
+            <p>{aboutEgrad.about_egt}</p>
+          </div>
+        ))}
+      </div>
+
+      <div>
+        <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
+          {showAboutUsForm ? "Close AboutUs Form" : "Add AboutUs"}
+        </button>
+        {showAboutUsForm && <AboutUsEdit type="aboutUs" />}
+        {aboutUsData.map((aboutUs) => (
+          <div key={aboutUs.about_us_id}>
+            <h2>{aboutUs.Title}</h2>
+            <p>{aboutUs.Description}</p>
+          </div>
+        ))}
+      </div>
+
       <Footer />
     </div>
   );

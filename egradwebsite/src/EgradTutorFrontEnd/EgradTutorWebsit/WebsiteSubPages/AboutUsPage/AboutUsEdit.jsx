@@ -1,12 +1,12 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { BiSolidEditAlt } from "react-icons/bi";
 import { MdDelete } from "react-icons/md";
-const AboutUsEdit = () => {
-  const [showEditHere, setShowEditHere] = useState(false);
+const AboutUsEdit = ({ type }) => {
+  const [showForm, setShowForm] = useState(true);
   const [showAboutUsForm, setShowAboutUsForm] = useState(false);
   const [showAboutEgtForm, setShowAboutEgtForm] = useState(false);
   const [aboutUsTitle, setAboutUsTitle] = useState("");
@@ -15,6 +15,7 @@ const AboutUsEdit = () => {
   const [aboutegrad, setAboutegrad] = useState("");
   const [aboutEgradData, setAboutEgradData] = useState([]);
   const [aboutUsData, setAboutUsData] = useState([]);
+
   const handleSubmit = async (e, type) => {
     e.preventDefault();
 
@@ -22,7 +23,7 @@ const AboutUsEdit = () => {
     let url;
     let successMessage;
 
-    if (type === 'aboutUs') {
+    if (type === "aboutUs") {
       dataToSend = {
         Title: aboutUsTitle,
         Description: aboutUsDescription,
@@ -35,7 +36,7 @@ const AboutUsEdit = () => {
         url = `${BASE_URL}/AboutUsEdit/about_us`;
         successMessage = "About Us data saved successfully!";
       }
-    } else if (type === 'aboutegrad') {
+    } else if (type === "aboutegrad") {
       dataToSend = {
         aboutegrad: aboutegrad,
       };
@@ -44,7 +45,7 @@ const AboutUsEdit = () => {
     }
 
     try {
-      if (type === 'aboutUs' && editAboutUsId) {
+      if (type === "aboutUs" && editAboutUsId) {
         await axios.put(url, dataToSend);
         setEditAboutUsId(null);
       } else {
@@ -53,19 +54,23 @@ const AboutUsEdit = () => {
       alert(successMessage);
 
       // Reset form fields
-      if (type === 'aboutUs') {
+      if (type === "aboutUs") {
         setAboutUsTitle("");
         setAboutUsDescription("");
         setShowAboutUsForm(false);
-      } else if (type === 'aboutegrad') {
+      } else if (type === "aboutegrad") {
         setAboutegrad("");
         setShowAboutEgtForm(false);
       }
     } catch (error) {
-      console.error(`Error saving ${type === 'aboutUs' ? 'About Us' : 'About eGRAD Tutor'} data:`, error);
+      console.error(
+        `Error saving ${
+          type === "aboutUs" ? "About Us" : "About eGRAD Tutor"
+        } data:`,
+        error
+      );
     }
   };
-
 
   const handleEditAboutegrad = (aboutEgrad) => {
     setEditAboutUsId(aboutEgrad.about_egt_id);
@@ -112,8 +117,6 @@ const AboutUsEdit = () => {
     }
   };
 
-
-
   const fetchAboutUsData = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/AboutUs/about_us`);
@@ -122,35 +125,26 @@ const AboutUsEdit = () => {
       console.error("Error fetching About Us data:", error);
     }
   };
-  
+
   useEffect(() => {
     fetchAboutUsData();
     fetchAboutEgradData();
   }, []);
+
+  useEffect(() => {
+    if (type === "aboutUs") {
+      fetchAboutUsData();
+    } else if (type === "aboutEgrad") {
+      fetchAboutEgradData();
+    }
+  }, [type]);
+
   return (
     <div>
- <div className="add_aboutUs">
-        <button
-          onClick={() => setShowEditHere(!showEditHere)}
-          className={showEditHere ? "hide-clicked" : "add-clicked"}
-        >
-          {showEditHere ? <IoMdClose /> : "Edit Here"}
-        </button>
-      </div>
-      {showEditHere && (
-      <div>
-      <div className="add_aboutUs">
-        <button
-          onClick={() => setShowAboutUsForm(!showAboutUsForm)}
-          className={showAboutUsForm ? "hide-clicked" : "add-clicked"}
-        >
-          {showAboutUsForm ? <IoMdClose /> : <FaRegPenToSquare />}
-        </button>
-      </div>
-      {showAboutUsForm && (
+      {type === "aboutUs" && (
         <div className="about_egt_popup">
           <div className="about_egt_form">
-            <form onSubmit={(e) => handleSubmit(e, 'aboutUs')}>
+            <form onSubmit={(e) => handleSubmit(e, "aboutUs")}>
               <label htmlFor="aboutUsTitle">Title:</label>
               <input
                 id="aboutUsTitle"
@@ -170,42 +164,34 @@ const AboutUsEdit = () => {
             </form>
           </div>
           {aboutUsData.map((aboutUs) => (
-              <div key={aboutUs.about_us_id}>
-                <h2>{aboutUs.Title}</h2>
-                <p>{aboutUs.Description}</p>
-            
-            <div>
-                  <button
-                    onClick={() => handleEditAboutUs(aboutUs)}
-                    className="popup_edit_btn"
-                  >
-                    {" "}
-                    <BiSolidEditAlt />
-                  </button>
-                  <button
-                    onClick={() => handleDeleteAboutUs(aboutUs.about_us_id)}
-                    className="popup_delete_btn"
-                  >
-                    <MdDelete />
-                  </button>
-                </div>
-               
+            <div key={aboutUs.about_us_id}>
+              <h2>{aboutUs.Title}</h2>
+              <p>{aboutUs.Description}</p>
+
+              <div>
+                <button
+                  onClick={() => handleEditAboutUs(aboutUs)}
+                  className="popup_edit_btn"
+                >
+                  {" "}
+                  <BiSolidEditAlt />
+                </button>
+                <button
+                  onClick={() => handleDeleteAboutUs(aboutUs.about_us_id)}
+                  className="popup_delete_btn"
+                >
+                  <MdDelete />
+                </button>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       )}
-      <div className="add_aboutEgt">
-        <button
-          onClick={() => setShowAboutEgtForm(!showAboutEgtForm)}
-          className={showAboutEgtForm ? "hide-clicked" : "add-clicked"}
-        >
-          {showAboutEgtForm ? <IoMdClose /> : <FaRegPenToSquare />}
-        </button>
-      </div>
-      {showAboutEgtForm && (
+
+      {type === "aboutEgrad" && (
         <div className="about_egt_popup">
           <div className="about_egt_form">
-            <form onSubmit={(e) => handleSubmit(e, 'aboutegrad')}>
+            <form onSubmit={(e) => handleSubmit(e, "aboutegrad")}>
               <label htmlFor="aboutegradtutor">About eGRAD Tutor</label>
               <textarea
                 id="aboutegradtutor"
@@ -219,30 +205,26 @@ const AboutUsEdit = () => {
             </form>
           </div>
           {aboutEgradData.map((aboutEgrad) => (
-              <div key={aboutEgrad.about_egt_id}>
-                <p>{aboutEgrad.about_egt}</p>
-               
-                <button
-                  onClick={() => handleEditAboutegrad(aboutEgrad)}
-                  className="popup_edit_btn"
-                >
-                  <BiSolidEditAlt />
-                </button>
-                <button
-                  onClick={() =>
-                    handleDeleteAboutegrad(aboutEgrad.about_egt_id)
-                  }
-                  className="popup_delete_btn"
-                >
-                  <MdDelete />
-                </button>
-               
-              </div>
-            ))}
+            <div key={aboutEgrad.about_egt_id}>
+              <p>{aboutEgrad.about_egt}</p>
+
+              <button
+                onClick={() => handleEditAboutegrad(aboutEgrad)}
+                className="popup_edit_btn"
+              >
+                <BiSolidEditAlt />
+              </button>
+              <button
+                onClick={() => handleDeleteAboutegrad(aboutEgrad.about_egt_id)}
+                className="popup_delete_btn"
+              >
+                <MdDelete />
+              </button>
+            </div>
+          ))}
         </div>
       )}
-         
-    </div> )}</div>
+    </div>
   );
 };
 
