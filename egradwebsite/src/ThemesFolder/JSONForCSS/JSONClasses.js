@@ -24,7 +24,7 @@ const JSONClasses = {
     themeAboutuscontainer: "container",
     themeLogoImgC: "Ug_header_Container",
     themeLogoImg: "Ug_header_logoIMG",
-    themeAboutusmaindiv: "",
+    // themeAboutusmaindiv: "",
     themeHeadingtext: "abus_heading",
     themeAboutusimg: "image-section",
     themeAboutegtmaindiv: "text-section",
@@ -50,6 +50,18 @@ const JSONClasses = {
     ThemeFooterSubContainerCopywriteData:
       "ThemeFooterSubContainerCopywriteDataDefault",
     ThemeFooterHorizantalLine: "ThemeFooterHorizantalLineDefault",
+    // our courses container
+    themeOurCoursesContainer: "defaltOurCoursesContainer",
+    themeCoursesHeadding: "defaultCoursesHeadding",
+    themeCoursesSubContainer: "defaultCoursesSubContainer",
+    themeCoursesUl: "defaultCoursesUl",
+    themeCourseLi:"defaultCourseLi",
+    themePortalName:"defaultPortalName",
+    themeExamsNames:"defaultExamsNames",
+    themeCFeatures:"defaultCFeatures",
+    themeFeaturesContainer:"defaultFeaturesContainer",
+    themeFeatures:"defaultFeatures",
+    themeFeatureImgC:"defaultFeatureImgC",
 
     // End //
   },
@@ -75,7 +87,7 @@ const JSONClasses = {
     themeAboutuscontainer: "t1container",
     themeLogoImgC: "Ug_header_Container",
     themeLogoImg: "Ug_header_logoIMG",
-    themeAboutusmaindiv: "",
+    // themeAboutusmaindiv: "",
     themeHeadingtext: "t1abus_heading",
     themeAboutusimg: "t1image-section",
     themeAboutegtmaindiv: "t1text-section",
@@ -86,14 +98,17 @@ const JSONClasses = {
     themeAboutusprofileimg: "t1profile-img",
     themeUgAndPgButtons: "t1UgAndPgButtons",
 
-// footer classes added by shiva 
+    // footer classes added by shiva
     ThemeFooterMainContainer: "t1FooterMainContainer",
     ThemeFooterSubContainer: "t1FooterSubContainer",
     ThemeFooterSubContainerFirstPart: "t1FooterSubContainerFirstPart",
     ThemeFooterSubContainerSecondtPart: "t1FooterSubContainerSecondtPart",
-    ThemeFooterSubContainerFirstPartEGATEData: "t1FooterSubContainerFirstPartEGATEData",
-    ThemeFooterSubContainerFirstPartLinksData: "t1FooterSubContainerFirstPartLinksData",
-    ThemeFooterSubContainerSecondtPartContactUsData: "t1FooterSubContainerSecondtPartContactUsData",
+    ThemeFooterSubContainerFirstPartEGATEData:
+      "t1FooterSubContainerFirstPartEGATEData",
+    ThemeFooterSubContainerFirstPartLinksData:
+      "t1FooterSubContainerFirstPartLinksData",
+    ThemeFooterSubContainerSecondtPartContactUsData:
+      "t1FooterSubContainerSecondtPartContactUsData",
     ThemeFooterSubContainerCopywriteData: "t1FooterSubContainerCopywriteData",
     ThemeFooterHorizantalLine: "t1FooterHorizantalLine",
 
@@ -111,6 +126,18 @@ const JSONClasses = {
     themeUgExploreExamsContainer: "t1UgExploreExamsContainer",
     themeUgExploreExamsSection: "t1UgExploreExamsSection",
     themeUgExploreExamsContent: "t1UgExploreExamsContent",
+    // ug our courses part
+    themeOurCoursesContainer: "t1OurCoursesContainer",
+    themeCoursesHeadding: "t1CoursesHeadding",
+    themeCoursesSubContainer: "t1CoursesSubContainer",
+    themeCoursesUl: "t1CoursesUl",
+    themeCourseLi:"t1CourseLi",
+    themePortalName:"t1PortalName",
+    themeExamsNames:"t1ExamsNames",
+    themeCFeatures:"t1CFeatures",
+    themeFeaturesContainer:"t1FeaturesContainer",
+    themeFeatures:"t1Features",
+    themeFeatureImgC:"t1FeatureImgC",
 
 
   },
@@ -147,9 +174,18 @@ const JSONClasses = {
     themeUgExploreExamsContainer: "t2UgExploreExamsContainer",
     themeUgExploreExamsSection: "t2UgExploreExamsSection",
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
+    // our courses container
+    themeOurCoursesContainer: "t2OurCoursesContainer",
+    themeCoursesHeadding: "t2CoursesHeadding",
+    themeCoursesSubContainer: "t2CoursesSubContainer",
+    themeCoursesUl: "t2CoursesUl",
+    themeCourseLi:"t2CourseLi",
+    themePortalName:"t2PortalName",
+    themeExamsNames:"t2ExamsNames",
+    themeFeaturesContainer:"t2FeaturesContainer",
+    themeFeatures:"t2Features",
+    themeFeatureImgC:"t2FeatureImgC",
   },
 };
-   
-    
- 
+
 export default JSONClasses;
