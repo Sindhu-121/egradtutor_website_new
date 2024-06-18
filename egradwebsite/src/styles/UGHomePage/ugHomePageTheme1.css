@@ -6,6 +6,7 @@
 .\"Ug_header_Container.t1UgHeaderContainer {
     display: flex;
     align-items: center;
+    height: 130px;
     justify-content: space-between;
 
 }
@@ -118,7 +119,3 @@
     height: 154px;
   }
 
-  .Ug_header_logoIMG img {
-    width: 100%;
-    height: 100%;
-}
