@@ -18,11 +18,11 @@ const LandingPageHeader = () => {
   const [welcomeimage, setWelcomeImage] = useState(null);
   const [welcomeDataList, setWelcomeDataList] = useState([]);
   const [showwelcomeForm, setShowWelcomeForm] = useState(false);
+  const [fetchError, setFetchError] = useState(false); // State to handle fetch errors
 
   const themeFromContext = useContext(ThemeContext);
-  console.log(themeFromContext, "this is the theme from the context");
 
-  // fetching the logo
+  // Fetching the logo
   const fetchImage = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/LandingPageHeader/image`, {
@@ -36,7 +36,7 @@ const LandingPageHeader = () => {
     }
   };
 
-  // fetching the welcome data
+  // Fetching the welcome data
   const fetchData = async () => {
     try {
       const response = await fetch(`${BASE_URL}/LandingPageHeader/welcome`);
@@ -46,11 +46,12 @@ const LandingPageHeader = () => {
       const data = await response.json();
       setWelcomeDataList([data]);
     } catch (error) {
-      console.error("Error submitting data:", error);
+      console.error("Error fetching data:", error);
+      setFetchError(true); // Set fetch error state to true
     }
   };
 
-  //  fetch welcome image
+  // Fetching welcome image
   const fetchWelcomeImage = async () => {
     try {
       const response = await axios.get(
@@ -74,9 +75,7 @@ const LandingPageHeader = () => {
   }, []);
 
   const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss");
   const themeDetails = JSONClasses[themeColor] || [];
-  console.log(themeDetails, "mapppping from json....");
 
   return (
     <div className="Newlandingpage">
@@ -88,7 +87,7 @@ const LandingPageHeader = () => {
           </button>
           {showImage && <LandingPageHeaderEdit type="addLogo" />}
         </div>
-        {/* Logo imeage feaching  */}
+        {/* Logo image fetching */}
         <div
           className={`Newlandingpage_logocontainer ${themeDetails.themeHeaderColor}`}
         >
@@ -109,22 +108,22 @@ const LandingPageHeader = () => {
             </div>
           </div>
         </div>
-        {/*  Logo imeage feaching  End */}
+        {/* Logo image fetching End */}
       </div>
       <div>
-        {/* Adding Welcom info button */}
+        {/* Adding Welcome info button */}
         <div>
           <button onClick={() => setShowWelcomeForm(!showwelcomeForm)}>
             {showwelcomeForm ? "Close" : "Add Welcome info"}
           </button>
           {showwelcomeForm && <LandingPageHeaderEdit type="WelcomeForm" />}
         </div>
-        {/* Welcom imeage and data feaching */}
+        {/* Welcome image and data fetching */}
         <div
           className={`landing_content_div_container ${themeDetails.themeLandingParentContainer}`}
         >
           <div className={`landing_img_div ${themeDetails.themeLCapImgDiv}`}>
-            {image ? (
+            {welcomeimage ? (
               <img src={welcomeimage} alt="welcomeCurrent" />
             ) : (
               <img src={defaultImage} alt="Default" />
@@ -134,17 +133,28 @@ const LandingPageHeader = () => {
             className={`landing_heading_div_container ${themeDetails.themeCapTextContainer}`}
           >
             <div className={`${themeDetails.themeTextContainer}`}>
-              {welcomeDataList.map((welcomeData) => (
-                <div key={welcomeData.welcome_id}>
-                  <h1>{welcomeData.welcome_text}</h1>
-                  <p>{welcomeData.welcome_longtext}</p>
+              {fetchError ? (
+                <div>
+                  <h1>Error fetching welcome data.</h1>
+                  <p>Please try again later.</p>
                 </div>
-              ))}
+              ) : welcomeDataList.length > 0 ? (
+                welcomeDataList.map((welcomeData) => (
+                  <div key={welcomeData.welcome_id}>
+                    <h1>{welcomeData.welcome_text}</h1>
+                    <p>{welcomeData.welcome_longtext}</p>
+                  </div>
+                ))
+              ) : (
+                <div>
+                  <h1>No welcome data available.</h1>
+                  <p>Please add welcome information.</p>
+                </div>
+              )}
             </div>
           </div>
         </div>
-
-        {/* Welcom imeage and data feaching end */}
+        {/* Welcome image and data fetching end */}
       </div>
     </div>
   );
