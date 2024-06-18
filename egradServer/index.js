@@ -26,6 +26,9 @@ app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 const ExampagePortals =require("./EgradTutorWebsite/ExamPage/ExampagePortals");
 app.use("/ExampagePortals" ,ExampagePortals)
 
+const ExamInfo =require("./EgradTutorWebsite/ExamPage/ExamInfo");
+app.use("/ExamInfo" ,ExamInfo)
+
 const AboutUs =require("./EgradTutorWebsite/AboutUs/AboutUs");
 app.use("/AboutUs", AboutUs)
 const AboutUsEdit =require("./EgradTutorWebsite/AboutUs/AboutUsEdit");
