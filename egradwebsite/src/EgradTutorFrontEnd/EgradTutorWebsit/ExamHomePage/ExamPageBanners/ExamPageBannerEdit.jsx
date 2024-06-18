@@ -1,8 +1,11 @@
 import React from 'react'
 
-const ExamPageBannerEdit = () => {
+const ExamPageBannerEdit = ({ type }) => {
   return (
-    <div>ExamPageBannerEdit</div>
+    <div>     
+      {type === 'addBanner' && <div>Banner Edit Form</div>}
+      
+      </div>
   )
 }
 
