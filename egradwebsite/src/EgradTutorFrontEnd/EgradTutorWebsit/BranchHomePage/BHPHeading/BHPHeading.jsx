@@ -7,6 +7,8 @@ import BASE_URL from '../../../../apiConfig';
 import '../../../../styles/UGHomePage/ugHomePageTheme2.css'
 const BHPHeading = () => {
   const [image, setImage] = useState(null);
+  const [navItems, setNavItems] = useState([]);
+
   // setting an image
   const fetchImage = async () => {
     try {
@@ -36,6 +38,28 @@ const BHPHeading = () => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
+// fetching for navitems
+useEffect(() => {
+  const fetchNavItems = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/Main_Header/homepageNavItems`
+      );
+      if (response.data.status === "Success") {
+        setNavItems(response.data.navItems);
+        console.log("Nav items:", response.data.navItems);
+      } else {
+        console.error("Failed to fetch nav items");
+      }
+    } catch (error) {
+      console.error("Error fetching nav items:", error);
+    }
+  };
+
+  fetchNavItems();
+}, []);
+
+
   return (
     <div>
    <div className={`Ug_Home_Container ${themeDetails.themeUgHomeContainer}`}>
@@ -74,7 +98,21 @@ const BHPHeading = () => {
      </div>
      <div/>
      
-     </div></div>
+     </div>
+     </div>
+     {/* home,contactus navbar(second navbar) */}
+     <div className={`ug_header ${themeDetails.themeUgHeader}`}>
+          <div className={`ug_container ${themeDetails.themeUgHContainer}`}>
+            <div className={`navItemsContainer ${themeDetails.themeUgNavContainer}`}>
+              <ul className={`${themeDetails.themeUgHeaderUl}`}>
+                {navItems.map((navItem) => (
+                  <li key={navItem.id} className={`${themeDetails.themeUgHeaderLi}`}>{navItem.Nav_Item}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+        </div>
      </div>
   )
 }
