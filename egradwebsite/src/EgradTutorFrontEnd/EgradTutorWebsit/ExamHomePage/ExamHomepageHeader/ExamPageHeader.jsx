@@ -16,7 +16,7 @@ const ExamPageHeader = () => {
     const fetchEntranceExam = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/ExamPages/feachingentrance_exams/${EntranceExams_Id}`
+          `${BASE_URL}/ExamInfo/feachingentrance_exams/${EntranceExams_Id}`
         );
         console.log("Entrance Exam Data:", response.data);
         setEntranceExam(response.data);
