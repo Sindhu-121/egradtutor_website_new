@@ -4,6 +4,7 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import axios from 'axios';
 import BASE_URL from '../../../../apiConfig';
+import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import '../../../../styles/UGHomePage/ugHomePageTheme2.css'
 const BHPHeading = () => {
   const [image, setImage] = useState(null);

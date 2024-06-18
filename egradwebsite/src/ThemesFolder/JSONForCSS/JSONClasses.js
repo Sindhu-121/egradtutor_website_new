@@ -34,7 +34,7 @@ const JSONClasses = {
     themeAboutusinfobox: "info-box",
     themeAboutusprofileimg: "profile-img",
 
-    // For practicing Div structure fromate for footer section //
+    // Div structure fromate for footer section //
 
     ThemeFooterMainContainer: "ThemeFooterMainContainerDefault",
     ThemeFooterSubContainer: "ThemeFooterSubContainerDefault",
@@ -85,24 +85,32 @@ const JSONClasses = {
     themeAboutusinfobox: "t1info-box",
     themeAboutusprofileimg: "t1profile-img",
     themeUgAndPgButtons: "t1UgAndPgButtons",
+
 // footer classes added by shiva 
     ThemeFooterMainContainer: "t1FooterMainContainer",
-
     ThemeFooterSubContainer: "t1FooterSubContainer",
-
     ThemeFooterSubContainerFirstPart: "t1FooterSubContainerFirstPart",
-
     ThemeFooterSubContainerSecondtPart: "t1FooterSubContainerSecondtPart",
-
     ThemeFooterSubContainerFirstPartEGATEData: "t1FooterSubContainerFirstPartEGATEData",
-
     ThemeFooterSubContainerFirstPartLinksData: "t1FooterSubContainerFirstPartLinksData",
-
     ThemeFooterSubContainerSecondtPartContactUsData: "t1FooterSubContainerSecondtPartContactUsData",
-
     ThemeFooterSubContainerCopywriteData: "t1FooterSubContainerCopywriteData",
+    ThemeFooterHorizantalLine: "t1FooterHorizantalLine",
 
-    ThemeFooterHorizantalLine: "t1FooterHorizantalLine"
+    themeUgHeaderLi: "t1UgHeaderLi",
+    themeUgHomeContainer: "t1UgHomeContainer",
+    themeUgHeaderSec: "t1UgHeaderSec",
+    themeUgHeaderContainer: "t1UgHeaderContainer",
+    themeUgHeaderLogoImg: "t1UgHeaderLogoImg",
+    themeUgHeaderUl: "t1UgHeaderUl",
+    themeMarqData: "t1MarqData",
+    themeUgDivLinksOfHeader: "t1UgDivLinksOfHeader",
+    themeUgHeader: "t1UgHeader",
+    themeUgNavContainer: "t1UgNavContainer",
+    themeUgHContainer: "t1UgHContainer",
+    themeUgExploreExamsContainer: "t1UgExploreExamsContainer",
+    themeUgExploreExamsSection: "t1UgExploreExamsSection",
+    themeUgExploreExamsContent: "t1UgExploreExamsContent",
 
 
   },
