@@ -49,9 +49,10 @@ const OueCourses = () => {
   };
   return (
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
-      <div className={`${themeDetails.themeCoursesHeadding}`}>OurCourses
+      <div className={`${themeDetails.themeCoursesHeadding}`}>
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
-          <h3 >Course Features:</h3>
+          <h2 >OUR COURSES</h2>
+          <div className={`${themeDetails.themeCoursesBoxContainer}`}>
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
@@ -72,6 +73,7 @@ const OueCourses = () => {
               </li>
             ))}
           </ul>
+          </div>
         </div>
         <OurCoursesEdit />
       </div>

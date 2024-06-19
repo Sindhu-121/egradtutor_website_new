@@ -30,6 +30,30 @@ themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
 themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
 
 
+// UG_HOME_PAGE_NAVBAR_CLASSES
+themeUgHeader:"themeUgHeaderDefault",
+themeUgHContainer:"themeUgHContainerDefault",
+themeUgNavContainer:"themeUgNavContainerDefault",
+themeUgHeaderUl:"themeUgHeaderUlDefault",
+themeUgHeaderLi:"themeUgHeaderLiDefault",
+themeMarqData:"themeMarqDataDefault",
+
+
+// OUR_COURSES_CLASSES
+themeOurCoursesContainer:"themeOurCoursesContainerDefault",
+themeCoursesHeadding:"themeCoursesHeaddingDefault",
+themeCoursesSubContainer:"themeCoursesSubContainerDefault",
+themeCoursesUl:"themeCoursesUlDefault",
+themeCourseLi:"themeCourseLiDefault",
+themePortalName:"themePortalNameDefault",
+themeExamsNames:"themeExamsNamesDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeFeatures:"themeFeaturesDefault",
+themeFeatureImgC:"themeFeatureImgCDefault",
+
+
+
+
 
 
     //About Us div class
@@ -74,7 +98,7 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeFeaturesContainer:"defaultFeaturesContainer",
     themeFeatures:"defaultFeatures",
     themeFeatureImgC:"defaultFeatureImgC",
-
+    themeCoursesBoxContainer:"themeCoursesBoxContainerDefault",
     // End //
 
     themeExamPageHeaderMainContainer:"themeExamPageHeaderMainContainer",
