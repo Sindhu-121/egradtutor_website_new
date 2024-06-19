@@ -60,13 +60,14 @@ const ExamPageHeader = () => {
         )}
           <Link to="/BranchHomePage"><IoHome />Home</Link>
       </div>
-    
+    <div className={`total_exam_page ${themeDetails.themeTotalExamContainer}`}>
       {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
           <div key={exam.EntranceExams_Id} className={`exampage_heading ${themeDetails.themeExamPageHeaderHeading}`}>
             <p>{exam.EntranceExams_name} Exam</p>
           </div>
         ))}
+    </div>
     </div>
   )
 }

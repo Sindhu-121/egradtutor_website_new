@@ -68,6 +68,7 @@ const JSONClasses = {
     themeExamPageHeaderMainContainer:"themeExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"themeExamPageHeaderContainer",
     themeExamPageHeaderHeading:"themeExamPageHeaderHeading",
+    themeTotalExamContainer:"themeTotalExamContainer"
   },
   "Theme-1": {
     id: "themeOneId",
@@ -147,6 +148,7 @@ const JSONClasses = {
     themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
+    themeTotalExamContainer:"t1TotalExamContainer"
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -185,6 +187,7 @@ const JSONClasses = {
     themeExamPageHeaderMainContainer:"t2ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"t2ExamPageHeaderContainer",
     themeExamPageHeaderHeading:"t2ExamPageHeaderHeading",
+    themeTotalExamContainer:"t2TotalExamContainer",
     // our courses container
     themeOurCoursesContainer: "t2OurCoursesContainer",
     themeCoursesHeadding: "t2CoursesHeadding",

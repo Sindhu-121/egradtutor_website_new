@@ -1,8 +1,8 @@
-
-.Ug_header_logoIMG img{
+.Ug_header_logoIMG img {
     width: 250px;
 
 }
+
 .\"Ug_header_Container.t1UgHeaderContainer {
     display: flex;
     align-items: center;
@@ -10,13 +10,15 @@
     justify-content: space-between;
 
 }
+
 .t1UgDivLinksOfHeader {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
 }
-.t1UgDivLinksOfHeader a{
+
+.t1UgDivLinksOfHeader a {
     padding: 10px 45px;
     border-radius: 5px;
     background-color: #8fd9fc;
@@ -25,13 +27,14 @@
     font-weight: bold;
     transition: 0.3s ease-in-out;
 }
+
 .Ug_HeaderSection.t1UgHeaderSec {
     width: 80%;
     margin: 0 auto;
 
 }
 
-.Ug_Home_Container.t1UgHomeContainer{
+.Ug_Home_Container.t1UgHomeContainer {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 
 }
@@ -41,60 +44,68 @@
 
 /* For contact us ,home ........ */
 .t1UgHeader {
-    color: white;            
-    padding: 10px 0;           
-    text-align: center;        /* Centered text */
-    font-size: 24px;           /* Larger text size */
-    font-family: Arial, sans-serif; /* Font family */
-  }
-  
-  /* Container for the header */
-  .t1UgHContainer {
-    max-width: 1200px; /* Maximum width */
-    margin: 0 auto;    /* Center the container */
-    padding: 0 20px;   /* Padding left and right */
-  }
-  
-  /* Container for the navigation */
-  .t1UgNavContainer {
-    overflow: hidden;       
-  }
-  
-  /* Unordered list inside the header */
-  .t1UgHeaderUl {
-    list-style-type: none;  /* Remove bullet points */
-    margin: 0;              /* Remove default margin */
-    padding: 0;  
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    /* Centered text */
+    font-size: 24px;
+    /* Larger text size */
+    font-family: Arial, sans-serif;
+    /* Font family */
+}
+
+/* Container for the header */
+.t1UgHContainer {
+    max-width: 1200px;
+    /* Maximum width */
+    margin: 0 auto;
+    /* Center the container */
+    padding: 0 20px;
+    /* Padding left and right */
+}
+
+/* Container for the navigation */
+.t1UgNavContainer {
+    overflow: hidden;
+}
+
+/* Unordered list inside the header */
+.t1UgHeaderUl {
+    list-style-type: none;
+    /* Remove bullet points */
+    margin: 0;
+    /* Remove default margin */
+    padding: 0;
     display: flex;
-    flex-direction: row;   
-    justify-content: space-evenly;     
-    flex-wrap: wrap;   
-  }
-  
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
 
-  .t1UgHeaderLi {
-    float: left; 
-    color: black;          
-  }
 
-  .t1UgHeaderLi a {
-    display: block;        
-    color: white;          
-    text-align: center;     
-    padding: 14px 16px;    
-    text-decoration: none;  
-  }
-  
- 
-  
+.t1UgHeaderLi {
+    float: left;
+    color: black;
+}
 
-  .Ug_header_logoIMG {
+.t1UgHeaderLi a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+
+
+
+.Ug_header_logoIMG {
     width: 250px;
     display: flex;
     align-items: center;
     padding: 9px;
     height: 154px;
-  }
+}
 
 
 
@@ -102,13 +113,13 @@
 
 /* for exams page *************************/
 
-.t1ExamPageHeaderMainContainer{
- width: 100%;
- align-items: center;
- background-color:white;
+.t1ExamPageHeaderMainContainer {
+    width: 100%;
+    align-items: center;
+    background-color: white;
 }
 
-.t1ExamPageHeaderContainer{
+.t1ExamPageHeaderContainer {
     width: 80%;
     display: flex;
     flex-direction: row;
@@ -119,7 +130,7 @@
     height: 100px;
 }
 
-.t1ExamPageHeaderContainer a{
+.t1ExamPageHeaderContainer a {
     background-color: #c8eafa;
     border-radius: 20px;
     padding: 10px;
@@ -133,25 +144,24 @@
     color: black;
     font-weight: bold;
 }
- 
-.t1ExamPageHeaderContainer img{
+
+.t1ExamPageHeaderContainer img {
     height: 100%;
     width: auto;
 }
 
-.t1ExamPageHeaderHeading{
-background-color: rgb(241, 241, 233);
-color: black;
-font-size: 20px;
-height: 50px;
-font-weight: bold;
-text-align: center;
-justify-content: center;
-
-&
-p{
-    display: flex;
+.t1ExamPageHeaderHeading {
+    background-color: rgb(241, 241, 233);
+    color: black ;
+    font-size: 20px;
+    height: 50px;
+    font-weight: bold;
+    text-align: center;
     justify-content: center;
-    padding: 10px;
-}
+
+    & p {
+        display: flex;
+        justify-content: center;
+        padding: 10px;
+    }
 }
