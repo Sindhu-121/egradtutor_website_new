@@ -23,6 +23,10 @@ const LandingPageHeaderEdit =require("./EgradTutorWebsite/LandingPage/LandingPag
 app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 
 
+
+const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
+app.use("/Webbanners" ,Webbanners)
+
 const ExampagePortals =require("./EgradTutorWebsite/ExamPage/ExampagePortals");
 app.use("/ExampagePortals" ,ExampagePortals)
 
