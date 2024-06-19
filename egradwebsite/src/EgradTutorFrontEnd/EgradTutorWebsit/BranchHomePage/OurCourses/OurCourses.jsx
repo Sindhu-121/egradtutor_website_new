@@ -51,7 +51,7 @@ const OueCourses = () => {
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
-          <h2 >OUR COURSES</h2>
+          <h3 >OUR COURSES</h3>
           <div className={`${themeDetails.themeCoursesBoxContainer}`}>
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
