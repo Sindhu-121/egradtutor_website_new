@@ -5,7 +5,7 @@ import ExploreExamEdit from './ExploreExamEdit'
 import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
-
+ 
 const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
@@ -37,7 +37,7 @@ const ExploreExam = () => {
       );
       const data = response.data;
       const portalesData = responsePortales.data;
-
+ 
       const foundBranch = data.find(
         (branch) => branch.Branch_Id === parseInt(Branch_Id)
       );
@@ -47,8 +47,8 @@ const ExploreExam = () => {
       console.error("Error fetching branch data:", error);
     }
   };
-
-
+ 
+ 
   const themeColor = themeFromContext[0]?.current_theme;
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
@@ -57,14 +57,14 @@ const ExploreExam = () => {
     <div className={`NewExploreExams_Main_Container ${themeDetails.themeExploreExamsMainContainer}`}>
       <h2 id="EXPLORE_Exam_Heading">EXPLORE EXAMS</h2>
       <div className={`NewExploreExams_Sub_Container ${themeDetails.themeExploreExamsSubContainer}`}>
-
-
+ 
+ 
         <div className={`NewExploreExams_ExamCrad_MainContainer ${themeDetails.NewExploreExams_ExamCrad_MainContainer}`}>
         <div className={`NewExploreExams_ExamCrad_Container ${themeDetails.NewExploreExams_ExamCrad_Container}`}>
             {branch &&
               branch.EntranceExams.map((exam, index) => (
                 <div className={`NewExploreExams_ExamName_Container ${themeDetails.NewExploreExams_ExamName_Container}`}>
-
+ 
                   <div className={`NewExploreExams_EachCard_Container ${themeDetails.NewExploreExams_EachCard_Container}`}>
                   <ul key={index}>
                     <li>
@@ -80,30 +80,30 @@ const ExploreExam = () => {
                           <li key={index}>{portaleName}</li>
                         ))}
                     </div>
-
+ 
                   </ul>
                   </div>
                 </div>
               ))}
           </div>
-
-
+ 
+ 
           <div className={`NewExploreExams_Image ${themeDetails.NewExploreExams_Image}`}>
             {fetchedImage && (
-
+ 
               <img src={fetchedImage} alt="Fetched from database" />
-
+ 
             )}
-
+ 
           </div>
-
-
-
+ 
+ 
+ 
         </div>
       </div>
       <ExploreExamEdit />
     </div>
   )
 }
-
+ 
 export default ExploreExam

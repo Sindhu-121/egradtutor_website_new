@@ -33,9 +33,14 @@ const OueCourses =require("./EgradTutorWebsite/BranchHomePage/OueCourses");
 app.use("/OueCourses" , OueCourses)
 
 
+const OurCourseedit =require("./EgradTutorWebsite/BranchHomePage/OurCourseedit");
+app.use("/OurCourseedit" , OurCourseedit)
+
 const ExploreExam =require("./EgradTutorWebsite/BranchHomePage/ExploreExam");
 app.use("/ExploreExam" , ExploreExam)
 
+const ExploreExamEdit =require("./EgradTutorWebsite/BranchHomePage/ExploreExamEdit");
+app.use("/ExploreExamEdit" , ExploreExamEdit)
 
 const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
 app.use("/Webbanners" ,Webbanners)

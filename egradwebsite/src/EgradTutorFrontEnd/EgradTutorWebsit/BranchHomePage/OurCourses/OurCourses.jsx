@@ -1,12 +1,15 @@
 import React, { useState, useEffect, useContext } from 'react'
 import OurCoursesEdit from './OurCoursesEdit'
 import axios from 'axios';
+import { Link,useParams } from "react-router-dom";
 import BASE_URL from '../../../../apiConfig';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
 const OueCourses = () => {
+  const { Branch_Id } = useParams();
+  const [showFeatureForm, setShowFeatureForm] = useState(false);
   const [courseFeatures, setCourseFeatures] = useState([]);
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
@@ -20,13 +23,19 @@ const OueCourses = () => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
+
+
+  const handleAddFeaturesClick = () => {
+    setShowFeatureForm(!showFeatureForm);
+  };
+
   useEffect(() => {
     fetchCourseFeatures();
   }, []);
   const fetchCourseFeatures = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/OueCourses/course_features_with_images/1`
+        `${BASE_URL}/OueCourses/course_features_with_images/${Branch_Id}`
       );
 
       // Map over each feature and create image URLs
@@ -50,7 +59,13 @@ const OueCourses = () => {
     }
   };
   return (
+
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
+      <div> <button onClick={handleAddFeaturesClick}>
+          {showFeatureForm ? "Close Feature Form" : "Add Features"}
+        </button>
+        {showFeatureForm && <OurCoursesEdit type="AddFeatures" />}
+        </div>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
         <h2>OurCourses</h2>
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
@@ -76,17 +91,12 @@ const OueCourses = () => {
                       </div>
                     ))}
                   </div>
-                  {/*  for  features */}
-                  {/* <div className={`${themeDetails.themeFeaturesToBeRow}`}> */}
-                    {/* <div className={`${themeDetails.themeFeaturesContainer}`}>
-                    {feature.Features.map((item, index) => (
-                      <div key={index} className={`${themeDetails.themeFeatures}`}>{item}</div>
-                    ))}
-                  </div> */}
-                    
+                                  
                     <div className={`${themeDetails.themeExamsNames}`}>
                       {feature.EntranceExams_name.map((item, index) => (
-                        <button key={index}>{item}</button>
+                          <Link key={index}
+                          to={`/ExamHomePage/${feature.EntranceExams_Id}`}
+                        > {item}</Link>
                       ))}
                     </div>
                   {/* </div> */}
@@ -95,7 +105,7 @@ const OueCourses = () => {
             ))}
           </ul>
         </div>
-        <OurCoursesEdit />
+       
       </div>
     </div>
   )
