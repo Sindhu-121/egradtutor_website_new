@@ -24,6 +24,7 @@ router.get('/course_features_with_images/:Branch_Id', async (req, res) => {
           organizedData[key] = {
             Portale_Id: row.Portale_Id,
             Portale_Name: row.Portale_Name,
+            EntranceExams_Id:row.EntranceExams_Id,
             EntranceExams_name: [],
             Features: [],
           };

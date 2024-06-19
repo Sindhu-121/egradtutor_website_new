@@ -8,6 +8,7 @@ import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
 const OueCourses = () => {
+  const { Branch_Id } = useParams();
   const [courseFeatures, setCourseFeatures] = useState([]);
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
@@ -27,7 +28,7 @@ const OueCourses = () => {
   const fetchCourseFeatures = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/OueCourses/course_features_with_images/1`
+        `${BASE_URL}/OueCourses/course_features_with_images/${Branch_Id}`
       );
 
       // Map over each feature and create image URLs
@@ -80,10 +81,9 @@ const OueCourses = () => {
                                   
                     <div className={`${themeDetails.themeExamsNames}`}>
                       {feature.EntranceExams_name.map((item, index) => (
-                          <Link
+                          <Link key={index}
                           to={`/ExamHomePage/${feature.EntranceExams_Id}`}
                         > {item}</Link>
-                        // <button key={index}>{item}</button>
                       ))}
                     </div>
                   {/* </div> */}
