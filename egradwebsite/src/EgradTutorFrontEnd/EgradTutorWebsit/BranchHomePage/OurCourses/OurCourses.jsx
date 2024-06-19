@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import OurCoursesEdit from './OurCoursesEdit'
 import axios from 'axios';
+import { Link,useParams } from "react-router-dom";
 import BASE_URL from '../../../../apiConfig';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
@@ -76,17 +77,13 @@ const OueCourses = () => {
                       </div>
                     ))}
                   </div>
-                  {/*  for  features */}
-                  {/* <div className={`${themeDetails.themeFeaturesToBeRow}`}> */}
-                    {/* <div className={`${themeDetails.themeFeaturesContainer}`}>
-                    {feature.Features.map((item, index) => (
-                      <div key={index} className={`${themeDetails.themeFeatures}`}>{item}</div>
-                    ))}
-                  </div> */}
-                    
+                                  
                     <div className={`${themeDetails.themeExamsNames}`}>
                       {feature.EntranceExams_name.map((item, index) => (
-                        <button key={index}>{item}</button>
+                          <Link
+                          to={`/ExamHomePage/${feature.EntranceExams_Id}`}
+                        > {item}</Link>
+                        // <button key={index}>{item}</button>
                       ))}
                     </div>
                   {/* </div> */}

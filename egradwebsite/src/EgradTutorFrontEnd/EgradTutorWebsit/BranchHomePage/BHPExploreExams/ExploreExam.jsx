@@ -57,7 +57,7 @@ const ExploreExam = () => {
                             <li>
                               <Link
                                 style={{ backgroundColor: "red" }}
-                                to={`/ExamPages_main/${exam.EntranceExams_Id}`}
+                                to={`/ExamHomePage/${exam.EntranceExams_Id}`}
                               >
                                 {exam.EntranceExams_name}
                               </Link>
