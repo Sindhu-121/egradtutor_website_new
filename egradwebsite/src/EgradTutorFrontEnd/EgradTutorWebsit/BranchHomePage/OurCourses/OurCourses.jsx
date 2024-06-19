@@ -9,6 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
 const OueCourses = () => {
   const { Branch_Id } = useParams();
+  const [showFeatureForm, setShowFeatureForm] = useState(false);
   const [courseFeatures, setCourseFeatures] = useState([]);
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
@@ -22,6 +23,12 @@ const OueCourses = () => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
+
+
+  const handleAddFeaturesClick = () => {
+    setShowFeatureForm(!showFeatureForm);
+  };
+
   useEffect(() => {
     fetchCourseFeatures();
   }, []);
@@ -52,7 +59,13 @@ const OueCourses = () => {
     }
   };
   return (
+
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
+      <div> <button onClick={handleAddFeaturesClick}>
+          {showFeatureForm ? "Close Feature Form" : "Add Features"}
+        </button>
+        {showFeatureForm && <OurCoursesEdit type="AddFeatures" />}
+        </div>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
         <h2>OurCourses</h2>
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
@@ -92,7 +105,7 @@ const OueCourses = () => {
             ))}
           </ul>
         </div>
-        <OurCoursesEdit />
+       
       </div>
     </div>
   )
