@@ -30,6 +30,30 @@ themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
 themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
 
 
+// UG_HOME_PAGE_NAVBAR_CLASSES
+themeUgHeader:"themeUgHeaderDefault",
+themeUgHContainer:"themeUgHContainerDefault",
+themeUgNavContainer:"themeUgNavContainerDefault",
+themeUgHeaderUl:"themeUgHeaderUlDefault",
+themeUgHeaderLi:"themeUgHeaderLiDefault",
+themeMarqData:"themeMarqDataDefault",
+
+
+// OUR_COURSES_CLASSES
+themeOurCoursesContainer:"themeOurCoursesContainerDefault",
+themeCoursesHeadding:"themeCoursesHeaddingDefault",
+themeCoursesSubContainer:"themeCoursesSubContainerDefault",
+themeCoursesUl:"themeCoursesUlDefault",
+themeCourseLi:"themeCourseLiDefault",
+themePortalName:"themePortalNameDefault",
+themeExamsNames:"themeExamsNamesDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeFeatures:"themeFeaturesDefault",
+themeFeatureImgC:"themeFeatureImgCDefault",
+
+
+
+
 
 
     //About Us div class
@@ -74,6 +98,17 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeFeaturesContainer:"defaultFeaturesContainer",
     themeFeatures:"defaultFeatures",
     themeFeatureImgC:"defaultFeatureImgC",
+    themeCoursesBoxContainer:"themeCoursesBoxContainerDefault",
+    themeCourseLi: "defaultCourseLi",
+    themePortalName: "defaultPortalName",
+    themeExamsNames: "defaultExamsNames",
+    themeCFeatures: "defaultCFeatures",
+    themeFeaturesContainer: "defaultFeaturesContainer",
+    themeFeatures: "defaultFeatures",
+    themeFeatureImgC: "defaultFeatureImgC",
+    themeCourseName: "defaultCourseName",
+    themeFeaturesSecondContainer:"defaultFeaturesSecondContainer",
+    themeFeaturesToBeRow:"defaultFeaturesToBeRow",
 
     // End //
 
@@ -148,20 +183,32 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeCoursesHeadding: "t1CoursesHeadding",
     themeCoursesSubContainer: "t1CoursesSubContainer",
     themeCoursesUl: "t1CoursesUl",
-    themeCourseLi:"t1CourseLi",
-    themePortalName:"t1PortalName",
-    themeExamsNames:"t1ExamsNames",
-    themeCFeatures:"t1CFeatures",
-    themeFeaturesContainer:"t1FeaturesContainer",
-    themeFeatures:"t1Features",
-    themeFeatureImgC:"t1FeatureImgC",
-
+    themeCourseLi: "t1CourseLi",
+    themePortalName: "t1PortalName",
+    themeExamsNames: "t1ExamsNames",
+    themeCFeatures: "t1CFeatures",
+    themeFeaturesContainer: "t1FeaturesContainer",
+    themeFeatures: "t1Features",
+    themeFeatureImgC: "t1FeatureImgC",
+    themeCourseName: "t1CourseName",
+    themeFeaturesSecondContainer:"t1FeaturesSecondContainer",
+    themeFeaturesToBeRow:"t1FeaturesToBeRow",
 
     themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
-    themeTotalExamContainer:"t1TotalExamContainer"
+    themeTotalExamContainer:"t1TotalExamContainer",
+
+
+    themeExamInfoMainContainer:"t1ExamInfoMainContainer",
+    themeExamInfoBtnsContainer:"t1ExamInfoBtnsContainer",
+    themeExamInfoSubContainer:"t1ExamInfoSubContainer",
+    themeExamInfoBtns:"t1ExamInfoBtns",
+    themeExamInfoDivs:"t1ExamInfoDivs",
+    themeExamInfoToggles:"t1ExamInfoToggles",
+    themeToggles:"t1Toggles",
   },
+
   "Theme-2": {
     id: "themeTwoId",
     themeHeaderColor: "t2HeaderColor",
@@ -205,12 +252,16 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeCoursesHeadding: "t2CoursesHeadding",
     themeCoursesSubContainer: "t2CoursesSubContainer",
     themeCoursesUl: "t2CoursesUl",
-    themeCourseLi:"t2CourseLi",
-    themePortalName:"t2PortalName",
-    themeExamsNames:"t2ExamsNames",
-    themeFeaturesContainer:"t2FeaturesContainer",
-    themeFeatures:"t2Features",
-    themeFeatureImgC:"t2FeatureImgC",
+    themeCourseLi: "t2CourseLi",
+    themePortalName: "t2PortalName",
+    themeExamsNames: "t2ExamsNames",
+    themeFeaturesContainer: "t2FeaturesContainer",
+    themeFeatures: "t2Features",
+    themeFeatureImgC: "t2FeatureImgC",
+    themeCourseName: "t2CourseName",
+    themeFeaturesSecondContainer:"t2FeaturesSecondContainer",
+    themeFeaturesToBeRow:"t2FeaturesToBeRow",
+    themeArrowWithFeatures:"t2ArrowWithFeatures",
   },
 };
 

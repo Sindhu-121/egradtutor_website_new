@@ -47,34 +47,24 @@
     color: white;
     padding: 10px 0;
     text-align: center;
-    /* Centered text */
     font-size: 24px;
-    /* Larger text size */
     font-family: Arial, sans-serif;
-    /* Font family */
 }
 
-/* Container for the header */
 .t1UgHContainer {
     max-width: 1200px;
-    /* Maximum width */
     margin: 0 auto;
-    /* Center the container */
     padding: 0 20px;
-    /* Padding left and right */
+
 }
 
-/* Container for the navigation */
 .t1UgNavContainer {
     overflow: hidden;
 }
 
-/* Unordered list inside the header */
 .t1UgHeaderUl {
     list-style-type: none;
-    /* Remove bullet points */
     margin: 0;
-    /* Remove default margin */
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -131,8 +121,9 @@
 }
 
 .t1ExamPageHeaderContainer a {
-    background-color: #c8eafa;
+    background-color: #fef0f0;
     border-radius: 20px;
+    border: 1px solid rgb(207, 160, 160);
     padding: 10px;
     height: 50px;
     width: 150px;
@@ -152,7 +143,7 @@
 
 .t1ExamPageHeaderHeading {
     background-color: rgb(241, 241, 233);
-    color: black ;
+    color: black;
     font-size: 20px;
     height: 50px;
     font-weight: bold;
@@ -164,4 +155,97 @@
         justify-content: center;
         padding: 10px;
     }
+}
+
+
+
+/* ********* exam page Information Brochure ****************** */
+
+/* Main container for the accordion */
+.t1ExamInfoMainContainer {
+    background-color: rgb(243, 238, 238);
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+}
+
+.t1ExamInfoBtnsContainer {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sub-container for each accordion section */
+.t1ExamInfoSubContainer {
+    border-bottom: 1px solid #ddd;
+}
+
+/* Last sub-container should not have bottom border */
+.t1ExamInfoSubContainer:last-child {
+    /* border-bottom: none; */
+}
+
+/* Buttons to toggle accordion sections */
+.t1ExamInfoBtns {
+    display: flex;
+    justify-content: space-evenly;
+    background-color: #f1f1f1;
+    color: #333;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.t1ExamInfoBtns:hover {
+    background-color: #eee7e7;
+}
+
+
+/* Container for the toggles content */
+.t1ExamInfoToggles {
+    padding: 0 18px;
+    background-color: white;
+    transition: max-height 0.2s ease-out;
+}
+
+/* Additional styling for toggle content */
+.t1Toggles {
+    padding: 18px;
+    border-top: 1px solid #ddd;
+}
+
+.t1ExamInfoDivs {
+    background-color: #fef0f0;
+    height: 45px;
+    border-radius: 35px;
+    display: flex;
+    width: 200px;
+    border: 1px solid rgb(238, 189, 189);
+}
+
+.t1ExamInfoDivs #info_title {
+    text-align: center;
+    font-size: 17px;
+    width: 100%;
+    padding: 10px;
+    color: rgb(20, 17, 17);
+}
+
+.t1Toggles #info_title {
+    font-size: 16px;
+}
+
+.t1Toggles span{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
