@@ -66,6 +66,28 @@ NewExploreExams_Image:"NewExploreExams_ImageDefault",
 NewExploreExams_ExamCrad_MainContainer:"NewExploreExams_ExamCrad_MainContainerDefault",
 NewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
 
+// OUR COURSES CLASSES //
+
+themeOurCoursesContainer:"themeOurCoursesContainerDefault",
+themeCoursesHeadding:"themeCoursesHeaddingDefault",
+themeCoursesSubContainer:"themeCoursesSubContainerDefault",
+themeCoursesUl:"themeCoursesUlDefault",
+themeCourseLi:"themeCourseLiDefault",
+themeCourseName:"themeCourseNameDefault",
+
+themePortalName:"themePortalNameDefault",
+themeFeaturesSecondContainer:"themeFeaturesSecondContainerDefault",
+themeFeatureImgC:"themeFeatureImgCDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeArrowWithFeatures:"themeArrowWithFeaturesDefault",
+themeFeatures:"themeFeaturesDefault",
+themeExamsNames:"themeExamsNamesDefault",
+
+
+
+
+
+
 
     //About Us div class
     themeAboutuscontainer: "container",
