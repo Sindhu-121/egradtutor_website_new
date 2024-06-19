@@ -8,7 +8,7 @@ import Footer from '../Footer/Footer'
 const BranchHomePage = () => {
   return (
     <div>
-      {/* header  */}
+      header 
       <BHPHeading />
       <BHPNavBar />
       <BHBanners />

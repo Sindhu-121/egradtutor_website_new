@@ -249,3 +249,17 @@
     flex-direction: row;
     justify-content: end;
 }
+
+.t1Toggles #more_info{
+    background-color: #fcf8f8;
+    padding: 20px;
+    line-break: anywhere;
+    line-height: 28px;
+}
+
+
+@media (max-width:"768px"){
+    .t1ExamInfoMainContainer{
+        width:100%;
+    }
+}

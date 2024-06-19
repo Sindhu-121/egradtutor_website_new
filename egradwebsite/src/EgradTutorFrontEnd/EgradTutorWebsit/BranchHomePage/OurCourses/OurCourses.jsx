@@ -57,7 +57,7 @@ const OueCourses = () => {
             {courseFeatures.map((feature, index) => (
 
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
-                <div className={`${themeDetails.PortalName_ImageContainer}`}>
+                <div className={`${themeDetails.PortalNma}`}>
                 <strong className={`${themeDetails.themePortalName}`}>{feature.Portale_Name}</strong> -{" "}
     {/* Render image if available */}
     {feature.image && (
