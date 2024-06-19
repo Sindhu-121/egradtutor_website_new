@@ -80,7 +80,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
                 key={branch.Branch_Id}
               >
                 <button className={`${themeDetails.themeUgAndPgButtons}`} >
-                  <Link to={{ pathname: `/BranchHomePage` }}>
+                  <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
                     {branch.Branch_Name}{" "}
                   </Link>
                   {/* <MdOutlineTouchApp /> */}

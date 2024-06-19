@@ -32,6 +32,11 @@ app.use("/BHPNavBar" , BHPNavBar)
 const OueCourses =require("./EgradTutorWebsite/BranchHomePage/OueCourses");
 app.use("/OueCourses" , OueCourses)
 
+
+const ExploreExam =require("./EgradTutorWebsite/BranchHomePage/ExploreExam");
+app.use("/ExploreExam" , ExploreExam)
+
+
 const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
 app.use("/Webbanners" ,Webbanners)
 
