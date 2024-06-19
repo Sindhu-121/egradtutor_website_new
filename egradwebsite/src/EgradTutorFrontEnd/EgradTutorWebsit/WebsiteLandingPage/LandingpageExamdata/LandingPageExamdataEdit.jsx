@@ -198,6 +198,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
       {enableButton === 'Enable Edit' ?
         <button>Editing Button..........</button>
         : null}
+
       {/* EXAM IMAGE UPLOAD */}
       {openUgExamImageUpload &&
         <div>
@@ -307,6 +308,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
           </div>
         )}
       </div>
+
       {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
           <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
@@ -314,10 +316,12 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
             <LiaEditSolid />
             Edit
           </button>
+
           <button onClick={() => OpenAddExamForm(branch.Branch_Id)}>
             <IoMdAddCircleOutline />
             Add
           </button>
+
         </div>
       ))}
     </div>
