@@ -19,6 +19,18 @@ const JSONClasses = {
     themeExamImageBox: "ug_pg_boxes",
     themeExamButtonsBox: "Exams_container",
     themeUgAndPgButtons: "ugAndPgButtonsDefault",
+    ThemeExamADD_EDIT_Buttons:"ThemeExamADD_EDIT_ButtonsDefault",
+
+// UG_HOME_PAGE_HEADER_CLASSESS
+themeUgHomePageFirstContainer:"themeUgHomePageFirstContainer",
+themeUgHomeContainer:"themeUgHomeContainerDefault",
+themeUgHeaderSec:"themeUgHeaderSecDefault",
+themeUgHeaderContainer:"themeUgHeaderContainerDefault",
+themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
+themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
+
+
+
 
     //About Us div class
     themeAboutuscontainer: "container",
