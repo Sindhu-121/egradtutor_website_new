@@ -8,11 +8,11 @@ import Footer from '../Footer/Footer'
 const BranchHomePage = () => {
   return (
     <div>
-      {/* header  */}
-      {/* <BHPHeading /> */}
-      {/* <BHPNavBar /> */}
-      {/* <BHBanners /> */}
-      {/* <ExploreExam /> */}
+      header 
+      <BHPHeading />
+      <BHPNavBar />
+      <BHBanners />
+      <ExploreExam />
       <OurCourses />
       <Footer />
     </div>
