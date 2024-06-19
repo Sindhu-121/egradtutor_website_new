@@ -40,6 +40,46 @@
 }
 
 
+@media screen and (max-width:430px) {
+    .Ug_examsPage_Main_Container.t1ExamPageHeaderMainContainer {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .t1ExamPageHeaderContainer{
+        width: 80%;
+        align-items: center;
+    }
+
+    .t1ExamPageHeaderMainContainer .t1ExamPageHeaderContainer img {
+        height: 50px;
+        width: 100px;
+    }
+
+    .t1ExamPageHeaderMainContainer .t1ExamPageHeaderContainer a {
+        background-color: #fef0f0;
+        width: 100px;
+        height: 30px;
+    }
+
+    .t1ExamPageHeaderHeading p{
+        font-size: 15px;
+        color: black ;
+    }
+
+
+    .t1ExamInfoBtns .t1ExamInfoDivs{
+        width:100px;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    .t1ExamInfoBtns .t1ExamInfoDivs #info_title{
+        font-size: 13px;
+    }
+}
 
 
 /* For contact us ,home ........ */
@@ -52,7 +92,7 @@
 }
 
 .t1UgHContainer {
-    max-width: 1200px;
+    max-width: 120px;
     margin: 0 auto;
     padding: 0 20px;
 
@@ -94,7 +134,6 @@
     display: flex;
     align-items: center;
     padding: 9px;
-    height: 154px;
 }
 
 
@@ -244,13 +283,13 @@
     font-size: 16px;
 }
 
-.t1Toggles span{
+.t1Toggles span {
     display: flex;
     flex-direction: row;
     justify-content: end;
 }
 
-.t1Toggles #more_info{
+.t1Toggles #more_info {
     background-color: #fcf8f8;
     padding: 20px;
     line-break: anywhere;
@@ -258,8 +297,8 @@
 }
 
 
-@media (max-width:"768px"){
-    .t1ExamInfoMainContainer{
-        width:100%;
+@media (max-width:"768px") {
+    .t1ExamInfoMainContainer {
+        width: 100%;
     }
 }
