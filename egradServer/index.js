@@ -36,6 +36,8 @@ app.use("/OueCourses" , OueCourses)
 const ExploreExam =require("./EgradTutorWebsite/BranchHomePage/ExploreExam");
 app.use("/ExploreExam" , ExploreExam)
 
+const ExploreExamEdit =require("./EgradTutorWebsite/BranchHomePage/ExploreExamEdit");
+app.use("/ExploreExamEdit" , ExploreExamEdit)
 
 const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
 app.use("/Webbanners" ,Webbanners)

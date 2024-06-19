@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
-import ExploreExamEdit from './ExploreExamEdit'
-import { Link,useParams } from "react-router-dom";
+import ExploreExamEdit from "./ExploreExamEdit";
+import { Link, useParams } from "react-router-dom";
 const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
   const [portalesData, setPortalesData] = useState([]);
   const [branch, setBranch] = useState(null);
+  const [isEditing, setIsEditing] = useState(false);
   useEffect(() => {
     fetchBranchData();
     fetchImage();
@@ -43,46 +44,52 @@ const ExploreExam = () => {
       console.error("Error fetching branch data:", error);
     }
   };
+  const handleEditClick = () => {
+    setIsEditing(!isEditing);
+  };
   return (
     <div>
-        <ExploreExamEdit/>
+      <button onClick={handleEditClick}>
+              {isEditing ? "Close Update Info" : "Update Info"}
+            </button>
+            {isEditing && <ExploreExamEdit type="ExploreExam" />}
+      <div>
         <div>
-              <div>
-                <div>
+          <div>
+            <div>
+              {branch &&
+                branch.EntranceExams.map((exam, index) => (
                   <div>
-                    {branch &&
-                      branch.EntranceExams.map((exam, index) => (
-                        <div>
-                          <ul key={index}>
-                            <li>
-                              <Link
-                                style={{ backgroundColor: "red" }}
-                                to={`/ExamHomePage/${exam.EntranceExams_Id}`}
-                              >
-                                {exam.EntranceExams_name}
-                              </Link>
-                            </li>
+                    <ul key={index}>
+                      <li>
+                        <Link
+                          style={{ backgroundColor: "red" }}
+                          to={`/ExamHomePage/${exam.EntranceExams_Id}`}
+                        >
+                          {exam.EntranceExams_name}
+                        </Link>
+                      </li>
 
-                            {exam.Portale_Names &&
-                              exam.Portale_Names.map((portaleName, index) => (
-                                <li key={index}>{portaleName}</li>
-                              ))}
-                          </ul>
-                        </div>
-                      ))}
+                      {exam.Portale_Names &&
+                        exam.Portale_Names.map((portaleName, index) => (
+                          <li key={index}>{portaleName}</li>
+                        ))}
+                    </ul>
                   </div>
-                </div>
-                <div>
-                  {fetchedImage && (
-                    <div>
-                      <img src={fetchedImage} alt="Fetched from database" />
-                    </div>
-                  )}
-                </div>
-              </div>
+                ))}
             </div>
+          </div>
+          <div>
+            {fetchedImage && (
+              <div>
+                <img src={fetchedImage} alt="Fetched from database" />
+              </div>
+            )}
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExploreExam
+export default ExploreExam;
