@@ -22,6 +22,11 @@ app.use("/LandingPageHeader" ,LandingPageHeader)
 const LandingPageHeaderEdit =require("./EgradTutorWebsite/LandingPage/LandingPageHeaderEdit");
 app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 
+const LandingPageExamData =require("./EgradTutorWebsite/LandingPage/LandingPageExamData");
+app.use("/LandingPageExamData" ,LandingPageExamData)
+
+const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
+app.use("/Webbanners" ,Webbanners)
 
 const ExampagePortals =require("./EgradTutorWebsite/ExamPage/ExampagePortals");
 app.use("/ExampagePortals" ,ExampagePortals)
@@ -34,7 +39,8 @@ app.use("/AboutUs", AboutUs)
 const AboutUsEdit =require("./EgradTutorWebsite/AboutUs/AboutUsEdit");
 app.use("/AboutUsEdit", AboutUsEdit)
 
-
+const themesSection=require('./ThemesAPIs/ThemesAPIs')
+app.use('/themesSection',themesSection);
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

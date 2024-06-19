@@ -30,6 +30,30 @@ themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
 themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
 
 
+// UG_HOME_PAGE_NAVBAR_CLASSES
+themeUgHeader:"themeUgHeaderDefault",
+themeUgHContainer:"themeUgHContainerDefault",
+themeUgNavContainer:"themeUgNavContainerDefault",
+themeUgHeaderUl:"themeUgHeaderUlDefault",
+themeUgHeaderLi:"themeUgHeaderLiDefault",
+themeMarqData:"themeMarqDataDefault",
+
+
+// OUR_COURSES_CLASSES
+themeOurCoursesContainer:"themeOurCoursesContainerDefault",
+themeCoursesHeadding:"themeCoursesHeaddingDefault",
+themeCoursesSubContainer:"themeCoursesSubContainerDefault",
+themeCoursesUl:"themeCoursesUlDefault",
+themeCourseLi:"themeCourseLiDefault",
+themePortalName:"themePortalNameDefault",
+themeExamsNames:"themeExamsNamesDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeFeatures:"themeFeaturesDefault",
+themeFeatureImgC:"themeFeatureImgCDefault",
+
+
+
+
 
 
     //About Us div class
@@ -67,6 +91,14 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeCoursesHeadding: "defaultCoursesHeadding",
     themeCoursesSubContainer: "defaultCoursesSubContainer",
     themeCoursesUl: "defaultCoursesUl",
+    themeCourseLi:"defaultCourseLi",
+    themePortalName:"defaultPortalName",
+    themeExamsNames:"defaultExamsNames",
+    themeCFeatures:"defaultCFeatures",
+    themeFeaturesContainer:"defaultFeaturesContainer",
+    themeFeatures:"defaultFeatures",
+    themeFeatureImgC:"defaultFeatureImgC",
+    themeCoursesBoxContainer:"themeCoursesBoxContainerDefault",
     themeCourseLi: "defaultCourseLi",
     themePortalName: "defaultPortalName",
     themeExamsNames: "defaultExamsNames",
@@ -165,8 +197,18 @@ themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
     themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
-    themeTotalExamContainer:"t1TotalExamContainer"
+    themeTotalExamContainer:"t1TotalExamContainer",
+
+
+    themeExamInfoMainContainer:"t1ExamInfoMainContainer",
+    themeExamInfoBtnsContainer:"t1ExamInfoBtnsContainer",
+    themeExamInfoSubContainer:"t1ExamInfoSubContainer",
+    themeExamInfoBtns:"t1ExamInfoBtns",
+    themeExamInfoDivs:"t1ExamInfoDivs",
+    themeExamInfoToggles:"t1ExamInfoToggles",
+    themeToggles:"t1Toggles",
   },
+
   "Theme-2": {
     id: "themeTwoId",
     themeHeaderColor: "t2HeaderColor",
