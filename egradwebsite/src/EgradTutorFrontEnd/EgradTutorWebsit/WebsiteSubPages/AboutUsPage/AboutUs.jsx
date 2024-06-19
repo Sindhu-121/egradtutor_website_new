@@ -14,7 +14,7 @@ const AboutUs = () => {
 
   const fetchImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/MainHearder/image`, {
+      const response = await axios.get(`${BASE_URL}/Logo/image`, {
         responseType: "arraybuffer",
       });
       const imageBlob = new Blob([response.data], { type: "image/png" });

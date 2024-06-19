@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+const Logo =require("./EgradTutorWebsite/Logo");
+app.use("/Logo" ,Logo)
+
 const LandingPageHeader =require("./EgradTutorWebsite/LandingPage/LandingPageHeader");
 app.use("/LandingPageHeader" ,LandingPageHeader)
 
@@ -22,6 +25,9 @@ app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 
 const ExampagePortals =require("./EgradTutorWebsite/ExamPage/ExampagePortals");
 app.use("/ExampagePortals" ,ExampagePortals)
+
+const ExamInfo =require("./EgradTutorWebsite/ExamPage/ExamInfo");
+app.use("/ExamInfo" ,ExamInfo)
 
 const AboutUs =require("./EgradTutorWebsite/AboutUs/AboutUs");
 app.use("/AboutUs", AboutUs)

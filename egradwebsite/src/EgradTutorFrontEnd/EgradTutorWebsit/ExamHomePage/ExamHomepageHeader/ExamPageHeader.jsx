@@ -16,7 +16,7 @@ const ExamPageHeader = () => {
     const fetchEntranceExam = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/ExamPages/feachingentrance_exams/${EntranceExams_Id}`
+          `${BASE_URL}/ExamInfo/feachingentrance_exams/${EntranceExams_Id}`
         );
         console.log("Entrance Exam Data:", response.data);
         setEntranceExam(response.data);
@@ -29,7 +29,7 @@ const ExamPageHeader = () => {
 
   const fetchImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/MainHearder/image`, {
+      const response = await axios.get(`${BASE_URL}/Logo/image`, {
         responseType: "arraybuffer",
       });
       const imageBlob = new Blob([response.data], { type: "image/png" });
@@ -58,8 +58,9 @@ const ExamPageHeader = () => {
         ) : (
           <img src={defaultImage} alt="Default" />
         )}
+          <Link to="/BranchHomePage"><IoHome />Home</Link>
       </div>
-      <Link to="/BranchHomePage"><IoHome />Home</Link>
+    
       {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
           <div key={exam.EntranceExams_Id} className={`exampage_heading ${themeDetails.themeExamPageHeaderHeading}`}>
