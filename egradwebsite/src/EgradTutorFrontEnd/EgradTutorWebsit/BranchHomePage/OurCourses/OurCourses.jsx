@@ -26,7 +26,7 @@ const OueCourses = () => {
   const fetchCourseFeatures = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/UgHomePage/course_features_with_images/1`
+        `${BASE_URL}/OueCourses/course_features_with_images/1`
       );
 
       // Map over each feature and create image URLs

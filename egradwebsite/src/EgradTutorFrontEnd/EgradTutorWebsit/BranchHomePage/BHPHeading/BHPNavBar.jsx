@@ -15,7 +15,7 @@ const BHPNavBar = () => {
     const fetchNavItems = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/Main_Header/homepageNavItems`
+          `${BASE_URL}/BHPNavBar/homepageNavItems`
         );
         if (response.data.status === "Success") {
           setNavItems(response.data.navItems);
@@ -46,7 +46,7 @@ const BHPNavBar = () => {
   const fetchMarqueeItems = async () => {
     try {
       const response = await axios.get(
-        `${BASE_URL}/UgHomePage/homepage_marqueedisply/1`
+        `${BASE_URL}/BHPNavBar/homepage_marqueedisply/1`
       );
       setMarqueeItems(response.data);
     } catch (error) {

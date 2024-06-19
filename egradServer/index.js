@@ -25,6 +25,13 @@ app.use("/LandingPageHeaderEdit" ,LandingPageHeaderEdit)
 const LandingPageExamData =require("./EgradTutorWebsite/LandingPage/LandingPageExamData");
 app.use("/LandingPageExamData" ,LandingPageExamData)
 
+
+const BHPNavBar =require("./EgradTutorWebsite/BranchHomePage/BHPNavBar");
+app.use("/BHPNavBar" , BHPNavBar)
+
+const OueCourses =require("./EgradTutorWebsite/BranchHomePage/OueCourses");
+app.use("/OueCourses" , OueCourses)
+
 const Webbanners =require("./EgradTutorWebsite/ExamPage/Webbanners");
 app.use("/Webbanners" ,Webbanners)
 
