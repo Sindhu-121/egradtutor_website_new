@@ -8,8 +8,6 @@ import { MdFileUpload } from "react-icons/md";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import BASE_URL from "../../../../apiConfig";
-
-
 const LandingPageExamdataEdit = ({ enableButton }) => {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [examImageFile, setExamImageFile] = useState(null);
@@ -18,27 +16,18 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
   const [examImage, setExamImage] = useState(null);
   const [selectedBranchName, setSelectedBranchName] = useState('');
   const [examImages, setExamImages] = useState([]);
-  const [imageId, setImageId] = useState('');
-
   const [branches, setBranches] = useState([]);
   const [selectedBranch, setSelectedBranch] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
   const [newExamName, setNewExamName] = useState("");
   const [openAddExamForm, setOpenAddExamForm] = useState(false);
-  const [image, setImage] = useState(null);
-  const [updateId, setUpdateId] = useState("");
-  const [showForm, setShowForm] = useState(false);
-
-  const [editingId, setEditingId] = useState(null);
   const themeFromContext = useContext(ThemeContext);
   console.log(themeFromContext, "this is the theme from the context")
-
   const handleExamImageChange = (e) => {
     const file = e.target.files[0];
     setExamImageFile(file);
     setExamImage(file); // Assuming examImage is state variable set by useState
   };
-
   const handleSubmitExamImage = (e) => {
     e.preventDefault();
 
@@ -61,7 +50,6 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
         // Handle error
       });
   };
-
   const fetchExamImages = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Landingpage/getExamImages`);
@@ -70,19 +58,14 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
       console.error('Error fetching exam images:', error);
     }
   };
-
   useEffect(() => {
     fetchExamImages();
   }, []);
-
   const handleUpdateExamImage = async (selectedImageId) => {
     console.log(selectedImageId);
-
-
     const formData = new FormData();
     formData.append('Exam_Image', examImageFile);
     console.log(formData);
-
     try {
       const response = await axios.put(`${BASE_URL}/Landingpage/updateExamImage/${selectedImageId}`, formData, {
         headers: {
@@ -114,30 +97,24 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
   const handleBranchIdChange = (e) => {
     const selectedId = e.target.value;
     setBranchId(selectedId);
-
-    // Find the selected branch name based on the selectedId
     const selectedBranch = branches.find(branch => branch.Branch_Id === selectedId);
     if (selectedBranch) {
       setSelectedBranchName(selectedBranch.Branch_Name);
     } else {
-      setSelectedBranchName(''); // Reset if no branch is selected
+      setSelectedBranchName(''); 
     }
   };
-
   const handleEditClick = (branch) => {
     setSelectedBranch(branch);
     setShowPopup(true);
   };
-
   const handleClosePopup = () => {
     setShowPopup(false);
     setOpenAddExamForm(false);
   };
-
   useEffect(() => {
     fetchBranches();
   }, []);
-
   const fetchBranches = async () => {
     try {
       const response = await fetch(`${BASE_URL}/Landingpage/branches`);
@@ -147,7 +124,6 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
       console.error("Error fetching branches:", error);
     }
   };
-
   const handleSaveChanges = async () => {
     try {
       const updatedExams = selectedBranch.EntranceExams.map((exam) => ({
@@ -163,9 +139,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
           }
         );
       }
-
       alert("Entrance exams updated successfully.");
-
       handleClosePopup();
     } catch (error) {
       console.error(error);
@@ -174,10 +148,8 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
         "An error occurred while updating entrance exams. Please try again later."
       );
     }
-
     fetchBranches();
   };
-
   const handleDeleteExam = async (examId) => {
     console.log(examId);
     try {
@@ -189,14 +161,11 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
         "An error occurred while deleting the entrance exam. Please try again later."
       );
     }
-
     fetchBranches();
   };
-
   const handleInputChange = (e) => {
     setNewExamName(e.target.value);
   };
-
   const handleAddExam = async (branchId) => {
     try {
       await axios.post(`${BASE_URL}/Landingpage/addNewentrance_exam`, {
@@ -211,34 +180,24 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
     }
     fetchBranches();
   };
-
   const OpenAddExamForm = (branchBranch_Id) => {
     console.log(branchBranch_Id);
     setOpenAddExamForm(branchBranch_Id); // Set the state to the branch's ID
   };
-
   const [openUgExamImageUpload, setOpenUgExamImageUpload] = useState(false);
   const OpenExamImageUplaod = () => {
     setOpenUgExamImageUpload(true);
   }
-
   const themeColor = themeFromContext[0]?.current_theme;
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
-
-  const handleImageChange = (e) => {
-    setImage(e.target.files[0]);
-  };
-
-  const [enableEditcontainer, setEnableEditcontainer] = useState(false);
   return (
     <div>
       {/* LandingPageExamdataEdit */}
       {enableButton === 'Enable Edit' ?
         <button>Editing Button..........</button>
         : null}
-
       {/* EXAM IMAGE UPLOAD */}
       {openUgExamImageUpload &&
         <div>
@@ -265,21 +224,16 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
             {examImages.map(image => (
               <li key={image.Image_Id}>
                 <button onClick={() => handleUpdateExamImage(image.Image_Id)}>Update</button>
-                {/* <button onClick={() => setSelectedImageId(image.Image_Id)}>
-              {selectedImageId === image.Image_Id ? 'Selected' : 'Select'}
-            </button> */}
               </li>
             ))}
           </ul>
         </div>
       }
-
       {/* EXAM IMage upload END */}
       <div>
         {branches.map((branch) => (
           <>
             {openAddExamForm === branch.Branch_Id && (
-              //  Check if openAddExamForm matches the current branch's ID
               <div className="enableEditcontainerinlanding ">
                 <div className="enableEditsubcontainerinlanding">
                   <h3> Add Exam </h3>
@@ -353,20 +307,17 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
           </div>
         )}
       </div>
-
       {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
           <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
           <button onClick={() => handleEditClick(branch)}>
             <LiaEditSolid />
-            Edit{branch.Branch_Name}
+            Edit
           </button>
-
           <button onClick={() => OpenAddExamForm(branch.Branch_Id)}>
             <IoMdAddCircleOutline />
-            Add{branch.Branch_Name}
+            Add
           </button>
-
         </div>
       ))}
     </div>
