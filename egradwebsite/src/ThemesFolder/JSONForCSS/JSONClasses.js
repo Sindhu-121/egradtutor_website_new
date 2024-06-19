@@ -50,11 +50,7 @@ themeExamsNames:"themeExamsNamesDefault",
 themeFeaturesContainer:"themeFeaturesContainerDefault",
 themeFeatures:"themeFeaturesDefault",
 themeFeatureImgC:"themeFeatureImgCDefault",
-
-
-
-
-
+PortalName_ImageContainer:"PortalName_ImageContainerDefault",
 
     //About Us div class
     themeAboutuscontainer: "container",

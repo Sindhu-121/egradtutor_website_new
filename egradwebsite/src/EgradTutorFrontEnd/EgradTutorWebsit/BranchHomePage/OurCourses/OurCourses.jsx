@@ -55,8 +55,18 @@ const OueCourses = () => {
           <div className={`${themeDetails.themeCoursesBoxContainer}`}>
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
+
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
+                <div className={`${themeDetails.PortalName_ImageContainer}`}>
                 <strong className={`${themeDetails.themePortalName}`}>{feature.Portale_Name}</strong> -{" "}
+    {/* Render image if available */}
+    {feature.image && (
+                  <div style={{ width: '250px' }} className={`${themeDetails.themeFeatureImgC}`}>
+                    <img src={feature.image} alt={`${feature.Portale_Name}`} />
+                  </div>
+                )}
+</div>
+
                 <em className={`${themeDetails.themeExamsNames}`}>{feature.EntranceExams_name.join(", ")}</em>:{" "}
                 {/* {feature.Features.join(", ")} */}
                 <div className={`${themeDetails.themeFeaturesContainer}`}>
@@ -64,12 +74,7 @@ const OueCourses = () => {
                     <div key={index} className={`${themeDetails.themeFeatures}`}>{item}</div>
                   ))}
                 </div>
-                {/* Render image if available */}
-                {feature.image && (
-                  <div style={{ width: '250px' }} className={`${themeDetails.themeFeatureImgC}`}>
-                    <img src={feature.image} alt={`${feature.Portale_Name}`} />
-                  </div>
-                )}
+            
               </li>
             ))}
           </ul>
