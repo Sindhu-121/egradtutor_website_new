@@ -58,3 +58,120 @@ font-size: 20px;
     margin: 1rem 0;
     padding: .5rem;
 }
+.t2OurCoursesContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.t2CoursesHeadding {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+}
+.t2CoursesHeadding h2 {
+    text-align: center;
+    color: #376893;
+}
+li.t2CourseLi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #e8ebf4;
+}
+.t2ExamsNames {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    gap: 1rem;
+}
+.t2FeaturesSecondContainer {
+    display: flex;
+    flex-direction: row;
+    /* background-color: #3eaff1; */
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    gap: 1rem;
+}
+.t2FeaturesToBeRow {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+.t2CourseName {
+    font-size: 20px;
+    background-color: #1f4c60;
+    margin: 1rem 0;
+    border-radius: 20px;
+    padding: 7px 25px;
+    color: white;
+}
+.t2CoursesSubContainer {
+    border: 1px solid black;
+}
+ul.t2CoursesUl {
+    padding: 0;
+    margin: 0;
+}
+.t2FeatureImgC {
+    height: 250px;
+    width: 250px;
+}
+.t2FeatureImgC img{
+width: 100%;
+}
+/* #e8ebf4 */
+.t2ExamsNames button{
+    background-color:transparent ;
+    /* color: white; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+.t2FeaturesContainer {
+    width:60%;
+    padding: 10px 20px;
+    /* background-color: #73b1e2; */
+    color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.t2FeaturesContainer li{
+    font-size: 20px;
+
+}
+.t2ArrowWithFeatures {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 1rem;
+    padding: 5px 3px;
+    background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
+    border-radius: 27px;
+    /* background: linear-gradient(5deg, #274c61, #59799c, #32546a, #dbe4f1); */
+}
+.arrow {
+    padding: 4px 11px;
+    background-color: #e8ebf4;
+    color: black;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+}
+@media screen and (max-width: 1308px) {
+    .t2FeaturesContainer li {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1170px) {
+    .t2FeaturesContainer li {
+        font-size: 12px;
+    }
+}
+
