@@ -1,3 +1,126 @@
+/* .\"Ug_header_Container.themeUgHeaderContainerDefault {
+    background-color: white;
+    height: 130px;
+    padding-left: 126px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+} */
+
+
+
 .\"Ug_header_Container.themeUgHeaderContainerDefault {
-    background-color: red;
+    display: flex;
+    align-items: center;
+    height: 130px;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: space-between;
+    /* padding: 19px; */
+    width: 80%;
+}
+ 
+.themeUgDivLinksOfHeaderDefault {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+ 
+.themeUgDivLinksOfHeaderDefault a {
+    align-items: center;
+    background: #01c3ff;
+    border-radius: 0 20px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    width: 120px;
+    padding: 5px;
+    color: white;
+    font-weight:bold;
+}
+.ug_container.themeUgHContainerDefault {
+    align-items: center;
+    background-color: #000;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,.5);
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    padding: -30.5rem 0;
+    height: 60px;
+}
+
+ul.themeUgHeaderUlDefault {
+    display: flex;
+    gap: 1.5rem;
+}
+li.themeUgHeaderLiDefault {
+        color: #fff;
+        position: relative;
+        font-size: 1.3rem;
+        font-weight: 500;
+}
+
+li.themeUgHeaderLiDefault:hover {
+    -webkit-animation: navhover .5s alternate forwards;
+    animation: navhover .5s alternate forwards;
+    color: #fff;
+    font-weight: 900;
+    text-decoration: underline;
+    text-decoration-color: #099bdf;
+}
+.navItemsContainer.themeUgNavContainerDefault {
+    /* width: 80%; */
+    margin-left: 164px;
+}
+.themeMarqDataDefault {
+    background-color: white;
+    box-shadow: rgb(117, 117, 117) 0 0 5px;
+    padding: 15px;
+    margin-top: 19px;
+}
+.themeMarqDataDefault  span{
+        color: black;
+        font-weight: 400;
+}
+
+.defaultCoursesSubContainer h2 {
+    color: #00a3ff;
+    font-size: 2rem;
+    margin: 1rem auto;
+    text-align: center;
+}
+/* .defaultCoursesUl {
+    grid-gap: 2rem;
+    display: grid;
+    gap: 2rem;
+    margin: .5rem auto;
+    width: 80%;
+} */
+
+
+
+
+.themeCoursesBoxContainerDefault {
+        grid-gap: 2rem;
+        align-items: center;
+        background: #e2f7fb;
+        border: 2px solid#000;
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 35% 30% 25%;
+        justify-content: space-around;
+        margin: 0 auto;
+        padding: .8rem;
+        grid-gap: 2rem;
+        display: grid;
+        gap: 2rem;
+        margin: .5rem auto;
+        width: 80%;
+}
+.themeCoursesBoxContainerDefault :hover {
+    -webkit-animation: UG_course 3s infinite alternate;
+    animation: UG_course 3s infinite alternate;
 }
