@@ -197,8 +197,18 @@ themeFeatureImgC:"themeFeatureImgCDefault",
     themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
-    themeTotalExamContainer:"t1TotalExamContainer"
+    themeTotalExamContainer:"t1TotalExamContainer",
+
+
+    themeExamInfoMainContainer:"t1ExamInfoMainContainer",
+    themeExamInfoBtnsContainer:"t1ExamInfoBtnsContainer",
+    themeExamInfoSubContainer:"t1ExamInfoSubContainer",
+    themeExamInfoBtns:"t1ExamInfoBtns",
+    themeExamInfoDivs:"t1ExamInfoDivs",
+    themeExamInfoToggles:"t1ExamInfoToggles",
+    themeToggles:"t1Toggles",
   },
+
   "Theme-2": {
     id: "themeTwoId",
     themeHeaderColor: "t2HeaderColor",

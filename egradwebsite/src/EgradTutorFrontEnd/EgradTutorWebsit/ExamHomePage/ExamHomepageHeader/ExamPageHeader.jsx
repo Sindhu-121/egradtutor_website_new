@@ -3,6 +3,7 @@ import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
 import defaultImage from '../../../../assets/defaultImage.png';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
+import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import { IoHome } from "react-icons/io5";
 import { useParams, Link } from 'react-router-dom'
