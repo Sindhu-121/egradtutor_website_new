@@ -60,7 +60,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
 
   const fetchBranches = async () => {
     try {
-      const response = await fetch(`${BASE_URL}/Landingpage/branches`);
+      const response = await fetch(`${BASE_URL}/LandingPageExamData/branches`);
       const data = await response.json();
       setBranches(data);
     } catch (error) {

@@ -9,10 +9,10 @@ const BranchHomePage = () => {
   return (
     <div>
       {/* header  */}
-      <BHPHeading />
-      <BHPNavBar />
-      <BHBanners />
-      <ExploreExam />
+      {/* <BHPHeading /> */}
+      {/* <BHPNavBar /> */}
+      {/* <BHBanners /> */}
+      {/* <ExploreExam /> */}
       <OurCourses />
       <Footer />
     </div>
