@@ -19,6 +19,18 @@ const JSONClasses = {
     themeExamImageBox: "ug_pg_boxes",
     themeExamButtonsBox: "Exams_container",
     themeUgAndPgButtons: "ugAndPgButtonsDefault",
+    ThemeExamADD_EDIT_Buttons:"ThemeExamADD_EDIT_ButtonsDefault",
+
+// UG_HOME_PAGE_HEADER_CLASSESS
+themeUgHomePageFirstContainer:"themeUgHomePageFirstContainer",
+themeUgHomeContainer:"themeUgHomeContainerDefault",
+themeUgHeaderSec:"themeUgHeaderSecDefault",
+themeUgHeaderContainer:"themeUgHeaderContainerDefault",
+themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
+themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
+
+
+
 
     //About Us div class
     themeAboutuscontainer: "container",
@@ -67,6 +79,11 @@ const JSONClasses = {
     themeFeaturesToBeRow:"defaultFeaturesToBeRow",
 
     // End //
+
+    themeExamPageHeaderMainContainer:"themeExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"themeExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"themeExamPageHeaderHeading",
+    themeTotalExamContainer:"themeTotalExamContainer"
   },
   "Theme-1": {
     id: "themeOneId",
@@ -145,6 +162,10 @@ const JSONClasses = {
     themeFeaturesSecondContainer:"t1FeaturesSecondContainer",
     themeFeaturesToBeRow:"t1FeaturesToBeRow",
 
+    themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
+    themeTotalExamContainer:"t1TotalExamContainer"
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -179,6 +200,11 @@ const JSONClasses = {
     themeUgExploreExamsContainer: "t2UgExploreExamsContainer",
     themeUgExploreExamsSection: "t2UgExploreExamsSection",
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
+
+    themeExamPageHeaderMainContainer:"t2ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer:"t2ExamPageHeaderContainer",
+    themeExamPageHeaderHeading:"t2ExamPageHeaderHeading",
+    themeTotalExamContainer:"t2TotalExamContainer",
     // our courses container
     themeOurCoursesContainer: "t2OurCoursesContainer",
     themeCoursesHeadding: "t2CoursesHeadding",

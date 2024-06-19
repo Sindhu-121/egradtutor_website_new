@@ -6,13 +6,14 @@ import axios from 'axios';
 import BASE_URL from '../../../../apiConfig';
 import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import '../../../../styles/UGHomePage/ugHomePageTheme2.css'
+import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css'
 const BHPHeading = () => {
   const [image, setImage] = useState(null);
 
   // setting an image
   const fetchImage = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/Main_Header/image`, {
+      const response = await axios.get(`${BASE_URL}/Logo/image`, {
         responseType: "arraybuffer",
       });
       const imageBlob = new Blob([response.data], { type: "image/png" });
@@ -43,7 +44,7 @@ const BHPHeading = () => {
 
 
   return (
-    <div>
+    <div className={`Ug_Home_Page_First_Container${themeDetails.themeUgHomePageFirstContainer}`}>
       {/* {header with logooo} */}
       <div className={`Ug_Home_Container ${themeDetails.themeUgHomeContainer}`}>
         <div className={`Ug_HeaderSection ${themeDetails.themeUgHeaderSec}`}>
