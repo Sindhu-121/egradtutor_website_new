@@ -14,7 +14,7 @@
     gap: 2rem;
 }
 .t2UgDivLinksOfHeader a{
-    padding: 10px 45px;
+    padding: 5px 10px;
     border-radius: 20px;
     background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
     color: white;
@@ -118,7 +118,7 @@ ul.t2CoursesUl {
     margin: 0;
 }
 .t2FeatureImgC {
-    height: 250px;
+    /* height: 250px; */
     width: 250px;
 }
 .t2FeatureImgC img{
@@ -131,7 +131,7 @@ width: 100%;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .t2FeaturesContainer {
-    width:60%;
+    width:50%;
     padding: 10px 20px;
     /* background-color: #73b1e2; */
     color: white;
@@ -166,7 +166,7 @@ width: 100%;
 }
 @media screen and (max-width: 1308px) {
     .t2FeaturesContainer li {
-        /* font-size: 16px; */
+        font-size: 16px;
     }
     .t2CoursesHeadding {
         width:95%;
@@ -178,26 +178,25 @@ width: 100%;
     
     .t2CoursesHeadding {
         width:100%;
-        /* margin: 0 auto; */
         background-color: rgb(255, 255, 255);
     }
 }
 @media screen and (max-width: 941px) {
+    .t2FeaturesSecondContainer{
+        gap: 0;
+    }
+    .t2FeaturesContainer li {
+        font-size: 12px;
+    }
     .t2CoursesHeadding {
-        width:100%;
+        width:93%;
         /* margin: 0 auto; */
         background-color: rgb(255, 255, 255);
     }
-    /* .t2FeaturesSecondContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
-        width: 100%;
-        gap: 1rem;
-    } */
+}
+@media screen and (max-width: 768px){
     .t2FeaturesContainer {
-        width: 100%;
+        width: 80%;
         padding: 10px 20px;
         color: white;
         display: flex;
@@ -205,5 +204,18 @@ width: 100%;
         flex-direction: column;
         gap: 1rem;
     }
+    .t2FeaturesSecondContainer{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        width: 100%;
+        gap: 1rem;
+    }
 }
 
+@media screen and (max-width: 849px){
+    .t2FeaturesContainer li {
+        font-size: 10px;
+    }
+}

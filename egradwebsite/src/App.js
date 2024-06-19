@@ -18,7 +18,7 @@ function App() {
     <Router>
       <Routes>
       <Route path="/" element={<WebSiteLandingPage/>}/>
-      <Route path="/BranchHomePage" element={<BranchHomePage/>}/>
+      <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>
       <Route path="/AboutUs" element={<AboutUs/>}/>
       

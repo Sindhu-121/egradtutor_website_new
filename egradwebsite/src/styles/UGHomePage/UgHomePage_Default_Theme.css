@@ -124,3 +124,7 @@ li.themeUgHeaderLiDefault:hover {
     -webkit-animation: UG_course 3s infinite alternate;
     animation: UG_course 3s infinite alternate;
 }
+.PortalName_ImageContainerDefault {
+    display: flex;
+    flex-direction: column;
+}

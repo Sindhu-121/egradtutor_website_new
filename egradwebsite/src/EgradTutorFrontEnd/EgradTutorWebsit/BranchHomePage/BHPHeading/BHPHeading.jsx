@@ -62,21 +62,21 @@ const BHPHeading = () => {
                 target="_blank"
 
               >
-                OTS
+                Online Test Series 
               </Link>
               <Link
                 to="/orvlHomePage"
                 target="_blank"
 
               >
-                ORVL
+                Online Recorded Video Lectures
               </Link>
               <Link
                 to="/oqbHomePage"
                 target="_blank"
 
               >
-                OQB
+                Online Question Bank 
               </Link>
             </div>
           </div>
