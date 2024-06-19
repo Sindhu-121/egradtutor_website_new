@@ -86,7 +86,7 @@ const OueCourses = () => {
                     
                     <div className={`${themeDetails.themeExamsNames}`}>
                       {feature.EntranceExams_name.map((item, index) => (
-                        <button key={index}>{item}</button>
+                        <button key={index} >{item}</button>
                       ))}
                     </div>
                   {/* </div> */}
