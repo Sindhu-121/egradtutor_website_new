@@ -502,8 +502,8 @@ const ExamPageBanner = () => {
                     src={`data:image/svg+xml;base64,${banner.banner}`}
                     alt={`Banner ${banner.EntranceExams_Id}`}
                     style={{
-                      width: "120rem",
-                      height: "30rem",
+                      // width: "120rem",
+                      // height: "30rem",
                       cursor: "pointer",
                     }}
                   />
@@ -750,9 +750,8 @@ const ExamPageBanner = () => {
           {message && (
             <div className="banner_popup">
               <div
-                className={`banner_popup_message ${
-                  message.startsWith("Error") ? "error" : "success"
-                }`}
+                className={`banner_popup_message ${message.startsWith("Error") ? "error" : "success"
+                  }`}
               >
                 <p>{message}</p>
 
@@ -803,9 +802,8 @@ const ExamPageBanner = () => {
                 {message && (
                   <div className="banner_popup">
                     <div
-                      className={`banner_popup_message ${
-                        message.startsWith("Error") ? "error" : "success"
-                      }`}
+                      className={`banner_popup_message ${message.startsWith("Error") ? "error" : "success"
+                        }`}
                     >
                       <p>{message}</p>
 
