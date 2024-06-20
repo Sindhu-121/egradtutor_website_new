@@ -11,6 +11,7 @@ import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 import AboutUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs";
 import Login from "./Login/Login";
 import AdminLogin from "./Login/AdminLogin";
+import Register from "./Login/Register";
 
 
 
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/userlogin" element={<Login/>}/>
         <Route path="/adminlogin" element={<AdminLogin/>}/>
+        <Route path="/Register" element={<Register/>} />
       <Route path="/" element={<WebSiteLandingPage/>}/>
       <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>

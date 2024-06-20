@@ -1,6 +1,33 @@
 const express = require('express');
 const router = express.Router();
 const db = require('./DataBase/db1');
+const fs = require("fs");
+const app = express();
+const jwt = require("jsonwebtoken");
+const sizeOf = require("image-size");
+const bodyParser = require("body-parser");
+const multer = require("multer");
+const nodemailer = require("nodemailer");
+const path = require("path");
+const xlsx = require("xlsx");
+const logoPath = path.resolve(__dirname, "../logo/egate logo.png");
+const userimgPath = path.resolve(__dirname, "../logo/user.png");
+const cors = require("cors");
+app.use(cors());
+
+app.use(bodyParser.json());
+
+const storage_PROimg = multer.diskStorage({
+    destination: function (req, file, cb) {
+      // Set up the destination folder for storing uploaded profile images
+      cb(null, "profilesimages/");
+    },
+    filename: function (req, file, cb) {
+      // Define how uploaded files should be named
+      cb(null, Date.now() + "-" + file.originalname);
+    },
+  });
+  const profilesimages = multer({ storage: storage_PROimg });
 
 router.post("/login", async (req, res) => {
     const { email, password } = req.body;
@@ -77,4 +104,118 @@ router.post("/login", async (req, res) => {
     }
   });
 
+  router.post(
+    "/register",
+    profilesimages.single("profileImage"),
+    async (req, res) => {
+      try {
+        const { username, email, phoneNumber, address } = req.body;
+        const generatedPassword = generateRandomPassword();
+        const defaultRole = "viewer";
+        let fileContent = null;
+  
+        // Check if an image was uploaded
+        if (req.file) {
+          fileContent = fs.readFileSync(req.file.path);
+        } else {
+          // Use the default image from the logoPath
+          fileContent = fs.readFileSync(userimgPath);
+        }
+  
+        // Check if email already exists
+        const emailExists = await checkEmailExists(email);
+        if (emailExists) {
+          return res.status(400).json({ error: "Email already exists" });
+        }
+  
+        const query = `
+          INSERT INTO log (username, email, password, role, profile_image) VALUES (?, ?, ?, ?, ?)
+        `;
+  
+        const values = [
+          username,
+          email,
+          generatedPassword,
+          defaultRole,
+          fileContent,
+        ];
+  
+        await db.query(query, values);
+  
+        // Sending email
+        const transporter = nodemailer.createTransport({
+          service: "Gmail",
+          host: "smtp.gmail.com", // Corrected host
+          auth: {
+            user: "webdriveegate@gmail.com",
+            pass: "qftimcrkpkbjugav",
+          },
+        });
+        const loginMailOptions = {
+          from: "webdriveegate@gmail.com",
+          to: email,
+          subject: "Login Details",
+          html: `
+            <div align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+              style="max-width: 600px; margin: 20px auto; border-collapse: collapse; padding: 20px;">
+  
+              <div>
+                <img src="cid:defaultLogo" alt="egradtutor" style="width: 150px;margin: 20px auto; margin-left:0; height: auto; display: block;">
+              </div>
+              <p style="font-size: 16px; color: #333; text-align: center; margin-top: 20px;">Thank you for registering on
+                Egradtutor. We hope you enjoy our service!</p>
+              </div>
+  
+              <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%"
+                style="max-width: 600px; margin: 20px auto; border-collapse: collapse; border: 1px solid rgba(0, 0, 0, 0.5); background-color: #ffffff; padding: 20px;">
+                <tr>
+                  <td>
+                    <tr>
+                      <th style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">Username</th>
+                      <th style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">Email</th>
+                      <th style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">Password</th>
+                    </tr>
+                    <tr>
+                      <td style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">${username}</td>
+                      <td style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">${email}</td>
+                      <td style="font-size: 14px; color: #666; padding: 10px; border-bottom: 1px solid rgba(0, 0, 0, 0.5); border-right: 1px solid rgba(0, 0, 0, 0.5);">${generatedPassword}</td>
+                    </tr>
+                </table>
+              </td>
+            </tr>
+          </table>
+        `,
+          attachments: [
+            {
+              filename: "logo.png",
+              path: logoPath,
+              cid: "defaultLogo",
+            },
+            {
+              filename: "profileImage.jpg",
+              content: Buffer.from(fileContent, "base64"),
+              encoding: "base64",
+              cid: "profileImage",
+            },
+          ],
+        };
+  
+        transporter.sendMail(loginMailOptions, (error, info) => {
+          if (error) {
+            console.error("Error sending login email:", error);
+          } else {
+            console.log("email sent");
+          }
+        });
+  
+        // Respond with success message
+        res.status(201).json({
+          message: "User registered successfully. Login details sent to email.",
+        });
+      } catch (error) {
+        console.error("Error saving form data:", error);
+        res.status(500).json({ message: "Internal server error" });
+      }
+    }
+  );
 module.exports = router;

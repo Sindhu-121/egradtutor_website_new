@@ -116,7 +116,7 @@ const handleLogin = async (e) => {
         localStorage.removeItem("isLoggedIn");
         localStorage.removeItem("token");
         setIsLoggedIn(false);
-        return <Navigate to="/uglogin" />;
+        return <Navigate to="/userlogin" />;
       }
 
       if (response.ok) {
@@ -131,7 +131,7 @@ const handleLogin = async (e) => {
   const handleLogout = () => {
     localStorage.removeItem("isLoggedIn");
     localStorage.removeItem("userRole");
-    window.location.href = "/uglogin";
+    window.location.href = "/userlogin";
   };
 
   const handleYesClick = () => {
