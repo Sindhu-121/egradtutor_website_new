@@ -1,24 +1,25 @@
-import React, { useContext, useState, useEffect } from 'react'
-import LandingPageExamdataEdit from './LandingPageExamdataEdit'
+import React, { useContext, useState, useEffect } from 'react';
+import LandingPageExamdataEdit from './LandingPageExamdataEdit';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import BASE_URL from '../../../../apiConfig';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 // import '../../../../styles/LandingPage_main.css'
-import '../../../../styles/Theme2_landingPage_styles.css'
-import '../../../../styles/Theme1_landingPage_styles.css'
-import '../../../../styles/Default_landingPage_styles.css'
-import ugImg from '../../../../styles/Girl.png'
+import '../../../../styles/Theme2_landingPage_styles.css';
+import '../../../../styles/Theme1_landingPage_styles.css';
+import '../../../../styles/Default_landingPage_styles.css';
+import ugImg from '../../../../styles/Girl.png';
 
-const LandingPageExamdata = ({enableEditFromP}) => {
+const LandingPageExamdata = ({ enableEditFromP }) => {
   const [image, setImage] = useState(null);
   const [branches, setBranches] = useState([]);
-  console.log(enableEditFromP,"this is the value that passed from landingPage");
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const themeFromContext = useContext(ThemeContext);
-  console.log(themeFromContext, "this is the theme from the context")
-  const [enableEdit, setEnableEdit] = useState("Enable Edit");
-  const [enableEditcontainer, setEnableEditcontainer] = useState(false);
+  const themeColor = themeFromContext[0]?.current_theme;
+  const themeDetails = JSONClasses[themeColor] || [];
+
   // In the page that needs to be refreshed
   const refreshChannel = new BroadcastChannel("refresh_channel");
   // Listen for messages from other pages
@@ -27,12 +28,6 @@ const LandingPageExamdata = ({enableEditFromP}) => {
       window.location.reload(); // Reload the page
     }
   };
-  const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss")
-  const themeDetails = JSONClasses[themeColor] || []
-  console.log(themeDetails, "mapppping from json....")
-
-
 
   // fetching the main header logo image
   const fetchImage = async () => {
@@ -52,43 +47,59 @@ const LandingPageExamdata = ({enableEditFromP}) => {
     fetchImage();
   }, []);
 
-  
   // fetching the branches
+  const fetchBranches = async () => {
+    try {
+      const response = await fetch(`${BASE_URL}/LandingPageExamData/branches`);
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const data = await response.json();
+      setBranches(data);
+      setLoading(false);
+    } catch (error) {
+      console.error("Error fetching branches:", error);
+      setError("Error fetching branches");
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
     fetchBranches();
   }, []);
 
-  const fetchBranches = async () => {
-    try {
-      const response = await fetch(`${BASE_URL}/LandingPageExamData/branches`);
-      const data = await response.json();
-      setBranches(data);
-    } catch (error) {
-      console.error("Error fetching branches:", error);
-    }
-  };
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  if (branches.length === 0) {
+    return <div>No data available. Please add data.</div>;
+  }
 
   return (
-    <div className='Newlandingpage' >
-       <LandingPageExamdataEdit />
-        {/* =======================Exam cards starts here============================== */}
-        <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
-          <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>
-            {branches.map((branch) => (
-              <div
-                className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
-                key={branch.Branch_Id}
-              >
-                <button className={`${themeDetails.themeUgAndPgButtons}`} >
-                  <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
-                    {branch.Branch_Name}{" "}
-                  </Link>
-                  {/* <MdOutlineTouchApp /> */}
-                </button>
+    <div className='Newlandingpage'>
+      <LandingPageExamdataEdit />
+      {/* =======================Exam cards starts here============================== */}
+      <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
+        <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>
+          {branches.map((branch) => (
+            <div
+              className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
+              key={branch.Branch_Id}
+            >
+              <button className={`${themeDetails.themeUgAndPgButtons}`}>
+                <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
+                  {branch.Branch_Name}{" "}
+                </Link>
+                {/* <MdOutlineTouchApp /> */}
+              </button>
 
                 <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
                   <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
-                  
                   
                   </div>
                   <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
@@ -110,7 +121,7 @@ const LandingPageExamdata = ({enableEditFromP}) => {
         {/* =======================Exam cards ends here============================== */}
        
     </div>
-  )
+  );
 }
 
-export default LandingPageExamdata
+export default LandingPageExamdata;
