@@ -59,8 +59,8 @@ const ExploreExam = () => {
       <div className={`NewExploreExams_Sub_Container ${themeDetails.themeExploreExamsSubContainer}`}>
  
  
-        <div className={`NewExploreExams_ExamCrad_MainContainer ${themeDetails.themeNewExploreExams_ExamCard_MainContainer}`}>
-        <div className={`NewExploreExams_ExamCrad_Container ${themeDetails.themeNewExploreExams_ExamCard_Container}`}>
+        <div className={`NewExploreExams_ExamCard_MainContainer ${themeDetails.themeNewExploreExams_ExamCard_MainContainer}`}>
+        <div className={`NewExploreExams_ExamCard_Container ${themeDetails.themeNewExploreExams_ExamCard_Container}`}>
             {branch &&
               branch.EntranceExams.map((exam, index) => (
                 <div className={`NewExploreExams_ExamName_Container ${themeDetails.themeNewExploreExams_ExamName_Container}`}>
