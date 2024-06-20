@@ -61,6 +61,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
   useEffect(() => {
     fetchExamImages();
   }, []);
+  
   const handleUpdateExamImage = async (selectedImageId) => {
     console.log(selectedImageId);
     const formData = new FormData();

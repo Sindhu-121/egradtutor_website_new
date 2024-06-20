@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react'
 import OurCoursesEdit from './OurCoursesEdit'
 import axios from 'axios';
-import { Link,useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import BASE_URL from '../../../../apiConfig';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
@@ -62,28 +62,37 @@ const OueCourses = () => {
 
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
       <div> <button onClick={handleAddFeaturesClick}>
-          {showFeatureForm ? "Close Feature Form" : "Add Features"}
-        </button>
+        {showFeatureForm ? "Close Feature Form" : "Add Features"}
+      </button>
         {showFeatureForm && <OurCoursesEdit type="AddFeatures" />}
-        </div>
+      </div>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
-        <h2>OurCourses</h2>
+        <h2 id="Our_Courses_heading">OurCourses</h2>
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
           {/* <h3 >Course Features:</h3> */}
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
-                <div className={`${themeDetails.themeCourseName}`}>
-                  <strong className={`${themeDetails.themePortalName}`}>{feature.Portale_Name}</strong>
-                </div>
-                {/* for buttons of exams names */}
-                <div className={`${themeDetails.themeFeaturesSecondContainer}`}>
-                  {/* Render image if available */}
-                  {feature.image && (
+                <div className={`${themeDetails.themeCoursePortalNameImageContainer}`}>
+
+                  <div className={`${themeDetails.themeCourseName}`}>
+                    <strong className={`${themeDetails.themePortalName}`}>{feature.Portale_Name}</strong>
+                  </div>
+                  {/* for buttons of exams names */}
+                  <div className={`${themeDetails.themeFeaturesSecondContainer}`}>
+                    {/* Render image if available */}
+                    {feature.image && (
                       <div className={`${themeDetails.themeFeatureImgC}`}>
                         <img src={feature.image} alt={`${feature.Portale_Name}`} />
                       </div>
                     )}
+
+                  </div>
+
+
+                  </div>
+
+                  
                   <div className={`${themeDetails.themeFeaturesContainer}`}>
                     {feature.Features.map((item, index) => (
                       <div className={`${themeDetails.themeArrowWithFeatures}`}>
@@ -91,21 +100,21 @@ const OueCourses = () => {
                       </div>
                     ))}
                   </div>
-                                  
-                    <div className={`${themeDetails.themeExamsNames}`}>
-                      {feature.EntranceExams_name.map((item, index) => (
-                          <Link key={index}
-                          to={`/ExamHomePage/${feature.EntranceExams_Id}`}
-                        > {item}</Link>
-                      ))}
-                    </div>
+
+                  <div className={`${themeDetails.themeExamsNames}`}>
+                    {feature.EntranceExams_name.map((item, index) => (
+                      <Link key={index}
+                        to={`/ExamHomePage/${feature.EntranceExams_Id}`}
+                      > {item}</Link>
+                    ))}
+                  </div>
                   {/* </div> */}
-                </div>
+               
               </li>
             ))}
           </ul>
         </div>
-       
+
       </div>
     </div>
   )
