@@ -9,6 +9,8 @@ import BranchHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/BranchHomePage
 import ExamHomePage from "./EgradTutorFrontEnd/EgradTutorWebsit/ExamHomePage/ExamHomePage"
 import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 import AboutUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs";
+import Login from "./Login/Login";
+import AdminLogin from "./Login/AdminLogin";
 
 
 
@@ -17,6 +19,8 @@ function App() {
     <ThemeProvider>
     <Router>
       <Routes>
+        <Route path="/userlogin" element={<Login/>}/>
+        <Route path="/adminlogin" element={<AdminLogin/>}/>
       <Route path="/" element={<WebSiteLandingPage/>}/>
       <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>

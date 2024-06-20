@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+const LoginApis =require("./LoginApis");
+app.use("/LoginApis" ,LoginApis)
+
 const Logo =require("./EgradTutorWebsite/Logo");
 app.use("/Logo" ,Logo)
 
