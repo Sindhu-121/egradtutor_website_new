@@ -59,13 +59,13 @@ const ExploreExam = () => {
       <div className={`NewExploreExams_Sub_Container ${themeDetails.themeExploreExamsSubContainer}`}>
  
  
-        <div className={`NewExploreExams_ExamCrad_MainContainer ${themeDetails.NewExploreExams_ExamCrad_MainContainer}`}>
-        <div className={`NewExploreExams_ExamCrad_Container ${themeDetails.NewExploreExams_ExamCrad_Container}`}>
+        <div className={`NewExploreExams_ExamCrad_MainContainer ${themeDetails.themeNewExploreExams_ExamCard_MainContainer}`}>
+        <div className={`NewExploreExams_ExamCrad_Container ${themeDetails.themeNewExploreExams_ExamCard_Container}`}>
             {branch &&
               branch.EntranceExams.map((exam, index) => (
-                <div className={`NewExploreExams_ExamName_Container ${themeDetails.NewExploreExams_ExamName_Container}`}>
+                <div className={`NewExploreExams_ExamName_Container ${themeDetails.themeNewExploreExams_ExamName_Container}`}>
  
-                  <div className={`NewExploreExams_EachCard_Container ${themeDetails.NewExploreExams_EachCard_Container}`}>
+                  <div className={`NewExploreExams_EachCard_Container ${themeDetails.themeNewExploreExams_EachCard_Container}`}>
                   <ul key={index}>
                     <li>
                       <Link
@@ -74,7 +74,7 @@ const ExploreExam = () => {
                         {exam.EntranceExams_name}
                       </Link>
                     </li>
-                    <div className={`NewExploreExams_PortalNames_Container ${themeDetails.NewExploreExams_PortalNames_Container}`} >
+                    <div className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`} >
                       {exam.Portale_Names &&
                         exam.Portale_Names.map((portaleName, index) => (
                           <li key={index}>{portaleName}</li>
@@ -88,7 +88,7 @@ const ExploreExam = () => {
           </div>
  
  
-          <div className={`NewExploreExams_Image ${themeDetails.NewExploreExams_Image}`}>
+          <div className={`NewExploreExams_Image ${themeDetails.themeNewExploreExams_Image}`}>
             {fetchedImage && (
  
               <img src={fetchedImage} alt="Fetched from database" />

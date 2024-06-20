@@ -12,6 +12,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({extended:false}));
 
+const LoginApis =require("./LoginApis");
+app.use("/LoginApis" ,LoginApis)
+
 const Logo =require("./EgradTutorWebsite/Logo");
 app.use("/Logo" ,Logo)
 
@@ -58,6 +61,8 @@ app.use("/AboutUsEdit", AboutUsEdit)
 
 const themesSection=require('./ThemesAPIs/ThemesAPIs')
 app.use('/themesSection',themesSection);
+
+
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);

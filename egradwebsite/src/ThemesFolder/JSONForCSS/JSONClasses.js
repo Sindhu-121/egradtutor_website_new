@@ -57,14 +57,14 @@ const JSONClasses = {
 // EXPLORE EXAMS CLASSES
 themeExploreExamsMainContainer:"themeExploreExamsMainContainerDefault",
 themeExploreExamsSubContainer:"themeExploreExamsSubContainerDefault",
-NewExploreExams_ExamCrad_Container:"NewExploreExams_ExamCrad_ContainerDefault",
-
-NewExploreExams_ExamName_Container:"NewExploreExams_ExamName_ContainerDefault",
-NewExploreExams_PortalNames_Container:"NewExploreExams_PortalNames_ContainerDefault",
+themeNewExploreExams_ExamCard_MainContainer:"NewExploreExams_ExamCrad_ContainerDefault",
+themeNewExploreExams_ExamCard_Container:"NewExploreExams_ExamCrad_ContainerDefault",
+themeNewExploreExams_ExamName_Container:"NewExploreExams_ExamName_ContainerDefault",
+themeNewExploreExams_PortalNames_Container:"NewExploreExams_PortalNames_ContainerDefault",
 NewExploreExams_Image_Container:"NewExploreExams_Image_ContainerDefault",
-NewExploreExams_Image:"NewExploreExams_ImageDefault",
+themeNewExploreExams_Image:"NewExploreExams_ImageDefault",
 NewExploreExams_ExamCrad_MainContainer:"NewExploreExams_ExamCrad_MainContainerDefault",
-NewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
+themeNewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
 
 // OUR COURSES CLASSES //
 
