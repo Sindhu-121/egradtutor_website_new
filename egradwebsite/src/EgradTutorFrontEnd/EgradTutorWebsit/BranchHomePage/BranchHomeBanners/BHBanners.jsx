@@ -11,7 +11,6 @@ import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
-import './styles/BHBanners.css'
 
 
 const BHBanners = () => {
@@ -462,8 +461,8 @@ const BHBanners = () => {
                     src={`data:image/svg+xml;base64,${banner.banner}`}
                     alt={`Banner ${banner.EntranceExams_Id}`}
                     style={{
-                      width: "120rem",
-                      height: "30rem",
+                      width: "100%",
+                      height: "25rem",
                       cursor: "pointer",
                     }}
                   />

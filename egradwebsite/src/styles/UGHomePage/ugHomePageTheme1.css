@@ -1,16 +1,22 @@
-.Ug_header_logoIMG img {
-    width: 250px;
-
+.Ug_Home_Container.t1UgHomeContainer {
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px;
 }
 
-.\"Ug_header_Container.t1UgHeaderContainer {
+.Ug_HeaderSection.t1UgHeaderSec {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.t1UgHeaderContainer {
     display: flex;
     align-items: center;
     height: 130px;
     justify-content: space-between;
-
 }
 
+.t1UgHeaderLogoImg{
+
+}
 .t1UgDivLinksOfHeader {
     display: flex;
     align-items: center;
@@ -19,7 +25,7 @@
 }
 
 .t1UgDivLinksOfHeader a {
-    padding: 10px 45px;
+    padding: 10px;
     border-radius: 5px;
     background-color: #8fd9fc;
     color: rgb(14, 6, 6);
@@ -28,16 +34,7 @@
     transition: 0.3s ease-in-out;
 }
 
-.Ug_HeaderSection.t1UgHeaderSec {
-    width: 80%;
-    margin: 0 auto;
 
-}
-
-.Ug_Home_Container.t1UgHomeContainer {
-    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-
-}
 
 
 @media screen and (max-width:430px) {
@@ -80,64 +77,6 @@
         font-size: 13px;
     }
 }
-
-
-/* For contact us ,home ****************************************************************************************************/
-.t1UgHeader {
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 24px;
-    font-family: Arial, sans-serif;
-}
-
-.t1UgHContainer {
-    max-width: 120px;
-    margin: 0 auto;
-    padding: 0 20px;
-
-}
-
-.t1UgNavContainer {
-    overflow: hidden;
-}
-
-.t1UgHeaderUl {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-}
-
-
-.t1UgHeaderLi {
-    float: left;
-    color: black;
-}
-
-.t1UgHeaderLi a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-
-
-
-.Ug_header_logoIMG {
-    width: 250px;
-    display: flex;
-    align-items: center;
-    padding: 9px;
-}
-
-
-
 
 
 /* for exams page ****************************************************************************************************/
@@ -281,7 +220,7 @@
     width: 100%;
     padding: 10px;
     color: rgb(20, 17, 17);
-    
+    transition: all .8s ease-in-out;
 }
 
 .t1ExamInfoDivs:hover {
@@ -303,7 +242,8 @@
     padding: 20px;
     line-break: anywhere;
     line-height: 28px;
-   
+    transform: translateX(5px);
+  
 }
 .t1Toggles.active #more_info {
     max-height: 200px;
@@ -330,6 +270,7 @@
         justify-content: center;
     }
 }
+
 
 /* ***************** COURSES****************************************************************************************** */
 

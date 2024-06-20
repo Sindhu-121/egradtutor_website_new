@@ -85,10 +85,6 @@ themeExamsNames:"themeExamsNamesDefault",
 
 
 
-
-
-
-
     //About Us div class
     themeAboutuscontainer: "container",
     // themeLogoImgC: "Ug_header_Container",
@@ -248,6 +244,10 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamCoursesNameHeading:"t1ExamCoursesNameHeading",
     themePortalNames:"t1PortalNames",
     themeExamPortalBtn:"t1ExamPortalBtn",
+
+
+
+   
 
   },
 

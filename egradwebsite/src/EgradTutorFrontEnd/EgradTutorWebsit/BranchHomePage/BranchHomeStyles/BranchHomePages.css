@@ -1,0 +1,74 @@
+/* ***************{styles for "BranchHome Navbar" in BHPNavbar.jsx} ****************************************************************** */
+
+.t1UgHeader {
+    padding: 10px 0;
+    text-align: center;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+.t1UgHContainer {
+    margin: 0 auto;
+    padding: 0 20px;
+
+}
+
+.t1UgHeaderUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0px 0px 0px 30px;
+    flex-wrap: wrap;
+}
+
+
+.t1UgHeaderLi {
+    color: black;
+    transform: all 0.3s ease;
+    width: 150px;
+    padding: 0.6em -1em;
+    background: #faf6f6;
+    cursor: pointer;
+}
+
+.t1UgHeaderLi:hover{
+    background-color: #3db0f3;
+    border-radius: 10px;
+    transition:ease-in-out 2s;
+}
+
+
+/* ***************{styles for "BranchHome Marquee" in BHPNavbar.jsx} ****************************************************************** */
+
+.t1MarqData{
+background-color:rgb(153 217 254);
+height: 50px;
+font-size: 20px;
+padding: 10px;
+}
+
+
+/* ***************{styles for "BranchHome Explore Exams" in BHPExploreExams.jsx} ****************************************************************** */
+
+.t1ExploreExamsMainContainer{
+background-color: red;
+width: 100%;
+}
+
+.t1ExploreExamsSubContainer{
+    background-color: green;
+    width: 80%;
+    display: flex;
+    margin: 0 auto;
+}
+
+.t1NewExploreExams_ExamCrad_MainContainer{
+
+}
+
+.t1NewExploreExams_ExamName_Container{
+
+}
