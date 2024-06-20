@@ -98,27 +98,28 @@ const LandingPageExamdata = ({ enableEditFromP }) => {
                 {/* <MdOutlineTouchApp /> */}
               </button>
 
-              <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
-                <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
-                
-                </div>
-                <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
-                  <ul>
-                    {branch.EntranceExams.slice(0, 4).map((exam) => (
-                      <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
-                        <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
-                          {exam.EntranceExams_name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
+                <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
+                  <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
+                  
+                  </div>
+                  <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
+                    <ul >
+                      {branch.EntranceExams.slice(0, 4).map((exam) => (
+                        <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
+                          <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
+                            {exam.EntranceExams_name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-      {/* =======================Exam cards ends here============================== */}
+        {/* =======================Exam cards ends here============================== */}
+       
     </div>
   );
 }

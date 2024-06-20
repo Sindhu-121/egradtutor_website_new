@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../../DataBase/db2');
 
-
 router.get('/branches', async (req, res) => {
     try {
       const [rows] = await db.query(`
