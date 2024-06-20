@@ -7,6 +7,8 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
+import '../BranchHomeStyles/BranchHomePages.css'
+
 const OueCourses = () => {
   const { Branch_Id } = useParams();
   const [showFeatureForm, setShowFeatureForm] = useState(false);
