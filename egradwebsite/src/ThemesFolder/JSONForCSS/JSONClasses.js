@@ -52,6 +52,43 @@ const JSONClasses = {
     themeFeatureImgC: "themeFeatureImgCDefault",
     PortalName_ImageContainer: "PortalName_ImageContainerDefault",
 
+
+
+// EXPLORE EXAMS CLASSES
+themeExploreExamsMainContainer:"themeExploreExamsMainContainerDefault",
+themeExploreExamsSubContainer:"themeExploreExamsSubContainerDefault",
+NewExploreExams_ExamCrad_Container:"NewExploreExams_ExamCrad_ContainerDefault",
+
+NewExploreExams_ExamName_Container:"NewExploreExams_ExamName_ContainerDefault",
+NewExploreExams_PortalNames_Container:"NewExploreExams_PortalNames_ContainerDefault",
+NewExploreExams_Image_Container:"NewExploreExams_Image_ContainerDefault",
+NewExploreExams_Image:"NewExploreExams_ImageDefault",
+NewExploreExams_ExamCrad_MainContainer:"NewExploreExams_ExamCrad_MainContainerDefault",
+NewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
+
+// OUR COURSES CLASSES //
+
+themeOurCoursesContainer:"themeOurCoursesContainerDefault",
+themeCoursesHeadding:"themeCoursesHeaddingDefault",
+themeCoursesSubContainer:"themeCoursesSubContainerDefault",
+themeCoursesUl:"themeCoursesUlDefault",
+themeCourseLi:"themeCourseLiDefault",
+themeCourseName:"themeCourseNameDefault",
+
+themePortalName:"themePortalNameDefault",
+themeFeaturesSecondContainer:"themeFeaturesSecondContainerDefault",
+themeFeatureImgC:"themeFeatureImgCDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeArrowWithFeatures:"themeArrowWithFeaturesDefault",
+themeFeatures:"themeFeaturesDefault",
+themeExamsNames:"themeExamsNamesDefault",
+
+
+
+
+
+
+
     //About Us div class
     themeAboutuscontainer: "container",
     // themeLogoImgC: "Ug_header_Container",
