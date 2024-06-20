@@ -145,7 +145,7 @@ li.themeUgHeaderLiDefault:hover {
     margin: 2rem auto;
 }
 
-.NewExploreExams_ExamCrad_Container.NewExploreExams_ExamCrad_ContainerDefault {
+.NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -161,7 +161,7 @@ li.themeUgHeaderLiDefault:hover {
     line-height: 2rem;
 }
 
-.NewExploreExams_PortalNames_ContainerDefault li :hover {
+.NewExploreExams_PortalNames_ContainerDefault li:hover {
     color: blue;
     text-decoration: underline;
 }
@@ -169,12 +169,12 @@ li.themeUgHeaderLiDefault:hover {
 
 
 
-.NewExploreExams_ExamCrad_MainContainerDefault {
+.NewExploreExams_ExamCard_MainContainerDefault {
 display: flex;
 flex-direction: row;
 }
 
-.NewExploreExams_ExamCrad_MainContainer.NewExploreExams_ExamCrad_MainContainerDefault {
+.NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_MainContainerDefault {
         align-items: center;
         display: flex;
         flex-wrap: wrap-reverse;
@@ -184,7 +184,7 @@ flex-direction: row;
         width: 95%;
 }
 
-.NewExploreExams_ExamCrad_MainContainerDefault {
+.NewExploreExams_ExamCard_MainContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
     -webkit-column-gap: 7.8rem;
@@ -210,7 +210,7 @@ flex-direction: row;
     text-transform: capitalize;
     width: 290px;
 }
-.NewExploreExams_ExamCrad_Container.NewExploreExams_ExamCrad_ContainerDefault {
+.NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
     -webkit-column-gap: 7.8rem;
