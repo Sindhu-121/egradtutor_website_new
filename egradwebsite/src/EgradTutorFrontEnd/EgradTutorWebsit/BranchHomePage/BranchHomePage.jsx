@@ -5,6 +5,7 @@ import BHBanners from "./BranchHomeBanners/BHBanners"
 import ExploreExam from './BHPExploreExams/ExploreExam'
 import OurCourses from './OurCourses/OurCourses'
 import Footer from '../Footer/Footer'
+import FooterEdit from '../Footer/FooterEdit'
 const BranchHomePage = () => {
   return (
     <div>
@@ -14,6 +15,7 @@ const BranchHomePage = () => {
       <ExploreExam />
       <OurCourses />
       <Footer />
+      <FooterEdit/>
     </div>
   )
 }

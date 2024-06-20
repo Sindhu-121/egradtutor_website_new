@@ -11,7 +11,6 @@ import { ThemeProvider } from "./ThemesFolder/ThemeContext/Context";
 import AboutUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs";
 
 
-
 function App() {
   return (
     <ThemeProvider>

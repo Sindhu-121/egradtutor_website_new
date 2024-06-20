@@ -36,7 +36,7 @@ const Footer = () => {
   }, []);
 
   useEffect(() => {
-    const fetchFooterData = async () => {
+    const fetchFooterCopyWriteData = async () => {
       try {
         const response = await axios.get(
           `${BASE_URL}/FooterPage/landingfooterContentDataThree`
@@ -47,7 +47,7 @@ const Footer = () => {
       }
     };
 
-    fetchFooterData();
+    fetchFooterCopyWriteData();
   }, []);
 
   useEffect(() => {
