@@ -88,10 +88,7 @@ const OueCourses = () => {
                         <img src={feature.image} alt={`${feature.Portale_Name}`} />
                       </div>
                     )}
-
                   </div>
-
-
                   </div>
 
                   
