@@ -418,6 +418,8 @@ const JSONClasses = {
     themeExamPageHeaderContainer: "themeExamPageHeaderContainer",
     themeExamPageHeaderHeading: "themeExamPageHeaderHeading",
     themeTotalExamContainer: "themeTotalExamContainer",
+    themeLinkToSpecificExam:"defaultLinkToSpecificExam",
+
   },
   "Theme-1": {
     id: "themeOneId",
@@ -529,6 +531,8 @@ const JSONClasses = {
     themeNewExploreExams_Image: "t1NewExploreExams_Image_Container",
     themeNewExploreExams_EachCard_Container:
       "t1NewExploreExams_EachCard_Container",
+      themeLinkToSpecificExam:"t1LinkToSpecificExam",
+
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -603,6 +607,7 @@ const JSONClasses = {
     themeNewExploreExams_Image: "t2NewExploreExams_Image_Container",
     themeNewExploreExams_EachCard_Container:
       "t2NewExploreExams_EachCard_Container",
+      themeLinkToSpecificExam:"t2LinkToSpecificExam",
   },
 };
 

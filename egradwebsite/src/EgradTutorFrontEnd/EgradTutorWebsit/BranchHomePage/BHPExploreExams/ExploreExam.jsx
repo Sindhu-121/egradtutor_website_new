@@ -68,7 +68,7 @@ const ExploreExam = () => {
  
                   <div className={`NewExploreExams_EachCard_Container ${themeDetails.themeNewExploreExams_EachCard_Container}`}>
                   <ul key={index}>
-                    <li>
+                    <li className={`${themeDetails.themeLinkToSpecificExam}`}>
                       <Link
                         to={`/ExamPages_main/${exam.EntranceExams_Id}`}
                       >
