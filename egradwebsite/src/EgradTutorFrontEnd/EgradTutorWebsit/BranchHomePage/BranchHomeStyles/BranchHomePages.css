@@ -72,3 +72,11 @@ width: 100%;
 .t1NewExploreExams_ExamName_Container{
 
 }
+
+
+
+/* ***************{styles for "BranchHome OurCourses" in OurCourses.jsx} ****************************************************************** */
+
+.themeOurCoursesContainer{
+background-color:green;
+}
