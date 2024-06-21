@@ -12,6 +12,8 @@ import AboutUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/About
 import Login from "./Login/Login";
 import AdminLogin from "./Login/AdminLogin";
 import Register from "./Login/Register";
+import UgadminHome from "./Login/UgadminHome";
+
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
         <Route path="/userlogin" element={<Login/>}/>
         <Route path="/adminlogin" element={<AdminLogin/>}/>
         <Route path="/Register" element={<Register/>} />
+        <Route path="./UgadminHome" element={<UgadminHome/>}/>
+        
       <Route path="/" element={<WebSiteLandingPage/>}/>
       <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>

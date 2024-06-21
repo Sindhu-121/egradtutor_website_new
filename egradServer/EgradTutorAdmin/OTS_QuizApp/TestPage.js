@@ -1,10 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../DataBase/db2");
-
-
-
-
+const db = require("../../DataBase/db2");
 
 router.get(
   "/feachingtest/:courseCreationId/:typeOfTestId",
@@ -53,23 +49,25 @@ router.get("/feachingtest/:courseCreationId", async (req, res) => {
       [courseCreationId]
     );
 
-    console.log('courseCreationId:', courseCreationId);
-    
+    console.log("courseCreationId:", courseCreationId);
+
     res.json(rows);
   } catch (error) {
-    console.error('Error executing MySQL query:', error);
+    console.error("Error executing MySQL query:", error);
     res.status(500).json({ error: error.message }); // Send error message as response
   }
 });
 
-router.get("/feachingOveralltest/:courseCreationId/:user_Id", async (req, res) => {
-  const { courseCreationId, user_Id } = req.params;
-  try {
-    // Log the parameters
-    console.log('courseCreationId and user_Id:', courseCreationId, user_Id);
+router.get(
+  "/feachingOveralltest/:courseCreationId/:user_Id",
+  async (req, res) => {
+    const { courseCreationId, user_Id } = req.params;
+    try {
+      // Log the parameters
+      console.log("courseCreationId and user_Id:", courseCreationId, user_Id);
 
-    // Construct and log the query
-    const query = `
+      // Construct and log the query
+      const query = `
     SELECT DISTINCT 
     tpt.typeOfTestId, 
     tpt.typeOfTestName, 
@@ -111,82 +109,18 @@ WHERE
 
 
     `;
-    console.log('Query:', query);
+      console.log("Query:", query);
 
-    // Fetch exams from the database
-    const [rows] = await db.query(query, [courseCreationId, user_Id]); // Reordered the parameters here
-    console.log(rows)
-    res.json(rows);
-  } catch (error) {
-    console.error('Error executing MySQL query:', error);
-    res.status(500).json({ error: error.message }); // Send error message as response
-  }
-
-
-
+      // Fetch exams from the database
+      const [rows] = await db.query(query, [courseCreationId, user_Id]); // Reordered the parameters here
+      console.log(rows);
+      res.json(rows);
+    } catch (error) {
+      console.error("Error executing MySQL query:", error);
+      res.status(500).json({ error: error.message }); // Send error message as response
+    }
   }
 );
-// router.get("/feachingOveralltest/:CourseData_Id/:user_Id", async (req, res) => {
-//   const { CourseData_Id, user_Id } = req.params;
-//   console.log('CourseData_Id and user_Id:', CourseData_Id, user_Id); // Check if you receive the correct IDs
-
-//   try {
-//     const query = `
-    //   SELECT DISTINCT
-    //   cct.*,
-    //   cd.*,
-    //   oc.*,
-    //   sbc.user_Id,
-    //   tct.*,
-    //   ol.*,
-    //   ses.test_end_time,
-    //   ctpt.*,
-    //   tpt.typeOfTestId,
-    //   tpt.typeOfTestName,
-    //   tas.test_status,
-    //   tp.Test_pattern_name
-    // FROM
-    //   course_data cd
-    // LEFT JOIN course_creation_table cct ON
-    //   cd.courseCreationId = cct.courseCreationId
-    // LEFT JOIN ovl_course oc ON
-    //   oc.OVL_Course_Id = cd.OVL_Course_Id
-    // LEFT JOIN student_buy_courses sbc ON
-    //   sbc.CourseData_Id = cd.CourseData_Id
-    // LEFT JOIN test_creation_table tct ON
-    //   cct.courseCreationId = tct.courseCreationId AND tct.status = 'active'
-    // LEFT JOIN ovl_links ol ON
-    //   oc.OVL_Course_Id = ol.OVL_Course_Id
-    // LEFT JOIN student_exam_summery ses ON
-    //   ses.testCreationTableId = tct.testCreationTableId AND ses.user_Id = sbc.user_Id
-    // LEFT JOIN course_typeoftests ctpt ON
-    //   ctpt.courseCreationId = tct.courseCreationId
-    // LEFT JOIN type_of_test tpt ON
-    //   tpt.typeOfTestId = ctpt.typeOfTestId
-    // LEFT JOIN test_pattern tp ON tct.Test_Pattern_Id=tp.Test_Pattern_Id
-    // LEFT JOIN test_attempt_status tas ON
-    //   tas.testCreationTableId = tct.testCreationTableId AND tas.user_Id = sbc.user_Id
-    // WHERE
-    //   cd.CourseData_Id = ?
-    //   AND tct.testCreationTableId IN (
-    //     SELECT testCreationTableId 
-    //     FROM test_creation_table 
-    //     WHERE courseCreationId = cct.courseCreationId 
-    //     AND courseTypeOfTestId = tpt.typeOfTestId
-    //   )
-    //   AND sbc.user_Id = ? AND tct.status = 'active';
-//     `;
-    
-//     const [rows] = await db.query(query, [CourseData_Id, user_Id]); 
-//     console.log(rows);
-//     res.json(rows);
-//   } catch (error) {
-//     console.error('Error executing MySQL query:', error);
-//     res.status(500).json({ error: error.message }); // Send error message as response
-//   }
-// });
-
-
 
 router.get("/feachingtypeoftest", async (req, res) => {
   try {
@@ -199,27 +133,24 @@ router.get("/feachingtypeoftest", async (req, res) => {
   }
 });
 
+router.get(
+  "/testAttemptStatus/:user_Id/:courseCreationId/:testCreationTableId",
+  async (req, res) => {
+    const { user_Id, testCreationTableId, courseCreationId } = req.params;
+    try {
+      // Fetch exams from the database
+      const [rows] = await db.query(
+        `SELECT * FROM test_attempt_status WHERE user_Id = ? AND testCreationTableId = ? AND courseCreationId = ?`,
+        [user_Id, testCreationTableId, courseCreationId]
+      );
 
-
-
-
-
-
-router.get("/testAttemptStatus/:user_Id/:courseCreationId/:testCreationTableId", async (req, res) => {
-  const { user_Id, testCreationTableId, courseCreationId } = req.params;
-  try {
-    // Fetch exams from the database
-    const [rows] = await db.query(
-      `SELECT * FROM test_attempt_status WHERE user_Id = ? AND testCreationTableId = ? AND courseCreationId = ?`,
-      [user_Id, testCreationTableId, courseCreationId]
-    );
- 
-    res.json(rows);
-  } catch (error) {
-    console.error('Error executing MySQL query:', error);
-    res.status(500).json({ error: error.message }); // Send error message as response
+      res.json(rows);
+    } catch (error) {
+      console.error("Error executing MySQL query:", error);
+      res.status(500).json({ error: error.message }); // Send error message as response
+    }
   }
-});
+);
 
 router.get("/feachingAttempted_TestDetails/:user_Id", async (req, res) => {
   const { user_Id } = req.params;
@@ -268,15 +199,14 @@ WHERE
   `,
       [user_Id]
     );
- 
-    console.log('user_Id:', user_Id);
-   
+
+    console.log("user_Id:", user_Id);
+
     res.json(rows);
   } catch (error) {
-    console.error('Error executing MySQL query:', error);
+    console.error("Error executing MySQL query:", error);
     res.status(500).json({ error: error.message }); // Send error message as response
   }
 });
-
 
 module.exports = router;
