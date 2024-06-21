@@ -7,7 +7,7 @@ import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import { IoHome } from "react-icons/io5";
 import { useParams, Link } from 'react-router-dom'
-
+import '../../../../styles/ExamPage/Theme2ExamPage.css'
 const ExamPageHeader = () => {
   const { EntranceExams_Id } = useParams();
   const [entranceExam, setEntranceExam] = useState([]);
