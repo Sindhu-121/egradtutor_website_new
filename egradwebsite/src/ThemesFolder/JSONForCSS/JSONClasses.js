@@ -244,7 +244,14 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamPortalBtn:"t1ExamPortalBtn",
 
 
-
+    themeExploreExamsMainContainer:"t1ExploreExamsMainContainer",
+    themeExploreExamsSubContainer:"t1ExploreExamsSubContainer",
+    themeNewExploreExams_ExamCard_MainContainer:"t1NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamCard_Container:"t1NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamName_Container:"t1NewExploreExams_ExamName_Container",
+    themeNewExploreExams_PortalNames_Container:"t1NewExploreExams_PortalNames_Container",
+    themeNewExploreExams_Image:"t1NewExploreExams_Image_Container",
+    themeNewExploreExams_EachCard_Container:"t1NewExploreExams_EachCard_Container",
    
 
   },

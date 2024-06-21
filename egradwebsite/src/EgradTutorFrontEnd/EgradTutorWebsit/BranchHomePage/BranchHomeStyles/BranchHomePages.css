@@ -34,49 +34,87 @@
     cursor: pointer;
 }
 
-.t1UgHeaderLi:hover{
+.t1UgHeaderLi:hover {
     background-color: #3db0f3;
     border-radius: 10px;
-    transition:ease-in-out 2s;
+    transition: ease-in-out 1s;
 }
 
 
 /* ***************{styles for "BranchHome Marquee" in BHPNavbar.jsx} ****************************************************************** */
 
-.t1MarqData{
-background-color:rgb(153 217 254);
-height: 50px;
-font-size: 20px;
-padding: 10px;
+.t1MarqData {
+    background-color: rgb(153 217 254);
+    height: 50px;
+    font-size: 20px;
+    padding: 10px;
 }
 
 
 /* ***************{styles for "BranchHome Explore Exams" in BHPExploreExams.jsx} ****************************************************************** */
 
-.t1ExploreExamsMainContainer{
-background-color: red;
-width: 100%;
+.t1ExploreExamsMainContainer {
+    background-color: red;
+    width: 100%;
+
+    & #EXPLORE_Exam_Heading {
+        text-align: center;
+        color: black;
+    }
 }
 
-.t1ExploreExamsSubContainer{
+.NewExploreExams_ExamName_Container.t1NewExploreExams_ExamName_Container {
+    height: 250px;
+    display: flex;
+    margin: 0 auto;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.t1ExploreExamsSubContainer {
     background-color: green;
-    width: 80%;
+    width: 100%;
     display: flex;
     margin: 0 auto;
 }
 
-.t1NewExploreExams_ExamCrad_MainContainer{
-
+.t1NewExploreExams_ExamCard_Container {
+    background-color: rgb(156, 60, 60);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 75%;
+    padding: 10px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    height: auto;
 }
 
-.t1NewExploreExams_ExamName_Container{
 
+.t1NewExploreExams_PortalNames_Container {
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(95, 11, 231);
 }
 
+.t1NewExploreExams_Image_Container {
+    display: flex;
+    background-color: pink;
+}
 
+.t1NewExploreExams_Image_Container img {
+    width: 200px;
+}
+
+.NewExploreExams_EachCard_Container.t1NewExploreExams_EachCard_Container {
+    height: 230px;
+    border-radius: 150px;
+    display: flex;
+    flex-direction: column;
+}
 
 /* ***************{styles for "BranchHome OurCourses" in OurCourses.jsx} ****************************************************************** */
 
-.themeOurCoursesContainer{
-background-color:green;
+.themeOurCoursesContainer {
+    background-color: green;
 }
