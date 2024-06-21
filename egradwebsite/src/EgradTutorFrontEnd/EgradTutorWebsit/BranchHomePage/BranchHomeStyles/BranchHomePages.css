@@ -54,12 +54,15 @@
 /* ***************{styles for "BranchHome Explore Exams" in BHPExploreExams.jsx} ****************************************************************** */
 
 .t1ExploreExamsMainContainer {
-    background-color: red;
+    /* background-color: red; */
     width: 100%;
 
     & #EXPLORE_Exam_Heading {
         text-align: center;
         color: black;
+        background-color: green;
+        width: 40%;
+      border-radius: 20px;
     }
 }
 
@@ -73,30 +76,26 @@
 }
 
 .t1ExploreExamsSubContainer {
-    background-color: green;
+    /* background-color: green; */
     width: 100%;
     display: flex;
     margin: 0 auto;
 }
 
 .t1NewExploreExams_ExamCard_Container {
-    background-color: rgb(156, 60, 60);
+    /* background-color: rgb(156, 60, 60); */
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     width: 75%;
     padding: 10px;
     margin: 0 auto;
-    flex-wrap: wrap;
+    flex-wrap: wrap;  
     height: auto;
 }
 
 .t1NewExploreExams_PortalNames_Container {
-    /* display: flex; */
     flex-direction: column;
-    /* height: 166px; */
-    /* margin-left: 42px;
-    margin-bottom: 20px; */
 }
 
 .t1NewExploreExams_EachCard_Container ul {
@@ -128,7 +127,7 @@
 }
 
 .t1NewExploreExams_Image_Container img {
-    width: 200px;
+    width: 100%;
 }
 
 .NewExploreExams_EachCard_Container.t1NewExploreExams_EachCard_Container {
