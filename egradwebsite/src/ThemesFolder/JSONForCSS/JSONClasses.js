@@ -19,38 +19,69 @@ const JSONClasses = {
     themeExamImageBox: "ug_pg_boxes",
     themeExamButtonsBox: "Exams_container",
     themeUgAndPgButtons: "ugAndPgButtonsDefault",
-    ThemeExamADD_EDIT_Buttons:"ThemeExamADD_EDIT_ButtonsDefault",
+    ThemeExamADD_EDIT_Buttons: "ThemeExamADD_EDIT_ButtonsDefault",
 
-// UG_HOME_PAGE_HEADER_CLASSESS
-themeUgHomePageFirstContainer:"defaultUgHomePageFirstContainer",
-themeUgHomeContainer:"themeUgHomeContainerDefault",
-themeUgHeaderSec:"themeUgHeaderSecDefault",
-themeUgHeaderContainer:"themeUgHeaderContainerDefault",
-themeUgHeaderLogoImg:"themeUgHeaderLogoImgDefault",
-themeUgDivLinksOfHeader:"themeUgDivLinksOfHeaderDefault",
-
-
-// UG_HOME_PAGE_NAVBAR_CLASSES
-themeUgHeader:"themeUgHeaderDefault",
-themeUgHContainer:"themeUgHContainerDefault",
-themeUgNavContainer:"themeUgNavContainerDefault",
-themeUgHeaderUl:"themeUgHeaderUlDefault",
-themeUgHeaderLi:"themeUgHeaderLiDefault",
-themeMarqData:"themeMarqDataDefault",
+    // UG_HOME_PAGE_HEADER_CLASSESS
+    themeUgHomePageFirstContainer: "defaultUgHomePageFirstContainer",
+    themeUgHomeContainer: "themeUgHomeContainerDefault",
+    themeUgHeaderSec: "themeUgHeaderSecDefault",
+    themeUgHeaderContainer: "themeUgHeaderContainerDefault",
+    themeUgHeaderLogoImg: "themeUgHeaderLogoImgDefault",
+    themeUgDivLinksOfHeader: "themeUgDivLinksOfHeaderDefault",
 
 
-// OUR_COURSES_CLASSES
+    // UG_HOME_PAGE_NAVBAR_CLASSES
+    themeUgHeader: "themeUgHeaderDefault",
+    themeUgHContainer: "themeUgHContainerDefault",
+    themeUgNavContainer: "themeUgNavContainerDefault",
+    themeUgHeaderUl: "themeUgHeaderUlDefault",
+    themeUgHeaderLi: "themeUgHeaderLiDefault",
+    themeMarqData: "themeMarqDataDefault",
+
+
+    // OUR_COURSES_CLASSES
+    themeOurCoursesContainer: "themeOurCoursesContainerDefault",
+    themeCoursesHeadding: "themeCoursesHeaddingDefault",
+    themeCoursesSubContainer: "themeCoursesSubContainerDefault",
+    themeCoursesUl: "themeCoursesUlDefault",
+    themeCourseLi: "themeCourseLiDefault",
+    themePortalName: "themePortalNameDefault",
+    themeExamsNames: "themeExamsNamesDefault",
+    themeFeaturesContainer: "themeFeaturesContainerDefault",
+    themeFeatures: "themeFeaturesDefault",
+    themeFeatureImgC: "themeFeatureImgCDefault",
+    PortalName_ImageContainer: "PortalName_ImageContainerDefault",
+
+
+
+// EXPLORE EXAMS CLASSES
+themeExploreExamsMainContainer:"themeExploreExamsMainContainerDefault",
+themeExploreExamsSubContainer:"themeExploreExamsSubContainerDefault",
+themeNewExploreExams_ExamCard_MainContainer:"NewExploreExams_ExamCard_ContainerDefault",
+themeNewExploreExams_ExamCard_Container:"NewExploreExams_ExamCard_ContainerDefault",
+themeNewExploreExams_ExamName_Container:"NewExploreExams_ExamName_ContainerDefault",
+themeNewExploreExams_PortalNames_Container:"NewExploreExams_PortalNames_ContainerDefault",
+NewExploreExams_Image_Container:"NewExploreExams_Image_ContainerDefault",
+themeNewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
+
+// OUR COURSES CLASSES //
+
 themeOurCoursesContainer:"themeOurCoursesContainerDefault",
 themeCoursesHeadding:"themeCoursesHeaddingDefault",
 themeCoursesSubContainer:"themeCoursesSubContainerDefault",
 themeCoursesUl:"themeCoursesUlDefault",
 themeCourseLi:"themeCourseLiDefault",
+themeCourseName:"themeCourseNameDefault",
+
 themePortalName:"themePortalNameDefault",
-themeExamsNames:"themeExamsNamesDefault",
-themeFeaturesContainer:"themeFeaturesContainerDefault",
-themeFeatures:"themeFeaturesDefault",
+themeFeaturesSecondContainer:"themeFeaturesSecondContainerDefault",
 themeFeatureImgC:"themeFeatureImgCDefault",
-PortalName_ImageContainer:"PortalName_ImageContainerDefault",
+themeFeaturesContainer:"themeFeaturesContainerDefault",
+themeArrowWithFeatures:"themeArrowWithFeaturesDefault",
+themeFeatures:"themeFeaturesDefault",
+themeExamsNames:"themeExamsNamesDefault",
+
+
 
     //About Us div class
     themeAboutuscontainer: "container",
@@ -103,15 +134,15 @@ PortalName_ImageContainer:"PortalName_ImageContainerDefault",
     // themeFeatures: "defaultFeatures",
     // themeFeatureImgC: "defaultFeatureImgC",
     themeCourseName: "defaultCourseName",
-    themeFeaturesSecondContainer:"defaultFeaturesSecondContainer",
-    themeFeaturesToBeRow:"defaultFeaturesToBeRow",
+    themeFeaturesSecondContainer: "defaultFeaturesSecondContainer",
+    themeFeaturesToBeRow: "defaultFeaturesToBeRow",
 
     // End //
 
-    themeExamPageHeaderMainContainer:"themeExamPageHeaderMainContainer",
-    themeExamPageHeaderContainer:"themeExamPageHeaderContainer",
-    themeExamPageHeaderHeading:"themeExamPageHeaderHeading",
-    themeTotalExamContainer:"themeTotalExamContainer"
+    themeExamPageHeaderMainContainer: "themeExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer: "themeExamPageHeaderContainer",
+    themeExamPageHeaderHeading: "themeExamPageHeaderHeading",
+    themeTotalExamContainer: "themeTotalExamContainer"
   },
   "Theme-1": {
     id: "themeOneId",
@@ -187,23 +218,34 @@ PortalName_ImageContainer:"PortalName_ImageContainerDefault",
     themeFeatures: "t1Features",
     themeFeatureImgC: "t1FeatureImgC",
     themeCourseName: "t1CourseName",
-    themeFeaturesSecondContainer:"t1FeaturesSecondContainer",
-    themeFeaturesToBeRow:"t1FeaturesToBeRow",
+    themeFeaturesSecondContainer: "t1FeaturesSecondContainer",
+    themeFeaturesToBeRow: "t1FeaturesToBeRow",
 
-    themeExamPageHeaderMainContainer:"t1ExamPageHeaderMainContainer",
-    themeExamPageHeaderContainer:"t1ExamPageHeaderContainer",
-    themeExamPageHeaderHeading:"t1ExamPageHeaderHeading",
-    themeTotalExamContainer:"t1TotalExamContainer",
+    themeExamPageHeaderMainContainer: "t1ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer: "t1ExamPageHeaderContainer",
+    themeExamPageHeaderHeading: "t1ExamPageHeaderHeading",
+    themeTotalExamContainer: "t1TotalExamContainer",
 
 
-    themeExamInfoMainContainer:"t1ExamInfoMainContainer",
-    themeExamInfoBtnsContainer:"t1ExamInfoBtnsContainer",
-    themeExamInfoSubContainer:"t1ExamInfoSubContainer",
-    themeExamInfoBtns:"t1ExamInfoBtns",
-    themeExamInfoDivs:"t1ExamInfoDivs",
-    themeExamInfoToggles:"t1ExamInfoToggles",
-    themeToggles:"t1Toggles",
-themeUgHomePageFirstContainer:"t1UgHomePageFirstContainer",
+    themeExamInfoMainContainer: "t1ExamInfoMainContainer",
+    themeExamInfoBtnsContainer: "t1ExamInfoBtnsContainer",
+    themeExamInfoSubContainer: "t1ExamInfoSubContainer",
+    themeExamInfoBtns: "t1ExamInfoBtns",
+    themeExamInfoDivs: "t1ExamInfoDivs",
+    themeExamInfoToggles: "t1ExamInfoToggles",
+    themeToggles: "t1Toggles",
+    themeUgHomePageFirstContainer: "t1UgHomePageFirstContainer",
+
+
+    themeExamCoursesContainer:"t1ExamCoursesContainer",
+    themeExamCoursesSubContainer:"t1ExamCoursesSubContainer",
+    themeExamCoursesNameHeading:"t1ExamCoursesNameHeading",
+    themePortalNames:"t1PortalNames",
+    themeExamPortalBtn:"t1ExamPortalBtn",
+
+
+
+   
 
   },
 
@@ -241,10 +283,10 @@ themeUgHomePageFirstContainer:"t1UgHomePageFirstContainer",
     themeUgExploreExamsSection: "t2UgExploreExamsSection",
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
 
-    themeExamPageHeaderMainContainer:"t2ExamPageHeaderMainContainer",
-    themeExamPageHeaderContainer:"t2ExamPageHeaderContainer",
-    themeExamPageHeaderHeading:"t2ExamPageHeaderHeading",
-    themeTotalExamContainer:"t2TotalExamContainer",
+    themeExamPageHeaderMainContainer: "t2ExamPageHeaderMainContainer",
+    themeExamPageHeaderContainer: "t2ExamPageHeaderContainer",
+    themeExamPageHeaderHeading: "t2ExamPageHeaderHeading",
+    themeTotalExamContainer: "t2TotalExamContainer",
     // our courses container
     themeOurCoursesContainer: "t2OurCoursesContainer",
     themeCoursesHeadding: "t2CoursesHeadding",
@@ -257,10 +299,10 @@ themeUgHomePageFirstContainer:"t1UgHomePageFirstContainer",
     themeFeatures: "t2Features",
     themeFeatureImgC: "t2FeatureImgC",
     themeCourseName: "t2CourseName",
-    themeFeaturesSecondContainer:"t2FeaturesSecondContainer",
-    themeFeaturesToBeRow:"t2FeaturesToBeRow",
-    themeArrowWithFeatures:"t2ArrowWithFeatures",
-themeUgHomePageFirstContainer:"t2UgHomePageFirstContainer",
+    themeFeaturesSecondContainer: "t2FeaturesSecondContainer",
+    themeFeaturesToBeRow: "t2FeaturesToBeRow",
+    themeArrowWithFeatures: "t2ArrowWithFeatures",
+    themeUgHomePageFirstContainer: "t2UgHomePageFirstContainer",
 
   },
 };

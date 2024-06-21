@@ -151,8 +151,6 @@ const ExploreExamEdit = ({ type }) => {
           </ul>
         </div>
         )}
-       
-  
   </div>
   )
 }

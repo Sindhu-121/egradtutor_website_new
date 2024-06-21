@@ -1,0 +1,388 @@
+.ug_quizheader {
+  display: flex;
+  /* background: #000; */
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.ug_quizheader .logo {
+  background: #ffffff;
+}
+
+.ug_quizheader a {
+  color: #000;
+  &:hover {
+    color: #000;
+  }
+}
+.ug_quizheader .uglogin_btn {
+  width: 100px;
+}
+
+.ug_quizheader .uglogin_btn a {
+  color: #fff;
+}
+.ug_logincontainer {
+  /* background: #d30707; */
+  width: 100%;
+  height: 100vh;
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ug_logincontainer_box {
+  width: 350px;
+  /* height: 70vh; */
+  /* border: 1px solid red; */
+  /* background: #0000000c; */
+  /* background: #279eff57; */
+
+  border-radius: 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+}
+
+.ug_logincontainer_box .ug_logincontainer_box_subbox {
+  /* display: grid; */
+  /* grid-template-columns: repeat(auto-fill, minmax(50px,1fr));  */
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginlogo_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loginlogo_img img {
+  width: 100px;
+  height: auto;
+  border-radius: 10%;
+}
+
+.ug_logincontainer_box h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin: 0rem auto;
+  margin-bottom: 1rem;
+  /* color: #00000079; */
+}
+
+.ug_logincontainer_box form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.ug_logincontainer_box form label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1rem;
+  /* border: 2px solid red; */
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid #1110109d;
+}
+
+.ug_logincontainer_box form input {
+  /* background: #e6e6e6; */
+  width: 100%;
+  height: 40px;
+  padding: 0.5rem;
+  background: none;
+  font-size: 1rem;
+  /* border: 1px solid #e6e6e6 ; */
+  border-radius: 18px;
+  outline: none;
+  color: #242121;
+}
+.ug_logincontainer_box form input[type="file"] {
+  font-size: 0.8rem;
+}
+.ug_logincontainer_box form button {
+  /* background: #000; */
+  background: #2f2467;
+
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  width: 150px;
+  text-align: center;
+  margin: 1rem auto;
+
+  &:hover {
+    background: #279eff;
+  }
+}
+
+.login_from_continer p {
+  display: flex;
+  /* justify-content: space-around; */
+  font-size: 1rem;
+  gap: 2rem;
+}
+
+.login_from_continer a {
+  color: #2f2467;
+  padding: 0 0.5rem;
+  /* border-bottom: 2px solid #2f2467; */
+
+  &:hover {
+    color: #2f00ff;
+    font-weight: 500;
+    /* border-bottom: 0.5px solid #2f00ff; */
+  }
+}
+@media (max-width: 950px) {
+  .ug_logincontainer {
+    transform: scale(0.9);
+  }
+
+  .ug_logincontainer_box .ug_logincontainer_box_subbox {
+    gap: 0;
+  }
+  .ug_logincontainer_box {
+    /* width: 80%; */
+    /* height: 50vh; */
+    padding: 0.5rem;
+  }
+
+  .ug_logincontainer_box h2 {
+    font-size: 1.5rem;
+    margin: 0.5rem auto;
+  }
+
+  .ug_logincontainer_box form label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.5rem;
+    /* border: 2px solid red; */
+    width: 100%;
+    margin: 0 auto;
+    border-bottom: 1px solid #1110109d;
+  }
+
+  .login_from_continer p {
+    margin: 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+.login_from_continer p {
+  font-size: 0.75rem;
+}
+.login_from_continer a {
+  font-size: 0.75rem;
+}
+
+@media (max-width: 600px) {
+  .ug_logincontainer {
+    height: 80vh;
+  }
+  .ug_logincontainer_box {
+    width: 300px;
+  }
+  .ug_logincontainer_box h2 {
+    font-size: 1rem;
+  }
+  .loginlogo_img img {
+    width: 50px;
+  }
+  .ug_logincontainer_box form button {
+    font-size: 0.8rem;
+    margin: 0;
+  }
+  .login_from_continer p {
+    font-size: 0.75rem;
+  }
+  .login_from_continer a {
+    font-size: 0.75rem;
+  }
+  .ug_logincontainer_box form input {
+    font-size: 0.5rem;
+    padding: 0;
+    width: 100%;
+  }
+}
+/* ------------------------------------------ register page -------------------------- */
+.student_regiterfrom {
+  border: 1px solid red;
+  text-align: center;
+}
+.student_regiterfrom h1 {
+  background: #96aad0;
+  color: white;
+  font-size: 25px;
+  padding: 5px;
+  text-align: left;
+}
+.strbox {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(450px, 800px));
+  justify-content: center;
+  align-items: start;
+  gap: 1rem;
+  text-align: left;
+}
+.strs {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0.5rem;
+  height: 100%;
+}
+.strbox > :last-child {
+  grid-column-end: span 2; /* Makes the last child span two columns */
+}
+.strs_5 > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 500px));
+  justify-content: space-evenly;
+  align-items: center;
+  justify-content: center;
+}
+.box_content {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 380px));
+  align-items: center;
+}
+
+.box_content_radio {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.box_content input[type="text"],
+.box_content input[type="email"],
+.box_content input[type="number"],
+.box_content input[type="date"],
+.box_content input[type="time"] {
+  width: 100%;
+  padding: 6px;
+  border: none;
+  box-shadow: 1px 4px 11px 0px #1a374d;
+  /* border: 1px solid red; */
+}
+.inputContent_from_radio {
+  display: flex;
+  gap: 1rem;
+}
+.box_contentIMG input[type="file"] {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 1rem;
+  /* padding: 6px; */
+  border: none;
+  box-shadow: 1px 4px 11px 0px #1a374d;
+  /* border: 1px solid red; */
+}
+.box_contentIMG {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .strs {
+    width: 90%;
+    margin: 0 auto;
+    padding: 10px;
+  }
+  .strbox > :last-child {
+    grid-column-end: span 1; /* Makes the last child span two columns */
+  }
+  .strbox {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+
+  .strs_5 > div {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+
+  .box_content {
+    grid-template-columns: 1fr; /* Change to a single column layout */
+  }
+}
+
+.logout {
+  background: #000000;
+  width: 100%;
+  height: 100vh;
+  /* color: #fff; */
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: url(../egate\ logo\ 1.png) no-repeat; */
+  background-size: 80%;
+  background-position: center;
+
+  .logout-conatiner {
+    position: absolute;
+    min-width: 280px;
+    max-width: 500px;
+    min-height: 200px;
+    max-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px #000;
+    padding: 0.5rem;
+    border-radius: 12px;
+    /* top: 0;
+    left: 0;
+    transform: translate(50%,50%); */
+    background: #ffffff;
+    p {
+      font-size: 1.5rem;
+      font-weight: 400;
+    }
+    > div {
+      display: flex;
+      font-size: 3rem;
+      gap: 1rem;
+      margin-top: 3rem;
+      button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50px;
+        color: #fff;
+        background: #00bf8e;
+      }
+    }
+  }
+}
+
+.logout::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+}

@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({extended:false}));
 
 const Logo = require("./EgradTutorWebsite/Logo");
 app.use("/Logo", Logo);
@@ -59,17 +59,8 @@ app.use("/AboutUs", AboutUs);
 const AboutUsEdit = require("./EgradTutorWebsite/AboutUs/AboutUsEdit");
 app.use("/AboutUsEdit", AboutUsEdit);
 
-const themesSection = require("./ThemesAPIs/ThemesAPIs");
-app.use("/themesSection", themesSection);
-
-const QuizPage = require("./EgradTutorAdmin/OTS_QuizApp/QuizPage");
-app.use("/QuizPage", QuizPage);
-
-const TestResultPage = require("./EgradTutorAdmin/OTS_QuizApp/TestResultPage");
-app.use("/TestResultPage", TestResultPage);
-
-const TestPage = require("./EgradTutorAdmin/OTS_QuizApp/TestPage");
-app.use("/TestPage", TestPage);
+const themesSection=require('./ThemesAPIs/ThemesAPIs')
+app.use('/themesSection',themesSection);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

@@ -5,16 +5,17 @@ import BHBanners from "./BranchHomeBanners/BHBanners"
 import ExploreExam from './BHPExploreExams/ExploreExam'
 import OurCourses from './OurCourses/OurCourses'
 import Footer from '../Footer/Footer'
+import FooterEdit from '../Footer/FooterEdit'
 const BranchHomePage = () => {
   return (
     <div>
-      header 
       <BHPHeading />
       <BHPNavBar />
       <BHBanners />
       <ExploreExam />
       <OurCourses />
       <Footer />
+      <FooterEdit/>
     </div>
   )
 }
