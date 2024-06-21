@@ -296,7 +296,7 @@ const JSONClasses = {
     themeExamButtonsBox: "Exams_container",
     themeUgAndPgButtons: "ugAndPgButtonsDefault",
     ThemeExamADD_EDIT_Buttons: "ThemeExamADD_EDIT_ButtonsDefault",
- 
+
     // UG_HOME_PAGE_HEADER_CLASSESS
     themeUgHomePageFirstContainer: "defaultUgHomePageFirstContainer",
     themeUgHomeContainer: "themeUgHomeContainerDefault",
@@ -304,8 +304,7 @@ const JSONClasses = {
     themeUgHeaderContainer: "themeUgHeaderContainerDefault",
     themeUgHeaderLogoImg: "themeUgHeaderLogoImgDefault",
     themeUgDivLinksOfHeader: "themeUgDivLinksOfHeaderDefault",
- 
- 
+
     // UG_HOME_PAGE_NAVBAR_CLASSES
     themeUgHeader: "themeUgHeaderDefault",
     themeUgHContainer: "themeUgHContainerDefault",
@@ -313,7 +312,7 @@ const JSONClasses = {
     themeUgHeaderUl: "themeUgHeaderUlDefault",
     themeUgHeaderLi: "themeUgHeaderLiDefault",
     themeMarqData: "themeMarqDataDefault",
- 
+
     // OUR_COURSES_CLASSES
     themeOurCoursesContainer: "themeOurCoursesContainerDefault",
     themeCoursesHeadding: "themeCoursesHeaddingDefault",
@@ -326,38 +325,39 @@ const JSONClasses = {
     themeFeatures: "themeFeaturesDefault",
     themeFeatureImgC: "themeFeatureImgCDefault",
     PortalName_ImageContainer: "PortalName_ImageContainerDefault",
- 
- 
- 
-// EXPLORE EXAMS CLASSES
-themeExploreExamsMainContainer:"themeExploreExamsMainContainerDefault",
-themeExploreExamsSubContainer:"themeExploreExamsSubContainerDefault",
-themeNewExploreExams_ExamCard_MainContainer:"NewExploreExams_ExamCard_ContainerDefault",
-themeNewExploreExams_ExamCard_Container:"NewExploreExams_ExamCard_ContainerDefault",
-themeNewExploreExams_ExamName_Container:"NewExploreExams_ExamName_ContainerDefault",
-themeNewExploreExams_PortalNames_Container:"NewExploreExams_PortalNames_ContainerDefault",
-NewExploreExams_Image_Container:"NewExploreExams_Image_ContainerDefault",
-themeNewExploreExams_EachCard_Container:"NewExploreExams_EachCard_Container",
- 
-// OUR COURSES CLASSES //
- 
-themeOurCoursesContainer:"themeOurCoursesContainerDefault",
-themeCoursesHeadding:"themeCoursesHeaddingDefault",
-themeCoursesSubContainer:"themeCoursesSubContainerDefault",
-themeCoursesUl:"themeCoursesUlDefault",
-themeCourseLi:"themeCourseLiDefault",
-themeCourseName:"themeCourseNameDefault",
- 
-themePortalName:"themePortalNameDefault",
-themeFeaturesSecondContainer:"themeFeaturesSecondContainerDefault",
-themeFeatureImgC:"themeFeatureImgCDefault",
-themeFeaturesContainer:"themeFeaturesContainerDefault",
-themeArrowWithFeatures:"themeArrowWithFeaturesDefault",
-themeFeatures:"themeFeaturesDefault",
-themeExamsNames:"themeExamsNamesDefault",
- 
- 
- 
+
+    // EXPLORE EXAMS CLASSES
+    themeExploreExamsMainContainer: "themeExploreExamsMainContainerDefault",
+    themeExploreExamsSubContainer: "themeExploreExamsSubContainerDefault",
+    themeNewExploreExams_ExamCard_MainContainer:
+      "NewExploreExams_ExamCard_ContainerDefault",
+    themeNewExploreExams_ExamCard_Container:
+      "NewExploreExams_ExamCard_ContainerDefault",
+    themeNewExploreExams_ExamName_Container:
+      "NewExploreExams_ExamName_ContainerDefault",
+    themeNewExploreExams_PortalNames_Container:
+      "NewExploreExams_PortalNames_ContainerDefault",
+    NewExploreExams_Image_Container: "NewExploreExams_Image_ContainerDefault",
+    themeNewExploreExams_EachCard_Container:
+      "NewExploreExams_EachCard_Container",
+
+    // OUR COURSES CLASSES //
+
+    themeOurCoursesContainer: "themeOurCoursesContainerDefault",
+    themeCoursesHeadding: "themeCoursesHeaddingDefault",
+    themeCoursesSubContainer: "themeCoursesSubContainerDefault",
+    themeCoursesUl: "themeCoursesUlDefault",
+    themeCourseLi: "themeCourseLiDefault",
+    themeCourseName: "themeCourseNameDefault",
+
+    themePortalName: "themePortalNameDefault",
+    themeFeaturesSecondContainer: "themeFeaturesSecondContainerDefault",
+    themeFeatureImgC: "themeFeatureImgCDefault",
+    themeFeaturesContainer: "themeFeaturesContainerDefault",
+    themeArrowWithFeatures: "themeArrowWithFeaturesDefault",
+    themeFeatures: "themeFeaturesDefault",
+    themeExamsNames: "themeExamsNamesDefault",
+
     //About Us div class
     themeAboutuscontainer: "container",
     // themeLogoImgC: "Ug_header_Container",
@@ -371,9 +371,9 @@ themeExamsNames:"themeExamsNamesDefault",
     themeAboutusmaindivinfo: "info_out",
     themeAboutusinfobox: "info-box",
     themeAboutusprofileimg: "profile-img",
- 
+
     // Div structure fromate for footer section //
- 
+
     ThemeFooterMainContainer: "ThemeFooterMainContainerDefault",
     ThemeFooterSubContainer: "ThemeFooterSubContainerDefault",
     ThemeFooterSubContainerFirstPart: "ThemeFooterSubContainerFirstPartDefault",
@@ -393,14 +393,14 @@ themeExamsNames:"themeExamsNamesDefault",
     themeCoursesHeadding: "defaultCoursesHeadding",
     themeCoursesSubContainer: "defaultCoursesSubContainer",
     themeCoursesUl: "defaultCoursesUl",
-    themeCourseLi:"defaultCourseLi",
-    themePortalName:"defaultPortalName",
-    themeExamsNames:"defaultExamsNames",
-    themeCFeatures:"defaultCFeatures",
-    themeFeaturesContainer:"defaultFeaturesContainer",
-    themeFeatures:"defaultFeatures",
-    themeFeatureImgC:"defaultFeatureImgC",
-    themeCoursesBoxContainer:"themeCoursesBoxContainerDefault",
+    themeCourseLi: "defaultCourseLi",
+    themePortalName: "defaultPortalName",
+    themeExamsNames: "defaultExamsNames",
+    themeCFeatures: "defaultCFeatures",
+    themeFeaturesContainer: "defaultFeaturesContainer",
+    themeFeatures: "defaultFeatures",
+    themeFeatureImgC: "defaultFeatureImgC",
+    themeCoursesBoxContainer: "themeCoursesBoxContainerDefault",
     themeCourseLi: "defaultCourseLi",
     themePortalName: "defaultPortalName",
     themeExamsNames: "defaultExamsNames",
@@ -411,13 +411,13 @@ themeExamsNames:"themeExamsNamesDefault",
     themeCourseName: "defaultCourseName",
     themeFeaturesSecondContainer: "defaultFeaturesSecondContainer",
     themeFeaturesToBeRow: "defaultFeaturesToBeRow",
- 
+
     // End //
- 
+
     themeExamPageHeaderMainContainer: "themeExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "themeExamPageHeaderContainer",
     themeExamPageHeaderHeading: "themeExamPageHeaderHeading",
-    themeTotalExamContainer: "themeTotalExamContainer"
+    themeTotalExamContainer: "themeTotalExamContainer",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -437,7 +437,7 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamImageBox: "t1ExamImageBox",
     themeLanding_branch_box_btns: "t1Landing_branch_box_btns",
     themeLanding_branch_box_li_buttons: "t1Landing_branch_box_li_buttons",
- 
+
     themeAboutuscontainer: "t1container",
     themeLogoImgC: "Ug_header_Container",
     themeLogoImg: "Ug_header_logoIMG",
@@ -451,7 +451,7 @@ themeExamsNames:"themeExamsNamesDefault",
     themeAboutusinfobox: "t1info-box",
     themeAboutusprofileimg: "t1profile-img",
     themeUgAndPgButtons: "t1UgAndPgButtons",
- 
+
     // footer classes added by shiva
     ThemeFooterMainContainer: "t1FooterMainContainer",
     ThemeFooterSubContainer: "t1FooterSubContainer",
@@ -465,7 +465,7 @@ themeExamsNames:"themeExamsNamesDefault",
       "t1FooterSubContainerSecondtPartContactUsData",
     ThemeFooterSubContainerCopywriteData: "t1FooterSubContainerCopywriteData",
     ThemeFooterHorizantalLine: "t1FooterHorizantalLine",
- 
+
     themeUgHeaderLi: "t1UgHeaderLi",
     themeUgHomeContainer: "t1UgHomeContainer",
     themeUgHeaderSec: "t1UgHeaderSec",
@@ -495,13 +495,11 @@ themeExamsNames:"themeExamsNamesDefault",
     themeCourseName: "t1CourseName",
     themeFeaturesSecondContainer: "t1FeaturesSecondContainer",
     themeFeaturesToBeRow: "t1FeaturesToBeRow",
- 
     themeExamPageHeaderMainContainer: "t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading: "t1ExamPageHeaderHeading",
     themeTotalExamContainer: "t1TotalExamContainer",
- 
- 
+
     themeExamInfoMainContainer: "t1ExamInfoMainContainer",
     themeExamInfoBtnsContainer: "t1ExamInfoBtnsContainer",
     themeExamInfoSubContainer: "t1ExamInfoSubContainer",
@@ -510,25 +508,27 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamInfoToggles: "t1ExamInfoToggles",
     themeToggles: "t1Toggles",
     themeUgHomePageFirstContainer: "t1UgHomePageFirstContainer",
- 
- 
-    themeExamCoursesContainer:"t1ExamCoursesContainer",
-    themeExamCoursesSubContainer:"t1ExamCoursesSubContainer",
-    themeExamCoursesNameHeading:"t1ExamCoursesNameHeading",
-    themePortalNames:"t1PortalNames",
-    themeExamPortalBtn:"t1ExamPortalBtn",
 
+    themeExamCoursesContainer: "t1ExamCoursesContainer",
+    themeExamCoursesSubContainer: "t1ExamCoursesSubContainer",
+    themeExamCoursesNameHeading: "t1ExamCoursesNameHeading",
+    themePortalNames: "t1PortalNames",
+    themeExamPortalBtn: "t1ExamPortalBtn",
 
-    themeExploreExamsMainContainer:"t1ExploreExamsMainContainer",
-    themeExploreExamsSubContainer:"t1ExploreExamsSubContainer",
-    themeNewExploreExams_ExamCard_MainContainer:"t1NewExploreExams_ExamCard_Container",
-    themeNewExploreExams_ExamCard_Container:"t1NewExploreExams_ExamCard_Container",
-    themeNewExploreExams_ExamName_Container:"t1NewExploreExams_ExamName_Container",
-    themeNewExploreExams_PortalNames_Container:"t1NewExploreExams_PortalNames_Container",
-    themeNewExploreExams_Image:"t1NewExploreExams_Image_Container",
-    themeNewExploreExams_EachCard_Container:"t1NewExploreExams_EachCard_Container",
-   
- 
+    // EXPLORE EXAM CLASSES
+    themeExploreExamsMainContainer: "t1ExploreExamsMainContainer",
+    themeExploreExamsSubContainer: "t1ExploreExamsSubContainer",
+    themeNewExploreExams_ExamCard_MainContainer:
+      "t1NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamCard_Container:
+      "t1NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamName_Container:
+      "t1NewExploreExams_ExamName_Container",
+    themeNewExploreExams_PortalNames_Container:
+      "t1NewExploreExams_PortalNames_Container",
+    themeNewExploreExams_Image: "t1NewExploreExams_Image_Container",
+    themeNewExploreExams_EachCard_Container:
+      "t1NewExploreExams_EachCard_Container",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -563,7 +563,7 @@ themeExamsNames:"themeExamsNamesDefault",
     themeUgExploreExamsContainer: "t2UgExploreExamsContainer",
     themeUgExploreExamsSection: "t2UgExploreExamsSection",
     themeUgExploreExamsContent: "t2UgExploreExamsContent",
- 
+
     themeExamPageHeaderMainContainer: "t2ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "t2ExamPageHeaderContainer",
     themeExamPageHeaderHeading: "t2ExamPageHeaderHeading",
@@ -587,12 +587,23 @@ themeExamsNames:"themeExamsNamesDefault",
     themeArrowWithFeatures: "t2ArrowWithFeatures",
     themeUgHomePageFirstContainer: "t2UgHomePageFirstContainer",
     // missing classes
-    themeCoursePortalNameImageContainer:"t2CoursePortalNameImageContainer",
-    themeFeaturesHeading:"t2FeaturesHeading",
-    // Explore exams
-
-    
+    themeCoursePortalNameImageContainer: "t2CoursePortalNameImageContainer",
+    themeFeaturesHeading: "t2FeaturesHeading",
+    // EXPLORE EXAM CLASSES
+    themeExploreExamsMainContainer: "t2ExploreExamsMainContainer",
+    themeExploreExamsSubContainer: "t2ExploreExamsSubContainer",
+    themeNewExploreExams_ExamCard_MainContainer:
+      "t2NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamCard_Container:
+      "t2NewExploreExams_ExamCard_Container",
+    themeNewExploreExams_ExamName_Container:
+      "t2NewExploreExams_ExamName_Container",
+    themeNewExploreExams_PortalNames_Container:
+      "t2NewExploreExams_PortalNames_Container",
+    themeNewExploreExams_Image: "t2NewExploreExams_Image_Container",
+    themeNewExploreExams_EachCard_Container:
+      "t2NewExploreExams_EachCard_Container",
   },
 };
- 
+
 export default JSONClasses;

@@ -96,13 +96,26 @@ const OueCourses = () => {
 
                   
                   <div className={`${themeDetails.themeFeaturesContainer}`}>
-                    <h3>Features</h3>
-                    {feature.Features.map((item, index) => (
+                    <h3 className={`${themeDetails.themeFeaturesHeading}`}>Features</h3>
+                    {feature.Features.map((feature, index) => (
                       <div className={`${themeDetails.themeArrowWithFeatures}`}>
-                        <li key={index} className={`${themeDetails.themeFeatures}`}> {item}</li>
+                        {themeColor==='Theme-2' && 
+                       <div className='arrow'><TiTick/> </div>}
+                        <li key={index} className={`${themeDetails.themeFeatures}`}> {feature}</li>
                       </div>
                     ))}
                   </div>
+                  {/* {feature.Features.map((item, index) => (
+                    <h3 className={`${themeDetails.themeFeaturesHeading}`}>Features</h3>
+                    {feature.Features.map((feature, index) => (
+                      <div className={`${themeDetails.themeArrowWithFeatures}`}>
+                        <li key={index} className={`${themeDetails.themeFeatures}`}> {item}</li>
+                        {themeColor==='Theme-2' && 
+                       <div className='arrow'><TiTick/> </div>
+                      }
+                        <li key={index} className={`${themeDetails.themeFeatures}`}> {feature}</li>
+                      </div>
+                    ))} */}
 
                   <div className={`${themeDetails.themeExamsNames}`}>
                     {feature.EntranceExams_name.map((item, index) => (
