@@ -1,4 +1,4 @@
-.NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
+/* .NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
     background-color: red;
 }
 .NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
@@ -6,10 +6,74 @@
     align-items: center;
     justify-content: space-evenly;
 }
+
+.NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container {
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+li.t2LinkToSpecificExam {
+    position: absolute;
+    top: 32%;
+    left: -18%;
+    height: 72px;
+    width: 154px;
+    background-color: green;
+}
+
+li.t2LinkToSpecificExam a {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
 .NewExploreExams_ExamCard_Container.t2NewExploreExams_ExamCard_Container {
     display: flex;
     align-items: center;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
+    gap: 1rem 4rem;
+    padding: 0 4rem;
+} */
+/* secod card design */
+.NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.NewExploreExams_ExamCard_Container.t2NewExploreExams_ExamCard_Container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+    gap: 2rem 0;
+}
+.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container ul {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-evenly;
+}
+.NewExploreExams_PortalNames_Container.t2NewExploreExams_PortalNames_Container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
+    /* background: #279eff69; */
+    /* background: #fff; */
+    /* border-radius: 13px; */
+    /* box-shadow: 0 0 5px rgba(0,0,0,.5); */
+    display: flex;
+    /* flex-direction: column; */
+    gap: .8rem;
+    height: 195px;
+    justify-content: center;
+    padding: 0rem;
+    text-align: center;
+    text-transform: capitalize;
+    width: 290px;
 }
