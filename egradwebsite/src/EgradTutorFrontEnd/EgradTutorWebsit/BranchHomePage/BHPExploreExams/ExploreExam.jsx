@@ -5,7 +5,7 @@ import ExploreExamEdit from './ExploreExamEdit'
 import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
- 
+import '../BranchHomeStyles/BranchHomePages.css'
 const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
@@ -90,9 +90,7 @@ const ExploreExam = () => {
  
           <div className={`NewExploreExams_Image ${themeDetails.themeNewExploreExams_Image}`}>
             {fetchedImage && (
- 
               <img src={fetchedImage} alt="Fetched from database" />
- 
             )}
  
           </div>

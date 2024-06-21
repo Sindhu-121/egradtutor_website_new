@@ -17,7 +17,7 @@ const Footer = () => {
 
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/Footer/landingfooterContentDataOne`)
+      .get(`${BASE_URL}/FooterPage/landingfooterContentDataOne`)
       .then((res) => {
         setDataOne(res.data);
       })
@@ -30,7 +30,7 @@ const Footer = () => {
     const fetchFooterData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/Footer/landingfooterContentDataTwo`
+          `${BASE_URL}/FooterPage/landingfooterContentDataTwo`
         );
         setDataTwo(response.data);
       } catch (error) {
@@ -45,7 +45,7 @@ const Footer = () => {
     const fetchFooterCopyWriteData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/Footer/landingfooterContentDataThree`
+          `${BASE_URL}/FooterPage/landingfooterContentDataThree`
         );
         setDataThree(response.data);
       } catch (error) {
@@ -62,13 +62,27 @@ const Footer = () => {
 
   const fetchFooterLinks = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/Footer/footerLinks`);
+      const response = await axios.get(`${BASE_URL}/FooterPage/footerLinks`);
       setFooterLinkData(response.data);
     } catch (error) {
       console.error("Error fetching footer links:", error);
     }
   };
 
+  useEffect(() => {
+    const fetchFooterCopyWriteData = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/FooterPage/landingfooterContentDataThree`
+        );
+        setDataThree(response.data);
+      } catch (error) {
+        console.error("Error fetching data from landing_copyright:", error);
+      }
+    };
+
+    fetchFooterCopyWriteData();
+  }, []);
   return (
     <div>
       <div>
