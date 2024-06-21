@@ -84,11 +84,6 @@ const JSONClasses = {
     themeCoursesUl: "defaultCoursesUl",
     themeCourseLi: "defaultCourseLi",
     themePortalName: "defaultPortalName",
-    themeFeaturesSecondContainer: "themeFeaturesSecondContainerDefault",
-    themeFeatureImgC: "themeFeatureImgCDefault",
-    themeFeaturesContainer: "themeFeaturesContainerDefault",
-    themeArrowWithFeatures: "themeArrowWithFeaturesDefault",
-    themeFeatures: "themeFeaturesDefault",
     themeExamsNames: "defaultExamsNames",
     themeCFeatures: "defaultCFeatures",
     themeFeaturesContainer: "defaultFeaturesContainer",
@@ -98,7 +93,7 @@ const JSONClasses = {
     themeCourseName: "defaultCourseName",
     themeFeaturesSecondContainer: "defaultFeaturesSecondContainer",
     themeFeaturesToBeRow: "defaultFeaturesToBeRow",
-
+    themeCoursePortalNameImageContainer:"themeCoursePortalNameImageContainerDefault",
     // End //
 
     themeExamPageHeaderMainContainer: "themeExamPageHeaderMainContainer",
