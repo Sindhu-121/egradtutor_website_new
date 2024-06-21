@@ -7,6 +7,8 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
+import '../BranchHomeStyles/BranchHomePages.css'
+
 const OueCourses = () => {
   const { Branch_Id } = useParams();
   const [showFeatureForm, setShowFeatureForm] = useState(false);
@@ -94,9 +96,10 @@ const OueCourses = () => {
 
                   
                   <div className={`${themeDetails.themeFeaturesContainer}`}>
+                    <h3>Features</h3>
                     {feature.Features.map((item, index) => (
                       <div className={`${themeDetails.themeArrowWithFeatures}`}>
-                        <div className='arrow'><TiTick /></div> <li key={index} className={`${themeDetails.themeFeatures}`}> {item}</li>
+                        <li key={index} className={`${themeDetails.themeFeatures}`}> {item}</li>
                       </div>
                     ))}
                   </div>
