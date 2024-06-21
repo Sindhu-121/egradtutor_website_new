@@ -36,6 +36,10 @@ li.t2LinkToSpecificExam a {
     padding: 0 4rem;
 } */
 /* secod card design */
+.NewExploreExams_ExamName_Container.t2NewExploreExams_ExamName_Container 
+ .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container {
+    width: 350px;
+}
 .NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
     display: flex;
     align-items: center;
@@ -56,11 +60,16 @@ li.t2LinkToSpecificExam a {
     padding: 0;
     justify-content: space-evenly;
 }
+
 .NewExploreExams_PortalNames_Container.t2NewExploreExams_PortalNames_Container {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    height: 177px;
+    padding: 39px;
+    background: rgb(247, 94, 94);
+    border-radius: 20px;
 }
 .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
     /* background: #279eff69; */
@@ -76,4 +85,25 @@ li.t2LinkToSpecificExam a {
     text-align: center;
     text-transform: capitalize;
     width: 290px;
+}
+@media screen and (max-width: 875px)  {
+    .NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        flex-direction: column-reverse;
+    }
+}
+.NewExploreExams_EachCard_Container ul li.t2LinkToSpecificExam a {
+    /* background: #3ad4ba; */
+    border-radius: 13px;
+    color: var(--bs-gray-dark);
+    font-family: Noto Sans Display,sans-serif;
+    /* font-size: 1.3rem; */
+    font-weight: 700;
+    /* padding: .3rem .5rem; */
+    text-decoration: none;
+    font-size: 18px;
+    padding: 0 10px;
+    background-color: unset;
 }
