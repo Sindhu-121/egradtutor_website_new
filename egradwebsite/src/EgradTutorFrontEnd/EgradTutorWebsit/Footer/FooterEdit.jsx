@@ -29,22 +29,244 @@ const FooterEdit = ({ type }) => {
     const [currentDocumentName, setCurrentDocumentName] = useState('');
     const [editLinkFileData, setEditLinkFileData] = useState("");
     const [dataTwo, setDataTwo] = useState([]);
- 
-    const [editItemId, setEditItemId] = useState(null);
-    const [editedItem, setEditedItem] = useState(null);
-    const [dataThree, setDataThree] = useState([]);
-    const [editItemIdThree, setEditItemIdThree] = useState(null);
-    const [editedItemThree, setEditedItemThree] = useState({
-        content_name: "",
-    });
-    const [editedValue, setEditedValue] = useState("");
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
- 
- 
- 
-    const handleEditClickPopupOne = (content_id, content) => {
-        setEditedItemIdOne(content_id);
-        setEditedItemOne({ content: content });
+
+
+  const [editItemId, setEditItemId] = useState(null);
+  const [editedItem, setEditedItem] = useState(null);
+  const [isCopyRightSectionVisible, setIsCopyRightSectionVisible] = useState(false);
+  const [dataThree, setDataThree] = useState([]);
+  const [editItemIdThree, setEditItemIdThree] = useState(null);
+  const [editedItemThree, setEditedItemThree] = useState({
+    content_name: "",
+  });
+  const [editedValue, setEditedValue] = useState("");
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+//Footer first part eGRADTtorData Start //
+  const handleEditClick = () => {
+    setFirstPopupVisible(!FirstPopupVisible); // Toggle the popup visibility
+  };
+
+  const handleEditClickPopupOne = (content_id, content) => {
+    setEditedItemIdOne(content_id);
+    setEditedItemOne({ content: content });
+  };
+
+  const handleDeleteItemOne = async (content_id) => {
+    try {
+      console.log("Deleting item with ID:", content_id);
+      const response = await axios.delete(
+        `${BASE_URL}/FooterPage/landingfooterContentDataOne/${content_id}`
+      );
+
+      console.log("Success:", response.data);
+      console.log("Item deleted");
+
+      setDataOne((prevData) =>
+        prevData.filter((dataItem) => dataItem.Content_id !== content_id)
+      );
+    } catch (error) {
+      console.error("Error deleting data:", error);
+    }
+  };
+  const handleExistingValueChangeOne = (e) => {
+    const newValue = e.target.value;
+    setEditedItemOne({ content: newValue });
+  };
+
+  const handleEditSaveOne = async (content_id, editedContent, setDataOne) => {
+    console.log(content_id);
+    console.log(editedContent);
+    try {
+      const response = await axios.put(
+        `${BASE_URL}/FooterPage/landingfooterContentDataTwoUpdate/${content_id}`,
+        { content_name: editedContent } // Ensure the correct field name is sent to the backend
+      );
+
+      console.log("Data updated successfully:", response.data);
+
+      setDataOne((prevData) =>
+        prevData.map((item) =>
+          item.content_id === content_id
+            ? {
+                ...item,
+                content: editedContent,
+              }
+            : item
+        )
+      );
+
+      setEditedItemIdOne(null);
+    } catch (error) {
+      console.error("Error updating data:", error);
+    }
+  };
+  
+  useEffect(() => {
+    axios
+      .get(`${BASE_URL}/FooterPage/landingfooterContentDataOne`)
+      .then((res) => {
+        setDataOne(res.data);
+      })
+      .catch((error) => {
+        console.error("Error fetching data from landing_page_one:", error);
+      });
+  }, []);
+
+  //Footer first part eGRADTtorData End //
+
+
+
+//     const handleEditClickPopupOne = (content_id, content) => {
+//         setEditedItemIdOne(content_id);
+//         setEditedItemOne({ content: content });
+
+//   const handleSubmitFooterLinks = async (e) => {
+//     e.preventDefault();
+//     try {
+//       const formDataWithFile = new FormData();
+//       if (file) {
+//         formDataWithFile.append("file", file);
+//         formDataWithFile.append("document_name", file.name);
+//       }
+//       formDataWithFile.append("Link_Item", formData.Link_Item);
+//       formDataWithFile.append("Link_Routing_Data", formData.Link_Routing_Data);
+
+//       const response = await axios.post(
+//         `${BASE_URL}/FooterPage/footerLinks`,
+//         formDataWithFile,
+//         {
+//           headers: {
+//             "Content-Type": "multipart/form-data",
+//           },
+//         }
+//       );
+//       console.log("Response:", response.data);
+
+//       // Show success message
+//       setShowSuccessMessage(true);
+
+//       // Reset form state or do any additional actions
+//     } catch (error) {
+//       console.error("Error submitting data:", error);
+//       // Handle error if needed
+//     }
+//   };
+
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleEditFileChange = (event) => {
+    const file = event.target.files[0];
+    setSelectedFile(file);
+    // Extract only the filename from the path
+    const fileName = event.target.value.split('\\').pop().split('/').pop(); // Handles both Windows and Unix paths
+    // setDocumentName(fileName); // Set the document name to display
+    setDocumentName(file ? file.name : '');
+  };
+
+
+  useEffect(() => {
+    fetchFooterLinks();
+  }, []);
+
+  const fetchFooterLinks = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/FooterPage/footerLinks`);
+      setFooterLinkData(response.data);
+    } catch (error) {
+      console.error("Error fetching footer links:", error);
+    }
+  };
+
+  const handleChangeLinkRoutingData = (e) =>
+    setEditedLinkRoutingData(e.target.value);
+
+  const handleSaveFooterItem = async (Link_Id) => {
+    console.log("document_name", documentName);
+    const formData = new FormData();
+    formData.append("Link_Item", editedLinkItem);
+    formData.append("Link_Routing_Data", editedLinkRoutingData);
+    formData.append("document_name", documentName);
+    if (selectedFile) {
+      formData.append("file", selectedFile);
+    }
+
+    try {
+      const response = await axios.put(
+        `${BASE_URL}/FooterPage/footerLinks/${Link_Id}`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+      console.log("Response:", response.data);
+
+      // Reset edit state
+      setEditFooterItemId(null);
+      setEditedLinkItem("");
+      setEditedLinkRoutingData("");
+      setSelectedFile(null);
+      setDocumentName("");
+      setCurrentDocumentName(''); // Clear current document name display if needed
+    } catch (error) {
+      console.error("Error updating data:", error);
+    }
+  };
+  const handleEditFooterItemClick = (
+    Link_Id,
+    Link_Item,
+    Link_Routing_Data,
+    footer_document_data,
+    document_name
+  ) => {
+    console.log(documentName);
+    setEditFooterItemId(Link_Id);
+    setEditedLinkItem(Link_Item);
+    setEditedLinkRoutingData(Link_Routing_Data);
+    setEditLinkFileData(footer_document_data);
+    setDocumentName(document_name);
+  };
+
+  const handleDeleteFooterItem = async (Link_Id) => {
+    console.log("Link_Id",Link_Id);
+    try {
+      const response = await axios.delete(
+        `${BASE_URL}/FooterPage/footerLinksDeleteData/${Link_Id}`
+      );
+      console.log("Response:", response.data);
+    } catch (error) {
+      console.error("Error deleting data:", error);
+    }
+  };
+
+
+  const toggleSectionVisibility = (section) => {
+    switch (section) {
+      case 'contactUs':
+        setIsContactUsSectionVisible(prevState => !prevState);
+        break;
+      case 'copyRight':
+        setIsCopyRightSectionVisible(prevState => !prevState);
+        break;
+      default:
+        break;
+    }
+  };
+  useEffect(() => {
+    const fetchFooterData = async () => {
+      try {
+        const response = await axios.get(
+          `${BASE_URL}/FooterPage/landingfooterContentDataTwo`
+        );
+        setDataTwo(response.data);
+      } catch (error) {
+        console.error("Error fetching data from landing_page_two:", error);
+      }
     };
  
     const handleDeleteItemOne = async (content_id) => {
