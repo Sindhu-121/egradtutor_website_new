@@ -1,0 +1,6 @@
+.NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
+    background-color: red;
+}
+.NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
+    display: flex;
+}
