@@ -314,7 +314,6 @@ const JSONClasses = {
     themeUgHeaderLi: "themeUgHeaderLiDefault",
     themeMarqData: "themeMarqDataDefault",
  
- 
     // OUR_COURSES_CLASSES
     themeOurCoursesContainer: "themeOurCoursesContainerDefault",
     themeCoursesHeadding: "themeCoursesHeaddingDefault",
@@ -590,6 +589,8 @@ themeExamsNames:"themeExamsNamesDefault",
     // missing classes
     themeCoursePortalNameImageContainer:"t2CoursePortalNameImageContainer",
     themeFeaturesHeading:"t2FeaturesHeading",
+    // Explore exams
+
     
   },
 };
