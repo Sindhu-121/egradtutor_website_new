@@ -6,7 +6,6 @@ import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import '../BranchHomeStyles/BranchHomePages.css'
-
 const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
