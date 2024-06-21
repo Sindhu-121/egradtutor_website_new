@@ -216,6 +216,10 @@ const JSONClasses = {
       themeLinkToSpecificExam:"t1LinkToSpecificExam",
       themeCoursePortalNameImageContainer: "t1CoursePortalNameImageContainer",
       themeFeaturesHeading: "t1FeaturesHeading",
+      themeArrowWithFeatures:"t1ArrowWithFeatures",
+    // themeFeatures: "t2Features",
+      
+
 
   },
   "Theme-2": {
