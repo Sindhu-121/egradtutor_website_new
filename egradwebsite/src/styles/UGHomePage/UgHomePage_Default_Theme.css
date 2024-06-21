@@ -342,3 +342,12 @@ li.defaultFeatures{
     width: 150px;
     font-size: 13px;
 }
+
+ul.defaultCoursesUl:hover {
+    background-color: white;
+    box-shadow: black 0 0 5px;
+    transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
+    height: 221px !important;
+}
