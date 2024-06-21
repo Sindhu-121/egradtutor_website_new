@@ -20,7 +20,7 @@
 //     themeExamButtonsBox: "Exams_container",
 //     themeUgAndPgButtons: "ugAndPgButtonsDefault",
 //     ThemeExamADD_EDIT_Buttons: "ThemeExamADD_EDIT_ButtonsDefault",
-
+ 
 //     // UG_HOME_PAGE_HEADER_CLASSESS
 //     themeUgHomePageFirstContainer: "defaultUgHomePageFirstContainer",
 //     themeUgHomeContainer: "themeUgHomeContainerDefault",
@@ -28,7 +28,7 @@
 //     themeUgHeaderContainer: "themeUgHeaderContainerDefault",
 //     themeUgHeaderLogoImg: "themeUgHeaderLogoImgDefault",
 //     themeUgDivLinksOfHeader: "themeUgDivLinksOfHeaderDefault",
-
+ 
 //     // UG_HOME_PAGE_NAVBAR_CLASSES
 //     themeUgHeader: "themeUgHeaderDefault",
 //     themeUgHContainer: "themeUgHContainerDefault",
@@ -36,7 +36,7 @@
 //     themeUgHeaderUl: "themeUgHeaderUlDefault",
 //     themeUgHeaderLi: "themeUgHeaderLiDefault",
 //     themeMarqData: "themeMarqDataDefault",
-
+ 
 //     // OUR_COURSES_CLASSES
 //     themeOurCoursesContainer: "themeOurCoursesContainerDefault",
 //     themeCoursesHeadding: "themeCoursesHeaddingDefault",
@@ -49,7 +49,7 @@
 //     themeFeatures: "themeFeaturesDefault",
 //     themeFeatureImgC: "themeFeatureImgCDefault",
 //     PortalName_ImageContainer: "PortalName_ImageContainerDefault",
-
+ 
 //     //About Us div class
 //     themeAboutuscontainer: "container",
 //     // themeLogoImgC: "Ug_header_Container",
@@ -63,9 +63,9 @@
 //     themeAboutusmaindivinfo: "info_out",
 //     themeAboutusinfobox: "info-box",
 //     themeAboutusprofileimg: "profile-img",
-
+ 
 //     // Div structure fromate for footer section //
-
+ 
 //     ThemeFooterMainContainer: "ThemeFooterMainContainerDefault",
 //     ThemeFooterSubContainer: "ThemeFooterSubContainerDefault",
 //     ThemeFooterSubContainerFirstPart: "ThemeFooterSubContainerFirstPartDefault",
@@ -103,9 +103,9 @@
 //     themeCourseName: "defaultCourseName",
 //     themeFeaturesSecondContainer: "defaultFeaturesSecondContainer",
 //     themeFeaturesToBeRow: "defaultFeaturesToBeRow",
-
+ 
 //     // End //
-
+ 
 //     themeExamPageHeaderMainContainer: "themeExamPageHeaderMainContainer",
 //     themeExamPageHeaderContainer: "themeExamPageHeaderContainer",
 //     themeExamPageHeaderHeading: "themeExamPageHeaderHeading",
@@ -129,7 +129,7 @@
 //     themeExamImageBox: "t1ExamImageBox",
 //     themeLanding_branch_box_btns: "t1Landing_branch_box_btns",
 //     themeLanding_branch_box_li_buttons: "t1Landing_branch_box_li_buttons",
-
+ 
 //     themeAboutuscontainer: "t1container",
 //     themeLogoImgC: "Ug_header_Container",
 //     themeLogoImg: "Ug_header_logoIMG",
@@ -143,7 +143,7 @@
 //     themeAboutusinfobox: "t1info-box",
 //     themeAboutusprofileimg: "t1profile-img",
 //     themeUgAndPgButtons: "t1UgAndPgButtons",
-
+ 
 //     // footer classes added by shiva
 //     ThemeFooterMainContainer: "t1FooterMainContainer",
 //     ThemeFooterSubContainer: "t1FooterSubContainer",
@@ -157,7 +157,7 @@
 //       "t1FooterSubContainerSecondtPartContactUsData",
 //     ThemeFooterSubContainerCopywriteData: "t1FooterSubContainerCopywriteData",
 //     ThemeFooterHorizantalLine: "t1FooterHorizantalLine",
-
+ 
 //     themeUgHeaderLi: "t1UgHeaderLi",
 //     themeUgHomeContainer: "t1UgHomeContainer",
 //     themeUgHeaderSec: "t1UgHeaderSec",
@@ -187,12 +187,12 @@
 //     themeCourseName: "t1CourseName",
 //     themeFeaturesSecondContainer: "t1FeaturesSecondContainer",
 //     themeFeaturesToBeRow: "t1FeaturesToBeRow",
-
+ 
 //     themeExamPageHeaderMainContainer: "t1ExamPageHeaderMainContainer",
 //     themeExamPageHeaderContainer: "t1ExamPageHeaderContainer",
 //     themeExamPageHeaderHeading: "t1ExamPageHeaderHeading",
 //     themeTotalExamContainer: "t1TotalExamContainer",
-
+ 
 //     themeExamInfoMainContainer: "t1ExamInfoMainContainer",
 //     themeExamInfoBtnsContainer: "t1ExamInfoBtnsContainer",
 //     themeExamInfoSubContainer: "t1ExamInfoSubContainer",
@@ -202,7 +202,7 @@
 //     themeToggles: "t1Toggles",
 //     themeUgHomePageFirstContainer: "t1UgHomePageFirstContainer",
 //   },
-
+ 
 //   "Theme-2": {
 //     id: "themeTwoId",
 //     themeHeaderColor: "t2HeaderColor",
@@ -236,7 +236,7 @@
 //     themeUgExploreExamsContainer: "t2UgExploreExamsContainer",
 //     themeUgExploreExamsSection: "t2UgExploreExamsSection",
 //     themeUgExploreExamsContent: "t2UgExploreExamsContent",
-
+ 
 //     themeExamPageHeaderMainContainer: "t2ExamPageHeaderMainContainer",
 //     themeExamPageHeaderContainer: "t2ExamPageHeaderContainer",
 //     themeExamPageHeaderHeading: "t2ExamPageHeaderHeading",
@@ -272,7 +272,7 @@
 //     themePortalNames:"themePortalNames"
 //   },
 // };
-
+ 
 // export default JSONClasses;
 const JSONClasses = {
   "Theme-default": {
@@ -518,8 +518,8 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamCoursesNameHeading:"t1ExamCoursesNameHeading",
     themePortalNames:"t1PortalNames",
     themeExamPortalBtn:"t1ExamPortalBtn",
-
-
+ 
+ 
     themeExploreExamsMainContainer:"t1ExploreExamsMainContainer",
     themeExploreExamsSubContainer:"t1ExploreExamsSubContainer",
     themeNewExploreExams_ExamCard_MainContainer:"t1NewExploreExams_ExamCard_Container",
@@ -571,7 +571,7 @@ themeExamsNames:"themeExamsNamesDefault",
     themeExamPageHeaderHeading: "t2ExamPageHeaderHeading",
     themeTotalExamContainer: "t2TotalExamContainer",
     themeLanding_branch_box_li_buttons: "t2Landing_branch_box_li_buttons",
-
+ 
     // our courses container
     themeOurCoursesContainer: "t2OurCoursesContainer",
     themeCoursesHeadding: "t2CoursesHeadding",
@@ -591,7 +591,7 @@ themeExamsNames:"themeExamsNamesDefault",
     // missing classes
     themeCoursePortalNameImageContainer:"t2CoursePortalNameImageContainer",
     themeFeaturesHeading:"t2FeaturesHeading",
-    
+ 
   },
 };
  
