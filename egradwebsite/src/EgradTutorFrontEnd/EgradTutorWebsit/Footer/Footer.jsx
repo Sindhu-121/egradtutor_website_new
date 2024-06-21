@@ -63,20 +63,6 @@ const Footer = () => {
     }
   };
 
-  useEffect(() => {
-    const fetchFooterCopyWriteData = async () => {
-      try {
-        const response = await axios.get(
-          `${BASE_URL}/FooterPage/landingfooterContentDataThree`
-        );
-        setDataThree(response.data);
-      } catch (error) {
-        console.error("Error fetching data from landing_copyright:", error);
-      }
-    };
-
-    fetchFooterCopyWriteData();
-  }, []);
   return (
     <div>
       <div>

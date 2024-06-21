@@ -20,8 +20,6 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage });
 
 
-
-
 router.delete("/landingfooterContentDataOne/:content_id", async (req, res) => {
     const { content_id } = req.params;
   
