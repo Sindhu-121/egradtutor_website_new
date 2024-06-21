@@ -58,12 +58,12 @@ font-size: 20px;
     margin: 1rem 0;
     padding: .5rem;
 }
-/* .t2OurCoursesContainer {
+.t2OurCoursesContainer {
     display: flex;
     align-items: center;
     justify-content: center;
 
-} */
+}
 .t2CoursesHeadding {
     width: 80%;
     margin: 0 auto;
@@ -76,11 +76,9 @@ font-size: 20px;
 li.t2CourseLi {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    flex-direction: row;
-    border: 1px solid black;
+    justify-content: center;
+    flex-direction: column;
     background-color: #e8ebf4;
-    margin: 2rem 0;
 }
 .t2ExamsNames {
     display: flex;
@@ -113,7 +111,7 @@ li.t2CourseLi {
     color: white;
 }
 .t2CoursesSubContainer {
-    /* border: 1px solid black; */
+    border: 1px solid black;
 }
 ul.t2CoursesUl {
     padding: 0;
@@ -121,23 +119,15 @@ ul.t2CoursesUl {
 }
 .t2FeatureImgC {
     /* height: 250px; */
-    width: 230px;
+    width: 250px;
 }
 .t2FeatureImgC img{
 width: 100%;
 }
 /* #e8ebf4 */
-.t2ExamsNames a {
-    background-color: transparent;
-    padding: 5px 5px;
-    margin: 10px 0;
-    color: black;
-    /* font-size: 12px; */
-    text-align: center;
-    font-weight: 600;
-    border-radius: 10px;
-    margin-right: .5rem;
-    text-decoration: none;
+.t2ExamsNames button{
+    background-color:transparent ;
+    /* color: white; */
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 .t2FeaturesContainer {
@@ -187,16 +177,8 @@ width: 100%;
 @media screen and (max-width: 1170px) {
     
     .t2CoursesHeadding {
-        width:96%;
+        width:100%;
         background-color: rgb(255, 255, 255);
-    }
-    .t2CourseName {
-        font-size: 17px;
-        background-color: #1f4c60;
-        margin: 1rem 0;
-        border-radius: 20px;
-        padding: 7px 25px;
-        color: white;
     }
 }
 @media screen and (max-width: 941px) {
@@ -236,112 +218,4 @@ width: 100%;
     .t2FeaturesContainer li {
         font-size: 10px;
     }
-}
-/* explore exam's styles */
-.t2EESubContainer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 5rem;
-    flex-wrap: wrap;
-}
-.t2EEParentContainer {
-    background-color: #e8ebf4;
-}
-.t2ExploreExamContainer {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    /* row-gap: 5rem;
-    column-gap: 7rem; */
-    /* margin: 2rem 0; */
-}
-.t2EEInMap {
-    background-color: rgba(162, 224, 195, 0.37);
-    padding: 2rem 5rem;
-    /* position: relative; */
-    display: flex;
-    /* align-items: center; */
-    justify-content: center;
-}
-li.t2EELi {
-    position: absolute;
-    top: 32%;
-    text-wrap: wrap;
-    left: -16%;
-    width: 159px;
-    text-align: center;
-    padding: 1rem 2rem;
-    background-color: green;
-}
-ul.t2EEUl {
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    flex-direction: column;
-    gap: 20px;
-    height:150px;
-    width: 300px;
-    flex-wrap: wrap;
-    background-color: red;
-    position: relative;
-}
-li.t2EELi a{
-color: white;
-}
-
-.t2PortalNames:first-child {
-    margin-left: 2rem;
-}
-/* 21-06-2024 */
-@media screen and (max-width: 768px){
-    .t2ExamsNames a {
-        background-color: transparent;
-        /* color: white; */
-        font-size: 12px;
-        text-align: center;
-        margin-right: .5rem;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    }
-}
-/* 660 */
-@media screen and (max-width: 616px){
-    li.t2CourseLi {
-        display: flex;
-        align-items: center;
-        justify-content: space-evenly;
-        flex-direction: column;
-        border: 1px solid black;
-        background-color: #e8ebf4;
-        margin: 2rem 0;
-    }
-    .t2FeaturesContainer {
-        width: 92%;
-        padding: 10px 20px;
-        color: white;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        gap: 1rem;
-    }
-    .t2ExamsNames {
-        display: flex;
-        flex-direction: row;
-        /* align-items: center; */
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 1rem;
-    }
-    .t2ExamsNames a {
-        background-color: transparent;
-        /* color: white; */
-        font-size: 12px;
-        /* width: 109px; */
-        padding: 13px;
-        text-align: center;
-        margin-right: .5rem;
-        box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-    }
-}
-.t2FeaturesHeading{
-    color: black;
 }
