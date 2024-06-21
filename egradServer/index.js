@@ -62,13 +62,6 @@ app.use("/AboutUsEdit", AboutUsEdit);
 const themesSection=require('./ThemesAPIs/ThemesAPIs')
 app.use('/themesSection',themesSection);
 
-const Footer = require("./EgradTutorWebsite/Footer/Footer");
-app.use("/Footer", Footer);
-
-const FooterEdit = require("./EgradTutorWebsite/Footer/FooterEdit");
-app.use("/FooterEdit", FooterEdit);
-
-
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

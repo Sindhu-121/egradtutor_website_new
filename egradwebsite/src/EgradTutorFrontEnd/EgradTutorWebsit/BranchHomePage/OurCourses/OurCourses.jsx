@@ -96,13 +96,10 @@ const OueCourses = () => {
 
                   
                   <div className={`${themeDetails.themeFeaturesContainer}`}>
-                    <h3 className={`${themeDetails.themeFeaturesHeading}`}>Features</h3>
-                    {feature.Features.map((feature, index) => (
+                    <h3>Features</h3>
+                    {feature.Features.map((item, index) => (
                       <div className={`${themeDetails.themeArrowWithFeatures}`}>
-                        {themeColor==='Theme-2' && 
-                       <div className='arrow'><TiTick/> </div>
-                      }
-                        <li key={index} className={`${themeDetails.themeFeatures}`}> {feature}</li>
+                        <li key={index} className={`${themeDetails.themeFeatures}`}> {item}</li>
                       </div>
                     ))}
                   </div>

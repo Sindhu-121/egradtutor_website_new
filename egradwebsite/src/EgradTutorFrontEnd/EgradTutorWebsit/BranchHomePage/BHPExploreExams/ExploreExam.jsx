@@ -12,17 +12,6 @@ const ExploreExam = () => {
   const [portalesData, setPortalesData] = useState([]);
   const [branch, setBranch] = useState(null);
   const themeFromContext = useContext(ThemeContext);
-  const refreshChannel = new BroadcastChannel("refresh_channel");
-  // Listen for messages from other pages
-  refreshChannel.onmessage = function (event) {
-    if (event.data === "refresh_page") {
-      window.location.reload(); // Reload the page
-    }
-  };
-  const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss")
-  const themeDetails = JSONClasses[themeColor] || []
-  console.log(themeDetails, "mapppping from json....")
   useEffect(() => {
     fetchBranchData();
     fetchImage();
@@ -59,44 +48,58 @@ const ExploreExam = () => {
     }
   };
  
+ 
+  const themeColor = themeFromContext[0]?.current_theme;
+  console.log(themeColor, "this is the theme json classesssssss")
+  const themeDetails = JSONClasses[themeColor] || []
+  console.log(themeDetails, "mapppping from json....")
   return (
-    <div>
-      <ExploreExamEdit />
-      <div className={`${themeDetails.themeEEParentContainer}`} >
-        <div className={`${themeDetails.themeEESubContainer}`}>
-          <div className={`${themeDetails.themeEntranceExamsContainer}`}>
-            <div className={`${themeDetails.themeExploreExamContainer}`}>
-              {branch &&
-                branch.EntranceExams.map((exam, index) => (
-                  <div className={`${themeDetails.themeEEInMap}`}>
-                    <ul key={index} className={`${themeDetails.themeEEUl}`}>
-                      <li className={`${themeDetails.themeEELi}`}>
-                        <Link className={`${themeDetails.themeEELink}`}
-                          to={`/ExamHomePage/${exam.EntranceExams_Id}`}
-                        >
-                          {exam.EntranceExams_name}
-                        </Link>
-                      </li>
-                      <div className={`${themeDetails.themePortalNames}`}>
-                        {exam.Portale_Names &&
-                          exam.Portale_Names.map((portaleName, index) => (
-                              <li key={index} className={`${themeDetails.themeEEPortalLi}`}>{portaleName}</li>
-                          ))}
-                      </div>
-                    </ul>
+    <div className={`NewExploreExams_Main_Container ${themeDetails.themeExploreExamsMainContainer}`}>
+      <h2 id="EXPLORE_Exam_Heading">EXPLORE EXAMS</h2>
+      <div className={`NewExploreExams_Sub_Container ${themeDetails.themeExploreExamsSubContainer}`}>
+ 
+ 
+        <div className={`NewExploreExams_ExamCard_MainContainer ${themeDetails.themeNewExploreExams_ExamCard_MainContainer}`}>
+        <div className={`NewExploreExams_ExamCard_Container ${themeDetails.themeNewExploreExams_ExamCard_Container}`}>
+            {branch &&
+              branch.EntranceExams.map((exam, index) => (
+                <div className={`NewExploreExams_ExamName_Container ${themeDetails.themeNewExploreExams_ExamName_Container}`}>
+ 
+                  <div className={`NewExploreExams_EachCard_Container ${themeDetails.themeNewExploreExams_EachCard_Container}`}>
+                  <ul key={index}>
+                    <li>
+                      <Link
+                        to={`/ExamPages_main/${exam.EntranceExams_Id}`}
+                      >
+                        {exam.EntranceExams_name}
+                      </Link>
+                    </li>
+                    <div className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`} >
+                      {exam.Portale_Names &&
+                        exam.Portale_Names.map((portaleName, index) => (
+                          <li key={index}>{portaleName}</li>
+                        ))}
+                    </div>
+ 
+                  </ul>
                   </div>
-                ))}
-            </div>
+                </div>
+              ))}
           </div>
-          <div>
+ 
+ 
+          <div className={`NewExploreExams_Image ${themeDetails.themeNewExploreExams_Image}`}>
             {fetchedImage && (
-              <div className={`${themeDetails.themeEEBGImage}`}>
-                <img src={fetchedImage} alt="Fetched from database" />
-              </div>
+              <img src={fetchedImage} alt="Fetched from database" />
             )}
+ 
           </div>
+ 
+ 
+ 
         </div>
       </div>
+      <ExploreExamEdit />
     </div>
   )
 }
