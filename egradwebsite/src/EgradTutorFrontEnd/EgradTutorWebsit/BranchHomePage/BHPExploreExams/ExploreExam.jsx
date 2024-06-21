@@ -5,7 +5,8 @@ import ExploreExamEdit from './ExploreExamEdit'
 import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
-import '../BranchHomeStyles/BranchHomePages.css'
+import '../BranchHomeStyles/BranchHomePages.css';
+import '../BranchHomeStyles/Theme2BranchHomePage.css'
 const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
