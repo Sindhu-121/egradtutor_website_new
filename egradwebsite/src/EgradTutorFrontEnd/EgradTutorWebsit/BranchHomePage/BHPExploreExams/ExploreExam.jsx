@@ -47,7 +47,7 @@ const ExploreExam = () => {
       );
       const data = response.data;
       const portalesData = responsePortales.data;
-
+ 
       const foundBranch = data.find(
         (branch) => branch.Branch_Id === parseInt(Branch_Id)
       );
@@ -57,6 +57,7 @@ const ExploreExam = () => {
       console.error("Error fetching branch data:", error);
     }
   };
+ 
   return (
     <div>
       <ExploreExamEdit />
@@ -98,5 +99,5 @@ const ExploreExam = () => {
     </div>
   )
 }
-
+ 
 export default ExploreExam

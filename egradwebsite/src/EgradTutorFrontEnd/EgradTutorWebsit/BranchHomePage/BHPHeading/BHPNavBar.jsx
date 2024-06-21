@@ -4,6 +4,7 @@ import axios from 'axios';
 import BASE_URL from '../../../../apiConfig';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
+import '../BranchHomeStyles/BranchHomePages.css'
 import Marquee from "react-fast-marquee";
 
 

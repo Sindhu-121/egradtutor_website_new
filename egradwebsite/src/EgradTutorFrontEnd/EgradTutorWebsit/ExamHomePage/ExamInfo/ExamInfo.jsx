@@ -117,7 +117,9 @@ const ExamInfo = () => {
                 Conducting Authority{" "}
                 <span>{getIcon("Conducting_Authority")}</span>
               </h3>
+              <div>
 
+              </div>
               {visibleSection === "Conducting_Authority" && (
                 <p id="more_info">{newInfo.Conducting_Authority}</p>
               )}

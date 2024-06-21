@@ -1,8 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const db = require("../DataBase/db2");
-
-
+const db = require("../../DataBase/db2");
 
 router.get("/questionCount", async (req, res) => {
   const { testCreationTableId, subjectId, sectionId } = req.params;
@@ -64,16 +62,14 @@ router.get("/attemptCount/:testCreationTableId/:user_Id", async (req, res) => {
     );
     const responseObj = {
       results: results,
-      updateResult: updateResult
+      updateResult: updateResult,
     };
-    res.json(responseObj); 
+    res.json(responseObj);
   } catch (error) {
     console.error("Error fetching attempted question count:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 });
-
-
 
 router.get(
   "/correctAnswers/:testCreationTableId/:user_Id",
@@ -104,13 +100,15 @@ router.get(
 );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////end//////////////////////////////////////////////////////////////////////
-router.get("/getStudentMarks/:testCreationTableId/:user_Id", async (req, res) => {
-  const { testCreationTableId, user_Id } = req.params;
+router.get(
+  "/getStudentMarks/:testCreationTableId/:user_Id",
+  async (req, res) => {
+    const { testCreationTableId, user_Id } = req.params;
 
-  try {
-    // Fetch all user responses for the given test and user
-    const [userResponseRows] = await db.query(
-      `SELECT
+    try {
+      // Fetch all user responses for the given test and user
+      const [userResponseRows] = await db.query(
+        `SELECT
       ur.user_Id,
       ur.testCreationTableId,
       ur.subjectId,
@@ -138,28 +136,36 @@ router.get("/getStudentMarks/:testCreationTableId/:user_Id", async (req, res) =>
   WHERE
       ur.testCreationTableId = ? AND ur.user_Id = ?;
   `,
-      [testCreationTableId, user_Id]
-    );
+        [testCreationTableId, user_Id]
+      );
 
-    // Calculate and save marks for each user response
-    const savedRows = await calculateAndSaveMarks(userResponseRows);
-    
-    res.json(savedRows);
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Internal Server Error" });
+      // Calculate and save marks for each user response
+      const savedRows = await calculateAndSaveMarks(userResponseRows);
+
+      res.json(savedRows);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
   }
-});
+);
 
 async function saveToDatabaseFunction(table, columns, values) {
-  const columnsString = columns.join(', ');
-  const placeholders = values.map(value => (value !== undefined ? '?' : 'NULL')).join(', ');
+  const columnsString = columns.join(", ");
+  const placeholders = values
+    .map((value) => (value !== undefined ? "?" : "NULL"))
+    .join(", ");
 
   // Replace undefined values with null
-  const sanitizedValues = values.map(value => (value !== undefined ? value : null));
+  const sanitizedValues = values.map((value) =>
+    value !== undefined ? value : null
+  );
 
   try {
-    const [rows] = await db.execute(`INSERT INTO ${table} (${columnsString}) VALUES (${placeholders})`, sanitizedValues);
+    const [rows] = await db.execute(
+      `INSERT INTO ${table} (${columnsString}) VALUES (${placeholders})`,
+      sanitizedValues
+    );
     console.log(`Inserted row for Question ${values[4]}:`, rows);
     return rows;
   } catch (error) {
@@ -185,47 +191,87 @@ async function calculateAndSaveMarks(rows) {
 
     if (questionLimit !== null && correctAnswersCount < questionLimit) {
       // Await the asynchronous function
-      std_marks = await calculateMarksWithLimit(row, correctAnswersCount, questionLimit);
+      std_marks = await calculateMarksWithLimit(
+        row,
+        correctAnswersCount,
+        questionLimit
+      );
 
       if (std_marks !== null) {
         correctAnswersCountMap.set(sectionId, correctAnswersCount + 1);
       }
 
-      console.log(`Section ${sectionId}: correctAnswersCount: ${correctAnswersCount}, questionLimit: ${questionLimit}`);
-      console.log(`Question ${row.question_id}: Inserting row for std_marks: ${std_marks}`);
+      console.log(
+        `Section ${sectionId}: correctAnswersCount: ${correctAnswersCount}, questionLimit: ${questionLimit}`
+      );
+      console.log(
+        `Question ${row.question_id}: Inserting row for std_marks: ${std_marks}`
+      );
     } else if (questionLimit === null) {
       // Await the asynchronous function
       std_marks = await calculateMarksWithoutLimit(row);
 
-      console.log(`Question ${row.question_id}: Inserting row for std_marks: ${std_marks}`);
+      console.log(
+        `Question ${row.question_id}: Inserting row for std_marks: ${std_marks}`
+      );
     } else {
-      console.log(`Question ${row.question_id}: Skipping insertion due to question limit.`);
+      console.log(
+        `Question ${row.question_id}: Skipping insertion due to question limit.`
+      );
     }
 
-    console.log(`Question ${row.question_id}: std_marks calculated: ${std_marks}, user_answer: ${row.user_answer}, correctAnswersCount: ${correctAnswersCount}, questionLimit: ${questionLimit}`);
+    console.log(
+      `Question ${row.question_id}: std_marks calculated: ${std_marks}, user_answer: ${row.user_answer}, correctAnswersCount: ${correctAnswersCount}, questionLimit: ${questionLimit}`
+    );
 
     if (std_marks !== null) {
       const status = std_marks > 1 ? 1 : 0;
       // Await the asynchronous function
-      const result = await saveToDatabaseFunction('student_marks', ['user_Id', 'testCreationTableId', 'subjectId', 'sectionId', 'question_id', 'std_marks', 'status'], [row.user_Id, row.testCreationTableId, row.subjectId, row.sectionId, row.question_id, std_marks, status]);
+      const result = await saveToDatabaseFunction(
+        "student_marks",
+        [
+          "user_Id",
+          "testCreationTableId",
+          "subjectId",
+          "sectionId",
+          "question_id",
+          "std_marks",
+          "status",
+        ],
+        [
+          row.user_Id,
+          row.testCreationTableId,
+          row.subjectId,
+          row.sectionId,
+          row.question_id,
+          std_marks,
+          status,
+        ]
+      );
       savedRows.push(result);
     } else {
-      console.log(`Question ${row.question_id}: Skipping insertion due to null std_marks value.`);
+      console.log(
+        `Question ${row.question_id}: Skipping insertion due to null std_marks value.`
+      );
     }
   }
 
   return savedRows;
 }
 
-
-
-async function calculateMarksWithLimit(row, correctAnswersCount, questionLimit) {
+async function calculateMarksWithLimit(
+  row,
+  correctAnswersCount,
+  questionLimit
+) {
   if (row.quesionTypeId === 3) {
     // For question type 3, increment correctAnswersCount only if the user's answer exactly matches the correct answer
-    const userAnswerArray = row.user_answer.toLowerCase().split(',');
-    const correctAnswerArray = row.answer_text.toLowerCase().split(',');
-    
-    const isCorrect = userAnswerArray.every(answer => correctAnswerArray.includes(answer));
+    const userAnswerArray = row.user_answer.toLowerCase().split(",");
+    const correctAnswerArray = row.answer_text.toLowerCase().split(",");
+
+    const isCorrect = userAnswerArray.every((answer) =>
+      correctAnswerArray.includes(answer)
+    );
 
     if (isCorrect) {
       correctAnswersCount++;
@@ -253,7 +299,10 @@ async function calculateMarksWithLimit(row, correctAnswersCount, questionLimit) 
     }
   } else if (row.quesionTypeId === 4) {
     // For type 4 questions, increment correctAnswersCount if the user's answer matches any permutation of the correct answers
-    if (row.answer_text.toLowerCase().split(',').sort().join('') === row.user_answer.toLowerCase().split(',').sort().join('')) {
+    if (
+      row.answer_text.toLowerCase().split(",").sort().join("") ===
+      row.user_answer.toLowerCase().split(",").sort().join("")
+    ) {
       correctAnswersCount++;
       return row.marks_text !== null ? row.marks_text : 0;
     } else {
@@ -263,8 +312,6 @@ async function calculateMarksWithLimit(row, correctAnswersCount, questionLimit) 
     return null;
   }
 }
-
-
 
 async function calculateMarksWithoutLimit(row) {
   if (row.quesionTypeId === 4) {
@@ -290,20 +337,24 @@ async function calculateMarksWithoutLimit(row) {
   }
 }
 
-
-
 function calculateNonDecimalMarks(row) {
   if ([1, 2, 3, 5, 7, 8].includes(row.quesionTypeId)) {
     const userAnswer = row.user_answer.toLowerCase();
     const correctAnswer = row.answer_text.toLowerCase().trim();
-    
-    console.log(`Question ${row.question_id}: Comparing userAnswer: '${userAnswer}' to Correct Answer: '${correctAnswer}'`);
+
+    console.log(
+      `Question ${row.question_id}: Comparing userAnswer: '${userAnswer}' to Correct Answer: '${correctAnswer}'`
+    );
 
     if (userAnswer === correctAnswer) {
-      console.log(`Question ${row.question_id}: Matched correct answer. Returning marks_text: ${row.marks_text}`);
+      console.log(
+        `Question ${row.question_id}: Matched correct answer. Returning marks_text: ${row.marks_text}`
+      );
       return row.marks_text !== null ? row.marks_text : 0;
     } else {
-      console.log(`Question ${row.question_id}: Incorrect answer. Returning nmarks_text: ${row.nmarks_text}`);
+      console.log(
+        `Question ${row.question_id}: Incorrect answer. Returning nmarks_text: ${row.nmarks_text}`
+      );
       return row.nmarks_text !== null ? row.nmarks_text : 0;
     }
   } else {
@@ -314,51 +365,63 @@ function calculateNonDecimalMarks(row) {
 function calculateDecimalMarks(row) {
   if (row.quesionTypeId === 6) {
     const userAnswer = parseFloat(row.user_answer);
-    const correctAnswerMin = parseFloat(row.answer_text.split('-')[0]);
-    const correctAnswerMax = parseFloat(row.answer_text.split('-')[1]);
+    const correctAnswerMin = parseFloat(row.answer_text.split("-")[0]);
+    const correctAnswerMax = parseFloat(row.answer_text.split("-")[1]);
 
-    console.log(`Question ${row.question_id}: Comparing userAnswer: ${userAnswer} to Correct Answer Range: ${correctAnswerMin}-${correctAnswerMax}`);
+    console.log(
+      `Question ${row.question_id}: Comparing userAnswer: ${userAnswer} to Correct Answer Range: ${correctAnswerMin}-${correctAnswerMax}`
+    );
 
     // Check if the user answer is within the correct range
-    return (userAnswer >= correctAnswerMin && userAnswer <= correctAnswerMax) ? row.marks_text || 0 : (row.nmarks_text !== null ? row.nmarks_text : 0);
+    return userAnswer >= correctAnswerMin && userAnswer <= correctAnswerMax
+      ? row.marks_text || 0
+      : row.nmarks_text !== null
+      ? row.nmarks_text
+      : 0;
   } else {
     return null;
   }
 }
 
-
-
- 
 function calculateNonDecimalMarks(row) {
   // Implement your logic to calculate marks for non-decimal type questions
-  if ([1, 2,3, 5, 7, 8].includes(row.quesionTypeId)) {
+  if ([1, 2, 3, 5, 7, 8].includes(row.quesionTypeId)) {
     const userAnswer = row.user_answer.toLowerCase(); // Assuming case-insensitive comparison
- 
- console.log(`Question ${row.question_id}: Comparing userAnswer: '${userAnswer}' to Correct Answer: '${row.answer_text.toLowerCase().trim()}'`);
-if (userAnswer === row.answer_text.toLowerCase().trim()) {
-  // If the user's answer matches the correct answer, return marks_text from marks table
-  console.log(`Question ${row.question_id}: Matched correct answer. Returning marks_text: ${row.marks_text}`);
-  return row.marks_text !== null ? row.marks_text : 0;
-} else {
-  // If the user's answer is incorrect, return nmarks_text from marks table
-  console.log(`Question ${row.question_id}: Incorrect answer. Returning nmarks_text: ${row.nmarks_text}`);
-  return row.nmarks_text !== null ? row.nmarks_text : 0;
-}
+
+    console.log(
+      `Question ${
+        row.question_id
+      }: Comparing userAnswer: '${userAnswer}' to Correct Answer: '${row.answer_text
+        .toLowerCase()
+        .trim()}'`
+    );
+    if (userAnswer === row.answer_text.toLowerCase().trim()) {
+      // If the user's answer matches the correct answer, return marks_text from marks table
+      console.log(
+        `Question ${row.question_id}: Matched correct answer. Returning marks_text: ${row.marks_text}`
+      );
+      return row.marks_text !== null ? row.marks_text : 0;
+    } else {
+      // If the user's answer is incorrect, return nmarks_text from marks table
+      console.log(
+        `Question ${row.question_id}: Incorrect answer. Returning nmarks_text: ${row.nmarks_text}`
+      );
+      return row.nmarks_text !== null ? row.nmarks_text : 0;
+    }
   } else {
     // Handle other question types, if needed
     console.log(`Question ${row.question_id}: Handling other question types.`);
     return null; // Replace with the appropriate logic or value
   }
 }
- 
- 
+
 function calculateDecimalMarks(row) {
   // Implement your logic to calculate marks for decimal type questions
   if (row.quesionTypeId === 6) {
     const userAnswer = parseFloat(row.user_answer);
-    const correctAnswerMin = parseFloat(row.answer_text.split('-')[0]);
-    const correctAnswerMax = parseFloat(row.answer_text.split('-')[1]);
- 
+    const correctAnswerMin = parseFloat(row.answer_text.split("-")[0]);
+    const correctAnswerMax = parseFloat(row.answer_text.split("-")[1]);
+
     if (userAnswer >= correctAnswerMin && userAnswer <= correctAnswerMax) {
       // If the user's answer is within the correct range, return marks_text from marks table
       return row.marks_text || 0; // Assuming marks_text contains the marks value for correct answers
@@ -373,20 +436,36 @@ function calculateDecimalMarks(row) {
 
 async function calculateMarksForType4(row) {
   if (row.quesionTypeId === 4) {
-    const userAnswers = row.user_answer.toLowerCase().split(',').sort().join('');
-    const correctAnswers = row.answer_text.toLowerCase().split(',').sort().join('');
+    const userAnswers = row.user_answer
+      .toLowerCase()
+      .split(",")
+      .sort()
+      .join("");
+    const correctAnswers = row.answer_text
+      .toLowerCase()
+      .split(",")
+      .sort()
+      .join("");
 
-    console.log(`Question ${row.question_id}: Comparing userAnswers: '${userAnswers}' to Correct Answers: '${correctAnswers}'`);
+    console.log(
+      `Question ${row.question_id}: Comparing userAnswers: '${userAnswers}' to Correct Answers: '${correctAnswers}'`
+    );
 
     // Check if the user's answers exactly match the correct answers or any permutation of them
-    const correctPermutations = getPermutations(correctAnswers.split(','));
-    const matched = correctPermutations.some(perm => perm.join('') === userAnswers);
+    const correctPermutations = getPermutations(correctAnswers.split(","));
+    const matched = correctPermutations.some(
+      (perm) => perm.join("") === userAnswers
+    );
 
     if (matched) {
-      console.log(`Question ${row.question_id}: Matched correct answers. Returning marks_text: ${row.marks_text}`);
+      console.log(
+        `Question ${row.question_id}: Matched correct answers. Returning marks_text: ${row.marks_text}`
+      );
       return row.marks_text !== null ? row.marks_text : 0;
     } else {
-      console.log(`Question ${row.question_id}: Incorrect answers. Returning nmarks_text: ${row.nmarks_text}`);
+      console.log(
+        `Question ${row.question_id}: Incorrect answers. Returning nmarks_text: ${row.nmarks_text}`
+      );
       return row.nmarks_text !== null ? row.nmarks_text : 0;
     }
   } else {
@@ -398,25 +477,33 @@ function calculateMarksForType3(row) {
   if (row.quesionTypeId === 3) {
     console.log("Correct Answers:", row.answer_text);
     console.log("User Answers:", row.user_answer);
-    
+
     // Split the correct answer and user's answer into arrays
-    const correctAnswers = row.answer_text.toLowerCase().split(',').sort();
-    const userAnswers = row.user_answer.toLowerCase().split(',').sort();
+    const correctAnswers = row.answer_text.toLowerCase().split(",").sort();
+    const userAnswers = row.user_answer.toLowerCase().split(",").sort();
 
     // Initialize variable to store total marks
     let totalMarks = 0;
 
     // Check if the user's answer exactly matches the correct answer
-    if (correctAnswers.length === userAnswers.length && correctAnswers.every((value, index) => value === userAnswers[index])) {
+    if (
+      correctAnswers.length === userAnswers.length &&
+      correctAnswers.every((value, index) => value === userAnswers[index])
+    ) {
       totalMarks = parseFloat(row.marks_text); // Assign full marks
     } else {
       // Calculate marks for each correct answer
-      const correctCount = userAnswers.filter(answer => correctAnswers.includes(answer)).length;
-      totalMarks = (correctCount / correctAnswers.length) * parseFloat(row.marks_text);
+      const correctCount = userAnswers.filter((answer) =>
+        correctAnswers.includes(answer)
+      ).length;
+      totalMarks =
+        (correctCount / correctAnswers.length) * parseFloat(row.marks_text);
     }
 
     // Log the calculated marks
-    console.log(`Question ${row.question_id}: std_marks calculated: ${totalMarks}, user_answer: ${row.user_answer}, questionLimit: null`);
+    console.log(
+      `Question ${row.question_id}: std_marks calculated: ${totalMarks}, user_answer: ${row.user_answer}, questionLimit: null`
+    );
 
     // Return the total marks
     return totalMarks;
@@ -424,15 +511,6 @@ function calculateMarksForType3(row) {
     return null; // Return null for other question types
   }
 }
-
-
-
-
-
-
-
-
-
 
 // Helper function to generate all permutations of an array
 function getPermutations(arr) {
@@ -452,11 +530,6 @@ function getPermutations(arr) {
   permute(arr);
   return result;
 }
-
-
-
-
-
 
 router.get(
   "/correctAnswers/:testCreationTableId/:user_Id",
@@ -488,10 +561,10 @@ router.get(
 
       const responseObj = {
         results: results,
-        updateResult: updateResult
+        updateResult: updateResult,
       };
 
-      res.json(responseObj);  // Send both results and updateResult in the response
+      res.json(responseObj); // Send both results and updateResult in the response
     } catch (error) {
       console.error("Error updating correct answers count:", error);
       res.status(500).json({ error: "Internal Server Error" });
@@ -499,20 +572,22 @@ router.get(
   }
 );
 
-router.get("/totalcurrectans/:testCreationTableId/:user_Id", async (req, res) => {
-  const { testCreationTableId, user_Id } = req.params;
-  try {
-    const [results, fields] = await db.execute(
-      "SELECT Total_correct,Total_wrong,Total_Attempted FROM student_exam_summery WHERE testCreationTableId = ? AND user_Id = ?",
-      [testCreationTableId, user_Id]
-    );
-    res.json(results);
-  } catch (error) {
-    console.error("Error fetching question count:", error);
-    res.status(500).json({ error: "Internal Server Error" });
+router.get(
+  "/totalcurrectans/:testCreationTableId/:user_Id",
+  async (req, res) => {
+    const { testCreationTableId, user_Id } = req.params;
+    try {
+      const [results, fields] = await db.execute(
+        "SELECT Total_correct,Total_wrong,Total_Attempted FROM student_exam_summery WHERE testCreationTableId = ? AND user_Id = ?",
+        [testCreationTableId, user_Id]
+      );
+      res.json(results);
+    } catch (error) {
+      console.error("Error fetching question count:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    }
   }
-});
-
+);
 
 router.get(
   "/incorrectAnswers/:testCreationTableId/:user_Id",
@@ -542,7 +617,7 @@ router.get(
       );
       const responseObj = {
         results: results,
-        updateResult: updateResult
+        updateResult: updateResult,
       };
 
       res.json(responseObj);
@@ -552,9 +627,6 @@ router.get(
     }
   }
 );
-
-
-
 
 router.get("/score/:testCreationTableId/:user_Id", async (req, res) => {
   const { testCreationTableId, user_Id } = req.params;
@@ -720,7 +792,7 @@ router.get("/score/:testCreationTableId/:user_Id", async (req, res) => {
         nmarks_text,
         QuestionLimit,
         user_answer,
-        answer_text
+        answer_text,
       } = row;
 
       // Increment total marks
@@ -835,8 +907,6 @@ router.get("/score/:testCreationTableId/:user_Id", async (req, res) => {
   }
 });
 
-
-
 router.get("/answer/:testCreationTableId/:user_Id", async (req, res) => {
   try {
     const { testCreationTableId, user_Id } = req.params;
@@ -876,7 +946,8 @@ ORDER BY
   }
 });
 
-router.get("/getResponse/:testCreationTableId/:user_Id/:questionId",
+router.get(
+  "/getResponse/:testCreationTableId/:user_Id/:questionId",
   async (req, res) => {
     try {
       const { testCreationTableId, user_Id, questionId } = req.params;
@@ -906,7 +977,8 @@ router.get("/getResponse/:testCreationTableId/:user_Id/:questionId",
   }
 );
 
-router.get("/getTimeLeftSubmissions/:testCreationTableId/:userId",
+router.get(
+  "/getTimeLeftSubmissions/:testCreationTableId/:userId",
   async (req, res) => {
     try {
       const { testCreationTableId, userId } = req.params;
@@ -967,7 +1039,7 @@ router.get("/testDetails", (req, res) => {
 
 // @route   POST api/quiz /submitQuizResult/:id
 router.get("/testName/:testCreationTableId/:Portale_Id", async (req, res) => {
-  const { testCreationTableId,Portale_Id } = req.params;
+  const { testCreationTableId, Portale_Id } = req.params;
 
   try {
     if (!testCreationTableId) {
@@ -997,7 +1069,7 @@ router.get("/testName/:testCreationTableId/:Portale_Id", async (req, res) => {
       tct.testCreationTableId = ? AND cct.Portale_Id = ?
 `,
 
-      [testCreationTableId,Portale_Id]
+      [testCreationTableId, Portale_Id]
     );
 
     res.json({
