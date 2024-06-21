@@ -6,7 +6,7 @@ import BASE_URL from "../../../apiConfig";
 import { MdDelete } from "react-icons/md";
 import { Link, useParams } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
-
+ 
 const FooterEdit = ({ type }) => {
     const [dataOne, setDataOne] = useState([]);
     const [editItemIdOne, setEditedItemIdOne] = useState(null);
@@ -29,7 +29,7 @@ const FooterEdit = ({ type }) => {
     const [currentDocumentName, setCurrentDocumentName] = useState('');
     const [editLinkFileData, setEditLinkFileData] = useState("");
     const [dataTwo, setDataTwo] = useState([]);
-
+ 
     const [editItemId, setEditItemId] = useState(null);
     const [editedItem, setEditedItem] = useState(null);
     const [dataThree, setDataThree] = useState([]);
@@ -39,24 +39,24 @@ const FooterEdit = ({ type }) => {
     });
     const [editedValue, setEditedValue] = useState("");
     const [isPopupOpen, setIsPopupOpen] = useState(false);
-
-
-
+ 
+ 
+ 
     const handleEditClickPopupOne = (content_id, content) => {
         setEditedItemIdOne(content_id);
         setEditedItemOne({ content: content });
     };
-
+ 
     const handleDeleteItemOne = async (content_id) => {
         try {
             console.log("Deleting item with ID:", content_id);
             const response = await axios.delete(
                 `${BASE_URL}/FooterEdit/landingfooterContentDataOne/${content_id}`
             );
-
+ 
             console.log("Success:", response.data);
             console.log("Item deleted");
-
+ 
             setDataOne((prevData) =>
                 prevData.filter((dataItem) => dataItem.Content_id !== content_id)
             );
@@ -68,7 +68,7 @@ const FooterEdit = ({ type }) => {
         const newValue = e.target.value;
         setEditedItemOne({ content: newValue });
     };
-
+ 
     const handleEditSaveOne = async (content_id, editedContent, setDataOne) => {
         console.log(content_id);
         console.log(editedContent);
@@ -77,9 +77,9 @@ const FooterEdit = ({ type }) => {
                 `${BASE_URL}/FooterEdit/landingfooterContentDataTwoUpdate/${content_id}`,
                 { content_name: editedContent } // Ensure the correct field name is sent to the backend
             );
-
+ 
             console.log("Data updated successfully:", response.data);
-
+ 
             setDataOne((prevData) =>
                 prevData.map((item) =>
                     item.content_id === content_id
@@ -90,13 +90,13 @@ const FooterEdit = ({ type }) => {
                         : item
                 )
             );
-
+ 
             setEditedItemIdOne(null);
         } catch (error) {
             console.error("Error updating data:", error);
         }
     };
-
+ 
     useEffect(() => {
         axios
             .get(`${BASE_URL}/Footer/landingfooterContentDataOne`)
@@ -107,9 +107,9 @@ const FooterEdit = ({ type }) => {
                 console.error("Error fetching data from landing_page_one:", error);
             });
     }, []);
-
+ 
     //Footer first part eGRADTtorData End //
-
+ 
     const handleSubmitFooterLinks = async (e) => {
         e.preventDefault();
         try {
@@ -120,7 +120,7 @@ const FooterEdit = ({ type }) => {
             }
             formDataWithFile.append("Link_Item", formData.Link_Item);
             formDataWithFile.append("Link_Routing_Data", formData.Link_Routing_Data);
-
+ 
             const response = await axios.post(
                 `${BASE_URL}/FooterEdit/footerLinks`,
                 formDataWithFile,
@@ -131,22 +131,22 @@ const FooterEdit = ({ type }) => {
                 }
             );
             console.log("Response:", response.data);
-
+ 
             // Show success message
             setShowSuccessMessage(true);
-
+ 
             // Reset form state or do any additional actions
         } catch (error) {
             console.error("Error submitting data:", error);
             // Handle error if needed
         }
     };
-
-
+ 
+ 
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };
-
+ 
     const handleEditFileChange = (event) => {
         const file = event.target.files[0];
         setSelectedFile(file);
@@ -155,12 +155,12 @@ const FooterEdit = ({ type }) => {
         // setDocumentName(fileName); // Set the document name to display
         setDocumentName(file ? file.name : '');
     };
-
-
+ 
+ 
     useEffect(() => {
         fetchFooterLinks();
     }, []);
-
+ 
     const fetchFooterLinks = async () => {
         try {
             const response = await axios.get(`${BASE_URL}/Footer/footerLinks`);
@@ -169,10 +169,10 @@ const FooterEdit = ({ type }) => {
             console.error("Error fetching footer links:", error);
         }
     };
-
+ 
     const handleChangeLinkRoutingData = (e) =>
         setEditedLinkRoutingData(e.target.value);
-
+ 
     const handleSaveFooterItem = async (Link_Id) => {
         console.log("document_name", documentName);
         const formData = new FormData();
@@ -182,7 +182,7 @@ const FooterEdit = ({ type }) => {
         if (selectedFile) {
             formData.append("file", selectedFile);
         }
-
+ 
         try {
             const response = await axios.put(
                 `${BASE_URL}/FooterEdit/footerLinks/${Link_Id}`,
@@ -194,7 +194,7 @@ const FooterEdit = ({ type }) => {
                 }
             );
             console.log("Response:", response.data);
-
+ 
             // Reset edit state
             setEditFooterItemId(null);
             setEditedLinkItem("");
@@ -220,7 +220,7 @@ const FooterEdit = ({ type }) => {
         setEditLinkFileData(footer_document_data);
         setDocumentName(document_name);
     };
-
+ 
     const handleDeleteFooterItem = async (Link_Id) => {
         console.log("Link_Id", Link_Id);
         try {
@@ -232,7 +232,7 @@ const FooterEdit = ({ type }) => {
             console.error("Error deleting data:", error);
         }
     };
-
+ 
     useEffect(() => {
         const fetchFooterData = async () => {
             try {
@@ -244,17 +244,17 @@ const FooterEdit = ({ type }) => {
                 console.error("Error fetching data from landing_page_two:", error);
             }
         };
-
+ 
         fetchFooterData();
     }, []);
-
+ 
     const handleEditClickPopup = (id) => {
         setEditItemId(id);
         // Find the item associated with the editItemId and store it in state
         const itemToEdit = dataTwo.find((item) => item.Content_id === id);
         setEditedItem(itemToEdit);
     };
-
+ 
     const handleDeleteItemTwo = async (content_id) => {
         try {
             console.log("Deleting item with ID:", content_id);
@@ -272,16 +272,16 @@ const FooterEdit = ({ type }) => {
     const handleExistingValueChange = (e) => {
         setEditedItem({ ...editedItem, content_name: e.target.value });
     };
-
+ 
     const handleEditSave = async (content_id, editedContent, setDataTwo) => {
         try {
             const response = await axios.put(
                 `${BASE_URL}/FooterPage/landingfooterContentDataOneUpdate/${content_id}`,
                 { content_name: editedContent }
             );
-
+ 
             console.log("Data updated successfully:", response.data);
-
+ 
             setDataTwo((prevData) =>
                 prevData.map((item) =>
                     item.Content_id === content_id
@@ -308,10 +308,10 @@ const FooterEdit = ({ type }) => {
             const response = await axios.delete(
                 `${BASE_URL}/FooterPage/landingfooterContentDataThree/${content_id}`
             );
-
+ 
             console.log("Success:", response.data);
             console.log("Item deleted");
-
+ 
             setDataThree((prevData) =>
                 prevData.filter((dataItem) => dataItem.Content_id !== content_id)
             );
@@ -328,7 +328,7 @@ const FooterEdit = ({ type }) => {
         handleEditSaveThree(editItemIdThree, editedValue); // Assuming handleEditSaveThree updates the dataThree state
         setIsPopupOpen(false); // Close the popup
     };
-
+ 
     const handleEditSaveThree = async (
         content_id,
         editedContent,
@@ -339,9 +339,9 @@ const FooterEdit = ({ type }) => {
                 `${BASE_URL}/FooterPage/landingfooterContentDataThreeUpdate/${content_id}`,
                 { content_name: editedContent }
             );
-
+ 
             console.log("Data updated successfully:", response.data);
-
+ 
             setDataThree((prevData) =>
                 prevData.map((item) =>
                     item.content_id === content_id
@@ -352,13 +352,13 @@ const FooterEdit = ({ type }) => {
                         : item
                 )
             );
-
+ 
             setEditItemIdThree(null);
         } catch (error) {
             console.error("Error updating data:", error);
         }
     };
-
+ 
     useEffect(() => {
         const fetchFooterCopyWriteData = async () => {
             try {
@@ -524,7 +524,7 @@ const FooterEdit = ({ type }) => {
                             </div>
                         </li>
                     ))}
-
+ 
                     {editItemId && editedItem && (
                         <div className="new_landingfooter_conatinerthridpopupsub">
                             <h3>Edit</h3>
@@ -555,7 +555,7 @@ const FooterEdit = ({ type }) => {
                     )}
                 </div>
             )}
-
+ 
             {type === "CopyWriteTable" && (
                 <div className="new_landingfooter_copyrightpopup">
                     {dataThree.map((item) => (
@@ -591,11 +591,11 @@ const FooterEdit = ({ type }) => {
                             </div>
                         </div>
                     )}
-
+ 
                 </div>
             )}
         </div>
     )
 }
-
+ 
 export default FooterEdit

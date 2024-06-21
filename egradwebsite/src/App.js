@@ -21,6 +21,7 @@ function App() {
         <Route path="/Register" element={<Register/>} />
         <Route path="./UgadminHome" element={<UgadminHome/>}/>
       <Route path="/" element={<WebSiteLandingPage/>}/>
+      
       <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>
       <Route path="/AboutUs" element={<AboutUs/>}/>
