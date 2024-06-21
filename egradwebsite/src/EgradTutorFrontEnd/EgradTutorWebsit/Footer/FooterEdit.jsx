@@ -59,7 +59,7 @@ const FooterEdit = () => {
     try {
       console.log("Deleting item with ID:", content_id);
       const response = await axios.delete(
-        `${BASE_URL}/FooterPage/landingfooterContentDataOne/${content_id}`
+        `${BASE_URL}/FooterEdit/landingfooterContentDataOne/${content_id}`
       );
 
       console.log("Success:", response.data);
@@ -82,7 +82,7 @@ const FooterEdit = () => {
     console.log(editedContent);
     try {
       const response = await axios.put(
-        `${BASE_URL}/FooterPage/landingfooterContentDataTwoUpdate/${content_id}`,
+        `${BASE_URL}/FooterEdit/landingfooterContentDataTwoUpdate/${content_id}`,
         { content_name: editedContent } // Ensure the correct field name is sent to the backend
       );
 
@@ -107,7 +107,7 @@ const FooterEdit = () => {
   
   useEffect(() => {
     axios
-      .get(`${BASE_URL}/FooterPage/landingfooterContentDataOne`)
+      .get(`${BASE_URL}/Footer/landingfooterContentDataOne`)
       .then((res) => {
         setDataOne(res.data);
       })
@@ -144,7 +144,7 @@ const FooterEdit = () => {
       formDataWithFile.append("Link_Routing_Data", formData.Link_Routing_Data);
 
       const response = await axios.post(
-        `${BASE_URL}/FooterPage/footerLinks`,
+        `${BASE_URL}/FooterEdit/footerLinks`,
         formDataWithFile,
         {
           headers: {
@@ -185,7 +185,7 @@ const FooterEdit = () => {
 
   const fetchFooterLinks = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/FooterPage/footerLinks`);
+      const response = await axios.get(`${BASE_URL}/Footer/footerLinks`);
       setFooterLinkData(response.data);
     } catch (error) {
       console.error("Error fetching footer links:", error);
@@ -207,7 +207,7 @@ const FooterEdit = () => {
 
     try {
       const response = await axios.put(
-        `${BASE_URL}/FooterPage/footerLinks/${Link_Id}`,
+        `${BASE_URL}/FooterEdit/footerLinks/${Link_Id}`,
         formData,
         {
           headers: {
@@ -247,7 +247,7 @@ const FooterEdit = () => {
     console.log("Link_Id",Link_Id);
     try {
       const response = await axios.delete(
-        `${BASE_URL}/FooterPage/footerLinksDeleteData/${Link_Id}`
+        `${BASE_URL}/FooterEdit/footerLinksDeleteData/${Link_Id}`
       );
       console.log("Response:", response.data);
     } catch (error) {
@@ -272,7 +272,7 @@ const FooterEdit = () => {
     const fetchFooterData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/FooterPage/landingfooterContentDataTwo`
+          `${BASE_URL}/Footer/landingfooterContentDataTwo`
         );
         setDataTwo(response.data);
       } catch (error) {
@@ -406,7 +406,7 @@ const FooterEdit = () => {
     const fetchFooterCopyWriteData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/FooterPage/landingfooterContentDataThree`
+          `${BASE_URL}/Footer/landingfooterContentDataThree`
         );
         setDataThree(response.data);
       } catch (error) {
