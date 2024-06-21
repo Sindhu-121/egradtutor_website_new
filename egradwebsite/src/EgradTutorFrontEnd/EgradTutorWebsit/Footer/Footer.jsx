@@ -2,12 +2,18 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import BASE_URL from "../../../apiConfig";
 import { Link, useParams } from "react-router-dom";
+import FooterEdit from "./FooterEdit";
 
 const Footer = () => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
   const [dataThree, setDataThree] = useState([]);
   const [footerLinkData, setFooterLinkData] = useState([]);
+  const [FirstPopupVisible, setFirstPopupVisible] = useState(false);
+  const [showFooterLinksData, setShowFooterLinksData] = useState(false);
+  const [showPreviousLinksData, setShowPreviousLinksData] = useState(false);
+  const [isContactUsSectionVisible, setIsContactUsSectionVisible] = useState(false);
+  const [isCopyRightSectionVisible, setIsCopyRightSectionVisible] = useState(false);
 
   useEffect(() => {
     axios
@@ -66,8 +72,12 @@ const Footer = () => {
   return (
     <div>
       <div>
+        <button onClick={() => setFirstPopupVisible(!FirstPopupVisible)}>
+          {FirstPopupVisible ? 'Hide eGRADTtor Form' : 'EditeGRADTtorData'}
+        </button>
+        {FirstPopupVisible && <FooterEdit type="eGARDTutor" />}
+
         {dataOne.map((item, index) =>
-          // Render <h3> tag for the first item, and <p> tags for the rest
           index === 0 ? (
             <div key={item.Content_id}>
               <h2 className="new_landingfooter_conatinerfristpart_item">
@@ -84,39 +94,53 @@ const Footer = () => {
           )
         )}
       </div>
+      <div>
+        <button onClick={() => setShowFooterLinksData(!showFooterLinksData)}>
+          {showFooterLinksData ? 'Hide Add Link' : 'Add Link'}
+        </button>
+        {showFooterLinksData && <FooterEdit type="Add_Footer_Links" />}
 
-      <div>
-        <ul>
-          {footerLinkData.map((item) => (
-            <li key={item.Link_Id}>
-              <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div>
-        {dataTwo.map((item, index) =>
-          index === 0 ? (
-            <div key={item.Content_id}>
-              <h2 className="new_landingfooter_conatinersecondpart_item">
-                {item.content_name}
-              </h2>
-            </div>
-          ) : (
-            <p
-              className="new_landingfooter_conatinersecondpart_item"
-              key={item.Content_id}
-            >
-              {item.content_name}
-            </p>
-          )
-        )}
-      </div>
-
-      <div>
-        {dataThree.map((item) => (
-          <li key={item.Content_id}>{item.content_name}</li>
+        <button onClick={() => setShowPreviousLinksData(!showPreviousLinksData)}>
+          {showPreviousLinksData ? 'Hide Edit Links' : 'Edit Links'}
+        </button>
+        {showPreviousLinksData && <FooterEdit type="Update_Footer_Links" />}
+        {footerLinkData.map((item) => (
+          <li key={item.Link_Id}>
+            <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
+          </li>
         ))}
+        <div>
+          <button onClick={() => setIsContactUsSectionVisible(!isContactUsSectionVisible)} className="editbtn">
+
+            {isContactUsSectionVisible ? 'Hide ContactUs' : 'Edit ContactUs Data'}
+          </button>
+          {isContactUsSectionVisible && <FooterEdit type="ContactUs" />}
+          {dataTwo.map((item, index) =>
+            index === 0 ? (
+              <div key={item.Content_id}>
+                <h2 className="new_landingfooter_conatinersecondpart_item">
+                  {item.content_name}
+                </h2>
+              </div>
+            ) : (
+              <p
+                className="new_landingfooter_conatinersecondpart_item"
+                key={item.Content_id}
+              >
+                {item.content_name}
+              </p>
+            )
+          )}
+        </div>
+        <div>
+          <button onClick={() => setIsCopyRightSectionVisible(!isCopyRightSectionVisible)} className="editbtn">
+            {isCopyRightSectionVisible ? 'Hide copywrite form' : 'Edit copywrite'}
+          </button>
+          {isCopyRightSectionVisible && <FooterEdit type="CopyWriteTable" />}
+          {dataThree.map((item) => (
+            <li key={item.Content_id}>{item.content_name}</li>
+          ))}
+        </div>
       </div>
     </div>
   )
