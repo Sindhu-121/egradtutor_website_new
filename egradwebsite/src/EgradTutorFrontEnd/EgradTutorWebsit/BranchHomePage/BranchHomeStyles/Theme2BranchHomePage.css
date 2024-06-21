@@ -3,4 +3,13 @@
 }
 .NewExploreExams_ExamCard_MainContainer.t2NewExploreExams_ExamCard_Container {
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.NewExploreExams_ExamCard_Container.t2NewExploreExams_ExamCard_Container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
 }
