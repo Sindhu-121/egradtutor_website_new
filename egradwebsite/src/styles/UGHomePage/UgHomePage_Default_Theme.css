@@ -56,6 +56,7 @@
 ul.themeUgHeaderUlDefault {
     display: flex;
     gap: 1.5rem;
+    flex-direction: row;
 }
 li.themeUgHeaderLiDefault {
         color: #fff;
@@ -195,21 +196,7 @@ flex-direction: row;
     row-gap: 3rem;
 }
 
-.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
-    background: #279eff69;
-    background: #fff;
-    border-radius: 13px;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
-    display: flex;
-    flex-direction: column;
-    gap: .8rem;
-    height: 195px;
-    /* justify-content: center; */
-    padding: 1rem;
-    text-align: center;
-    text-transform: capitalize;
-    width: 290px;
-}
+
 .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
@@ -224,73 +211,134 @@ flex-direction: row;
     background: #3ad4ba;
     border-radius: 13px;
     color: #fff;
-    font-family: Noto Sans Display,sans-serif;
-    /* font-size: 1.3rem; */
+    font-family: Noto Sans Display, sans-serif;
+    font-size: 1.3rem;
     font-weight: 700;
-    /* padding: .3rem .5rem; */
     text-decoration: none;
     font-size: 16px;
     padding: 10px;
+    width: 155px;
+    display: inline-block;
 }
+
 .NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault {
     margin: 15px  0px 0px 0px;
 }
 
 
+
+.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
+    /* background: #279eff69; */
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    /* display: flex; */
+    flex-direction: column;
+    gap: .8rem;
+    height: 250px;
+    justify-content: center;
+    padding: 1rem;
+    /* text-align: center; */
+    text-transform: capitalize;
+    /* width: 250px; */
+}
+
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 /* OUR COURSES CSS PART */
 
-
+.defaultCoursesHeadding {
+    background: #fff;
+    padding: .5rem 0;
+}
 h2#Our_Courses_heading{
         color: #00a3ff;
         font-size: 2rem;
         margin: 1rem auto;
         text-align: center;
 }
-.themeCoursesSubContainerDefault {
+.defaultCoursesSubContainer {
     grid-gap: 2rem;
     display: grid;
     gap: 2rem;
     margin: .5rem auto;
     width: 80%;
 }
-li.themeCourseLiDefault{
-display: flex;
-flex-direction: row;
-
+ul.defaultCoursesUl {
+    grid-gap: 2rem;
+    /* align-items: center; */
+    background: #e2f7fb;
+    border: 2px solid#000;
+    /* display: grid; */
+    gap: 2rem;
+    grid-template-columns: 35% 30% 25%;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 1.5rem;
+    width: 95%;
 }
-.defaultCourseName {
+li.defaultCourseLi {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.themeCoursePortalNameImageContainerDefault{
+        display: flex;
+        flex-direction: column;
+}
+strong.defaultPortalName {
     background: #2d6891;
     color: #fff;
     font-size: 1.2rem;
     margin: .3rem auto;
     padding: .5rem;
     text-align: center;
-    width: 170%;
+    width: 165%;
+    display: block;
 }
-.themeFeatureImgCDefault img{
-        height: 250px;
-        width: 250px;
+.defaultFeatureImgC img {
+    height: 250px;
+    width: 250px;
 }
 
-
-ul.themeCoursesUlDefault {
-    grid-gap: 2rem;
-    align-items: center;
-    background: #e2f7fb;
-    border: 2px solid#000;
-    gap: 2rem;
-    grid-template-columns: 35% 30% 25%;
-    justify-content: space-around;
-    margin: 0 auto;
-    padding: .8rem;
-    width: 100%;
+.defaultFeaturesContainer {
+    /* line-height: 32px; */
+    padding-top: 4.6rem;
+    text-align: justify;
 }
-.themeFeaturesContainerDefault {
-    display: flex;
-    flex-direction: column;
+h3.undefined {
+    font-family: Roboto,sans-serif;
+}
+li.defaultFeatures{
+    list-style: disc;
+    margin-left: 22px;
+}
+.defaultExamsNames {
+    height: 100px;
+    /* grid-gap: 1rem; */
+    /* align-items: center; */
+    display: grid;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    grid-template-columns: repeat(1fr,1fr);
     justify-content: center;
-    margin-left: 229px;
+    margin-right: 90px;
+    margin-top: 75px;
 }
-.undefined {
-    margin: 31px;
+.defaultExamsNames a {
+    background: #2d6891;
+    border-radius: 10px;
+    color: #fff;
+    font-family: Noto Sans Display,sans-serif;
+    font-weight: 700;
+    padding: 0.5rem;
+    text-align: center;
+    /* text-transform: uppercase; */
+    text-decoration: none;
+    width: 150px;
+    font-size: 13px;
 }
