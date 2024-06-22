@@ -20,7 +20,35 @@ const storage = multer.diskStorage({
   const upload = multer({ storage: storage });
 
 
+  router.post('/Add_eGARDTutorContent', async (req, res) => {
+    const { content } = req.body;
+  
+    try {
+      const sql = 'INSERT INTO landing_page_one (content) VALUES (?)';
+      const [result] = await db.query(sql, [content]);
+      console.log('Inserted content:', result);
+      res.status(200).send('Content inserted successfully');
+    } catch (error) {
+      console.error('Error inserting content:', error);
+      res.status(500).send('Error inserting content');
+    }
+  });
+  
 
+  
+  router.post('/Add_ContactUsContent', async (req, res) => {
+    const { content } = req.body;
+  
+    try {
+      const sql = 'INSERT INTO  landing_page_two (content_name) VALUES (?)';
+      const [result] = await db.query(sql, [content]);
+      console.log('Inserted content:', result);
+      res.status(200).send('Content inserted successfully');
+    } catch (error) {
+      console.error('Error inserting content:', error);
+      res.status(500).send('Error inserting content');
+    }
+  });
 
 router.delete("/landingfooterContentDataOne/:content_id", async (req, res) => {
     const { content_id } = req.params;
