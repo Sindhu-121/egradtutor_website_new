@@ -8,6 +8,9 @@ import { Link, useParams } from "react-router-dom";
 import { RiDeleteBin6Line } from "react-icons/ri";
  
 const FooterEdit = ({ type }) => {
+      const[contactUsContent, setContactUsContent] = useState('');
+    const [egardTutorItem, setEgardTutorItem] = useState('');
+
     const [dataOne, setDataOne] = useState([]);
     const [editItemIdOne, setEditedItemIdOne] = useState(null);
     const [editedItemOne, setEditedItemOne] = useState({
@@ -47,6 +50,41 @@ const FooterEdit = ({ type }) => {
         setEditedItemOne({ content: content });
     };
  
+
+    const handleSubmiteGRADTutorContent = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const response = await axios.post(`${BASE_URL}/FooterEdit/Add_eGARDTutorContent`, {
+            content: egardTutorItem
+          });
+          console.log('Server Response:', response.data);
+          alert('Content inserted successfully');
+          setEgardTutorItem(''); // Clear input after successful submission
+        } catch (error) {
+          console.error('Error inserting content:', error);
+          alert('Failed to insert content');
+        }
+      };
+
+      const handleSubmitContactUsContent = async (e) => {
+        e.preventDefault();
+    
+        try {
+          const response = await axios.post(`${BASE_URL}/FooterEdit/Add_ContactUsContent`, {
+            content: contactUsContent
+          });
+          console.log('Server Response:', response.data);
+          alert('Content inserted successfully');
+          setContactUsContent(''); // Clear input after successful submission
+        } catch (error) {
+          console.error('Error inserting content:', error);
+          alert('Failed to insert content');
+        }
+      };
+
+
+
     const handleDeleteItemOne = async (content_id) => {
         try {
             console.log("Deleting item with ID:", content_id);
@@ -374,7 +412,43 @@ const FooterEdit = ({ type }) => {
     }, []);
     return (
         <div>
-            {type === "eGARDTutor" && (
+
+
+
+
+         {type === "Add eGRADTutor" && (
+          <form onSubmit={handleSubmiteGRADTutorContent}>
+          <label>
+            Content:
+            <textarea
+              value={egardTutorItem}
+              onChange={(e) => setEgardTutorItem(e.target.value)}
+              required
+            />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+        )}
+
+
+{type === "Add ContactUs" && (
+          <form onSubmit={handleSubmitContactUsContent}>
+          <label>
+            Content:
+            <textarea
+              value={contactUsContent}
+              onChange={(e) => setContactUsContent(e.target.value)}
+              required
+            />
+          </label>
+          <br />
+          <button type="submit">Submit</button>
+        </form>
+        )}
+
+
+            {type === "eGRADTutor" && (
                 <div className="new_landingfooter_conatinerfristpopup">
                     {dataOne.map((item) => (
                         <li key={item.content_id}>
