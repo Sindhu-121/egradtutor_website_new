@@ -6,7 +6,7 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import { IoMdClose } from "react-icons/io";
 import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+// import "react-responsive-carousel/lib/styles/carousel.min.css";
 import axios from "axios";
 import BASE_URL from "../../../../apiConfig";
 import "./styles/ExamPageBanner.css";
@@ -483,13 +483,13 @@ const ExamPageBanner = () => {
           </button>
 
           {/*--------------- Displaying_banners_start---------------- */}
-          <Carousel
+          {/* <Carousel
             autoPlay
             infiniteLoop
             showArrows={false}
             interval={4600}
             showThumbs={false}
-            // showIndicators={false}
+            showIndicators={false}
             showStatus={false}
           >
             {banners
@@ -509,7 +509,34 @@ const ExamPageBanner = () => {
                   />
                 </div>
               ))}
-          </Carousel>
+          </Carousel> */}
+        <Carousel
+      autoPlay
+      infiniteLoop
+      showArrows={false}
+      interval={4600}
+      showThumbs={false}
+      showStatus={false}
+    >
+      {banners
+        .filter((banner) => banner.banner_status === "active")
+        .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
+        // .slice(startBannerIndex, startBannerIndex + 4)
+        .map((banner) => (
+          <div key={banner.EntranceExams_Id}>
+            <img
+              src={`data:image/svg+xml;base64,${banner.banner}`}
+              alt={`Banner ${banner.EntranceExams_Id}`}
+              style={{
+                width: "100%", // Adjust as per your design
+                height: "auto", // Adjust as per your design
+                cursor: "pointer",
+              }}
+            />
+          </div>
+        ))}
+    </Carousel>
+
           {/*-------------- Displaying_banners_end-------------------- */}
 
           {/*-------OnClick_EditIcon_Opens_banners_popup_edit_section_start--------*/}
