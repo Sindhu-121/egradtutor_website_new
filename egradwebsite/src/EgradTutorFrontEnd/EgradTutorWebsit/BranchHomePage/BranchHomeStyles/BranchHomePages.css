@@ -108,6 +108,7 @@ li.t1LinkToSpecificExam {
     font-size: 16px;
     font-weight: 600;
     text-align: start;
+    margin-left: 15%;
 }
 
 .t1NewExploreExams_EachCard_Container ul {
@@ -120,7 +121,7 @@ li.t1LinkToSpecificExam {
 }
 
 .t1NewExploreExams_EachCard_Container ul li a {
-    background-color: rgb(11, 204, 21);
+    background-color: rgb(61 176 243);
     position: relative;
     left: -48px;
     top: 11px;
@@ -137,11 +138,12 @@ li.t1LinkToSpecificExam {
 .t1NewExploreExams_Image_Container {
     display: flex;
     background-color: pink;
-    height: 240px;
+    height: 580px;
 }
 
 .t1NewExploreExams_Image_Container img {
     width: 100%;
+   
 }
 
 .NewExploreExams_EachCard_Container.t1NewExploreExams_EachCard_Container {
@@ -158,13 +160,13 @@ li.t1LinkToSpecificExam {
 }
 
 .t1CoursesHeadding #Our_Courses_heading{
-background-color: rgb(180, 123, 123);
+background-color: rgb(250 192 203);
 width: 100%;
 }
 
-.themeCoursesSubContainer{
+.t1CoursesSubContainer{
     color: #3db0f3;
-    background-color: greenyellow;
+    /* background-color: greenyellow; */
 }
 
 .t1CoursesUl{
@@ -188,6 +190,7 @@ color: blue;
 
 .t1PortalName{
 background-color: green;
+border-radius: 20px;
 height: 50px;
 width: 300px;
 display: flex;
@@ -220,38 +223,66 @@ display: flex;
 .t1FeaturesContainer{
 display: flex;
 flex-direction: column;
+width: 50%;
 border: 2px solid green;
 }
 
 .t1FeaturesHeading{
 color: red;
+display: flex;
+align-items: center;
+justify-content: center;
 background-color: palegoldenrod;
 }
 
 .t1ArrowWithFeatures{
-
+color: green;
+padding: 5px;
 }
 
 .t1Features{
-    color: red;
-    background-color: palegoldenrod;
+    color: rgb(14, 13, 13);
+   
 }
 
-.t1ExamsNames{
+.t1ExamsNames {
     display: flex;
     flex-direction: column;
-    border:2px solid rgb(32, 151, 32);
-}
-
-
-.t1ExamsNames a {
-    display: flex;
-    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     border: 2px solid rgb(32, 151, 32);
-    width: 200px;
-    justify-content: space-between;
-    background-color: gray;
-    border-radius: 20px;
-    /* gap: 10px; */
-    /* padding: 10px; */
+    height: 400px;
+    width: 275px;
+}
+
+
+.t1ExamsNames a  {
+  background-color: #c2fbd7;
+  border-radius: 100px;
+  box-shadow: rgba(44, 187, 99, .2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+  color: green;
+  cursor: pointer;
+  padding: 7px 20px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 250ms;
+  width: 235px;
+}
+
+.t1ExamsNames a:hover {
+  box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+  transform: scale(1.05) rotate(-1deg);
+}
+
+ .t1CourseLi:nth-child(2) .t1FeaturesContainer,
+.t1CourseLi:nth-child(3) .t1ExamsNames{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(66, 54, 54);
+    border: 1px solid #ccc;       
+    border-radius: 8px;           
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: 10px 0;              
+    padding: 10px;               
+    color: white;  
 }
