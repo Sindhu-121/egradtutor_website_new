@@ -109,7 +109,7 @@
 
 /* another  */
 /* Container styles */
-.exam_courses_container {
+.exam_courses_container.t2ExamCoursesContainer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -124,7 +124,7 @@
     /* background-color: #e8ebf4; */
   }
   
-  .exam_courses_sub_container ul {
+  .exam_courses_sub_container.t2ExamCoursesSubContainer  ul {
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(348px, 1fr));
@@ -134,7 +134,7 @@
 }
   
   /* Portal card styles */
-  .portal_names {
+  .portal_names.t2PortalNames {
     display: flex;
     flex-direction: column;
     border: 1px solid #1e6478;
@@ -150,7 +150,7 @@
     transform: scale(1.05);
   }
   
-  .portal_names li {
+  .portal_names.t2PortalNames li {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -160,7 +160,7 @@
     position: relative;
 }
   
-.portal_names li h1 {
+.portal_names.t2PortalNames  li h1 {
     margin: 0;
     font-size: 20px;
     margin-bottom: 1rem;
@@ -183,13 +183,13 @@
   }
   
   /* Button styles */
-  .exam_portal_btn {
+  .exam_portal_btn.t2ExamPortalBtn {
     background: linear-gradient(326deg, #0a9396, #005f73, #003d4e);
     padding: 6px;
     border-radius: 8px;
     margin-top: 2rem;
 }
-  .exam_portal_btn a {
+  .exam_portal_btn.t2ExamPortalBtn  a {
     color: white;
     text-decoration: none;
     font-weight: bold;
@@ -200,7 +200,7 @@
   }
   
   /* First child specific styles */
-  .exam_courses_sub_container ul .portal_names:first-child {
+  .exam_courses_sub_container ul .portal_names.t2PortalNames:first-child {
     margin-left: 0rem;
   }
   

@@ -41,13 +41,15 @@ const ExamCourse = () => {
   const themeDetails = JSONClasses[themeColor] || [];
   return (
     <div className={`exam_courses_container ${themeDetails.themeExamCoursesContainer}`}>
+     
       <div className={`exam_courses_sub_container ${themeDetails.themeExamCoursesSubContainer}`}>
       {/* <h1 className={`exam_courses_name_heading ${themeDetails.themeExamCoursesNameHeading}`}></h1> */}
       <ul>
         {portaldata.map(item => (
           <div className={`portal_names ${themeDetails.themePortalNames}`}>
+           
             <li key={item.Portale_Id}>
-              <h1 alt="image">{item.Portale_Name}</h1>
+              <h2 alt="image">{item.Portale_Name}</h2>
               {themeColor==="Theme-1" ?
               <hr/>:null
             }

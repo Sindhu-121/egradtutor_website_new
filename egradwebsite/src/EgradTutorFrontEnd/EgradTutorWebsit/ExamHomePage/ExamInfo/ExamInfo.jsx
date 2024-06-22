@@ -8,6 +8,7 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import ExamInfoEdit from './ExamInfoEdit'
 import { IoMdClose } from "react-icons/io";
 import { FaRegPenToSquare } from "react-icons/fa6";
+import '../../../../styles/ExamPage/DefaultThemeExamPage.css'
 const ExamInfo = () => {
   const { EntranceExams_Id } = useParams();
   const [isEditing, setIsEditing] = useState(false);

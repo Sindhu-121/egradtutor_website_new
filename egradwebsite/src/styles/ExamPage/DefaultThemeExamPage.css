@@ -84,11 +84,16 @@
 
 /* iNFORMATION BROUCHER SECTION CSS */
 
-.exams_info_btn_container.undefined {
+.exams_info_btn_container.defaultExamInfoBtnsContainer {
     padding: 1rem 9rem;
 }
-
-.exam_info_divs.undefined {
+h3#info_title {
+    background: #d9d9ff;
+    height: 9vh;
+    font-size: 1rem;
+    padding: 10px 20px; /* 10px top and bottom, 20px left and right */
+}
+h3#info_title{
     border: none;
     border-radius: .3rem;
     cursor: pointer;
@@ -97,4 +102,64 @@
     padding: .5rem 1rem;
     transition: .2s ease-in-out;
     white-space: nowrap;
+}
+.exam_courses_container.defaultExamCoursesContainer {
+    background-color:  #d9d9ff;;
+    width: 100%;
+}
+.portal_names.defaultPortalNames h1 {
+    color: #000;
+    /* font-family: Roboto; */
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    text-align: center;
+    
+}
+
+.portal_names.defaultPortalNames li{
+        border-radius: 20px;
+        box-shadow: 0 0 78px -19px #000;
+        transition: 1s;
+        width:20%;
+        text-align: center;
+       
+}
+.test_btn h3 {
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.5rem;
+    font-weight: 900;
+    padding: 1rem;
+}
+.portal_names.defaultPortalNames h2{
+        background-color: #fff;
+        border-radius: 20px 20px 0 0;
+        font-size: 1.5rem;
+        font-weight: 900;
+        padding: 1rem;
+}
+.defaultExamPortalImgDivInCard img {
+    height: 300px;
+    width: 300px;
+}
+.exam_portal_btn.defaultExamPortalBtn {
+    background-color: #fff;
+    border-radius: 0 0 20px 20px;
+}
+.exam_portal_btn.defaultExamPortalBtn a {
+    margin: 10px;
+    background: #d9d9ff;
+    border-radius: 8px;
+    padding: 1px;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.defaultPortalNames {
+    display: flex;
+}
+.exam_courses_sub_container.defaultExamCoursesSubContainer ul div{
+    display: flex;
+    flex-direction: row;
 }
