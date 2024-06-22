@@ -1,0 +1,89 @@
+* {
+    letter-spacing: 0;
+    line-height: 160%;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    word-spacing: .2rem;
+}
+
+
+
+.themeExamPageHeaderMainContainer {
+        background: white;
+        position: -webkit-sticky;
+        position: sticky;
+        top: .5rem;
+        z-index: 10;
+}
+ 
+.themeExamPageHeaderContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    padding: 10px;
+    height: 100px;
+}
+ 
+.Ug_examsPage_Container.themeExamPageHeaderContainer a {
+    /* background-color: #fef0f0; */
+    border-radius: 20px;
+    /* border: 1px solid rgb(207, 160, 160); */
+    padding: 10px;
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    /* margin-right: -11px; */
+}
+ 
+.Ug_examsPage_Container.themeExamPageHeaderContainer :hover{
+   text-decoration: solid;
+    text-decoration-color:rgb(16, 164, 223);
+}
+
+ 
+.Ug_examsPage_Container.themeExamPageHeaderContainer img {
+        border-radius: 5px;
+        width: 330px;
+}
+
+.Ug_examsPage_Container.themeExamPageHeaderContainer img, svg {
+    vertical-align: middle;
+    margin: 10px;
+}
+ 
+.exampage_heading.themeExamPageHeaderHeading {
+        background: #d9d9ff;
+        height: 9vh;
+ 
+    & p{
+        color: #070606;
+        font-size: 30px;
+        margin-bottom: 0;
+        text-align: center;
+        font-weight: bold;
+        padding:11px;
+    }
+}
+
+.exam_login_menu {
+    align-items: center;
+    display: flex;
+}
+
+
+/* iNFORMATION BROUCHER SECTION CSS */
+
+.exams_info_btn_container.undefined {
+    padding: 1rem 9rem;
+}

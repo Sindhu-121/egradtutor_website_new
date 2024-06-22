@@ -8,6 +8,7 @@ import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import { IoHome } from "react-icons/io5";
 import { useParams, Link } from 'react-router-dom'
 import '../../../../styles/ExamPage/Theme2ExamPage.css'
+import '../../../../styles/ExamPage/DefaultThemeExamPage.css'
 const ExamPageHeader = () => {
   const { EntranceExams_Id } = useParams();
   const [entranceExam, setEntranceExam] = useState([]);
@@ -65,7 +66,7 @@ const ExamPageHeader = () => {
       {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
           <div key={exam.EntranceExams_Id} className={`exampage_heading ${themeDetails.themeExamPageHeaderHeading}`}>
-            <p>{exam.EntranceExams_name} Exam</p>
+            <p>{exam.EntranceExams_name} EXAM</p>
           </div>
         ))}
     </div>
