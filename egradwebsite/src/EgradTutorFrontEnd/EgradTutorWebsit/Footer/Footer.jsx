@@ -14,7 +14,8 @@ const Footer = () => {
   const [showPreviousLinksData, setShowPreviousLinksData] = useState(false);
   const [isContactUsSectionVisible, setIsContactUsSectionVisible] = useState(false);
   const [isCopyRightSectionVisible, setIsCopyRightSectionVisible] = useState(false);
-
+const [addeGRADTutorContent, setAddeGRADTutorContent] = useState(false);
+const [addContactUsContent,setAddContactUsContent] = useState(false);
   useEffect(() => {
     axios
       .get(`${BASE_URL}/Footer/landingfooterContentDataOne`)
@@ -86,10 +87,16 @@ const Footer = () => {
   return (
     <div>
       <div>
+
+      <button onClick={() => setAddeGRADTutorContent(!addeGRADTutorContent)}>
+          {addeGRADTutorContent ? 'Hide eGRADTtor Form' : 'Add GRADTtorData'}
+        </button>
+        {addeGRADTutorContent && <FooterEdit type = "Add eGRADTutor" />}
+
         <button onClick={() => setFirstPopupVisible(!FirstPopupVisible)}>
           {FirstPopupVisible ? 'Hide eGRADTtor Form' : 'EditeGRADTtorData'}
         </button>
-        {FirstPopupVisible && <FooterEdit type="eGARDTutor" />}
+        {FirstPopupVisible && <FooterEdit type="eGRADTutor" />}
 
         {dataOne.map((item, index) =>
           index === 0 ? (
@@ -124,6 +131,12 @@ const Footer = () => {
           </li>
         ))}
         <div>
+        <button onClick={() => setAddContactUsContent(!addContactUsContent)} className="editbtn">
+
+{addContactUsContent ? 'Hide ContactUs' : 'Add ContactUs Data'}
+</button>
+{addContactUsContent && <FooterEdit type="Add ContactUs" />}
+
           <button onClick={() => setIsContactUsSectionVisible(!isContactUsSectionVisible)} className="editbtn">
 
             {isContactUsSectionVisible ? 'Hide ContactUs' : 'Edit ContactUs Data'}
