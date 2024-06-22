@@ -48,8 +48,13 @@ const ExamCourse = () => {
           <div className={`portal_names ${themeDetails.themePortalNames}`}>
             <li key={item.Portale_Id}>
               <h1 alt="image">{item.Portale_Name}</h1>
-              <hr/>
-              <img src={girl_img }/>
+              {themeColor==="Theme-1" ?
+              <hr/>:null
+            }
+              {/* <img src={girl_img }/> */}
+              <div className={` ${themeDetails.themeExamPortalImgDivInCard}`}>
+              <img src={girl_img } alt='img not uploaded'/>
+              </div>
               <div className={`exam_portal_btn ${themeDetails.themeExamPortalBtn}`}>
               <Link>{item.button}Explore<FaArrowRight /></Link>
               </div>
