@@ -42,14 +42,19 @@ const ExamCourse = () => {
   return (
     <div className={`exam_courses_container ${themeDetails.themeExamCoursesContainer}`}>
       <div className={`exam_courses_sub_container ${themeDetails.themeExamCoursesSubContainer}`}>
-      <h1 className={`exam_courses_name_heading ${themeDetails.themeExamCoursesNameHeading}`}></h1>
+      {/* <h1 className={`exam_courses_name_heading ${themeDetails.themeExamCoursesNameHeading}`}></h1> */}
       <ul>
         {portaldata.map(item => (
           <div className={`portal_names ${themeDetails.themePortalNames}`}>
             <li key={item.Portale_Id}>
               <h1 alt="image">{item.Portale_Name}</h1>
-              <hr/>
-              <img src={girl_img }/>
+              {themeColor==="Theme-1" ?
+              <hr/>:null
+            }
+              {/* <img src={girl_img }/> */}
+              <div className={` ${themeDetails.themeExamPortalImgDivInCard}`}>
+              <img src={girl_img } alt='img not uploaded'/>
+              </div>
               <div className={`exam_portal_btn ${themeDetails.themeExamPortalBtn}`}>
               <Link>{item.button}Explore<FaArrowRight /></Link>
               </div>
