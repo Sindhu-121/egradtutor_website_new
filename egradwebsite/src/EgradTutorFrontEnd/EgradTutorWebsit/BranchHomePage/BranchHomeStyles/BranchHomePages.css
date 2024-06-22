@@ -83,11 +83,11 @@
 }
 
 .t1NewExploreExams_ExamCard_Container {
-    /* background-color: rgb(156, 60, 60); */
+    background-color: rgb(250 192 203);
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
-    width: 75%;
+    /* justify-content: space-evenly; */
+    /* width: 75%; */
     padding: 10px;
     margin: 0 auto;
     flex-wrap: wrap;  
@@ -217,18 +217,21 @@ color: white;
     display: flex;
     justify-content: center;
     flex-direction: row;
+  
 }
 
 .t1FeatureImgC img{
     height: 100%;
     width: 100%;
+
     }
 
     .t1FeaturesContainer {
         display: flex;
         flex-direction: column;
         justify-content: space-evenly;
-        /* width: 40%; */
+        width: 30%;
+        border-radius: 10px;
         border: 2px solid rgb(189, 192, 189);
     }
 
@@ -247,6 +250,11 @@ padding: 15px;
 .t1Features{
     color: rgb(14, 13, 13);
    padding: 2px;
+}
+
+li.t1Features {
+    font-size: 16px;
+    font-weight: 500;
 }
 
 .t1ExamsNames {
@@ -279,6 +287,7 @@ padding: 15px;
 .t1ExtraPCForFeatures{
 padding: 30px;
 width: 80%;
+margin: 0 auto;
 display: flex;
 justify-content: space-evenly;
 
@@ -297,5 +306,17 @@ justify-content: space-evenly;
         width: 100%;
         padding: 10px;
         margin-top: 10px;
+    }
+
+    .t1ExamsNames a{
+        padding: 10px;
+        margin-top: 10px;
+    }
+}
+
+@media screen and (max-width:1400px){
+    .t1NewExploreExams_ExamCard_Container{
+        display: flex;
+        flex-direction: row;
     }
 }
