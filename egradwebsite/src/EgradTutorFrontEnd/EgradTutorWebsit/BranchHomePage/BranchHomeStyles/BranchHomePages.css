@@ -227,7 +227,8 @@ color: white;
     .t1FeaturesContainer {
         display: flex;
         flex-direction: column;
-        width: 30%;
+        justify-content: space-evenly;
+        /* width: 40%; */
         border: 2px solid rgb(189, 192, 189);
     }
 
@@ -253,8 +254,7 @@ padding: 15px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid rgb(189, 192, 189);
-    width: 275px;
+    /* width: 275px; */
 }
 
 
@@ -278,6 +278,7 @@ padding: 15px;
 
 .t1ExtraPCForFeatures{
 padding: 30px;
+width: 80%;
 display: flex;
 justify-content: space-evenly;
 
@@ -294,5 +295,7 @@ justify-content: space-evenly;
 
     .t1ExamsNames{
         width: 100%;
+        padding: 10px;
+        margin-top: 10px;
     }
 }
