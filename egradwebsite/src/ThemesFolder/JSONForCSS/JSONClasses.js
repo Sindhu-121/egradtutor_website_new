@@ -1,4 +1,3 @@
-
 const JSONClasses = {
   "Theme-default": {
     id: "defaultId",
@@ -93,15 +92,29 @@ const JSONClasses = {
     themeCourseName: "defaultCourseName",
     themeFeaturesSecondContainer: "defaultFeaturesSecondContainer",
     themeFeaturesToBeRow: "defaultFeaturesToBeRow",
-
+    themeCoursePortalNameImageContainer:
+      "themeCoursePortalNameImageContainerDefault",
     // End //
-
     themeExamPageHeaderMainContainer: "themeExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "themeExamPageHeaderContainer",
     themeExamPageHeaderHeading: "themeExamPageHeaderHeading",
     themeTotalExamContainer: "themeTotalExamContainer",
-    themeLinkToSpecificExam:"defaultLinkToSpecificExam",
-
+    themeLinkToSpecificExam: "defaultLinkToSpecificExam",
+    // exam page classes
+    themeExamInfoMainContainer: "defaultExamInfoMainContainer",
+    themeExamInfoBtnsContainer: "defaultExamInfoBtnsContainer",
+    themeExamInfoSubContainer: "defaultExamInfoSubContainer",
+    themeExamInfoBtns: "defaultExamInfoBtns",
+    themeExamInfoDivs: "defaultExamInfoDivs",
+    themeExamInfoToggles: "defaultExamInfoToggles",
+    themeToggles: "defaultToggles",
+    themeExamCoursesContainer: "defaultExamCoursesContainer",
+    themeExamCoursesSubContainer: "defaultExamCoursesSubContainer",
+    themeExamCoursesNameHeading: "defaultExamCoursesNameHeading",
+    themePortalNames: "defaultPortalNames",
+    themeExamPortalBtn: "defaultExamPortalBtn",
+    themeExamPortalImgDivInCard:"defaultExamPortalImgDivInCard",
+    
   },
   "Theme-1": {
     id: "themeOneId",
@@ -179,11 +192,11 @@ const JSONClasses = {
     themeCourseName: "t1CourseName",
     themeFeaturesSecondContainer: "t1FeaturesSecondContainer",
     themeFeaturesToBeRow: "t1FeaturesToBeRow",
+
     themeExamPageHeaderMainContainer: "t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "t1ExamPageHeaderContainer",
     themeExamPageHeaderHeading: "t1ExamPageHeaderHeading",
     themeTotalExamContainer: "t1TotalExamContainer",
-
     themeExamInfoMainContainer: "t1ExamInfoMainContainer",
     themeExamInfoBtnsContainer: "t1ExamInfoBtnsContainer",
     themeExamInfoSubContainer: "t1ExamInfoSubContainer",
@@ -192,13 +205,11 @@ const JSONClasses = {
     themeExamInfoToggles: "t1ExamInfoToggles",
     themeToggles: "t1Toggles",
     themeUgHomePageFirstContainer: "t1UgHomePageFirstContainer",
-
     themeExamCoursesContainer: "t1ExamCoursesContainer",
     themeExamCoursesSubContainer: "t1ExamCoursesSubContainer",
     themeExamCoursesNameHeading: "t1ExamCoursesNameHeading",
     themePortalNames: "t1PortalNames",
     themeExamPortalBtn: "t1ExamPortalBtn",
-
     // EXPLORE EXAM CLASSES
     themeExploreExamsMainContainer: "t1ExploreExamsMainContainer",
     themeExploreExamsSubContainer: "t1ExploreExamsSubContainer",
@@ -213,14 +224,14 @@ const JSONClasses = {
     themeNewExploreExams_Image: "t1NewExploreExams_Image_Container",
     themeNewExploreExams_EachCard_Container:
       "t1NewExploreExams_EachCard_Container",
-      themeLinkToSpecificExam:"t1LinkToSpecificExam",
-      themeCoursePortalNameImageContainer: "t1CoursePortalNameImageContainer",
-      themeFeaturesHeading: "t1FeaturesHeading",
-      themeArrowWithFeatures:"t1ArrowWithFeatures",
+    themeLinkToSpecificExam: "t1LinkToSpecificExam",
+    themeCoursePortalNameImageContainer: "t1CoursePortalNameImageContainer",
+    themeFeaturesHeading: "t1FeaturesHeading",
+    themeArrowWithFeatures: "t1ArrowWithFeatures",
     // themeFeatures: "t2Features",
-      
-
-
+    themeExamPortalImgDivInCard:"t1ExamPortalImgDivInCard",
+    // extra class for theme1
+    themeExtraPCForFeatures:"t1ExtraPCForFeatures",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -295,8 +306,24 @@ const JSONClasses = {
     themeNewExploreExams_Image: "t2NewExploreExams_Image_Container",
     themeNewExploreExams_EachCard_Container:
       "t2NewExploreExams_EachCard_Container",
-      themeLinkToSpecificExam:"t2LinkToSpecificExam",
-      themeEEContainerForCards:"t2EEContainerForCards",
+    themeLinkToSpecificExam: "t2LinkToSpecificExam",
+    themeEEContainerForCards: "t2EEContainerForCards",
+    // exam page classes
+    themeExamInfoMainContainer: "t2ExamInfoMainContainer",
+    themeExamInfoBtnsContainer: "t2ExamInfoBtnsContainer",
+    themeExamInfoSubContainer: "t2ExamInfoSubContainer",
+    themeExamInfoBtns: "t2ExamInfoBtns",
+    themeExamInfoDivs: "t2ExamInfoDivs",
+    themeExamInfoToggles: "t2ExamInfoToggles",
+    themeToggles: "t2Toggles",
+    // 2nd part
+    themeExamCoursesContainer: "t2ExamCoursesContainer",
+    themeExamCoursesSubContainer: "t2ExamCoursesSubContainer",
+    themeExamCoursesNameHeading: "t2ExamCoursesNameHeading",
+    themePortalNames: "t2PortalNames",
+    themeExamPortalBtn: "t2ExamPortalBtn",
+    themeExamPortalImgDivInCard:"t2ExamPortalImgDivInCard",
+
   },
 };
 
