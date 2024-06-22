@@ -244,9 +244,9 @@ flex-direction: row;
 }
 
 ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
 }
 
 /* OUR COURSES CSS PART */

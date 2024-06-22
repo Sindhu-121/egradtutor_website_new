@@ -159,9 +159,11 @@ li.t1LinkToSpecificExam {
     /* background-color: green; */
 }
 
-.t1CoursesHeadding #Our_Courses_heading{
-background-color: rgb(250 192 203);
-width: 100%;
+.t1CoursesHeadding #Our_Courses_heading {
+    background-color: rgb(250 192 203);
+    width: 100%;
+    height: 85px;
+    padding: 20px;
 }
 
 .t1CoursesSubContainer{
@@ -171,6 +173,7 @@ width: 100%;
 
 .t1CoursesUl{
 color: black;
+background-color: azure;
 }
 
 .t1CourseLi{
@@ -189,7 +192,7 @@ color: blue;
 }
 
 .t1PortalName{
-background-color: green;
+background-color: #f6860a;
 border-radius: 20px;
 height: 50px;
 width: 300px;
@@ -206,43 +209,43 @@ color: white;
     justify-content: center;
 }
 
-.t1FeatureImgC{
-height: 200px;
-width: 300px;
-border: 2px solid green;
-border-radius: 50px;
-display: flex;
+.t1FeatureImgC {
+    height: 296px;
+    width: 300px;
+    border: 1px solid #3aa4fc;
+    border-radius: 166px;
+    display: flex;
     justify-content: center;
     flex-direction: row;
 }
+
 .t1FeatureImgC img{
     height: 100%;
     width: 100%;
     }
 
-.t1FeaturesContainer{
-display: flex;
-flex-direction: column;
-width: 50%;
-border: 2px solid green;
-}
+    .t1FeaturesContainer {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        border: 2px solid rgb(189, 192, 189);
+    }
 
-.t1FeaturesHeading{
-color: red;
-display: flex;
-align-items: center;
-justify-content: center;
-background-color: palegoldenrod;
-}
+    .t1FeaturesHeading {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #b8d8ef;
+    }
 
 .t1ArrowWithFeatures{
 color: green;
-padding: 5px;
+padding: 15px;
 }
 
 .t1Features{
     color: rgb(14, 13, 13);
-   
+   padding: 2px;
 }
 
 .t1ExamsNames {
@@ -250,8 +253,7 @@ padding: 5px;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    border: 2px solid rgb(32, 151, 32);
-    height: 400px;
+    border: 2px solid rgb(189, 192, 189);
     width: 275px;
 }
 
@@ -271,18 +273,26 @@ padding: 5px;
 
 .t1ExamsNames a:hover {
   box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
-  transform: scale(1.05) rotate(-1deg);
+  transform: scale(1.05) ;
 }
 
- .t1CourseLi:nth-child(2) .t1FeaturesContainer,
-.t1CourseLi:nth-child(3) .t1ExamsNames{
-    display: flex;
-    flex-direction: row;
-    background-color: rgb(66, 54, 54);
-    border: 1px solid #ccc;       
-    border-radius: 8px;           
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
-    margin: 10px 0;              
-    padding: 10px;               
-    color: white;  
+.t1ExtraPCForFeatures{
+padding: 30px;
+display: flex;
+justify-content: space-evenly;
+
+}
+
+@media screen and (max-width:768px){
+    .t1ExtraPCForFeatures {
+        display: flex;
+        flex-direction: column;
+    }
+    .t1FeaturesContainer{
+        width: 100%;
+    }
+
+    .t1ExamsNames{
+        width: 100%;
+    }
 }
