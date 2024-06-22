@@ -245,7 +245,7 @@ flex-direction: row;
 
 ul {
     display: flex;
-    flex-direction: column;
+    /* flex-direction: column; */
     justify-content: center;
 }
 
