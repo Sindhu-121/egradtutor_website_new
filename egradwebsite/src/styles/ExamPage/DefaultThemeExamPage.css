@@ -2,12 +2,11 @@
     letter-spacing: 0;
     line-height: 160%;
     list-style-type: none;
-    margin: 0;
+   
     padding: 0;
     text-decoration: none;
     word-spacing: .2rem;
 }
-
 
 
 .themeExamPageHeaderMainContainer {
@@ -103,9 +102,10 @@ h3#info_title{
     transition: .2s ease-in-out;
     white-space: nowrap;
 }
-.exam_courses_container.defaultExamCoursesContainer {
-    background-color:  #d9d9ff;;
+.defaultExamCoursesContainer {
+    background-color: #d9d9ff;
     width: 100%;
+    border: none !important;
 }
 .portal_names.defaultPortalNames h1 {
     color: #000;
@@ -121,10 +121,13 @@ h3#info_title{
         border-radius: 20px;
         box-shadow: 0 0 78px -19px #000;
         transition: 1s;
-        width:20%;
+        width:100%;
         text-align: center;
+        margin:10px;
        
 }
+
+
 .test_btn h3 {
     background-color: #fff;
     border-radius: 20px 20px 0 0;
@@ -132,12 +135,12 @@ h3#info_title{
     font-weight: 900;
     padding: 1rem;
 }
-.portal_names.defaultPortalNames h2{
-        background-color: #fff;
-        border-radius: 20px 20px 0 0;
-        font-size: 1.5rem;
-        font-weight: 900;
-        padding: 1rem;
+.portal_names.defaultPortalNames h2 {
+    background-color: #fff;
+    border-radius: 20px 20px 0 0;
+    font-size: 1.2rem;
+    /* font-weight: 900; */
+    padding: 1rem;
 }
 .defaultExamPortalImgDivInCard img {
     height: 300px;
@@ -156,10 +159,20 @@ h3#info_title{
     font-size: 1rem;
     font-weight: 400;
 }
-.defaultPortalNames {
+
+.neetcourses .online_courses {
     display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    justify-content: flex-start;
+    margin: 0 auto;
+    width: 75%;
 }
-.exam_courses_sub_container.defaultExamCoursesSubContainer ul div{
+.exam_courses_sub_container.defaultExamCoursesSubContainer ul {
     display: flex;
     flex-direction: row;
+    width:80%;
+}
+.portal_names.defaultPortalNames {
+    margin-right: 15px;
 }
