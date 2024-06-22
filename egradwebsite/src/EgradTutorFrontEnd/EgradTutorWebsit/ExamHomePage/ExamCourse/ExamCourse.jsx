@@ -42,7 +42,7 @@ const ExamCourse = () => {
   return (
     <div className={`exam_courses_container ${themeDetails.themeExamCoursesContainer}`}>
       <div className={`exam_courses_sub_container ${themeDetails.themeExamCoursesSubContainer}`}>
-      <h1 className={`exam_courses_name_heading ${themeDetails.themeExamCoursesNameHeading}`}></h1>
+      {/* <h1 className={`exam_courses_name_heading ${themeDetails.themeExamCoursesNameHeading}`}></h1> */}
       <ul>
         {portaldata.map(item => (
           <div className={`portal_names ${themeDetails.themePortalNames}`}>
