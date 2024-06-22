@@ -303,7 +303,13 @@
     height: auto;
 
 }
-
+.undefined {
+    /* margin: 31px; */
+    display: flex;
+    width: 58%;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
 .t1ExamCoursesSubContainer ul {
     display: flex;
     flex-wrap: wrap;
