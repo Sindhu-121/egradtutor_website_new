@@ -232,6 +232,8 @@ const JSONClasses = {
     themeExamPortalImgDivInCard:"t1ExamPortalImgDivInCard",
     // extra class for theme1
     themeExtraPCForFeatures:"t1ExtraPCForFeatures",
+    // exam info for exam page
+
   },
   "Theme-2": {
     id: "themeTwoId",

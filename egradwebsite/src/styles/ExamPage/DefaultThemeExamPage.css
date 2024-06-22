@@ -87,3 +87,14 @@
 .exams_info_btn_container.undefined {
     padding: 1rem 9rem;
 }
+
+.exam_info_divs.undefined {
+    border: none;
+    border-radius: .3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: .5rem 1rem;
+    transition: .2s ease-in-out;
+    white-space: nowrap;
+}
