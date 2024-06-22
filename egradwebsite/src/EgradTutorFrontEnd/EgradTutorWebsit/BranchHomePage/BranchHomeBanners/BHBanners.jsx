@@ -1210,7 +1210,7 @@ const BHBanners = () => {
  
     setIsPopupVisible(false);
   };
- 
+
   return (
     <div>
       <div className="banner_section">
