@@ -4,7 +4,7 @@
     justify-content: center;
     gap: 4rem;
     flex-wrap: wrap;
-    width: 80%;
+    width: 90%;
     margin: auto;
 }
    .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container {
@@ -53,8 +53,10 @@
     gap: 1rem;
     flex-direction: column;
     position: relative;
+    padding: 0;
 
 }
+
 li.t2LinkToSpecificExam {
     width: 100%;
 }
@@ -66,6 +68,12 @@ li.t2LinkToSpecificExam {
     border-radius: 20px;
     /* left: -11%; */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+.t2CoursesHeadding {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    position: relative;
 }
 .NewExploreExams_PortalNames_Container.t2NewExploreExams_PortalNames_Container li {
     font-size: 16px;
@@ -100,12 +108,30 @@ li.t2LinkToSpecificExam {
     padding: 1rem 0;
 }
 .NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    /* margin: 1rem; */
-    padding: 1rem 0;
+    /* box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset; */
+    margin: 1rem 0;
+    padding: 10px 0 4rem 0;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    /* box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset; */
+    box-shadow: rgba(0, 0, 0, 0.06) 0px 2px 4px 0px inset;
+    background-color: #dee2e62e;
 }
-.NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
-    /* margin: 1rem; */
-    padding: 1rem 0;
+.t2OurCoursesContainer {
+    position: relative;
 }
+.ribbon-2 {
+    --f: 10px; /* control the folded part*/
+    --r: 15px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+    
+    position: absolute;
+    inset: var(--t) calc(-1*var(--f)) auto auto;
+    padding: 0 10px var(--f) calc(10px + var(--r));
+    clip-path: 
+      polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
+        calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)),
+        var(--r) calc(50% - var(--f)/2));
+    background: #BD1550;
+    box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+  }
+  

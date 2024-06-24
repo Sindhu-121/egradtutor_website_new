@@ -9,6 +9,9 @@ import ExamInfoEdit from './ExamInfoEdit'
 import { IoMdClose } from "react-icons/io";
 import { FaRegPenToSquare } from "react-icons/fa6";
 import '../../../../styles/ExamPage/DefaultThemeExamPage.css'
+// import { BsInfoSquareFill } from "react-icons/bs";
+import { LuInfo } from "react-icons/lu";
+import { GoGlobe } from "react-icons/go";
 const ExamInfo = () => {
   const { EntranceExams_Id } = useParams();
   const [isEditing, setIsEditing] = useState(false);
@@ -99,15 +102,35 @@ const ExamInfo = () => {
 
         {isEditing && <ExamInfoEdit type="aboutUs" />}
         <div className={`exam_info_sub_container ${themeDetails.themeExamInfoSubContainer}`}>
-          <div className={`exam_info_btns ${themeDetails.themeExamInfoBtns}`}>
-            <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
-              <h3 id="info_title">Information Brochure</h3>
+          {themeColor === 'Theme-2'
+            ?
+            <div className={`exam_info_btns ${themeDetails.themeExamInfoBtns}`}>
+              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+                <div id="info_title" className="infoButton ">
+                  <div className="infoButtonSpan"><LuInfo /> </div>
+                  <div className="t2ButtonDiv"><p> Information Brochure</p></div>
+                </div>
+              </div>
+
+              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+                <div id="info_title" className='infoButton'>
+                  <div className='infoButtonSpan'><GoGlobe /></div>
+                  <div className="t2ButtonDiv"> <p> Official Webpage</p></div></div>
+              </div>
+            </div>
+            :
+            <div className={`exam_info_btns ${themeDetails.themeExamInfoBtns}`}>
+
+              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+                <h3 id="info_title"> Information Brochure</h3>
+              </div>
+
+              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+                <h3 id="info_title">Official Webpage</h3>
+              </div>
             </div>
 
-            <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
-              <h3 id="info_title">Official Webpage</h3>
-            </div>
-          </div>
+          }
 
           <div className={`exam_info_toggle_visiable_links ${themeDetails.themeExamInfoToggles}`}>
             <div className={`toggles ${themeDetails.themeToggles}`}>
