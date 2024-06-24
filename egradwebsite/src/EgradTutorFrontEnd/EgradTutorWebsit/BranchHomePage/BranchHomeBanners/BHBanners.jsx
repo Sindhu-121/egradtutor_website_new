@@ -788,7 +788,6 @@ import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
  
- 
 const BHBanners = () => {
   const [banners, setBanners] = useState([]);
   const { Branch_Id, EntranceExams_Id } = useParams();
@@ -1218,7 +1217,7 @@ const BHBanners = () => {
           <button onClick={toggleBannerPopup}>Edit</button>
  
           {/*--------------- Displaying_banners_start---------------- */}
-          <Carousel
+          <Carousel 
             autoPlay
             infiniteLoop
             showArrows={false}
