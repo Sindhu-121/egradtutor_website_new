@@ -25,7 +25,7 @@
     border-radius: 0 15%;
 }
 .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container:nth-child(odd) {
-    height: 376px;
+    height: 300px;
     width: 320px;
     /* background-color: red; */
     /* border-radius: 15% 0; */
