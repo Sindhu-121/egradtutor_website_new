@@ -115,6 +115,22 @@ const JSONClasses = {
     themeExamPortalBtn: "defaultExamPortalBtn",
     themeExamPortalImgDivInCard:"defaultExamPortalImgDivInCard",
     
+// Footer classes
+themeFooterMainContainer:"themeFooterMainContainerDeafult",
+themeFooterSubContainer:"themeFooterSubContainerDefault",
+themeFooterContentMainContainer:"themeFooterContentMainContainerDefault",
+themeFooterFirstContentContainer:"themeFooterFirstContentContainerDefault",
+themeFootereGRADTtutoContent:"themeFootereGRADTtutoContentDefault",
+themeFooterFirstContent:"themeFooterFirstContentDefault",
+themeFooterLinksContent:"themeFooterLinksContentDefault",
+themeFooterContactUsContent:"themeFooterContactUsContentDefault",
+themeFooterContactData:"themeFooterContactDataDefault",
+themeFooterCopywriteContentContainer:"themeFooterCopywriteContentContainerDefault",
+
+themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
+
+
+
   },
   "Theme-1": {
     id: "themeOneId",

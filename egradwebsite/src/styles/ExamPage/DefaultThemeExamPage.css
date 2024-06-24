@@ -84,15 +84,13 @@
 .exams_info_btn_container.defaultExamInfoBtnsContainer {
     padding: 1rem 9rem;
 }
-.defaultExamInfoSubContainer .defaultExamInfoBtns.defaultExamInfoDivs h3#info_title {
+h3#info_title {
     background: #d9d9ff;
     /* height: 9vh; */
     font-size: 1rem;
     padding: 10px 20px;
     margin-bottom: 32px;
 }
-
-    
 .defaultExamInfoToggles .defaultToggles h3#info_title {
     border: none;
     /* border-radius: .3rem; */
