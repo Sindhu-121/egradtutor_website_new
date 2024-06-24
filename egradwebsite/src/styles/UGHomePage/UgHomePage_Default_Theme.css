@@ -151,10 +151,10 @@ li.themeUgHeaderLiDefault:hover {
     display: flex;
     flex-direction: row;
     /* flex-wrap: wrap-reverse; */
-    gap: 5rem;
+    /* gap: 5rem; */
     justify-content: center;
     margin: 0 auto;
-    width: 80%;
+    width: 65%;
 }
 .NewExploreExams_ImageDefault img {
     width: 500px;
@@ -205,12 +205,12 @@ flex-direction: row;
 .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
-    -webkit-column-gap: 7.8rem;
     column-gap: 7.8rem;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     padding: 0 2rem;
     row-gap: 3rem;
+    margin-right: 20px;
 }
 .NewExploreExams_EachCard_Container ul li a {
     background: #3ad4ba;
@@ -245,7 +245,7 @@ flex-direction: row;
     padding: 1rem;
     /* text-align: center; */
     text-transform: capitalize;
-    /* width: 250px; */
+    width: 250px;
 }
 
 ul {
@@ -294,7 +294,12 @@ li.defaultCourseLi {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    background: #e3f2fd;
+    margin: 15px;
+    border: 1px solid black; /* Updated border property */
+    padding:20px;
 }
+
 .themeCoursePortalNameImageContainerDefault{
         display: flex;
         flex-direction: column;
@@ -327,9 +332,7 @@ h3.undefined {
     margin-left: 22px;
 }
 .defaultExamsNames {
-    height: 100px;
-    /* grid-gap: 1rem; */ 
-    /* align-items: center; */
+    height: 20px;
     display: grid;
     flex-wrap: wrap;
     gap: 0.8rem;
@@ -348,7 +351,7 @@ h3.undefined {
     text-align: center;
     /* text-transform: uppercase; */
     text-decoration: none;
-    width: 150px;
+    width: 179px;
     font-size: 13px;
 }
 
@@ -357,6 +360,121 @@ ul.defaultCoursesUl li:hover {
     box-shadow: black 0 0 5px;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
-.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
-    height: 221px !important;
+@media (max-width: 600px) {
+    .Ug_header_logoIMG img {
+        width: 145px;
+    }
+    .themeUgDivLinksOfHeaderDefault {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+    #EXPLORE_Exam_Heading {
+        color: #00a3ff;
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+        color: #1ba2d9;
+    }
+    .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+        align-items: center;
+        display: flex;
+      flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+        width: 65%;
+    }
+    .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      align-items: center;
+    }
+    .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
+        display: flex;
+        align-items: center;
+        width: 100px;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
+        /* background: #279eff69; */
+        background: #fff;
+        border-radius: 13px;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+        /* display: flex; */
+        flex-direction: column;
+        gap: .8rem;
+        height: 266px;
+        justify-content: center;
+        padding: 1rem;
+        /* text-align: center; */
+        text-transform: capitalize;
+        width: 250px;
+    }
+    .NewExploreExams_Image.themeNewExploreExams_ImageDefault img{
+        width:100px;
+    }
+    .NewExploreExams_Image.themeNewExploreExams_ImageDefault img {
+        width: 325px;
+        margin-top: 20px;
+    }
+    li.defaultCourseLi {
+        display: flex;
+        flex-direction: column;
+      
+        background: #e3f2fd;
+        margin: 15px;
+        border: 1px solid black;
+        padding: 20px;
+    }
+    .defaultFeatureImgC img {
+        height: 220px;
+        width: 220px;
+    }
+    strong.defaultPortalName {
+        background: #2d6891;
+        color: #fff;
+        font-size: 1.2rem;
+        margin: .3rem auto;
+        padding: .5rem;
+        text-align: center;
+        width: 80%;
+        display: block;
+    }
+    .defaultFeaturesContainer {
+        /* line-height: 32px; */
+        padding-top:0px;
+        text-align: justify;
+    }
+    .defaultExamsNames {
+        margin-top:0px;
+    }
+    .defaultCoursesSubContainer {
+        grid-gap: 2rem;
+        /* display: grid; */
+        gap: 2rem;
+        margin: .5rem auto;
+        width: 98%;
+    }
 }
+
+@media (max-width:1280) {
+    .NewExploreExams_Image.themeNewExploreExams_ImageDefault img {
+        margin-left: 20px;
+    }
+    .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+        align-items: center;
+        /* display: flex; */
+        flex-direction: row;
+        /* flex-wrap: wrap-reverse; */
+        /* gap: 5rem; */
+        justify-content: center;
+        margin: 0 auto;
+        width: 65%;
+    }
+}
+
+
