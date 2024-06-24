@@ -12,6 +12,7 @@ const ExploreExam = () => {
   const [fetchedImage, setFetchedImage] = useState(null);
   const [portalesData, setPortalesData] = useState([]);
   const [branch, setBranch] = useState(null);
+  const [showExploreExam, setShowExploreExam] = useState(false);
   const themeFromContext = useContext(ThemeContext);
   useEffect(() => {
     fetchBranchData();
@@ -73,7 +74,7 @@ const ExploreExam = () => {
                       <ul key={index}>
                         <li className={`${themeDetails.themeLinkToSpecificExam}`}>
                           <Link
-                            to={`/ExamPages_main/${exam.EntranceExams_Id}`}
+                            to={`/ExamHomePage/${exam.EntranceExams_Id}`}
                           >
                             {exam.EntranceExams_name}
                           </Link>
@@ -81,7 +82,7 @@ const ExploreExam = () => {
                         <div className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`} >
                           {exam.Portale_Names &&
                             exam.Portale_Names.map((portaleName, index) => (
-                              <li key={index}>{portaleName}</li>
+                              <li key={index}><Link to={exam.portalLink}>{portaleName}</Link></li>
                             ))}
                         </div>
 
@@ -96,7 +97,10 @@ const ExploreExam = () => {
 
         </div>
       </div>
-      <ExploreExamEdit />
+      <button onClick={() => setShowExploreExam(!showExploreExam)}>
+          {showExploreExam ? "Close" : "Add ExploreExam"}
+        </button>
+        {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
     </div>
      :
      <div className={`NewExploreExams_Main_Container ${themeDetails.themeExploreExamsMainContainer}`}>
@@ -115,7 +119,7 @@ const ExploreExam = () => {
                       <ul key={index}>
                         <li className={`${themeDetails.themeLinkToSpecificExam}`}>
                           <Link
-                            to={`/ExamPages_main/${exam.EntranceExams_Id}`}
+                            to={`/ExamHomePage/${exam.EntranceExams_Id}`}
                           >
                             {exam.EntranceExams_name}
                           </Link>
@@ -123,7 +127,7 @@ const ExploreExam = () => {
                         <div className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`} >
                           {exam.Portale_Names &&
                             exam.Portale_Names.map((portaleName, index) => (
-                              <li key={index}>{portaleName}</li>
+                              <li key={index}><Link to={exam.portalLink}>{portaleName}</Link></li>
                             ))}
                         </div>
  
@@ -145,7 +149,10 @@ const ExploreExam = () => {
  
         </div>
       </div>
-      <ExploreExamEdit />
+      <button onClick={() => setShowExploreExam(!showExploreExam)}>
+          {showExploreExam ? "Close" : "Add ExploreExam"}
+        </button>
+        {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
     </div>
      }
     </>

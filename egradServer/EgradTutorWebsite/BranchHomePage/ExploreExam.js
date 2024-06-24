@@ -56,13 +56,12 @@ router.get("/examdata/:Branch_Id", async (req, res) => {
         exam.EntranceExams_Id === EntranceExams_Id &&
         exam.EntranceExams_name === EntranceExams_name
     );
-  
-    // If the entrance exam doesn't exist, push it to the array along with the Portale_Name
+
     if (!existingExam) {
       acc[Branch_Id].EntranceExams.push({
         EntranceExams_Id,
         EntranceExams_name,
-        Portale_Names: [Portale_Name], // Initialize an array for Portale_Names
+        Portale_Names: [Portale_Name], 
       });
     } else {
       // If the entrance exam already exists, check if the Portale_Name is not already included
