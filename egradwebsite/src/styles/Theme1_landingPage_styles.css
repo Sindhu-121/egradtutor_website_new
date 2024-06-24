@@ -16,21 +16,16 @@
     border: none !important;
 }
 
-/* .t1ThemeLogoImgC {
-    width: 300px;
-    height: 150px;
-} */
-
-.t1SubContainer  img{
+.t1SubContainer img {
     width: 300px;
     height: 150px;
 }
 
 
-/* img.t1LogoImg {
-    height: 100px;
-    width: 100%
-} */
+img.t1LogoImg {
+    height: 100%;
+    width: 100%;
+}
 
 
 
@@ -196,62 +191,62 @@
     font-size: 30px;
 }
 
+/* 
+& .t1BranchesContainer {
+    & .t1BranchesSubContainer {
+        display: flex;
+        justify-content: space-evenly;
 
-    & .t1BranchesContainer {
-        & .t1BranchesSubContainer {
+        & .t1BranchBox {
             display: flex;
-            justify-content: space-evenly;
+            flex-direction: column;
+            height: 420px;
 
-            & .t1BranchBox {
+            & .t1ExamButtonsBox {
                 display: flex;
-                flex-direction: column;
-                height: 420px;
+                flex-direction: row;
+                justify-content: space-around;
+                padding: 0px;
+                margin: 0px;
 
-                & .t1ExamButtonsBox {
+                & t1ExamImageBox {
+                    height: 240px !important;
+                }
+
+                & .t1Landing_branch_box_btns {
                     display: flex;
                     flex-direction: row;
-                    justify-content: space-around;
-                    padding: 0px;
-                    margin: 0px;
-                    &
-                    t1ExamImageBox{
-                        height: 240px !important;
-                    }
+                    flex-wrap: wrap;
 
-                    & .t1Landing_branch_box_btns {
+                    & ul {
                         display: flex;
                         flex-direction: row;
                         flex-wrap: wrap;
+                        border-radius: 20px;
+                        width: 150px;
 
-                        & ul {
-                            display: flex;
-                            flex-direction: row;
-                            flex-wrap: wrap;
-                            border-radius: 20px;
-                            width: 150px;
+                    }
 
-                        }
+                    & li {
+                        width: 100%;
+                        text-align: center;
+                        box-shadow: 0 0 3px #afd2c9;
+                        height: auto !important;
+                        border-radius: 20px;
+                    }
 
-                        & li {
-                            width: 100%;
-                            text-align: center;
-                            box-shadow: 0 0 3px #afd2c9;
-                            height: auto !important;
-                            border-radius: 20px;
-                        }
+                    & li:hover {
+                        background-color: rgb(191, 239, 250);
+                    }
 
-                        & li:hover {
-                            background-color: rgb(191, 239, 250);
-                        }
-
-                        & a {
-                            font-size: 15px;
-                        }
+                    & a {
+                        font-size: 15px;
                     }
                 }
             }
         }
     }
+}
 
 
 
@@ -265,8 +260,10 @@
                     justify-content: center;
                     width: 310px;
                     align-items: center;
+
                     & .t1UgAndPgButtons {
                         height: 30px;
+
                         a {
                             font-size: 0.8rem;
                         }
@@ -287,16 +284,18 @@
             }
         }
     }
-}
+} */
 
-.NewlandingPage_exams_image.t1ExamImageBox img{
+.NewlandingPage_exams_image.t1ExamImageBox img {
     height: 240px !important;
+    border: 1px solid #abd7f7;
+    border-radius: 140px;
 }
 
 /* ************************** For Footer Part ***************************************** */
-.t1FooterMainContainer{
+.t1FooterMainContainer {
     background-color: rgb(6, 243, 6) !important;
-} 
+}
 
 .Ug_header_logoIMG {
     width: 250px;
@@ -309,8 +308,128 @@
 
 .Newlandingpage_branchescontainer.t1BranchesContainer {
     width: 100%;
-    min-height: 40vh;
+    /* min-height: 40vh; */
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* *************************************************************************************************************************************** */
+/* ********* NEW CSS FOR LANDING PAGE ****************************************************************************************************** */
+/* *************************************************************************************************************************************** */
+
+.theme1welcomecontainer {
+    padding: 10px;
+}
+
+
+.theme1UGEntranceExamsContainer {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.theme1UGEntranceExamsContainer .t1BranchBox {
+    text-align: center;
+    display: flex;
+    padding: 15px;
+    justify-content: space-around;
+}
+
+
+.theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.themeInBranchBox {
+    display: flex;
+    flex-direction: column;
+}
+
+.theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
+    flex-direction: row-reverse;
+
+
+}
+
+.themeInBranchBox button.t1UgAndPgButtons {
+    background: transparent;
+    padding: 10px;
+}
+
+.theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.t1UgAndPgButtons a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #153e61;
+    background: #cceafb;
+}
+
+.t1Landing_branch_box_btns ul li a {
+    text-decoration: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    color: black;
+    font-size: 20px;
+    font-weight: 400;
+    padding-top: 10px;
+}
+
+
+@media (max-width:768px) {
+    .t1BranchBox {
+        flex-direction: column;
+    }
+
+    .t1BranchBox:nth-child(2) {
+        flex-direction: column !important;
+    }
+}
+
+@media (max-width:468px) {
+    .t1LandingParentContainer {
+        object-fit: cover;
+    }
+
+    .t1LCapImgDiv {
+        width: 200px;
+        height: 200px;
+    }
+
+    .t1UgAndPgButtons a {
+        text-decoration: none;
+        font-size: 20px;
+        color: #3db0f2;
+    }
+
+    .t1Landing_branch_box_btns ul li a {
+       font-size: 15px;
+       align-items: center;
+    }
+    
 }
