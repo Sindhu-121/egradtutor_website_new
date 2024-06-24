@@ -223,3 +223,11 @@ img.t2LogoImg {
         max-width: 257px;
     }
 }
+/* missing styles */
+li.t2Landing_branch_box_li_buttons a{
+text-decoration: none;
+font-weight: 600;
+}
+button.t2UgAndPgButtons a {
+text-decoration: none;
+}

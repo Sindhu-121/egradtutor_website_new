@@ -517,13 +517,16 @@ const ExamPageBanner = () => {
       interval={4600}
       showThumbs={false}
       showStatus={false}
+      
+      // transitionTime: 500, 
+      // swipeScrollTolerance: 5
     >
       {banners
         .filter((banner) => banner.banner_status === "active")
         .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
         // .slice(startBannerIndex, startBannerIndex + 4)
         .map((banner) => (
-          <div key={banner.EntranceExams_Id}>
+          <div key={banner.EntranceExams_Id} >
             <img
               src={`data:image/svg+xml;base64,${banner.banner}`}
               alt={`Banner ${banner.EntranceExams_Id}`}

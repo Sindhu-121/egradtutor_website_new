@@ -278,3 +278,7 @@ button.disable {
 /* Additional styles as per your design needs */
 
 /* ==========================BANNERS UPDATING CSS styling END================================*/
+/* themes banners css trying */
+.carousel-item.fade-out {
+  opacity: 0; /* Fades out the element */
+}
