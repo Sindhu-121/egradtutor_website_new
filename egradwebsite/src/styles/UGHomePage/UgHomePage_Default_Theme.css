@@ -358,5 +358,5 @@ ul.defaultCoursesUl li:hover {
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
-    height: 221px !important;
+    height: 221px;
 }
