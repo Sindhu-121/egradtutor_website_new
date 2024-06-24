@@ -6,7 +6,7 @@ import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
 import '../BranchHomeStyles/BranchHomePages.css'
 import Marquee from "react-fast-marquee";
-
+import { Link } from "react-router-dom";
 
 const BHPNavBar = () => {
   const [navItems, setNavItems] = useState([]);
@@ -67,7 +67,7 @@ const BHPNavBar = () => {
           <div className={`navItemsContainer ${themeDetails.themeUgNavContainer}`}>
             <ul className={`${themeDetails.themeUgHeaderUl}`}>
               {navItems.map((navItem) => (
-                <li key={navItem.id} className={`${themeDetails.themeUgHeaderLi}`}>{navItem.Nav_Item}</li>
+                <li key={navItem.id} className={`${themeDetails.themeUgHeaderLi}`}><Link to={navItem.navItemlink}>{navItem.Nav_Item}</Link></li>
               ))}
             </ul>
           </div>
