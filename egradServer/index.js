@@ -39,6 +39,12 @@ app.use("/ExploreExam", ExploreExam);
 const ExploreExamEdit = require("./EgradTutorWebsite/BranchHomePage/ExploreExamEdit");
 app.use("/ExploreExamEdit", ExploreExamEdit);
 
+const BHPNavBarEdit = require("./EgradTutorWebsite/BranchHomePage/BHPNavBarEdit");
+app.use("/BHPNavBarEdit", BHPNavBarEdit);
+
+
+const ContactUs = require("./EgradTutorWebsite/ContactUs/ContactUs");
+app.use("/ContactUs", ContactUs);
 const Webbanners = require("./EgradTutorWebsite/ExamPage/Webbanners");
 app.use("/Webbanners", Webbanners);
 

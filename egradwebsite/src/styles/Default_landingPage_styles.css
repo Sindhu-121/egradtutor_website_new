@@ -159,11 +159,7 @@ color: white;
         margin:10px;
     }
 
-    @media (max-width: 600px) {
-        .Egate_logo_hjurnfh img {
-            max-width: 500px !important;
-        }
-    }
+  
 
 
     a {
@@ -229,4 +225,114 @@ color: white;
             text-align: justify;
         }
     }
+
+    /* Media queries for landing page */
+
+    @media (max-width: 600px) {
+        .Egate_logo_hjurnfh img {
+            max-width: 150px !important;
+        }
+
+        .landing_content_div_container.EGATE_landingE {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            justify-content: center;
+            align-items: center;
+            background-color: #00222c;
+            height: 300px;
+        }
+        .Egate_loge_landing img {
+            background: #fff;
+            box-shadow: -1px 1px 20px 6px #fff;
+            max-width: 225px;
+        }
+        .Egate_landiing_ojnkl h1 {
+            color: white;
+            font-size: 25px;
+        } && p{
+            color: white;
+            font-size: 18px;
+        }
+        .themeLanding_branch_box_li_buttonsDefault a {
+            border-width:1px solid;
+            border-color:gray;
+        }
+        .Footer_Sub_Container.themeFooterSubContainerDefault {
+            padding: 1rem 2.5rem 0;
+        }
+        .Footer_Content_Main_Container.themeFooterContentMainContainerDefault {
+            display: flex;
+            /* justify-content: space-evenly; */
+            flex-direction: column;
+        }
+        .Footer_eGRADTtutor__Content.themeFootereGRADTtutoContentDefault {
+            width: 100%;
+        }
+        .Footer_FirstContent.themeFooterFirstContentDefault h2 {
+            padding-top: 1rem;
+            padding-bottom: 0px;
+        }
+        && p {
+            color: white;
+            font-size: 15px;
+        }
+        .Footer_Links_Content.themeFooterLinksContentDefault ul {
+            display: flex;
+            flex-direction: column;
+            line-height: -10rem; 
+            margin: 10px 0; 
+        }
+        .Footer_Links_Content.themeFooterLinksContentDefault ul li a {
+            font-size: 15px;
+        }
+        .themeFooterContactDataDefault h2 {
+            padding-top: 1rem;
+            padding-bottom: 0px;
+        }
+    }
+    
+
+    /* Media query for screen sizes between 601px and 800px */
+@media (min-width: 601px) and (max-width: 850px) {
+    
+    .landing_content_div_container.EGATE_landingE {
+        display: flex;
+        gap: 4rem;
+        justify-content: center;
+        align-items: center;
+        background-color: #00222c;
+        height: 300px;
+        padding: 72px;
+    }
+    .Egate_loge_landing img {
+        background: #fff;
+        box-shadow: -1px 1px 20px 6px #fff;
+        max-width: 282px;
+    }
+    
+    .Egate_landiing_ojnkl h1 {
+        color: white;
+        font-size: 24px;
+    }
+    .Footer_Sub_Container.themeFooterSubContainerDefault {
+        padding: 2rem 2rem 0;
+    }
+    .Footer_Links_Content.themeFooterLinksContentDefault ul li a {
+        /* margin-right: 100px; */
+        gap:5rem;
+    }
+}
+/* Media query for maximum screen width of 415px */
+@media (max-width: 415px) {
+    .EGATE_elandUl-pg_Default {
+        width: 385px !important;
+        box-shadow: 0 0 10px #00222c !important;
+        padding: 1rem !important;
+        height: 400px;
+    }
+}
+
+
+
     
