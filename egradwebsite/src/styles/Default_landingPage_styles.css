@@ -47,12 +47,8 @@
     background-color: #00222c !important;
     text-align: center;
     box-shadow: 0 0 5px black !important;
-
-/* 
-    background-color: black;
-    box-shadow: 0 0 5px black; */
+    border-radius: 10px;
 }
- 
 .EGATE_elandUl-pg_Default button:hover {
     background-color: #062833;
     text-align: center;
@@ -170,8 +166,67 @@ color: white;
     }
 
 
-
+    a {
+        text-decoration: none !important;
+    }
     /* Exam Home page header section file */
 
+    .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container ul {
+        display:flex;
+        flex-direction: column;
+    }
     
+
+    /* Footer Part */
+
+    .Footer_Main_Container.themeFooterMainContainerDeafult{
+            background: #020202;
+    }
+    .Footer_Sub_Container.themeFooterSubContainerDefault{
+            padding: 2rem 10rem 0;
+    }
+    .Footer_Content_Main_Container.themeFooterContentMainContainerDefault{
+            display: flex;
+            justify-content: space-evenly;
+    }
+    .Footer_eGRADTtutor__Content.themeFootereGRADTtutoContentDefault{
+            width: 71%;
+    }
+    .Footer_FirstContent.themeFooterFirstContentDefault h2 {
+        color: #279eff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        text-shadow: 2px 9px 8px #000;
+    } && p{
+            line-height: 1.5rem;
+            text-align: justify;
+            color:white;
+    }
+    .Footer_Links_Content.themeFooterLinksContentDefault ul{
+        display: flex;
+        
+    } && li a{
+        color:white;
+        margin-right:10px;
+    }
+    .themeFooterContactDataDefault h2{
+        color: #279eff;
+        font-size: 1.5rem;
+        font-weight: 700;
+        padding-bottom: 1rem;
+        text-shadow: 2px 9px 8px #000;
+    }
+    .Footer_Copywrite_Content_Container.themeFooterCopywriteContentContainerDefault {
+        text-align: center;
+        border-top: 1px solid rgb(255, 255, 255);
+        padding-top: 10px;
+        padding-bottom: 10px;
+        color: rgb(255, 255, 255);
+
+        && p {
+            /* line-height: 1.5rem; */
+            text-align: justify;
+        }
+    }
     

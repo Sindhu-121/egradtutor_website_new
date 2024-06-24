@@ -74,6 +74,7 @@ const OueCourses = () => {
           {/* <h3 >Course Features:</h3> */}
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
+              
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
                 <div className={`${themeDetails.themeCoursePortalNameImageContainer}`}>
 
