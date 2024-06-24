@@ -90,14 +90,7 @@ const ExploreExam = () => {
             </div>
           </div>
 
-          <div className={`NewExploreExams_Image ${themeDetails.themeNewExploreExams_Image}`}>
-            {fetchedImage && (
-              <img src={fetchedImage} alt="Fetched from database" />
-            )}
-
-          </div>
-
-
+          
 
         </div>
       </div>
