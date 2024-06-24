@@ -147,9 +147,14 @@ li.themeUgHeaderLiDefault:hover {
 }
 
 .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+    align-items: center;
     display: flex;
     flex-direction: row;
+    /* flex-wrap: wrap-reverse; */
+    gap: 5rem;
     justify-content: center;
+    margin: 0 auto;
+    width: 80%;
 }
 .NewExploreExams_ImageDefault img {
     width: 500px;
@@ -268,19 +273,23 @@ h2#Our_Courses_heading{
     margin: .5rem auto;
     width: 80%;
 }
-ul.defaultCoursesUl {
+.defaultCoursesSubContainer .ul.defaultCoursesUl li {
     grid-gap: 2rem;
-    /* align-items: center; */
     background: #e2f7fb;
-    border: 2px solid#000;
-    /* display: grid; */
+    border: 2px solid #000; /* Corrected border syntax */
     gap: 2rem;
     grid-template-columns: 35% 30% 25%;
     justify-content: space-around;
     margin: 0 auto;
     padding: 1.5rem;
     width: 95%;
+    margin-bottom: 15px;
 }
+
+
+
+
+
 li.defaultCourseLi {
     display: flex;
     flex-direction: row;
@@ -313,13 +322,13 @@ strong.defaultPortalName {
 h3.undefined {
     font-family: Roboto,sans-serif;
 }
-li.defaultFeatures{
+.DefaultthemeArrowWithFeatures li.DefaultthemeFeatures{
     list-style: disc;
     margin-left: 22px;
 }
 .defaultExamsNames {
     height: 100px;
-    /* grid-gap: 1rem; */
+    /* grid-gap: 1rem; */ 
     /* align-items: center; */
     display: grid;
     flex-wrap: wrap;
@@ -343,7 +352,7 @@ li.defaultFeatures{
     font-size: 13px;
 }
 
-ul.defaultCoursesUl:hover {
+ul.defaultCoursesUl li:hover {
     background-color: white;
     box-shadow: black 0 0 5px;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;

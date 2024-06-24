@@ -11,8 +11,6 @@
 
 .themeExamPageHeaderMainContainer {
         background: white;
-        position: -webkit-sticky;
-        position: sticky;
         top: .5rem;
         z-index: 10;
 }
@@ -88,24 +86,28 @@
 }
 h3#info_title {
     background: #d9d9ff;
-    height: 9vh;
+    /* height: 9vh; */
     font-size: 1rem;
-    padding: 10px 20px; /* 10px top and bottom, 20px left and right */
+    padding: 10px 20px;
+    margin-bottom: 32px;
 }
-h3#info_title{
+.defaultExamInfoToggles.defaultToggles h3#info_title {
+    
     border: none;
-    border-radius: .3rem;
+    /* border-radius: .3rem; */
     cursor: pointer;
     font-size: 1rem;
-    font-weight: 600;
+    font-weight: 700;
     padding: .5rem 1rem;
-    transition: .2s ease-in-out;
+    transition: 5.2s ease-in-out;
     white-space: nowrap;
 }
 .defaultExamCoursesContainer {
     background-color: #d9d9ff;
     width: 100%;
     border: none !important;
+    text-align: center;
+    padding-top: 150px;
 }
 .portal_names.defaultPortalNames h1 {
     color: #000;
@@ -143,21 +145,26 @@ h3#info_title{
     padding: 1rem;
 }
 .defaultExamPortalImgDivInCard img {
-    height: 300px;
+    height: 255px;
     width: 300px;
 }
 .exam_portal_btn.defaultExamPortalBtn {
     background-color: #fff;
     border-radius: 0 0 20px 20px;
+    height: 7vh;
+    margin-top: 20px;
+    text-align: center;
+    padding: 17px;
 }
 .exam_portal_btn.defaultExamPortalBtn a {
     margin: 10px;
     background: #d9d9ff;
     border-radius: 8px;
-    padding: 1px;
+    padding: 9px;
     color: #000;
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: 500;
+    /* margin-top: 33px; */
 }
 
 .neetcourses .online_courses {
@@ -170,9 +177,45 @@ h3#info_title{
 }
 .exam_courses_sub_container.defaultExamCoursesSubContainer ul {
     display: flex;
-    flex-direction: row;
-    width:80%;
+    /* flex-direction: row; */
+    /* width: 95%; */
+    /* text-align: center; */
+    justify-content: center;
+    /* align-items: center; */
 }
 .portal_names.defaultPortalNames {
     margin-right: 15px;
+    height: 200px;
+    width: 389px;
+}
+.exam_courses_sub_container.defaultExamCoursesSubContainer {
+    height: 70vh;
+}
+.toggles.defaultToggles h3{
+    display: flex;
+    justify-content: space-between;
+    font-weight:800;
+    font-size:20px;
+    && span {
+        font-weight:800;
+        font-size:20px;
+    }
+}
+
+.defaultToggles p#more_info  {
+    background-color:white;
+    color:black;
+    padding:10px;
+    border-width:1px;
+    border-color: black;
+}
+.exam_info_divs.defaultExamInfoDivs h3 {
+    width:200px;
+    margin-right: 10px;
+}
+.defaultExamInfoBtns {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+   
 }
