@@ -8,11 +8,14 @@ import BASE_URL from "../../../../apiConfig";
 const BHPNavBarEdit = () => {
   const [editingItemId, setEditingItemId] = useState(null);
   const [editNavItemText, setEditNavItemText] = useState('');
+  const [editnavItemlink, setEditnavItemlink] = useState('');
   const [navItems, setNavItems] = useState([]);
   const [isNavbarOpen, setIsNavbarOpen] = useState(false);
   const [editItemOrder, setEditItemOrder] = useState('');
   const [navItem, setNavItem] = useState('');
   const [itemOrder, setItemOrder] = useState('');
+  const [navItemlink, setNavItemlink] = useState('');
+  
  
   const handleDelete = (id) => {
     fetch(`${BASE_URL}/Main_Header/homepageNavItems/${id}`, {
@@ -56,23 +59,27 @@ const BHPNavBarEdit = () => {
 
   const handleSave = async (id) => {
     try {
-      await axios.put(`${BASE_URL}/Main_Header/homepageNavItem/${id}`, {
+      await axios.put(`${BASE_URL}/BHPNavBarEdit/homepageNavItem/${id}`, {
         Nav_Item: editNavItemText,
-        Item_Order: editItemOrder
+        Item_Order: editItemOrder,
+        navItemlink:editnavItemlink
       });
-      setNavItems(navItems.map(item => item.Nav_id === id ? { ...item, Nav_Item: editNavItemText, Item_Order: editItemOrder } : item));
+      setNavItems(navItems.map(item => item.Nav_id === id ? { ...item, Nav_Item: editNavItemText, Item_Order: editItemOrder,navItemlink: editnavItemlink } : item, ));
       setEditingItemId(null);
       setEditNavItemText('');
       setEditItemOrder('');
+      setEditnavItemlink('');
     } catch (error) {
       console.error('Error updating item:', error);
     }
   };
+
   const handleSaveNavItem = async () => {
     try {
-      const response = await axios.post(`${BASE_URL}/Main_Header/homepageNavItem`, {
+      const response = await axios.post(`${BASE_URL}/BHPNavBarEdit/homepageNavItem`, {
         Nav_Item: navItem,
-        Item_Order: itemOrder
+        Item_Order: itemOrder,
+        navItemlink:navItemlink
       });
       console.log('Server Response:', response.data);
       if (response.data.status === 'Success') {
@@ -80,6 +87,7 @@ const BHPNavBarEdit = () => {
         // Optionally close the form or reset form fields
         setNavItem('');
         setItemOrder('');
+        setNavItemlink('');
       } else {
         console.error('Failed to save item');
       }
@@ -124,11 +132,18 @@ const BHPNavBarEdit = () => {
                     value={editItemOrder}
                     onChange={(e) => setEditItemOrder(e.target.value)}
                   />
+                  <input
+                    type="number"
+                    value={editNavItemText}
+                    onChange={(e) => setEditnavItemlink(e.target.value)}
+                  />
+                  
                   <button onClick={() => handleSave(navItem.Nav_id)}>Save</button>
                   <button onClick={() => {
                     setEditingItemId(null);
                     setEditNavItemText('');
                     setEditItemOrder('');
+                    setEditnavItemlink('');
                   }}>Cancel</button>
                 </>
               ) : (
@@ -145,6 +160,7 @@ const BHPNavBarEdit = () => {
                   setEditingItemId(navItem.Nav_id);
                   setEditNavItemText(navItem.Nav_Item);
                   setEditItemOrder(navItem.Item_Order);
+                  setEditnavItemlink(navItem.navItemlink)
                 }}
               >
                 <CiEdit />
@@ -169,7 +185,13 @@ const BHPNavBarEdit = () => {
               onChange={(e) => setItemOrder(e.target.value)}
               placeholder="Enter Item Order"
             />
-            <button onClick={handleSaveNavItem}>Upload</button>
+             <input
+              type="text"
+              value={navItemlink}
+              onChange={(e) => setNavItemlink(e.target.value)}
+              placeholder="Enter NavItem Link"
+            />
+            <button onClick={handleSaveNavItem}>Save</button>
           </div>
         </div>
       )}

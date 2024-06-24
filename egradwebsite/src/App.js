@@ -10,6 +10,7 @@ import Login from "./Login/Login";
 import AdminLogin from "./Login/AdminLogin";
 import Register from "./Login/Register";
 import UgadminHome from "./Login/UgadminHome";
+import ContactUs from "./EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/ContactUs/ContactUs";
 
 function App() {
   return (
@@ -21,11 +22,11 @@ function App() {
         <Route path="/Register" element={<Register/>} />
         <Route path="./UgadminHome" element={<UgadminHome/>}/>
       <Route path="/" element={<WebSiteLandingPage/>}/>
-      
+
       <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage/>}/>
       <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage />}/>
       <Route path="/AboutUs" element={<AboutUs/>}/>
-      
+       <Route path="/ContactUs" element={<ContactUs/>}/>
       </Routes>
     </Router>
      </ThemeProvider>

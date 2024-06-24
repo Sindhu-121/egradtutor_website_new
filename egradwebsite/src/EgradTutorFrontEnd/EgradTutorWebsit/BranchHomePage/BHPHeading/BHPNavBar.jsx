@@ -1,16 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react'
-import BHPNavBarEdit from "./BHPNavBarEdit"
+import React, { useContext, useEffect, useState } from 'react';
+import BHPNavBarEdit from "./BHPNavBarEdit";
 import axios from 'axios';
 import BASE_URL from '../../../../apiConfig';
 import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
-import '../BranchHomeStyles/BranchHomePages.css'
+import '../BranchHomeStyles/BranchHomePages.css';
 import Marquee from "react-fast-marquee";
-
+import { Link as ScrollLink } from 'react-scroll';
+import { Link, useNavigate } from 'react-router-dom';
 
 const BHPNavBar = () => {
   const [navItems, setNavItems] = useState([]);
   const [marqueeItems, setMarqueeItems] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchNavItems = async () => {
@@ -34,16 +36,14 @@ const BHPNavBar = () => {
 
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
-  // Listen for messages from other pages
   refreshChannel.onmessage = function (event) {
     if (event.data === "refresh_page") {
-      window.location.reload(); // Reload the page
+      window.location.reload();
     }
   };
   const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss")
-  const themeDetails = JSONClasses[themeColor] || []
-  console.log(themeDetails, "mapppping from json....")
+  const themeDetails = JSONClasses[themeColor] || [];
+
   const fetchMarqueeItems = async () => {
     try {
       const response = await axios.get(
@@ -55,36 +55,55 @@ const BHPNavBar = () => {
     }
   };
   useEffect(() => {
-    // fetchBranchData();
     fetchMarqueeItems();
-    // fetchAllBranches();
   }, []);
+
+  const renderNavItem = (navItem) => {
+    // Check if the link should scroll or redirect
+    const isInternalLink = navItem.navItemlink.startsWith('Explore') || navItem.navItemlink.startsWith('Our');
+
+    if (isInternalLink) {
+      // Internal link for scrolling
+      return (
+        <ScrollLink to={navItem.navItemlink} smooth={true} duration={500}>
+          {navItem.Nav_Item}
+        </ScrollLink>
+      );
+    } else {
+      // External link for navigation
+      return (
+        <span onClick={() => navigate(navItem.navItemlink)}>
+          {navItem.Nav_Item}
+        </span>
+      );
+    }
+  };
+
   return (
     <div>
-      {/* home,contactus navbar(second navbar) */}
       <div className={`ug_header ${themeDetails.themeUgHeader}`}>
         <div className={`ug_container ${themeDetails.themeUgHContainer}`}>
           <div className={`navItemsContainer ${themeDetails.themeUgNavContainer}`}>
             <ul className={`${themeDetails.themeUgHeaderUl}`}>
               {navItems.map((navItem) => (
-                <li key={navItem.id} className={`${themeDetails.themeUgHeaderLi}`}>{navItem.Nav_Item}</li>
+                <li key={navItem.id} className={`${themeDetails.themeUgHeaderLi}`}>
+                  {renderNavItem(navItem)}
+                </li>
               ))}
             </ul>
           </div>
         </div>
-
       </div>
       <div className={`marquee_data ${themeDetails.themeMarqData}`}>
-          <Marquee  behavior="scroll" direction="left" scrollamount="5" scrolldelay="10" loop="infinite" pauseOnHover
-          >
-            {marqueeItems.map((item) => (
-              <span key={item.Marquee_Id}>{item.Marquee_data}</span>
-            ))}
-          </Marquee>
-        </div>
+        <Marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="10" loop="infinite" pauseOnHover>
+          {marqueeItems.map((item) => (
+            <span key={item.Marquee_Id}>{item.Marquee_data}</span>
+          ))}
+        </Marquee>
+      </div>
       <BHPNavBarEdit />
     </div>
-  )
+  );
 }
 
-export default BHPNavBar
+export default BHPNavBar;

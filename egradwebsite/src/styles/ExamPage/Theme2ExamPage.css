@@ -290,3 +290,9 @@
         margin: 3.5rem 0px 0 0;
     }
 }
+/*  for the exam info accordion */
+.exam_info_sub_container.t2ExamInfoSubContainer {
+  width: 80%;
+  margin: auto;
+  /* background-color: rebeccapurple; */
+}

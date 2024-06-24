@@ -1218,6 +1218,8 @@ const BHBanners = () => {
  
           {/*--------------- Displaying_banners_start---------------- */}
           <Carousel 
+          // axis='vertical'
+          // verticalSwipe='natural'
             autoPlay
             infiniteLoop
             showArrows={false}

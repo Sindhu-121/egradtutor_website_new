@@ -108,10 +108,10 @@ img.t2LogoImg {
     font-size: 2.5rem;
     margin-top: 8.5rem;
 }
-.t2TextContainer div p{
+.t2TextContainer div p {
     margin-left: 102px;
+    color: #418f95;
     font-size: 1.25rem;
-
 }
 .Newlandingpage_branchescontainer.t2BranchesContainer{
     min-height: unset;

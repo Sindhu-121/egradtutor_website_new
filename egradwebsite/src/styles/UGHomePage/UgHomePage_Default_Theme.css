@@ -7,9 +7,9 @@
     align-items: center;
     justify-content: space-between;
 } */
-
-
-
+ 
+ 
+ 
 .\"Ug_header_Container.themeUgHeaderContainerDefault {
     display: flex;
     align-items: center;
@@ -52,7 +52,7 @@
     padding: -30.5rem 0;
     height: 60px;
 }
-
+ 
 ul.themeUgHeaderUlDefault {
     display: flex;
     gap: 1.5rem;
@@ -64,7 +64,7 @@ li.themeUgHeaderLiDefault {
         font-size: 1.3rem;
         font-weight: 500;
 }
-
+ 
 li.themeUgHeaderLiDefault:hover {
     -webkit-animation: navhover .5s alternate forwards;
     animation: navhover .5s alternate forwards;
@@ -87,7 +87,7 @@ li.themeUgHeaderLiDefault:hover {
         color: black;
         font-weight: 400;
 }
-
+ 
 .defaultCoursesSubContainer h2 {
     color: #00a3ff;
     font-size: 2rem;
@@ -101,10 +101,10 @@ li.themeUgHeaderLiDefault:hover {
     margin: .5rem auto;
     width: 80%;
 } */
-
-
-
-
+ 
+ 
+ 
+ 
 .themeCoursesBoxContainerDefault {
         grid-gap: 2rem;
         align-items: center;
@@ -130,22 +130,22 @@ li.themeUgHeaderLiDefault:hover {
     display: flex;
     flex-direction: column;
 }
-
+ 
 /* EXPLORE EXAMS CSS */
-
+ 
 .NewExploreExams_Main_Container.themeExploreExamsMainContainerDefault {
     background: #e2f7fb;
     padding: 20px 0;
     text-align: center;
     width: 100%;
 }
-
+ 
 #EXPLORE_Exam_Heading {
     color: #00a3ff;
     font-size: 2rem;
     margin: 2rem auto;
 }
-
+ 
 .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
     align-items: center;
     display: flex;
@@ -159,27 +159,27 @@ li.themeUgHeaderLiDefault:hover {
 .NewExploreExams_ImageDefault img {
     width: 500px;
 }
-
+ 
 .NewExploreExams_PortalNames_ContainerDefault li {
     color: #000;
     /* font-size: .9rem; */
     font-weight: 400;
     line-height: 2rem;
 }
-
+ 
 .NewExploreExams_PortalNames_ContainerDefault li:hover {
     color: blue;
     text-decoration: underline;
 }
-
-
-
-
+ 
+ 
+ 
+ 
 .NewExploreExams_ExamCard_MainContainerDefault {
 display: flex;
 flex-direction: row;
 }
-
+ 
 .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_MainContainerDefault {
         align-items: center;
         display: flex;
@@ -189,7 +189,7 @@ flex-direction: row;
         margin: 0 auto;
         width: 95%;
 }
-
+ 
 .NewExploreExams_ExamCard_MainContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
@@ -200,8 +200,8 @@ flex-direction: row;
     padding: 0 2rem;
     row-gap: 3rem;
 }
-
-
+ 
+ 
 .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
     grid-column-gap: 7.8rem;
     grid-row-gap: 3rem;
@@ -225,13 +225,13 @@ flex-direction: row;
     width: 155px;
     display: inline-block;
 }
-
+ 
 .NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault {
     margin: 15px  0px 0px 0px;
 }
-
-
-
+ 
+ 
+ 
 .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
     /* background: #279eff69; */
     background: #fff;
@@ -247,15 +247,15 @@ flex-direction: row;
     text-transform: capitalize;
     width: 250px;
 }
-
+ 
 ul {
     /* display: flex; */
     /* flex-direction: column; */
     /* justify-content: center; */
 }
-
+ 
 /* OUR COURSES CSS PART */
-
+ 
 .defaultCoursesHeadding {
     background: #fff;
     padding: .5rem 0;
@@ -285,11 +285,11 @@ h2#Our_Courses_heading{
     width: 95%;
     margin-bottom: 15px;
 }
-
-
-
-
-
+ 
+ 
+ 
+ 
+ 
 li.defaultCourseLi {
     display: flex;
     flex-direction: row;
@@ -299,7 +299,7 @@ li.defaultCourseLi {
     border: 1px solid black; /* Updated border property */
     padding:20px;
 }
-
+ 
 .themeCoursePortalNameImageContainerDefault{
         display: flex;
         flex-direction: column;
@@ -318,7 +318,7 @@ strong.defaultPortalName {
     height: 250px;
     width: 250px;
 }
-
+ 
 .defaultFeaturesContainer {
     /* line-height: 32px; */
     padding-top: 4.6rem;
@@ -354,7 +354,7 @@ h3.undefined {
     width: 179px;
     font-size: 13px;
 }
-
+ 
 ul.defaultCoursesUl li:hover {
     background-color: white;
     box-shadow: black 0 0 5px;
@@ -424,7 +424,7 @@ ul.defaultCoursesUl li:hover {
     li.defaultCourseLi {
         display: flex;
         flex-direction: column;
-      
+     
         background: #e3f2fd;
         margin: 15px;
         border: 1px solid black;
@@ -460,7 +460,7 @@ ul.defaultCoursesUl li:hover {
         width: 98%;
     }
 }
-
+ 
 @media (max-width:1280) {
     .NewExploreExams_Image.themeNewExploreExams_ImageDefault img {
         margin-left: 20px;
@@ -476,5 +476,4 @@ ul.defaultCoursesUl li:hover {
         width: 65%;
     }
 }
-
-
+ 
