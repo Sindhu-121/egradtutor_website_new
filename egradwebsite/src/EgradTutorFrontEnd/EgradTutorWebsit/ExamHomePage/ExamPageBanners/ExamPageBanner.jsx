@@ -11,7 +11,7 @@ import axios from "axios";
 import BASE_URL from "../../../../apiConfig";
 import "./styles/ExamPageBanner.css";
 
-const ExamPageBanner = () => {
+const ExamPageBanner = ({isEditMode}) => {
   const { EntranceExams_Id } = useParams();
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [isPopupUploadBanner, setIsPopupUploadBanner] = useState(false);
@@ -478,9 +478,15 @@ const ExamPageBanner = () => {
     <div>
       <div className="banner_section">
         <div>
+
+        {isEditMode && (
+          <div>
           <button onClick={toggleBannerPopup} className="add-clicked">
             <FaRegPenToSquare />
           </button>
+          </div>
+        )}
+          
 
           {/*--------------- Displaying_banners_start---------------- */}
           {/* <Carousel
