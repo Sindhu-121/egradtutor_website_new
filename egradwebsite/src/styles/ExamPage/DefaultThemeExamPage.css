@@ -123,7 +123,7 @@ p#more_info {
 
 }
 }
-h3#info_title {
+.defaultExamInfoSubContainer .defaultExamInfoBtns.defaultExamInfoDivs h3#info_title {
     background: #d9d9ff;
     /* height: 9vh; */
     font-size: 1rem;

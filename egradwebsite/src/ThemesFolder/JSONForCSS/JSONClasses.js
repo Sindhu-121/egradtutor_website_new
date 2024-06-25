@@ -273,6 +273,10 @@ themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
     themeFooterContactData:"t1FooterContactData",
     themeFooterCopywriteContentContainer:"t1FooterCopywriteContentContainer",
     themeContactFooterContentContainer:"t1ContactFooterContentContainer",
+    themeFooterCopyrightData:"t1FooterCopyrightData",
+    themeFooterCopyrightWrapperData:"t1FooterCopyrightWrapperData",
+    themeFooterCopyrightTextData:"t1FooterCopyrightTextData",
+    themeFooterContentColumn:"t1FooterContentColumn",
 
 
   },
