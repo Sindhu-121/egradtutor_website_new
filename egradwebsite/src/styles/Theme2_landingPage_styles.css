@@ -231,3 +231,13 @@ font-weight: 600;
 button.t2UgAndPgButtons a {
 text-decoration: none;
 }
+.Footer_Content_Main_Container.t2FooterContentMainContainer {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    /* background-color: red; */
+}
+.Footer_Sub_Container.t2FooterSubContainer {
+    width: 80%;
+    margin: auto;
+}

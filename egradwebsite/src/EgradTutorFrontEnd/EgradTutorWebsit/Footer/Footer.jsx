@@ -7,6 +7,7 @@ import FooterEdit from "./FooterEdit";
 import JSONClasses from "../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../ThemesFolder/ThemeContext/Context";
 import "../../../styles/Default_landingPage_styles.css";
+import '../../../styles/Theme2_landingPage_styles.css'
 const Footer = () => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
@@ -298,6 +299,7 @@ const Footer = () => {
           </div>
         </div>
       }
+
       {themeColor === 'Theme-1' && 
       <div className={`pg-footer ${themeDetails.themeMainFooterContainer}`}>
       <footer className={`footer ${themeDetails.themeInnerMainFooterContainer}`}>

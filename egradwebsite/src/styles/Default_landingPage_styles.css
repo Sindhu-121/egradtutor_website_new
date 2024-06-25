@@ -194,11 +194,15 @@ color: white;
         font-weight: 700;
         padding-bottom: 1rem;
         text-shadow: 2px 9px 8px #000;
-    } && p{
-            line-height: 1.5rem;
-            text-align: justify;
-            color:white;
-    }
+    } 
+
+    .Footer_FirstContent.themeFooterFirstContentDefault p{
+        line-height: 1.5rem;
+        text-align: justify;
+        color:white;
+}
+
+
     .Footer_Links_Content.themeFooterLinksContentDefault ul{
         display: flex;
         
@@ -220,12 +224,14 @@ color: white;
         padding-bottom: 10px;
         color: rgb(255, 255, 255);
 
-        && p {
-            /* line-height: 1.5rem; */
-            text-align: justify;
-        }
+        
     }
 
+
+    .Footer_Copywrite_Content_Container.themeFooterCopywriteContentContainerDefault  p {
+        /* line-height: 1.5rem; */
+        text-align: justify;
+    }
     /* Media queries for landing page */
 
     @media (max-width: 600px) {
@@ -273,7 +279,8 @@ color: white;
             padding-top: 1rem;
             padding-bottom: 0px;
         }
-        && p {
+        
+        .Footer_FirstContent.themeFooterFirstContentDefault p {
             color: white;
             font-size: 15px;
         }
