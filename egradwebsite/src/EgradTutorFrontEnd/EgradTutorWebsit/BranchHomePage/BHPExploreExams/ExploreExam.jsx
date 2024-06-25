@@ -93,9 +93,9 @@ const ExploreExam = () => {
             </div>
           </div>
 
-          
-
         </div>
+
+        
       </div>
       <button onClick={() => setShowExploreExam(!showExploreExam)}>
           {showExploreExam ? "Close" : "Add ExploreExam"}
@@ -109,7 +109,7 @@ const ExploreExam = () => {
  
  
         <div className={`NewExploreExams_ExamCard_MainContainer ${themeDetails.themeNewExploreExams_ExamCard_MainContainer}`}>
-          <div className={`${themeDetails.themeEEContainerForCards}`}>
+          {/* <div className={`${themeDetails.themeEEContainerForCards}`}> */}
             <div className={`NewExploreExams_ExamCard_Container ${themeDetails.themeNewExploreExams_ExamCard_Container}`}>
               {branch &&
                 branch.EntranceExams.map((exam, index) => (
@@ -135,7 +135,7 @@ const ExploreExam = () => {
                     </div>
                   </div>
                 ))}
-            </div>
+            {/* </div> */}
           </div>
  
           <div className={`NewExploreExams_Image ${themeDetails.themeNewExploreExams_Image}`}>
