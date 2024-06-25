@@ -235,4 +235,9 @@ text-decoration: none;
     display: flex;
     /* align-items: center; */
     justify-content: center;
+    /* background-color: red; */
+}
+.Footer_Sub_Container.t2FooterSubContainer {
+    width: 80%;
+    margin: auto;
 }
