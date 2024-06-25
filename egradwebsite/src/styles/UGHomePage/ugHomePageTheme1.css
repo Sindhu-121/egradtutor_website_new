@@ -306,13 +306,12 @@ background-color:  rgb(241, 241, 233);
     height: auto;
 
 }
-.undefined {
-    /* margin: 31px; */
+/* .undefined {
     display: flex;
     width: 58%;
     flex-direction: row;
     flex-wrap: wrap;
-}
+} */
 .t1ExamCoursesSubContainer ul {
     display: flex;
     flex-wrap: wrap;
