@@ -8,12 +8,14 @@ import JSONClasses from "../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../ThemesFolder/ThemeContext/Context";
 import "../../../styles/Default_landingPage_styles.css";
 import '../../../styles/Theme2_landingPage_styles.css'
+
 const Footer = ({
   isEditMode
   }) => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
   const [dataThree, setDataThree] = useState([]);
+  const [footerLink, setFooterLink] = useState([]);
   const [footerLinkData, setFooterLinkData] = useState([]);
   const [FirstPopupVisible, setFirstPopupVisible] = useState(false);
   const [showFooterLinksData, setShowFooterLinksData] = useState(false);
@@ -69,20 +71,32 @@ const Footer = ({
     fetchFooterLinks();
   }, []);
 
+  // useEffect(() => {
+  //   fetchFooterLinkData();
+  // }, []);
   const fetchFooterLinks = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Footer/footerLinks`);
-      setFooterLinkData(response.data);
+      setFooterLink(response.data);
     } catch (error) {
       console.error("Error fetching footer links:", error);
     }
   };
 
+  // const fetchFooterLinkData = async (Link_Id) => {
+  //   try {
+  //     const response = await axios.get(`${BASE_URL}/Footer/footerLinks/${Link_Id}`);
+  //     setFooterLinkData(response.data);
+  //   } catch (error) {
+  //     console.error("Error fetching footer links:", error);
+  //   }
+  // };
+
   useEffect(() => {
     const fetchFooterCopyWriteData = async () => {
       try {
         const response = await axios.get(
-          `${BASE_URL}/FooterPage/landingfooterContentDataThree`
+          `${BASE_URL}/Footer/landingfooterContentDataThree`
         );
         setDataThree(response.data);
       } catch (error) {
@@ -98,6 +112,8 @@ const Footer = ({
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
 
+
+  
 
   return (
     <>
@@ -190,12 +206,26 @@ const Footer = ({
                     </div>
                   )}
                   <ul>
-                    {footerLinkData.map((item) => (
-
-                      <li key={item.Link_Id}>
-                        <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
-                      </li>
-                    ))}
+                  {footerLink.map((item) => (
+                    <li key={item.Link_Id}>
+                      {item.footer_document_data ? (
+                        <Link
+                          to={{
+                            pathname: `/linkpage/${item.Link_Id}`,
+                            state: {
+                              footerDocumentData: item.footer_document_data,
+                            },
+                          }}
+                        >
+                          {item.Link_Item} 
+                        </Link>
+                      ) : (
+                        <Link to={item.Link_Routing_Data}>
+                          {item.Link_Item} 
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                   </ul>
                 </div>
               </div>
@@ -367,12 +397,32 @@ const Footer = ({
                   )}
  
                   <ul>
-                    {footerLinkData.map((item) => (
+                    {/* {footerLink.map((item) => (
 
                       <li key={item.Link_Id}>
                         <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
                       </li>
-                    ))}
+                    ))} */}
+                         {footerLink.map((item) => (
+                    <li key={item.Link_Id}>
+                      {item.footer_document_data ? (
+                        <Link
+                          to={{
+                            pathname: `/linkpage/${item.Link_Id}`,
+                            state: {
+                              footerDocumentData: item.footer_document_data,
+                            },
+                          }}
+                        >
+                          {item.Link_Item} 
+                        </Link>
+                      ) : (
+                        <Link to={item.Link_Routing_Data}>
+                          {item.Link_Item} 
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                   </ul>
                 </div>
               </div>
@@ -555,12 +605,26 @@ const Footer = ({
                       </div>
                     )}
                   <ul>
-                    {footerLinkData.map((item) => (
-
-                      <li key={item.Link_Id}>
-                        <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
-                      </li>
-                    ))}
+                  {footerLink.map((item) => (
+                    <li key={item.Link_Id}>
+                      {item.footer_document_data ? (
+                        <Link
+                          to={{
+                            pathname: `/linkpage/${item.Link_Id}`,
+                            state: {
+                              footerDocumentData: item.footer_document_data,
+                            },
+                          }}
+                        >
+                          {item.Link_Item} 
+                        </Link>
+                      ) : (
+                        <Link to={item.Link_Routing_Data}>
+                          {item.Link_Item} 
+                        </Link>
+                      )}
+                    </li>
+                  ))}
                   </ul>
                 </div>
               </div>

@@ -7,6 +7,7 @@ import BASE_URL from '../../../../apiConfig';
 import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import '../../../../styles/UGHomePage/ugHomePageTheme2.css'
 import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css'
+import defaultImage from "../../../../assets/defaultImage.png";
 const BHPHeading = () => {
   const [image, setImage] = useState(null);
 
@@ -50,10 +51,15 @@ const BHPHeading = () => {
         <div className={`Ug_HeaderSection ${themeDetails.themeUgHeaderSec}`}>
           <div className={`"Ug_header_Container ${themeDetails.themeUgHeaderContainer}`} >
             <div className={`Ug_header_logoIMG ${themeDetails.themeUgHeaderLogoImg}`}>
-              {image ? (
-                <img src={image} alt="Current" />
+            {image ? (
+                <Link to="/">
+                <img
+                  src={image}
+                  className={`${themeDetails.themeLogoImg}`}
+                  alt="Current"
+                /></Link>
               ) : (
-                <p>No image available</p>
+                <img src={defaultImage} alt="Default" />
               )}
             </div>
             <div className={`${themeDetails.themeUgDivLinksOfHeader}`}>
