@@ -240,4 +240,5 @@ text-decoration: none;
 .Footer_Sub_Container.t2FooterSubContainer {
     width: 80%;
     margin: auto;
+    border-top: 2px solid black;
 }
