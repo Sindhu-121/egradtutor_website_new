@@ -391,3 +391,6 @@
   margin: 0;
   padding: 10px ;
 }
+.infoButton .t2ButtonDiv p{
+  font-size: inherit;  
+}
