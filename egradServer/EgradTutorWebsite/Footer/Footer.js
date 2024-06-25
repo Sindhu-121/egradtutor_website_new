@@ -56,4 +56,23 @@ router.get("/landingfooterContentDataOne", async (req, res) => {
       res.status(500).send("Error retrieving data from the database");
     }
   });
+
+  router.get("/footerLinks/:linkId", async (req, res) => {
+    const linkId = req.params.linkId;
+    const sql = "SELECT * FROM footer_links_table WHERE Link_Id = ?";
+  
+    try {
+      // Assuming db.query is a function that executes the SQL query
+      const [results] = await db.query(sql, [linkId]);
+      console.log(
+        `Retrieved data from footer_links_table for Link_Id ${linkId}:`,
+        results
+      );
+      res.json(results); // Send JSON response with queried data
+    } catch (error) {
+      console.error("Error executing query:", error.stack);
+      res.status(500).send("Error retrieving data from the database");
+    }
+  });
+  
 module.exports = router;
