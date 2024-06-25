@@ -1,17 +1,18 @@
 import React, { useState, useEffect, useContext } from "react";
 import BASE_URL from "../../../../apiConfig";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-import JSONClasses from '../../../../ThemesFolder/JSONForCSS/JSONClasses';
-import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
-import { ThemeContext } from '../../../../ThemesFolder/ThemeContext/Context';
-import ExamInfoEdit from './ExamInfoEdit'
+import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
+import "../../../../styles/UGHomePage/ugHomePageTheme1.css";
+import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
+import ExamInfoEdit from "./ExamInfoEdit";
 import { IoMdClose } from "react-icons/io";
 import { FaRegPenToSquare } from "react-icons/fa6";
-import '../../../../styles/ExamPage/DefaultThemeExamPage.css'
+import "../../../../styles/ExamPage/DefaultThemeExamPage.css";
 // import { BsInfoSquareFill } from "react-icons/bs";
 import { LuInfo } from "react-icons/lu";
 import { GoGlobe } from "react-icons/go";
+
 const ExamInfo = () => {
   const { EntranceExams_Id } = useParams();
   const [isEditing, setIsEditing] = useState(false);
@@ -83,16 +84,19 @@ const ExamInfo = () => {
     return visibleSection === section ? "-" : "+";
   };
 
-
   const themeFromContext = useContext(ThemeContext);
   const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss")
-  const themeDetails = JSONClasses[themeColor] || []
-  console.log(themeDetails, "mapppping from json....")
+  console.log(themeColor, "this is the theme json classesssssss");
+  const themeDetails = JSONClasses[themeColor] || [];
+  console.log(themeDetails, "mapppping from json....");
 
   return (
-    <div className={`exam_info_main_container ${themeDetails.themeExamInfoMainContainer}`}>
-      <div className={`exams_info_btn_container ${themeDetails.themeExamInfoBtnsContainer}`}>
+    <div
+      className={`exam_info_main_container ${themeDetails.themeExamInfoMainContainer}`}
+    >
+      <div
+        className={`exams_info_btn_container ${themeDetails.themeExamInfoBtnsContainer}`}
+      >
         <button
           onClick={handleEditClick}
           className={isEditing ? "hide-clicked" : "add-clicked"}
@@ -101,38 +105,74 @@ const ExamInfo = () => {
         </button>
 
         {isEditing && <ExamInfoEdit type="aboutUs" />}
-        <div className={`exam_info_sub_container ${themeDetails.themeExamInfoSubContainer}`}>
-          {themeColor === 'Theme-2'
-            ?
+        <div
+          className={`exam_info_sub_container ${themeDetails.themeExamInfoSubContainer}`}
+        >
+          {themeColor === "Theme-2" ? (
             <div className={`exam_info_btns ${themeDetails.themeExamInfoBtns}`}>
-              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+              <div
+                className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}
+              >
                 <div id="info_title" className="infoButton ">
-                  <div className="infoButtonSpan"><LuInfo /> </div>
-                  <div className="t2ButtonDiv"><p> Information Brochure</p></div>
+                  <div className="infoButtonSpan">
+                    <LuInfo />{" "}
+                  </div>
+                  <div className="t2ButtonDiv">
+                    <p>
+                      <a
+                        href={newInfo.Official_Webpage}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Information Brochure
+                      </a>{" "}
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
-                <div id="info_title" className='infoButton'>
-                  <div className='infoButtonSpan'><GoGlobe /></div>
-                  <div className="t2ButtonDiv"> <p> Official Webpage</p></div></div>
+              <div
+                className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}
+              >
+                <div id="info_title" className="infoButton">
+                  <div className="infoButtonSpan">
+                    <GoGlobe />
+                  </div>
+                  <div className="t2ButtonDiv">
+                    {" "}
+                    <p>
+                      {" "}
+                      <a
+                        href={newInfo.Info_broucher}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Official Webpage
+                      </a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            :
+          ) : (
             <div className={`exam_info_btns ${themeDetails.themeExamInfoBtns}`}>
-
-              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+              <div
+                className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}
+              >
                 <h3 id="info_title"> Information Brochure</h3>
               </div>
 
-              <div className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}>
+              <div
+                className={`exam_info_divs ${themeDetails.themeExamInfoDivs}`}
+              >
                 <h3 id="info_title">Official Webpage</h3>
               </div>
             </div>
+          )}
 
-          }
-
-          <div className={`exam_info_toggle_visiable_links ${themeDetails.themeExamInfoToggles}`}>
+          <div
+            className={`exam_info_toggle_visiable_links ${themeDetails.themeExamInfoToggles}`}
+          >
             <div className={`toggles ${themeDetails.themeToggles}`}>
               <h3
                 id="info_title"
@@ -141,9 +181,7 @@ const ExamInfo = () => {
                 Conducting Authority{" "}
                 <span>{getIcon("Conducting_Authority")}</span>
               </h3>
-              <div>
-
-              </div>
+              <div></div>
               {visibleSection === "Conducting_Authority" && (
                 <p id="more_info">{newInfo.Conducting_Authority}</p>
               )}
@@ -163,7 +201,10 @@ const ExamInfo = () => {
             </div>
 
             <div className={`toggles ${themeDetails.themeToggles}`}>
-              <h3 id="info_title" onClick={() => toggleVisibility("Eligibility")}>
+              <h3
+                id="info_title"
+                onClick={() => toggleVisibility("Eligibility")}
+              >
                 Eligibility <span>{getIcon("Eligibility")}</span>
               </h3>
 
@@ -198,7 +239,7 @@ const ExamInfo = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ExamInfo
+export default ExamInfo;
