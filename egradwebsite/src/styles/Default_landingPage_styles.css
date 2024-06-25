@@ -37,6 +37,7 @@
     align-items: center;
     background-color: #00222c;
     height: 300px;
+    margin-top: 35px;
 }
 .Egate_landiing_ojnkl h1{
     color:white;
@@ -196,20 +197,24 @@ color: white;
         text-shadow: 2px 9px 8px #000;
     } 
 
-    .Footer_FirstContent.themeFooterFirstContentDefault p{
+    .Footer_eGRADTtutor__Content.themeFootereGRADTtutoContentDefault p{
         line-height: 1.5rem;
         text-align: justify;
-        color:white;
+        color:white !important;
 }
 
 
-    .Footer_Links_Content.themeFooterLinksContentDefault ul{
-        display: flex;
-        
-    } && li a{
-        color:white;
+.Footer_Links_Content.themeFooterLinksContentDefault ul {
+    display: flex;
+    padding-left: 0px;
+} 
+
+    .Footer_Links_Content.themeFooterLinksContentDefault ul li a{
+        color:white !important; 
         margin-right:10px;
+        text-decoration: underline !important;
     }
+
     .themeFooterContactDataDefault h2{
         color: #279eff;
         font-size: 1.5rem;

@@ -9,7 +9,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
 import '../BranchHomeStyles/BranchHomePages.css'
 
-const OueCourses = () => {
+const OueCourses = ({isEditMode}) => {
   const { Branch_Id } = useParams();
   const [showFeatureForm, setShowFeatureForm] = useState(false);
   const [courseFeatures, setCourseFeatures] = useState([]);
@@ -63,10 +63,15 @@ const OueCourses = () => {
   return (
 
     <div className={`${themeDetails.themeOurCoursesContainer}`}>
-      <div> <button onClick={handleAddFeaturesClick}>
+      <div>
+      {isEditMode && (
+          <div>
+          <button onClick={handleAddFeaturesClick}>
         {showFeatureForm ? "Close Feature Form" : "Add Features"}
       </button>
         {showFeatureForm && <OurCoursesEdit type="AddFeatures" />}
+          </div>
+        )}
       </div>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
         {themeColor === 'Theme-2' ?

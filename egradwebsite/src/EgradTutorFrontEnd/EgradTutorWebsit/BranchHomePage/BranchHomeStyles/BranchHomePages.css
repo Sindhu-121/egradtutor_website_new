@@ -56,9 +56,7 @@
         width: 130px;      
     }
 
-    .t1NewExploreExams_ExamCard_Container {
-        
-    }
+    
 }
 
 /* ***************{styles for "BranchHome Marquee" in BHPNavbar.jsx} ****************************************************************** */
@@ -72,9 +70,8 @@
 
 
 /* ***************{styles for "BranchHome Explore Exams" in BHPExploreExams.jsx} ****************************************************************** */
-
+/* 
 .t1ExploreExamsMainContainer {
-    /* background-color: red; */
     width: 100%;
 
     & #EXPLORE_Exam_Heading {
@@ -98,7 +95,6 @@
 }
 
 .t1ExploreExamsSubContainer {
-    /* background-color: green; */
     width: 100%;
     display: flex;
     margin: 0 auto;
@@ -108,8 +104,6 @@
     background-color: rgb(250 192 203);
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
-    /* width: 75%; */
     padding: 20px;
     margin: 0 auto;
     flex-wrap: wrap;  
@@ -118,44 +112,18 @@
 
 li.t1LinkToSpecificExam {
     position: absolute;
-    top: -19%;
-    left: 0;
+    top: -3%;
+    left: -17px;
+    padding: 10px;
+    width: 50%;
+    background: red;
 }
 .t1NewExploreExams_PortalNames_Container {
     justify-content: center;
     display: flex;
     flex-direction: column;
-    padding: 28px;
-    gap: 14px;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: start;
-    margin-left: 15%;
 }
 
-.t1NewExploreExams_EachCard_Container ul {
-    /* background-color: red; */
-    /* position: absolute; */
-}
-
-.t1NewExploreExams_EachCard_Container ul li {
-    /* background-color: rgb(107, 89, 89); */
-}
-
-.t1NewExploreExams_EachCard_Container ul li a {
-    background-color: rgb(90 209 182);
-    position: relative;
-    left: -48px;
-    top: 11px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    font-size: 11px;
-    width: 102px;
-    display: flex;
-    height: 100px;
-    border-radius: 53px;
-}
 
 .t1NewExploreExams_Image_Container {
     display: flex;
@@ -173,7 +141,82 @@ li.t1LinkToSpecificExam {
    position:relative;
     display: flex;
     flex-direction: column;
+} */
+
+
+
+
+
+
+.t1ExploreExamsMainContainer{
+background-color: rgb(250, 246, 246);
 }
+
+.t1ExploreExamsSubContainer{
+background-color: green;
+}
+
+.t1NewExploreExams_ExamCard_MainContainer{
+/* background-color: red; */
+}
+
+.t1NewExploreExams_ExamCard_Container {
+    /* background-color: purple; */
+    display: flex;
+    /* flex-wrap: wrap; */
+    /* flex-direction: row; */
+    width: 100%;
+}
+.t1NewExploreExams_EachCard_Container {
+    background: red;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.undefined{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+
+.t1NewExploreExams_ExamName_Container{
+background-color: whitesmoke;
+}
+
+.t1NewExploreExams_ExamName_Container {
+    background-color: rebeccapurple;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    width: 50%;
+    justify-content: space-between;
+}
+.t1NewExploreExams_Image_Container {
+    width: 200px;
+    height: 200px;
+}
+
+.t1NewExploreExams_EachCard_Container ul{
+    display: flex;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* ***************{styles for "BranchHome OurCourses" in OurCourses.jsx} ****************************************************************** */
 
@@ -339,10 +382,10 @@ justify-content: space-between;
     }
 }
 
-@media screen and (max-width:1400px){
+/* @media screen and (max-width:1400px){
     .t1NewExploreExams_ExamCard_Container{
         display: flex;
         flex-direction: row;
         padding: 15px;
     }
-}
+} */

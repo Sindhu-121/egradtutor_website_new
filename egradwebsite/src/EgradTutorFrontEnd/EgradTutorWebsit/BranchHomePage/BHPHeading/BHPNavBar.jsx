@@ -9,7 +9,7 @@ import Marquee from "react-fast-marquee";
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, useNavigate } from 'react-router-dom';
 
-const BHPNavBar = () => {
+const BHPNavBar = ({ isEditMode }) => {
   const [navItems, setNavItems] = useState([]);
   const [marqueeItems, setMarqueeItems] = useState([]);
   const navigate = useNavigate();
@@ -101,7 +101,12 @@ const BHPNavBar = () => {
           ))}
         </Marquee>
       </div>
-      <BHPNavBarEdit />
+      {isEditMode && (
+          <div>
+           <BHPNavBarEdit />
+          </div>
+        )}
+     
     </div>
   );
 }

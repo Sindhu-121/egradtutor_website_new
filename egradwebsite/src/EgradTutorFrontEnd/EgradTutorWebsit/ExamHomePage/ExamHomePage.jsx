@@ -4,13 +4,13 @@ import ExamPageHeader from "./ExamHomepageHeader/ExamPageHeader"
 import ExamInfo from './ExamInfo/ExamInfo'
 import ExamCourse from './ExamCourse/ExamCourse'
 import Footer from '../Footer/Footer'
-const ExamHomePage = () => {
+const ExamHomePage = ({isEditMode}) => {
   return (
     <div>
-      <ExamPageHeader />
-      <ExamPageBanner/>
-      <ExamInfo/>
-      <ExamCourse/>
+      <ExamPageHeader isEditMode={isEditMode}/>
+      <ExamPageBanner isEditMode={isEditMode}/>
+      <ExamInfo isEditMode={isEditMode}/>
+      <ExamCourse isEditMode={isEditMode}/>
       <Footer/>
     </div>
   )
