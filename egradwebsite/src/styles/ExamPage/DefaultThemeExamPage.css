@@ -7,7 +7,12 @@
     text-decoration: none;
     word-spacing: .2rem;
 }
-
+.exampage_heading.JEEHeading.themeExamPageHeaderHeading h1 {
+    text-align: center;
+    color: black;
+    padding: 32px;
+    font-size: 28px;
+}
 
 .themeExamPageHeaderMainContainer {
         background: white;
