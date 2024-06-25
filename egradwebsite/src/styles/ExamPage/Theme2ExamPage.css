@@ -32,11 +32,27 @@
     font-weight: bold;
 }
 .total_exam_page.t2TotalExamContainer {
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: center;
-    background: linear-gradient(326deg, #0a9396, #005f73, #003d4e);
+  display: flex;
+  align-items: center;
+  /* text-align: center; */
+  justify-content: center;
+  width: auto;
+  height: auto;
+  /* background: green; */
+  /* padding: 20px; */
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+.exampage_heading.t2ExamPageHeaderHeading.JEEHeading p {
+  color: red;
+  /* font-size: 30px; */
+  margin: 0;
+}
+.exampage_heading.JEEHeading.t2ExamPageHeaderHeading h1 {
+  font-size: 2rem;
+  color: #3e8991;
+}
+.slider-wrapper.axis-horizontal {
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 /* 
 .exampage_heading.t2ExamPageHeaderHeading {
@@ -294,5 +310,84 @@
 .exam_info_sub_container.t2ExamInfoSubContainer {
   width: 80%;
   margin: auto;
-  /* background-color: rebeccapurple; */
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  gap: 1rem;
+  flex-direction: column;
+}
+.exam_info_btns.t2ExamInfoBtns {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.exam_info_toggle_visiable_links.t2ExamInfoToggles {
+  display: flex;
+  /* align-items: center; */
+  flex-direction: column;
+  justify-content: space-between;
+  /* border-bottom: 2px solid green; */
+}
+.toggles.t2Toggles {
+  padding: 10px;
+  /* background-color: #175266; */
+  background-color: #2d8990;
+  border: 1px solid #ffffff;
+  color: white;
+  cursor: pointer;
+  /* background: linear-gradient(0deg, #0a9396, #005f73, #003d4e); */
+}
+.toggles.t2Toggles p#more_info {
+  /* font-size: 20px; */
+  padding: 10px;
+}
+.toggles.t2Toggles h3#info_title {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+.exam_info_divs.t2ExamInfoDivs .infoButton {
+  /* background-color: rgb(173, 238, 130); */
+  /* padding: 5px 0px; */
+  padding-right: 10px;
+  padding: 10px;
+  display: flex;
+  border-radius: 20px;
+  margin: 0;
+  padding: 0 0px;
+  padding-right: 5px;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  background-image: linear-gradient(to right top, #185569, #1f697a, #12445638, #8caab3, #4a8992);
+  background: linear-gradient(to right, #348f50, #56b4d3);
+}
+.exam_info_divs.t2ExamInfoDivs {
+  /* border-radius: 20px; */
+  padding: 0 20px;
+  /* background-color: black; */
+}
+.exam_info_divs.t2ExamInfoDivs .infoButton svg{
+  /* background-color: red; */
+  /* padding: 10px; */
+  /* border: 1px solid red; */
+  border-radius: 50%;
+}
+.infoButtonSpan {
+  background-color: #3e8991;
+  /* padding: 5px; */
+  color: white;
+  font-size: 28px;
+}
+.exam_info_divs.t2ExamInfoDivs .infoButton span{
+  /* background-color: gray; */
+  padding:0px 5px ;
+}
+.t2ButtonDiv p {
+  font-size: 22px;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  padding: 10px ;
 }

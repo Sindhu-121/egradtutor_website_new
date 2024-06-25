@@ -58,7 +58,7 @@ const ExamCourse = () => {
               <img src={girl_img } alt='img not uploaded'/>
               </div>
               <div className={`exam_portal_btn ${themeDetails.themeExamPortalBtn}`}>
-              <Link>{item.button}Explore<FaArrowRight /></Link>
+              <Link to={item.portalLink}>{item.button}Explore<FaArrowRight /></Link>
               </div>
            
             </li>

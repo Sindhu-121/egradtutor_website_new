@@ -56,7 +56,7 @@ const ExploreExamEdit = ({ type }) => {
 
     try {
       const response = await axios.post(
-        `${BASE_URL}/UgHomePage/our_courses`,
+        `${BASE_URL}/ExploreExamEdit/our_courses`,
         formData,
         {
           headers: {

@@ -60,13 +60,19 @@ const ExamPageHeader = () => {
         ) : (
           <img src={defaultImage} alt="Default" />
         )}
-          <Link to="/BranchHomePage"><IoHome />Home</Link>
+        {entranceExam.length > 0 &&
+        entranceExam.map((exam) => (
+          <div key={exam.EntranceExams_Id} className={`exampage_heading JEEHeading ${themeDetails.themeExamPageHeaderHeading}`}>
+          <Link to={`/BranchHomePage/${exam.Branch_Id}`}><IoHome />Home</Link>
+          </div>
+        ))}
+        
       </div>
     <div className={`total_exam_page ${themeDetails.themeTotalExamContainer}`}>
       {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
-          <div key={exam.EntranceExams_Id} className={`exampage_heading ${themeDetails.themeExamPageHeaderHeading}`}>
-            <p>{exam.EntranceExams_name} EXAM</p>
+          <div key={exam.EntranceExams_Id} className={`exampage_heading JEEHeading ${themeDetails.themeExamPageHeaderHeading}`}>
+            <h1>{exam.EntranceExams_name} EXAM</h1>
           </div>
         ))}
     </div>

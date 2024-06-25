@@ -6,7 +6,7 @@ const db = require('../../DataBase/db2');
 router.get('/feachingentrance_exams/:EntranceExams_Id', async (req, res) => {
     const { EntranceExams_Id } = req.params;
     try {
-        const [rows] = await db.query('SELECT EntranceExams_name, EntranceExams_Id FROM entrance_exams WHERE EntranceExams_Id = ?', [EntranceExams_Id]);
+        const [rows] = await db.query('SELECT EntranceExams_name, EntranceExams_Id,Branch_Id FROM entrance_exams WHERE EntranceExams_Id = ?', [EntranceExams_Id]);
         res.json(rows);
     } catch (error) {
         console.error(error);
