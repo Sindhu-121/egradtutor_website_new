@@ -481,23 +481,6 @@ a {
     fill: #fffff2;
 }
 
-/* .footer-content {
-    margin-right: auto;
-    max-width: 1230px;
-    padding: 25px 15px 175px;
-    position: relative;
-} */
-
-/* .footer-content-column {
-    box-sizing: border-box;
-    float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
-    color: #fff;
-    display: flex;
-    flex-direction: row;
-} */
 
 
 .footer-logo-link {
@@ -768,18 +751,15 @@ background-color: rgb(136, 67, 67);
 
 
 .t1FootereGRADTtutoContent {
-    /* background-color: rgb(255, 184, 184); */
     width: 200px;
 }
 
 
 .t1FooterFirstContentContainer {
-    /* background-color: red; */
 margin-left: 60px;
 }
 
 .t1FooterContactUsContent {
-    /* background-color: rgb(158, 50, 50); */
 }
 
 .t1FooterFirstContent {
@@ -795,7 +775,7 @@ margin-left: 60px;
     padding: 10px;
 }
 
-.new_landingfooter_conatinerfristpart_item {
+.t1FootereGRADTtutoContent .new_landingfooter_conatinerfristpart_item {
     color: #efefef;
 }
 
