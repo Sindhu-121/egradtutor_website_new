@@ -510,7 +510,11 @@ const ExamPageBanner = () => {
                 </div>
               ))}
           </Carousel> */}
+
         <Carousel
+        // axis="vertical"
+        // verticalSwipe="natural"
+        // dynamicHeight={true}
       autoPlay
       infiniteLoop
       showArrows={false}
@@ -530,11 +534,11 @@ const ExamPageBanner = () => {
             <img
               src={`data:image/svg+xml;base64,${banner.banner}`}
               alt={`Banner ${banner.EntranceExams_Id}`}
-              style={{
-                width: "100%", // Adjust as per your design
-                height: "auto", // Adjust as per your design
-                cursor: "pointer",
-              }}
+              // style={{
+              //   width: "100%", 
+              //   height: "auto", 
+              //   cursor: "pointer",
+              // }}
             />
           </div>
         ))}
