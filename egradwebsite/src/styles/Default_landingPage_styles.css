@@ -209,10 +209,10 @@ color: white;
     padding-left: 0px;
 } 
 
-    .Footer_Links_Content.themeFooterLinksContentDefault li{
-        color:white;
+    .Footer_Links_Content.themeFooterLinksContentDefault ul li a{
+        color:white !important; 
         margin-right:10px;
-        text-decoration: underline;
+        text-decoration: underline !important;
     }
 
     .themeFooterContactDataDefault h2{

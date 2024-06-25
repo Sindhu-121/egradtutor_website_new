@@ -160,8 +160,8 @@ li.themeUgHeaderLiDefault:hover {
     width: 500px;
 }
  
-.NewExploreExams_PortalNames_ContainerDefault li {
-    color: #000;
+.NewExploreExams_ExamName_Container.NewExploreExams_ExamName_ContainerDefault .NewExploreExams_PortalNames_ContainerDefault li {
+    color: #5c0505 !important;
     /* font-size: .9rem; */
     font-weight:bold;
 }
@@ -322,6 +322,7 @@ strong.defaultPortalName {
     /* line-height: 32px; */
     padding-top: 4.6rem;
     text-align: justify;
+    font-weight: 600;
 }
 h3.undefined {
     font-family: Roboto,sans-serif;
@@ -398,17 +399,9 @@ ul.defaultCoursesUl li:hover {
         flex-direction: column;
         justify-content: center;
     }
-    .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_C.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container ul li a {
-        border-radius: 13px;
-        color: #070707;
-        font-family: Noto Sans Display, sans-serif;
-        font-size: 1.3rem;
-        font-weight: 700;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 10px;
-        width: 155px;
-        display: inline-block;
+    .themeNewExploreExams_Exam_Container  li a {
+        background-color: red !important;
+        color:green;
 
     }
     .NewExploreExams_Image.themeNewExploreExams_ImageDefault img{

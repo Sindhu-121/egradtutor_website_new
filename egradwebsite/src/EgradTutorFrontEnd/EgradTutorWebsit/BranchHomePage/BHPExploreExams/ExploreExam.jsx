@@ -7,7 +7,7 @@ import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import '../BranchHomeStyles/BranchHomePages.css';
 import '../BranchHomeStyles/Theme2BranchHomePage.css'
-const ExploreExam = ({ isEditMode }) => {
+const ExploreExam = () => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
   const [portalesData, setPortalesData] = useState([]);
@@ -93,19 +93,16 @@ const ExploreExam = ({ isEditMode }) => {
             </div>
           </div>
 
+          
+
         </div>
 
         
       </div>
-      {isEditMode && (
-          <div>
-            <button onClick={() => setShowExploreExam(!showExploreExam)}>
+      <button onClick={() => setShowExploreExam(!showExploreExam)}>
           {showExploreExam ? "Close" : "Add ExploreExam"}
         </button>
         {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
-          </div>
-        )}
-     
     </div>
      :
      <div className={`NewExploreExams_Main_Container ${themeDetails.themeExploreExamsMainContainer}`}>
@@ -122,7 +119,7 @@ const ExploreExam = ({ isEditMode }) => {
  
                     <div className={`NewExploreExams_EachCard_Container ${themeDetails.themeNewExploreExams_EachCard_Container}`}>
                       <ul key={index}>
-                        <li>
+                        <li className={`${themeDetails.themeLinkToSpecificExam}`}>
                           <Link
                             to={`/ExamHomePage/${exam.EntranceExams_Id}`}
                           >
@@ -150,16 +147,14 @@ const ExploreExam = ({ isEditMode }) => {
  
           </div>
  
+ 
+ 
         </div>
       </div>
-      {isEditMode && (
-          <div>
-            <button onClick={() => setShowExploreExam(!showExploreExam)}>
+      <button onClick={() => setShowExploreExam(!showExploreExam)}>
           {showExploreExam ? "Close" : "Add ExploreExam"}
         </button>
         {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
-          </div>
-        )}
     </div>
      }
     </>
