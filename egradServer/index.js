@@ -15,6 +15,9 @@ app.use(express.urlencoded({extended:false}));
 const Logo = require("./EgradTutorWebsite/Logo");
 app.use("/Logo", Logo);
 
+const LoginApis = require("./LoginApis");
+app.use("/LoginApis", LoginApis);
+
 const LandingPageHeader = require("./EgradTutorWebsite/LandingPage/LandingPageHeader");
 app.use("/LandingPageHeader", LandingPageHeader);
 
