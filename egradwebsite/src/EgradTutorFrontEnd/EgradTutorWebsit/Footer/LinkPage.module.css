@@ -1,0 +1,24 @@
+/* LinkPage.module.css */
+
+.footer-content{
+    padding: 5rem;
+}
+.footer-content p {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .footer-content h1 {
+    color: #555;
+    font-size: 24px;
+  }
+
+    
+  .footer-content ul li {
+    list-style-type: disc;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* Add more styles as needed for other HTML tags */
+  

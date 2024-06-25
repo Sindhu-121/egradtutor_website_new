@@ -56,7 +56,12 @@ const ExamPageHeader = () => {
     <div className={`Ug_examsPage_Main_Container ${themeDetails.themeExamPageHeaderMainContainer}`}>
       <div className={`Ug_examsPage_Container ${themeDetails.themeExamPageHeaderContainer}`}>
         {image ? (
-          <img src={image} alt="Current" />
+     <Link to="/">
+     <img
+       src={image}
+       className={`${themeDetails.themeLogoImg}`}
+       alt="Current"
+     /></Link>
         ) : (
           <img src={defaultImage} alt="Default" />
         )}

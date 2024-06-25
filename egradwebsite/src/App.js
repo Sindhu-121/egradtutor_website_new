@@ -11,6 +11,8 @@ import Login from './Login/Login';
 import AdminLogin from './Login/AdminLogin';
 import Register from './Login/Register';
 import UgadminHome from './Login/UgadminHome';
+import LinkPage from './EgradTutorFrontEnd/EgradTutorWebsit/Footer/LinkPage';
+import FAQ from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/FAQPage/FAQ';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -46,6 +48,8 @@ function App() {
             <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
             <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
             <Route path="/ContactUs" element={<ContactUs />} />
+            <Route path="/Faq" element={<FAQ/>} />
+            <Route path="/linkpage/:Link_Id" element={<LinkPage/>} />
           </Routes>
         </Router>
       </div>

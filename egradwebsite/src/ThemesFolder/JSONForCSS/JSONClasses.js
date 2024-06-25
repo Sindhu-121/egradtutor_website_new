@@ -50,7 +50,8 @@ const JSONClasses = {
       "NewExploreExams_PortalNames_ContainerDefault",
     NewExploreExams_Image_Container: "NewExploreExams_Image_ContainerDefault",
     themeNewExploreExams_EachCard_Container:
-      "NewExploreExams_EachCard_Container",
+      "NewExploreExams_EachCard_ContainerDefault",
+      themeNewExploreExams_Exam_Container:"themeNewExploreExams_Exam_ContainerDefault",
     //About Us div class
     themeAboutuscontainer: "container",
     themeHeadingtext: "abus_heading",

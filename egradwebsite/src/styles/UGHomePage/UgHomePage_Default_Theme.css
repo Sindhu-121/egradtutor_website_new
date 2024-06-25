@@ -132,127 +132,13 @@ li.themeUgHeaderLiDefault:hover {
 }
  
 /* EXPLORE EXAMS CSS */
- 
 .NewExploreExams_Main_Container.themeExploreExamsMainContainerDefault {
-    background: #e2f7fb;
-    padding: 20px 0;
-    text-align: center;
-    width: 100%;
+        background: #e2f7fb;
+        padding: 20px 0;
+        text-align: center;
+        width: 100%;
 }
- 
-#EXPLORE_Exam_Heading {
-    color: #00a3ff;
-    font-size: 2rem;
-    margin: 2rem auto;
-}
- 
-.NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    /* flex-wrap: wrap-reverse; */
-    /* gap: 5rem; */
-    justify-content: center;
-    margin: 0 auto;
-    width: 65%;
-}
-.NewExploreExams_ImageDefault img {
-    width: 500px;
-}
- 
-.NewExploreExams_PortalNames_ContainerDefault li {
-    color: #000;
-    /* font-size: .9rem; */
-    font-weight: 400;
-    line-height: 2rem;
-}
- 
-.NewExploreExams_PortalNames_ContainerDefault li:hover {
-    color: blue;
-    text-decoration: underline;
-}
- 
- 
- 
- 
-.NewExploreExams_ExamCard_MainContainerDefault {
-display: flex;
-flex-direction: row;
-}
- 
-.NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_MainContainerDefault {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap-reverse;
-        gap: 5rem;
-        justify-content: center;
-        margin: 0 auto;
-        width: 95%;
-}
- 
-.NewExploreExams_ExamCard_MainContainerDefault {
-    grid-column-gap: 7.8rem;
-    grid-row-gap: 3rem;
-    -webkit-column-gap: 7.8rem;
-    column-gap: 7.8rem;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 0 2rem;
-    row-gap: 3rem;
-}
- 
- 
-.NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
-    grid-column-gap: 7.8rem;
-    grid-row-gap: 3rem;
-    column-gap: 7.8rem;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    padding: 0 2rem;
-    row-gap: 3rem;
-    margin-right: 20px;
-}
-.NewExploreExams_EachCard_Container ul li a {
-    background: #3ad4ba;
-    border-radius: 13px;
-    color: #fff;
-    font-family: Noto Sans Display, sans-serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    text-decoration: none;
-    font-size: 16px;
-    padding: 10px;
-    width: 155px;
-    display: inline-block;
-}
- 
-.NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault {
-    margin: 15px  0px 0px 0px;
-}
- 
- 
- 
-.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
-    /* background: #279eff69; */
-    background: #fff;
-    border-radius: 13px;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
-    /* display: flex; */
-    flex-direction: column;
-    gap: .8rem;
-    height: 250px;
-    justify-content: center;
-    padding: 1rem;
-    /* text-align: center; */
-    text-transform: capitalize;
-    width: 250px;
-}
- 
-ul {
-    /* display: flex; */
-    /* flex-direction: column; */
-    /* justify-content: center; */
-}
+
  
 /* OUR COURSES CSS PART */
  
@@ -323,6 +209,7 @@ strong.defaultPortalName {
     /* line-height: 32px; */
     padding-top: 4.6rem;
     text-align: justify;
+    font-weight: 600;
 }
 h3.undefined {
     font-family: Roboto,sans-serif;
@@ -399,20 +286,10 @@ ul.defaultCoursesUl li:hover {
         flex-direction: column;
         justify-content: center;
     }
-    .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container {
-        /* background: #279eff69; */
-        background: #fff;
-        border-radius: 13px;
-        box-shadow: 0 0 5px rgba(0,0,0,.5);
-        /* display: flex; */
-        flex-direction: column;
-        gap: .8rem;
-        height: 266px;
-        justify-content: center;
-        padding: 1rem;
-        /* text-align: center; */
-        text-transform: capitalize;
-        width: 250px;
+    .themeNewExploreExams_Exam_Container  li a {
+        background-color: red !important;
+        color:green;
+
     }
     .NewExploreExams_Image.themeNewExploreExams_ImageDefault img{
         width:100px;
