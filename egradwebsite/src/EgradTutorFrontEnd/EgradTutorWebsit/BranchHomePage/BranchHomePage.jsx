@@ -7,20 +7,20 @@ import OurCourses from "./OurCourses/OurCourses";
 import Footer from "../Footer/Footer";
 import FooterEdit from "../Footer/FooterEdit";
 import { Element } from "react-scroll";
-const BranchHomePage = () => {
+const BranchHomePage = ({ isEditMode }) => {
   return (
     <div>
-      <BHPHeading />
-      <BHPNavBar />
-      <BHBanners />
+      <BHPHeading isEditMode={isEditMode} />
+      <BHPNavBar  isEditMode={isEditMode}/>
+      <BHBanners  isEditMode={isEditMode}/>
       <Element id="ExploreExam">
-        <ExploreExam />
+        <ExploreExam  isEditMode={isEditMode}/>
       </Element>
       <Element id="OurCourses">
-        <OurCourses />
+        <OurCourses  isEditMode={isEditMode}/>
       </Element>
-      <Footer />
-      <FooterEdit />
+      <Footer isEditMode={isEditMode}/>
+      <FooterEdit isEditMode={isEditMode} />
     </div>
   );
 };
