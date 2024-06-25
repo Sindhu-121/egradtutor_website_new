@@ -13,7 +13,7 @@ import ugImg from '../../../../styles/Girl.png';
 import women_img from "../../../../styles/women_image.png";
 import { FcGraduationCap } from "react-icons/fc";
 
-const LandingPageExamdata = ({ enableEditFromP }) => {
+const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
   const [image, setImage] = useState(null);
   const [branches, setBranches] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -86,8 +86,15 @@ const LandingPageExamdata = ({ enableEditFromP }) => {
     <>
     {themeColor==='Theme-1' ? 
       <div className={`${themeDetails.theme1welcomecontainer}`}>
+        {/* {isEditMode && (
+          <div>
+            <button onClick={() => setShowImage(!showImage)}>
+              {showImage ? "Close" : "Add Logo"}
+            </button>
+            {showImage && <LandingPageExamdataEdit type="addLogo" />}
+          </div>
+        )} */}
       <div className={`${themeDetails.theme1UGEntranceExamsContainer}`}>
-        {/* <div className={`${themeDetails.theme1CourseWithImgbox}`}> */}
         {branches.map((branch) => (
           <div
             className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
@@ -128,7 +135,7 @@ const LandingPageExamdata = ({ enableEditFromP }) => {
     </div>
     :
     <div className='Newlandingpage'>
-    <LandingPageExamdataEdit />
+
     {/* =======================Exam cards starts here============================== */}
     <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
       <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>

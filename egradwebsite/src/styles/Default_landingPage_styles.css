@@ -256,7 +256,8 @@ color: white;
         .Egate_landiing_ojnkl h1 {
             color: white;
             font-size: 25px;
-        } && p{
+        }
+        .Egate_landiing_ojnkl p{
             color: white;
             font-size: 18px;
         }
@@ -298,7 +299,11 @@ color: white;
             padding-bottom: 0px;
         }
     }
-    
+    .Newlandingpage .Egate_eLanding_Container_Egate_landing .EGATE_eCordsLanding .EGATE_elandUl-pg_Default button:hover {
+        background: #2a7184;
+        color: #fff;
+        outline: 0;
+    }
 
     /* Media query for screen sizes between 601px and 800px */
 @media (min-width: 601px) and (max-width: 850px) {
@@ -329,6 +334,9 @@ color: white;
         /* margin-right: 100px; */
         gap:5rem;
     }
+}
+.Footer_Contact_Us_Content.themeFooterContactUsContentDefault .Footer_ContactData.themeFooterContactDataDefault div P {
+    color:white;
 }
 /* Media query for maximum screen width of 415px */
 @media (max-width: 415px) {

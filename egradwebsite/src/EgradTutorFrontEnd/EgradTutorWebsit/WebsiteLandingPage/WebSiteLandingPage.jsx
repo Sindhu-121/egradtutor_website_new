@@ -1,30 +1,38 @@
-import React, { useState } from 'react'
-import LandingPageHeader from './LandingPageHeader/LandingPageHeader'
-import LandingPageExamdata from './LandingpageExamdata/LandingPageExamdata'
-import Footer from '../Footer/Footer'
-
+import React, { useState, useEffect } from 'react';
+import LandingPageHeader from './LandingPageHeader/LandingPageHeader';
+import LandingPageExamdata from './LandingpageExamdata/LandingPageExamdata';
+import Footer from '../Footer/Footer';
 
 const WebSiteLandingPage = () => {
-  const [enableEdit, setEnableEdit] = useState("Enable Edit FromParent");
-  const [enableEditcontainer, setEnableEditcontainer] = useState(false);
+  const [isEditMode, setIsEditMode] = useState(false);
+  const [isAdmin, setIsAdmin] = useState(false);
 
-  const handleenableEdit = () => {
-    if (enableEdit === "Enable Edit") {
-      setEnableEdit("Disable Edit");
-      setEnableEditcontainer(true);
-    } else {
-      setEnableEdit("Enable Edit");
-      setEnableEditcontainer(false);
+  useEffect(() => {
+    const userRole = localStorage.getItem('userRole');
+    if (userRole === 'admin') {
+      setIsAdmin(true);
     }
+  }, []);
+
+  const toggleEditMode = () => {
+    setIsEditMode(!isEditMode);
   };
 
   return (
     <div>
-      <LandingPageHeader />
-      <LandingPageExamdata />
-      <Footer />
+      {isAdmin && (
+        <button onClick={toggleEditMode}>
+          {isEditMode ? 'Disable Edit' : 'Enable Edit'}
+        </button>
+      )}
+      <LandingPageHeader isEditMode={isEditMode} />
+      <LandingPageExamdata isEditMode={isEditMode} />
+      <Footer isEditMode={isEditMode}/>
     </div>
-  )
-}
+  );
+};
 
-export default WebSiteLandingPage
+export default WebSiteLandingPage;
+
+
+

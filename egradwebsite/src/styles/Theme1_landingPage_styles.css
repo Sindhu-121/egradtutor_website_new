@@ -575,13 +575,14 @@ a {
 
 
 
-/* 
+   
 
 .footer-social-links {
     bottom: 0;
     height: 54px;
     position: absolute;
     right: 0;
+    top: 1830px;
     width: 236px;
 }
 
@@ -653,118 +654,28 @@ a {
     left: 172px;
     top: 7px;
     width: 34px;
-} */
-/* 
-.footer-copyright {
-    background-color: #027b9a;
-    color: #fff;
-    padding: 15px 30px;
-    text-align: center;
-} */
+} 
 
-/* .footer-copyright-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 1200px;
-} */
-
-/* .footer-copyright-text {
-    color: #fff;
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 18px;
-    margin-bottom: 0;
-    margin-top: 0;
-} */
-
-.footer-copyright-link {
+/* .footer-copyright-link {
     color: #fff;
     text-decoration: none;
-}
+} */
 
 
 
-
-
-
-/*   
-  @media (min-width:320px) and (max-width:479px)  {
-    .footer-content {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1230px;
-      padding: 40px 15px 1050px;
-      position: relative;
-    }
-  }
-  @media (min-width:480px) and (max-width:599px)  {
-    .footer-content {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1230px;
-      padding: 40px 15px 1050px;
-      position: relative;
-    }
-  }
-  
-  @media (min-width:600px) and (max-width: 800px) {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1230px;
-      padding: 40px 15px 1050px;
-      position: relative; */
-
-
-
-
-
-/* @media (min-width: 760px) {
-    .footer-content {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1230px;
-        height: 200px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 40px 15px 450px;
-        position: relative;
-    }
-    .footer-wave-svg {
-        height: 50px;
-    }
-  
-    .footer-content-column {
-        width: 24.99%;
-    }
-
-    .t1FootereGRADTtutoContent{
-background-color: rgb(136, 67, 67);
-
-    }
-  }
-  @media (min-width: 568px) {
-    /* .footer-content-column {
-        width: 49.99%;
-    } */
-
-
-
-.t1FootereGRADTtutoContent {
+/* .t1FootereGRADTtutoContent {
     width: 200px;
-}
+} */
 
 
 .t1FooterFirstContentContainer {
-margin-left: 60px;
+    margin-left: 60px;
 }
 
-.t1FooterContactUsContent {
-}
-
+/* 
 .t1FooterFirstContent {
     padding: 10px;
-}
+} */
 
 .t1FooterFirstContent #Footer_Heading {
     color: #cceafb;
@@ -788,65 +699,155 @@ margin-left: 60px;
 .t1InnerMainFooterContentContainer {
     margin-right: auto;
     max-width: 1230px;
-    padding: 25px 15px 175px;
+    padding: 25px 15px 115px;
     position: relative;
 }
 
 .t1InnerMainFooterContentColumnContainer {
     box-sizing: border-box;
     float: left;
-    padding-left: 15px;
-    padding-right: 15px;
-    width: 100%;
+    padding-left: 65px;
     color: #fff;
     display: flex;
     flex-direction: row;
 }
 
+.t1FooterContentColumn ul li{
+    line-height: 2rem;
+}
+
 .t1FooterContentColumn ul li a {
     color: #fff;
     text-decoration: none;
+    padding: 15px;
 }
 
+.t1FooterContactData h2{
+color: rgb(233, 225, 225);
+}
 
-.t1FootereGRADTtutoContent {}
 
 .t1ContactFooterContentContainer {
     display: flex;
     flex-direction: row;
 }
 
-.t1FooterCopyrightData{
-display: flex;
-justify-content: center;
-background-color: #027b9a;
-color: #fff;
-padding: 15px 30px;
-text-align: center;
+.t1FooterCopyrightData {
+    display: flex;
+    justify-content: center;
+    background-color: #027b9a;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
 }
- 
-.t1FooterCopyrightWrapperData{
+
+.t1FooterCopyrightWrapperData {
     margin-left: auto;
     margin-right: auto;
     max-width: 1200px;
 }
 
-.t1FooterCopyrightTextData{
+.t1FooterCopyrightTextData {
     color: #fff;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 400;
     line-height: 18px;
     margin-bottom: 0;
     margin-top: 0;
 }
 
-.t1FooterContentColumn{
+.t1FooterContentColumn {
     box-sizing: border-box;
     float: left;
-    padding-left: 15px;
-    padding-right: 15px;
+    /* padding-left: 15px;
+    padding-right: 15px; */
     width: 100%;
     color: #fff;
     display: flex;
     flex-direction: row;
+}
+
+.t1FooterLinksContent ul {
+    padding: 10px;
+}
+
+@media  (max-width:568px) {
+    .t1ContactFooterContentContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin-left: 20px;
+    }
+
+    .t1FooterContentColumn {
+      margin-left: 10px;
+    }
+
+    .t1FooterContactUsContent{
+        font-size: 20px;
+    }
+    .t1FooterFirstContentContainer{
+        margin-left: 0px;
+    }
+    .t1InnerMainFooterContentColumnContainer{
+        padding-left: 15px;
+     
+    }
+    .t1FootereGRADTtutoContent .new_landingfooter_conatinerfristpart_item {
+        color: #efefef;
+        font-size: 14px;
+    }
+    .t1FooterLinksContent ul {
+        padding: 10px;
+        font-size: 15px;
+    }
+    p.new_landingfooter_conatinersecondpart_item {
+        font-size: 13px;
+    }
+    .themeInBranchBox button.t1UgAndPgButtons a {
+        color: rgb(25, 27, 26);
+        font-size: 11px;
+        font-weight: bold;
+    }
+    .themeInBranchBox button.t1UgAndPgButtons {
+        background: #cceafb;
+        padding: 10px;
+        border-radius: 39px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        height: 50px;
+        align-items: center;
+        border: 2px outset hsla(0, 60%, 70%, .5);
+    }
+}
+
+@media  (max-width:1224px){
+    .t1InnerMainFooterContainer{
+display: flex;
+flex-direction: column;
+    }
+
+    .t1InnerMainFooterContentContainer{
+        margin-right: auto;
+    max-width: 1230px;
+    padding: 05px 5px 15px;
+    position: relative;
+    }
+
+    .t1FooterFirstContent #Footer_Heading {
+        color: whitesmoke;
+        font-size: 40px;
+        font-weight: bold;
+    }
+
+    .footer-wave-svg {
+        background-color: transparent;
+        display: block;
+        height: 30px;
+        position: relative;
+        top: -10px;
+        width: 100%;
+    }
+
 }
