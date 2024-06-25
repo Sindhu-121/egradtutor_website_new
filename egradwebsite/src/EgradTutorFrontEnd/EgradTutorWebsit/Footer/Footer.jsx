@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import BASE_URL from "../../../apiConfig";
@@ -6,8 +7,10 @@ import FooterEdit from "./FooterEdit";
 import JSONClasses from "../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../ThemesFolder/ThemeContext/Context";
 import "../../../styles/Default_landingPage_styles.css";
-import "../../../styles/Theme2_landingPage_styles.css";
-const Footer = ({ isEditMode }) => {
+import '../../../styles/Theme2_landingPage_styles.css'
+const Footer = ({
+  isEditMode
+  }) => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
   const [dataThree, setDataThree] = useState([]);
@@ -15,10 +18,8 @@ const Footer = ({ isEditMode }) => {
   const [FirstPopupVisible, setFirstPopupVisible] = useState(false);
   const [showFooterLinksData, setShowFooterLinksData] = useState(false);
   const [showPreviousLinksData, setShowPreviousLinksData] = useState(false);
-  const [isContactUsSectionVisible, setIsContactUsSectionVisible] =
-    useState(false);
-  const [isCopyRightSectionVisible, setIsCopyRightSectionVisible] =
-    useState(false);
+  const [isContactUsSectionVisible, setIsContactUsSectionVisible] = useState(false);
+  const [isCopyRightSectionVisible, setIsCopyRightSectionVisible] = useState(false);
   const [addeGRADTutorContent, setAddeGRADTutorContent] = useState(false);
   const [addContactUsContent, setAddContactUsContent] = useState(false);
   const themeFromContext = useContext(ThemeContext);
@@ -93,30 +94,21 @@ const Footer = ({ isEditMode }) => {
   }, []);
 
   const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss");
-  const themeDetails = JSONClasses[themeColor] || [];
-  console.log(themeDetails, "mapppping from json....");
+  console.log(themeColor, "this is the theme json classesssssss")
+  const themeDetails = JSONClasses[themeColor] || []
+  console.log(themeDetails, "mapppping from json....")
+
 
   return (
     <>
-      {themeColor === "Theme-2" && (
-        <div
-          className={`Footer_Main_Container ${themeDetails.themeFooterMainContainer}`}
-        >
-          <div
-            className={`Footer_Sub_Container ${themeDetails.themeFooterSubContainer}`}
-          >
-            <div
-              className={`Footer_Content_Main_Container ${themeDetails.themeFooterContentMainContainer}`}
-            >
-              <div
-                className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}
-              >
-                <div
-                  className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}
-                >
+      {themeColor === 'Theme-2' &&
+        <div className={`Footer_Main_Container ${themeDetails.themeFooterMainContainer}`}>
+          <div className={`Footer_Sub_Container ${themeDetails.themeFooterSubContainer}`}>
+            <div className={`Footer_Content_Main_Container ${themeDetails.themeFooterContentMainContainer}`}>
+              <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
+                <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
                   <div>
-                    {isEditMode && (
+                  {isEditMode && (
                       <div>
                         <button
                           onClick={() =>
@@ -127,7 +119,7 @@ const Footer = ({ isEditMode }) => {
                             ? "Hide eGRADTtor Form"
                             : "Add GRADTtorData"}
                         </button>
-
+ 
                         {addeGRADTutorContent && (
                           <FooterEdit type="Add eGRADTutor" />
                         )}
@@ -144,19 +136,17 @@ const Footer = ({ isEditMode }) => {
                             ? "Hide eGRADTtor Form"
                             : "EditeGRADTtorData"}
                         </button>
-
+ 
                         {FirstPopupVisible && <FooterEdit type="eGRADTutor" />}
                       </div>
                     )}
-                  </div>
-
+</div>
                   {dataOne.map((item, index) =>
                     index === 0 ? (
-                      <div
-                        key={item.Content_id}
-                        className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}
-                      >
-                        <h2 id="Footer_Heading">{item.content}</h2>
+                      <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
+                        <h2 id="Footer_Heading">
+                          {item.content}
+                        </h2>
                       </div>
                     ) : (
                       <p
@@ -168,10 +158,8 @@ const Footer = ({ isEditMode }) => {
                     )
                   )}
                 </div>
-                <div
-                  className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}
-                >
-                  {isEditMode && (
+                <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
+                {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -201,22 +189,18 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
                   <ul>
                     {footerLinkData.map((item) => (
+
                       <li key={item.Link_Id}>
-                        <Link to={item.Link_Routing_Data}>
-                          {item.Link_Item}
-                        </Link>
+                        <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div
-                className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}
-              >
-                {isEditMode && (
+              <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
+              {isEditMode && (
                   <div>
                     <button
                       onClick={() =>
@@ -231,7 +215,7 @@ const Footer = ({ isEditMode }) => {
                     {addContactUsContent && <FooterEdit type="Add ContactUs" />}
                   </div>
                 )}
-
+ 
                 {isEditMode && (
                   <div>
                     <button
@@ -249,13 +233,9 @@ const Footer = ({ isEditMode }) => {
                     )}
                   </div>
                 )}
-
                 {dataTwo.map((item, index) =>
                   index === 0 ? (
-                    <div
-                      key={item.Content_id}
-                      className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}
-                    >
+                    <div key={item.Content_id} className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}>
                       <h2 className="new_landingfooter_conatinersecondpart_item">
                         {item.content_name}
                       </h2>
@@ -270,11 +250,11 @@ const Footer = ({ isEditMode }) => {
                   )
                 )}
               </div>
+
             </div>
 
-            <div
-              className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}
-            >
+            <div className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}>
+            
               {isEditMode && (
                 <div>
                   <button
@@ -292,31 +272,20 @@ const Footer = ({ isEditMode }) => {
                   )}
                 </div>
               )}
-
               {dataThree.map((item) => (
                 <li key={item.Content_id}>{item.content_name}</li>
               ))}
             </div>
           </div>
         </div>
-      )}
-      {themeColor === "Theme-default" && (
-        <div
-          className={`Footer_Main_Container ${themeDetails.themeFooterMainContainer}`}
-        >
-          <div
-            className={`Footer_Sub_Container ${themeDetails.themeFooterSubContainer}`}
-          >
-            <div
-              className={`Footer_Content_Main_Container ${themeDetails.themeFooterContentMainContainer}`}
-            >
-              <div
-                className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}
-              >
-                <div
-                  className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}
-                >
-                  {isEditMode && (
+      }
+      {themeColor === 'Theme-default' &&
+        <div className={`Footer_Main_Container ${themeDetails.themeFooterMainContainer}`}>
+          <div className={`Footer_Sub_Container ${themeDetails.themeFooterSubContainer}`}>
+            <div className={`Footer_Content_Main_Container ${themeDetails.themeFooterContentMainContainer}`}>
+              <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
+                <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
+                {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -332,7 +301,7 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
+ 
                   {isEditMode && (
                     <div>
                       <button
@@ -345,14 +314,14 @@ const Footer = ({ isEditMode }) => {
                       {FirstPopupVisible && <FooterEdit type="eGRADTutor" />}
                     </div>
                   )}
+ 
 
                   {dataOne.map((item, index) =>
                     index === 0 ? (
-                      <div
-                        key={item.Content_id}
-                        className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}
-                      >
-                        <h2 id="Footer_Heading">{item.content}</h2>
+                      <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
+                        <h2 id="Footer_Heading">
+                          {item.content}
+                        </h2>
                       </div>
                     ) : (
                       <p
@@ -364,10 +333,8 @@ const Footer = ({ isEditMode }) => {
                     )
                   )}
                 </div>
-                <div
-                  className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}
-                >
-                  {isEditMode && (
+                <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
+                {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -381,7 +348,7 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
+ 
                   {isEditMode && (
                     <div>
                       <button
@@ -398,22 +365,19 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
+ 
                   <ul>
                     {footerLinkData.map((item) => (
+
                       <li key={item.Link_Id}>
-                        <Link to={item.Link_Routing_Data}>
-                          {item.Link_Item}
-                        </Link>
+                        <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div
-                className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}
-              >
-                {isEditMode && (
+              <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
+              {isEditMode && (
                   <div>
                     <button
                       onClick={() =>
@@ -428,7 +392,7 @@ const Footer = ({ isEditMode }) => {
                     {addContactUsContent && <FooterEdit type="Add ContactUs" />}
                   </div>
                 )}
-
+ 
                 {isEditMode && (
                   <div>
                     <button
@@ -446,13 +410,9 @@ const Footer = ({ isEditMode }) => {
                     )}
                   </div>
                 )}
-
                 {dataTwo.map((item, index) =>
                   index === 0 ? (
-                    <div
-                      key={item.Content_id}
-                      className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}
-                    >
+                    <div key={item.Content_id} className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}>
                       <h2 className="new_landingfooter_conatinersecondpart_item">
                         {item.content_name}
                       </h2>
@@ -467,11 +427,11 @@ const Footer = ({ isEditMode }) => {
                   )
                 )}
               </div>
+
             </div>
 
-            <div
-              className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}
-            >
+            <div className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}>
+             
               {isEditMode && (
                 <div>
                   <button
@@ -489,41 +449,28 @@ const Footer = ({ isEditMode }) => {
                   )}
                 </div>
               )}
-
+ 
               {dataThree.map((item) => (
                 <li key={item.Content_id}>{item.content_name}</li>
               ))}
             </div>
+
+
+
           </div>
         </div>
-      )}
+      }
 
-      {themeColor === "Theme-1" && (
-        <div className={`pg-footer ${themeDetails.themeMainFooterContainer}`}>
-          <footer
-            className={`footer ${themeDetails.themeInnerMainFooterContainer}`}
-          >
-            <svg
-              class="footer-wave-svg"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 100"
-              preserveAspectRatio="none"
-            >
-              <path
-                class="footer-wave-path"
-                d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"
-              ></path>
-            </svg>
-            <div
-              className={`footer-content ${themeDetails.themeInnerMainFooterContentContainer}`}
-            >
-              <div
-                className={`footer-content-column ${themeDetails.themeInnerMainFooterContentColumnContainer}`}
-              >
-                <div
-                  className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}
-                >
-                  {isEditMode && (
+      {themeColor === 'Theme-1' && 
+      <div className={`pg-footer ${themeDetails.themeMainFooterContainer}`}>
+      <footer className={`footer ${themeDetails.themeInnerMainFooterContainer}`}>
+        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+          <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+        </svg>
+        <div className={`footer-content ${themeDetails.themeInnerMainFooterContentContainer}`}>
+          <div className={`footer-content-column ${themeDetails.themeInnerMainFooterContentColumnContainer}`}>
+            <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
+            {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -539,7 +486,7 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
+ 
                   {isEditMode && (
                     <div>
                       <button
@@ -553,39 +500,31 @@ const Footer = ({ isEditMode }) => {
                     </div>
                   )}
 
-                  {dataOne.map((item, index) =>
-                    index === 0 ? (
-                      <div
-                        key={item.Content_id}
-                        className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}
-                      >
-                        <h2 id="Footer_Heading">{item.content}</h2>
-                      </div>
-                    ) : (
-                      <p
-                        className="new_landingfooter_conatinerfristpart_item"
-                        key={item.Content_id}
-                      >
-                        {item.content}
-                      </p>
-                    )
-                  )}
-                </div>
-              </div>
-            </div>
-            <div
-              className={`contact-content ${themeDetails.themeContactFooterContentContainer}`}
-            >
-              <div
-                className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}
-              >
-                <div
-                  className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}
-                >
-                  <div
-                    className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}
+              {dataOne.map((item, index) =>
+                index === 0 ? (
+                  <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
+                    <h2 id="Footer_Heading">
+                      {item.content}
+                    </h2>
+                  </div>
+                ) : (
+                  <p
+                    className="new_landingfooter_conatinerfristpart_item"
+                    key={item.Content_id}
                   >
-                    {isEditMode && (
+                    {item.content}
+                  </p>
+                )
+              )}
+            </div>
+          </div>
+         
+          </div>
+          <div className={`contact-content ${themeDetails.themeContactFooterContentContainer}`}>
+            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
+              <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
+                <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
+                {isEditMode && (
                       <div>
                         <button
                           onClick={() =>
@@ -615,26 +554,20 @@ const Footer = ({ isEditMode }) => {
                         )}
                       </div>
                     )}
+                  <ul>
+                    {footerLinkData.map((item) => (
 
-                    <ul>
-                      {footerLinkData.map((item) => (
-                        <li key={item.Link_Id}>
-                          <Link to={item.Link_Routing_Data}>
-                            {item.Link_Item}
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                      <li key={item.Link_Id}>
+                        <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
               </div>
-              <div
-                className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}
-              >
-                <div
-                  className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}
-                >
-                  {isEditMode && (
+            </div>
+            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
+              <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
+              {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -670,39 +603,31 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
-                  {dataTwo.map((item, index) =>
-                    index === 0 ? (
-                      <div
-                        key={item.Content_id}
-                        className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}
-                      >
-                        <h2 className="new_landingfooter_conatinersecondpart_item">
-                          {item.content_name}
-                        </h2>
-                      </div>
-                    ) : (
-                      <p
-                        className="new_landingfooter_conatinersecondpart_item"
-                        key={item.Content_id}
-                      >
+                {dataTwo.map((item, index) =>
+                  index === 0 ? (
+                    <div key={item.Content_id} className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}>
+                      <h2 className="new_landingfooter_conatinersecondpart_item">
                         {item.content_name}
-                      </p>
-                    )
-                  )}
-                </div>
+                      </h2>
+                    </div>
+                  ) : (
+                    <p
+                      className="new_landingfooter_conatinersecondpart_item"
+                      key={item.Content_id}
+                    >
+                      {item.content_name}
+                    </p>
+                  )
+                )}
               </div>
+
             </div>
-            <div
-              className={`footer-copyright ${themeDetails.themeFooterCopyrightData}`}
-            >
-              <div
-                className={`footer-copyright-wrapper ${themeDetails.themeFooterCopyrightWrapperData}`}
-              >
-                <p
-                  className={`footer-copyright-text ${themeDetails.themeFooterCopyrightTextData}`}
-                >
-                  {isEditMode && (
+
+        </div>
+        <div className={`footer-copyright ${themeDetails.themeFooterCopyrightData}`}>
+          <div className={`footer-copyright-wrapper ${themeDetails.themeFooterCopyrightWrapperData}`}>
+            <p className={`footer-copyright-text ${themeDetails.themeFooterCopyrightTextData}`}>
+            {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -721,17 +646,16 @@ const Footer = ({ isEditMode }) => {
                       )}
                     </div>
                   )}
-
-                  {dataThree.map((item) => (
-                    <li key={item.Content_id}>{item.content_name}</li>
-                  ))}
-                </p>
-              </div>
-            </div>
-          </footer>
+              {dataThree.map((item) => (
+                <li key={item.Content_id}>{item.content_name}</li>
+              ))}
+            </p>
+          </div>
         </div>
-      )}
+      </footer>
+    </div>
+    }
     </>
-  );
-};
+  )
+}
 export default Footer;
