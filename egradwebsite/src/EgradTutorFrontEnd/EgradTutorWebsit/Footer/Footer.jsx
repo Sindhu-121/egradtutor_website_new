@@ -338,7 +338,7 @@ const Footer = () => {
          
           </div>
           <div className={`contact-content ${themeDetails.themeContactFooterContentContainer}`}>
-            <div class="footer-content-column">
+            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
               <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
                 <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
                   <button onClick={() => setShowFooterLinksData(!showFooterLinksData)}>
@@ -361,7 +361,7 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div class="footer-content-column">
+            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
               <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
                 <button onClick={() => setAddContactUsContent(!addContactUsContent)} className="editbtn">
 
@@ -424,9 +424,9 @@ const Footer = () => {
             </a>
           </div> */}
         </div>
-        <div class="footer-copyright">
-          <div class="footer-copyright-wrapper">
-            <p class="footer-copyright-text">
+        <div className={`footer-copyright ${themeDetails.themeFooterCopyrightData}`}>
+          <div className={`footer-copyright-wrapper ${themeDetails.themeFooterCopyrightWrapperData}`}>
+            <p className={`footer-copyright-text ${themeDetails.themeFooterCopyrightTextData}`}>
               <button onClick={() => setIsCopyRightSectionVisible(!isCopyRightSectionVisible)} className="editbtn">
                 {isCopyRightSectionVisible ? 'Hide copywrite form' : 'Edit copywrite'}
               </button>
