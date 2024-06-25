@@ -9,7 +9,7 @@ import "../../../../styles/Theme1_landingPage_styles.css";
 import "../../../../styles/Theme2_landingPage_styles.css";
 import "../../../../styles/LandingPage_main.css";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
-
+import { Link } from "react-router-dom";
 const LandingPageHeader = ({ isEditMode }) => {
   const [image, setImage] = useState(null);
   const [showImage, setShowImage] = useState(false);
@@ -91,11 +91,12 @@ const LandingPageHeader = ({ isEditMode }) => {
           >
             <div className={`logo_Img_container ${themeDetails.themeLogoImgC}`}>
               {image ? (
+                <Link to="/">
                 <img
                   src={image}
                   className={`${themeDetails.themeLogoImg}`}
                   alt="Current"
-                />
+                /></Link>
               ) : (
                 <img src={defaultImage} alt="Default" />
               )}
