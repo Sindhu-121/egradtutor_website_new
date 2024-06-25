@@ -787,7 +787,7 @@ import { MdClose } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
- 
+import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 const BHBanners = () => {
   const [banners, setBanners] = useState([]);
   const { Branch_Id, EntranceExams_Id } = useParams();
@@ -1217,35 +1217,33 @@ const BHBanners = () => {
           <button onClick={toggleBannerPopup}>Edit</button>
  
           {/*--------------- Displaying_banners_start---------------- */}
-          <Carousel 
-          // axis='vertical'
-          // verticalSwipe='natural'
-            autoPlay
-            infiniteLoop
-            showArrows={false}
-            interval={4600}
-            showThumbs={false}
-            // showIndicators={false}
-            showStatus={false}
-          >
-            {banners
-              .filter((banner) => banner.banner_status === "active") // Filter banners by status
-              .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
-              .slice(startBannerIndex, startBannerIndex + 4)
-              .map((banner) => (
-                <div key={banner.EntranceExams_Id}>
-                  <img
-                    src={`data:image/svg+xml;base64,${banner.banner}`}
-                    alt={`Banner ${banner.EntranceExams_Id}`}
-                    style={{
-                      width: "100%",
-                      height: "25rem",
-                      cursor: "pointer",
-                    }}
-                  />
-                </div>
-              ))}
-          </Carousel>
+          <div className="carousel-container">
+                <Carousel 
+                    axis="vertical"
+                    verticalSwipe='natural'
+                    autoPlay
+                    infiniteLoop
+                    showArrows={false}
+                    interval={4600}
+                    showThumbs={false}
+                    showStatus={false}
+                    // dynamicHeight={true}
+                >
+                    {banners
+                        .filter((banner) => banner.banner_status === "active") // Filter banners by status
+                        .sort((a, b) => (a.display_order || 0) - (b.display_order || 0))
+                        .slice(startBannerIndex, startBannerIndex + 4)
+                        .map((banner) => (
+                            <div key={banner.EntranceExams_Id}>
+                                <img
+                                    src={`data:image/svg+xml;base64,${banner.banner}`}
+                                    alt={`Banner ${banner.EntranceExams_Id}`}
+                                    style={{ width: '100%', objectFit: 'cover' }} // Ensure images fit the container
+                                />
+                            </div>
+                        ))}
+                </Carousel>
+            </div>
           {/*-------------- Displaying_banners_end-------------------- */}
  
           {/*-------Parent_OnClick_EditIcon_Opens_banners_popup_edit_section_start--------*/}

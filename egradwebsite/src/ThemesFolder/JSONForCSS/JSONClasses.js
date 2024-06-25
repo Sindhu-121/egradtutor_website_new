@@ -129,7 +129,11 @@ themeFooterCopywriteContentContainer:"themeFooterCopywriteContentContainerDefaul
 
 themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
 
-
+// our courses
+themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
+    themeFeaturesHeading: "DeaultthemeFeaturesHeading",
+    themeArrowWithFeatures: "DefaultthemeArrowWithFeatures",
+    // themeFeatures: "DefaultthemeFeatures",
 
   },
   "Theme-1": {
