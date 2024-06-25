@@ -4,7 +4,7 @@ import axios from "axios";
 import Footer from "../../Footer/Footer";
 import defaultImage from '../../../../assets/defaultImage.png'; 
 import AboutUsEdit from "./AboutUsEdit";
-
+import { Link } from "react-router-dom";
 const AboutUs = ({isEditMode}) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
@@ -54,7 +54,11 @@ const AboutUs = ({isEditMode}) => {
     <div>
       <div>
         {image ? (
-          <img src={image} alt="Current" />
+          <Link to="/">
+          <img
+            src={image}
+            alt="Current"
+          /></Link>
         ) : (
           <img src={defaultImage} alt="Default" />
         )}
