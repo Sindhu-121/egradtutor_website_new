@@ -30,64 +30,65 @@ const Login = () => {
     fetchImage();
   }, []);
 
-const handleLogin = async (e) => {
-  e.preventDefault();
-
-  try {
-    const response = await fetch(
-      `${BASE_URL}/LoginApis/login`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ email, password }),
-        credentials: "same-origin",
-      }
-    );
-
-    if (response.ok) {
-      const responseData = await response.json();
-      const { token, user } = responseData;
-
-      if (user.role === "admin") {
- throw new Error("Invalid credentials");
-      }
-
-      localStorage.setItem("token", token); // Store the token in localStorage
-      localStorage.setItem("userRole", user.role);
-      localStorage.setItem("isLoggedIn", "true");
-
-      // Get the current time
-      const currentTime = new Date();
-      const currentHour = currentTime.getHours();
-
-      // Determine the greeting based on the current hour
-      let greeting = "";
-      if (currentHour < 12) {
-        greeting = "Good Morning,";
-      } else if (currentHour < 18) {
-        greeting = "Good Afternoon,";
+  const handleLogin = async (e) => {
+    e.preventDefault();
+  
+    try {
+      const response = await fetch(
+        `${BASE_URL}/LoginApis/login`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ email, password }),
+          credentials: "same-origin",
+        }
+      );
+  
+      if (response.ok) {
+        const responseData = await response.json();
+        const { token, user } = responseData;
+  
+        if (user.role === "admin") {
+          throw new Error("Invalid credentials");
+        }
+  
+        localStorage.setItem("token", token); // Store the token in localStorage
+        localStorage.setItem("userRole", user.role);
+        localStorage.setItem("isLoggedIn", "true");
+  
+        // Get the current time
+        const currentTime = new Date();
+        const currentHour = currentTime.getHours();
+  
+        // Determine the greeting based on the current hour
+        let greeting = "";
+        if (currentHour < 12) {
+          greeting = "Good Morning,";
+        } else if (currentHour < 18) {
+          greeting = "Good Afternoon,";
+        } else {
+          greeting = "Good Evening,";
+        }
+  
+        // Set the greeting message in localStorage
+        localStorage.setItem("greeting", greeting);
+  
+        setMessage("Login successful!");
+        setEmail("");
+        setPassword("");
+        window.location.href = "/"; // Redirect to the desired page after successful login
       } else {
-        greeting = "Good Evening,";
+        const data = await response.json();
+        throw new Error(data.error || "Failed to login");
       }
-
-      // Set the greeting message in localStorage
-      localStorage.setItem("greeting", greeting);
-
-      setMessage("Login successful!");
-      setEmail("");
-      setPassword("");
-      window.location.href = "/UgadminHome"; // Redirect to the desired page after successful login
-    } else {
-      const data = await response.json();
-      throw new Error(data.error || "Failed to login");
+    } catch (error) {
+      setMessage(error.message || "Error logging in");
+      console.error("Error:", error);
     }
-  } catch (error) {
-    setMessage(error.message || "Error logging in");
-    console.error("Error:", error);
-  }
-};
+  };
+  
 
   useEffect(() => {
     const checkLoggedIn = () => {

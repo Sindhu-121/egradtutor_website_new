@@ -14,7 +14,6 @@ const logoPath = path.resolve(__dirname, "../logo/egate logo.png");
 const userimgPath = path.resolve(__dirname, "../logo/user.png");
 const cors = require("cors");
 app.use(cors());
-
 app.use(bodyParser.json());
 
 const storage_PROimg = multer.diskStorage({
@@ -29,23 +28,26 @@ const storage_PROimg = multer.diskStorage({
   });
   const profilesimages = multer({ storage: storage_PROimg });
 
-router.post("/login", async (req, res) => {
+  router.post("/login", async (req, res) => {
     const { email, password } = req.body;
   
     try {
       const sql = "SELECT * FROM log WHERE email = ?";
-      db1.query(sql, [email], (error, results) => {
-        if (error || results.length === 0) {
-          res.status(401).json({ error: "Invalid email" });
-          return;
+      db.query(sql, [email], (error, results) => {
+        if (error) {
+          console.error("Database query error:", error);
+          return res.status(500).json({ error: "Database query error" });
+        }
+        
+        if (results.length === 0) {
+          return res.status(401).json({ error: "Invalid email" });
         }
   
         const user = results[0];
   
         // Simulate password checking without bcrypt (not recommended for production)
         if (password !== user.password) {
-          res.status(401).json({ error: "Invalid password" });
-          return;
+          return res.status(401).json({ error: "Invalid password" });
         }
   
         const token = jwt.sign({ id: user.user_Id }, "your_secret_key", {
@@ -55,10 +57,11 @@ router.post("/login", async (req, res) => {
         res.status(200).json({ token, user: { user_Id, email, role } });
       });
     } catch (error) {
+      console.error("Internal server error:", error);
       res.status(500).json({ error: "Internal server error" });
     }
   });
-
+  
   router.get("/user", async (req, res) => {
     try {
       const authHeader = req.headers.authorization;

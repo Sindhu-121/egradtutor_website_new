@@ -10,17 +10,16 @@ import "../../../../styles/Theme2_landingPage_styles.css";
 import "../../../../styles/LandingPage_main.css";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
 
-const LandingPageHeader = () => {
+const LandingPageHeader = ({ isEditMode }) => {
   const [image, setImage] = useState(null);
   const [showImage, setShowImage] = useState(false);
   const [welcomeimage, setWelcomeImage] = useState(null);
   const [welcomeDataList, setWelcomeDataList] = useState([]);
   const [showwelcomeForm, setShowWelcomeForm] = useState(false);
-  const [fetchError, setFetchError] = useState(false); // State to handle fetch errors
+  const [fetchError, setFetchError] = useState(false);
 
   const themeFromContext = useContext(ThemeContext);
 
-  // Fetching the logo
   const fetchImage = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Logo/image`, {
@@ -34,7 +33,6 @@ const LandingPageHeader = () => {
     }
   };
 
-  // Fetching the welcome data
   const fetchData = async () => {
     try {
       const response = await fetch(`${BASE_URL}/LandingPageHeader/welcome`);
@@ -45,11 +43,10 @@ const LandingPageHeader = () => {
       setWelcomeDataList([data]);
     } catch (error) {
       console.error("Error fetching data:", error);
-      setFetchError(true); // Set fetch error state to true
+      setFetchError(true);
     }
   };
 
-  // Fetching welcome image
   const fetchWelcomeImage = async () => {
     try {
       const response = await axios.get(
@@ -78,14 +75,14 @@ const LandingPageHeader = () => {
   return (
     <div className="Newlandingpage">
       <div>
-        {/* Adding Logo button */}
-        <div>
-          <button onClick={() => setShowImage(!showImage)}>
-            {showImage ? "Close" : "Add Logo"}
-          </button>
-          {showImage && <LandingPageHeaderEdit type="addLogo" />}
-        </div>
-        {/* Logo image fetching */}
+        {isEditMode && (
+          <div>
+            <button onClick={() => setShowImage(!showImage)}>
+              {showImage ? "Close" : "Add Logo"}
+            </button>
+            {showImage && <LandingPageHeaderEdit type="addLogo" />}
+          </div>
+        )}
         <div
           className={`Newlandingpage_logocontainer ${themeDetails.themeHeaderColor}`}
         >
@@ -106,17 +103,16 @@ const LandingPageHeader = () => {
             </div>
           </div>
         </div>
-        {/* Logo image fetching End */}
       </div>
       <div>
-        {/* Adding Welcome info button */}
-        <div>
-          <button onClick={() => setShowWelcomeForm(!showwelcomeForm)}>
-            {showwelcomeForm ? "Close" : "Add Welcome info"}
-          </button>
-          {showwelcomeForm && <LandingPageHeaderEdit type="WelcomeForm" />}
-        </div>
-        {/* Welcome image and data fetching */}
+        {isEditMode && (
+          <div>
+            <button onClick={() => setShowWelcomeForm(!showwelcomeForm)}>
+              {showwelcomeForm ? "Close" : "Add Welcome info"}
+            </button>
+            {showwelcomeForm && <LandingPageHeaderEdit type="WelcomeForm" />}
+          </div>
+        )}
         <div
           className={`landing_content_div_container ${themeDetails.themeLandingParentContainer}`}
         >
@@ -152,7 +148,6 @@ const LandingPageHeader = () => {
             </div>
           </div>
         </div>
-        {/* Welcome image and data fetching end */}
       </div>
     </div>
   );
