@@ -6,6 +6,7 @@ import axios from 'axios';
 import BASE_URL from '../../../../apiConfig';
 import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import '../../../../styles/UGHomePage/ugHomePageTheme2.css'
+import { RxHamburgerMenu } from "react-icons/rx";
 import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css'
 const BHPHeading = () => {
   const [image, setImage] = useState(null);
@@ -41,14 +42,14 @@ const BHPHeading = () => {
   console.log(themeDetails, "mapppping from json....")
   // fetching for navitems
 
-
+const[showLinks,setShowLinks]=useState(false)
 
   return (
     <div className={`Ug_Home_Page_First_Container${themeDetails.themeUgHomePageFirstContainer}`}>
       {/* {header with logooo} */}
-      <div className={`Ug_Home_Container ${themeDetails.themeUgHomeContainer}`}>
+      <div className={`Ug_Home_Container  ${themeDetails.themeUgHomeContainer}`}>
         <div className={`Ug_HeaderSection ${themeDetails.themeUgHeaderSec}`}>
-          <div className={`"Ug_header_Container ${themeDetails.themeUgHeaderContainer}`} >
+          <div className={`"Ug_header_Container main-nav ${themeDetails.themeUgHeaderContainer}`} >
             <div className={`Ug_header_logoIMG ${themeDetails.themeUgHeaderLogoImg}`}>
               {image ? (
                 <img src={image} alt="Current" />
@@ -56,13 +57,13 @@ const BHPHeading = () => {
                 <p>No image available</p>
               )}
             </div>
-            <div className={`${themeDetails.themeUgDivLinksOfHeader}`}>
+            <div className={`${showLinks?"menu-link mobileMenuLink":"menu-link"} ${themeDetails.themeUgDivLinksOfHeader}`}>
               <Link
                 to="/otsHomePage"
                 target="_blank"
 
               >
-                Online Test Series 
+                Online Test Series
               </Link>
               <Link
                 to="/orvlHomePage"
@@ -76,15 +77,18 @@ const BHPHeading = () => {
                 target="_blank"
 
               >
-                Online Question Bank 
+                Online Question Bank
               </Link>
+              
             </div>
+            <div className="hamburgerMenu" onClick={()=>{setShowLinks(!showLinks);console.log(showLinks,"this is from onclick of hMenu")}}> <RxHamburgerMenu />
+              </div>
           </div>
           <div />
 
         </div>
       </div>
-      
+
 
     </div>
   )
