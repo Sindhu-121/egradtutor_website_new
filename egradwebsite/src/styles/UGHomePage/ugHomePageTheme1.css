@@ -123,9 +123,12 @@
     height: 100%;
     width: auto;
 }
+.t1TotalExamContainer{
+background-color:  rgb(241, 241, 233);
+}
 
 .t1ExamPageHeaderHeading {
-    background-color: rgb(241, 241, 233);
+    /* background-color: rgb(241, 241, 233); */
     color: black;
     font-size: 20px;
     height: 50px;
@@ -343,7 +346,7 @@
 
 }
 
-.t1PortalNames li h1 {
+.t1PortalNames li h2{
     font-size: 20px;
     padding: 10px;
 }

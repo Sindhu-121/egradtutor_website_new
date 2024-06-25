@@ -788,7 +788,8 @@ import { Link } from "react-router-dom";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
-const BHBanners = () => {
+const BHBanners = ({ isEditMode }) => {
+
   const [banners, setBanners] = useState([]);
   const { Branch_Id, EntranceExams_Id } = useParams();
   const [selectedBannerId, setSelectedBannerId] = useState(null);
@@ -1214,8 +1215,9 @@ const BHBanners = () => {
     <div>
       <div className="banner_section">
         <div>
+        {isEditMode && (
           <button onClick={toggleBannerPopup}>Edit</button>
- 
+        )}
           {/*--------------- Displaying_banners_start---------------- */}
           <div className="carousel-container">
                 <Carousel 
