@@ -72,6 +72,7 @@ img.t1LogoImg {
         font-family: "Kalam", cursive;
         font-weight: 400;
         font-style: normal;
+        color: black;
     }
 
 }
@@ -162,6 +163,8 @@ img.t1LogoImg {
         }
 
     }
+
+
 }
 
 /* ************************** ?For UG and PG entrance exams css? ****************** */
@@ -191,139 +194,6 @@ img.t1LogoImg {
     font-size: 30px;
 }
 
-/* 
-& .t1BranchesContainer {
-    & .t1BranchesSubContainer {
-        display: flex;
-        justify-content: space-evenly;
-
-        & .t1BranchBox {
-            display: flex;
-            flex-direction: column;
-            height: 420px;
-
-            & .t1ExamButtonsBox {
-                display: flex;
-                flex-direction: row;
-                justify-content: space-around;
-                padding: 0px;
-                margin: 0px;
-
-                & t1ExamImageBox {
-                    height: 240px !important;
-                }
-
-                & .t1Landing_branch_box_btns {
-                    display: flex;
-                    flex-direction: row;
-                    flex-wrap: wrap;
-
-                    & ul {
-                        display: flex;
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        border-radius: 20px;
-                        width: 150px;
-
-                    }
-
-                    & li {
-                        width: 100%;
-                        text-align: center;
-                        box-shadow: 0 0 3px #afd2c9;
-                        height: auto !important;
-                        border-radius: 20px;
-                    }
-
-                    & li:hover {
-                        background-color: rgb(191, 239, 250);
-                    }
-
-                    & a {
-                        font-size: 15px;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-
-@media (max-width:450px) {
-    .Newlandingpage {
-        & .t1BranchesContainer {
-            & .t1BranchesSubContainer {
-                & .t1BranchBox {
-                    height: auto;
-                    display: flex;
-                    justify-content: center;
-                    width: 310px;
-                    align-items: center;
-
-                    & .t1UgAndPgButtons {
-                        height: 30px;
-
-                        a {
-                            font-size: 0.8rem;
-                        }
-                    }
-
-                    & .t1ExamButtonsBox {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: space-around;
-
-                        & .t1Landing_branch_box_btns {
-                            & ul {
-                                width: 250px;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-} */
-
-.NewlandingPage_exams_image.t1ExamImageBox img {
-    height: 240px !important;
-    border: 1px solid #abd7f7;
-    border-radius: 140px;
-}
-
-/* ************************** For Footer Part ***************************************** */
-.t1FooterMainContainer {
-    background-color: rgb(6, 243, 6) !important;
-}
-
-.Ug_header_logoIMG {
-    width: 250px;
-    display: flex;
-    padding: 9px;
-}
-
-
-
-
-.Newlandingpage_branchescontainer.t1BranchesContainer {
-    width: 100%;
-    /* min-height: 40vh; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -334,8 +204,8 @@ img.t1LogoImg {
 
 .theme1welcomecontainer {
     padding: 10px;
+    background: aliceblue;
 }
-
 
 .theme1UGEntranceExamsContainer {
     width: 80%;
@@ -350,6 +220,8 @@ img.t1LogoImg {
     display: flex;
     padding: 15px;
     justify-content: space-around;
+    border: 2px solid aliceblue;
+    background-color: #efefef;
 }
 
 
@@ -364,28 +236,47 @@ img.t1LogoImg {
     flex-direction: column;
 }
 
+.theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
+    border: 1px solid rgb(156, 156, 177);
+    border-top-right-radius: 250px;
+    border-bottom-left-radius: 250px;
+}
+
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
     flex-direction: row-reverse;
-
-
+    border: 1px solid rgb(156, 156, 177);
+    border-top-left-radius: 250px;
+    border-bottom-right-radius: 250px;
+    margin-top: 50px;
 }
 
 .themeInBranchBox button.t1UgAndPgButtons {
-    background: transparent;
+    background: #cceafb;
     padding: 10px;
+    border-radius: 39px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px outset hsla(0, 60%, 70%, .5);
+}
+
+.themeInBranchBox button.t1UgAndPgButtons a {
+    color: rgb(25, 27, 26);
+    font-size: 15px;
+    font-weight: bold;
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
-    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.t1UgAndPgButtons a {
-    text-decoration: none;
-    font-size: 30px;
-    color: #153e61;
-    background: #cceafb;
+
+.t1Landing_branch_box_btns ul {
+    height: 200px;
+    width: 300px;
+    margin-top: 45px;
 }
 
 .t1Landing_branch_box_btns ul li a {
@@ -400,6 +291,37 @@ img.t1LogoImg {
     padding-top: 10px;
 }
 
+.NewlandingPage_exams_image.t1ExamImageBox {
+    padding: 22px;
+}
+
+.NewlandingPage_exams_image.t1ExamImageBox img {
+    height: 240px !important;
+    border-radius: 140px;
+    box-shadow: 0 4px 8px rgba(34, 28, 28, 0.1);
+}
+
+.t1Landing_branch_box_btns ul li {
+    cursor: pointer;
+    font-size: 30px;
+    height: auto;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background: #1abebf;
+    background-image: linear-gradient(122deg, #37e0e0, #1abebe);
+    color: #fff;
+    border-bottom: 5px solid #ffc600;
+    border-radius: 30px;
+    box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
+    text-shadow: 0 0 3px rgb(0 0 0 / 30%);
+    transition: all .3s;
+}
+
+.t1Landing_branch_box_btns ul li:hover {
+    background-color: rgb(219, 218, 218);
+}
+
+
 
 @media (max-width:768px) {
     .t1BranchBox {
@@ -408,6 +330,16 @@ img.t1LogoImg {
 
     .t1BranchBox:nth-child(2) {
         flex-direction: column !important;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
+        border-radius: 30px;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
+        flex-direction: row-reverse;
+        border-radius: 30px;
+        height: auto;
     }
 }
 
@@ -421,15 +353,473 @@ img.t1LogoImg {
         height: 200px;
     }
 
+    .t1ExamImageBox img {
+        width: 200px;
+        height: 100px;
+    }
+
     .t1UgAndPgButtons a {
         text-decoration: none;
-        font-size: 20px;
+        font-size: 12px;
         color: #3db0f2;
     }
 
-    .t1Landing_branch_box_btns ul li a {
-       font-size: 15px;
-       align-items: center;
+    .t1Landing_branch_box_btns ul {
+        display: flex;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: center;
+        flex-direction: column;
     }
-    
+
+    .t1Landing_branch_box_btns ul li a {
+        font-size: 15px;
+        align-items: center;
+    }
+
+    .t1Landing_branch_box_btns ul li {
+        height: auto;
+        width: 200px;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
+        flex-direction: row-reverse;
+        border-radius: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+@media (min-width:800px) and (max-width:1440px) {
+    .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
+        border-radius: 30px;
+    }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
+        flex-direction: row-reverse;
+        border-radius: 30px;
+        height: auto;
+    }
+
+    .t1Landing_branch_box_btns ul {
+        height: 200px;
+        width: 275px;
+    }
+
+    .landing_img_div.t1LCapImgDiv img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .t1TextContainer div h1 {
+        font-size: 50px;
+    }
+
+    .t1TextContainer div p {
+        font-size: 20px;
+    }
+}
+
+.themeInBranchBox button.t1UgAndPgButtons:hover {
+    background-color: rgb(253, 249, 249);
+}
+
+
+
+
+
+
+
+
+/* ************************** For Footer Part ***************************************** */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.pg-footer {
+    font-family: 'Roboto', sans-serif;
+}
+
+
+.footer {
+    background-color: #004658;
+    color: #fff;
+}
+
+.footer-wave-svg {
+    background-color: transparent;
+    display: block;
+    height: 30px;
+    position: relative;
+    top: -1px;
+    width: 100%;
+}
+
+.footer-wave-path {
+    fill: #fffff2;
+}
+
+.footer-content {
+    /* margin-left: auto; */
+    margin-right: auto;
+    max-width: 1230px;
+    padding: 25px 15px 175px;
+    position: relative;
+}
+
+.footer-content-column {
+    box-sizing: border-box;
+    float: left;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-content-column ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-logo-link {
+    display: inline-block;
+}
+
+.footer-menu {
+    margin-top: 30px;
+}
+
+.footer-menu-name {
+    color: #fffff2;
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.footer-menu-list {
+    list-style: none;
+    margin-bottom: 0;
+    margin-top: 10px;
+    padding-left: 0;
+}
+
+.footer-menu-list li {
+    margin-top: 5px;
+}
+
+.footer-call-to-action-description {
+    color: #fffff2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-call-to-action-button:hover {
+    background-color: #fffff2;
+    color: #00bef0;
+}
+
+.button:last-of-type {
+    margin-right: 0;
+}
+
+.footer-call-to-action-button {
+    background-color: #027b9a;
+    border-radius: 21px;
+    color: #fffff2;
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    padding: 12px 30px;
+    margin: 0 10px 10px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: background-color .2s;
+    cursor: pointer;
+    position: relative;
+}
+
+.footer-call-to-action {
+    margin-top: 30px;
+}
+
+.footer-call-to-action-title {
+    color: #fffff2;
+    font-size: 14px;
+    font-weight: 900;
+    letter-spacing: .1em;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+    text-transform: uppercase;
+}
+
+.footer-call-to-action-link-wrapper {
+    margin-bottom: 0;
+    margin-top: 10px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-call-to-action-link-wrapper a {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+.footer-social-links {
+    bottom: 0;
+    height: 54px;
+    position: absolute;
+    right: 0;
+    width: 236px;
+}
+
+.footer-social-amoeba-svg {
+    height: 54px;
+    left: 0;
+    display: block;
+    position: absolute;
+    top: 0;
+    width: 236px;
+}
+
+.footer-social-amoeba-path {
+    fill: #027b9a;
+}
+
+.footer-social-link.linkedin {
+    height: 26px;
+    left: 3px;
+    top: 11px;
+    width: 26px;
+}
+
+.footer-social-link {
+    display: block;
+    padding: 10px;
+    position: absolute;
+}
+
+.hidden-link-text {
+    position: absolute;
+    clip: rect(1px 1px 1px 1px);
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+    top: 50%;
+}
+
+.footer-social-icon-svg {
+    display: block;
+}
+
+.footer-social-icon-path {
+    fill: #fffff2;
+    transition: fill .2s;
+}
+
+.footer-social-link.twitter {
+    height: 28px;
+    left: 62px;
+    top: 3px;
+    width: 28px;
+}
+
+.footer-social-link.youtube {
+    height: 24px;
+    left: 123px;
+    top: 12px;
+    width: 24px;
+}
+
+.footer-social-link.github {
+    height: 34px;
+    left: 172px;
+    top: 7px;
+    width: 34px;
+}
+
+.footer-copyright {
+    background-color: #027b9a;
+    color: #fff;
+    padding: 15px 30px;
+    text-align: center;
+}
+
+.footer-copyright-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1200px;
+}
+
+.footer-copyright-text {
+    color: #fff;
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.footer-copyright-link {
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
+
+/*   
+  @media (min-width:320px) and (max-width:479px)  {
+    .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 1050px;
+      position: relative;
+    }
+  }
+  @media (min-width:480px) and (max-width:599px)  {
+    .footer-content {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 1050px;
+      position: relative;
+    }
+  }
+  
+  @media (min-width:600px) and (max-width: 800px) {
+      margin-left: auto;
+      margin-right: auto;
+      max-width: 1230px;
+      padding: 40px 15px 1050px;
+      position: relative; */
+
+
+
+
+
+/* @media (min-width: 760px) {
+    .footer-content {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 1230px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 40px 15px 450px;
+        position: relative;
+    }
+    .footer-wave-svg {
+        height: 50px;
+    }
+  
+    .footer-content-column {
+        width: 24.99%;
+    }
+
+    .t1FootereGRADTtutoContent{
+background-color: rgb(136, 67, 67);
+
+    }
+  }
+  @media (min-width: 568px) {
+    /* .footer-content-column {
+        width: 49.99%;
+    } */
+
+
+
+.t1FootereGRADTtutoContent {
+    /* background-color: rgb(255, 184, 184); */
+    width: 200px;
+}
+
+
+.t1FooterFirstContentContainer {
+    /* background-color: red; */
+
+}
+
+.t1FooterContactUsContent {
+    /* background-color: rgb(158, 50, 50); */
+}
+
+.t1FooterFirstContent {
+    padding: 10px;
+}
+
+.t1FooterFirstContent #Footer_Heading {
+    color: #cceafb;
+}
+
+.t1FooterFirstContent p {
+    color: #004658;
+    padding: 10px;
+}
+
+.new_landingfooter_conatinerfristpart_item {
+    color: #efefef;
+}
+
+.Footer_eGRADTtutor__Content.t1FootereGRADTtutoContent {
+    width: 100%;
+}
+
+
+
+.t1InnerMainFooterContentContainer {}
+
+.t1InnerMainFooterContentColumnContainer {
+    display: flex;
+    /* background-color: red; */
+}
+
+.t1FootereGRADTtutoContent {}
+
+.t1ContactFooterContentContainer {
+    display: flex;
+    flex-direction: row;
 }

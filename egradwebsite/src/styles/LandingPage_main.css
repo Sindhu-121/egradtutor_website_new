@@ -35,6 +35,9 @@
       }
     }
   }
+  .logo_Img_container.t1ThemeLogoImgC {
+    max-width: 320px;
+}
 
   .Newlandingpage_branchescontainer {
     width: 100%;
@@ -221,4 +224,12 @@ button {
   border: none;
   cursor: pointer;
   transition: 0.2s ease-in-out;
+}
+
+
+@media (max-width:428px){
+  .logo_Img_container.t1ThemeLogoImgC {
+    max-width: 200px !important;
+}
+
 }
