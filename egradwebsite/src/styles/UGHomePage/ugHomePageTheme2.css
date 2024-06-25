@@ -304,3 +304,6 @@ li.t2CourseLi{
 .t2FeaturesHeading{
     color: black;
 }
+li.t2UgHeaderLi {
+    cursor: pointer;
+}

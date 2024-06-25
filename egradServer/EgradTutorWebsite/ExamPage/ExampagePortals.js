@@ -10,7 +10,8 @@ router.get('/examPortal/:EntranceExams_Id', async (req, res) => {
         const [rows] = await db.query(`SELECT
         oc.Portale_Id,
         oc.EntranceExams_Id,
-        p.Portale_Name
+        p.Portale_Name,
+        portalLink
     FROM
         our_courses AS oc
     JOIN portales AS p

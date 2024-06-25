@@ -366,8 +366,23 @@ themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
     themePortalNames: "t2PortalNames",
     themeExamPortalBtn: "t2ExamPortalBtn",
     themeExamPortalImgDivInCard:"t2ExamPortalImgDivInCard",
+     // for footer, json classes
+     themeFooterMainContainer: "t2FooterMainContainer",
+     themeFooterSubContainer: "t2FooterSubContainer",
+     themeFooterContentMainContainer: "t2FooterContentMainContainer",
+     themeFooterFirstContentContainer: "t2FooterFirstContentContainer",
+     themeFootereGRADTtutoContent: "t2FootereGRADTtutoContent",
+     themeFooterFirstContent: "t2FooterFirstContentD",
+     themeFooterLinksContent: "t2FooterLinksContent",
+     themeFooterContactUsContent: "t2FooterContactUsContent",
+     themeFooterContactData: "t2FooterContactData",
+     themeFooterCopywriteContentContainer:
+       "t2FooterCopywriteContentContainer",
+ 
+     themeFooterCopywriteContent: "t2FooterCopywriteContent",
 
   },
 };
 
 export default JSONClasses;
+// main file i think sooooooo
