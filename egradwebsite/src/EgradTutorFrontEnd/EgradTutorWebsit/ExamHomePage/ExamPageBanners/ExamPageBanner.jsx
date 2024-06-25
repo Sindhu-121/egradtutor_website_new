@@ -11,7 +11,7 @@ import axios from "axios";
 import BASE_URL from "../../../../apiConfig";
 import "./styles/ExamPageBanner.css";
 
-const ExamPageBanner = () => {
+const ExamPageBanner = ({isEditMode}) => {
   const { EntranceExams_Id } = useParams();
   const [isPopupVisible, setIsPopupVisible] = useState(false);
   const [isPopupUploadBanner, setIsPopupUploadBanner] = useState(false);
@@ -478,9 +478,15 @@ const ExamPageBanner = () => {
     <div>
       <div className="banner_section">
         <div>
+
+        {isEditMode && (
+          <div>
           <button onClick={toggleBannerPopup} className="add-clicked">
             <FaRegPenToSquare />
           </button>
+          </div>
+        )}
+          
 
           {/*--------------- Displaying_banners_start---------------- */}
           {/* <Carousel
@@ -510,7 +516,11 @@ const ExamPageBanner = () => {
                 </div>
               ))}
           </Carousel> */}
+
         <Carousel
+        // axis="vertical"
+        // verticalSwipe="natural"
+        // dynamicHeight={true}
       autoPlay
       infiniteLoop
       showArrows={false}
@@ -530,11 +540,11 @@ const ExamPageBanner = () => {
             <img
               src={`data:image/svg+xml;base64,${banner.banner}`}
               alt={`Banner ${banner.EntranceExams_Id}`}
-              style={{
-                width: "100%", // Adjust as per your design
-                height: "auto", // Adjust as per your design
-                cursor: "pointer",
-              }}
+              // style={{
+              //   width: "100%", 
+              //   height: "auto", 
+              //   cursor: "pointer",
+              // }}
             />
           </div>
         ))}

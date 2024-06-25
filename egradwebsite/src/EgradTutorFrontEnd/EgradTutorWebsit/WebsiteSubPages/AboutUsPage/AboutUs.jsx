@@ -5,7 +5,7 @@ import Footer from "../../Footer/Footer";
 import defaultImage from '../../../../assets/defaultImage.png'; 
 import AboutUsEdit from "./AboutUsEdit";
 
-const AboutUs = () => {
+const AboutUs = ({isEditMode}) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
   const [image, setImage] = useState(null);
@@ -61,10 +61,16 @@ const AboutUs = () => {
       </div>
 
       <div>
-        <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
+      {isEditMode && (
+          <div>
+            <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
           {showAboutEgradForm ? "Close AboutEGT Form" : "Add AboutEGT"}
         </button>
         {showAboutEgradForm && <AboutUsEdit type="aboutEgrad" />}
+          </div>
+        )}
+
+        
         {aboutEgradData.map((aboutEgrad) => (
           <div key={aboutEgrad.about_egt_id}>
             <p>{aboutEgrad.about_egt}</p>
@@ -73,10 +79,15 @@ const AboutUs = () => {
       </div>
 
       <div>
-        <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
+      {isEditMode && (
+          <div>
+            <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
           {showAboutUsForm ? "Close AboutUs Form" : "Add AboutUs"}
         </button>
         {showAboutUsForm && <AboutUsEdit type="aboutUs" />}
+          </div>
+        )}
+       
         {aboutUsData.map((aboutUs) => (
           <div key={aboutUs.about_us_id}>
             <h2>{aboutUs.Title}</h2>

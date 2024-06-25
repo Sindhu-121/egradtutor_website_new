@@ -196,10 +196,10 @@ color: white;
         text-shadow: 2px 9px 8px #000;
     } 
 
-    .Footer_FirstContent.themeFooterFirstContentDefault p{
+    .Footer_eGRADTtutor__Content.themeFootereGRADTtutoContentDefault p{
         line-height: 1.5rem;
         text-align: justify;
-        color:white;
+        color:white !important;
 }
 
 

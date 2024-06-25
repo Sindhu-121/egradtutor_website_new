@@ -7,7 +7,7 @@ import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import '../BranchHomeStyles/BranchHomePages.css';
 import '../BranchHomeStyles/Theme2BranchHomePage.css'
-const ExploreExam = () => {
+const ExploreExam = ({ isEditMode }) => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
   const [portalesData, setPortalesData] = useState([]);
@@ -97,10 +97,15 @@ const ExploreExam = () => {
 
         
       </div>
-      <button onClick={() => setShowExploreExam(!showExploreExam)}>
+      {isEditMode && (
+          <div>
+            <button onClick={() => setShowExploreExam(!showExploreExam)}>
           {showExploreExam ? "Close" : "Add ExploreExam"}
         </button>
         {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
+          </div>
+        )}
+     
     </div>
      :
      <div className={`NewExploreExams_Main_Container ${themeDetails.themeExploreExamsMainContainer}`}>
@@ -149,10 +154,14 @@ const ExploreExam = () => {
  
         </div>
       </div>
-      <button onClick={() => setShowExploreExam(!showExploreExam)}>
+      {isEditMode && (
+          <div>
+            <button onClick={() => setShowExploreExam(!showExploreExam)}>
           {showExploreExam ? "Close" : "Add ExploreExam"}
         </button>
         {showExploreExam && <ExploreExamEdit type="ExploreExam" />}
+          </div>
+        )}
     </div>
      }
     </>

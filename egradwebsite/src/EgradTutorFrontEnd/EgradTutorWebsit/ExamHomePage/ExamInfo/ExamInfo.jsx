@@ -13,7 +13,7 @@ import "../../../../styles/ExamPage/DefaultThemeExamPage.css";
 import { LuInfo } from "react-icons/lu";
 import { GoGlobe } from "react-icons/go";
 
-const ExamInfo = () => {
+const ExamInfo = ({ isEditMode }) => {
   const { EntranceExams_Id } = useParams();
   const [isEditing, setIsEditing] = useState(false);
   const [newInfo, setNewInfo] = useState({
@@ -97,14 +97,18 @@ const ExamInfo = () => {
       <div
         className={`exams_info_btn_container ${themeDetails.themeExamInfoBtnsContainer}`}
       >
-        <button
-          onClick={handleEditClick}
-          className={isEditing ? "hide-clicked" : "add-clicked"}
-        >
-          {isEditing ? <IoMdClose /> : <FaRegPenToSquare />}
-        </button>
+        {isEditMode && (
+          <div>
+            <button
+              onClick={handleEditClick}
+              className={isEditing ? "hide-clicked" : "add-clicked"}
+            >
+              {isEditing ? <IoMdClose /> : <FaRegPenToSquare />}
+            </button>
 
-        {isEditing && <ExamInfoEdit type="aboutUs" />}
+            {isEditing && <ExamInfoEdit type="aboutUs" />}
+          </div>
+        )}
         <div
           className={`exam_info_sub_container ${themeDetails.themeExamInfoSubContainer}`}
         >
