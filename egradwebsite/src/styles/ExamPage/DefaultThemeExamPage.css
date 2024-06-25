@@ -117,9 +117,11 @@ p#more_info {
 .exams_info_btn_container.defaultExamInfoBtnsContainer {
     padding: 1rem 9rem;
 }
+.defaultExamInfoSubContainer .defaultExamInfoBtns.defaultExamInfoDivs h3#info_title {
 .exam_info_divs.defaultExamInfoDivs h3#info_title :hover {
     color:white;
 
+}
 }
 h3#info_title {
     background: #d9d9ff;

@@ -71,6 +71,24 @@ const JSONClasses = {
       "themeFooterCopywriteContentContainerDefault",
 
     themeFooterCopywriteContent: "themeFooterCopywriteContentDefault",
+    // 
+    themeMainFooterContainer:"t1MainFooterContainer",
+    themeInnerMainFooterContainer:"t1InnerMainFooterContainer",
+    themeInnerMainFooterContentContainer:"t1InnerMainFooterContentContainer",
+    themeInnerMainFooterContentColumnContainer:"t1InnerMainFooterContentColumnContainer",
+   
+ 
+    // themeFooterMainContainer:"t1FooterMainContainer",
+    // themeFooterSubContainer:"t1FooterSubContainer",
+    // themeFooterContentMainContainer:"t1FooterContentMainContainer",
+    // themeFooterFirstContentContainer:"t1FooterFirstContentContainer",
+    // themeFootereGRADTtutoContent:"t1FootereGRADTtutoContent",
+    // themeFooterFirstContent:"t1FooterFirstContent",
+    // themeFooterLinksContent:"t1FooterLinksContent",
+    // themeFooterContactUsContent:"t1FooterContactUsContent",
+    // themeFooterContactData:"t1FooterContactData",
+    // themeFooterCopywriteContentContainer:"t1FooterCopywriteContentContainer",
+    // themeContactFooterContentContainer:"t1ContactFooterContentContainer",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -108,6 +126,23 @@ const JSONClasses = {
     theme1welcomecontainer: "theme1welcomecontainer",
     theme1UGEntranceExamsContainer: "theme1UGEntranceExamsContainer",
     themeInBranchBox: "themeInBranchBox",
+    themeMainFooterContainer:"t1MainFooterContainer",
+    themeInnerMainFooterContainer:"t1InnerMainFooterContainer",
+    themeInnerMainFooterContentContainer:"t1InnerMainFooterContentContainer",
+    themeInnerMainFooterContentColumnContainer:"t1InnerMainFooterContentColumnContainer",
+   
+ 
+    themeFooterMainContainer:"t1FooterMainContainer",
+    themeFooterSubContainer:"t1FooterSubContainer",
+    themeFooterContentMainContainer:"t1FooterContentMainContainer",
+    themeFooterFirstContentContainer:"t1FooterFirstContentContainer",
+    themeFootereGRADTtutoContent:"t1FootereGRADTtutoContent",
+    themeFooterFirstContent:"t1FooterFirstContent",
+    themeFooterLinksContent:"t1FooterLinksContent",
+    themeFooterContactUsContent:"t1FooterContactUsContent",
+    themeFooterContactData:"t1FooterContactData",
+    themeFooterCopywriteContentContainer:"t1FooterCopywriteContentContainer",
+    themeContactFooterContentContainer:"t1ContactFooterContentContainer",
   },
   "Theme-2": {
     id: "themeTwoId",

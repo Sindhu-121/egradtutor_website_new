@@ -69,12 +69,16 @@ const OueCourses = () => {
         {showFeatureForm && <OurCoursesEdit type="AddFeatures" />}
       </div>
       <div className={`${themeDetails.themeCoursesHeadding}`}>
-        <h2 id="Our_Courses_heading" className="ribbon-2">OurCourses</h2>
+        {themeColor === 'Theme-2' ?
+          <h2 id="Our_Courses_heading" className="ribbon-2">OurCourses</h2>
+          :
+          <h2 id="Our_Courses_heading">OurCourses</h2>
+        }
         <div className={`${themeDetails.themeCoursesSubContainer}`}>
           {/* <h3 >Course Features:</h3> */}
           <ul className={`${themeDetails.themeCoursesUl}`} >
             {courseFeatures.map((feature, index) => (
-              
+
               <li key={index} className={`${themeDetails.themeCourseLi}`}>
                 <div className={`${themeDetails.themeCoursePortalNameImageContainer}`}>
 

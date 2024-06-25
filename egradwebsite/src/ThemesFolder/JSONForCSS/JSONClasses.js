@@ -250,6 +250,31 @@ themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
     themeExtraPCForFeatures:"t1ExtraPCForFeatures",
     // exam info for exam page
 
+
+
+    theme1welcomecontainer:"theme1welcomecontainer",
+    theme1UGEntranceExamsContainer:"theme1UGEntranceExamsContainer",
+    themeInBranchBox:"themeInBranchBox",
+
+    themeMainFooterContainer:"t1MainFooterContainer",
+    themeInnerMainFooterContainer:"t1InnerMainFooterContainer",
+    themeInnerMainFooterContentContainer:"t1InnerMainFooterContentContainer",
+    themeInnerMainFooterContentColumnContainer:"t1InnerMainFooterContentColumnContainer",
+    
+
+    themeFooterMainContainer:"t1FooterMainContainer",
+    themeFooterSubContainer:"t1FooterSubContainer",
+    themeFooterContentMainContainer:"t1FooterContentMainContainer",
+    themeFooterFirstContentContainer:"t1FooterFirstContentContainer",
+    themeFootereGRADTtutoContent:"t1FootereGRADTtutoContent",
+    themeFooterFirstContent:"t1FooterFirstContent",
+    themeFooterLinksContent:"t1FooterLinksContent",
+    themeFooterContactUsContent:"t1FooterContactUsContent",
+    themeFooterContactData:"t1FooterContactData",
+    themeFooterCopywriteContentContainer:"t1FooterCopywriteContentContainer",
+    themeContactFooterContentContainer:"t1ContactFooterContentContainer",
+
+
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -341,8 +366,23 @@ themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
     themePortalNames: "t2PortalNames",
     themeExamPortalBtn: "t2ExamPortalBtn",
     themeExamPortalImgDivInCard:"t2ExamPortalImgDivInCard",
+     // for footer, json classes
+     themeFooterMainContainer: "t2FooterMainContainer",
+     themeFooterSubContainer: "t2FooterSubContainer",
+     themeFooterContentMainContainer: "t2FooterContentMainContainer",
+     themeFooterFirstContentContainer: "t2FooterFirstContentContainer",
+     themeFootereGRADTtutoContent: "t2FootereGRADTtutoContent",
+     themeFooterFirstContent: "t2FooterFirstContentD",
+     themeFooterLinksContent: "t2FooterLinksContent",
+     themeFooterContactUsContent: "t2FooterContactUsContent",
+     themeFooterContactData: "t2FooterContactData",
+     themeFooterCopywriteContentContainer:
+       "t2FooterCopywriteContentContainer",
+ 
+     themeFooterCopywriteContent: "t2FooterCopywriteContent",
 
   },
 };
 
 export default JSONClasses;
+// main file i think sooooooo

@@ -65,7 +65,7 @@ const BHPNavBar = () => {
     if (isInternalLink) {
       // Internal link for scrolling
       return (
-        <ScrollLink to={navItem.navItemlink} smooth={true} duration={500}>
+        <ScrollLink to={navItem.navItemlink} smooth={true} duration={100}>
           {navItem.Nav_Item}
         </ScrollLink>
       );

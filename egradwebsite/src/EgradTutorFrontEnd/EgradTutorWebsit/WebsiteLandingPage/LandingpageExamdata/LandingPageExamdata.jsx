@@ -10,6 +10,8 @@ import '../../../../styles/Theme2_landingPage_styles.css';
 import '../../../../styles/Theme1_landingPage_styles.css';
 import '../../../../styles/Default_landingPage_styles.css';
 import ugImg from '../../../../styles/Girl.png';
+import women_img from "../../../../styles/women_image.png";
+import { FcGraduationCap } from "react-icons/fc";
 
 const LandingPageExamdata = ({ enableEditFromP }) => {
   const [image, setImage] = useState(null);
@@ -81,51 +83,98 @@ const LandingPageExamdata = ({ enableEditFromP }) => {
   }
 
   return (
-    <div className='Newlandingpage'>
-      <LandingPageExamdataEdit />
-      {/* =======================Exam cards starts here============================== */}
-      <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
-        <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>
-          {branches.map((branch) => (
-            <div
-              className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
-              key={branch.Branch_Id}
-            >
+    <>
+    {themeColor==='Theme-1' ? 
+      <div className={`${themeDetails.theme1welcomecontainer}`}>
+      <div className={`${themeDetails.theme1UGEntranceExamsContainer}`}>
+        {/* <div className={`${themeDetails.theme1CourseWithImgbox}`}> */}
+        {branches.map((branch) => (
+          <div
+            className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
+            key={branch.Branch_Id}
+          >
+            <div className={`${themeDetails.themeInBranchBox}`}>
+           
               <button className={`${themeDetails.themeUgAndPgButtons}`}>
                 <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
+                <FcGraduationCap style={{"fontSize":"30px"}}/>
                   {branch.Branch_Name}{" "}
                 </Link>
-                {/* <MdOutlineTouchApp /> */}
               </button>
-
-              <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
-                <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
-                  {themeColor === 'Theme-2' &&
-                    <img src={ugImg} alt="" />
-                  }
-
-                </div>
-                <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
-
-                  <ul >
-
-                    {branch.EntranceExams.slice(0, 4).map((exam) => (
-                      <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
-                        <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
-                          {exam.EntranceExams_name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+              <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
+                {themeColor === 'Theme-1' &&
+                  <img src={women_img} alt="" />
+                }
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-      {/* =======================Exam cards ends here============================== */}
 
+
+            <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
+              <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
+                <ul >
+                  {branch.EntranceExams.slice(0, 4).map((exam) => (
+                    <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
+                      <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
+                        {exam.EntranceExams_name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
+    :
+    <div className='Newlandingpage'>
+    <LandingPageExamdataEdit />
+    {/* =======================Exam cards starts here============================== */}
+    <div className={`Newlandingpage_branchescontainer ${themeDetails.themeBranchesContainer}`}>
+      <div className={`Newlandingpage_branchessubcontainer ${themeDetails.themeBranchesSubContainer}`}>
+        {branches.map((branch) => (
+          <div
+            className={`Newlandingpage_branch_box ${themeDetails.themeBranchBox}`}
+            key={branch.Branch_Id}
+          >
+            <button className={`${themeDetails.themeUgAndPgButtons}`}>
+              <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
+                {branch.Branch_Name}{" "}
+              </Link>
+              {/* <MdOutlineTouchApp /> */}
+            </button>
+
+            <div className={`Newlandingpage_exams_button_box ${themeDetails.themeExamButtonsBox}`}>
+              <div className={`NewlandingPage_exams_image ${themeDetails.themeExamImageBox}`}>
+                {themeColor === 'Theme-2' &&
+                  <img src={ugImg} alt="" />
+                }
+
+              </div>
+              <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
+
+                <ul >
+
+                  {branch.EntranceExams.slice(0, 4).map((exam) => (
+                    <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
+                      <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
+                        {exam.EntranceExams_name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    {/* =======================Exam cards ends here============================== */}
+
+  </div>
+    }
+    
+    </>
   );
 }
 
