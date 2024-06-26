@@ -7,6 +7,7 @@ import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import "../BranchHomeStyles/BranchHomePages.css";
 import "../BranchHomeStyles/Theme2BranchHomePage.css";
+import { BiSolidRightArrow } from "react-icons/bi";
 const ExploreExam = ({ isEditMode }) => {
   const { Branch_Id } = useParams();
   const [fetchedImage, setFetchedImage] = useState(null);
@@ -149,6 +150,26 @@ const ExploreExam = ({ isEditMode }) => {
                               {exam.EntranceExams_name}
                             </Link>
                           </li>
+                          {themeColor === 'Theme-1' ? (
+                            <>
+                              <div className={`${themeDetails.themeExploreImgContainer}`}>
+                                <img src={fetchedImage} />
+                              </div>
+                              <div
+                                className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
+                              >
+                                {exam.Portale_Names &&
+                                  exam.Portale_Names.map((portaleName, index) => (
+                                    <li key={index}>
+                                      <BiSolidRightArrow />
+                                      <Link to={exam.portalLink}>
+                                        {portaleName}
+                                      </Link>
+                                    </li>
+                                  ))}
+                              </div>
+                            </>
+                          ) : ("")}
                           <div
                             className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
                           >
