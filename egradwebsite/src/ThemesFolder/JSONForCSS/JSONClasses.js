@@ -136,6 +136,16 @@ themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
     themeArrowWithFeatures: "DefaultthemeArrowWithFeatures",
     // themeFeatures: "DefaultthemeFeatures",
 
+
+    // AboutUs Clsses
+    AboutUsMainContainer:"AboutUsMainContainerDefault",
+    AboutUsImgContainer:"AboutUsImgContainerDefault",
+    AboutUsContentMainContainer:"AboutUsContentMainContainerDefault",
+    AboutUs1stContentContainer:"AboutUs1stContentContainerDefault",
+    AboutUsImgDataContentContainer:"AboutUsImgDataContentContainerDefault",
+    AboutUsVisionContentContainer:"AboutUsVisionContentContainerDefault",
+    AboutUsImgDataContentContainer:"AboutUsImgDataContentContainerDefault",
+    AboutUsContentSubContainer:"AboutUsContentSubContainerDefault",
   },
   "Theme-1": {
     id: "themeOneId",
