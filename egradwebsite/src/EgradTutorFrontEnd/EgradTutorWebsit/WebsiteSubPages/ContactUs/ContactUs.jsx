@@ -6,6 +6,7 @@ import defaultImage from '../../../../assets/defaultImage.png';
 import { Contact_Map_Data } from './Contact_map_data';
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
+import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
 
 
 const ContactUs = () => {
@@ -128,6 +129,8 @@ const ContactUs = () => {
     ) : (
       <img src={defaultImage} alt="Default" />
     )}
+
+
   </div>
 
 <div className={`ContactUsContentDataContainer ${themeDetails.ContactUsContentDataContainer}`}>
@@ -154,25 +157,25 @@ const ContactUs = () => {
 
 <div className={`ContactUsFormContainer ${themeDetails.ContactUsFormContainer}`}>
 <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.ContactUsFormData}`}>
-      <label htmlFor="firstName">First Name:</label>
-      <input type="text" id="firstName" name="First_Name"  value={formData.First_Name} onChange={handleChange} required  /><br />
+      <label htmlFor="firstName"></label>
+      <input type="text" id="firstName" name="First_Name"  value={formData.First_Name} onChange={handleChange} placeholder="First Name"  className={`ContactUsFormFirstName ${themeDetails.ContactUsFormFirstName}`} required  /><br />
 
-      <label htmlFor="lastName">Last Name:</label>
-      <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} required /><br />
+      <label htmlFor="lastName"></label>
+      <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="Last Name"  className={`ContactUsFormLasttName ${themeDetails.ContactUsFormLasttName}`} required /><br />
 
-      <label htmlFor="email">Email Address:</label>
-      <input type="email" id="email" name="Email_Address" value={formData.Email_Address} onChange={handleChange} required /><br />
+      <label htmlFor="email"></label>
+      <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.ContactUsFormemail}`} required /><br />
 
-      <label htmlFor="category">Select Category:</label>
-      <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} required>
+      <label htmlFor="category"></label>
+      <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.ContactUsFormCategory}`} required>
         <option value="">Select a category...</option>
         {categories.map(category => (
           <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
         ))}
       </select>
 
-      <label htmlFor="message">Message:</label>
-      <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} required></textarea><br />
+      <label htmlFor="message"></label>
+      <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="Message"  className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`}  required></textarea><br />
 
       <button type="submit">Submit</button>
     </form>

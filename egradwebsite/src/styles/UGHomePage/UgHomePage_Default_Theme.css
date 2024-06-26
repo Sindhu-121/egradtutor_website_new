@@ -604,3 +604,49 @@ ul.defaultCoursesUl li:hover {
         margin-bottom: 2rem;
     }
 }
+
+/* Contact Us Css styles */
+.ContactUsContentDataContainer.ContactUsContentDataContainerDefault {
+    padding: 8rem 0;
+    width: 100%;
+}
+.ContactUsContentDataContainer.ContactUsContentDataContainerDefault {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+    height: 75vh;
+    padding: 8rem 0;
+}
+.ContactUsContentContainer.ContactUsContentContainerDefault {
+    box-shadow: 0 0 10px rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    height: 25rem;
+    padding: 1.8rem;
+    width: 25rem;
+    text-align: left;
+}
+ .ContactUsMapData.ContactUsMapDataDefault iframe{
+    height: 25rem;
+    width: 25rem;
+}
+form.ContactUsFormData.ContactUsFormDataDefault{
+    /* grid-gap: 1rem; */
+    align-items: center;
+    display: grid;
+    gap: rem;
+    grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
+    justify-content: center;
+}
+.contact_box .ug_from .ug_input, .contact_box .ug_from select {
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 50px;
+    outline: none;
+    padding: .1rem .5rem;
+    text-transform: uppercase;
+    width: 90%;
+}

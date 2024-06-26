@@ -84,6 +84,11 @@ app.use("/CoursePageHeaderEdit", CoursePageHeaderEdit);
 const WhychooseUsEdit = require("./EgradTutorWebsite/CoursePage/WhychooseUsEdit");
 app.use("/WhychooseUsEdit", WhychooseUsEdit);
 
+const PoopularCourses = require("./EgradTutorWebsite/CoursePage/PoopularCourses");
+app.use("/PoopularCourses", PoopularCourses);
+
+const StudentRegistationPage = require("./EgradTutorWebsite/StudentDashbord/StudentRegistationPage");
+app.use("/StudentRegistationPage", StudentRegistationPage);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);

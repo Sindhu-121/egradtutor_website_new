@@ -30,6 +30,7 @@ const ExploreExam = ({ isEditMode }) => {
       console.error("Error fetching image:", error);
     }
   };
+
   const fetchBranchData = async () => {
     try {
       const response = await axios.get(
@@ -40,6 +41,15 @@ const ExploreExam = ({ isEditMode }) => {
       );
       const data = response.data;
       const portalesData = responsePortales.data;
+
+      // Log Portale_Id for each EntranceExams object
+      data.forEach((branch) => {
+        branch.EntranceExams.forEach((exam) => {
+          console.log(
+            `Portale_Id for ${exam.EntranceExams_name}: ${exam.Portale_Id}`
+          );
+        });
+      });
 
       const foundBranch = data.find(
         (branch) => branch.Branch_Id === parseInt(Branch_Id)
@@ -96,7 +106,9 @@ const ExploreExam = ({ isEditMode }) => {
                               {exam.Portale_Names &&
                                 exam.Portale_Names.map((portaleName, index) => (
                                   <li key={index}>
-                                    <Link to={`/CoursePage/${Branch_Id}`} target="_blank">
+                                    <Link
+                                      to={`/CoursePage/${Branch_Id}/${exam.Portale_Id}`}
+                                    >
                                       {portaleName}
                                     </Link>
                                   </li>
@@ -150,38 +162,46 @@ const ExploreExam = ({ isEditMode }) => {
                               {exam.EntranceExams_name}
                             </Link>
                           </li>
-                          {themeColor === 'Theme-1' ? (
+                          {themeColor === "Theme-1" ? (
                             <>
-                              <div className={`${themeDetails.themeExploreImgContainer}`}>
+                              <div
+                                className={`${themeDetails.themeExploreImgContainer}`}
+                              >
                                 <img src={fetchedImage} />
                               </div>
                               <div
                                 className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
                               >
                                 {exam.Portale_Names &&
-                                  exam.Portale_Names.map((portaleName, index) => (
-                                    <li key={index}>
-                                      <BiSolidRightArrow />
-                                      <Link to={exam.portalLink}>
-                                        {portaleName}
-                                      </Link>
-                                    </li>
-                                  ))}
+                                  exam.Portale_Names.map(
+                                    (portaleName, index) => (
+                                      <li key={index}>
+                                        <Link
+                                          to={`/CoursePage/${Branch_Id}/${exam.Portale_Id}`}
+                                        >
+                                          {portaleName}
+                                        </Link>
+                                      </li>
+                                    )
+                                  )}
                               </div>
                             </>
-                          ) : ( <div
-                            className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
-                          >
-                            {exam.Portale_Names &&
-                              exam.Portale_Names.map((portaleName, index) => (
-                                <li key={index}>
-                                  <Link to={exam.portalLink}>
-                                    {portaleName}
-                                  </Link>
-                                </li>
-                              ))}
-                          </div>)}
-                         
+                          ) : (
+                            <div
+                              className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
+                            >
+                              {exam.Portale_Names &&
+                                exam.Portale_Names.map((portaleName, index) => (
+                                  <li key={index}>
+                                    <Link
+                                      to={`/CoursePage/${Branch_Id}/${exam.Portale_Id}`}
+                                    >
+                                      {portaleName}
+                                    </Link>
+                                  </li>
+                                ))}
+                            </div>
+                          )}
                         </ul>
                       </div>
                     </div>

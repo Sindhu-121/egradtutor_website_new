@@ -46,7 +46,7 @@ router.get("/examdata/:Branch_Id", async (req, res) => {
     if (!acc[Branch_Id]) {
       acc[Branch_Id] = {
         Branch_Id,
-        EntranceExams: [], // Initialize the array for entrance exams
+        EntranceExams: [], 
       };
     }
   
@@ -61,6 +61,7 @@ router.get("/examdata/:Branch_Id", async (req, res) => {
       acc[Branch_Id].EntranceExams.push({
         EntranceExams_Id,
         EntranceExams_name,
+        Portale_Id:Portale_Id,
         Portale_Names: [Portale_Name], 
       });
     } else {
