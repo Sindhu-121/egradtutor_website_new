@@ -6,7 +6,7 @@
     align-items: center;
     margin: 0 auto;
     padding: 10px;
-    height: 100px;
+    /* height: 100px; */
 }
 .t2ExamPageHeaderContainer img {
     height: 100%;
@@ -54,74 +54,6 @@
 .slider-wrapper.axis-horizontal {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
-/* 
-.exampage_heading.t2ExamPageHeaderHeading {
-    color: white;
-    font-size: 24px;
-}
-.t2ExamPortalImgDivInCard {
-    height: 100px;
-    width: 100px;
-    border: 2px solid red;
-    border-radius: 50%;
-    margin-top: 2rem;
-}
-.t2ExamPortalImgDivInCard img{
-    width: 100%;
-}
-.exam_courses_sub_container.t2ExamCoursesSubContainer ul {
-  
-    margin: 0;
-    padding: 0;
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: 1fr 1fr;
-}
-.exam_portal_btn.t2ExamPortalBtn {
-    background: linear-gradient(326deg, #0a9396, #005f73, #003d4e);
-    padding: 10px;
-    border-radius: 8px;
-   
-}
-.exam_portal_btn.t2ExamPortalBtn a{
-    color: white;
-    text-decoration: none;
-
-}
-.portal_names.t2PortalNames li h1 {
-    
-    font-size: 20px;
-}
-.portal_names.t2PortalNames li {
-    margin: 0;
-    height: 150px;
-    width: 400px;
-    background-color: #e8ebf4;
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    position: relative;
-}
-.portal_names.t2PortalNames {
-    display: flex;
-    border: 1px solid rebeccapurple;
-    border-radius: 20px;
- 
-    align-items: center;
-    justify-content: center;
-}
-.portal_names.t2PortalNames li h1 {
-    
-    font-size: 20px;
-    position: absolute;
-    top: 8px;
-    
-}
-.exam_courses_sub_container.t2ExamCoursesSubContainer ul .t2PortalNames:first-child {
-    margin: 0;
-} */
-
 
 /* another  */
 /* Container styles */
@@ -232,7 +164,10 @@
     .exam_courses_sub_container.t2ExamCoursesSubContainer  {
       width: 95%;
     }
-    
+    .exampage_heading.JEEHeading.t2ExamPageHeaderHeading h1 {
+      font-size: 1.3rem;
+      color: #3e8991;
+  }
     /* .exam_courses_sub_container.t2ExamCoursesSubContainer ul {
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     } */
@@ -323,10 +258,9 @@
 }
 .exam_info_toggle_visiable_links.t2ExamInfoToggles {
   display: flex;
-  /* align-items: center; */
   flex-direction: column;
+  gap: 1.5rem;
   justify-content: space-between;
-  /* border-bottom: 2px solid green; */
 }
 .toggles.t2Toggles {
   padding: 10px;
@@ -342,7 +276,7 @@
   padding: 10px;
 }
 .toggles.t2Toggles h3#info_title {
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
 }
@@ -393,4 +327,95 @@
 }
 .infoButton .t2ButtonDiv p{
   font-size: inherit;  
+}
+.infoButton .t2ButtonDiv p a{
+  font-size: inherit;
+  color: white;  
+}
+.t2ExamPageHeaderContainer  .t2LinkToLandingPage {
+  padding: 0;
+  margin: 0;
+  /* width: inherit; */
+  height: inherit;
+  min-width: 300px;
+}
+@media (max-width: 800px){
+  .t2ExamPageHeaderContainer  .t2LinkToLandingPage {
+    padding: 0;
+    margin: 0;
+    /* width: inherit; */
+    height: inherit;
+    min-width: 280px;
+  }
+}
+.banner_section {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* border: 1px solid #b8b8b8; */
+  /* padding: 2rem 0; */
+  margin: 2rem 0;
+}
+/* 638 */
+@media (max-width: 638px){
+  .infoButtonSpan {
+    display: none;
+}
+}
+
+/* 513 */
+@media (max-width: 513px){
+  .exam_info_btns.t2ExamInfoBtns {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: space-around;
+  }
+}
+@media (max-width: 768px) {
+  .t2ExamPageHeaderContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+    /* padding: 10px; */
+    /* height: 100px; */
+    /* flex-direction: column; */
+}
+.t2ExamPageHeaderContainer  .t2LinkToLandingPage {
+  padding: 0;
+  margin: 0;
+  /* width: inherit; */
+  height: inherit;
+  min-width: 200px;
+}
+}
+@media (max-width: 375px){
+  .t2ExamPageHeaderContainer {
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1rem; */
+    justify-content: center;
+}
+.toggles.t2Toggles h3#info_title {
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.exam_courses_sub_container.t2ExamCoursesSubContainer  ul {
+  display: grid;
+  gap: 2rem;
+  /* grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); */
+  grid-template-columns: 220px;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  list-style: none;
+}
+.exampage_heading.JEEHeading.t2ExamPageHeaderHeading h1 {
+  font-size: 1.2rem;
+  color: #3e8991;
+}
 }

@@ -51,7 +51,8 @@ const JSONClasses = {
     NewExploreExams_Image_Container: "NewExploreExams_Image_ContainerDefault",
     themeNewExploreExams_EachCard_Container:
       "NewExploreExams_EachCard_ContainerDefault",
-      themeNewExploreExams_Exam_Container:"themeNewExploreExams_Exam_ContainerDefault",
+    themeNewExploreExams_Exam_Container:
+      "themeNewExploreExams_Exam_ContainerDefault",
     //About Us div class
     themeAboutuscontainer: "container",
     themeHeadingtext: "abus_heading",
@@ -114,38 +115,38 @@ const JSONClasses = {
     themeExamCoursesNameHeading: "defaultExamCoursesNameHeading",
     themePortalNames: "defaultPortalNames",
     themeExamPortalBtn: "defaultExamPortalBtn",
-    themeExamPortalImgDivInCard:"defaultExamPortalImgDivInCard",
-    
-// Footer classes
-themeFooterMainContainer:"themeFooterMainContainerDeafult",
-themeFooterSubContainer:"themeFooterSubContainerDefault",
-themeFooterContentMainContainer:"themeFooterContentMainContainerDefault",
-themeFooterFirstContentContainer:"themeFooterFirstContentContainerDefault",
-themeFootereGRADTtutoContent:"themeFootereGRADTtutoContentDefault",
-themeFooterFirstContent:"themeFooterFirstContentDefault",
-themeFooterLinksContent:"themeFooterLinksContentDefault",
-themeFooterContactUsContent:"themeFooterContactUsContentDefault",
-themeFooterContactData:"themeFooterContactDataDefault",
-themeFooterCopywriteContentContainer:"themeFooterCopywriteContentContainerDefault",
+    themeExamPortalImgDivInCard: "defaultExamPortalImgDivInCard",
 
-themeFooterCopywriteContent:"themeFooterCopywriteContentDefault",
+    // Footer classes
+    themeFooterMainContainer: "themeFooterMainContainerDeafult",
+    themeFooterSubContainer: "themeFooterSubContainerDefault",
+    themeFooterContentMainContainer: "themeFooterContentMainContainerDefault",
+    themeFooterFirstContentContainer: "themeFooterFirstContentContainerDefault",
+    themeFootereGRADTtutoContent: "themeFootereGRADTtutoContentDefault",
+    themeFooterFirstContent: "themeFooterFirstContentDefault",
+    themeFooterLinksContent: "themeFooterLinksContentDefault",
+    themeFooterContactUsContent: "themeFooterContactUsContentDefault",
+    themeFooterContactData: "themeFooterContactDataDefault",
+    themeFooterCopywriteContentContainer:
+      "themeFooterCopywriteContentContainerDefault",
 
-// our courses
-themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
+    themeFooterCopywriteContent: "themeFooterCopywriteContentDefault",
+
+    // our courses
+    themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
     themeFeaturesHeading: "DeaultthemeFeaturesHeading",
     themeArrowWithFeatures: "DefaultthemeArrowWithFeatures",
     // themeFeatures: "DefaultthemeFeatures",
 
-
     // AboutUs Clsses
-    AboutUsMainContainer:"AboutUsMainContainerDefault",
-    AboutUsImgContainer:"AboutUsImgContainerDefault",
-    AboutUsContentMainContainer:"AboutUsContentMainContainerDefault",
-    AboutUs1stContentContainer:"AboutUs1stContentContainerDefault",
-    AboutUsImgDataContentContainer:"AboutUsImgDataContentContainerDefault",
-    AboutUsVisionContentContainer:"AboutUsVisionContentContainerDefault",
-    AboutUsImgDataContentContainer:"AboutUsImgDataContentContainerDefault",
-    AboutUsContentSubContainer:"AboutUsContentSubContainerDefault",
+    AboutUsMainContainer: "AboutUsMainContainerDefault",
+    AboutUsImgContainer: "AboutUsImgContainerDefault",
+    AboutUsContentMainContainer: "AboutUsContentMainContainerDefault",
+    AboutUs1stContentContainer: "AboutUs1stContentContainerDefault",
+    AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
+    AboutUsVisionContentContainer: "AboutUsVisionContentContainerDefault",
+    AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
+    AboutUsContentSubContainer: "AboutUsContentSubContainerDefault",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -260,41 +261,36 @@ themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
     themeFeaturesHeading: "t1FeaturesHeading",
     themeArrowWithFeatures: "t1ArrowWithFeatures",
     // themeFeatures: "t2Features",
-    themeExamPortalImgDivInCard:"t1ExamPortalImgDivInCard",
+    themeExamPortalImgDivInCard: "t1ExamPortalImgDivInCard",
     // extra class for theme1
-    themeExtraPCForFeatures:"t1ExtraPCForFeatures",
+    themeExtraPCForFeatures: "t1ExtraPCForFeatures",
     // exam info for exam page
 
-    themeExploreImgContainer:"t1ExploreImgContainer",
+    theme1welcomecontainer: "theme1welcomecontainer",
+    theme1UGEntranceExamsContainer: "theme1UGEntranceExamsContainer",
+    themeInBranchBox: "themeInBranchBox",
 
+    themeMainFooterContainer: "t1MainFooterContainer",
+    themeInnerMainFooterContainer: "t1InnerMainFooterContainer",
+    themeInnerMainFooterContentContainer: "t1InnerMainFooterContentContainer",
+    themeInnerMainFooterContentColumnContainer:
+      "t1InnerMainFooterContentColumnContainer",
 
-    theme1welcomecontainer:"theme1welcomecontainer",
-    theme1UGEntranceExamsContainer:"theme1UGEntranceExamsContainer",
-    themeInBranchBox:"themeInBranchBox",
-
-    themeMainFooterContainer:"t1MainFooterContainer",
-    themeInnerMainFooterContainer:"t1InnerMainFooterContainer",
-    themeInnerMainFooterContentContainer:"t1InnerMainFooterContentContainer",
-    themeInnerMainFooterContentColumnContainer:"t1InnerMainFooterContentColumnContainer",
-    
-
-    themeFooterMainContainer:"t1FooterMainContainer",
-    themeFooterSubContainer:"t1FooterSubContainer",
-    themeFooterContentMainContainer:"t1FooterContentMainContainer",
-    themeFooterFirstContentContainer:"t1FooterFirstContentContainer",
-    themeFootereGRADTtutoContent:"t1FootereGRADTtutoContent",
-    themeFooterFirstContent:"t1FooterFirstContent",
-    themeFooterLinksContent:"t1FooterLinksContent",
-    themeFooterContactUsContent:"t1FooterContactUsContent",
-    themeFooterContactData:"t1FooterContactData",
-    themeFooterCopywriteContentContainer:"t1FooterCopywriteContentContainer",
-    themeContactFooterContentContainer:"t1ContactFooterContentContainer",
-    themeFooterCopyrightData:"t1FooterCopyrightData",
-    themeFooterCopyrightWrapperData:"t1FooterCopyrightWrapperData",
-    themeFooterCopyrightTextData:"t1FooterCopyrightTextData",
-    themeFooterContentColumn:"t1FooterContentColumn",
-
-
+    themeFooterMainContainer: "t1FooterMainContainer",
+    themeFooterSubContainer: "t1FooterSubContainer",
+    themeFooterContentMainContainer: "t1FooterContentMainContainer",
+    themeFooterFirstContentContainer: "t1FooterFirstContentContainer",
+    themeFootereGRADTtutoContent: "t1FootereGRADTtutoContent",
+    themeFooterFirstContent: "t1FooterFirstContent",
+    themeFooterLinksContent: "t1FooterLinksContent",
+    themeFooterContactUsContent: "t1FooterContactUsContent",
+    themeFooterContactData: "t1FooterContactData",
+    themeFooterCopywriteContentContainer: "t1FooterCopywriteContentContainer",
+    themeContactFooterContentContainer: "t1ContactFooterContentContainer",
+    themeFooterCopyrightData: "t1FooterCopyrightData",
+    themeFooterCopyrightWrapperData: "t1FooterCopyrightWrapperData",
+    themeFooterCopyrightTextData: "t1FooterCopyrightTextData",
+    themeFooterContentColumn: "t1FooterContentColumn",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -385,22 +381,26 @@ themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
     themeExamCoursesNameHeading: "t2ExamCoursesNameHeading",
     themePortalNames: "t2PortalNames",
     themeExamPortalBtn: "t2ExamPortalBtn",
-    themeExamPortalImgDivInCard:"t2ExamPortalImgDivInCard",
-     // for footer, json classes
-     themeFooterMainContainer: "t2FooterMainContainer",
-     themeFooterSubContainer: "t2FooterSubContainer",
-     themeFooterContentMainContainer: "t2FooterContentMainContainer",
-     themeFooterFirstContentContainer: "t2FooterFirstContentContainer",
-     themeFootereGRADTtutoContent: "t2FootereGRADTtutoContent",
-     themeFooterFirstContent: "t2FooterFirstContentD",
-     themeFooterLinksContent: "t2FooterLinksContent",
-     themeFooterContactUsContent: "t2FooterContactUsContent",
-     themeFooterContactData: "t2FooterContactData",
-     themeFooterCopywriteContentContainer:
-       "t2FooterCopywriteContentContainer",
- 
-     themeFooterCopywriteContent: "t2FooterCopywriteContent",
+    themeExamPortalImgDivInCard: "t2ExamPortalImgDivInCard",
+    // for footer, json classes
+    themeFooterMainContainer: "t2FooterMainContainer",
+    themeFooterSubContainer: "t2FooterSubContainer",
+    themeFooterContentMainContainer: "t2FooterContentMainContainer",
+    themeFooterFirstContentContainer: "t2FooterFirstContentContainer",
+    themeFootereGRADTtutoContent: "t2FootereGRADTtutoContent",
+    themeFooterFirstContent: "t2FooterFirstContentD",
+    themeFooterLinksContent: "t2FooterLinksContent",
+    themeFooterContactUsContent: "t2FooterContactUsContent",
+    themeFooterContactData: "t2FooterContactData",
+    themeFooterCopywriteContentContainer: "t2FooterCopywriteContentContainer",
 
+    themeFooterCopywriteContent: "t2FooterCopywriteContent",
+    // contact us classes for the div structure that i am decided
+    themeCULogoContainer: "t2CULogoContainer",
+    // about us classes
+    themeAboutUsImgWithTextDiv:"t2AboutUsImgWithTextDiv",
+    themeAUHeadingContainer:"t2AUHeadingContainer",
+    themeAUSection1:"t2AUSection1"
   },
 };
 

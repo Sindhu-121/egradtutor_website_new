@@ -7,20 +7,19 @@ import AboutUsEdit from "./AboutUsEdit";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { Link } from "react-router-dom";
-
-import About_Us_Image from "../../../../styles/About_us_Image.jpeg";
-import Our_Vision_Img from '../../../../styles/Our_Mission_img.png';
-import Our_Mission_Img from '../../../../styles/Our_Mission_img.png'
-import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
-const AboutUs = ({isEditMode}) => {
+import capImg from '../../../../styles/AboutUsCapImg.png'
+import ExamPageHeader from "../../ExamHomePage/ExamHomepageHeader/ExamPageHeader";
+import '../../../../styles/AboutUs/Theme2AboutUs.css';
+import Our_Vision_Img from '../../../../styles/Our_Mission_img.a4171ae2dd49cdc24875.png'
+const AboutUs = ({ isEditMode }) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
   const [image, setImage] = useState(null);
   const [showAboutUsForm, setShowAboutUsForm] = useState(false);
   const [showAboutEgradForm, setShowAboutEgradForm] = useState(false);
   const themeFromContext = useContext(ThemeContext);
- 
- 
+
+
   const fetchImage = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Logo/image`, {
@@ -33,13 +32,13 @@ const AboutUs = ({isEditMode}) => {
       console.error("Error fetching image:", error);
     }
   };
- 
+
   useEffect(() => {
     fetchAboutUsData();
     fetchAboutEgradData();
     fetchImage();
   }, []);
- 
+
   const fetchAboutUsData = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/AboutUs/about_us`);
@@ -48,7 +47,7 @@ const AboutUs = ({isEditMode}) => {
       console.error("Error fetching About Us data:", error);
     }
   };
- 
+
   const fetchAboutEgradData = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/AboutUs/about_egt`);
@@ -62,12 +61,140 @@ const AboutUs = ({isEditMode}) => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
- 
- 
+
+
   return (
-    <div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
+    <>
+      {themeColor === 'Theme-2' &&
+        <div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
+          <ExamPageHeader />
+
+          <div className={`AboutUsContentMainContainer ${themeDetails.AboutUsContentMainContainer}`}>
+            <div className={`${themeDetails.themeAUSection1}`}>
+              <div className={`${themeDetails.themeAboutUsImgWithTextDiv}`}>
+
+                <div className={`${themeDetails.themeAUHeadingContainer}`}>
+                  <h1>About Us</h1>
+                </div>
+                <div>
+                  <img src={capImg} alt="error while getting about us cap img" />
+                </div>
+                <div className={`AboutUs1stContentContainer ${themeDetails.AboutUs1stContentContainer}`} >
+                  {isEditMode && (
+                    <div>
+                      <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
+                        {showAboutEgradForm ? "Close AboutEGT Form" : "Add AboutEGT"}
+                      </button>
+                      {showAboutEgradForm && <AboutUsEdit type="aboutEgrad" />}
+                    </div>
+                  )}
+                  {aboutEgradData.map((aboutEgrad) => (
+                    <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                      <p>{aboutEgrad.about_egt}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            <div className={`AboutUsContentSubContainer ${themeDetails.AboutUsContentSubContainer}`}>
+
+
+
+              <div className={`AboutUs_VisionContent_Container ${themeDetails.AboutUsVisionContentContainer}`} >
+                {isEditMode && (
+                  <div>
+                    <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
+                      {showAboutUsForm ? "Close AboutUs Form" : "Add AboutUs"}
+                    </button>
+                    {showAboutUsForm && <AboutUsEdit type="aboutUs" />}
+                  </div>
+                )}
+
+                {aboutUsData.map((aboutUs) => (
+                  <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                    <h2>{aboutUs.Title}</h2>
+                    <p>{aboutUs.Description}</p>
+                  </div>
+                ))}
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+
+          <Footer />
+        </div>
+      }
+      {themeColor === 'Theme-1' && <div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
+        <ExamPageHeader />
+
+        <div className={`AboutUsContentMainContainer ${themeDetails.AboutUsContentMainContainer}`}>
+          <div className={`${themeDetails.themeAUSection1}`}>
+            <div className={`${themeDetails.themeAboutUsImgWithTextDiv}`}>
+
+              <div className={`${themeDetails.themeAUHeadingContainer}`}>
+                <h1>About Us</h1>
+              </div>
+              <div>
+                <img src={capImg} alt="error while getting about us cap img" />
+              </div>
+              <div className={`AboutUs1stContentContainer ${themeDetails.AboutUs1stContentContainer}`} >
+                {isEditMode && (
+                  <div>
+                    <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
+                      {showAboutEgradForm ? "Close AboutEGT Form" : "Add AboutEGT"}
+                    </button>
+                    {showAboutEgradForm && <AboutUsEdit type="aboutEgrad" />}
+                  </div>
+                )}
+                {aboutEgradData.map((aboutEgrad) => (
+                  <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                    <p>{aboutEgrad.about_egt}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+          <div className={`AboutUsContentSubContainer ${themeDetails.AboutUsContentSubContainer}`}>
+
+
+
+            <div className={`AboutUs_VisionContent_Container ${themeDetails.AboutUsVisionContentContainer}`} >
+              {isEditMode && (
+                <div>
+                  <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
+                    {showAboutUsForm ? "Close AboutUs Form" : "Add AboutUs"}
+                  </button>
+                  {showAboutUsForm && <AboutUsEdit type="aboutUs" />}
+                </div>
+              )}
+
+              {aboutUsData.map((aboutUs) => (
+                <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                  <h2>{aboutUs.Title}</h2>
+                  <p>{aboutUs.Description}</p>
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+
+        <Footer />
+      </div>}
+
+      {themeColor==='Theme-default' && 
+
+<div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
  
-  
+ 
 <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`}>
       {image ? (
           <Link to="/">
@@ -97,13 +224,13 @@ const AboutUs = ({isEditMode}) => {
        
         {aboutEgradData.map((aboutEgrad) => (
           <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
-            <img src = {About_Us_Image} alt="" />
+            <img src = {capImg} alt="" />
             <p>{aboutEgrad.about_egt}</p>
           </div>
         ))}
       </div>
-
-
+ 
+ 
       <div className={`AboutUs_VisionContent_Container ${themeDetails.AboutUsVisionContentContainer}`} >
       {isEditMode && (
           <div>
@@ -122,7 +249,7 @@ const AboutUs = ({isEditMode}) => {
           </div>
         ))}
       </div>
-
+ 
       </div>
  
       </div>
@@ -132,7 +259,11 @@ const AboutUs = ({isEditMode}) => {
  
       <Footer />
     </div>
+      }
+      
+      
+    </>
   );
 };
- 
+
 export default AboutUs;
