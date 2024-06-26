@@ -95,7 +95,7 @@ const ExploreExam = ({ isEditMode }) => {
                               {exam.Portale_Names &&
                                 exam.Portale_Names.map((portaleName, index) => (
                                   <li key={index}>
-                                    <Link to={exam.portalLink}>
+                                    <Link to={`/CoursePage/${Branch_Id}`} target="_blank">
                                       {portaleName}
                                     </Link>
                                   </li>
