@@ -100,7 +100,7 @@
 
 
 
-.t1ExamPageHeaderContainer a {
+.t1ExamPageHeaderHeading a {
     background-color: #fef0f0;
     border-radius: 20px;
     border: 1px solid rgb(207, 160, 160);
@@ -121,9 +121,9 @@
     color: white;
 }
 
-.t1ExamPageHeaderContainer img {
+.t1ExamPageHeaderContainer a img {
     height: 100%;
-    width: auto;
+    width:350px;
 }
 .t1TotalExamContainer{
 background-color:  rgb(241, 241, 233);

@@ -55,8 +55,23 @@ const ExamPageHeader = () => {
   return (
     <div className={`Ug_examsPage_Main_Container ${themeDetails.themeExamPageHeaderMainContainer}`}>
       <div className={`Ug_examsPage_Container ${themeDetails.themeExamPageHeaderContainer}`}>
+      {themeColor==='Theme-2' ? 
+       <>
+       {image ? (
+    <Link to="/" className='t2LinkToLandingPage' >
+    <img
+      src={image}
+      className={`${themeDetails.themeLogoImg}`}
+      alt="Current"
+    /></Link>
+       ) : (
+         <img src={defaultImage} alt="Default" />
+       )}
+       </>
+      :
+      <>
         {image ? (
-     <Link to="/">
+     <Link to="/" >
      <img
        src={image}
        className={`${themeDetails.themeLogoImg}`}
@@ -65,6 +80,8 @@ const ExamPageHeader = () => {
         ) : (
           <img src={defaultImage} alt="Default" />
         )}
+        </>
+        }
         {entranceExam.length > 0 &&
         entranceExam.map((exam) => (
           <div key={exam.EntranceExams_Id} className={`exampage_heading JEEHeading ${themeDetails.themeExamPageHeaderHeading}`}>
