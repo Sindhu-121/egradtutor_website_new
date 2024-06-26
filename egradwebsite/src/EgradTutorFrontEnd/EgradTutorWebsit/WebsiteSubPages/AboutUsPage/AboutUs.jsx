@@ -7,6 +7,11 @@ import AboutUsEdit from "./AboutUsEdit";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { Link } from "react-router-dom";
+
+import About_Us_Image from "../../../../styles/About_us_Image.jpeg";
+import Our_Vision_Img from '../../../../styles/Our_Mission_img.png';
+import Our_Mission_Img from '../../../../styles/Our_Mission_img.png'
+import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
 const AboutUs = ({isEditMode}) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
@@ -92,6 +97,7 @@ const AboutUs = ({isEditMode}) => {
        
         {aboutEgradData.map((aboutEgrad) => (
           <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+            <img src = {About_Us_Image} alt="" />
             <p>{aboutEgrad.about_egt}</p>
           </div>
         ))}
@@ -110,6 +116,7 @@ const AboutUs = ({isEditMode}) => {
        
         {aboutUsData.map((aboutUs) => (
           <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                 <img src={Our_Vision_Img} alt="" />
             <h2>{aboutUs.Title}</h2>
             <p>{aboutUs.Description}</p>
           </div>

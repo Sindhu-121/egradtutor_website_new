@@ -8,7 +8,7 @@ import { FaArrowRight } from "react-icons/fa6";
 import '../../../../styles/UGHomePage/ugHomePageTheme1.css'
 import girl_img from'../../../../styles/Girl.png'
 const ExamCourse = () => {
-  const { EntranceExams_Id } = useParams();
+  const { EntranceExams_Id,Branch_Id } = useParams();
   const [portaldata, setPortalData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -58,7 +58,7 @@ const ExamCourse = () => {
               <img src={girl_img } alt='img not uploaded'/>
               </div>
               <div className={`exam_portal_btn ${themeDetails.themeExamPortalBtn}`}>
-              <Link to={item.portalLink}>{item.button}Explore<FaArrowRight /></Link>
+              <Link to={`/CoursePage/${item.Branch_Id}`} target="_blank">{item.button}Explore<FaArrowRight /></Link>
               </div>
            
             </li>

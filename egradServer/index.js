@@ -77,6 +77,13 @@ app.use("/Footer", Footer);
 const FooterEdit = require("./EgradTutorWebsite/Footer/FooterEdit");
 app.use("/FooterEdit", FooterEdit);
 
+const CoursePageHeaderEdit = require("./EgradTutorWebsite/CoursePage/CoursePageHeaderEdit");
+app.use("/CoursePageHeaderEdit", CoursePageHeaderEdit);
+
+
+
+
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });

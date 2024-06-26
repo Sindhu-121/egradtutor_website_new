@@ -13,6 +13,7 @@ import Register from './Login/Register';
 import UgadminHome from './Login/UgadminHome';
 import LinkPage from './EgradTutorFrontEnd/EgradTutorWebsit/Footer/LinkPage';
 import FAQ from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/FAQPage/FAQ';
+import CoursePage from './EgradTutorFrontEnd/EgradTutorWebsit/CoursePages/CoursePage';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -45,7 +46,13 @@ function App() {
             <Route path="/UgadminHome" element={<UgadminHome />} />
             <Route path="/" element={<WebSiteLandingPage isEditMode={isEditMode} />} />
             <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage isEditMode={isEditMode} />} />
+
+
             <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
+
+            <Route path="/CoursePage/:Branch_Id" element={<CoursePage isEditMode={isEditMode} />}/>
+
+
             <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/Faq" element={<FAQ/>} />
