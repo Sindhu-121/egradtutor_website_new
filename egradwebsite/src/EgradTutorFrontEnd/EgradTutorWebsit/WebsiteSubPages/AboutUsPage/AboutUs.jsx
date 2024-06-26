@@ -11,8 +11,9 @@ import capImg from '../../../../styles/AboutUsCapImg.png'
 import ExamPageHeader from "../../ExamHomePage/ExamHomepageHeader/ExamPageHeader";
 import '../../../../styles/AboutUs/Theme1AboutUs.css';
 import '../../../../styles/AboutUs/Theme2AboutUs.css';
-import Our_Vision_Img from '../../../../styles/Our_Mission_img.a4171ae2dd49cdc24875.png';
 import { IoHome } from "react-icons/io5";
+import Our_Vision_Img from '../../../../styles/Our_Mission_img.a4171ae2dd49cdc24875.png'
+import aboutUsAP from '../../../../styles/AboutUSPic-removebg-preview.png'
 const AboutUs = ({ isEditMode }) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutEgradData, setAboutEgradData] = useState([]);
@@ -68,19 +69,19 @@ const AboutUs = ({ isEditMode }) => {
   return (
     <>
       {themeColor === 'Theme-2' &&
-        <div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
+        <div className={`AboutUs_Main_Container ${themeDetails.themeAboutUsMainContainer}`}>
           <ExamPageHeader />
-
-          <div className={`AboutUsContentMainContainer ${themeDetails.AboutUsContentMainContainer}`}>
+          <div className={`AboutUsContentMainContainer ${themeDetails.themeAUDataContainer}`}>
+            <div className={`${themeDetails.themeAUSectionPC}`}>
             <div className={`${themeDetails.themeAUSection1}`}>
               <div className={`${themeDetails.themeAboutUsImgWithTextDiv}`}>
                 <div className={`${themeDetails.themeAUHeadingContainer}`}>
                   <h1>About Us</h1>
                 </div>
-                <div>
-                  <img src={capImg} alt="error while getting about us cap img" />
+                <div className={`${themeDetails.themeAUCapImgDiv}`}>
+                  <img src={aboutUsAP} alt="error while getting about us cap img" />
                 </div>
-                <div className={`AboutUs1stContentContainer ${themeDetails.AboutUs1stContentContainer}`} >
+                <div className={`AboutUs1stContentContainer ${themeDetails.themeAUContentContainer}`} >
                   {isEditMode && (
                     <div>
                       <button onClick={() => setShowAboutEgradForm(!showAboutEgradForm)}>
@@ -90,18 +91,16 @@ const AboutUs = ({ isEditMode }) => {
                     </div>
                   )}
                   {aboutEgradData.map((aboutEgrad) => (
-                    <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                    <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.themeAUImgDataContentContainer}`} >
                       <p>{aboutEgrad.about_egt}</p>
                     </div>
                   ))}
                 </div>
               </div>
             </div>
-            <div className={`AboutUsContentSubContainer ${themeDetails.AboutUsContentSubContainer}`}>
-
-
-
-              <div className={`AboutUs_VisionContent_Container ${themeDetails.AboutUsVisionContentContainer}`} >
+            </div>
+            <div className={`AboutUsContentSubContainer ${themeDetails.themeAUSubContainer}`}>
+              <div className={`AboutUs_VisionContent_Container`} >
                 {isEditMode && (
                   <div>
                     <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
@@ -110,22 +109,22 @@ const AboutUs = ({ isEditMode }) => {
                     {showAboutUsForm && <AboutUsEdit type="aboutUs" />}
                   </div>
                 )}
-
+                {/* our vision and our mission mapping goes here */}
                 {aboutUsData.map((aboutUs) => (
-                  <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
-                    <h2>{aboutUs.Title}</h2>
+                  <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.themeAUVMPC}`} >
+                    <div className={`${themeDetails.themeVMContainer}`}>
+                      <span className={`${themeDetails.themeSpanLines}`}></span>
+                      <h2>{aboutUs.Title}</h2>
+                      <span className={`${themeDetails.themeSpanLines}`}></span>
+                    </div>
+                    <div className={`${themeDetails.themeVMText}`}>
                     <p>{aboutUs.Description}</p>
+                    </div>
                   </div>
                 ))}
               </div>
-
             </div>
-
           </div>
-
-
-
-
           <Footer />
         </div>
       }
@@ -195,7 +194,10 @@ const AboutUs = ({ isEditMode }) => {
 
       {themeColor === 'Theme-default' &&
 
+
         <div className={`AboutUs_Main_Container ${themeDetails.AboutUsMainContainer}`}>
+
+
 
 
           <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`}>
@@ -208,9 +210,10 @@ const AboutUs = ({ isEditMode }) => {
             ) : (
               <img src={defaultImage} alt="Default" />
             )}
-            <span>
-              <Link to={`/`}><IoHome />Home</Link>
-            </span>
+
+<span>
+<Link to={`/`}><IoHome />Home</Link>
+</span>
           </div>
 
 
@@ -259,10 +262,6 @@ const AboutUs = ({ isEditMode }) => {
             </div>
 
           </div>
-
-
-
-
           <Footer />
         </div>
       }
