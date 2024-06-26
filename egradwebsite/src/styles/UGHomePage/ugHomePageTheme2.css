@@ -25,6 +25,7 @@
     width: 80%;
     margin: 0 auto;
 }
+
 .Ug_Home_Container.t2UgHomeContainer{
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
 }
@@ -34,6 +35,7 @@ ul.t2UgHeaderUl {
     justify-content: start;
     gap: 2rem;
     margin: 0rem;
+    flex-wrap: wrap;
     padding: 5px 0;
 }
 .ug_container.themeUgHContainer {
@@ -183,6 +185,18 @@ width: 100%;
 li.t2CourseLi{
     border: 1px solid black;
 }
+
+@media screen and (max-width: 1440px) {
+    .Ug_HeaderSection.t2UgHeaderSec {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .t2UgDivLinksOfHeader {
+        gap: 1rem;
+    }
+}
+
+
 @media screen and (max-width: 1308px) {
     .t2FeaturesContainer li {
         font-size: 16px;
@@ -230,11 +244,26 @@ li.t2CourseLi{
         width: 100%;
         gap: 1rem;
     }
+    .arrow{
+        display: none;
+    }
+    .t2FeaturesContainer li {
+        padding:  0 7px ;
+    }
+    ul.t2UgHeaderUl {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 1rem;
+        margin: 0rem;
+        flex-wrap: wrap;
+        padding: 5px 0;
+    }
 }
 
 @media screen and (max-width: 849px){
     .t2FeaturesContainer li {
-        font-size: 10px;
+        font-size: 17px;
     }
 }
 /* 21-06-2024 */
@@ -256,7 +285,7 @@ li.t2CourseLi{
 }
 /* 660 */
 
-@media screen and (max-width: 616px){
+@media screen and (max-width: 812px){
     li.t2CourseLi {
         display: flex;
         align-items: center;
@@ -308,13 +337,29 @@ li.t2UgHeaderLi {
     cursor: pointer;
 }
 .carousel-container {
-    width: 100%;
-    height: 25rem; 
-    overflow: hidden;
+    /* width: 100%; */
+    /* height: 25rem;  */
+    /* height: inherit; */
+    /* overflow: hidden; */
 }
 
 .carousel .slide img {
     width: 100%;
-    height: 25rem; /* Make sure this matches the container height */
+    /* height: 25rem; */
+    height: 100%;
+    height: inherit;
     object-fit: cover;
+}
+.carousel .slide img {
+    width: 100%;
+    /* height: 100vh;  */
+    object-fit: cover; /* Ensure the image covers the container without distortion */
+}
+/*  */
+/* 630 */
+@media screen and (max-width: 630px){
+    ul.t2UgHeaderUl li {
+        font-weight: 500;
+        font-size: 16px;
+    }
 }

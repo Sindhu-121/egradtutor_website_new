@@ -138,7 +138,75 @@ li.themeUgHeaderLiDefault:hover {
         text-align: center;
         width: 100%;
 }
-
+h2#EXPLORE_Exam_Heading {
+    color: #00a3ff;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
+.NewExploreExams_Sub_Container.themeExploreExamsSubContainerDefault {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 5rem;
+    justify-content: center;
+    margin: 0 auto;
+    width: 95%;
+}
+.NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
+    grid-column-gap: 7.8rem;
+    grid-row-gap: 3rem;
+    -webkit-column-gap: 7.8rem;
+    column-gap: 7.8rem;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    padding: 0 2rem;
+    row-gap: 3rem;
+}
+.exam_box_left img {
+    width: 100%;
+}
+.NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+    display: flex;
+    justify-content: space-evenly;
+}
+.NewExploreExams_ExamName_Container.NewExploreExams_ExamName_ContainerDefault {
+    background: #279eff69;
+    background: #fff;
+    border-radius: 13px;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    /* height: 166px; */
+    /* justify-content: center; */
+    padding: 1.5rem;
+    text-align: center;
+    text-transform: capitalize;
+    width: 256px;
+    height: 249px;
+}
+.NewExploreExams_EachCard_Container.NewExploreExams_EachCard_ContainerDefault ul li.defaultLinkToSpecificExam{
+    background: #3ad4ba;
+    border-radius: 13px;
+    color: #070707 !important;
+    font-family: Noto Sans Display,sans-serif;
+    font-weight: 700;
+    padding: .3rem .5rem;
+    font-size:1.3rem;
+}
+.NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a{
+    color:black;
+    line-height: 2rem;
+}
+li.defaultLinkToSpecificExam a{
+    color:white;
+    font-weight:bold;
+}
+.NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a:hover {
+    color: rgb(48, 4, 129);
+    font-weight: bold;
+    text-decoration: underline;
+}
  
 /* OUR COURSES CSS PART */
  
@@ -353,4 +421,70 @@ ul.defaultCoursesUl li:hover {
         width: 65%;
     }
 }
- 
+
+
+
+/* About Us Styles */
+
+.AboutUsImgContainerDefault{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 auto;
+        padding: 10px;
+        height: 100px;
+}
+.AboutUsImgContainerDefault img {
+    border-radius: 5px;
+    width: 330px;
+}
+.AboutUsContentMainContainer.AboutUsContentMainContainerDefault{
+        margin: 0 auto;
+        text-align: center;
+        width: 100%;
+            background: #e2f7fb;
+           
+}
+.AboutUsContentSubContainerDefault {
+    padding: 3rem 10rem;
+    display: flex;
+    height: 60vh;
+    justify-content: center;
+    align-items: center;
+    gap: 6rem;
+}
+
+.AboutUs1stContentContainer.AboutUs1stContentContainerDefault {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content:center;
+    max-width: 48%;
+    /* gap:5rem; */
+}
+
+.AboutUs1stContentContainer.AboutUs1stContentContainerDefault p {
+    color: black;
+    font-weight: 500;
+    text-align: left;
+
+}
+.AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault {
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0,0,0,.5);
+    width: 500px;
+    padding:20px;
+    margin-bottom: 2rem;
+}
+.AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault h2 {
+    color: #00a3ff;
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+}
+.AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault p{
+    color:black;
+    font-weight:500;
+}

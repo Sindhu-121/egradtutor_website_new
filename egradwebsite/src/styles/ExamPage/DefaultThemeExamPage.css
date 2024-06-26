@@ -265,7 +265,7 @@ p#more_info {
 }
 
 
-p.new_landingfooter_conatinersecondpart_item {
+.Footer_Contact_Us_Content.themeFooterContactUsContentDefault p {
     color: white;
 }
 /* media queries for exam page */
