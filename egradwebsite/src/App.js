@@ -50,7 +50,7 @@ function App() {
 
             <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
 
-            <Route path="/CoursePage/:Branch_Id" element={<CoursePage isEditMode={isEditMode} />}/>
+            <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />}/>
 
 
             <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />

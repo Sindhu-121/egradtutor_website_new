@@ -12,7 +12,7 @@ router.get('/examPortal/:EntranceExams_Id', async (req, res) => {
         oc.Portale_Id,
         oc.EntranceExams_Id,
         p.Portale_Name,
-        portalLink,ee.Branch_Id
+        p.portalLink,ee.Branch_Id
     FROM
         our_courses AS oc
     JOIN portales AS p
