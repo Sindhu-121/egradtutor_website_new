@@ -177,12 +177,17 @@
     flex-direction: row;
     flex-wrap: wrap;
 }
-.undefined{
+.t1ExploreImgContainer{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 30px;
+}
+
+.t1ExploreImgContainer img{
+    height: 200px;
+width: 200px;
 }
 
 .t1NewExploreExams_ExamName_Container{

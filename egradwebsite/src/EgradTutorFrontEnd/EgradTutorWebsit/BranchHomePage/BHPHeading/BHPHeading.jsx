@@ -87,7 +87,7 @@ const BHPHeading = () => {
             
                 {portales.map((portale) => (
                   <li key={portale.Portale_Id}>
-                    <Link to={`/CoursePage/${Branch_Id}`}target="_blank">
+                    <Link to={`/CoursePage/${Branch_Id}/${portale.Portale_Id}`}target="_blank">
                       {portale.Portale_Name}
                     </Link>
                   </li>
