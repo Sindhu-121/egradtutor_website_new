@@ -1,8 +1,11 @@
 import React from 'react'
+import WhychooseUsEdit from './WhychooseUsEdit'
 
 const WhyChooseUs = () => {
   return (
-    <div>WhyChooseUs</div>
+    <div>WhyChooseUs
+      <WhychooseUsEdit/>
+    </div>
   )
 }
 

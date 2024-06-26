@@ -81,7 +81,8 @@ const CoursePageHeaderEdit = require("./EgradTutorWebsite/CoursePage/CoursePageH
 app.use("/CoursePageHeaderEdit", CoursePageHeaderEdit);
 
 
-
+const WhychooseUsEdit = require("./EgradTutorWebsite/CoursePage/WhychooseUsEdit");
+app.use("/WhychooseUsEdit", WhychooseUsEdit);
 
 
 app.listen(port, () => {
