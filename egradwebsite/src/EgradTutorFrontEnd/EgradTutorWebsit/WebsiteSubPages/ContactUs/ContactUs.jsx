@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
 import defaultImage from '../../../../assets/defaultImage.png'; 
 import { Contact_Map_Data } from './Contact_map_data';
+import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
+import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
+
+
 const ContactUs = () => {
+  const [categories, setCategories] = useState([]);
+  const themeFromContext = useContext(ThemeContext);
+
+
     const [image, setImage] = useState(null);
     const [landingFooterData, setLandingFooterData] = useState([]);
     const fetchImage = async () => {
@@ -38,25 +46,102 @@ const ContactUs = () => {
     
         fetchData();
       }, []); 
+
+      const [formData, setFormData] = useState({
+        Category_Id: '',
+        Category_Name: '',
+        First_Name: '',
+        Last_Name: '',
+        Email_Address: '',
+        Message: ''
+      });
+
+      const handleChange = (e) => {
+        // If the event target is the category select dropdown
+        if (e.target.name === 'Category_Id') {
+          // Get the selected option from the event target's options property
+          const selectedOption = e.target.options[e.target.selectedIndex];
+          // Extract Category_Id and Category_Name from the selected option's attributes
+          const categoryId = selectedOption.value;
+          const categoryName = selectedOption.getAttribute('data-categoryname');
+          // Update the state with the selected Category_Id and Category_Name
+          setFormData({
+            ...formData,
+            Category_Id: categoryId,
+            Category_Name: categoryName
+          });
+        } else {
+          // For other input fields, update the state as usual
+          setFormData({
+            ...formData,
+            [e.target.name]: e.target.value
+          });
+        }
+      };
+
+      const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const response = await axios.post(`${BASE_URL}/ContactUs/addEnquiry`, formData);
+          if (response.status === 201) {
+            alert('Enquiry added successfully!');
+            console.log('Enquiry ID:', response.data.enquiryId);
+          }
+        } catch (error) {
+          console.error('Error:', error.message);
+          alert('Failed to add enquiry. Please try again later.');
+        }
+      };
+
+
+      useEffect(() => {
+        const fetchCategories = async () => {
+            try {
+                const response = await axios.get(`${BASE_URL}/ContactUs/contact-categories`);
+                if (Array.isArray(response.data) && response.data.length > 0) {
+                    // Assuming the category data is in the first array
+                    const categoryData = response.data[0];
+                    setCategories(categoryData);
+                } else {
+                    console.error('Invalid response format:', response.data);
+                }
+            } catch (error) {
+                console.error('Error fetching categories:', error);
+                // Handle error as needed
+            }
+        };
+    
+        fetchCategories();
+    }, []);
+    const themeColor = themeFromContext[0]?.current_theme;
+    console.log(themeColor, "this is the theme json classesssssss")
+    const themeDetails = JSONClasses[themeColor] || []
+    console.log(themeDetails, "mapppping from json....")  
     
   return (
-    <div>  
-          <div>
+    <div className={`ContactUsMainContainer ${themeDetails.themeContactUsMainContainer}`}>  
+
+
+          <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
     {image ? (
       <img src={image} alt="Current" />
     ) : (
       <img src={defaultImage} alt="Default" />
     )}
   </div>
-  <div>{Contact_Map_Data.map((Contact_data, index) => (
-  <div className="map" key={index}>
+
+<div className={`ContactUsContentDataContainer ${themeDetails.ContactUsContentDataContainer}`}>
+
+  <div className={`ContactUsMapContainer ${themeDetails.ContactUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
+  <div className={`ContactUsMapData ${themeDetails.ContactUsMapData}`} key={index}>
     <iframe src={Contact_data.map} frameBorder="0"></iframe>
   </div>
 ))}
 </div>
-  <div>
+
+  <div className={`ContactUsContentContainer ${themeDetails.ContactUsContentContainer}`}>
     {landingFooterData.map(item => (
-      <div key={item.Content_id}>
+      <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.ContactUsDataContainer}`}>
         {item.Content_id === 1 ? (
           <h2>{item.content_name}</h2>
         ) : (
@@ -65,7 +150,37 @@ const ContactUs = () => {
       </div>
     ))}
   </div>
+
+
+<div className={`ContactUsFormContainer ${themeDetails.ContactUsFormContainer}`}>
+<form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.ContactUsFormData}`}>
+      <label htmlFor="firstName">First Name:</label>
+      <input type="text" id="firstName" name="First_Name"  value={formData.First_Name} onChange={handleChange} required  /><br />
+
+      <label htmlFor="lastName">Last Name:</label>
+      <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} required /><br />
+
+      <label htmlFor="email">Email Address:</label>
+      <input type="email" id="email" name="Email_Address" value={formData.Email_Address} onChange={handleChange} required /><br />
+
+      <label htmlFor="category">Select Category:</label>
+      <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} required>
+        <option value="">Select a category...</option>
+        {categories.map(category => (
+          <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
+        ))}
+      </select>
+
+      <label htmlFor="message">Message:</label>
+      <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} required></textarea><br />
+
+      <button type="submit">Submit</button>
+    </form>
   
+</div>
+
+
+</div>
   <Footer />
   </div>
   )

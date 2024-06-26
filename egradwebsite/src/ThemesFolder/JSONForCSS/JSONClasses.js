@@ -265,6 +265,7 @@ themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
     themeExtraPCForFeatures:"t1ExtraPCForFeatures",
     // exam info for exam page
 
+    themeExploreImgContainer:"t1ExploreImgContainer",
 
 
     theme1welcomecontainer:"theme1welcomecontainer",
