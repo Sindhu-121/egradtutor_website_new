@@ -3,11 +3,19 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import BASE_URL from "../../../apiConfig";
 import styles from './LinkPage.module.css'; // Import CSS module
+import { Link } from 'react-router-dom'
+import defaultImage from '../../../assets/defaultImage.png';
+import { IoHome } from "react-icons/io5";
+
 
 const LinkPage = () => {
   const { Link_Id } = useParams();
+  const { EntranceExams_Id } = useParams();
   const [footerDocumentData, setFooterDocumentData] = useState('');
   const [error, setError] = useState(null);
+  const [image, setImage] = useState(null);
+  const [entranceExam, setEntranceExam] = useState([]);
+
 
   useEffect(() => {
     const fetchFooterLinks = async () => {
@@ -30,8 +38,47 @@ const LinkPage = () => {
     }
   }, [Link_Id]);
 
+  const fetchImage = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/Logo/image`, {
+        responseType: "arraybuffer",
+      });
+      const imageBlob = new Blob([response.data], { type: "image/png" });
+      const imageUrl = URL.createObjectURL(imageBlob);
+      setImage(imageUrl);
+    } catch (error) {
+      console.error("Error fetching image:", error);
+    }
+  };
+  useEffect(() => {
+    fetchImage();
+  }, []);
+
+
+
+
   return (
     <div>
+
+      <>
+        {image ? (
+          <Link to="/" >
+            <img
+              src={image}
+
+              alt="Current"
+            /></Link>
+        ) : (
+          <img src={defaultImage} alt="Default" />
+        )}
+      </>
+
+
+      <div >
+        <Link to={`/`}><IoHome />Home</Link>
+      </div>
+
+
       {/* <h2>Link Page Content</h2> */}
       {error && <div>Error: {error}</div>}
       <div className={styles['footer-content']}>

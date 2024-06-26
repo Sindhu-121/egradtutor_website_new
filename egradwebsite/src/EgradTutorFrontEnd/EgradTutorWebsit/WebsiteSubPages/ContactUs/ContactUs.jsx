@@ -7,7 +7,8 @@ import { Contact_Map_Data } from './Contact_map_data';
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
-
+import { Link } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
 
 const ContactUs = () => {
   const [categories, setCategories] = useState([]);
@@ -130,10 +131,13 @@ const ContactUs = () => {
       <img src={defaultImage} alt="Default" />
     )}
 
-
+<span>
+<Link to={`/`}><IoHome />Home</Link>
+</span>
   </div>
-
+  <h1>CONTACT US</h1>
 <div className={`ContactUsContentDataContainer ${themeDetails.ContactUsContentDataContainer}`}>
+
 
   <div className={`ContactUsMapContainer ${themeDetails.ContactUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
   <div className={`ContactUsMapData ${themeDetails.ContactUsMapData}`} key={index}>
@@ -146,7 +150,7 @@ const ContactUs = () => {
     {landingFooterData.map(item => (
       <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.ContactUsDataContainer}`}>
         {item.Content_id === 1 ? (
-          <h2>{item.content_name}</h2>
+          <h2>ADDRESS</h2>
         ) : (
           <p>{item.content_name}</p>
         )}
