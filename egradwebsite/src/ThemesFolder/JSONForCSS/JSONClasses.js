@@ -400,7 +400,18 @@ const JSONClasses = {
     // about us classes
     themeAboutUsImgWithTextDiv:"t2AboutUsImgWithTextDiv",
     themeAUHeadingContainer:"t2AUHeadingContainer",
-    themeAUSection1:"t2AUSection1"
+    themeAUSection1:"t2AUSection1",
+    themeAUCapImgDiv:"t2AUCapImgDiv",
+    themeVMContainer:"t2VMContainer",
+    themeSpanLines:"t2SpanLines",
+    themeVMText:"t2VMText",
+    themeAUSectionPC:"t2AUSectionPC",
+    themeAboutUsMainContainer:"t2AboutUsMainContainer",
+    themeAUDataContainer:"t2AUDataContainer",
+    themeAUSubContainer:"t2AUSubContainer",
+    themeAUContentContainer:"t2AUContentContainer",
+    themeAUImgDataContentContainer:"t2AUImgDataContentContainer",
+    themeAUVMPC:"t2AUVMPC",
   },
 };
 
