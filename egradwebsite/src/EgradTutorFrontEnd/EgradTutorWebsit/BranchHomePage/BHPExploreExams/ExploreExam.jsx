@@ -169,8 +169,7 @@ const ExploreExam = ({ isEditMode }) => {
                                   ))}
                               </div>
                             </>
-                          ) : ("")}
-                          <div
+                          ) : ( <div
                             className={`NewExploreExams_PortalNames_Container ${themeDetails.themeNewExploreExams_PortalNames_Container}`}
                           >
                             {exam.Portale_Names &&
@@ -181,7 +180,8 @@ const ExploreExam = ({ isEditMode }) => {
                                   </Link>
                                 </li>
                               ))}
-                          </div>
+                          </div>)}
+                         
                         </ul>
                       </div>
                     </div>
