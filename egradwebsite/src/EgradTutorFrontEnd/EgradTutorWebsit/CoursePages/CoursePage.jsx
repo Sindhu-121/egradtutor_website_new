@@ -5,13 +5,13 @@ import PoopularCourses from './CoursePagePopularCourses/PoopularCourses'
 import WhyChooseUs from './CoursePageWhychooseUs/WhyChooseUs'
 import Footer from '../Footer/Footer'
 
-const CoursePage = () => {
+const CoursePage = ({isEditMode} ) => {
   return (
     <div>
-      <CoursePageHeader/>
-      <CoursePageBanners/>
+      <CoursePageHeader isEditMode={isEditMode} />
+      <CoursePageBanners isEditMode={isEditMode}/>
       <PoopularCourses/>
-      <WhyChooseUs/>
+      <WhyChooseUs isEditMode={isEditMode}/>
       <Footer/>
     </div>
   )
