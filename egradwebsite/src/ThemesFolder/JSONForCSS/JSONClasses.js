@@ -1,3 +1,5 @@
+import AboutUs from "../../EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs";
+
 const JSONClasses = {
   "Theme-default": {
     id: "defaultId",
@@ -145,8 +147,24 @@ const JSONClasses = {
     AboutUs1stContentContainer: "AboutUs1stContentContainerDefault",
     AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
     AboutUsVisionContentContainer: "AboutUsVisionContentContainerDefault",
-    AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
     AboutUsContentSubContainer: "AboutUsContentSubContainerDefault",
+
+     
+// Contact Us classes
+themeContactUsMainContainer:"themeContactUsMainContainerDefault",
+ContactUsContentDataContainer:"ContactUsContentDataContainerDefault",
+ContactUsMapContainer:"ContactUsMapContainerDefault",
+ContactUsMapData:"ContactUsMapDataDefault",
+ContactUsContentContainer:"ContactUsContentContainerDefault",
+ContactUsDataContainer:"ContactUsDataContainerDefault",
+ContactUsFormContainer:"ContactUsFormContainerDefault",
+ContactUsFormData:"ContactUsFormDataDefault",
+ 
+ContactUsFormFirstName:"ContactUsFormFirstNameDefault",
+ContactUsFormLasttName:"ContactUsFormLasttNameDefault",
+ContactUsFormemail:"ContactUsFormemailDefault",
+ContactUsFormCategory:"ContactUsFormCategoryDefault",
+ContactUsForMessage:"ContactUsForMessageDefault",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -260,6 +278,7 @@ const JSONClasses = {
     themeCoursePortalNameImageContainer: "t1CoursePortalNameImageContainer",
     themeFeaturesHeading: "t1FeaturesHeading",
     themeArrowWithFeatures: "t1ArrowWithFeatures",
+    themeExploreImgContainer:"t1ExploreImgContainer",
     // themeFeatures: "t2Features",
     themeExamPortalImgDivInCard: "t1ExamPortalImgDivInCard",
     // extra class for theme1
@@ -291,6 +310,23 @@ const JSONClasses = {
     themeFooterCopyrightWrapperData: "t1FooterCopyrightWrapperData",
     themeFooterCopyrightTextData: "t1FooterCopyrightTextData",
     themeFooterContentColumn: "t1FooterContentColumn",
+
+
+    // ABOUT US//
+    themeAboutUsMainContainer:"themeAboutUsMainContainer",
+    themeAUSection1:"t1AUSection1",
+    themeAboutUsImgWithTextDiv:"t1AboutUsImgWithTextDiv",
+    themeAUHeadingContainer:"t1AUHeadingContainer",
+    AboutUsContentMainContainer:"t1AboutUsContentMainContainer",
+    AboutUs1stContentContainer:"t1AboutUs1stContentContainer",
+    AboutUsImgDataContentContainer:"t1AboutUsImgDataContentContainer",
+    themeAboutusFlexDiv:"t1AboutusFlexDiv",
+    themeAboutusFlexDivForImg:"t1AboutusFlexDivForImg",
+    AboutUsContentSubContainer:"t1AboutUsContentSubContainer",
+    AboutUsVisionContentContainer:"t1AboutUsVisionContentContainer",
+    AboutUsImgDataContentContainer:"t1AboutUsImgDataContentContainer",
+    VMissionImgs:"t1VMissionImgs",
+    VMissionContainer:"t1VMissionContainer",
   },
   "Theme-2": {
     id: "themeTwoId",

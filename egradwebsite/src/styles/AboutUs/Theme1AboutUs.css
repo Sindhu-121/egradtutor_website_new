@@ -1,0 +1,178 @@
+/* **********ABOUT US SECTION ******************************************************************/
+
+.AboutUsContentMainContainer {
+    background-color: rgb(50 50 50);
+    width: 100%;
+    padding: 0px;
+}
+
+.t1AboutUsContentMainContainer {
+    background-color: white;
+}
+
+.t1AUSection1 {
+    background-color: rgb(50 50 50);
+    margin-bottom: 50px;
+}
+
+.t1AboutUsImgWithTextDiv {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+}
+
+.t1AUHeadingContainer {
+    & h1 {
+        font-size: 39px;
+        color: #FFFFFF;
+        padding: 10px;
+        font: 38px Poppins, sans-serif;
+        margin: 30px 0px 40px;
+
+    }
+}
+
+.t1AboutUsImgDataContentContainer {
+    color: white;
+}
+
+.t1AboutusFlexDiv {
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+}
+
+.t1AboutUs1stContentContainer {
+    width: 60%;
+    padding: 10px;
+}
+
+.t1AboutUs1stContentContainer .t1AboutUsImgDataContentContainer p {
+    color: #FFFFFF;
+    font: 16px Quickasand, sans-serif;
+    line-height: 30px;
+}
+
+.t1AboutusFlexDiv .t1AboutusFlexDivForImg {
+    width: 400px;
+    height: 400px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+
+}
+
+.t1AboutusFlexDivForImg img {
+    width: 100%;
+    height: 100%;
+    border-radius: 250px;
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+}
+
+.t1AboutUsContentSubContainer {
+    /* background-color: green; */
+}
+
+.t1AboutUsVisionContentContainer {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.t1AboutUsVisionContentContainer .t1AboutUsImgDataContentContainer {
+    display: flex;
+    flex-direction: row;
+}
+
+.t1AboutUsVisionContentContainer .t1AboutUsImgDataContentContainer:nth-child(2) {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+
+.t1VMissionImgs {
+    height: 200px;
+    width: 50%;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.t1VMissionContainer {
+    width: 50%;
+    background-color: #323232;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: rgba(7, 7, 238, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+.t1VMissionContainer h2 {
+    color: #0dcaf0;
+    font: 30px Poppins, sans-serif;
+    text-align: start;
+    text-decoration: overline 1px rgb(150, 130, 130);
+
+}
+
+
+.t1VMissionContainer p {
+    margin-left: 30px;
+}
+
+.t1VMissionImgs:nth-child(2) {
+    display: none;
+}
+
+@media (max-width:600px) {
+
+    .t1AboutUsImgWithTextDiv {
+        width: 100%;
+        display: flex;
+        flex-direction: column-reverse;
+
+    }
+
+    .t1AboutusFlexDivForImg img {
+        height: 200px;
+        width: 200px;
+    }
+
+    .t1AUHeadingContainer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .t1AboutUs1stContentContainer {
+        width: 80%;
+    }
+
+    .t1AboutusFlexDiv .t1AboutusFlexDivForImg {
+        height: 200px;
+        display: flex;
+        align-items: center;
+    }
+
+    .t1AboutUsVisionContentContainer .t1AboutUsImgDataContentContainer {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .t1AboutUsVisionContentContainer .t1AboutUsImgDataContentContainer:nth-child(2) {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .t1VMissionContainer {
+        width: 100%;
+    }
+}
+
+
+
+@media (max-width:900px) {
+    .t1AboutusFlexDiv {
+        width: 200px;
+        height: 100px;
+    }
+}
