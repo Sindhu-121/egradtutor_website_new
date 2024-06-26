@@ -14,8 +14,12 @@
    }
    .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container ul li.t2LinkToSpecificExam a {
     background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
-    /* color: black; */
+    color: white;
+    padding: 10px;
     width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 20px;
     text-align: center;
 }
 
@@ -68,6 +72,16 @@ li.t2LinkToSpecificExam {
     border-radius: 20px;
     /* left: -11%; */
     /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+}
+li.t2LinkToSpecificExam {
+    width: 76%;
+    border-radius: 20px;
+    /* left: -11%; */
+    /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .t2CoursesHeadding {
     width: 80%;
@@ -155,12 +169,14 @@ li.t2LinkToSpecificExam {
     display: none;
     font-size: 40px;
 }
-@media screen and (max-width: 768px){
+@media screen and (max-width: 924px){
     .hamburgerMenu{
         display: flex;
         position: relative;
         z-index: 99;
+        /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
     }
+   
     .Ug_HeaderSection.t2UgHeaderSec {
         width: 80%;
         margin: 0 auto;
@@ -174,11 +190,11 @@ li.t2LinkToSpecificExam {
     .mobileMenuLink {
         position: absolute;
         display: flex;
-        top: 1%;
+        top: 5%;
         border-radius: 20px;
         right: 54px;
         flex-direction: column;
-        padding-top: 4rem;
+        padding: 3rem 2rem 2rem;
         border: 1px solid #1f4c60;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     }
@@ -195,5 +211,10 @@ li.t2LinkToSpecificExam {
         transition: 0.3s ease-in-out;
         box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
         /* border: 1px solid red; */
+        transition: transform 0.3s ease-in-out;
     }
+    .mobileMenuLink.t2UgDivLinksOfHeader a:hover{
+        transform: scale(1.05);
+    }
+    
 }
