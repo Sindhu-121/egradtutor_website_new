@@ -39,6 +39,21 @@
     border-radius: 10px;
     transition: ease-in-out 1s;
 }
+
+
+/* @media (min-width:700px){
+
+    .t1NewExploreExams_ExamName_Container {
+        background-color: rebeccapurple;
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        width: 50%;
+        justify-content: space-between;
+    }
+
+} */
+
 @media (min-width:768px) and (max-width:900px){
     .t1UgDivLinksOfHeader a {
         padding: 5px;
@@ -55,8 +70,67 @@
     .t1UgHeaderLi{
         width: 130px;      
     }
-
+    .t1NewExploreExams_ExamName_Container {
+        /* background-color: rebeccapurple; */
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        width: 50%;
+        justify-content: space-between;
+    }
     
+}
+
+@media (max-width:600px){
+    .t1UgHomeContainer{
+        width: 100%;
+    }
+        .t1UgHContainer{
+              width: 100%;
+    }
+    .t1UgNavContainer{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .t1UgHeaderLi{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        font-size: 20px;
+        width: 100px;
+    }
+
+    .t1ExploreExamsMainContainer .t1ExploreExamsSubContainer {
+        margin: 0 auto;
+        padding: 10px;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    
+}
+
+@media (max-width:1114px){
+    .t1ExploreExamsMainContainer .t1ExploreExamsSubContainer{
+        width: 80%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content:center;
+      
+    }
+
+    .t1NewExploreExams_ExamName_Container {
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+        margin: 0 auto;
+        justify-content:center;
+    }
 }
 
 /* ***************{styles for "BranchHome Marquee" in BHPNavbar.jsx} ****************************************************************** */
@@ -70,106 +144,36 @@
 
 
 /* ***************{styles for "BranchHome Explore Exams" in BHPExploreExams.jsx} ****************************************************************** */
-/* 
-.t1ExploreExamsMainContainer {
-    width: 100%;
-
-    & #EXPLORE_Exam_Heading {
-        text-align: center;
-        color: var(--bs-white);
-        background-color: #2a6d8c;
-        width: 40%;
-        height: 63px;
-        padding: 10px;
-        border-radius: 20px;
-    }
-}
-
-.NewExploreExams_ExamName_Container.t1NewExploreExams_ExamName_Container {
-    height: 250px;
-    display: flex;
-    margin: 0 auto;
-    padding: 10px;
-    flex-direction: row;
-    justify-content: space-around;
-}
-
-.t1ExploreExamsSubContainer {
-    width: 100%;
-    display: flex;
-    margin: 0 auto;
-}
-
-.t1NewExploreExams_ExamCard_Container {
-    background-color: rgb(250 192 203);
-    display: flex;
-    flex-direction: row;
-    padding: 20px;
-    margin: 0 auto;
-    flex-wrap: wrap;  
-    height: auto;
-}
-
-li.t1LinkToSpecificExam {
-    position: absolute;
-    top: -3%;
-    left: -17px;
-    padding: 10px;
-    width: 50%;
-    background: red;
-}
-.t1NewExploreExams_PortalNames_Container {
-    justify-content: center;
-    display: flex;
-    flex-direction: column;
-}
-
-
-.t1NewExploreExams_Image_Container {
-    display: flex;
-    background-color: pink;
-    height: 580px;
-}
-
-.t1NewExploreExams_Image_Container img {
-    width: 100%;
-    height: 85%;
-}
-
-.NewExploreExams_EachCard_Container.t1NewExploreExams_EachCard_Container {
-    height: 230px;
-   position:relative;
-    display: flex;
-    flex-direction: column;
-} */
-
-
-
 
 
 
 .t1ExploreExamsMainContainer{
-background-color: rgb(250, 246, 246);
+/* background-color: rgb(250, 246, 246); */
 }
 
-.t1ExploreExamsSubContainer{
-background-color: green;
+.t1ExploreExamsSubContainer {
+    margin: 0 auto;
+    padding: 10px;
+    width: 80%;
+    display: flex;
 }
 
-.t1NewExploreExams_ExamCard_MainContainer{
-/* background-color: red; */
-}
+
 
 .t1NewExploreExams_ExamCard_Container {
-    /* background-color: purple; */
     display: flex;
-    /* flex-wrap: wrap; */
-    /* flex-direction: row; */
-    width: 100%;
+    flex-wrap: wrap;
+    flex-direction: row;
+    /* width: 100%; */
 }
 .t1NewExploreExams_EachCard_Container {
-    background: red;
+    border: 2px solid black;
+    border-radius: 20px;
     display: flex;
+    padding: 10px;
+    /* height: 350px; */
+    text-align: center;
+    width: 300px;
     flex-direction: row;
     flex-wrap: wrap;
 }
@@ -182,38 +186,104 @@ background-color: green;
 }
 
 .t1NewExploreExams_ExamName_Container{
-background-color: whitesmoke;
+/* background-color: whitesmoke; */
+display: flex;
+justify-content: space-around;
 }
 
 .t1NewExploreExams_ExamName_Container {
-    background-color: rebeccapurple;
+    /* background-color: rebeccapurple; */
     display: flex;
     flex-direction: row;
     padding: 10px;
-    width: 50%;
+    /* width: 50%; */
     justify-content: space-between;
 }
 .t1NewExploreExams_Image_Container {
+    width: 325px;
+    height: 200px;
+}
+
+.t1NewExploreExams_Image_Container img{
+    width:100%;
+}
+
+.t1NewExploreExams_ExamCard_Container{
+    display: flex;
+    width: 100%;
+}
+
+.t1NewExploreExams_EachCard_Container ul .t1LinkToSpecificExam { 
+    text-align: center;
+    border-radius: 20px;
+
+    & 
+    a{
+        color: rgb(7, 0, 0);
+        font-size: 22px;
+        font-weight: bold;
+        padding: 10px;
+        align-items: center;
+    }
+}
+.t1NewExploreExams_PortalNames_Container{
+    padding: 15px;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    text-align: start  ;
+    row-gap: 5px;
+}
+
+
+.t1NewExploreExams_PortalNames_Container li a{
+color: rgb(10, 10, 10);
+font-size: 18px;
+    word-spacing: 0rem;
+    line-height: 1.5; 
+}
+
+.t1NewExploreExams_PortalNames_Container li a:hover{
+    color: #088af5;
+}
+
+
+.t1NewExploreExams_Image_Container{
+    display: none;
+}
+
+.t1ExploreImgContainer{
     width: 200px;
     height: 200px;
 }
 
-.t1NewExploreExams_EachCard_Container ul{
-    display: flex;
+.t1ExploreImgContainer img{
+width: 100%;
+height: 100%;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
+.t1ExploreExamsMainContainer #EXPLORE_Exam_Heading h2{
+    color: white;
+}
+.t1ExploreExamsMainContainer #EXPLORE_Exam_Heading {
+    --f: 10px; /* control the folded part*/
+    --r: 15px; /* control the ribbon shape */
+    --t: 10px; /* the top offset */
+    width: 300px;
+    color: white;
+    font-size: 30px;
+    padding: 10px;
+    inset: var(--t) calc(-1*var(--f)) auto auto;
+    padding: 0 20px var(--f) calc(20px + var(--r));
+    clip-path: 
+      polygon(0 0,100% 0,100% calc(100% - var(--f)),calc(100% - var(--f)) 100%,
+        calc(100% - var(--f)) calc(100% - var(--f)),0 calc(100% - var(--f)),
+        var(--r) calc(50% - var(--f)/2));
+    background: #BD1550;
+    box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
+  }
+  
 
 
 
@@ -382,10 +452,14 @@ justify-content: space-between;
     }
 }
 
-/* @media screen and (max-width:1400px){
+@media screen and (min-width:1400px){
     .t1NewExploreExams_ExamCard_Container{
         display: flex;
-        flex-direction: row;
-        padding: 15px;
+        justify-content: center;
     }
-} */
+    
+    .t1NewExploreExams_ExamCard_Container{
+
+    }
+    
+}
