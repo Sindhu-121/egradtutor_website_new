@@ -14,6 +14,7 @@ import UgadminHome from './Login/UgadminHome';
 import LinkPage from './EgradTutorFrontEnd/EgradTutorWebsit/Footer/LinkPage';
 import FAQ from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/FAQPage/FAQ';
 import CoursePage from './EgradTutorFrontEnd/EgradTutorWebsit/CoursePages/CoursePage';
+import StudentRegistationPage from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/StudentRegistationPage';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -50,13 +51,13 @@ function App() {
 
             <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
 
-            <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />}/>
-
+            <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />} />
+            <Route path="/coursedataSRP/1" element={<StudentRegistationPage />} />
 
             <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
             <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/Faq" element={<FAQ/>} />
-            <Route path="/linkpage/:Link_Id" element={<LinkPage/>} />
+            <Route path="/Faq" element={<FAQ />} />
+            <Route path="/linkpage/:Link_Id" element={<LinkPage />} />
           </Routes>
         </Router>
       </div>
