@@ -128,7 +128,7 @@ const AboutUs = ({ isEditMode }) => {
           <Footer />
         </div>
       }
-      {themeColor === 'Theme-1' && <div className={`AboutUs_Main_Container ${themeDetails.themeAboutUsMainContainer}`}>
+      {themeColor === 'Theme-1' && <div className={`AboutUs_Main_Container ${themeDetails.themeAboutUsMainsContainer}`}>
         <ExamPageHeader />
 
         <div className={`AboutUsContentMainContainer ${themeDetails.AboutUsContentMainContainer}`}>
