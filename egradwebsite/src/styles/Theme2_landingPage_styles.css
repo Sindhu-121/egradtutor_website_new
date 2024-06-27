@@ -7,6 +7,7 @@
     max-width: 300px;
     height: 90px;
 }
+
 .Newlandingpage .Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox {
     width: 498px;
     box-shadow: unset;
@@ -56,7 +57,7 @@ img.t2LogoImg {
     width: 100%;
     height: inherit;
     background-color: #EBEDEF;
-    border-radius: 10px;
+    /* border-radius: 10px; */
 }
 .Newlandingpage_exams_button_box.t2ExamButtonsBox {
     background-color: #e8ebf4;
@@ -109,6 +110,10 @@ img.t2LogoImg {
     background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
     margin-bottom: 1rem;
     transition: transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .Newlandingpage_branchescontainer.t2BranchesContainer .Newlandingpage_branch_box.t2BranchBox button.t2UgAndPgButtons:hover{
     transform: scale(1.03);
@@ -234,9 +239,10 @@ img.t2LogoImg {
     }
 }
 /* missing styles */
-li.t2Landing_branch_box_li_buttons a{
-text-decoration: none;
-font-weight: 600;
+li.t2Landing_branch_box_li_buttons a {
+    text-decoration: none;
+    /* font-weight: 600; */
+    font-size: 15px;
 }
 button.t2UgAndPgButtons a {
 text-decoration: none;
@@ -251,7 +257,8 @@ text-decoration: none;
 .Footer_Content_Main_Container.t2FooterContentMainContainer {
     display: flex;
     justify-content: center;
-    gap: 1rem;
+    /* gap: 1rem; */
+    position: relative;
 }
 .Footer_Sub_Container.t2FooterSubContainer {
     width: 80%;
@@ -260,6 +267,9 @@ text-decoration: none;
 .Footer_FirstContent__Container.t2FooterFirstContentContainer,.Footer_Contact_Us_Content.t2FooterContactUsContent {
     border-top: 2px solid black;
     padding: 10px;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 .Footer_Copywrite_Content_Container.t2FooterCopywriteContentContainer {
     border-top: 1px solid black;
@@ -281,10 +291,15 @@ color: black;
 }
 .Footer_FirstContent.t2FooterFirstContentD h2#Footer_Heading {
     color: #287c88;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .Footer_ContactData.t2FooterContactData h2{
     color: #287c88;
-
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 @media (max-width: 686px){
     .Footer_Content_Main_Container.t2FooterContentMainContainer {
@@ -293,4 +308,53 @@ color: black;
         gap: 1rem;
         flex-direction: column;
     }
+}
+/*  img in landing page */
+.landing_img_div.t2LCapImgDiv {
+    width: 597px;
+    height: 359px;
+}
+@media screen and (max-width: 955px) {
+    .landing_img_div.t2LCapImgDiv {
+        width: 400px;
+        /* height: 359px; */
+        height: unset;
+    }
+}
+/* 425 */
+@media screen and (max-width:425px) {
+    .landing_img_div.t2LCapImgDiv {
+        width: 300px;
+        /* height: 359px; */
+        height: unset;
+    }
+}
+@media  screen and (max-width: 370px) {
+.Newlandingpage .Newlandingpage_branchessubcontainer.t2BranchesSubContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 90% !important;
+}
+}
+/* icons */
+.t2FooterSMIcons {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    right: -7%;
+    top: 18%;
+}
+.t2FooterSMIcons a{
+color: black;
+}
+.t2FooterSMIcons a svg{
+    font-size: 26px;
+    transition: transform 0.3s ease; 
+}
+.t2FooterSMIcons a svg:hover{
+    font-size: 26px;
+    transform: scale(1.1);
 }

@@ -5,3 +5,177 @@
 .t2CULogoContainer img{
 width: 100%;
 }
+form.ContactUsFormData.t2CUForm {
+    padding: 0 1rem;
+}
+.t2FormAndContactContainer {
+    display: flex;
+    background-color: #e8ebf4;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.t2FormNdCardSubContainer {
+    display: flex;
+    /* gap: 1rem; */
+    /* background-color: rebeccapurple; */
+    padding: 1rem 2rem;
+    position: relative;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    background: linear-gradient(133deg, #2e8c9240, #1c5f7336, #2e8c9200, #2c878f);
+    border: 1px solid #19596e;
+
+}
+.ContactUsContentContainer.t2CUMapContainer {
+    /* height: 250px; */
+    /* width: 320px; */
+    width: 40%;
+    background-color: red;
+    position: absolute;
+    /* top: 0; */
+    left: -6%;
+    background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
+    color: white;
+    padding: 0 5px 0 19px;
+    border: 1px solid white;
+}
+.ContactUsFormContainer.themeCUFormContainer {
+    margin-left: 40%;
+    /* width: 36%; */
+    width: inherit;
+}
+form.ContactUsFormData.t2CUForm input,form.ContactUsFormData.t2CUForm select,
+form.ContactUsFormData.t2CUForm textarea#message {
+    width: 90%;
+    padding: 10px;
+    border-radius: 11px;
+    border: 1px solid #19596e;
+    border-top: unset;
+    /* background-color: transparent; */
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+form.ContactUsFormData.t2CUForm select option{
+    padding: 10px;
+    width: 90%;
+    border-radius: 11px;
+
+}
+form.ContactUsFormData.t2CUForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+}
+.t2FormNdCardPC {
+    width: 55%;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    padding: 0 5rem;
+}
+/* form.ContactUsFormData.t2CUForm textarea#message {
+    width: 90%;
+} */
+form.ContactUsFormData.t2CUForm button{
+    /* width: 70%; */
+    background-color: #003d4eb0;
+    color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+form.ContactUsFormData.t2CUForm button:hover{
+    /* width: 70%; */
+    background-color: #003d4e;
+    color: white;
+    transform: scale(1.1);
+    font-weight: 500;
+
+}
+.t2CUSubmitButtonDiv{
+display: flex;
+align-items: center;
+justify-self: center;
+}
+@media (min-width: 1880px) and (max-width: 2560px) {
+    .t2FormNdCardPC {
+        width: 40%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        padding: 0 5rem;
+    }
+}
+/* 1453-1200 */
+@media (min-width: 1200px) and (max-width: 1453px) {
+    .t2FormNdCardPC {
+        width: 70%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        padding: 0 5rem;
+        text-transform: uppercase;
+        font-family: "Playfair Display", serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
+}
+/* 1024 */
+@media (max-width: 1200px){
+    .t2FormNdCardPC {
+        width: 85%;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        padding: 0 5rem;
+    }
+}
+.ContactUsMapContainer.t2CUsMapContainer {
+    /* width: 80%; */
+    /* margin: auto; */
+    /* background-color: red; */
+    padding: 2rem 0;
+}
+.ContactUsMapData.t2CUMapDiv {
+    width: 80%;
+    margin: auto;
+    /* background-color: rebeccapurple; */
+    padding: 1rem;
+}
+/* asdf */
+.ContactUsMapData.t2CUMapDiv iframe {
+    width: 100%;
+    height: 275px;
+    border: 1p solid #003d4e;
+}
+/* .t2AUHeadingContainer h1 {
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+} */
+/* .AboutUsImgDataContentContainer.t2AUImgDataContentContainer p {
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
+} */
+.ContactUsDataContainer h2{
+    text-transform: uppercase;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    /* text-decoration: underline; */
+}
+.ContactUsDataContainer {
+    padding: 5px;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 400;
+    font-style: normal;
+}

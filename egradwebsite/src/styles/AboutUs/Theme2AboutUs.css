@@ -75,7 +75,7 @@ span.t2SpanLines {
     padding: 2rem;
     /* background: linear-gradient(45deg, #2e8c9282, #e0eced, #2b858d69, #20697a6b); */
 }
-.AboutUs_VisionContent_Container {
+.AboutUs_VisionContent_Container.t2AUVisionContent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -93,7 +93,7 @@ span.t2SpanLines {
     font-style: normal;
 }
 .t2AUSectionPC {
-    background-color: #e8ebf4;
+    /* background-color: #e8ebf4; */
     padding: 2rem 0;
 }
 .AboutUsContentSubContainer.t2AUSubContainer {

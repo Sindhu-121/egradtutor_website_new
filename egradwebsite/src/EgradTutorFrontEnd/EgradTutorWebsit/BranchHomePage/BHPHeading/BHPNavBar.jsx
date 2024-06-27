@@ -8,6 +8,7 @@ import '../BranchHomeStyles/BranchHomePages.css';
 import Marquee from "react-fast-marquee";
 import { Link as ScrollLink } from 'react-scroll';
 import { Link, useNavigate } from 'react-router-dom';
+import { IoMdArrowDropright } from "react-icons/io";
 
 const BHPNavBar = ({ isEditMode }) => {
   const [navItems, setNavItems] = useState([]);
@@ -97,7 +98,10 @@ const BHPNavBar = ({ isEditMode }) => {
       <div className={`marquee_data ${themeDetails.themeMarqData}`}>
         <Marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="10" loop="infinite" pauseOnHover>
           {marqueeItems.map((item) => (
-            <span key={item.Marquee_Id}>{item.Marquee_data}</span>
+            <>
+            {themeColor==='Theme-2' ?<IoMdArrowDropright style={{fontSize:"30px",margin:0}}/> :null}
+            <span style={{color:'red',fontWeight:500}}  key={item.Marquee_Id}>{item.Marquee_data}</span>
+            </>
           ))}
         </Marquee>
       </div>
