@@ -174,7 +174,7 @@
     border: 2px solid black;
     border-radius: 20px;
     display: flex;
-    padding: 10px;
+    /* padding: 10px; */
     /* height: 350px; */
     text-align: center;
     width: 300px;
@@ -224,19 +224,53 @@ justify-content: space-around;
 
 .t1NewExploreExams_EachCard_Container ul .t1LinkToSpecificExam { 
     text-align: center;
+    align-items: center;
     border-radius: 20px;
+    margin-top: 10px;
+    outline-width: 1px;
+    outline-offset: 0;
+    border: 1px solid rgba(0, 130, 206, 0.75) ;
+    outline-color: rgba(0, 130, 206, 0.75);
+    outline-style: solid;
+    animation: animateOutline 4s ease infinite;
+
 
     & 
     a{
         color: rgb(7, 0, 0);
-        font-size: 22px;
         font-weight: bold;
         padding: 10px;
         align-items: center;
     }
+
 }
+    
+@keyframes animateOutline {
+    0% {
+      outline-width: 1px;
+      outline-offset: 0;
+      outline-color: rgba(0, 130, 206, 0);
+    }
+  
+    10% {
+      outline-color: rgba(0, 130, 206, 0.75);
+    }
+  
+    /* The animation finishes at 50% */
+    50% {
+      outline-width: 7px;
+      outline-offset: 4px;
+      outline-color: rgba(0, 130, 206, 0);
+    }
+  
+    100% {
+      outline-width: 7px;
+      outline-offset: 4px;
+      outline-color: rgba(102, 102, 102, 0);
+    }
+  }
 .t1NewExploreExams_PortalNames_Container{
-    padding: 15px;
+    /* padding: 15px; */
     display: flex;
     justify-content: start;
     flex-direction: column;
@@ -256,7 +290,11 @@ font-size: 18px;
 .t1NewExploreExams_PortalNames_Container li a:hover{
     color: #088af5;
 }
-
+.t1ExploreExamsMainContainer h2#EXPLORE_Exam_Heading {
+    color: white;
+    font-size: 2rem;
+    margin: 2rem auto;
+}
 
 .t1NewExploreExams_Image_Container{
     display: none;
@@ -283,14 +321,14 @@ height: 100%;
     padding: 10px 40px;
     text-align: center;
     width: 400px;
-    background-color: rgb(74, 74, 138);
+    background-color: rgb(29 94 129);
 }
   
   .t1ExploreExamsMainContainer #EXPLORE_Exam_Heading::before, .t1ExploreExamsMainContainer #EXPLORE_Exam_Heading::after {
     content: '';
     width: 80px;
     height: 100%;
-    background-color: #796a62;
+    background-color:rgb(29 94 129);
   
     position: absolute;
     z-index: -1;
