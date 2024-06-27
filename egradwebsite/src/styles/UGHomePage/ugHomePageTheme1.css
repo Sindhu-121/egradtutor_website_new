@@ -126,7 +126,7 @@
     width:350px;
 }
 .t1TotalExamContainer{
-background-color:  rgb(241, 241, 233);
+background-color:  #fff5d75c;
 }
 
 .t1ExamPageHeaderHeading {
@@ -137,6 +137,12 @@ background-color:  rgb(241, 241, 233);
     font-weight: bold;
     text-align: center;
     justify-content: center;
+
+    & h1{
+font-size: 25px;
+padding: 10px;
+font-family: "Roboto";
+    }
 
     & p {
         display: flex;
@@ -222,6 +228,8 @@ background-color:  rgb(241, 241, 233);
 .t1ExamInfoDivs #info_title {
     text-align: center;
     font-size: 17px;
+    font-family: "Roboto";
+    font-weight: 800;
     width: 100%;
     padding: 10px;
     color: rgb(20, 17, 17);

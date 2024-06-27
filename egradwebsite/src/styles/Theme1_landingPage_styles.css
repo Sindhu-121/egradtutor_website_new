@@ -33,7 +33,7 @@ img.t1LogoImg {
 .t1LandingParentContainer {
     width: 100%;
     background-position: center;
-    background-color: #c8eafa;
+    background-color: #fff5d75c;
     justify-content: end;
     align-items: center;
     /* background-image: url('../Imgs/DeWatermark.ai_1718342258588.png'); */
@@ -150,7 +150,7 @@ img.t1LogoImg {
         h1 {
             text-align: center;
             font-size: 65px;
-            color: rgb(54 52 53);
+            color: #ff5e6c;
             ;
             justify-content: center;
             align-items: center;
@@ -221,7 +221,7 @@ img.t1LogoImg {
     padding: 15px;
     justify-content: space-around;
     border: 2px solid aliceblue;
-    background-color: #efefef;
+    background-color: #D3C5E5;
 }
 
 
@@ -285,7 +285,7 @@ img.t1LogoImg {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: black;
+    color: white;
     font-size: 20px;
     font-weight: 400;
     padding-top: 10px;
@@ -307,10 +307,10 @@ img.t1LogoImg {
     height: auto;
     margin-bottom: 10px;
     text-decoration: none;
-    background: #1abebf;
-    background-image: linear-gradient(122deg, #37e0e0, #1abebe);
+    background: #328990e6;
+    /* background-image: linear-gradient(122deg, #37e0e0, #1abebe); */
     color: #fff;
-    border-bottom: 5px solid #cff4fc;
+    /* border-bottom: 5px solid #cff4fc; */
     border-radius: 30px;
     box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
     text-shadow: 0 0 3px rgb(0 0 0 / 30%);
