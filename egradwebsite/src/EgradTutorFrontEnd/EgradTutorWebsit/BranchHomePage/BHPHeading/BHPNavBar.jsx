@@ -99,8 +99,13 @@ const BHPNavBar = ({ isEditMode }) => {
         <Marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="10" loop="infinite" pauseOnHover>
           {marqueeItems.map((item) => (
             <>
-            {themeColor==='Theme-2' ?<IoMdArrowDropright style={{fontSize:"30px",margin:0}}/> :null}
+            {themeColor==='Theme-2' ?
+            <>
+            <IoMdArrowDropright style={{fontSize:"30px",margin:0}}/> 
             <span style={{color:'red',fontWeight:500}}  key={item.Marquee_Id}>{item.Marquee_data}</span>
+            </>
+            :
+            <span  key={item.Marquee_Id}>{item.Marquee_data}</span>}
             </>
           ))}
         </Marquee>
