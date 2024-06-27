@@ -10,6 +10,10 @@ import '../../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
 import ExamPageHeader from "../../ExamHomePage/ExamHomepageHeader/ExamPageHeader";
 // Header
 import '../../../../styles/ContactUs/Theme2ContactUs.css'
+import { Link } from "react-router-dom";
+import { IoHome } from "react-icons/io5";
+// import '../../../../styles/ContactUs/Theme1ContactUs.css'
+
 const ContactUs = () => {
   const [categories, setCategories] = useState([]);
   const themeFromContext = useContext(ThemeContext);
@@ -176,24 +180,97 @@ const ContactUs = () => {
           <Footer />
         </div>
       }
-      {themeColor==='Theme-1'&&
-      <div className={`${themeDetails.themeContactusMainsContainer}`}>
-      <ExamPageHeader />
-      <div className={`ContactUsMainContainer ${themeDetails.themeContactUsSubbMainContainer}`}>
-        <div className={`ContactUsContentDataContainer ${themeDetails.themeContactUsContentsDataContainer}`}>
-        <h1>CONTACT US</h1>
-          <div className={`ContactUsMapContainer ${themeDetails.themeContactsUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
-            <div className={`ContactUsMapData ${themeDetails.themeContactUsMapData}`} key={index}>
-              <iframe src={Contact_data.map} frameBorder="0"></iframe>
+      [14:48] Siva Bhargava Gandikota
+
+      {themeColor === 'Theme-1' &&
+        <div className={`${themeDetails.themeContactusMainsContainer}`}>
+          <ExamPageHeader />
+          <div className={`ContactUsMainContainer ${themeDetails.themeContactUsSubbMainContainer}`}>
+            <div className={`ContactUsContentDataContainer ${themeDetails.themeContactUsContentsDataContainer}`}>
+              <h1>CONTACT US</h1>
+              <div className={`ContactUsMapContainer ${themeDetails.themeContactsUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
+                <div className={`ContactUsMapData ${themeDetails.themeContactUsMapData}`} key={index}>
+                  <iframe src={Contact_data.map} frameBorder="0"></iframe>
+                </div>
+              ))}
+              </div>
+
+
+              <div className={` ${themeDetails.themeContactUsFormAndAdressContainer}`}>
+                <div className={`ContactUsContentContainer ${themeDetails.themeContactUsContentContainer}`}>
+                  {landingFooterData.map(item => (
+                    <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.themeContactUsDataContainer}`}>
+                      {item.Content_id === 1 ? (
+                        <h2>ADDRESS</h2>
+                      ) : (
+                        <p>{item.content_name}</p>
+                      )}
+                    </div>
+                  ))}
+                </div>
+
+                <div className={`ContactUsFormContainer ${themeDetails.themeContactUsFormContainer}`}>
+                  <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.themeContactUsFormData}`}>
+                    <label htmlFor="firstName"></label>
+                    <input type="text" id="firstName" name="First_Name" value={formData.First_Name} onChange={handleChange} placeholder="    First Name" className={`ContactUsFormFirstName ${themeDetails.themeContactUsFormsFirstName}`} required /><br />
+
+                    <label htmlFor="lastName"></label>
+                    <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="   Last Name" className={`ContactUsFormLasttName ${themeDetails.themeContactUsFormsLasttName}`} required /><br />
+
+                    <label htmlFor="email"></label>
+                    <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="   Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.themeContactsUsFormemail}`} required /><br />
+
+                    <label htmlFor="category"></label>
+                    <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.themeContactUsFormCategory}`} required>
+                      <option value="">Select a category...</option>
+                      {categories.map(category => (
+                        <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
+                      ))}
+                    </select>
+
+                    <label htmlFor="message"></label>
+                    <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="   Message" className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`} required></textarea><br />
+
+                    <button type="submit">Submit</button>
+                  </form>
+
+                </div>
+              </div>
+
             </div>
-          ))}
+            <Footer />
           </div>
+        </div>
+      }
+      {themeColor === 'Theme-default' &&
+        <div className={`ContactUsMainContainer ${themeDetails.themeContactUsMainContainer}`}>
 
 
-          <div className={` ${themeDetails.themeContactUsFormAndAdressContainer}`}>
-            <div className={`ContactUsContentContainer ${themeDetails.themeContactUsContentContainer}`}>
+          <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
+            {image ? (
+              <img src={image} alt="Current" />
+            ) : (
+              <img src={defaultImage} alt="Default" />
+            )}
+
+            <span>
+              <Link to={`/`}><IoHome />Home</Link>
+            </span>
+          </div>
+          <h1>CONTACT US</h1>
+          <div className={`ContactUsContentDataContainer ${themeDetails.ContactUsContentDataContainer}`}>
+
+
+            <div className={`ContactUsMapContainer ${themeDetails.ContactUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
+              <div className={`ContactUsMapData ${themeDetails.ContactUsMapData}`} key={index}>
+                <iframe src={Contact_data.map} frameBorder="0"></iframe>
+              </div>
+            ))}
+            </div>
+
+            <div className={`ContactUsContentContainer ${themeDetails.ContactUsContentContainer}`}>
               {landingFooterData.map(item => (
-                <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.themeContactUsDataContainer}`}>
+                <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.ContactUsDataContainer}`}>
                   {item.Content_id === 1 ? (
                     <h2>ADDRESS</h2>
                   ) : (
@@ -203,19 +280,20 @@ const ContactUs = () => {
               ))}
             </div>
 
-            <div className={`ContactUsFormContainer ${themeDetails.themeContactUsFormContainer}`}>
-              <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.themeContactUsFormData}`}>
+
+            <div className={`ContactUsFormContainer ${themeDetails.ContactUsFormContainer}`}>
+              <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.ContactUsFormData}`}>
                 <label htmlFor="firstName"></label>
-                <input type="text" id="firstName" name="First_Name" value={formData.First_Name} onChange={handleChange} placeholder="    First Name" className={`ContactUsFormFirstName ${themeDetails.themeContactUsFormsFirstName}`} required /><br />
+                <input type="text" id="firstName" name="First_Name" value={formData.First_Name} onChange={handleChange} placeholder="First Name" className={`ContactUsFormFirstName ${themeDetails.ContactUsFormFirstName}`} required /><br />
 
                 <label htmlFor="lastName"></label>
-                <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="   Last Name" className={`ContactUsFormLasttName ${themeDetails.themeContactUsFormsLasttName}`} required /><br />
+                <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="Last Name" className={`ContactUsFormLasttName ${themeDetails.ContactUsFormLasttName}`} required /><br />
 
                 <label htmlFor="email"></label>
-                <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="   Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.themeContactsUsFormemail}`} required /><br />
+                <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.ContactUsFormemail}`} required /><br />
 
                 <label htmlFor="category"></label>
-                <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.themeContactUsFormCategory}`} required>
+                <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.ContactUsFormCategory}`} required>
                   <option value="">Select a category...</option>
                   {categories.map(category => (
                     <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
@@ -223,20 +301,22 @@ const ContactUs = () => {
                 </select>
 
                 <label htmlFor="message"></label>
-                <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="   Message" className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`} required></textarea><br />
+                <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="Message" className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`} required></textarea><br />
 
                 <button type="submit">Submit</button>
               </form>
 
             </div>
-          </div>
 
-        </div>
-        <Footer />
-      </div>
-    </div>
-      }
+
+          </div>
+          <Footer />
+        </div>}
+
+
+
     </>
+
   )
 }
 

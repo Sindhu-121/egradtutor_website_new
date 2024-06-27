@@ -1,3 +1,5 @@
+import AboutUs from "../../EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs";
+
 const JSONClasses = {
   "Theme-default": {
     id: "defaultId",
@@ -145,8 +147,24 @@ const JSONClasses = {
     AboutUs1stContentContainer: "AboutUs1stContentContainerDefault",
     AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
     AboutUsVisionContentContainer: "AboutUsVisionContentContainerDefault",
-    AboutUsImgDataContentContainer: "AboutUsImgDataContentContainerDefault",
     AboutUsContentSubContainer: "AboutUsContentSubContainerDefault",
+
+     
+// Contact Us classes
+themeContactUsMainContainer:"themeContactUsMainContainerDefault",
+ContactUsContentDataContainer:"ContactUsContentDataContainerDefault",
+ContactUsMapContainer:"ContactUsMapContainerDefault",
+ContactUsMapData:"ContactUsMapDataDefault",
+ContactUsContentContainer:"ContactUsContentContainerDefault",
+ContactUsDataContainer:"ContactUsDataContainerDefault",
+ContactUsFormContainer:"ContactUsFormContainerDefault",
+ContactUsFormData:"ContactUsFormDataDefault",
+ 
+ContactUsFormFirstName:"ContactUsFormFirstNameDefault",
+ContactUsFormLasttName:"ContactUsFormLasttNameDefault",
+ContactUsFormemail:"ContactUsFormemailDefault",
+ContactUsFormCategory:"ContactUsFormCategoryDefault",
+ContactUsForMessage:"ContactUsForMessageDefault",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -260,6 +278,7 @@ const JSONClasses = {
     themeCoursePortalNameImageContainer: "t1CoursePortalNameImageContainer",
     themeFeaturesHeading: "t1FeaturesHeading",
     themeArrowWithFeatures: "t1ArrowWithFeatures",
+    themeExploreImgContainer:"t1ExploreImgContainer",
     // themeFeatures: "t2Features",
     themeExamPortalImgDivInCard: "t1ExamPortalImgDivInCard",
     // extra class for theme1

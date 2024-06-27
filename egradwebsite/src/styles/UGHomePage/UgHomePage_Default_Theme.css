@@ -1,15 +1,4 @@
-/* .\"Ug_header_Container.themeUgHeaderContainerDefault {
-    background-color: white;
-    height: 130px;
-    padding-left: 126px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-} */
- 
- 
- 
+
 .\"Ug_header_Container.themeUgHeaderContainerDefault {
     display: flex;
     align-items: center;
@@ -76,6 +65,11 @@ li.themeUgHeaderLiDefault:hover {
 .navItemsContainer.themeUgNavContainerDefault {
     /* width: 80%; */
     margin-left: 164px;
+}
+ul.themeUgHeaderUlDefault {
+    display: flex;
+    gap: 1rem;
+    flex-direction: row;
 }
 .themeMarqDataDefault {
     background-color: white;
@@ -287,7 +281,7 @@ h3.undefined {
     margin-left: 22px;
 }
 .defaultExamsNames {
-    height: 20px;
+    /* height: 20px; */
     display: grid;
     flex-wrap: wrap;
     gap: 0.8rem;
@@ -308,6 +302,7 @@ h3.undefined {
     text-decoration: none;
     width: 179px;
     font-size: 13px;
+    height: 42px;
 }
  
 ul.defaultCoursesUl li:hover {
@@ -316,6 +311,8 @@ ul.defaultCoursesUl li:hover {
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 @media (max-width: 600px) {
+
+
     .Ug_header_logoIMG img {
         width: 145px;
     }
@@ -325,6 +322,18 @@ ul.defaultCoursesUl li:hover {
         justify-content: center;
         gap: 1rem;
     }
+
+
+    .navItemsContainer.themeUgNavContainerDefault {
+        width: 95%;
+        margin-left:0px;
+    }
+    li.themeUgHeaderLiDefault {
+        color: #fff;
+        font-size: 15px;
+        font-weight: 500;
+    }
+   
     #EXPLORE_Exam_Heading {
         color: #00a3ff;
         text-align: center;
@@ -340,6 +349,7 @@ ul.defaultCoursesUl li:hover {
         margin: 0 auto;
         width: 65%;
     }
+
     .NewExploreExams_ExamCard_Container.NewExploreExams_ExamCard_ContainerDefault {
       text-align: center;
       display: flex;
@@ -369,11 +379,14 @@ ul.defaultCoursesUl li:hover {
     li.defaultCourseLi {
         display: flex;
         flex-direction: column;
-     
+     height: auto;
         background: #e3f2fd;
         margin: 15px;
         border: 1px solid black;
         padding: 20px;
+    }
+    .defaultCoursesSubContainer ul.defaultCoursesUl {
+        padding-left: 0px;
     }
     .defaultFeatureImgC img {
         height: 220px;
@@ -395,15 +408,16 @@ ul.defaultCoursesUl li:hover {
         text-align: justify;
     }
     .defaultExamsNames {
-        margin-top:0px;
+        margin-top: 2.5rem;
     }
     .defaultCoursesSubContainer {
         grid-gap: 2rem;
         /* display: grid; */
         gap: 2rem;
-        margin: .5rem auto;
-        width: 98%;
+        /* margin: .5rem auto; */
+        width: 100%;
     }
+
 }
  
 @media (max-width:1280) {
@@ -435,6 +449,7 @@ ul.defaultCoursesUl li:hover {
         margin: 0 auto;
         padding: 10px;
         height: 100px;
+        padding-top: 3rem;
 }
 .AboutUsImgContainerDefault img {
     border-radius: 5px;
@@ -467,7 +482,6 @@ ul.defaultCoursesUl li:hover {
 
 .AboutUs1stContentContainer.AboutUs1stContentContainerDefault p {
     color: black;
-    font-weight: 500;
     text-align: left;
 
 }
@@ -485,7 +499,7 @@ ul.defaultCoursesUl li:hover {
 }
 .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault p{
     color:black;
-    font-weight:500;
+
 }
 
 .AboutUsContentMainContainer.AboutUsContentMainContainerDefault h1{
@@ -500,6 +514,12 @@ ul.defaultCoursesUl li:hover {
 }
 .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault img {
     width:100px;
+}
+.AboutUs_Main_Container.AboutUsMainContainerDefault .AboutUsImgContainer.AboutUsImgContainerDefault span {
+    color:rgb(97, 3, 3) !important;
+    font-size: 1.5rem;
+    font-weight: bold;
+
 }
 
 /* About_Us_Responsive */
@@ -617,8 +637,7 @@ ul.defaultCoursesUl li:hover {
     gap: 2rem;
     justify-content: center;
     margin-bottom: 2rem;
-    height: 75vh;
-    padding: 8rem 0;
+    padding: 3rem 0;
 }
 .ContactUsContentContainer.ContactUsContentContainerDefault {
     box-shadow: 0 0 10px rgba(0,0,0,.5);
@@ -641,7 +660,7 @@ form.ContactUsFormData.ContactUsFormDataDefault{
     grid-template-columns: repeat(auto-fit,minmax(350px,1fr));
     justify-content: center;
 }
-.contact_box .ug_from .ug_input, .contact_box .ug_from select {
+form.ContactUsFormData.ContactUsFormDataDefault #firstName, #lastName, #email, #category,#message {
     border: 1px solid #000;
     border-radius: 10px;
     height: 50px;
@@ -649,4 +668,99 @@ form.ContactUsFormData.ContactUsFormDataDefault{
     padding: .1rem .5rem;
     text-transform: uppercase;
     width: 90%;
+}
+form.ContactUsFormData.ContactUsFormDataDefault #category {
+    margin-bottom:20px;
+}
+form.ContactUsFormData.ContactUsFormDataDefault button {
+    background: #279eff;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    height: 40px;
+    justify-self: end;
+    margin-right: 2.5rem;
+    transition: all .5s;
+    width: 100px;
+}
+.ContactUsMainContainer.themeContactUsMainContainerDefault h1 {
+    color: #00a3ff;
+    font-size: 2.5rem;
+    margin: 1.5rem auto;
+    text-align: center;
+    font-weight: bold;
+}
+.ContactUsDataContainer.ContactUsDataContainerDefault h2 {
+    color: #01c3ff;
+    font-size: 2rem;
+    text-align: center;
+}
+.ContactUsDataContainer.ContactUsDataContainerDefault p {
+    font-size: 20px;
+    padding: 7px 0px;
+}
+.AboutUsImgContainer.AboutUsImgContainerDefault span {
+    color:#000;
+    font-size:1.5rem;
+    font-weight:bold;
+}
+
+/* Responsive for Contact Us Page */
+
+@media (max-width: 600px) {
+    .AboutUsImgContainerDefault img {
+        border-radius: 5px;
+        width: 195px;
+    }
+    .ContactUsMainContainer.themeContactUsMainContainerDefault h1 {
+        color: #00a3ff;
+        font-size: 1.5rem;
+        margin: 3.5rem auto;
+        text-align: center;
+        font-weight: bold;
+    }
+    .ContactUsContentDataContainer.ContactUsContentDataContainerDefault {
+        padding: 0rem 0;
+    
+    }
+    .ContactUsMapData.ContactUsMapDataDefault iframe {
+        height: 18rem;
+        width: 18rem;
+    }
+    .ContactUsContentContainer.ContactUsContentContainerDefault {
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+        display: flex;
+        flex-direction: column;
+        height: 26rem;
+        padding: 1.8rem;
+        width: 18rem;
+        text-align: left;
+    }
+}
+
+@media (max-width: 320px) {
+    form.ContactUsFormData.ContactUsFormDataDefault {
+        align-items: center;
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: none;
+        justify-content: center;
+    }
+}
+@media (max-width:834px){
+    .ContactUsMapData.ContactUsMapDataDefault iframe {
+        height: 25rem;
+        width: 23rem;
+    }
+    .ContactUsContentContainer.ContactUsContentContainerDefault {
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
+        display: flex;
+        flex-direction: column;
+        height: 25rem;
+        padding: 1.8rem;
+        width: 23rem;
+        text-align: left;
+    }
 }
