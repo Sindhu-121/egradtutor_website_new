@@ -122,11 +122,17 @@ img.t2LogoImg {
     color: #2f8f94;
     font-size: 2.5rem;
     margin-top: 8.5rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .t2TextContainer div p {
     margin-left: 102px;
     color: #418f95;
     font-size: 1.25rem;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 .Newlandingpage_branchescontainer.t2BranchesContainer{
     min-height: unset;
@@ -244,6 +250,9 @@ li.t2Landing_branch_box_li_buttons a {
     text-decoration: none;
     /* font-weight: 600; */
     font-size: 15px;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 button.t2UgAndPgButtons a {
 text-decoration: none;

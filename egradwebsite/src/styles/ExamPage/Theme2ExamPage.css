@@ -50,6 +50,9 @@
 .exampage_heading.JEEHeading.t2ExamPageHeaderHeading h1 {
   font-size: 2rem;
   color: #3e8991;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 .slider-wrapper.axis-horizontal {
   box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
@@ -337,9 +340,12 @@
 .infoButton .t2ButtonDiv p{
   font-size: inherit;  
 }
-.infoButton .t2ButtonDiv p a{
+.infoButton .t2ButtonDiv p a {
   font-size: inherit;
-  color: white;  
+  color: white;
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 .t2ExamPageHeaderContainer  .t2LinkToLandingPage {
   padding: 0;
