@@ -1221,8 +1221,8 @@ const BHBanners = ({ isEditMode }) => {
           {/*--------------- Displaying_banners_start---------------- */}
           <div className="carousel-container">
                 <Carousel 
-                    axis="vertical"
-                    verticalSwipe='natural'
+                    // axis="vertical"
+                    // verticalSwipe='natural'
                     autoPlay
                     infiniteLoop
                     showArrows={false}

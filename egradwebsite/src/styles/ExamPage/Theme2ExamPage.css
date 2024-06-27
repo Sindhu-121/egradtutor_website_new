@@ -262,14 +262,22 @@
   gap: 1.5rem;
   justify-content: space-between;
 }
-.toggles.t2Toggles {
+/* .toggles.t2Toggles {
   padding: 10px;
-  /* background-color: #175266; */
   background-color: #2d8990;
   border: 1px solid #ffffff;
   color: white;
   cursor: pointer;
-  /* background: linear-gradient(0deg, #0a9396, #005f73, #003d4e); */
+  background: linear-gradient(133deg, #2b848d, #144a5dc7, #2e8d9275, #2c878f);
+} */
+.toggles.t2Toggles {
+  padding: 10px;
+  background-color: #2d8990;
+  border: 1px solid #ffffff;
+  color: white;
+  cursor: pointer;
+  /* background: linear-gradient(19deg, #0a9396, #048c8e, #005f73, #9dc3c6, #1c6175); */
+  background: linear-gradient(135deg, #144c5fd1, #1e637b, #28889b);
 }
 .toggles.t2Toggles p#more_info {
   /* font-size: 20px; */
@@ -294,8 +302,9 @@
   justify-content: center;
   color: white;
   cursor: pointer;
-  background-image: linear-gradient(to right top, #185569, #1f697a, #12445638, #8caab3, #4a8992);
-  background: linear-gradient(to right, #348f50, #56b4d3);
+  /* background-image: linear-gradient(to right top, #185569, #1f697a, #12445638, #8caab3, #4a8992); */
+  /* background: linear-gradient(45deg, #003d5b, #008c8c, #a2c7ca, #417f8a); */
+  background: linear-gradient(to bottom right, #144c5f, #1e637b, #28889b);
 }
 .exam_info_divs.t2ExamInfoDivs {
   /* border-radius: 20px; */
