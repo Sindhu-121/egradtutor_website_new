@@ -1,0 +1,165 @@
+.t1ContactusMainsContainer {
+    background-color: #FFF0E9;
+}
+
+.t1ContactUsSubbMainContainer {
+    display: flex;
+    flex-direction: column;
+
+}
+
+.t1ContactUsContentsDataContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.t1ContactUsContentsDataContainer h1 {
+    color: rgb(66, 59, 48);
+    font-size: 25px;
+    font-weight: 600;
+    padding: 10px;
+    font-family: "Roboto";
+    text-align: center;
+}
+
+
+.t1ContactsUsMapContainer {
+    background-color: tan;
+    width: 90%;
+    margin: 0 auto;
+
+}
+
+.t1ContactUsMapData iframe {
+    background-color: honeydew;
+    width: 100%;
+    height: 300px;
+}
+
+.t1ContactUsFormAndAdressContainer {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.t1ContactUsContentContainer {
+    padding: 30px;
+    display: flex;
+    width: 50%;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.t1ContactUsFormContainer {
+    padding: 10px;
+    display: flex;
+    width: 50%;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.t1ContactUsFormData {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.t1ContactUsDataContainer h2 {
+    color: #01202B;
+    font-size: 30px;
+    font: 24px poppins;
+    margin: 0px 0px 30px;
+}
+
+.t1ContactUsDataContainer p {
+    margin-left: 20px;
+    color: #344E5A;
+}
+
+
+.t1ContactUsFormData input {
+    width: 60% !important;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.t1ContactUsFormData select#category {
+    width: 60%;
+    padding: 10px;
+    margin-bottom: 20px;
+font-size: 13px;
+}
+
+.t1ContactUsFormData select#category option{
+    font-size: 17px;
+}
+
+.t1ContactUsFormData textarea#message {
+    width: 60%;
+}
+
+
+
+.t1ContactUsFormData button {
+    width: 30%;
+    text-align: center;
+    align-items: center;
+    background-color: #01202B;
+    color: white;
+    
+}
+
+.t1ContactUsFormData button:hover {
+    background-color: rgb(56, 49, 49);
+}
+
+@media(max-width:600px) {
+    .t1ContactUsFormAndAdressContainer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .t1ContactUsContentContainer {
+        width: 100%;
+    }
+
+    .t1ContactUsFormData {
+        width: 100% ;
+    }
+
+    .t1ContactUsFormData input {
+        width: 100% !important;
+    }
+    .t1ContactUsFormData select#category {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+    
+    }
+    
+    .t1ContactUsFormData textarea#message {
+        width: 100%;
+    }
+    
+    .t1ContactUsFormContainer {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: center;
+        
+    }
+   
+}
+
+@media(min-width:640px) and (max-width:1024){
+    .t1ContactUsFormData input {
+        width: 100p ;
+    }
+}
