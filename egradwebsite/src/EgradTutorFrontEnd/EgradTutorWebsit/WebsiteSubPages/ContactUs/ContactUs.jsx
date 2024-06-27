@@ -180,7 +180,6 @@ const ContactUs = () => {
           <Footer />
         </div>
       }
-      [14:48] Siva Bhargava Gandikota
 
       {themeColor === 'Theme-1' &&
         <div className={`${themeDetails.themeContactusMainsContainer}`}>
