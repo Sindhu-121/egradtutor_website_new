@@ -284,7 +284,7 @@ const Footer = ({
                 )}
               </div>
               <div className={`${themeDetails.themeFooterSMIcons}`}>
-             <Link> <FaFacebook /></Link>
+             <Link to='/'> <FaFacebook /></Link>
              <Link> <GrInstagram /></Link>
              <Link><SiYoutube /></Link>
              <Link><ImLinkedin /></Link>
