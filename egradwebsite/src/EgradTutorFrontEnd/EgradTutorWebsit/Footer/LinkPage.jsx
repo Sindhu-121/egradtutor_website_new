@@ -90,7 +90,7 @@ const LinkPage = () => {
       <div className={styles['footer-content']}>
         {/* Render footerDocumentData */}
         {footerDocumentData ? (
-          <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} />
+          <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} className={`LinksDataContainer ${themeDetails.LinksDataContainer}`}  />
         ) : (
           <p>No footer document data found.</p>
         )}
