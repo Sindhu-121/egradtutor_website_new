@@ -165,6 +165,11 @@ ContactUsFormLasttName:"ContactUsFormLasttNameDefault",
 ContactUsFormemail:"ContactUsFormemailDefault",
 ContactUsFormCategory:"ContactUsFormCategoryDefault",
 ContactUsForMessage:"ContactUsForMessageDefault",
+
+// Links page classes
+LinksPagesMainContainer:"LinksPagesMainContainerDefault",
+AboutUsImgContainer:"AboutUsImgContainerDefault",
+LinksDataContainer:"LinksDataContainerDefault",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -310,6 +315,23 @@ ContactUsForMessage:"ContactUsForMessageDefault",
     themeFooterCopyrightWrapperData: "t1FooterCopyrightWrapperData",
     themeFooterCopyrightTextData: "t1FooterCopyrightTextData",
     themeFooterContentColumn: "t1FooterContentColumn",
+
+    // ABOUT US//
+    themeAboutUsMainsContainer:"t1AboutUsMainsContainer",
+    themeAUSection1:"t1AUSection1",
+    themeAboutUsImgWithTextDiv:"t1AboutUsImgWithTextDiv",
+    themeAUHeadingContainer:"t1AUHeadingContainer",
+    AboutUsContentMainContainer:"t1AboutUsContentMainContainer",
+    AboutUs1stContentContainer:"t1AboutUs1stContentContainer",
+    AboutUsImgDataContentContainer:"t1AboutUsImgDataContentContainer",
+    themeAboutusFlexDiv:"t1AboutusFlexDiv",
+    themeAboutusFlexDivForImg:"t1AboutusFlexDivForImg",
+    AboutUsContentSubContainer:"t1AboutUsContentSubContainer",
+    AboutUsVisionContentContainer:"t1AboutUsVisionContentContainer",
+    AboutUsImgDataContentContainer:"t1AboutUsImgDataContentContainer",
+    VMissionImgs:"t1VMissionImgs",
+    VMissionContainer:"t1VMissionContainer",
+  
     // contact us
     themeContactusMainsContainer: "t1ContactusMainsContainer",
     themeContactUsSubbMainContainer: "t1ContactUsSubbMainContainer",
