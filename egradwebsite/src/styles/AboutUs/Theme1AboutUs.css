@@ -43,7 +43,7 @@
 }
 
 .t1AboutUs1stContentContainer {
-    width: 60%;
+    /* width: 60%; */
     padding: 10px;
 }
 
@@ -140,6 +140,7 @@
     .t1AUHeadingContainer {
         display: flex;
         flex-direction: column;
+        /* margin-top: 110px; */
         align-items: center;
     }
 
@@ -170,9 +171,34 @@
 
 
 
-@media (max-width:900px) {
+@media (min-width:768px) and (max-width:900px) {
+    .t1AUHeadingContainer {
+        height: 540px;
+    }
+
     .t1AboutusFlexDiv {
+        width: 300px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .t1AboutusFlexDiv .t1AboutusFlexDivForImg {
         width: 200px;
-        height: 100px;
+        height: 200px;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+    }
+
+    .t1AUHeadingContainer .t1AboutUs1stContentContainer {
+        padding: 10px;
+    }
+}
+
+@media (min-width:1100px) {
+
+    .t1AboutUs1stContentContainer {
+        width: 75%;
+        padding: 10px;
     }
 }
