@@ -19,4 +19,6 @@
   }
   
   /* Add more styles as needed for other HTML tags */
-  
+  .LinkPage_footer-content__EHAOJ .LinksDataContainer.LinksDataContainerDefault strong {
+    color:red !important;
+  }

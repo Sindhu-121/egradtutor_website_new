@@ -55,6 +55,7 @@ const JSONClasses = {
       "NewExploreExams_EachCard_ContainerDefault",
     themeNewExploreExams_Exam_Container:
       "themeNewExploreExams_Exam_ContainerDefault",
+      themeNewExploreExams_Image:"themeNewExploreExams_ImageDefault",
     //About Us div class
     themeAboutuscontainer: "container",
     themeHeadingtext: "abus_heading",
@@ -170,6 +171,12 @@ ContactUsForMessage:"ContactUsForMessageDefault",
 LinksPagesMainContainer:"LinksPagesMainContainerDefault",
 AboutUsImgContainer:"AboutUsImgContainerDefault",
 LinksDataContainer:"LinksDataContainerDefault",
+// Faq classes
+FaqMainContainer:"FaqMainContainerDefault",
+FaqSubContainer:"FaqSubContainerDefault",
+FaqDataContainer:"FaqDataContainerDefault",
+FaqData:"FaqDataDefault",
+
   },
   "Theme-1": {
     id: "themeOneId",
@@ -347,6 +354,8 @@ LinksDataContainer:"LinksDataContainerDefault",
     themeContactUsFormsLasttName: "t1ContactUsFormsLasttName",
     themeContactsUsFormemail: "t1ContactsUsFormemail",
     themeContactUsFormCategory: "t1ContactUsFormCategory",
+
+    
   },
   "Theme-2": {
     id: "themeTwoId",
