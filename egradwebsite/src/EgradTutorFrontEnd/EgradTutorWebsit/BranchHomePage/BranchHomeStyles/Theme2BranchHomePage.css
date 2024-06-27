@@ -15,12 +15,15 @@
    .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container ul li.t2LinkToSpecificExam a {
     background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
     color: white;
-    padding: 10px;
+    padding: 7px;
     width: 100%;
     font-weight: 600;
     font-size: 16px;
     border-radius: 20px;
     text-align: center;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 .NewExploreExams_EachCard_Container.t2NewExploreExams_EachCard_Container:nth-child(even) {
@@ -115,6 +118,9 @@ li.t2LinkToSpecificExam {
     background: linear-gradient(90deg,#eeeff8 0,#00aff0 0,#cf1512);
     -webkit-background-clip: text;
     text-shadow: 1px 1px 0 var(--bs-cyan), -1px -1px 0 #2c888f;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .NewExploreExams_Main_Container.t2ExploreExamsMainContainer {
     box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
@@ -146,7 +152,7 @@ li.t2LinkToSpecificExam {
     background: #f9c000;
     box-shadow: 0 calc(-1*var(--f)) 0 inset #0005;
 }
-  .NewExploreExams_PortalNames_Container.t2NewExploreExams_PortalNames_Container li a {
+.NewExploreExams_PortalNames_Container.t2NewExploreExams_PortalNames_Container li a {
     /* display: flex; */
     align-items: center;
     justify-content: center;
@@ -158,11 +164,17 @@ li.t2LinkToSpecificExam {
     width: 100%;
     background-color: unset;
     color: black;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 .t2CoursesHeadding h2#Our_Courses_heading {
     color: #1d6175;
     font-size: 2rem;
     margin: 1rem auto;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     text-align: center;
 }
 .hamburgerMenu{
