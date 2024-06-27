@@ -13,13 +13,16 @@
     justify-content: center;
     gap: 2rem;
 }
-.t2UgDivLinksOfHeader a{
+.t2UgDivLinksOfHeader a {
     padding: 5px 10px;
     border-radius: 20px;
     background: linear-gradient(45deg, #0a9396, #005f73, #003d4e);
     color: white;
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .Ug_HeaderSection.t2UgHeaderSec {
     width: 80%;
@@ -45,9 +48,12 @@ ul.t2UgHeaderUl {
 .ug_header.themeUgHeader {
     background-color: #e8ebf4;;
 }
-ul.t2UgHeaderUl li{
-font-weight: 500;
-font-size: 20px;
+ul.t2UgHeaderUl li {
+    font-weight: 500;
+    font-size: 20px;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .ug_header.themeUgHeader {
     background-color: #144c5f;
@@ -148,10 +154,12 @@ width: 100%;
     color: black;
     text-decoration: none;
     text-align: center;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
     padding: 5px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     background: linear-gradient(45deg, #2e8c9282, #e8ebf4, #2e8c9200, #124557);
-
 }
 .t2FeaturesContainer {
     width:50%;
@@ -164,9 +172,11 @@ width: 100%;
     gap: 1rem;
 }
 
-.t2FeaturesContainer li{
+.t2FeaturesContainer li {
     font-size: 20px;
-
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 .t2ArrowWithFeatures {
     display: flex;
@@ -349,8 +359,11 @@ li.t2CourseLi {
     }
 }
 
-.t2FeaturesHeading{
+.t2FeaturesHeading {
     color: black;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 li.t2UgHeaderLi {
     cursor: pointer;
@@ -381,4 +394,11 @@ li.t2UgHeaderLi {
         font-weight: 500;
         font-size: 16px;
     }
+}
+
+.t2CourseName strong{
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+ 
 }

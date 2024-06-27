@@ -179,6 +179,7 @@ const ExploreExam = ({ isEditMode }) => {
                                         <Link
                                           to={`/CoursePage/${Branch_Id}/${exam.Portale_Id}`}
                                         >
+                                           <BiSolidRightArrow/>
                                           {portaleName}
                                         </Link>
                                       </li>
@@ -196,6 +197,7 @@ const ExploreExam = ({ isEditMode }) => {
                                     <Link
                                       to={`/CoursePage/${Branch_Id}/${exam.Portale_Id}`}
                                     >
+                                     
                                       {portaleName}
                                     </Link>
                                   </li>
