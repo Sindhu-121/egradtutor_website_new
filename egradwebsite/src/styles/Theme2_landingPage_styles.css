@@ -122,11 +122,17 @@ img.t2LogoImg {
     color: #2f8f94;
     font-size: 2.5rem;
     margin-top: 8.5rem;
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 .t2TextContainer div p {
     margin-left: 102px;
     color: #418f95;
     font-size: 1.25rem;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 .Newlandingpage_branchescontainer.t2BranchesContainer{
     min-height: unset;
@@ -232,6 +238,7 @@ img.t2LogoImg {
     .logo_Img_container.t2ThemeLogoImgC {
        max-width: 180px;
     }
+    
 }
 @media only screen and (min-width: 1023px) and (max-width: 768px){
     .logo_Img_container.t2ThemeLogoImgC {
@@ -243,6 +250,9 @@ li.t2Landing_branch_box_li_buttons a {
     text-decoration: none;
     /* font-weight: 600; */
     font-size: 15px;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
 }
 button.t2UgAndPgButtons a {
 text-decoration: none;
@@ -301,14 +311,8 @@ color: black;
     font-optical-sizing: auto;
     font-style: normal;
 }
-@media (max-width: 686px){
-    .Footer_Content_Main_Container.t2FooterContentMainContainer {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        flex-direction: column;
-    }
-}
+
+
 /*  img in landing page */
 .landing_img_div.t2LCapImgDiv {
     width: 597px;
@@ -358,3 +362,45 @@ color: black;
     font-size: 26px;
     transform: scale(1.1);
 }
+@media (max-width: 768px){
+    /* .t2FooterSMIcons {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        right: 13%;
+        top: 74%;
+    } */
+}
+@media (max-width: 686px){
+    .Footer_Content_Main_Container.t2FooterContentMainContainer {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-direction: column;
+    }
+    .t2FooterSMIcons {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        right: 7%;
+        top: 91%;
+        /* bottom: -69%; */
+    }
+}
+@media (max-width: 425px){
+    .t2FooterSMIcons {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        right: 7%;
+        top: 94%;
+        /* bottom: -69%; */
+    }
+}
+

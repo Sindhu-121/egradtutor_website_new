@@ -79,15 +79,22 @@ span.t2SpanLines {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    /* flex-direction: column; */
     gap: 2rem;
+    padding: 2rem;
+    /* width: 80%; */
+    flex-wrap: wrap;
+    margin: auto;
 }
 /* asdf */
-.AboutUsImgVisionDataContentContainer.t2AUVMPC  {
+.AboutUsImgVisionDataContentContainer.t2AUVMPC {
     width: 80%;
     margin: auto;
     background-color: #e8ebf4;
-}.t2VMText p{
+    height: 340px;
+    width: 444px;
+}
+.t2VMText p{
     font-family: "LXGW WenKai TC", cursive;
     font-weight: 600;
     font-style: normal;
@@ -162,4 +169,9 @@ span.t2SpanLines {
     span.t2SpanLines{
         display: none;
     }
+}
+@media (max-width: 420px) {
+.t2VMText p {
+    font-size: 12px;
+}
 }

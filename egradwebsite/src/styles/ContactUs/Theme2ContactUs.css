@@ -99,10 +99,11 @@ form.ContactUsFormData.t2CUForm button:hover{
     font-weight: 500;
 
 }
-.t2CUSubmitButtonDiv{
-display: flex;
-align-items: center;
-justify-self: center;
+.t2CUSubmitButtonDiv {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    padding-bottom: 10px;
 }
 @media (min-width: 1880px) and (max-width: 2560px) {
     .t2FormNdCardPC {
@@ -178,4 +179,41 @@ justify-self: center;
     font-family: "LXGW WenKai TC", cursive;
     font-weight: 400;
     font-style: normal;
+}
+/* 986 */
+@media (max-width: 986px){
+    .t2FormNdCardSubContainer{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+    }
+    .ContactUsContentContainer.t2CUMapContainer{
+        position: unset;
+        width: inherit;
+    }
+    .ContactUsFormContainer.themeCUFormContainer {
+        margin: 0;
+        border: 1px solid #185569;
+    }
+}
+@media (max-width: 768px){
+    .t2FormNdCardPC{
+        width: 100%;
+    }
+}
+/* 564 */
+@media (max-width: 564px){
+    .t2FormNdCardPC{
+        width: 100%;
+        padding: 0 2rem;
+    }
+    .t2FormNdCardSubContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        padding: 0;
+    }
 }
