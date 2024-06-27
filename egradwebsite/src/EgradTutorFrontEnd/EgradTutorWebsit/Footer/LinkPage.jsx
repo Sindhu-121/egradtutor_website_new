@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import BASE_URL from "../../../apiConfig";
@@ -6,7 +6,8 @@ import styles from './LinkPage.module.css'; // Import CSS module
 import { Link } from 'react-router-dom'
 import defaultImage from '../../../assets/defaultImage.png';
 import { IoHome } from "react-icons/io5";
-
+import JSONClasses from '../../../ThemesFolder/JSONForCSS/JSONClasses';
+import { ThemeContext } from '../../../ThemesFolder/ThemeContext/Context';
 
 const LinkPage = () => {
   const { Link_Id } = useParams();
@@ -15,6 +16,7 @@ const LinkPage = () => {
   const [error, setError] = useState(null);
   const [image, setImage] = useState(null);
   const [entranceExam, setEntranceExam] = useState([]);
+  const themeFromContext = useContext(ThemeContext);
 
 
   useEffect(() => {
@@ -55,11 +57,15 @@ const LinkPage = () => {
   }, []);
 
 
-
+  const themeColor = themeFromContext[0]?.current_theme;
+    console.log(themeColor, "this is the theme json classesssssss")
+    const themeDetails = JSONClasses[themeColor] || []
+    console.log(themeDetails, "mapppping from json....")  
+    
 
   return (
-    <div>
-
+    <div className={`LinksPagesMainContainer ${themeDetails.LinksPagesMainContainer}`}>  
+ <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
       <>
         {image ? (
           <Link to="/" >
@@ -74,10 +80,10 @@ const LinkPage = () => {
       </>
 
 
-      <div >
+      <span >
         <Link to={`/`}><IoHome />Home</Link>
+      </span>
       </div>
-
 
       {/* <h2>Link Page Content</h2> */}
       {error && <div>Error: {error}</div>}
