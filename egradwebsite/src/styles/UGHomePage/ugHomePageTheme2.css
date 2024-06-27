@@ -66,6 +66,9 @@ font-size: 20px;
     justify-content: center;
 
 } */
+.Ug_Home_Page_First_Containert2UgHomePageFirstContainer {
+    padding-bottom: 1rem;
+}
 .t2CoursesHeadding {
     width: 80%;
     margin: 0 auto;
@@ -184,10 +187,13 @@ width: 100%;
     display: flex;
     font-size: 20px;
 }
-li.t2CourseLi{
+li.t2CourseLi:first-child {
+    border: 1px solid black;
+    padding: 3rem 0;
+}
+li.t2CourseLi {
     border: 1px solid black;
 }
-
 @media screen and (max-width: 1440px) {
     .Ug_HeaderSection.t2UgHeaderSec {
         width: 100%;
@@ -195,6 +201,17 @@ li.t2CourseLi{
     }
     .t2UgDivLinksOfHeader {
         gap: 1rem;
+    }
+}
+/* 1211 */
+@media screen and (max-width: 1211px) {
+    .t2CourseName {
+        font-size: 20px;
+        background-color: #1f4c60;
+        margin: 1rem 0;
+        border-radius: 20px;
+        padding: 2px 17px;
+        color: white;
     }
 }
 

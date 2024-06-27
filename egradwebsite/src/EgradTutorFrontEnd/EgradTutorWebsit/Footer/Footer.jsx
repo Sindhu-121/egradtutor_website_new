@@ -8,10 +8,13 @@ import JSONClasses from "../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../ThemesFolder/ThemeContext/Context";
 import "../../../styles/Default_landingPage_styles.css";
 import '../../../styles/Theme2_landingPage_styles.css'
-
+import { FaFacebook } from "react-icons/fa";
+import { GrInstagram } from "react-icons/gr";
+import { SiYoutube } from "react-icons/si";
+import { ImLinkedin } from "react-icons/im";
 const Footer = ({
   isEditMode
-  }) => {
+}) => {
   const [dataOne, setDataOne] = useState([]);
   const [dataTwo, setDataTwo] = useState([]);
   const [dataThree, setDataThree] = useState([]);
@@ -113,7 +116,7 @@ const Footer = ({
   console.log(themeDetails, "mapppping from json....")
 
 
-  
+
 
   return (
     <>
@@ -124,7 +127,7 @@ const Footer = ({
               <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
                 <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
                   <div>
-                  {isEditMode && (
+                    {isEditMode && (
                       <div>
                         <button
                           onClick={() =>
@@ -135,7 +138,7 @@ const Footer = ({
                             ? "Hide eGRADTtor Form"
                             : "Add GRADTtorData"}
                         </button>
- 
+
                         {addeGRADTutorContent && (
                           <FooterEdit type="Add eGRADTutor" />
                         )}
@@ -152,11 +155,11 @@ const Footer = ({
                             ? "Hide eGRADTtor Form"
                             : "EditeGRADTtorData"}
                         </button>
- 
+
                         {FirstPopupVisible && <FooterEdit type="eGRADTutor" />}
                       </div>
                     )}
-</div>
+                  </div>
                   {dataOne.map((item, index) =>
                     index === 0 ? (
                       <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
@@ -175,7 +178,7 @@ const Footer = ({
                   )}
                 </div>
                 <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
-                {isEditMode && (
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -206,31 +209,31 @@ const Footer = ({
                     </div>
                   )}
                   <ul>
-                  {footerLink.map((item) => (
-                    <li key={item.Link_Id}>
-                      {item.footer_document_data ? (
-                        <Link
-                          to={{
-                            pathname: `/linkpage/${item.Link_Id}`,
-                            state: {
-                              footerDocumentData: item.footer_document_data,
-                            },
-                          }}
-                        >
-                          {item.Link_Item} 
-                        </Link>
-                      ) : (
-                        <Link to={item.Link_Routing_Data}>
-                          {item.Link_Item} 
-                        </Link>
-                      )}
-                    </li>
-                  ))}
+                    {footerLink.map((item) => (
+                      <li key={item.Link_Id}>
+                        {item.footer_document_data ? (
+                          <Link
+                            to={{
+                              pathname: `/linkpage/${item.Link_Id}`,
+                              state: {
+                                footerDocumentData: item.footer_document_data,
+                              },
+                            }}
+                          >
+                            {item.Link_Item}
+                          </Link>
+                        ) : (
+                          <Link to={item.Link_Routing_Data}>
+                            {item.Link_Item}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
               <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
-              {isEditMode && (
+                {isEditMode && (
                   <div>
                     <button
                       onClick={() =>
@@ -245,7 +248,7 @@ const Footer = ({
                     {addContactUsContent && <FooterEdit type="Add ContactUs" />}
                   </div>
                 )}
- 
+
                 {isEditMode && (
                   <div>
                     <button
@@ -280,11 +283,16 @@ const Footer = ({
                   )
                 )}
               </div>
-
+              <div className={`${themeDetails.themeFooterSMIcons}`}>
+             <Link> <FaFacebook /></Link>
+             <Link> <GrInstagram /></Link>
+             <Link><SiYoutube /></Link>
+             <Link><ImLinkedin /></Link>
+              </div>
             </div>
 
             <div className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}>
-            
+
               {isEditMode && (
                 <div>
                   <button
@@ -315,7 +323,7 @@ const Footer = ({
             <div className={`Footer_Content_Main_Container ${themeDetails.themeFooterContentMainContainer}`}>
               <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
                 <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
-                {isEditMode && (
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -331,7 +339,7 @@ const Footer = ({
                       )}
                     </div>
                   )}
- 
+
                   {isEditMode && (
                     <div>
                       <button
@@ -344,7 +352,7 @@ const Footer = ({
                       {FirstPopupVisible && <FooterEdit type="eGRADTutor" />}
                     </div>
                   )}
- 
+
 
                   {dataOne.map((item, index) =>
                     index === 0 ? (
@@ -364,7 +372,7 @@ const Footer = ({
                   )}
                 </div>
                 <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
-                {isEditMode && (
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -378,7 +386,7 @@ const Footer = ({
                       )}
                     </div>
                   )}
- 
+
                   {isEditMode && (
                     <div>
                       <button
@@ -395,7 +403,7 @@ const Footer = ({
                       )}
                     </div>
                   )}
- 
+
                   <ul>
                     {/* {footerLink.map((item) => (
 
@@ -403,31 +411,31 @@ const Footer = ({
                         <Link to={item.Link_Routing_Data}>{item.Link_Item}</Link>
                       </li>
                     ))} */}
-                         {footerLink.map((item) => (
-                    <li key={item.Link_Id}>
-                      {item.footer_document_data ? (
-                        <Link
-                          to={{
-                            pathname: `/linkpage/${item.Link_Id}`,
-                            state: {
-                              footerDocumentData: item.footer_document_data,
-                            },
-                          }}
-                        >
-                          {item.Link_Item} 
-                        </Link>
-                      ) : (
-                        <Link to={item.Link_Routing_Data}>
-                          {item.Link_Item} 
-                        </Link>
-                      )}
-                    </li>
-                  ))}
+                    {footerLink.map((item) => (
+                      <li key={item.Link_Id}>
+                        {item.footer_document_data ? (
+                          <Link
+                            to={{
+                              pathname: `/linkpage/${item.Link_Id}`,
+                              state: {
+                                footerDocumentData: item.footer_document_data,
+                              },
+                            }}
+                          >
+                            {item.Link_Item}
+                          </Link>
+                        ) : (
+                          <Link to={item.Link_Routing_Data}>
+                            {item.Link_Item}
+                          </Link>
+                        )}
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
               <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
-              {isEditMode && (
+                {isEditMode && (
                   <div>
                     <button
                       onClick={() =>
@@ -442,7 +450,7 @@ const Footer = ({
                     {addContactUsContent && <FooterEdit type="Add ContactUs" />}
                   </div>
                 )}
- 
+
                 {isEditMode && (
                   <div>
                     <button
@@ -481,7 +489,7 @@ const Footer = ({
             </div>
 
             <div className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}>
-             
+
               {isEditMode && (
                 <div>
                   <button
@@ -499,7 +507,7 @@ const Footer = ({
                   )}
                 </div>
               )}
- 
+
               {dataThree.map((item) => (
                 <li key={item.Content_id}>{item.content_name}</li>
               ))}
@@ -511,16 +519,16 @@ const Footer = ({
         </div>
       }
 
-      {themeColor === 'Theme-1' && 
-      <div className={`pg-footer ${themeDetails.themeMainFooterContainer}`}>
-      <footer className={`footer ${themeDetails.themeInnerMainFooterContainer}`}>
-        <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
-          <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
-        </svg>
-        <div className={`footer-content ${themeDetails.themeInnerMainFooterContentContainer}`}>
-          <div className={`footer-content-column ${themeDetails.themeInnerMainFooterContentColumnContainer}`}>
-            <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
-            {isEditMode && (
+      {themeColor === 'Theme-1' &&
+        <div className={`pg-footer ${themeDetails.themeMainFooterContainer}`}>
+          <footer className={`footer ${themeDetails.themeInnerMainFooterContainer}`}>
+            <svg class="footer-wave-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 100" preserveAspectRatio="none">
+              <path class="footer-wave-path" d="M851.8,100c125,0,288.3-45,348.2-64V0H0v44c3.7-1,7.3-1.9,11-2.9C80.7,22,151.7,10.8,223.5,6.3C276.7,2.9,330,4,383,9.8 c52.2,5.7,103.3,16.2,153.4,32.8C623.9,71.3,726.8,100,851.8,100z"></path>
+            </svg>
+            <div className={`footer-content ${themeDetails.themeInnerMainFooterContentContainer}`}>
+              <div className={`footer-content-column ${themeDetails.themeInnerMainFooterContentColumnContainer}`}>
+                <div className={`Footer_eGRADTtutor__Content ${themeDetails.themeFootereGRADTtutoContent}`}>
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -536,7 +544,7 @@ const Footer = ({
                       )}
                     </div>
                   )}
- 
+
                   {isEditMode && (
                     <div>
                       <button
@@ -550,31 +558,31 @@ const Footer = ({
                     </div>
                   )}
 
-              {dataOne.map((item, index) =>
-                index === 0 ? (
-                  <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
-                    <h2 id="Footer_Heading">
-                      {item.content}
-                    </h2>
-                  </div>
-                ) : (
-                  <p
-                    className="new_landingfooter_conatinerfristpart_item"
-                    key={item.Content_id}
-                  >
-                    {item.content}
-                  </p>
-                )
-              )}
+                  {dataOne.map((item, index) =>
+                    index === 0 ? (
+                      <div key={item.Content_id} className={`Footer_FirstContent ${themeDetails.themeFooterFirstContent}`}>
+                        <h2 id="Footer_Heading">
+                          {item.content}
+                        </h2>
+                      </div>
+                    ) : (
+                      <p
+                        className="new_landingfooter_conatinerfristpart_item"
+                        key={item.Content_id}
+                      >
+                        {item.content}
+                      </p>
+                    )
+                  )}
+                </div>
+              </div>
+
             </div>
-          </div>
-         
-          </div>
-          <div className={`contact-content ${themeDetails.themeContactFooterContentContainer}`}>
-            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
-              <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
-                <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
-                {isEditMode && (
+            <div className={`contact-content ${themeDetails.themeContactFooterContentContainer}`}>
+              <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
+                <div className={`Footer_FirstContent__Container ${themeDetails.themeFooterFirstContentContainer}`}>
+                  <div className={`Footer_Links_Content ${themeDetails.themeFooterLinksContent}`}>
+                    {isEditMode && (
                       <div>
                         <button
                           onClick={() =>
@@ -604,34 +612,34 @@ const Footer = ({
                         )}
                       </div>
                     )}
-                  <ul>
-                  {footerLink.map((item) => (
-                    <li key={item.Link_Id}>
-                      {item.footer_document_data ? (
-                        <Link
-                          to={{
-                            pathname: `/linkpage/${item.Link_Id}`,
-                            state: {
-                              footerDocumentData: item.footer_document_data,
-                            },
-                          }}
-                        >
-                          {item.Link_Item} 
-                        </Link>
-                      ) : (
-                        <Link to={item.Link_Routing_Data}>
-                          {item.Link_Item} 
-                        </Link>
-                      )}
-                    </li>
-                  ))}
-                  </ul>
+                    <ul>
+                      {footerLink.map((item) => (
+                        <li key={item.Link_Id}>
+                          {item.footer_document_data ? (
+                            <Link
+                              to={{
+                                pathname: `/linkpage/${item.Link_Id}`,
+                                state: {
+                                  footerDocumentData: item.footer_document_data,
+                                },
+                              }}
+                            >
+                              {item.Link_Item}
+                            </Link>
+                          ) : (
+                            <Link to={item.Link_Routing_Data}>
+                              {item.Link_Item}
+                            </Link>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
-            <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
-              <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
-              {isEditMode && (
+              <div className={`footer-content-column ${themeDetails.themeFooterContentColumn}`}>
+                <div className={`Footer_Contact_Us_Content ${themeDetails.themeFooterContactUsContent}`}>
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -667,31 +675,31 @@ const Footer = ({
                       )}
                     </div>
                   )}
-                {dataTwo.map((item, index) =>
-                  index === 0 ? (
-                    <div key={item.Content_id} className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}>
-                      <h2 className="new_landingfooter_conatinersecondpart_item">
+                  {dataTwo.map((item, index) =>
+                    index === 0 ? (
+                      <div key={item.Content_id} className={`Footer_ContactData ${themeDetails.themeFooterContactData}`}>
+                        <h2 className="new_landingfooter_conatinersecondpart_item">
+                          {item.content_name}
+                        </h2>
+                      </div>
+                    ) : (
+                      <p
+                        className="new_landingfooter_conatinersecondpart_item"
+                        key={item.Content_id}
+                      >
                         {item.content_name}
-                      </h2>
-                    </div>
-                  ) : (
-                    <p
-                      className="new_landingfooter_conatinersecondpart_item"
-                      key={item.Content_id}
-                    >
-                      {item.content_name}
-                    </p>
-                  )
-                )}
+                      </p>
+                    )
+                  )}
+                </div>
+
               </div>
 
             </div>
-
-        </div>
-        <div className={`footer-copyright ${themeDetails.themeFooterCopyrightData}`}>
-          <div className={`footer-copyright-wrapper ${themeDetails.themeFooterCopyrightWrapperData}`}>
-            <p className={`footer-copyright-text ${themeDetails.themeFooterCopyrightTextData}`}>
-            {isEditMode && (
+            <div className={`footer-copyright ${themeDetails.themeFooterCopyrightData}`}>
+              <div className={`footer-copyright-wrapper ${themeDetails.themeFooterCopyrightWrapperData}`}>
+                <p className={`footer-copyright-text ${themeDetails.themeFooterCopyrightTextData}`}>
+                  {isEditMode && (
                     <div>
                       <button
                         onClick={() =>
@@ -710,15 +718,15 @@ const Footer = ({
                       )}
                     </div>
                   )}
-              {dataThree.map((item) => (
-                <li key={item.Content_id}>{item.content_name}</li>
-              ))}
-            </p>
-          </div>
+                  {dataThree.map((item) => (
+                    <li key={item.Content_id}>{item.content_name}</li>
+                  ))}
+                </p>
+              </div>
+            </div>
+          </footer>
         </div>
-      </footer>
-    </div>
-    }
+      }
     </>
   )
 }

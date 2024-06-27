@@ -99,7 +99,7 @@ const AboutUs = ({ isEditMode }) => {
             </div>
             </div>
             <div className={`AboutUsContentSubContainer ${themeDetails.themeAUSubContainer}`}>
-              <div className={`AboutUs_VisionContent_Container`} >
+              <div className={`AboutUs_VisionContent_Container ${themeDetails.themeAUVisionContent}`} >
                 {isEditMode && (
                   <div>
                     <button onClick={() => setShowAboutUsForm(!showAboutUsForm)}>
