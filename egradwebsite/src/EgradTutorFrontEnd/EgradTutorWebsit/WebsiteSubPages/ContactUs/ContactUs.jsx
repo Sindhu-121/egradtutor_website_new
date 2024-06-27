@@ -12,7 +12,7 @@ import ExamPageHeader from "../../ExamHomePage/ExamHomepageHeader/ExamPageHeader
 import '../../../../styles/ContactUs/Theme2ContactUs.css'
 import { Link } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
-// import '../../../../styles/ContactUs/Theme1ContactUs.css'
+import '../../../../styles/ContactUs/Theme1ContactUs.css'
 
 const ContactUs = () => {
   const [categories, setCategories] = useState([]);
