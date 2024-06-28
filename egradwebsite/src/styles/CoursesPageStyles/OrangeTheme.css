@@ -1,0 +1,103 @@
+/* .before_login_courses_btn_continer.theme-orange .courses_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3rem;
+} */
+.before_login_courses_btn_continer.theme-orange .courses_container {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    /* flex-wrap: wrap; */
+    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(2,440px);
+    margin: 0px auto;
+    grid-column-gap: 12rem;
+    background-color: #fff0f0;
+    padding: 48px 0px;
+}
+.orangeHeader{
+    background: linear-gradient(to right, #FFCC99, #FF9966);
+}
+.before_login_first_card.orangeImgDiv{
+    display: flex;
+    background-color: #fff;
+}
+.before_login_first_card.orangeImgDiv {
+    height: auto;
+}
+.card_container.orangeCard {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background-color: white;
+    height: 230px;
+    width: 460px;
+    padding: 10px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
+}
+.card_container .before_login_first_card.orangeImgDiv {
+    height: 210px;
+    width: 442px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    box-shadow: none;
+}
+.card_container .before_login_first_card.orangeImgDiv img{
+    height: 148px;
+    width: 180px;
+    position: absolute;
+    left: -45px;
+    background-color: white  ;
+    /* background-color: #8baa78; */
+    /* padding: 5px; */
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.before_login_first_carddel {
+  
+}
+.before_login_first_carddel.orangeCardBody{
+    padding: 12px 12px 0 12px;
+    margin-left: 140px;
+}
+p.courseNameInCard.orangeCourseNameInCard {
+    text-align: center;
+}
+.Price_Discount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 1102px) {
+    .before_login_courses_btn_continer.theme-orange .courses_container {
+        /* display: grid; */
+        grid-template-columns: 1fr;
+        /* grid-template-columns: repeat(2,340px); */
+        /* width: 100%; */
+        align-items: center;
+        justify-content: center;
+        /* margin: 0 50px; */
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+@media (max-width: 1250px) and (min-width: 1102px){
+    .before_login_courses_btn_continer.theme-orange .courses_container {
+        justify-content: start;
+        gap: 7rem;
+    }
+}
+h2#orange_examName{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 3px 5px;
+}
+.divToBeOpenedWhenPreviewed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}

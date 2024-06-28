@@ -1,0 +1,400 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* font-family: "Lora", serif; */
+
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+/* font-family: "Kalam", cursive; */
+
+:root{
+    --whiteThemeYellow: #ffd100;
+    --whiteThemeLogo: #00aff0;
+    --whiteTheme-width: 91%;
+     --whiteTheme_font: "Lora", serif;
+     --whiteTheme_text: "Kalam", cursive;;
+
+}
+
+.whiteThemeMainPageNavbar{
+    position: relative;
+}
+.white_NavContant {
+    background: #00aff0;
+    position: absolute;
+    bottom: -44px;
+    right: 0;
+    & ul{
+        & li{
+            & a{
+                color: rgb(255, 255, 255);
+                font-family: var(--whiteTheme_font);
+            }
+        }
+    }
+}
+#quizHomeWhite {
+    position: fixed;
+    /* display: block; */
+    z-index: 999999;
+    box-shadow: 2px 2px 8px -2px var(--whiteThemeLogo);
+    width: 100%
+}
+.whiteParentContainer {
+    padding-top: 6rem;
+    width: var(--whiteTheme-width);
+    margin: 0 auto;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+}
+.whiteIconsAndCardsPC {
+    display: flex;
+    /* justify-content: center;
+    align-items: center; */
+    text-align: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+.whiteWCUContainer h2 {
+    color: var(--whiteThemeYellow);
+    font-size: 35px;
+    font-family: var(--whiteTheme_font);
+}
+.whiteCOURSES {
+    background: #ffffff;
+    text-align: justify;
+    width: var(--whiteTheme-width);
+    margin: 0 auto;
+}
+.whiteIconAndCards {
+    width: 30%;
+    text-align: left;
+    border-right: 3px solid var(--whiteThemeLogo);
+    margin-right: 15px;
+    padding: 11px;
+    & .icon {
+        color: var(--whiteThemeLogo);
+        font-size: 54px;
+    }
+    & .textDiv{
+        & h2{
+            font-family: var(--whiteTheme_font);
+            font-weight: 600;
+        }
+        & p{
+            font-family: var(--whiteTheme_font);
+
+        }
+    }
+}
+.whiteIconAndCards {
+    width: 30%;
+    text-align: left;
+
+}
+
+.whiteIconAndCards:nth-child(3){
+    border-right: none;
+
+}
+
+.white_portal {
+    & h2{
+        background: none;
+        text-align: start;
+        color: var(--whiteThemeLogo) !important;
+        font-family: var(--whiteTheme_font);
+    }
+}
+.white_examName {
+    justify-content: left;
+}
+.theme-white {
+    background: #ffffff;
+    box-shadow: inset 0px 0px 4px -2px;
+}
+.white_courses_container{
+    /* box-shadow: inset 0px 0px 4px -2px; */
+    padding: 1rem;
+}
+.whiteCOURSES {
+    background: #ffffff;
+    & h2{
+        color: var(--whiteThemeYellow) !important;
+        font-size: 35px;
+        font-family: var(--whiteTheme_font);
+    }
+}
+.whiteImgDiv {
+    box-shadow: none;
+}
+h2#white_examName {
+    background: #fbfbfb;
+    /* padding: 18px 8px; */
+    border-bottom: 1px solid;
+    color: var(--whiteThemeYellow) !important;
+    font-family: var(--whiteTheme_font);
+}
+
+.whiteImgDiv {
+    /* display: flex; */
+    height: -moz-fit-content;
+    height: fit-content;
+    text-align: center;
+    width: 300px;
+    /* height: 420px; */
+    height: auto !important;
+    /* margin-left: 40px; */
+    background: #fff;
+    text-align: justify;
+    /* padding: 0.5rem; */
+    /* border: 1px solid rgba(0,0,0,0.5); */
+    /* border-radius: 18px; */
+    transition: 0.5s all;
+    background: red;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    & img{
+        height: 101px !important;
+        width: 50% !important;
+        /* margin: 0 !important; */
+    }
+}
+
+
+.whiteCardBody {
+    /* border-right: 1px solid var(--whiteThemeYellow); */
+    padding: 5px !important;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 0 0 14px 0px !important;
+    box-shadow: -1px 13px 10px -14px var(--whiteThemeLogo);
+    & .before_start_now{
+        background: var(--whiteThemeLogo);
+        width: auto !important;
+        height: auto !important;
+        font-size: 14px;
+        display: inline-block;
+        padding: 0px 15px;
+        border-radius: 4px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        width: 100%;   
+    }
+    & .Price_Discount{
+        justify-content: flex-start;
+    }
+}
+
+.whiteCard:hover .whiteCardBody{
+    /* border: 1px solid var(--whiteThemeLogo); */
+    box-shadow: 0px 0px 40px -27px var(--whiteThemeLogo);
+
+}
+.whiteCourseNameInCard {
+    background: var(--whiteThemeLogo);
+    color: #ffffff;
+    text-align: center;
+}
+
+.theme_transparent_bg{
+    background-color: transparent !important;
+  }
+  
+  .theme_scrolled_bg {
+    background-color: rgb(224, 247, 255) !important;
+  }
+  
+
+
+.whiteIconAndCards:hover  {
+    transition: 0.2s; 
+    background: linear-gradient(272deg, #f2fcff, transparent);
+}
+
+
+
+  /* styles.css */
+.card {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  .card-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+
+.Egate_achieved_Contaiuner{
+    /* background: rgb(246 253 255); */
+    .achievedSection {
+        width: var(--whiteTheme-width);
+        margin: 0 auto;
+        padding: 7rem;
+        & .achieved_contant{
+            display: flex;
+            justify-content: center;
+          
+            flex-direction: column;
+            & h2{
+                font-size: 35px;
+                /* color: var(--whiteThemeLogo); */
+            }
+            & p{
+            }
+        }
+            & .achieved_contant_Card{
+                display: flex;
+                justify-content: space-between;
+                margin: 1rem 0;
+                gap: 10px;
+                flex-wrap: wrap;
+                & .achieved_contantData{
+                    /* background: var(--whiteThemeYellow); */
+                    padding: 2rem 7rem;
+                    border-radius: 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: 0px 0px 20px -12px;
+
+                    & b{
+                        /* color: var(--whiteThemeYellow); */
+                        font-size: 48px;
+                    }
+                    & span{
+                        /* color: var(--whiteThemeLogo); */
+                    }
+                }
+               
+            }
+        }
+    }
+
+  
+
+    .whitethemefooterContant{
+        background-color: #3c7f97;
+        padding: 14px;
+        & .footer-linkss{
+            border-top: 1px solid #fff;
+            color: #ffffff !important;
+        }
+        }
+        .whitetheme_footerItem li a{
+          color: #ffffff !important;
+          /* font-weight: 400; */
+          /* letter-spacing: 3px; */
+          background: none !important; 
+          font-size: 10px !important;
+          padding: 0 !important;  
+          /* border-radius: 6px; */
+          font-family: var(--greenFont);
+        }
+        
+       .whitethemefooter {
+          display: flex;
+          width: 91%;
+            margin: 0 auto;
+            gap: 2rem;
+            & h4{
+              color: #ffbf23;
+            }
+            & p{
+                color: #ffffff !important;
+            }
+        }
+        
+        ul.whitetheme_footerItem li {
+            color: #ffffff !important;
+        }
+        ul.whitetheme_footerItem li:hover {
+            color: var(--whiteThemeYellow) !important;
+        }
+        
+        
+        .whitetheme_footerItem #footer_link:hover{
+          color: rgb(255, 255, 255) !important;
+          text-decoration: underline;
+        }
+        
+        .whitetheme_footerItem li:hover{
+          color: #290000;
+        }
+        
+        .whitetheme_footer_Copyright i{
+          color: #ffffff;
+          margin: 0 10px
+        }
+        .whitetheme_footer_Copyright i:hover{
+          color: var(--whiteThemeYellow) !important;
+        }
+        ul.greentheme_footerItem {
+          padding: 0;
+        }
+        
+
+
+
+  @media screen and (max-width: 999px) {
+    .whiteParentContainer {
+      height: auto;
+    }
+.achieved_contant_Card {
+        display: flex;
+        justify-content: space-between;
+        margin: 1rem 0;
+        flex-wrap: wrap;
+        gap: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .whiteParentContainer {
+      height: auto;
+    }
+    .whiteIconAndCards {
+        width: 100% !important;
+    }
+    .whiteIconAndCards {
+        width: 30%;
+        text-align: left;
+        border-right: none;
+
+        border-bottom: 3px solid var(--whiteThemeLogo);
+        margin-right: 15px;
+        padding: 11px;
+    }
+    .whiteWCUContainer h2 {
+        color: var(--whiteThemeYellow);
+        font-size: 23px;
+    }
+    .whiteCOURSES {
+        & h2 {
+            color: var(--whiteThemeYellow) !important;
+            font-size: 23px !important;
+        }
+    }
+    .white_portal {
+        & h2 {
+            background: none;
+            text-align: start;
+            color: var(--whiteThemeLogo) !important;
+            font-size: 23px !important;
+        }
+    }
+
+    .achieved_contantData {
+        width: 100%;
+    }
+    .whitethemefooter{
+        flex-direction: column;
+    }
+  }
