@@ -89,6 +89,9 @@ app.use("/PoopularCourses", PoopularCourses);
 
 const StudentRegistationPage = require("./EgradTutorWebsite/StudentDashbord/StudentRegistationPage");
 app.use("/StudentRegistationPage", StudentRegistationPage);
+// courseTab
+const courseTab=require('./EgradTutorWebsite/CourseTabsAPIS/CourseTabs')
+app.use('/courseTab',courseTab);
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
