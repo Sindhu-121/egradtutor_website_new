@@ -8,6 +8,8 @@ import defaultImage from '../../../assets/defaultImage.png';
 import { IoHome } from "react-icons/io5";
 import JSONClasses from '../../../ThemesFolder/JSONForCSS/JSONClasses';
 import { ThemeContext } from '../../../ThemesFolder/ThemeContext/Context';
+import '../../../styles/UGHomePage/UgHomePage_Default_Theme.css';
+import '../../../styles/Theme1LinksPage.css';
 
 const LinkPage = () => {
   const { Link_Id } = useParams();
@@ -58,44 +60,123 @@ const LinkPage = () => {
 
 
   const themeColor = themeFromContext[0]?.current_theme;
-    console.log(themeColor, "this is the theme json classesssssss")
-    const themeDetails = JSONClasses[themeColor] || []
-    console.log(themeDetails, "mapppping from json....")  
-    
+  console.log(themeColor, "this is the theme json classesssssss")
+  const themeDetails = JSONClasses[themeColor] || []
+  console.log(themeDetails, "mapppping from json....")
+
 
   return (
-    <div className={`LinksPagesMainContainer ${themeDetails.LinksPagesMainContainer}`}>  
- <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
-      <>
-        {image ? (
-          <Link to="/" >
-            <img
-              src={image}
+    <>
 
-              alt="Current"
-            /></Link>
-        ) : (
-          <img src={defaultImage} alt="Default" />
-        )}
-      </>
+      <div className={`LinksPagesMainContainer ${themeDetails.LinksPagesMainContainer}`}>
+        <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
+          <>
+            {image ? (
+              <Link to="/" >
+                <img
+                  src={image}
+
+                  alt="Current"
+                /></Link>
+            ) : (
+              <img src={defaultImage} alt="Default" />
+            )}
+          </>
 
 
-      <span >
-        <Link to={`/`}><IoHome />Home</Link>
-      </span>
+          <span >
+            <Link to={`/`}><IoHome />Home</Link>
+          </span>
+        </div>
+        {/* <h2>Link Page Content</h2> */}
+        {error && <div>Error: {error}</div>}
+        <div className={styles['footer-content']}>
+          {/* Render footerDocumentData */}
+          {footerDocumentData ? (
+            <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} className={`LinksDataContainer ${themeDetails.LinksDataContainer}`} />
+          ) : (
+            <p>No footer document data found.</p>
+          )}
+        </div>
+
       </div>
 
-      {/* <h2>Link Page Content</h2> */}
-      {error && <div>Error: {error}</div>}
-      <div className={styles['footer-content']}>
-        {/* Render footerDocumentData */}
-        {footerDocumentData ? (
-          <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} className={`LinksDataContainer ${themeDetails.LinksDataContainer}`}  />
-        ) : (
-          <p>No footer document data found.</p>
-        )}
-      </div>
-    </div>
+      {themeColor === "theme-1" &&
+        <>
+          <div className={`LinksPagesMainContainer ${themeDetails.LinksPagesMainContainer}`}>
+            <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
+              <>
+                {image ? (
+                  <Link to="/" >
+                    <img
+                      src={image}
+
+                      alt="Current"
+                    /></Link>
+                ) : (
+                  <img src={defaultImage} alt="Default" />
+                )}
+              </>
+
+
+              <span >
+                <Link to={`/`}><IoHome />Home</Link>
+              </span>
+            </div>
+            {/* <h2>Link Page Content</h2> */}
+            {error && <div>Error: {error}</div>}
+
+            <div className={styles['footer-content']}>
+              {/* Render footerDocumentData */}
+              {footerDocumentData ? (
+                <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} className={`LinksDataContainer ${themeDetails.LinksDataContainer}`} />
+              ) : (
+                <p>No footer document data found.</p>
+              )}
+            </div>
+          </div>
+
+        </>
+      }
+
+      {themeColor === "theme-2" &&
+        <>
+          <div className={`LinksPagesMainContainer ${themeDetails.LinksPagesMainContainer}`}>
+            <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
+              <>
+                {image ? (
+                  <Link to="/" >
+                    <img
+                      src={image}
+
+                      alt="Current"
+                    /></Link>
+                ) : (
+                  <img src={defaultImage} alt="Default" />
+                )}
+              </>
+
+
+              <span >
+                <Link to={`/`}><IoHome />Home</Link>
+              </span>
+            </div>
+            {/* <h2>Link Page Content</h2> */}
+            {error && <div>Error: {error}</div>}
+
+            <div className={styles['footer-content']}>
+              {/* Render footerDocumentData */}
+              {footerDocumentData ? (
+                <div dangerouslySetInnerHTML={{ __html: footerDocumentData }} className={`LinksDataContainer ${themeDetails.LinksDataContainer}`} />
+              ) : (
+                <p>No footer document data found.</p>
+              )}
+            </div>
+          </div>
+
+        </>
+      }
+    </>
   );
 };
 
