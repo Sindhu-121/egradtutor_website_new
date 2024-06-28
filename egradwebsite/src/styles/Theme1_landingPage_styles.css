@@ -169,31 +169,6 @@ img.t1LogoImg {
 
 /* ************************** ?For UG and PG entrance exams css? ****************** */
 
-.Newlandingpage .t1BranchesContainer .t1BranchesSubContainer .t1BranchBox {
-    display: flex;
-    flex-direction: column;
-
-    & .t1UgAndPgButtons {
-        background-color: rgb(63 155 176);
-    }
-}
-
-
-.Newlandingpage .t1BranchesContainer .t1BranchesSubContainer .t1BranchBox .t1UgAndPgButtons svg {
-    margin-left: 35px;
-    font-size: 25px;
-    border: 1px solid rgb(117, 192, 207);
-    border-radius: 10px;
-    display: none;
-}
-
-.Newlandingpage .t1BranchesContainer .t1BranchesSubContainer .t1BranchBox .t1UgAndPgButtons:hover svg {
-    display: block;
-    color: #dce3ff;
-    background-color: var(--rt-color-info);
-    font-size: 30px;
-}
-
 
 
 
@@ -225,7 +200,7 @@ img.t1LogoImg {
     /* padding: 15px; */
     /* justify-content: space-around; */
     border: 2px solid aliceblue;
-    background-color: #D3C5E5;
+    background-color: #d3c5e554;
 }
 
 
@@ -281,13 +256,13 @@ img.t1LogoImg {
 }
 
 .t1Landing_branch_box_btns ul {
-    height: 200px;
     width: 300px;
-    margin-top: 79px;
+    margin-top: 49px;
     align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
 }
 
 .t1Landing_branch_box_btns ul li a {
@@ -298,8 +273,10 @@ img.t1LogoImg {
     justify-content: space-around;
     color: white;
     font-size: 20px;
+    text-align: center;
     font-weight: 400;
-    width: 200px;
+    width: 260px;
+    align-items: center;
     padding-top: 10px;
 }
 
@@ -320,7 +297,7 @@ img.t1LogoImg {
     margin-bottom: 10px;
     text-decoration: none;
     background: #328990e6;
-    /* background-image: linear-gradient(122deg, #37e0e0, #1abebe); */
+    border-radius: 20px;
     color: #fff;
     box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
     text-shadow: 0 0 3px rgb(0 0 0 / 30%);
@@ -328,7 +305,7 @@ img.t1LogoImg {
 }
 
 .t1Landing_branch_box_btns ul li:hover {
-    background-color: rgb(165, 143, 143);
+    background-color:  rgb(18 70 89);
 }
 
 
@@ -348,23 +325,21 @@ img.t1LogoImg {
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
-        /* border-radius: 30px; */
- 
             width: 100%;
-            /* border-top-left-radius: 29px; */
-            /* border-top-right-radius: 29px; */
+        
         
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
         flex-direction: row-reverse;
-        /* border-radius: 30px; */
         width: 100%;
         height: auto;
     }
 }
 
 @media (max-width:468px) {
+
+    
     .t1UgAndPgButtons {
         margin-top: 20px !important;
     }
@@ -406,11 +381,15 @@ img.t1LogoImg {
     .t1Landing_branch_box_btns ul li a {
         font-size: 15px;
         align-items: center;
+        text-align: center;
+        display: flex;
+        width: 100%;
     }
 
     .t1Landing_branch_box_btns ul li {
         height: auto;
         width: 200px;
+        text-align: center;
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
@@ -428,6 +407,8 @@ img.t1LogoImg {
         align-items: center;
     }
 
+ 
+
     .theme1UGEntranceExamsContainer {
         display: flex;
         flex-direction: column;
@@ -439,6 +420,14 @@ img.t1LogoImg {
         width: 100%;
         border-top-left-radius: 29px;
         border-top-right-radius: 29px;
+    }
+    .t1Landing_branch_box_btns ul {
+        width: 300px;
+        margin-top: 33px;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
 
@@ -456,14 +445,22 @@ img.t1LogoImg {
 
     .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox {
         flex-direction: row;
-        /* display: flex; */
         width: 50%;
         justify-content: space-evenly;
     }
+    .theme1UGEntranceExamsContainer {
+        width: 90%;
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        padding: 10px;
+        margin: 0 auto;
+    }
+    
 
 }
 
-@media (min-width:800px) and (max-width:1440px) {
+@media (min-width:900px) and (max-width:1440px) {
     .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
         display: flex;
         margin-left: 100px;
@@ -484,7 +481,7 @@ img.t1LogoImg {
 
     .t1Landing_branch_box_btns ul {
         height: 200px;
-        width: 275px;
+        width: 105px;
     }
 
     .landing_img_div.t1LCapImgDiv img {
@@ -506,14 +503,22 @@ img.t1LogoImg {
         margin: 0 auto;
         align-items: center;
         flex-wrap: wrap;
-        /* flex-direction: column; */
     }
+
+    .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox {
+        flex-direction: row;
+        display: flex;
+        width: 50%;
+        justify-content: space-evenly;
+    }
+
+   
     
     
 }
 
 .themeInBranchBox button.t1UgAndPgButtons:hover {
-    background-color: rgb(253, 249, 249);
+    background-color: rgb(54 109 168 / 71%);
 }
 
 

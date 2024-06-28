@@ -139,128 +139,136 @@ const PoopularCourses = () => {
           </div>
         ))}
       </div> */}
-       <div>
-                    {Object.entries(coursesByPortalAndExam).map(
-                      ([portal, exams]) => (
+      <div>
+        <div className="courseheader_continer">
+          <div className={themeDetails.theme_COURSES}>
+            <h2 className={themeDetails.themeContant}>BUY COURSES</h2>
+            <span>Choose your course and get started.</span>
+          </div>
+          <div className="beforelogin_Quiz_cards_cantainer_contain">
+            {Object.entries(coursesByPortalAndExam).map(
+              ([portal, exams]) => (
 
-                        <div key={portal} className={themeDetails.theme_portal}>
-                          {themeColor === 'theme-purple' ? <div className="pp">
-                            <h2 className="portal_group_h2">{portal}</h2>{" "}
-                            <div>
-                              <img src={img} alt="" />
-                            </div>
-                          </div> :
-                            <h2 className="portal_group_h2">{portal}</h2>
-                          }
-                          {Object.entries(exams).map(([examName, courses], index) => (
-                            <div
-                              key={examName}
-                              className={`exam_group ${themeDetails.theme_exam_group}
+                <div key={portal} className={themeDetails.theme_portal}>
+                  {themeColor === 'theme-purple' ? <div className="pp">
+                    <h2 className="portal_group_h2">{portal}</h2>{" "}
+                    <div>
+                      <img src={img} alt="" />
+                    </div>
+                  </div> :
+                    <h2 className="portal_group_h2">{portal}</h2>
+                  }
+                  {Object.entries(exams).map(([examName, courses], index) => (
+                    <div
+                      key={examName}
+                      className={`exam_group ${themeDetails.theme_exam_group}
                               ${index % 2 === 0 ? 'evenColor' : 'oddColor'}`}
+                    >
+                      <h2
+                        className={`subheading ${themeDetails.theme_examName}`}
+                        id={themeDetails.theme_examName}
+                      >
+                        {examName}
+                      </h2>
+                      <div
+                        className={`courses_container ${themeDetails.theme_courses_container} `}
+                      >
+                        {courses.map((courseExamsDetails) => (
+                          <div
+                            className={`card_container ${themeDetails.themeCard}`}
+                          >
+                            <div
+                              key={courseExamsDetails.courseCreationId}
+                              className={`before_login_first_card ${themeDetails.themeCardImg}`}
                             >
-                              <h2
-                                className={`subheading ${themeDetails.theme_examName}`}
-                                id={themeDetails.theme_examName}
-                              >
-                                {examName}
-                              </h2>
-                              <div
-                                className={`courses_container ${themeDetails.theme_courses_container} `}
-                              >
-                                {courses.map((courseExamsDetails) => (
-                                  <div
-                                    className={`card_container ${themeDetails.themeCard}`}
-                                  >
-                                    <div
-                                      key={courseExamsDetails.courseCreationId}
-                                      className={`before_login_first_card ${themeDetails.themeCardImg}`}
-                                    >
-                                      <img
-                                        src={courseExamsDetails.courseCardImage}
-                                        alt={courseExamsDetails.courseName}
-                                      />
-                                      {themeColor ===
-                                        "theme-purple" && (
-                                          <div className="purpleCardHeading">
-                                            {courseExamsDetails.courseName}
-                                          </div>
-                                        )}
-                                      {themeColor ===
-                                        "theme-blue" && (
-                                          <div className="blueCardHeading">
-                                            {courseExamsDetails.courseName}
-                                            < GoChevronDown />
-                                          </div>
-                                        )}
-                                      {themeColor === 'theme-purple' && (
-                                        <p>
-                                          <span
-                                            className={
-                                              'durationBeforeHover'
-                                            }
-                                          >
-                                            {" "}
-                                            Duration:
-                                          </span>
-                                          {formatDate(
-                                            courseExamsDetails.courseStartDate
-                                          )}
-                                          <small style={{ textTransform: 'capitalize', padding: '0 1px' }}> to </small>
-                                          {formatDate(
-                                            courseExamsDetails.courseEndDate
-                                          )}
-                                        </p>
-                                      )}
-
-                                      <div
-                                        className={`before_login_first_carddel ${themeDetails.themeCardBody}`}
-                                      >
-                                        <p className={`courseNameInCard ${themeDetails.themeCourseNameInCard}`}>
-                                          {courseExamsDetails.courseName}
-                                        </p>
-                                        <p>
-                                          <span className={themeDetails.themeCourseInfoSpan}>Duration:</span>
-                                          {formatDate(
-                                            courseExamsDetails.courseStartDate
-                                          )} to
-                                          {formatDate(
-                                            courseExamsDetails.courseEndDate
-                                          )}
-                                        </p>
-                                        <p className="Price_Discount">
-                                          <p>
-                                            <span className={themeDetails.themeCourseInfoSpan}>Price:</span>
-                                            <span className="toBeStrikeOff">
-                                            {courseExamsDetails.ActualtotalPrice}
-                                            </span>
-                                          </p>
-                                          <p>
-                                            <span className={themeDetails.themeCourseInfoSpan}>Discount : </span>{courseExamsDetails.discount}%
-                                          </p>
-                                        </p>
-                                        <p>
-                                          <span className={themeDetails.themeCourseInfoSpan}>Amount : ₹</span>
-                                          {courseExamsDetails.totalPrice}/-
-                                        </p>
-
-                                        <div className="before_start_now">
-                                          <Link
-                                            to={`/coursedataSRP/${courseExamsDetails.courseCreationId}`}
-                                          >
-                                            Buy Now
-                                          </Link>
-                                        </div>
-                                      </div>
-                                    </div>
+                              <img
+                                src={courseExamsDetails.courseCardImage}
+                                alt={courseExamsDetails.courseName}
+                              />
+                              {themeColor ===
+                                "theme-purple" && (
+                                  <div className="purpleCardHeading">
+                                    {courseExamsDetails.courseName}
                                   </div>
-                                ))}
+                                )}
+                              {themeColor ===
+                                "theme-blue" && (
+                                  <div className="blueCardHeading">
+                                    {courseExamsDetails.courseName}
+                                    < GoChevronDown />
+                                  </div>
+                                )}
+                              {themeColor === 'theme-purple' && (
+                                <p>
+                                  <span
+                                    className={
+                                      'durationBeforeHover'
+                                    }
+                                  >
+                                    {" "}
+                                    Duration:
+                                  </span>
+                                  {formatDate(
+                                    courseExamsDetails.courseStartDate
+                                  )}
+                                  <small style={{ textTransform: 'capitalize', padding: '0 1px' }}> to </small>
+                                  {formatDate(
+                                    courseExamsDetails.courseEndDate
+                                  )}
+                                </p>
+                              )}
+
+                              <div
+                                className={`before_login_first_carddel ${themeDetails.themeCardBody}`}
+                              >
+                                <p className={`courseNameInCard ${themeDetails.themeCourseNameInCard}`}>
+                                  {courseExamsDetails.courseName}
+                                </p>
+                                <p>
+                                  <span className={themeDetails.themeCourseInfoSpan}>Duration:</span>
+                                  {formatDate(
+                                    courseExamsDetails.courseStartDate
+                                  )} to
+                                  {formatDate(
+                                    courseExamsDetails.courseEndDate
+                                  )}
+                                </p>
+                                <p className="Price_Discount">
+                                  <p>
+                                    <span className={themeDetails.themeCourseInfoSpan}>Price:</span>
+                                    <span className="toBeStrikeOff">
+                                      {courseExamsDetails.ActualtotalPrice}
+                                    </span>
+                                  </p>
+                                  <p>
+                                    <span className={themeDetails.themeCourseInfoSpan}>Discount : </span>{courseExamsDetails.discount}%
+                                  </p>
+                                </p>
+                                <p>
+                                  <span className={themeDetails.themeCourseInfoSpan}>Amount : ₹</span>
+                                  {courseExamsDetails.totalPrice}/-
+                                </p>
+
+                                <div className="before_start_now">
+                                  <Link
+                                    to={`/coursedataSRP/${courseExamsDetails.courseCreationId}`}
+                                  >
+                                    Buy Now
+                                  </Link>
+                                </div>
                               </div>
                             </div>
-                          ))}
-                        </div>
-                      )
-                    )}
-                  </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )
+            )}
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
