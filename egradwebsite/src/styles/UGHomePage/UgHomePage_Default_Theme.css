@@ -331,10 +331,9 @@ ul.defaultCoursesUl li:hover {
     }
     li.themeUgHeaderLiDefault {
         color: #fff;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         text-align: center;
-        /* padding: 10 0 px; */
     }
    
     #EXPLORE_Exam_Heading {
@@ -425,6 +424,12 @@ ul.defaultCoursesUl li:hover {
         color: #00a3ff;
         font-size: 1.5rem;
         margin: 2rem auto;
+    }
+    ul.themeUgHeaderUlDefault {
+        display: flex;
+        /* gap: 1.5rem; */
+        flex-direction: row;
+        align-items: center;
     }
 
 }
