@@ -89,7 +89,7 @@ const PoopularCourses = () => {
                             </small>
                             {formatDate(courseExamsDetails.courseEndDate)}
                           </p>
-
+ 
                           <div>
                             <p>
                               <p>

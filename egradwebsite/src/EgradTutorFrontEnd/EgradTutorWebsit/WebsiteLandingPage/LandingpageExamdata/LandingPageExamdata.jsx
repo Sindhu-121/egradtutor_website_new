@@ -101,7 +101,6 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
             key={branch.Branch_Id}
           >
             <div className={`${themeDetails.themeInBranchBox}`}>
-           
               <button className={`${themeDetails.themeUgAndPgButtons}`}>
                 <Link to={{ pathname: `/BranchHomePage/${branch.Branch_Id}` }}>
                 <FcGraduationCap style={{"fontSize":"30px"}}/>
@@ -132,6 +131,7 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
           </div>
         ))}
       </div>
+   
     </div>
     :
     <div className='Newlandingpage'>
