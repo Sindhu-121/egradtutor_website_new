@@ -333,6 +333,8 @@ ul.defaultCoursesUl li:hover {
         color: #fff;
         font-size: 15px;
         font-weight: 500;
+        text-align: center;
+        /* padding: 10 0 px; */
     }
    
     #EXPLORE_Exam_Heading {
@@ -526,10 +528,7 @@ ul.defaultCoursesUl li:hover {
 }
 }
 @media (max-width:1114px) {
-   
 
-
-    
     }
 
 /* About Us Styles */
