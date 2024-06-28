@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context.js";
 import CoursePageHeaderEdit from "./CoursePageHeaderEdit.jsx";
-
+import '../../../../styles/CoursePage/CoursePageDefault.css';
 const CoursePageHeader = ({ isEditMode }) => {
   const [image, setImage] = useState(null);
   const [showHeaderMenuForm, setShowHeaderMenuForm] = useState(false);
@@ -44,7 +44,7 @@ const CoursePageHeader = ({ isEditMode }) => {
   const themeColor = themeFromContext[0]?.current_theme;
   const themeDetails = JSONClasses[themeColor] || [];
   return (
-    <div>
+    <div  className={`CoursePage_header_Container ${themeDetails.CoursePageHeaderContainer }`}>
       <div className={`logo_Img_container ${themeDetails.themeLogoImgC}`}>
         {image ? (
           <Link to="/">
@@ -69,7 +69,7 @@ const CoursePageHeader = ({ isEditMode }) => {
           </div>
         )}
       </div>
-      <div>
+      <div className={`CoursePageItemsContainer ${themeDetails.CoursePageItemsContainer }`}>
         <ul>
           {headers.map((headeritem) => (
             <li key={headeritem.HeaderItem_Id}>
