@@ -398,3 +398,6 @@ h2#white_examName {
         flex-direction: column;
     }
   }
+  li.whyChooseUsLi {
+    background-color: #52a8bd;
+}

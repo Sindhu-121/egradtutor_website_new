@@ -293,28 +293,3 @@ footer.greenthemefooter div {
   /* margin: 0 auto; */
 }
 
-/* .green_login_btn {
-  & .dropdownmenu_foradim_page_btn {
-    &:hover .dropdownmenu_foradim_page {
-      border-radius: 18px;
-      box-shadow: 0px 4px 19px -4px #94d7b0;
-      top: 0;
-    }
-  }
-} */
-
-/* &:hover .dropdownmenu_foradim_page {
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-  top: -0.5rem;
-
-  text-align: left;
-  background: rgb(255 255 255);
-  padding: 1.45rem;
-  padding-top: 5rem;
-  z-index: -1;
-  border-radius: 18px;
-  box-shadow: 0px 4px 19px -4px #94d7b0;
-} */
