@@ -12,7 +12,7 @@ router.post('/login', async (req, res) => {
   
     try {
       // Fetch user from the database by email
-      const sql = 'SELECT * FROM log WHERE email = ?';
+      const sql = 'SELECT user_Id,email,password,role FROM log WHERE email = ?';
       const [users] = await db.query(sql, [email]);
   
       if (users.length === 0) {
@@ -32,10 +32,10 @@ router.post('/login', async (req, res) => {
       }
   
       // Generate JWT token
-      const token = jwt.sign({ userId: user.user_Id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
+      const token = jwt.sign({ user_Id: user.user_Id, role: user.role }, process.env.JWT_SECRET, { expiresIn: '1h' });
     //   console.log('Token generated for user:', user);
   
-      res.json({ token, role: user.role });
+      res.json({user_Id:user.user_Id, token, role: user.role });
     } catch (error) {
       console.error('Error during login:', error);
       res.status(500).json({ message: 'Server error' });
