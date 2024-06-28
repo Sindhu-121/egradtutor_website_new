@@ -396,13 +396,13 @@ color: black;
 }
 @media (max-width: 425px){
     .t2FooterSMIcons {
-        position: absolute;
+        position: unset;
         display: flex;
         align-items: center;
         justify-content: center;
         flex-direction: row;
-        right: 7%;
-        top: 94%;
+        /* right: 7%; */
+        /* top: 94%; */
         /* bottom: -69%; */
     }
 }

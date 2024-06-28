@@ -14,7 +14,10 @@ import UgadminHome from './Login/UgadminHome';
 import LinkPage from './EgradTutorFrontEnd/EgradTutorWebsit/Footer/LinkPage';
 import FAQ from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/FAQPage/FAQ';
 import CoursePage from './EgradTutorFrontEnd/EgradTutorWebsit/CoursePages/CoursePage';
-import StudentRegistationPage from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/StudentRegistationPage';
+
+import UserLogin from './Login/UserLogin';
+import StudentRegistrationPage from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/StudentRegistationPage';
+import PasswordChangeForm from '../../egradwebsite/src/EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/PasswordChangeForm';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -41,7 +44,7 @@ function App() {
         )}
         <Router>
           <Routes>
-            <Route path="/userlogin" element={<Login />} />
+            <Route path="/userloginn" element={<Login />} />
             <Route path="/adminlogin" element={<AdminLogin />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/UgadminHome" element={<UgadminHome />} />
@@ -52,12 +55,17 @@ function App() {
             <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
 
             <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />} />
-            <Route path="/coursedataSRP/1" element={<StudentRegistationPage />} />
 
             <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
             <Route path="/ContactUs" element={<ContactUs />} />
             <Route path="/Faq" element={<FAQ />} />
             <Route path="/linkpage/:Link_Id" element={<LinkPage />} />
+
+            {/* New Login System */}
+            <Route path="/UserLogin" element={<UserLogin/>}/>
+            <Route path="/Registation" element={<StudentRegistrationPage/>}/>
+            <Route path="/login/:userId" element={<PasswordChangeForm />} />
+
           </Routes>
         </Router>
       </div>

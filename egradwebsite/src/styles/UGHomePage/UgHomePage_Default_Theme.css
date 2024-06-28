@@ -759,7 +759,7 @@ form.ContactUsFormData.ContactUsFormDataDefault #firstName, #lastName, #email, #
     height: 50px;
     outline: none;
     padding: .1rem .5rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     width: 90%;
 }
 form.ContactUsFormData.ContactUsFormDataDefault #category {
