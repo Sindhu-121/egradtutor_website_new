@@ -862,7 +862,7 @@
   padding: 4rem 10rem 0rem 10rem;
 }
 footer.footer {
-  display: flex;
+  /* display: flex; */
   flex-wrap: wrap;
   justify-content: space-evenly;
   color: #fff;
