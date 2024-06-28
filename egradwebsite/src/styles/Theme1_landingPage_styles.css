@@ -207,10 +207,13 @@ img.t1LogoImg {
     background: aliceblue;
 }
 
+
+/* For 2 containers */
 .theme1UGEntranceExamsContainer {
     width: 80%;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    /* flex-direction: column; */
     padding: 10px;
     margin: 0 auto;
 }
@@ -218,8 +221,9 @@ img.t1LogoImg {
 .theme1UGEntranceExamsContainer .t1BranchBox {
     text-align: center;
     display: flex;
-    padding: 15px;
-    justify-content: space-around;
+    /* width: 50%; */
+    /* padding: 15px; */
+    /* justify-content: space-around; */
     border: 2px solid aliceblue;
     background-color: #D3C5E5;
 }
@@ -227,30 +231,34 @@ img.t1LogoImg {
 
 .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox {
     flex-direction: row;
-    display: flex;
+    /* display: flex; */
+    /* width: 50%; */
     justify-content: space-evenly;
 }
 
+/* For heading and image ug and pg */
 .themeInBranchBox {
     display: flex;
+    background-color: #fffbf0;
     flex-direction: column;
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
+    width: 90%;
+    margin: 0 auto;
     border: 1px solid rgb(156, 156, 177);
-    border-top-right-radius: 250px;
-    border-bottom-left-radius: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
     flex-direction: row-reverse;
     border: 1px solid rgb(156, 156, 177);
-    border-top-left-radius: 250px;
-    border-bottom-right-radius: 250px;
-    margin-top: 50px;
+    width: 90%;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.themeInBranchBox button.t1UgAndPgButtons {
+/* .themeInBranchBox button.t1UgAndPgButtons {
     background: #cceafb;
     padding: 10px;
     border-radius: 39px;
@@ -259,7 +267,7 @@ img.t1LogoImg {
     justify-content: center;
     align-items: center;
     border: 2px outset hsla(0, 60%, 70%, .5);
-}
+} */
 
 .themeInBranchBox button.t1UgAndPgButtons a {
     color: rgb(25, 27, 26);
@@ -272,11 +280,14 @@ img.t1LogoImg {
     justify-content: center;
 }
 
-
 .t1Landing_branch_box_btns ul {
     height: 200px;
     width: 300px;
-    margin-top: 45px;
+    margin-top: 79px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .t1Landing_branch_box_btns ul li a {
@@ -288,6 +299,7 @@ img.t1LogoImg {
     color: white;
     font-size: 20px;
     font-weight: 400;
+    width: 200px;
     padding-top: 10px;
 }
 
@@ -310,15 +322,13 @@ img.t1LogoImg {
     background: #328990e6;
     /* background-image: linear-gradient(122deg, #37e0e0, #1abebe); */
     color: #fff;
-    /* border-bottom: 5px solid #cff4fc; */
-    border-radius: 30px;
     box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
     text-shadow: 0 0 3px rgb(0 0 0 / 30%);
     transition: all .3s;
 }
 
 .t1Landing_branch_box_btns ul li:hover {
-    background-color: rgb(219, 218, 218);
+    background-color: rgb(165, 143, 143);
 }
 
 
@@ -326,6 +336,11 @@ img.t1LogoImg {
 @media (max-width:768px) {
     .t1BranchBox {
         flex-direction: column;
+        width: 100%;
+    }
+
+    .theme1UGEntranceExamsContainer {
+        width: 100%;
     }
 
     .t1BranchBox:nth-child(2) {
@@ -333,17 +348,33 @@ img.t1LogoImg {
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
-        border-radius: 30px;
+        /* border-radius: 30px; */
+ 
+            width: 100%;
+            /* border-top-left-radius: 29px; */
+            /* border-top-right-radius: 29px; */
+        
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
         flex-direction: row-reverse;
-        border-radius: 30px;
+        /* border-radius: 30px; */
+        width: 100%;
         height: auto;
     }
 }
 
 @media (max-width:468px) {
+    .t1UgAndPgButtons {
+        margin-top: 20px !important;
+    }
+
+    .themeInBranchBox {
+        width: 100%;
+        border-top-left-radius: 29px;
+        border-top-right-radius: 29px;
+    }
+
     .t1LandingParentContainer {
         object-fit: cover;
     }
@@ -397,23 +428,57 @@ img.t1LogoImg {
         align-items: center;
     }
 
+    .theme1UGEntranceExamsContainer {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    .themeInBranchBox {
+        width: 100%;
+        border-top-left-radius: 29px;
+        border-top-right-radius: 29px;
+    }
+
+
 }
 
+@media (min-width:800px) and (max-width:900px){
+    .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
+        display: flex;
+        margin-left: 22px;
+        margin-right: 39px;
+        align-items: center;
+        justify-content: center;
+    }
+  
+
+    .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox {
+        flex-direction: row;
+        /* display: flex; */
+        width: 50%;
+        justify-content: space-evenly;
+    }
+
+}
 
 @media (min-width:800px) and (max-width:1440px) {
     .theme1UGEntranceExamsContainer .t1BranchBox .t1ExamButtonsBox .t1Landing_branch_box_btns {
         display: flex;
+        margin-left: 100px;
+        margin-right: 100px;
         align-items: center;
         justify-content: center;
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
-        border-radius: 30px;
+        /* border-radius: 30px; */
     }
 
     .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
         flex-direction: row-reverse;
-        border-radius: 30px;
+        /* border-radius: 30px; */
         height: auto;
     }
 
@@ -434,6 +499,17 @@ img.t1LogoImg {
     .t1TextContainer div p {
         font-size: 20px;
     }
+
+    .theme1UGEntranceExamsContainer {
+        display: flex;
+        width: 80%;
+        margin: 0 auto;
+        align-items: center;
+        flex-wrap: wrap;
+        /* flex-direction: column; */
+    }
+    
+    
 }
 
 .themeInBranchBox button.t1UgAndPgButtons:hover {
@@ -575,7 +651,7 @@ img.t1LogoImg {
 
 
 
-   
+
 
 .footer-social-links {
     bottom: 0;
@@ -654,7 +730,7 @@ img.t1LogoImg {
     left: 172px;
     top: 7px;
     width: 34px;
-} 
+}
 
 /* .footer-copyright-link {
     color: #fff;
@@ -712,7 +788,7 @@ img.t1LogoImg {
     flex-direction: row;
 }
 
-.t1FooterContentColumn ul li{
+.t1FooterContentColumn ul li {
     line-height: 2rem;
 }
 
@@ -722,8 +798,8 @@ img.t1LogoImg {
     padding: 15px;
 }
 
-.t1FooterContactData h2{
-color: #abd7f7;
+.t1FooterContactData h2 {
+    color: #abd7f7;
 }
 
 
@@ -771,7 +847,7 @@ color: #abd7f7;
     padding: 10px;
 }
 
-@media  (max-width:568px) {
+@media (max-width:568px) {
     .t1ContactFooterContentContainer {
         display: flex;
         flex-direction: column;
@@ -779,36 +855,44 @@ color: #abd7f7;
         margin-left: 20px;
     }
 
+
     .t1FooterContentColumn {
-      margin-left: 10px;
+        margin-left: 10px;
     }
 
-    .t1FooterContactUsContent{
+    .t1FooterContactUsContent {
         font-size: 20px;
     }
-    .t1FooterFirstContentContainer{
+
+    .t1FooterFirstContentContainer {
         margin-left: 0px;
     }
-    .t1InnerMainFooterContentColumnContainer{
+
+    .t1InnerMainFooterContentColumnContainer {
         padding-left: 15px;
-     
+
     }
+
     .t1FootereGRADTtutoContent .new_landingfooter_conatinerfristpart_item {
         color: #efefef;
         font-size: 14px;
     }
+
     .t1FooterLinksContent ul {
         padding: 10px;
         font-size: 15px;
     }
+
     p.new_landingfooter_conatinersecondpart_item {
         font-size: 13px;
     }
+
     .themeInBranchBox button.t1UgAndPgButtons a {
         color: rgb(25, 27, 26);
         font-size: 11px;
         font-weight: bold;
     }
+
     .themeInBranchBox button.t1UgAndPgButtons {
         background: #cceafb;
         padding: 10px;
@@ -822,21 +906,21 @@ color: #abd7f7;
     }
 }
 
-@media  (max-width:1224px){
-    .t1InnerMainFooterContainer{
-display: flex;
-flex-direction: column;
+@media (max-width:1224px) {
+    .t1InnerMainFooterContainer {
+        display: flex;
+        flex-direction: column;
     }
 
-    .t1InnerMainFooterContentContainer{
+    .t1InnerMainFooterContentContainer {
         margin-right: auto;
-    max-width: 1230px;
-    padding: 05px 5px 15px;
-    position: relative;
+        max-width: 1230px;
+        padding: 05px 5px 15px;
+        position: relative;
     }
 
     .t1FooterFirstContent #Footer_Heading {
-        color:  #abd7f7;
+        color: #abd7f7;
         font-size: 40px;
         font-weight: bold;
     }
