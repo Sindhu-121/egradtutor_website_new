@@ -169,8 +169,9 @@ color: white;
     /* Exam Home page header section file */
 
     .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_Container ul {
-        display:flex;
+        display: flex;
         flex-direction: column;
+        padding-left: 0px;
     }
     
 
