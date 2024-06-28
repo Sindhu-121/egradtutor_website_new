@@ -9,6 +9,7 @@
     /* padding: 19px; */
     width: 80%;
 }
+
  
 .themeUgDivLinksOfHeaderDefault {
     display: flex;
@@ -188,9 +189,9 @@ h2#EXPLORE_Exam_Heading {
     padding: .3rem .5rem;
     font-size:1.3rem;
 }
-.NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a{
-    color:black;
-    line-height: 2rem;
+.NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a {
+    color: black;
+    line-height: 2.2rem;
 }
 li.defaultLinkToSpecificExam a{
     color:white;
@@ -332,6 +333,8 @@ ul.defaultCoursesUl li:hover {
         color: #fff;
         font-size: 15px;
         font-weight: 500;
+        text-align: center;
+        /* padding: 10 0 px; */
     }
    
     #EXPLORE_Exam_Heading {
@@ -373,7 +376,7 @@ ul.defaultCoursesUl li:hover {
         width:100px;
     }
     .NewExploreExams_Image.themeNewExploreExams_ImageDefault img {
-        width: 325px;
+        width: 289px;
         margin-top: 20px;
     }
     li.defaultCourseLi {
@@ -417,10 +420,16 @@ ul.defaultCoursesUl li:hover {
         /* margin: .5rem auto; */
         width: 100%;
     }
+    h2#EXPLORE_Exam_Heading {
+        font-weight: bold;
+        color: #00a3ff;
+        font-size: 1.5rem;
+        margin: 2rem auto;
+    }
 
 }
  
-@media (max-width:1280) {
+@media (max-width:884px) {
     .NewExploreExams_Image.themeNewExploreExams_ImageDefault img {
         margin-left: 20px;
     }
@@ -434,9 +443,93 @@ ul.defaultCoursesUl li:hover {
         margin: 0 auto;
         width: 65%;
     }
+ 
+    .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+        display: flex;
+        flex-direction: column;
+        /* justify-content: space-evenly; */
+    }
+    .defaultCoursesSubContainer {
+        grid-gap: 2rem;
+        display: grid;
+        gap: 2rem;
+        margin:0px;
+        width: 5%;
+    }
+    li.defaultCourseLi {
+        width: 92vw;
+    }
+    li.defaultCourseLi {
+        padding: 6px;
+    }
+    strong.defaultPortalName {
+        background: #2d6891;
+        color: #fff;
+        font-size: 1rem;
+        margin: .3rem auto;
+        padding: .6rem;
+        text-align: center;
+        width: 88%;
+        display: block;
+    }
+    .defaultExamsNames {
+        /* height: 20px; */
+        display: grid;
+        flex-wrap: wrap;
+        gap: 0.8rem;
+        grid-template-columns: repeat(1fr,1fr);
+        justify-content: center;
+        margin-right: 0px;
+        margin-top: 56px;
+        margin-left: 20px;
+    }
+    .defaultFeaturesContainer {
+        /* line-height: 32px; */
+        padding-top: 4.6rem;
+        text-align: justify;
+        font-weight: 300;
+        margin-left: 18px;
+    }
+    .defaultExamsNames a {
+        background: #2d6891;
+        border-radius: 10px;
+        color: #fff;
+        font-family: Noto Sans Display,sans-serif;
+        font-weight: 700;
+        padding: 0.3rem;
+        text-align: center;
+        /* text-transform: uppercase; */
+        text-decoration: none;
+        width: 155px;
+        font-size: 13px;
+        height: 40px;
+    }
+    .Footer_Sub_Container.themeFooterSubContainerDefault {
+        padding: 2rem 3rem 0;
+    }
+    
 }
 
+@media (max-width:1280px) {
 
+.themeUgDivLinksOfHeaderDefault a {
+    align-items: center;
+    background: #01c3ff;
+    border-radius: 0 20px;
+    box-shadow: 0 0 5px 3px rgba(0, 0, 0, .2);
+    display: flex;
+    justify-content: center;
+    /* width: 120px; */
+    padding: 5px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 13px;
+}
+}
+@media (max-width:1114px) {
+
+    }
 
 /* About Us Styles */
 
@@ -666,7 +759,7 @@ form.ContactUsFormData.ContactUsFormDataDefault #firstName, #lastName, #email, #
     height: 50px;
     outline: none;
     padding: .1rem .5rem;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     width: 90%;
 }
 form.ContactUsFormData.ContactUsFormDataDefault #category {

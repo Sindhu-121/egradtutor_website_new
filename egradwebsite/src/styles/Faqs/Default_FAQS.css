@@ -1,0 +1,24 @@
+.FaqSubContainer.FaqSubContainerDefault h1{
+        color: #00a3ff;
+        font-size: 2.5rem;
+        margin: 1.5rem auto;
+        text-align: center;
+        font-weight: bold;
+}
+.FaqSubContainer.FaqSubContainerDefault {
+        padding: 3rem 12rem;
+      
+}
+.FaqSubContainer.FaqSubContainerDefault {
+    background-color :#e2f7fb;
+    height:60vh;
+}
+.AboutUsImgContainer.AboutUsImgContainerDefault{
+    padding-top:0px;
+}
+.FaqData.FaqDataDefault h3 {
+    background-color: black;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}

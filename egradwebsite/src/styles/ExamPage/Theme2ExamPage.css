@@ -19,17 +19,20 @@
     
 }
 .t2ExamPageHeaderContainer a {
-    border-radius: 20px;
-    padding: 10px;
-    height: 50px;
-    width: 150px;
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
+  border-radius: 20px;
+  padding: 10px;
+  height: 50px;
+  width: 150px;
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 .total_exam_page.t2TotalExamContainer {
   display: flex;
@@ -112,11 +115,14 @@
 }
   
 .portal_names.t2PortalNames  li h2 {
-    margin: 0;
-    font-size: 20px;
-    margin-bottom: 1rem;
-    position: absolute;
-    top: -16%;
+  margin: 0;
+  font-size: 20px;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: -16%;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
   
 .t2ExamPortalImgDivInCard {
@@ -150,6 +156,9 @@
     gap: -0.5rem;
     /* padding: 0 5px; */
     padding-left: 5px;
+    font-family: "LXGW WenKai TC", cursive;
+    font-weight: 600;
+    font-style: normal;
   }
   
   /* First child specific styles */
@@ -285,11 +294,17 @@
 .toggles.t2Toggles p#more_info {
   /* font-size: 20px; */
   padding: 10px;
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 .toggles.t2Toggles h3#info_title {
   font-size: 1.2rem;
   display: flex;
   justify-content: space-between;
+  font-family: "LXGW WenKai TC", cursive;
+  font-weight: 600;
+  font-style: normal;
 }
 .exam_info_divs.t2ExamInfoDivs .infoButton {
   /* background-color: rgb(173, 238, 130); */
@@ -403,12 +418,12 @@
   margin: 0;
   /* width: inherit; */
   height: inherit;
-  min-width: 200px;
+  min-width: 150px;
 }
 }
 @media (max-width: 375px){
   .t2ExamPageHeaderContainer {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: center;
     /* gap: 1rem; */
     justify-content: center;
