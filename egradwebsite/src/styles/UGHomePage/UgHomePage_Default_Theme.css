@@ -192,6 +192,8 @@ h2#EXPLORE_Exam_Heading {
 .NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a {
     color: black;
     line-height: 2.2rem;
+    font-size: 15px;
+    font-weight: 500;
 }
 li.defaultLinkToSpecificExam a{
     color:white;
@@ -311,6 +313,52 @@ ul.defaultCoursesUl li:hover {
     box-shadow: black 0 0 5px;
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
+
+@media (max-width: 320px) {
+    ul.themeUgHeaderUlDefault {
+        display: flex;
+        /* gap: 1.5rem; */
+        flex-direction: row;
+        /* align-items: center; */
+        padding-top: 15px;
+    }
+    .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_ContainerDefault ul li.defaultLinkToSpecificExam {
+       
+        padding:0px;
+        
+    }
+    .NewExploreExams_PortalNames_Container.NewExploreExams_PortalNames_ContainerDefault li a {
+        color: black;
+        line-height: 2.2rem;
+        font-size: 13px;
+        font-weight: 500;
+    }
+    .NewExploreExams_ExamName_Container.NewExploreExams_ExamName_ContainerDefault {
+        background: #279eff69;
+        background: #fff;
+        border-radius: 13px;
+        box-shadow: 0 0 5px rgba(0,0,0,.5);
+        display: flex;
+        flex-direction: column;
+        gap: .8rem;
+        /* height: 166px; */
+        /* justify-content: center; */
+        padding: 1.5rem;
+        text-align: center;
+        text-transform: capitalize;
+        width: 246px;
+        height: 206px;
+    }
+}
+
+@media (max-width: 376px) {
+    li.themeUgHeaderLiDefault {
+      color: #fff;
+      font-size: 13px !important;
+      font-weight: 500;
+      text-align: center;
+    }
+  }
 @media (max-width: 600px) {
 
 
@@ -331,10 +379,9 @@ ul.defaultCoursesUl li:hover {
     }
     li.themeUgHeaderLiDefault {
         color: #fff;
-        font-size: 15px;
+        font-size: 14px;
         font-weight: 500;
         text-align: center;
-        /* padding: 10 0 px; */
     }
    
     #EXPLORE_Exam_Heading {
@@ -426,6 +473,12 @@ ul.defaultCoursesUl li:hover {
         font-size: 1.5rem;
         margin: 2rem auto;
     }
+    ul.themeUgHeaderUlDefault {
+        display: flex;
+        /* gap: 1.5rem; */
+        flex-direction: row;
+        align-items: center;
+    }
 
 }
  
@@ -487,7 +540,7 @@ ul.defaultCoursesUl li:hover {
         /* line-height: 32px; */
         padding-top: 4.6rem;
         text-align: justify;
-        font-weight: 300;
+        font-weight: 500;
         margin-left: 18px;
     }
     .defaultExamsNames a {
@@ -510,6 +563,15 @@ ul.defaultCoursesUl li:hover {
     
 }
 
+
+
+@media (max-width:1114px){
+    .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+}
 @media (max-width:1280px) {
 
 .themeUgDivLinksOfHeaderDefault a {

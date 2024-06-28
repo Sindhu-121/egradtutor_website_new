@@ -173,6 +173,9 @@ color: white;
         width: 100%;
         flex-direction: column;
         padding-left: 10px;
+        display: flex;
+        flex-direction: column;
+        padding-left: 0px;
     }
     
 

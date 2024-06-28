@@ -174,7 +174,7 @@ form.ContactUsFormData.t2CUForm button:hover{
     font-style: normal;
     /* text-decoration: underline; */
 }
-.ContactUsDataContainer {
+.ContactUsContentContainer.t2CUMapContainer  .ContactUsDataContainer {
     padding: 5px;
     font-family: "LXGW WenKai TC", cursive;
     font-weight: 400;
