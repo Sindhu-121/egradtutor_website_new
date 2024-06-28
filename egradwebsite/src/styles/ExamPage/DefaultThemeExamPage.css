@@ -311,9 +311,12 @@ p#more_info {
         justify-content: space-evenly;
     }
     .portal_names.defaultPortalNames li {
-        height:300px;
-    }
-
+        height: 320px;
+        width: 315px;
+        margin-bottom: 3rem; /* Ensure correct unit */
+        list-style: none; /* Remove default list styles */
+      }
+  
     .defaultExamCoursesContainer {
         background-color: #d9d9ff;
         width: 100%;
@@ -326,10 +329,9 @@ p#more_info {
         height: 130vh;
     }
     .portal_names.defaultPortalNames li {
-        height: auto;
-        width: 315px;
+        height: 235px;
+        width: 351px;
         /* margin-bottom: 40px; */
-       
     }
     .portal_names.defaultPortalNames h2 {
         background-color: #fff;
