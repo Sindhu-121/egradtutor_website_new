@@ -6,9 +6,13 @@ import '../../../../styles/CoursesPageStyles/CoursePage.css'
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import img from '../../../../styles/About_us_Image.jpeg'
+// theme-2 
 import '../../../../styles/CoursesPageStyles/OrangeTheme.css'
+// theme white is for default
 import '../../../../styles/CoursesPageStyles/themeWhite.css'
+// before themes, css
 import '../../../../styles/CoursesPageStyles/Home.css'
+// theme-1 (green,yellow )
 import '../../../../styles/CoursesPageStyles/Theme-green.css';
 
 
@@ -63,82 +67,6 @@ const PoopularCourses = () => {
 
   return (
     <div>
-      {/* <div>
-        {Object.entries(coursesByPortalAndExam).map(([portal, exams]) => (
-          <div key={portal} >
-            <div className="coursePagePortalName">
-              <h2>{portal}</h2>
-            </div>
-            <div className="courseExamParentContainer">
-              {Object.entries(exams).map(([examName, courses], index) => (
-                <div key={examName} className="courseExamContainer">
-                  <div className="coursePageExamCardContainer">
-                    <div className="courseExamHeading">
-                      <h2>{examName}</h2>
-                    </div>
-                    <div className="courseExamDetailsContainer">
-                      {courses.map((courseExamsDetails) => (
-                        <div key={courseExamsDetails.courseCreationId} className="courseCardDetailsContainer">
-                          <div className="courseImgContainer">
-                            <img
-                              src={courseExamsDetails.courseCardImage}
-                              alt={courseExamsDetails.courseName}
-                            />
-                          </div>
-                          <div className="courseExamPriceDetailsContainer">
-                          <div>{courseExamsDetails.courseName}</div>
-
-                          <p>
-                            <span> Duration:</span>
-                            {formatDate(courseExamsDetails.courseStartDate)}
-                            <small
-                              style={{
-                                textTransform: "capitalize",
-                                padding: "0 1px",
-                              }}
-                            >
-                              {" "}
-                              to{" "}
-                            </small>
-                            {formatDate(courseExamsDetails.courseEndDate)}
-                          </p>
- 
-                          <div>
-                            <p>
-                              <p>
-                                <span>Price :</span>{" "}
-                                <span>{courseExamsDetails.ActualtotalPrice}</span>
-                              </p>
-                              <p>
-                                <span>Discount : </span>{" "}
-                                {courseExamsDetails.discount}%
-                              </p>
-                            </p>
-                            <p>
-                              {" "}
-                              <span>Amount :</span> ₹
-                              {courseExamsDetails.totalPrice}/-
-                            </p>
-
-                            <div>
-                              <Link
-                                to={`/coursedataSRP/${courseExamsDetails.courseCreationId}`}
-                              >
-                                Buy Now
-                              </Link>
-                            </div>
-                          </div>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
       <div>
         <div className="courseheader_continer">
           <div className={themeDetails.theme_COURSES}>

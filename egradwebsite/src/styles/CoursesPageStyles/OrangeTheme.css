@@ -168,9 +168,18 @@ h2#orange_examName{
 /* newlyu aadded */
 .courses_container.orange_courses_container {
     padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(510px, 320px));
+    gap: 10px;
 }
 /* 536 */
 @media (max-width: 536px) {
+    .courses_container.orange_courses_container {
+        padding: 0 2rem;
+        display: unset;
+        grid-template-columns: repeat(auto-fill, minmax(510px, 320px));
+        gap: 10px;
+    }
     .card_container .before_login_first_card.orangeImgDiv {
        /* height: 210px; */
        /* width: 442px; */

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import WhychooseUsEdit from './WhychooseUsEdit'
 import BASE_URL from "../../../../apiConfig";
+import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
 const WhyChooseUs = ({isEditMode}) => {
   const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
   const [showWhyChooseUsForm, setShowWhyChooseUsForm] = useState(false);
@@ -30,8 +31,10 @@ const WhyChooseUs = ({isEditMode}) => {
        
       <ul>
         {WhyChooseUsitems.map((WhyChooseUsitem) => (
-          <li key={WhyChooseUsitem.WhyChooseUsId}>
+          <li key={WhyChooseUsitem.WhyChooseUsId} className='whyChooseUsLi'>
+            <div className='whyChooseUsImg'>
              <img src={`data:image/png;base64,${WhyChooseUsitem.WhyChooseUsImeage}`} alt={WhyChooseUsitem.WhyChooseUsTitle} />
+             </div>
             <p>{WhyChooseUsitem.WhyChooseUsTitle}  </p>
             <p>{WhyChooseUsitem.WhyChooseUsDiscreption}</p>
           </li>

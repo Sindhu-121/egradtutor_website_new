@@ -314,13 +314,19 @@ ul.defaultCoursesUl li:hover {
     transition: background-color 0.5s ease, box-shadow 0.5s ease;
 }
 
-@media (max-width: 320px) {
-    ul.themeUgHeaderUlDefault {
+@media (max-width: 325px) {
+    .AboutUsImgContainerDefault img {
+        border-radius: 5px;
+        width: 170px;
+    }
+    .ContactUsContentContainer.ContactUsContentContainerDefault {
+        box-shadow: 0 0 10px rgba(0,0,0,.5);
         display: flex;
-        /* gap: 1.5rem; */
-        flex-direction: row;
-        /* align-items: center; */
-        padding-top: 15px;
+        flex-direction: column;
+        height: auto;
+        padding: 1.8rem;
+        width: 18rem;
+        text-align: left;
     }
     .NewExploreExams_EachCard_Container.NewExploreExams_EachCard_ContainerDefault ul li.defaultLinkToSpecificExam {
        
@@ -350,6 +356,8 @@ ul.defaultCoursesUl li:hover {
         height: 206px;
     }
 }
+
+
 
 @media (max-width: 376px) {
     li.themeUgHeaderLiDefault {
@@ -565,12 +573,24 @@ ul.defaultCoursesUl li:hover {
 
 
 
-@media (max-width:1114px){
+@media (max-width: 1114px) {
     .NewExploreExams_ExamCard_MainContainer.NewExploreExams_ExamCard_ContainerDefault {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-evenly;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
     }
+    .themeUgDivLinksOfHeaderDefault {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem; /* Ensure the unit is specified */
+    }
+  }
+  ul.themeUgHeaderUlDefault {
+    display: flex;
+    gap:1.5rem;
+    padding-left: 0px;
+    flex-direction: row;
 }
 @media (max-width:1280px) {
 
@@ -652,9 +672,9 @@ ul.defaultCoursesUl li:hover {
     font-size: 1.5rem;
     padding-bottom: 5px;
 }
-.AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault p{
-    color:black;
-
+.AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault p {
+    color: black;
+    text-align: left;
 }
 
 .AboutUsContentMainContainer.AboutUsContentMainContainerDefault h1{
@@ -683,45 +703,33 @@ ul.defaultCoursesUl li:hover {
     .AboutUsImgContainerDefault img {
         border-radius: 5px;
         width: 185px;
-    }
-    .AboutUsImgContainerDefault {
-        width: 80%;
+      }
+      .AboutUsImgDataContentContainer.AboutUsImgDataContentContainerDefault img {
+        width: 343px; 
+      }
+      .AboutUsContentSubContainerDefault {
+        padding: 0.5rem 10rem;
         display: flex;
-        flex-direction: row;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
-        margin: 0 auto;
-        padding: 10px;
-        height: 50px;
+        gap: 6rem;
     }
-    .AboutUsImgContainerDefault {
-      
-        padding-top: 40px;
-       
-    }
-    .AboutUsContentMainContainer.AboutUsContentMainContainerDefault h1 {
-        font-size: 2rem;
-    }
-    .AboutUsContentSubContainerDefault{
-        display: flex;
-        flex-direction: column;
-    }
-    .AboutUsImgDataContentContainer.AboutUsImgDataContentContainerDefault img {
-        width: 300px;
+    .AboutUs1stContentContainer.AboutUs1stContentContainerDefault .AboutUsImgDataContentContainer.AboutUsImgDataContentContainerDefault img {
+        width: 345px;
         border-radius: 15px;
-        margin-bottom: 20px;
-        /* margin-top: 0px; */
     }
-    .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault {
+    .AboutUs1stContentContainer.AboutUs1stContentContainerDefault p {
+        text-align: left;
+        font-size: 18px;
+    }
+    .AboutUs_VisionContent_Container.AboutUsVisionContentContainerDefault .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault {
         background: #fff;
         box-shadow: 0 0 5px rgba(0,0,0,.5);
-        width: 359px;
+        width: 375px;
         padding: 20px;
         margin-bottom: 2rem;
     }
-    .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault p{
-        text-align: left;
-    }
+  
 }
 
 
