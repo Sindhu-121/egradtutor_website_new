@@ -206,6 +206,13 @@ const JSONClasses = {
     themescrolled_bg: "theme_scrolled_bg",
     themeswhite_Logins: "white_themesLogins",
     themeswhite_LoginsContainer: "themeswhite_LoginsContainer",
+
+    // COURSEPAGE HEADER CSS
+
+    CoursePageHeaderContainer: "CoursePageHeaderContainerDefault",
+    themeLogoImgC: "themeLogoImgCDefault",
+    logoC: "logoCDefault",
+    CoursePageItemsContainer: "CoursePageItemsContainerDefault",
   },
   "Theme-1": {
     id: "themeOneId",
@@ -412,9 +419,9 @@ const JSONClasses = {
     themeIconsAndCards: "greenIconAndCards",
 
     // link classes
-    LinksPagesMainContainer:"t1LinksPagesMainContainer",
-    AboutUsImgContainer:"t1AboutUsImgContainer",
-    LinksDataContainer:"t1LinksDataContainer",
+    LinksPagesMainContainer: "t1LinksPagesMainContainer",
+    AboutUsImgContainer: "t1AboutUsImgContainer",
+    LinksDataContainer: "t1LinksDataContainer",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -577,11 +584,11 @@ const JSONClasses = {
     themeIconsAndCardsPC: "orangeIconsAndCardsPC",
     themeIconsAndCards: "orangeIconAndCards",
 
-    
+
     // link classes
-    LinksPagesMainContainer:"t2LinksPa1gesMainContainer",
-    AboutUsImgContainer:"t2AboutUsImgContainer",
-    LinksDataContainer:"t2LinksDataContainer",
+    LinksPagesMainContainer: "t2LinksPa1gesMainContainer",
+    AboutUsImgContainer: "t2AboutUsImgContainer",
+    LinksDataContainer: "t2LinksDataContainer",
   },
 };
 
