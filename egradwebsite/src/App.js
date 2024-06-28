@@ -18,6 +18,7 @@ import CoursePage from './EgradTutorFrontEnd/EgradTutorWebsit/CoursePages/Course
 import UserLogin from './Login/UserLogin';
 import StudentRegistrationPage from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/StudentRegistationPage';
 import PasswordChangeForm from '../../egradwebsite/src/EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/PasswordChangeForm';
+import SuperAdminLogin from './Login/SuperAdminLogin';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -63,6 +64,9 @@ function App() {
 
             {/* New Login System */}
             <Route path="/UserLogin" element={<UserLogin/>}/>
+            <Route path="/adminlogin" element={<AdminLogin />} />
+            <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>} />
+
             <Route path="/Registation" element={<StudentRegistrationPage/>}/>
             <Route path="/login/:userId" element={<PasswordChangeForm />} />
 
