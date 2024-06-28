@@ -2,45 +2,36 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
-const UserLogin = () => {
+const SuperAdminLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log('Login form submitted with:', { email, password });
-
     try {
       const response = await axios.post('http://localhost:5001/Login/login', { email, password });
       const { token, role } = response.data;
-      // console.log('Login successful:', { token, role });
-
       localStorage.setItem('token', token);
-      
-      // Navigate based on role
-      if (role === 'User') {
-        // console.log('Navigating to user dashboard');
-        navigate('/user-dashboard');
-      } else if (role === 'Admin') {
-        // console.log('Admin access is not allowed on this page');
+      if (role === 'superadmin') {
+        navigate('/superadmin-dashboard');
+      }else if (role === 'User') {
+        console.log('User access is not allowed on this page');
         alert('You dont have access to this page');
-      } else if (role === 'SuperAdmin') {
-        // console.log('Super Admin access is not allowed on this page');
+      } else if (role === 'Admin') {
+        console.log(' Admin access is not allowed on this page');
         alert('You dont have access to this page');
       } else {
-        console.log('Unauthorized role:', role);
         alert('Unauthorized');
       }
     } catch (error) {
-      console.error('Error during login:', error);
       alert('Invalid email or password');
     }
   };
 
   return (
     <div className="container mt-4">
-      <h1>User Login</h1>
+      <h1>Super Admin Login</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label>Email</label>
@@ -66,4 +57,4 @@ const UserLogin = () => {
   );
 };
 
-export default UserLogin;
+export default SuperAdminLogin;
