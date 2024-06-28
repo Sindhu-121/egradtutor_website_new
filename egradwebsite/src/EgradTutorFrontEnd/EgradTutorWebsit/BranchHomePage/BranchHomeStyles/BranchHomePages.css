@@ -162,6 +162,12 @@
     display: flex;
 }
 
+.t1NewExploreExams_EachCard_Container ul {
+    display: flex;
+ align-items: center;
+
+}
+
 
 
 .t1NewExploreExams_ExamCard_Container {
@@ -186,7 +192,7 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
-    padding: 30px;
+    /* padding: 30px; */
 }
 
 .t1ExploreImgContainer img{
@@ -204,7 +210,7 @@ justify-content: space-around;
     /* background-color: rebeccapurple; */
     display: flex;
     flex-direction: row;
-    padding: 10px;
+    /* padding: 10px; */
     /* width: 50%; */
     justify-content: space-between;
 }
@@ -227,6 +233,7 @@ justify-content: space-around;
     align-items: center;
     border-radius: 20px;
     margin-top: 10px;
+    width: 235px;
     outline-width: 1px;
     outline-offset: 0;
     border: 1px solid rgba(0, 130, 206, 0.75) ;
@@ -373,10 +380,15 @@ height: 100%;
 }
 
 .t1CoursesHeadding #Our_Courses_heading {
-    background-color: var(--bs-tertiary-bg);
-    width: 100%;
-    height: 85px;
-    padding: 20px;
+background-color: #124659;
+    width: 27%;
+    border-radius: 20px;
+    /* height: 35px; */
+    color: white;
+    margin-top: 20px;
+    font-size: 30px;
+    padding: 10px;
+    margin-bottom: 0px;
 }
 
 .t1CoursesSubContainer{
@@ -404,16 +416,16 @@ color: blue;
     padding: 10px;
 }
 
-.t1PortalName{
-background-color: #f5c0cb;
-border-radius: 20px;
-height: 50px;
-width: 300px;
-display: flex;
-align-items: center;
-justify-content: center;
-font-size: 20px;
-color: var(--bs-primary-text-emphasis);
+.t1PortalName {
+    /* background-color: #124659; */
+    border-radius: 20px;
+    height: 50px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #123659;
 }
 
 .t1FeaturesSecondContainer {
@@ -534,6 +546,7 @@ justify-content: space-between;
     .t1NewExploreExams_ExamCard_Container{
         display: flex;
         justify-content: center;
+        gap: 60px;
     }
     
     .t1NewExploreExams_ExamCard_Container{
