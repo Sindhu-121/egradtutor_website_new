@@ -34,6 +34,15 @@
     transition: 0.3s ease-in-out;
 }
 
+.t1UgDivLinksOfHeader a:hover {
+    background-color: #2a5e82c2;
+    color: whitesmoke;
+}
+
+span {
+    font-style: oblique;
+    font-weight: 400;
+}
 
 
 
@@ -139,9 +148,17 @@ background-color:  #fff5d75c;
     justify-content: center;
 
     & h1{
-font-size: 25px;
+font-size: 27px;
 padding: 10px;
 font-family: "Roboto";
+background-image: url(https://media.giphy.com/media/26BROrSHlmyzzHf3i/giphy.gif);
+background-size: cover;
+color: transparent;
+font-weight: bolder;
+-moz-background-clip: text;
+-webkit-background-clip: text;
+text-transform: uppercase;
+margin: 10px 0;
     }
 
     & p {
