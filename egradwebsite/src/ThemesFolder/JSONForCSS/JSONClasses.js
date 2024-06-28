@@ -355,6 +355,7 @@ const JSONClasses = {
     // ABOUT US//
     themeAboutUsMainsContainer: "t1AboutUsMainsContainer",
     themeAUSection1: "t1AUSection1",
+    AboutUsImgContainer: "t1AboutUsImgContainer",
     themeAboutUsImgWithTextDiv: "t1AboutUsImgWithTextDiv",
     themeAUHeadingContainer: "t1AUHeadingContainer",
     AboutUsContentMainContainer: "t1AboutUsContentMainContainer",
@@ -409,6 +410,11 @@ const JSONClasses = {
     themeWCUContainer: "greenWCUContainer",
     themeIconsAndCardsPC: "greenIconsAndCardsPC",
     themeIconsAndCards: "greenIconAndCards",
+
+    // link classes
+    LinksPagesMainContainer:"t1LinksPagesMainContainer",
+    AboutUsImgContainer:"t1AboutUsImgContainer",
+    LinksDataContainer:"t1LinksDataContainer",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -570,6 +576,12 @@ const JSONClasses = {
     themeWCUContainer: "orangeWCUContainer",
     themeIconsAndCardsPC: "orangeIconsAndCardsPC",
     themeIconsAndCards: "orangeIconAndCards",
+
+    
+    // link classes
+    LinksPagesMainContainer:"t2LinksPa1gesMainContainer",
+    AboutUsImgContainer:"t2AboutUsImgContainer",
+    LinksDataContainer:"t2LinksDataContainer",
   },
 };
 
