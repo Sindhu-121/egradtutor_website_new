@@ -201,9 +201,9 @@ const StudentRegistationPage = () => {
             </div>
             <div className="popup-body">
               <p>You have successfully registered!</p>
+              <p>Plase reset your password with code what you got in registerd mail id </p>
             </div>
             <div className="popup-footer">
-              <button className="popup-button" onClick={() => window.location.href = `/buy-courses/${userId}`}>Buy Courses</button>
               <button className="popup-button" onClick={() => window.location.href = `/login/${userId}`}>Login</button>
             </div>
           </div>

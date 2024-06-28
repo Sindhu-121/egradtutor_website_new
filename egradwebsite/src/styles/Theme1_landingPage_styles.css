@@ -229,6 +229,8 @@ img.t1LogoImg {
     flex-direction: row-reverse;
     border: 1px solid rgb(156, 156, 177);
     width: 90%;
+    display: flex;
+    justify-content: space-between;
     margin: 0 auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
