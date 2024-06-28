@@ -353,6 +353,20 @@ color: white;
     }
 }
 
+@media (max-width: 360px) {
+
+.EGATE_elandUl-pg_Default {
+    width: 288px !important;
+    box-shadow: 0 0 10px #00222c !important;
+    padding: 1rem !important;
+    height: 400px;
+}
+.Newlandingpage_branch_box.EGATE_elandUl-pg_Default a {
+    font-size: 1rem !important;
+  }
+  
+
+}
 
 
     

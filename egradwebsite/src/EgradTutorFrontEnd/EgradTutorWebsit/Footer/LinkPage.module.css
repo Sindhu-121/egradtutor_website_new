@@ -17,8 +17,22 @@
     color: #555;
     font-size: 16px;
   }
+  .AboutUsImgContainer.AboutUsImgContainerDefault span {
+    color: black !important;
+  }
   
   /* Add more styles as needed for other HTML tags */
-  .LinkPage_footer-content__EHAOJ .LinksDataContainer.LinksDataContainerDefault strong {
-    color:red !important;
+ 
+
+  /* Apply responsive for links page */
+  @media (max-width: 415px) {
+    .AboutUsImgContainer.AboutUsImgContainerDefault span a svg{
+      color: #000;
+      font-size: 1rem;
+      font-weight: bold;
   }
+    .footer-content {
+      padding: 2rem;
+  }
+  }
+  
