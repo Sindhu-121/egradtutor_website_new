@@ -6,7 +6,10 @@ import { Link } from "react-router-dom";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context.js";
 import CoursePageHeaderEdit from "./CoursePageHeaderEdit.jsx";
-import '../../../../styles/CoursePage/CoursePageDefault.css';
+// import '../../../../styles/CoursePage/CoursePageDefault.css'
+import '../../../../styles/CoursesPageStyles/themeWhite.css';
+import { RiLoginBoxLine } from "react-icons/ri";
+
 const CoursePageHeader = ({ isEditMode }) => {
   const [image, setImage] = useState(null);
   const [showHeaderMenuForm, setShowHeaderMenuForm] = useState(false);

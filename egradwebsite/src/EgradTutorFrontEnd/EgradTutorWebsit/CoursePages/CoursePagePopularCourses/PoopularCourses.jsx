@@ -16,7 +16,6 @@ import '../../../../styles/CoursesPageStyles/Home.css'
 import '../../../../styles/CoursesPageStyles/Theme-green.css';
 
 
-
 const PoopularCourses = () => {
   const { Portale_Id } = useParams();
   const [unPurchasedCourses, setUnPurchasedCourses] = useState([]);
@@ -172,7 +171,7 @@ const PoopularCourses = () => {
                                     <span className={themeDetails.themeCourseInfoSpan}>Discount : </span>{courseExamsDetails.discount}%
                                   </p>
                                 </p>
-                                <p>
+                                <p className={themeDetails.themeCourseAmountSpan}>
                                   <span className={themeDetails.themeCourseInfoSpan}>Amount : ₹</span>
                                   {courseExamsDetails.totalPrice}/-
                                 </p>
