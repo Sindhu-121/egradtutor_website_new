@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './assets/actions/store';
 import WebSiteLandingPage from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteLandingPage/WebSiteLandingPage';
 import BranchHomePage from './EgradTutorFrontEnd/EgradTutorWebsit/BranchHomePage/BranchHomePage';
 import ExamHomePage from './EgradTutorFrontEnd/EgradTutorWebsit/ExamHomePage/ExamHomePage';
@@ -18,7 +20,7 @@ import StudentRegistrationPage from './EgradTutorFrontEnd/EgradTutorWebsit/Stude
 import PasswordChangeForm from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/PasswordChangeForm';
 import SuperAdminLogin from './Login/SuperAdminLogin';
 import UserDashboard from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/UserDashboard ';
-
+import PrivateRoute from './Login/PrivateRoute';
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -37,12 +39,13 @@ function App() {
 
   return (
     <ThemeProvider>
-        <div>
-          {isAdmin && (
-            <button onClick={toggleEditMode}>
-              {isEditMode ? 'Disable Edit' : 'Enable Edit'}
-            </button>
-          )}
+      <div>
+        {isAdmin && (
+          <button onClick={toggleEditMode}>
+            {isEditMode ? 'Disable Edit' : 'Enable Edit'}
+          </button>
+        )}
+        <Provider store={store}>
           <Router>
             <Routes>
               <Route path="/userloginn" element={<Login />} />
@@ -63,10 +66,13 @@ function App() {
               <Route path="/Registation" element={<StudentRegistrationPage />} />
               <Route path="/login/:userId" element={<PasswordChangeForm />} />
 
-              <Route path="/user-dashboard/:userId" element={<UserDashboard />} />
+              <Route path="/user-dashboard/:userId" element={<PrivateRoute>
+                <UserDashboard />
+              </PrivateRoute>} />
             </Routes>
           </Router>
-        </div>
+        </Provider>
+      </div>
     </ThemeProvider>
   );
 }
