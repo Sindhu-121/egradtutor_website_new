@@ -374,14 +374,12 @@ height: 100%;
 
 
 /* ***************{styles for "BranchHome OurCourses" in OurCourses.jsx} ****************************************************************** */
-.wrapper.ten {
-    /* background-color: #0e2839; */
-}
+
 .SPAN{
     margin-left: 10px;
 }
 .bounce {
-    font-size: 2rem;
+    font-size: 2.5rem;
     width: 100%;
     margin: 3rem auto;
     display: inline-flex;
@@ -390,29 +388,23 @@ height: 100%;
 }
 .bounce span {
     display: inline-flex;
-    color: #120eeb;
+    color: #3a8fe7;
     font-family: "Play", sans-serif;
     animation: bounce 1s infinite;
 }
 
 
-.t1CoursesHeadding{
-/* background-color: red; */
-width: 100%;
+.t1CoursesHeadding {
+    /* background-color: red; */
+    width: 100%;
+    padding-bottom: 20px;
 }
 
 
-/* .t1CoursesHeadding #Our_Courses_heading {
-    border-radius: 20px;
-    color: black;
-    margin-top: 20px;
-    font-size: 30px;
-    margin-bottom: 0px;
+.t1Features svg{
+font-size: 27px;
+margin-right: 2px;
 }
- */
-
-
-
 
 
 .t1ExtraPCForFeatures{
@@ -430,11 +422,10 @@ width: 100%;
 .t1CoursesUl{
 color: black;
 margin: 0 auto;
-background-color: azure;
-border: 1px solid green;
+
 }
 
-.t1CoursesUl:hover{
+.t1CourseLi:hover{
     border: 2px dashed green;
 }
 
@@ -443,6 +434,10 @@ color: rgb(14, 15, 15);
 display: flex;
 flex-direction: column;
 width: 100%;
+padding: 10px;
+border: 2px solid green;
+background-color: azure;
+margin-bottom: 20px;
 }
 
 .t1CoursePortalNameImageContainer{
@@ -459,7 +454,7 @@ color: blue;
 .t1PortalName {
     border-radius: 20px;
     height: 50px;
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -503,6 +498,11 @@ color: blue;
         height: 60px;
         align-items: center;
         justify-content: start;
+    }
+
+    .t1FeaturesHeading svg path{
+margin-left: 20px;
+background-color: red;
     }
 
 .t1ArrowWithFeatures{
