@@ -12,6 +12,7 @@ import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import '../../../../styles/Faqs/Default_FAQS.css';
 import Footer from "../../Footer/Footer";
+import { IoMdAdd } from "react-icons/io";
 
 const FAQ = () => {
   const [faqs, setFaqs] = useState([]);
@@ -101,7 +102,11 @@ const FAQ = () => {
           {faqs.map((faq) => (
         <div key={faq.faq_id} className={`FaqData ${themeDetails.FaqData}`}>
           <h3 id="faq_title" onClick={() => toggleAnswer(faq.faq_id)}>
-            {faq.faq_questions}
+            {faq.faq_questions} 
+            <div>
+            <IoMdAdd />
+            </div>
+       
           </h3>
           <p
             id={`faq_ans_${faq.faq_id}`}
