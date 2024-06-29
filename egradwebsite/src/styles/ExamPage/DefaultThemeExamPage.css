@@ -61,7 +61,7 @@
 
 .Ug_examsPage_Container.themeExamPageHeaderContainer img, svg {
     vertical-align: middle;
-    margin: 10px;
+    /* margin: 10px; */
 }
  
 .exampage_heading.themeExamPageHeaderHeading h1{
