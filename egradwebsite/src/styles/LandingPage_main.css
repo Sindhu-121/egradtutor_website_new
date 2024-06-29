@@ -11,8 +11,9 @@
   position: relative;
   .Newlandingpage_logocontainer {
     width: 100%;
-    /* border: 1px solid red; */
-    /* padding: 0.9rem 0; */
+    top: 0px;
+    position: fixed;
+    background-color: white;
     .Newlandingpage_logosubcontainer {
       width: 80%;
       margin: 0 auto;

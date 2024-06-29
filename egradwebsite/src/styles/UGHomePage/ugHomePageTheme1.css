@@ -17,6 +17,10 @@
 .t1UgHeaderLogoImg{
 
 }
+
+.t1UgDivLinksOfHeader li {
+    border: none !important;
+}
 .t1UgDivLinksOfHeader {
     display: flex;
     align-items: center;

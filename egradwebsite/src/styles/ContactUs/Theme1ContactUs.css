@@ -50,6 +50,11 @@
     width: 50%;
     justify-content: start;
     flex-direction: column;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 11px -9px 3px #efd0c1;
+    margin-top:3rem;
+    height: 30%;
 }
 
 .t1ContactUsFormContainer {
