@@ -213,7 +213,10 @@ const JSONClasses = {
     themeLogoImgC: "themeLogoImgCDefault",
     logoC: "logoCDefault",
     CoursePageItemsContainer: "CoursePageItemsContainerDefault",
+    themeCourseAmountSpan:"themeCourseAmountSpanDefault",
   },
+
+  
   "Theme-1": {
     id: "themeOneId",
     themeHeaderColor: "t1HeaderColor",

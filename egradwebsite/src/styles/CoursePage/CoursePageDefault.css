@@ -1,0 +1,48 @@
+.CoursePage_header_Container.CoursePageHeaderContainerDefault {
+    background-color: rgb(19, 170, 230);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+        padding: 3rem 4rem;
+}
+.logo_Img_container.themeLogoImgCDefault img {
+    width:225px;
+}
+
+img.defaultLogoImg::before {
+    left: auto;
+    right: 0;
+    top: 0px;
+    content: "";
+    z-index: -1;
+    width: 1000%;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    transform: skew(-25deg);
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.img-container {
+    position: relative; /* Required to position the pseudo-element absolutely */
+}
+.CoursePageItemsContainer.CoursePageItemsContainerDefault ul {
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+}
+.CoursePageItemsContainer.CoursePageItemsContainerDefault a {
+    color: white !important;
+    text-transform: uppercase !important;
+    font-weight: bold;
+}
+
+.whiteCOURSES h2 {
+    color:black;
+}
+.whiteCOURSES span {
+    color:yellow;
+}

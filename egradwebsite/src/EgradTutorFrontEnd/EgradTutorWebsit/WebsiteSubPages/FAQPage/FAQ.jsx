@@ -14,6 +14,7 @@ import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import '../../../../styles/Faqs/Default_FAQS.css';
 import '../../../../styles/Theme1LinksPage.css';
 import Footer from "../../Footer/Footer";
+import { IoMdAdd } from "react-icons/io";
 
 const FAQ = () => {
   const [faqs, setFaqs] = useState([]);

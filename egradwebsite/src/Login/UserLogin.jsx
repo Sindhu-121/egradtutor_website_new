@@ -1,35 +1,24 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../assets/actions/authActions';
 
 const UserLogin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log('Login form submitted with:', { email, password });
 
     try {
-      const response = await axios.post('http://localhost:5001/Login/login', { email, password });
-      const { token, role } = response.data;
-      // console.log('Login successful:', { token, role });
-
-      localStorage.setItem('token', token);
-      
-      // Navigate based on role
+      const { user_Id, role } = await dispatch(loginUser(email, password));
       if (role === 'User') {
-        // console.log('Navigating to user dashboard');
-        navigate('/user-dashboard');
-      } else if (role === 'Admin') {
-        // console.log('Admin access is not allowed on this page');
-        alert('You dont have access to this page');
-      } else if (role === 'SuperAdmin') {
-        // console.log('Super Admin access is not allowed on this page');
-        alert('You dont have access to this page');
+        navigate(`/user-dashboard/${user_Id}`);
+      } else if (role === 'Admin' || role === 'SuperAdmin') {
+        alert('You don\'t have access to this page');
       } else {
-        console.log('Unauthorized role:', role);
         alert('Unauthorized');
       }
     } catch (error) {

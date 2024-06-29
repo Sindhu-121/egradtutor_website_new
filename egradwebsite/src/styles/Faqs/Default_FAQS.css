@@ -17,8 +17,24 @@
     padding-top:0px;
 }
 .FaqData.FaqDataDefault h3 {
-    background-color: black;
-    color: white;
-    font-size: 18px;
+        background-color: #000;
+        color: #fff;
+        text-align: justify;
+        font-size: 20px;
+        padding: 10px;
+}
+h3#faq_title {
+    display: flex;
+    justify-content: space-between;
+}
+.FaqData.FaqDataDefault p {
+    border-style: solid;
+    border-width: 1.5px;
+    border-top: none;
+    box-shadow: 0 5px 5px rgba(0,0,0,.5);
+    color: #000;
+    height: auto;
+    margin-top: 2px;
     padding: 10px;
+    transition: all 1s;
 }

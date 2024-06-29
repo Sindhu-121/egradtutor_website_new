@@ -5,3 +5,16 @@
 .whyChooseUsImg img{
 width: 100%;
 }
+.courseITS{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rebeccapurple;
+}
+.tabImageDiv{
+    height: 200px;
+    width: 200px;
+}
+.tabImageDiv img{
+    width: 100%;
+}
