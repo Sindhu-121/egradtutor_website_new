@@ -945,3 +945,25 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
         text-align: left;
     }
 }
+
+
+/* Links page css */
+
+.LinksDataContainer.LinksDataContainerDefault {
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    padding: 2rem;
+}
+
+.LinksDataContainer.LinksDataContainerDefault strong {
+    color: #08a4e3;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.LinkPage_footer-content__EHAOJ ul li {
+    list-style-type: disc;
+    /* color: #555; */
+    font-size: 16px;
+    font-weight: 600;
+}
