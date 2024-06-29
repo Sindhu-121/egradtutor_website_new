@@ -134,6 +134,7 @@ const JSONClasses = {
       "themeFooterCopywriteContentContainerDefault",
 
     themeFooterCopywriteContent: "themeFooterCopywriteContentDefault",
+    themeFooterSMIcons:"themeFooterSMIconsDefault",
 
     // our courses
     themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
@@ -216,7 +217,7 @@ const JSONClasses = {
     themeCourseAmountSpan:"themeCourseAmountSpanDefault",
   },
 
-  
+
   "Theme-1": {
     id: "themeOneId",
     themeHeaderColor: "t1HeaderColor",
