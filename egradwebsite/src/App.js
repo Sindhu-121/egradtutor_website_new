@@ -6,7 +6,6 @@ import ExamHomePage from './EgradTutorFrontEnd/EgradTutorWebsit/ExamHomePage/Exa
 import { ThemeProvider } from './ThemesFolder/ThemeContext/Context';
 import AboutUs from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/AboutUsPage/AboutUs';
 import ContactUs from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/ContactUs/ContactUs';
-
 import Login from './Login/Login';
 import AdminLogin from './Login/AdminLogin';
 import Register from './Login/Register';
@@ -14,11 +13,12 @@ import UgadminHome from './Login/UgadminHome';
 import LinkPage from './EgradTutorFrontEnd/EgradTutorWebsit/Footer/LinkPage';
 import FAQ from './EgradTutorFrontEnd/EgradTutorWebsit/WebsiteSubPages/FAQPage/FAQ';
 import CoursePage from './EgradTutorFrontEnd/EgradTutorWebsit/CoursePages/CoursePage';
-
 import UserLogin from './Login/UserLogin';
 import StudentRegistrationPage from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/StudentRegistationPage';
-import PasswordChangeForm from '../../egradwebsite/src/EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/PasswordChangeForm';
+import PasswordChangeForm from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/PasswordChangeForm';
 import SuperAdminLogin from './Login/SuperAdminLogin';
+import UserDashboard from './EgradTutorFrontEnd/EgradTutorWebsit/StudentDashbord/UserDashboard ';
+
 
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
@@ -37,42 +37,36 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div>
-        {isAdmin && (
-          <button onClick={toggleEditMode}>
-            {isEditMode ? 'Disable Edit' : 'Enable Edit'}
-          </button>
-        )}
-        <Router>
-          <Routes>
-            <Route path="/userloginn" element={<Login />} />
-            <Route path="/adminlogin" element={<AdminLogin />} />
-            <Route path="/Register" element={<Register />} />
-            <Route path="/UgadminHome" element={<UgadminHome />} />
-            <Route path="/" element={<WebSiteLandingPage isEditMode={isEditMode} />} />
-            <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage isEditMode={isEditMode} />} />
+        <div>
+          {isAdmin && (
+            <button onClick={toggleEditMode}>
+              {isEditMode ? 'Disable Edit' : 'Enable Edit'}
+            </button>
+          )}
+          <Router>
+            <Routes>
+              <Route path="/userloginn" element={<Login />} />
+              <Route path="/adminlogin" element={<AdminLogin />} />
+              <Route path="/Register" element={<Register />} />
+              <Route path="/UgadminHome" element={<UgadminHome />} />
+              <Route path="/" element={<WebSiteLandingPage isEditMode={isEditMode} />} />
+              <Route path="/BranchHomePage/:Branch_Id" element={<BranchHomePage isEditMode={isEditMode} />} />
+              <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
+              <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />} />
+              <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
+              <Route path="/ContactUs" element={<ContactUs />} />
+              <Route path="/Faq" element={<FAQ />} />
+              <Route path="/linkpage/:Link_Id" element={<LinkPage />} />
+              {/* New Login System */}
+              <Route path="/UserLogin" element={<UserLogin />} />
+              <Route path="/SuperAdminLogin" element={<SuperAdminLogin />} />
+              <Route path="/Registation" element={<StudentRegistrationPage />} />
+              <Route path="/login/:userId" element={<PasswordChangeForm />} />
 
-
-            <Route path="/ExamHomePage/:EntranceExams_Id" element={<ExamHomePage isEditMode={isEditMode} />} />
-
-            <Route path="/CoursePage/:Branch_Id/:Portale_Id" element={<CoursePage isEditMode={isEditMode} />} />
-
-            <Route path="/AboutUs" element={<AboutUs isEditMode={isEditMode} />} />
-            <Route path="/ContactUs" element={<ContactUs />} />
-            <Route path="/Faq" element={<FAQ />} />
-            <Route path="/linkpage/:Link_Id" element={<LinkPage />} />
-
-            {/* New Login System */}
-            <Route path="/UserLogin" element={<UserLogin/>}/>
-            <Route path="/adminlogin" element={<AdminLogin />} />
-            <Route path="/SuperAdminLogin" element={<SuperAdminLogin/>} />
-
-            <Route path="/Registation" element={<StudentRegistrationPage/>}/>
-            <Route path="/login/:userId" element={<PasswordChangeForm />} />
-
-          </Routes>
-        </Router>
-      </div>
+              <Route path="/user-dashboard/:userId" element={<UserDashboard />} />
+            </Routes>
+          </Router>
+        </div>
     </ThemeProvider>
   );
 }
