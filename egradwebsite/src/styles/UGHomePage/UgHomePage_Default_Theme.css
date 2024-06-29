@@ -10,6 +10,21 @@
     width: 80%;
 }
 
+
+.menu-link.mobileMenuLink.themeUgDivLinksOfHeaderDefault {
+    align-items: center;
+    animation: mobile_menu .4s linear alternate forwards;
+    background: #00000067;
+    display: flex;
+    height: 100%;
+    /* justify-content: center; */
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50%;
+}
+
+
  
 .themeUgDivLinksOfHeaderDefault {
     display: flex;
@@ -245,7 +260,7 @@ li.defaultCourseLi {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background: #e3f2fd;
+    background: #e2f7fb;
     margin: 15px;
     border: 1px solid black; /* Updated border property */
     padding:20px;
@@ -373,12 +388,7 @@ ul.defaultCoursesUl li:hover {
     .Ug_header_logoIMG img {
         width: 145px;
     }
-    .themeUgDivLinksOfHeaderDefault {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 1rem;
-    }
+  
 
 
     .navItemsContainer.themeUgNavContainerDefault {
@@ -607,6 +617,14 @@ ul.defaultCoursesUl li:hover {
     font-weight: bold;
     text-decoration: none;
     font-size: 13px;
+}
+.menu-link.mobileMenuLink.themeUgDivLinksOfHeaderDefault a {
+    align-items: center;
+    background: transparent;
+    position: relative;
+    line-height: 6rem;
+    color:white;
+    font-size:15px;
 }
 }
 @media (max-width:1114px) {
@@ -926,4 +944,26 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
         width: 23rem;
         text-align: left;
     }
+}
+
+
+/* Links page css */
+
+.LinksDataContainer.LinksDataContainerDefault {
+    background-color: white;
+    box-shadow: 1px 1px 10px black;
+    padding: 2rem;
+}
+
+.LinksDataContainer.LinksDataContainerDefault strong {
+    color: #08a4e3;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.LinkPage_footer-content__EHAOJ ul li {
+    list-style-type: disc;
+    /* color: #555; */
+    font-size: 16px;
+    font-weight: 600;
 }
