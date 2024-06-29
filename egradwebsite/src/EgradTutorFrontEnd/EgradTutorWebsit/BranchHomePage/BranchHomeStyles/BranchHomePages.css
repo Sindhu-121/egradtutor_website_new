@@ -374,7 +374,26 @@ height: 100%;
 
 
 /* ***************{styles for "BranchHome OurCourses" in OurCourses.jsx} ****************************************************************** */
-
+.wrapper.ten {
+    /* background-color: #0e2839; */
+}
+.SPAN{
+    margin-left: 10px;
+}
+.bounce {
+    font-size: 2rem;
+    width: 100%;
+    margin: 3rem auto;
+    display: inline-flex;
+    justify-content: center;
+    -webkit-box-reflect: below -20px linear-gradient(transparent, #211e1e2e);
+}
+.bounce span {
+    display: inline-flex;
+    color: #120eeb;
+    font-family: "Play", sans-serif;
+    animation: bounce 1s infinite;
+}
 
 
 .t1CoursesHeadding{
@@ -383,14 +402,14 @@ width: 100%;
 }
 
 
-.t1CoursesHeadding #Our_Courses_heading {
+/* .t1CoursesHeadding #Our_Courses_heading {
     border-radius: 20px;
     color: black;
     margin-top: 20px;
     font-size: 30px;
     margin-bottom: 0px;
 }
-
+ */
 
 
 
