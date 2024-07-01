@@ -195,12 +195,10 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
   console.log(themeDetails, "mapppping from json....")
   return (
     <div>
-      {/* LandingPageExamdataEdit */}
       {enableButton === 'Enable Edit' ?
         <button>Editing Button..........</button>
         : null}
 
-      {/* EXAM IMAGE UPLOAD */}
       {type === "Upload Exam Image" &&
         <div>
           <h2>Upload Exam Image</h2>
@@ -231,7 +229,8 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
           </ul>
         </div>
       }
-      {/* EXAM IMage upload END */}
+
+      {type === "Add/Edit Exams" &&  
       <div>
         {branches.map((branch) => (
           <>
@@ -309,8 +308,8 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
           </div>
         )}
       </div>
-
-      {branches.map((branch) => (
+}
+      {/* {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
           <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
           <button onClick={() => handleEditClick(branch)}>
@@ -324,7 +323,7 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
           </button>
 
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

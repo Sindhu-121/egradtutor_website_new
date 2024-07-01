@@ -204,7 +204,7 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
 
     {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
-          <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
+          <button onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</button>
           <button onClick={() => handleEditClick(branch)}>
             <LiaEditSolid />
             Edit
