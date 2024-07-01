@@ -973,6 +973,16 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
     font-weight: 600;
 }
 
+.themeFooterSMIconsDefault {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20rem;
+}
+.themeFooterSMIconsDefault a {
+    color: white;
+    font-size: 2rem;
+    margin:1.8rem;
+}
 
 /* responsive */
 @media(max-width:430px) {

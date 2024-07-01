@@ -485,8 +485,18 @@ const Footer = ({
                   )
                 )}
               </div>
+           
+
 
             </div>
+
+
+            <div className={`${themeDetails.themeFooterSMIcons}`}>
+             <Link to='/'> <FaFacebook /></Link>
+             <Link> <GrInstagram /></Link>
+             <Link><SiYoutube /></Link>
+             <Link><ImLinkedin /></Link>
+              </div>
 
             <div className={`Footer_Copywrite_Content_Container ${themeDetails.themeFooterCopywriteContentContainer}`}>
 
