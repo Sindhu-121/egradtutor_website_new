@@ -51,7 +51,7 @@ img.t1LogoImg {
 .t1LandingParentContainer {
     width: 100%;
     background-position: center;
-    background-color: #fff5d75c;
+    background-color: #b2b2e7d9;
     justify-content: end;
     align-items: center;
     /* background-image: url('../Imgs/DeWatermark.ai_1718342258588.png'); */
@@ -59,20 +59,18 @@ img.t1LogoImg {
     background-position: inherit;
     background-repeat: no-repeat;
     display: flex;
-    height:47vh;
+    height: 35vh;
+    background: linear-gradient(to right, #a8e6cf57, #ffcc5c52);
 }
  
  
 .landing_img_div.t1LCapImgDiv img {
     background: #fff;
-    box-shadow: -1px 1px 8px 3px #328990e6;
-    max-width: 310px;
+    box-shadow: 0px 1px 16px 0px #328990e6;
+    max-width: 200px;
     margin-right: 2rem;
     max-height: 310px;
-} 
- 
-
-
+}
 .t1CapTextContainer {
     display: flex;
     flex-direction: column;
@@ -203,7 +201,7 @@ img.t1LogoImg {
 
 .theme1welcomecontainer {
     /* padding: 10px; */
-    background: aliceblue;
+    background: #e7e7f7;
 }
 
 
@@ -235,23 +233,27 @@ img.t1LogoImg {
     justify-content: space-evenly;
 }
 
+.t1UgAndPgButtons a svg{
+    margin-right: 10px;
+}
+
 /* For heading and image ug and pg */
 .themeInBranchBox {
     display: flex;
-    background-color: #fffbf0;
+    background-color: #e7e7f8;
     flex-direction: column;
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
     width: 90%;
     margin: 0 auto;
-    border: 1px solid rgb(156, 156, 177);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* border: 1px solid rgb(156, 156, 177); */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
     flex-direction: row-reverse;
-    border: 1px solid rgb(156, 156, 177);
+    /* border: 1px solid rgb(156, 156, 177); */
     width: 90%;
     display: flex;
     justify-content: space-between;
@@ -803,7 +805,7 @@ img.t1LogoImg {
 }
 
 .t1FooterLinksContent a:hover{
-color: rgb(215, 228, 37);
+color: rgb(245 92 106);
 }
 
 
