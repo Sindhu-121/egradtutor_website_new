@@ -12,6 +12,11 @@ import '../../../../styles/Default_landingPage_styles.css';
 import ugImg from '../../../../styles/Girl.png';
 import women_img from "../../../../styles/women_image.png";
 import { FcGraduationCap } from "react-icons/fc";
+import { MdFileUpload } from "react-icons/md";
+import { LiaEditSolid } from "react-icons/lia";
+import { IoMdAddCircleOutline } from "react-icons/io";
+
+
 
 const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
   const [image, setImage] = useState(null);
@@ -21,7 +26,13 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
   const themeFromContext = useContext(ThemeContext);
   const themeColor = themeFromContext[0]?.current_theme;
   const themeDetails = JSONClasses[themeColor] || [];
+  const [openAddExamForm, setOpenAddExamForm] = useState(false);
 
+
+  const OpenAddExamForm = (branchBranch_Id) => {
+    console.log(branchBranch_Id);
+    setOpenAddExamForm(branchBranch_Id); // Set the state to the branch's ID
+  };
   // In the page that needs to be refreshed
   const refreshChannel = new BroadcastChannel("refresh_channel");
   // Listen for messages from other pages
@@ -30,6 +41,20 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
       window.location.reload(); // Reload the page
     }
   };
+  
+  const [openUgExamImageUpload, setOpenUgExamImageUpload] = useState(false);
+  const OpenExamImageUplaod = () => {
+    setOpenUgExamImageUpload(true);
+  }
+
+  const handleEditClick = (branch) => {
+    setSelectedBranch(branch);
+    setShowPopup(true);
+  };
+
+  const [selectedBranch, setSelectedBranch] = useState(null);
+  const [showPopup, setShowPopup] = useState(false);
+
 
   // fetching the main header logo image
   const fetchImage = async () => {
@@ -161,7 +186,6 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
               <div className={`${themeDetails.themeLanding_branch_box_btns}`}>
 
                 <ul >
-
                   {branch.EntranceExams.slice(0, 4).map((exam) => (
                     <li key={exam.EntranceExams_Id} className={`${themeDetails.themeLanding_branch_box_li_buttons}`}>
                       <Link to={`/ExamHomePage/${exam.EntranceExams_Id}`}>
@@ -176,6 +200,23 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
         ))}
       </div>
     </div>
+
+
+    {branches.map((branch) => (
+        <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
+          <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
+          <button onClick={() => handleEditClick(branch)}>
+            <LiaEditSolid />
+            Edit
+          </button>
+
+          <button onClick={() => OpenAddExamForm(branch.Branch_Id)}>
+            <IoMdAddCircleOutline />
+            Add
+          </button>
+
+        </div>
+      ))}
     {/* =======================Exam cards ends here============================== */}
 
   </div>

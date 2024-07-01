@@ -84,11 +84,15 @@ const ExamInfo = ({ isEditMode }) => {
     return visibleSection === section ? "-" : "+";
   };
 
+
+  
   const themeFromContext = useContext(ThemeContext);
   const themeColor = themeFromContext[0]?.current_theme;
   console.log(themeColor, "this is the theme json classesssssss");
   const themeDetails = JSONClasses[themeColor] || [];
   console.log(themeDetails, "mapppping from json....");
+
+
 
   return (
     <div

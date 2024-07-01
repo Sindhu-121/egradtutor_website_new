@@ -297,7 +297,7 @@ const FooterEdit = ({ type }) => {
         try {
             console.log("Deleting item with ID:", content_id);
             await axios.delete(
-                `${BASE_URL}/FooterPage/landingfooterContentDataTwo/${content_id}`
+                `${BASE_URL}/FooterEdit/landingfooterContentDataTwo/${content_id}`
             );
             console.log("Item deleted");
             setDataTwo((prevData) =>
@@ -314,7 +314,7 @@ const FooterEdit = ({ type }) => {
     const handleEditSave = async (content_id, editedContent, setDataTwo) => {
         try {
             const response = await axios.put(
-                `${BASE_URL}/FooterPage/landingfooterContentDataOneUpdate/${content_id}`,
+                `${BASE_URL}/FooterEdit/landingfooterContentDataOneUpdate/${content_id}`,
                 { content_name: editedContent }
             );
  
@@ -344,7 +344,7 @@ const FooterEdit = ({ type }) => {
         try {
             console.log("Deleting item with ID:", content_id);
             const response = await axios.delete(
-                `${BASE_URL}/FooterPage/landingfooterContentDataThree/${content_id}`
+                `${BASE_URL}/FooterEdit/landingfooterContentDataThree/${content_id}`
             );
  
             console.log("Success:", response.data);
@@ -374,7 +374,7 @@ const FooterEdit = ({ type }) => {
     ) => {
         try {
             const response = await axios.put(
-                `${BASE_URL}/FooterPage/landingfooterContentDataThreeUpdate/${content_id}`,
+                `${BASE_URL}/FooterEdit/landingfooterContentDataThreeUpdate/${content_id}`,
                 { content_name: editedContent }
             );
  

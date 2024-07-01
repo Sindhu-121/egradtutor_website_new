@@ -8,7 +8,7 @@ import { MdFileUpload } from "react-icons/md";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import BASE_URL from "../../../../apiConfig";
-const LandingPageExamdataEdit = ({ enableButton }) => {
+const LandingPageExamdataEdit = ({ enableButton, type }) => {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [examImageFile, setExamImageFile] = useState(null);
   const [examBranches, setExamBranches] = useState([]);
@@ -201,7 +201,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
         : null}
 
       {/* EXAM IMAGE UPLOAD */}
-      {openUgExamImageUpload &&
+      {type === "Upload Exam Image" &&
         <div>
           <h2>Upload Exam Image</h2>
           <form onSubmit={handleSubmitExamImage}>
