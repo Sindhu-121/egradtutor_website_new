@@ -892,7 +892,12 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
     font-size:1.5rem;
     font-weight:bold;
 }
-
+.AboutUsImgContainer.AboutUsImgContainerDefault a {
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 1rem;
+}
 /* Responsive for Contact Us Page */
 
 @media (max-width: 600px) {
@@ -981,7 +986,9 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
 .themeFooterSMIconsDefault a {
     color: white;
     font-size: 2rem;
-    margin:1.8rem;
+    margin-right:1.8rem;
+    margin-left: 1.8rem;
+    margin-bottom: 10px;
 }
 
 /* responsive */

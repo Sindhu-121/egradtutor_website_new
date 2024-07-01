@@ -46,6 +46,7 @@
     color: black;
     font-weight: bold;
     /* margin-right: -11px; */
+    gap:1rem;
 }
  
 .Ug_examsPage_Container.themeExamPageHeaderContainer :hover{
