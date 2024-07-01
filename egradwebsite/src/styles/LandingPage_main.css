@@ -12,7 +12,7 @@
   .Newlandingpage_logocontainer {
     width: 100%;
     top: 0px;
-    position: fixed;
+    /* position: fixed; */
     background-color: white;
     .Newlandingpage_logosubcontainer {
       width: 80%;
