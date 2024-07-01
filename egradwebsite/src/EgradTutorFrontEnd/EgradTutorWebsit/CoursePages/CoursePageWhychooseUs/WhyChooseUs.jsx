@@ -8,8 +8,9 @@ import '../CourseTabButtonComponents/WhyChooseUsComponent'
 const WhyChooseUs = ({ isEditMode }) => {
   const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
   const [showWhyChooseUsForm, setShowWhyChooseUsForm] = useState(false);
-  const[showTabButtonForm,setShowTabButtonForm]=useState(false);
-
+  const [showTabButtonForm, setShowTabButtonForm] = useState(false);
+  const [showTabDetailsEditForm, setShowTabDetailsEditForm]=useState(false)
+  const [selectedTabId, setSelectedTabId] = useState(null);
   const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
   const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
   const [selectedTabContent, setSelectedTabContent] = useState("")
@@ -65,27 +66,29 @@ const WhyChooseUs = ({ isEditMode }) => {
   const handleTabCClick = (totalTabButtonObj) => {
     console.log(totalTabButtonObj)
     setSelectedTabContent(totalTabButtonObj)
+    setSelectedTabId(totalTabButtonObj.course_tab_id);
   }
-// for default tab displaying
-useEffect(()=>{
-  if(courseTabButtonNames.length>0){
-    const firstTab=courseTabButtonNames[0];
-    console.log(firstTab,"This is the first tab")
-    setSelectedTabContent(firstTab)
-  }
-},[courseTabButtonNames])
+  // for default tab displaying
+  useEffect(() => {
+    if (courseTabButtonNames.length > 0) {
+      const firstTab = courseTabButtonNames[0];
+      console.log(firstTab, "This is the first tab")
+      setSelectedTabContent(firstTab)
+    }
+  }, [courseTabButtonNames])
 
   return (
-    <div>
-      {isEditMode && (
+    <div >
+      <div className='tabsDiv'>
+        {/* {isEditMode && (
         <div>
           <button onClick={() => setShowWhyChooseUsForm(!showWhyChooseUsForm)}>
             {showWhyChooseUsForm ? "Close" : "Add WhyChooseUs"}
           </button>
           {showWhyChooseUsForm && <WhychooseUsEdit type="WhyChooseUs" />}
         </div>
-      )}
-      <ul>
+      )} */}
+        {/* <ul>
         {WhyChooseUsitems.map((WhyChooseUsitem) => (
           <li key={WhyChooseUsitem.WhyChooseUsId} className='whyChooseUsLi'>
             <div className='whyChooseUsImg'>
@@ -95,35 +98,48 @@ useEffect(()=>{
             <p>{WhyChooseUsitem.WhyChooseUsDiscreption}</p>
           </li>
         ))}
-      </ul>
+      </ul> */}
+        {isEditMode && (
+          <div>
+            <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
+              {showTabButtonForm ? "Close" : "AddTabsForPortals"}
+            </button>
+            {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
+          </div>
+        )}
+        <ul className='tabButtonUl'>
+          {courseTabButtonNames.map((tabButtons) => (
+            <>
+              <li key={tabButtons.courseTabId} >
+                <div >
+                  <button onClick={() => handleTabCClick(tabButtons)}
+                    className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : ''}
+
+                  >{tabButtons.course_tab_title}</button>
+                </div>
+              </li>
+            </>
+          ))}
+        </ul>
+        {selectedTabContent && (
+          <div className='tabDetailsDiv'>
+            <div className='tabImageDiv activatedTabContent' >
+              {/* <div className=''> */}
+              <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+              {selectedTabContent.course_tab_text}
+              {/* </div> */}
+            </div>
+          </div>
+        )}
+      </div>
       {isEditMode &&(
         <div>
-          <button onClick={()=>setShowTabButtonForm(!showTabButtonForm)}>
-            {showTabButtonForm?"Close":"AddTabsForPortals"}
+          <button onClick={()=>setShowTabButtonForm(!showTabDetailsEditForm)}>
+            {showTabDetailsEditForm?"Close":"EditTabDetails"}
           </button>
-          {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm"/>}
+          {showTabButtonForm && <WhychooseUsEdit type="tabDetailsEditForm"/>}
         </div>
       )}
-      <ul style={{ display: "flex" }}>
-        {courseTabButtonNames.map((tabButtons) => (
-          <>
-            <li key={tabButtons.courseTabId} >
-              <div >
-                <button onClick={() => handleTabCClick(tabButtons)}>{tabButtons.course_tab_title}</button>
-              </div>
-            </li>
-          </>
-        ))}
-      </ul>
-      {selectedTabContent && (
-        <div>
-          <div className='tabImageDiv' >
-            <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
-          </div>
-          {selectedTabContent.course_tab_text}
-          </div>
-      )}
-
     </div>
 
   )

@@ -9,6 +9,7 @@ const WhychooseUsEdit = ({ type }) => {
     order: "",
     image: null,
   });
+  const [tabEditDetails, setTabEditDetails] = useState([]);
   const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
   const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
   const getCourseTabButtonNames = async () => {
@@ -186,17 +187,12 @@ const WhychooseUsEdit = ({ type }) => {
           'Content-Type': 'multipart/form-data'
         }
       });
-      // if (response.status === 200 && response.data.msg === "sent successfully") {
-      //   alert("Info posted successfully");
-      // } else {
-      //   alert("Failed to post info. Please try again.");
-      // }
-      if(response.data.exists){
-        if(window.confirm("Data already exists.Do you want to over write it?")){
+      if (response.data.exists) {
+        if (window.confirm("Data already exists.Do you want to over write it?")) {
           handleOverwriteSubmit();
         }
-        else{
-          
+        else {
+
         }
       }
     } catch (error) {
@@ -237,15 +233,19 @@ const WhychooseUsEdit = ({ type }) => {
 
     })
   }
-  // const getCourseTabButtonNames = async () => {
-  //   try {
-  //     const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails`)
-  //     setCourseTabButtonNames(response.data);
-  //     console.log(courseTabButtonNames)
-  //   } catch (error) {
-  //     console.log(error, "error while getting course tab names");
-  //   }
-  // }
+  useEffect(() => {
+    const fetchTabDetailsForEdit = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/courseTab/fetchTabDetailsForEdit`);
+        setTabEditDetails(response.data);
+        console.log(response.data, "eeeeeeeeeeeeeeeeeee");
+      } catch (error) {
+        console.error("Error fetching tab details for edit:", error);
+      }
+    };
+
+    fetchTabDetailsForEdit();
+  }, []);
   return (
     <div>
       {type === "WhyChooseUs" && (
@@ -373,10 +373,17 @@ const WhychooseUsEdit = ({ type }) => {
           </form>
         </div>
       )}
-      {type==='tabDetailsEditForm'&&(
-        <div>
-
-        </div>
+      {type === 'tabDetailsEditForm' && (
+        <form>
+          {/* div for image */}
+          <div>
+           {tabEditDetails.map(()=>(
+            <div>
+              <img src={ `data:image/png;base64,${tabEditDetails.course_tab_image}`}alt="can't get the edit img"></img>
+            </div>
+           ))}
+          </div>
+        </form>
       )}
     </div>
   );
