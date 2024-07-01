@@ -94,4 +94,14 @@ router.get("/getCourseTabButtonDetails", async (req, res) => {
   }
 });
 
+// fetching the course internal tab details
+router.get('/fetchTabDetailsForEdit',async(req,res)=>{
+    try {
+        const [rows]= await db.query('select * from  course_tab_details');
+        console.log(rows)
+        res.json(rows)
+    } catch (error) {   
+        console.log(error,"error while fetching the details of course_tab_details table ");
+    }
+})
 module.exports = router;

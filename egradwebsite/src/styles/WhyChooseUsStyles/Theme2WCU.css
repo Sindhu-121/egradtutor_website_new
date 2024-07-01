@@ -12,9 +12,34 @@ width: 100%;
     background-color: rebeccapurple;
 }
 .tabImageDiv{
-    height: 200px;
+    /* height: 230px; */
     width: 200px;
 }
 .tabImageDiv img{
     width: 100%;
 }
+.tabsDiv{
+    /* border: 1px solid black; */
+    
+}
+.selectedButton {
+    background-color: #4CAF50; /* Green */
+    color: white;
+  }
+  
+  .selectedTabContent {
+    border: 2px solid #4CAF50; /* Green border */
+    padding: 10px;
+  }
+  .activatedTabContent{
+    border:2px solid #4CAF50; ;
+  }  
+
+  .tabButtonUl{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+  }
+  .tabDetailsDiv{
+    padding-left: 2rem;
+  }
