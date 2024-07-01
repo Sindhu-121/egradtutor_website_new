@@ -7,10 +7,12 @@ import BASE_URL from "../../../../apiConfig";
 import FAQEdit from "./FAQEdit";
 import { Link } from "react-router-dom";
 import { IoHome } from "react-icons/io5";
+import { AiFillPushpin } from "react-icons/ai";
 import defaultImage from '../../../../assets/defaultImage.png';
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import '../../../../styles/Faqs/Default_FAQS.css';
+import '../../../../styles/Theme1LinksPage.css';
 import Footer from "../../Footer/Footer";
 import { IoMdAdd } from "react-icons/io";
 
@@ -21,7 +23,7 @@ const FAQ = () => {
   const [showFaqForm, setShowFaqForm] = useState(false);
   const themeFromContext = useContext(ThemeContext);
 
-  
+
 
   useEffect(() => {
     fetchFaqs();
@@ -70,60 +72,56 @@ const FAQ = () => {
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
+  const items = document.querySelectorAll(".accordion button");
 
+  
   return (
-    <div  className={`FaqMainContainer ${themeDetails.FaqMainContainer}`}>
-      <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`}>
-        {image ? (
-          <Link to="/">
-            <img
-              src={image}
-              alt="Current"
-            /></Link>
-        ) : (
-          <img src={defaultImage} alt="Default" />
-        )}
+      <div className={`FaqMainContainer ${themeDetails.FaqMainContainer}`}>
+        <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`}>
+          {image ? (
+            <Link to="/">
+              <img
+                src={image}
+                alt="Current"
+              /></Link>
+          ) : (
+            <img src={defaultImage} alt="Default" />
+          )}
 
-        <span>
-          <Link to={`/`}><IoHome />Home</Link>
-        </span>
-      </div>
-      <div className={`FaqSubContainer ${themeDetails.FaqSubContainer}`}>
-        <h1>FREQUENTLY ASKED QUESTIONS</h1>
+          <span>
+            <Link to={`/`}><IoHome />Home</Link>
+          </span>
+        </div>
+        <div className={`FaqSubContainer ${themeDetails.FaqSubContainer}`}>
+          <h1>FREQUENTLY ASKED QUESTIONS</h1>
+          <button onClick={() => setShowFaqForm(!showFaqForm)}>
+            {showFaqForm ? "Close FAQ Form" : "Add FAQ"}
+          </button>
+          {/* <button onClick={openAddForm} className="add-clicked"><FaRegPenToSquare /></button> */}
 
-
-        <button onClick={() => setShowFaqForm(!showFaqForm)}>
-          {showFaqForm ? "Close FAQ Form" : "Add FAQ"}
-        </button>
-        {/* <button onClick={openAddForm} className="add-clicked"><FaRegPenToSquare /></button> */}
-
-        <div  className={`FaqDataContainer ${themeDetails.FaqDataContainer}`}>
-          {showFaqForm && <FAQEdit type="aboutFaq" />}
-          {faqs.map((faq) => (
-        <div key={faq.faq_id} className={`FaqData ${themeDetails.FaqData}`}>
-          <h3 id="faq_title" onClick={() => toggleAnswer(faq.faq_id)}>
-            {faq.faq_questions} 
-            <div>
-            <IoMdAdd />
-            </div>
+          <div className={`FaqDataContainer ${themeDetails.FaqDataContainer}`}>
+            {showFaqForm && <FAQEdit type="aboutFaq" />}
+            {faqs.map((faq) => (
+              <div key={faq.faq_id} className={`FaqData ${themeDetails.FaqData}`}>
+                <h3 id="faq_title" onClick={() => toggleAnswer(faq.faq_id)}>
+                <AiFillPushpin />
+                  {faq.faq_questions}
+                </h3>
+                <p
+                  id={`faq_ans_${faq.faq_id}`}
+                  className={`faq_ans ${openFaqId === faq.faq_id ? "show" : ""}`}
+                >
+                  {faq.faq_answer}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
        
-          </h3>
-          <p
-            id={`faq_ans_${faq.faq_id}`}
-            className={`faq_ans ${openFaqId === faq.faq_id ? "show" : ""}`}
-          >
-            {faq.faq_answer}
-          </p>
-        </div>
-      ))}
-        </div>
+
+        <Footer />
       </div>
 
-      <div>
-   
-      </div>
-      <Footer />
-    </div>
   );
 };
 

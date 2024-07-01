@@ -372,8 +372,13 @@ ul.defaultCoursesUl li:hover {
     }
 }
 
-
-
+@media (max-width: 391px) {
+  .AboutUsImgContainer.AboutUsImgContainerDefault span {
+    color: #000;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
+}
 @media (max-width: 376px) {
     li.themeUgHeaderLiDefault {
       color: #fff;
@@ -966,4 +971,42 @@ form.ContactUsFormData.ContactUsFormDataDefault button {
     /* color: #555; */
     font-size: 16px;
     font-weight: 600;
+}
+
+.themeFooterSMIconsDefault {
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20rem;
+}
+.themeFooterSMIconsDefault a {
+    color: white;
+    font-size: 2rem;
+    margin:1.8rem;
+}
+
+/* responsive */
+@media(max-width:430px) {
+    .LinkPage_footer-content__EHAOJ {
+        padding: 2rem;
+    }
+}
+
+@media(max-width: 320px) {
+    .LinksDataContainer.LinksDataContainerDefault {
+        background-color: white;
+        box-shadow: 1px 1px 10px black;
+        padding: 1rem;
+    }
+}
+
+@media(max-width: 360px) {
+    .LinksDataContainer.LinksDataContainerDefault {
+        background-color: white;
+        box-shadow: 1px 1px 10px black;
+        padding: 1rem;
+    }
+    .LinkPage_footer-content__EHAOJ p {
+        color: #333;
+        font-size: 13px;
+    }
 }

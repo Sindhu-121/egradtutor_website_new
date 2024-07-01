@@ -17,6 +17,10 @@
 .t1UgHeaderLogoImg{
 
 }
+
+.t1UgDivLinksOfHeader li {
+    border: none !important;
+}
 .t1UgDivLinksOfHeader {
     display: flex;
     align-items: center;
@@ -39,7 +43,7 @@
     color: whitesmoke;
 }
 
-span {
+.t1MarqData span {
     font-style: oblique;
     font-weight: 400;
 }
@@ -110,7 +114,7 @@ span {
 
 
 .t1ExamPageHeaderHeading a {
-    background-color: #fef0f0;
+    background-color: #134659;
     border-radius: 20px;
     border: 1px solid rgb(207, 160, 160);
     padding: 10px;
@@ -121,7 +125,7 @@ span {
     justify-content: center;
     font-size: 20px;
     text-decoration: none;
-    color: black;
+    color: white;
     font-weight: bold;
 }
 

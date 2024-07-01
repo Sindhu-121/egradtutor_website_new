@@ -134,6 +134,7 @@ const JSONClasses = {
       "themeFooterCopywriteContentContainerDefault",
 
     themeFooterCopywriteContent: "themeFooterCopywriteContentDefault",
+    themeFooterSMIcons:"themeFooterSMIconsDefault",
 
     // our courses
     themeExtraPCForFeatures: "DefaultthemeExtraPCForFeatures",
@@ -216,7 +217,7 @@ const JSONClasses = {
     themeCourseAmountSpan:"themeCourseAmountSpanDefault",
   },
 
-  
+
   "Theme-1": {
     id: "themeOneId",
     themeHeaderColor: "t1HeaderColor",
@@ -278,21 +279,27 @@ const JSONClasses = {
     themeUgExploreExamsContainer: "t1UgExploreExamsContainer",
     themeUgExploreExamsSection: "t1UgExploreExamsSection",
     themeUgExploreExamsContent: "t1UgExploreExamsContent",
+
     // ug our courses part
-    themeOurCoursesContainer: "t1OurCoursesContainer",
-    themeCoursesHeadding: "t1CoursesHeadding",
-    themeCoursesSubContainer: "t1CoursesSubContainer",
-    themeCoursesUl: "t1CoursesUl",
-    themeCourseLi: "t1CourseLi",
-    themePortalName: "t1PortalName",
-    themeExamsNames: "t1ExamsNames",
-    themeCFeatures: "t1CFeatures",
-    themeFeaturesContainer: "t1FeaturesContainer",
-    themeFeatures: "t1Features",
-    themeFeatureImgC: "t1FeatureImgC",
-    themeCourseName: "t1CourseName",
-    themeFeaturesSecondContainer: "t1FeaturesSecondContainer",
-    themeFeaturesToBeRow: "t1FeaturesToBeRow",
+    themeCoursesHeaddings: "t1CoursesHeadding", 
+    themeCoursesSubContainers: "t1CoursesSubContainer",
+    themeCoursesUls: "t1CoursesUl",
+    themeCourseLis: "t1CourseLi",
+    themePortalNamess: "t1PortalName",
+    themeExamsNamess: "t1ExamsNames",
+    themeArrowWithFeaturess:"themeArrowWithFeatures",
+    themeFeaturesContainers:"t1FeaturesContainer",
+    themeFeaturesHeadings:"t1FeaturesHeading",
+        themeFeaturess: "t1Features",
+    themeFeatureImgCs: "t1FeatureImgC",
+    themeExtraPCForFeaturess: "t1ExtraPCForFeatures",
+    themeCourseNamess: "t1CourseName",
+    themeFeaturesSecondContainers: "t1FeaturesSecondContainer",
+    
+    // themeCFeatures: "t1CFeatures",
+    // themeFeaturesContainer: "t1FeaturesContainer",
+    // themeOurCoursesContainers: "t1OurCoursesContainer",
+    // themeFeaturesToBeRow: "t1FeaturesToBeRow",
 
     themeExamPageHeaderMainContainer: "t1ExamPageHeaderMainContainer",
     themeExamPageHeaderContainer: "t1ExamPageHeaderContainer",
@@ -333,7 +340,7 @@ const JSONClasses = {
     // themeFeatures: "t2Features",
     themeExamPortalImgDivInCard: "t1ExamPortalImgDivInCard",
     // extra class for theme1
-    themeExtraPCForFeatures: "t1ExtraPCForFeatures",
+  
     // exam info for exam page
 
     theme1welcomecontainer: "theme1welcomecontainer",
@@ -425,6 +432,14 @@ const JSONClasses = {
     LinksPagesMainContainer: "t1LinksPagesMainContainer",
     AboutUsImgContainer: "t1AboutUsImgContainer",
     LinksDataContainer: "t1LinksDataContainer",
+
+    // FAQ classes
+    tFaqMainContainer:"t1FaqMainContainer",
+    AboutUsImgContainer:"t1AboutUsImgContainer",
+    FaqSubContainer:"t1FaqSubContainer",
+    FaqDataContainer:"t1FaqDataContainer",
+    FaqData:"t1FaqData",
+    
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -592,6 +607,13 @@ const JSONClasses = {
     LinksPagesMainContainer: "t2LinksPa1gesMainContainer",
     AboutUsImgContainer: "t2AboutUsImgContainer",
     LinksDataContainer: "t2LinksDataContainer",
+
+        // FAQ classes
+        FaqMainContainer:"t2FaqMainContainer",
+        AboutUsImgContainer:"t2AboutUsImgContainer",
+        FaqSubContainer:"t2FaqSubContainer",
+        FaqDataContainer:"t2FaqDataContainer",
+        FaqData:"t2FaqData",
   },
 };
 
