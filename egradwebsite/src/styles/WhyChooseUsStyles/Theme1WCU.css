@@ -1,5 +1,5 @@
 .t1TabsDivMainContainer{
-background-color: red;
+/* background-color: red; */
 }
 
 .t1TabsDiv{
@@ -13,14 +13,17 @@ background-color: red;
 display: flex;
 flex-direction: row ;
 background-color: #fff;
+border: 1px solid green;
 width:100%;
+margin-bottom: 25px;
 }
 
-.t1TabButtonUl{
+.t1TabsSubContainer .t1TabButtonUl{
     display: flex;
-    width: 100px;
     flex-direction: column;
+    padding: 10px;
 }
+
 
 .t1TabImageDiv {
     width: 200px;
@@ -30,4 +33,13 @@ width:100%;
 .t1TabImageDiv img {
     width: 100%;
     height: 100%;
+}
+
+.t1TabButtonUl li{
+width: 200px;
+}
+
+.t1TabsChange button{
+    width: 200px;
+    height: 100px;
 }
