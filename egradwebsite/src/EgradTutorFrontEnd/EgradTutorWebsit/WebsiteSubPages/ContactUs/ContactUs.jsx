@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
 import Footer from "../../Footer/Footer";
+import { BsTelephoneFill } from "react-icons/bs";
 import defaultImage from '../../../../assets/defaultImage.png';
 import { Contact_Map_Data } from './Contact_map_data';
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
@@ -15,12 +16,12 @@ import { IoHome } from "react-icons/io5";
 import '../../../../styles/ContactUs/Theme1ContactUs.css'
 import { FaAddressCard } from "react-icons/fa";
 import { BsArrowUpRightCircleFill } from "react-icons/bs";
- 
+
 const ContactUs = () => {
   const [categories, setCategories] = useState([]);
   const themeFromContext = useContext(ThemeContext);
- 
- 
+
+
   const [image, setImage] = useState(null);
   const [landingFooterData, setLandingFooterData] = useState([]);
   const fetchImage = async () => {
@@ -35,11 +36,11 @@ const ContactUs = () => {
       console.error("Error fetching image:", error);
     }
   };
- 
+
   useEffect(() => {
     fetchImage();
   }, []);
- 
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -51,10 +52,10 @@ const ContactUs = () => {
         // Handle error state
       }
     };
- 
+
     fetchData();
   }, []);
- 
+
   const [formData, setFormData] = useState({
     Category_Id: '',
     Category_Name: '',
@@ -63,7 +64,7 @@ const ContactUs = () => {
     Email_Address: '',
     Message: ''
   });
- 
+
   const handleChange = (e) => {
     // If the event target is the category select dropdown
     if (e.target.name === 'Category_Id') {
@@ -86,7 +87,7 @@ const ContactUs = () => {
       });
     }
   };
- 
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -100,8 +101,8 @@ const ContactUs = () => {
       alert('Failed to add enquiry. Please try again later.');
     }
   };
- 
- 
+
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -118,14 +119,14 @@ const ContactUs = () => {
         // Handle error as needed
       }
     };
- 
+
     fetchCategories();
   }, []);
   const themeColor = themeFromContext[0]?.current_theme;
   console.log(themeColor, "this is the theme json classesssssss")
   const themeDetails = JSONClasses[themeColor] || []
   console.log(themeDetails, "mapppping from json....")
- 
+
   return (
     <>
       {themeColor === 'Theme-2' &&
@@ -182,48 +183,50 @@ const ContactUs = () => {
           <Footer />
         </div>
       }
- 
+
       {themeColor === 'Theme-1' &&
         <div className={`${themeDetails.themeContactusMainsContainer}`}>
           <ExamPageHeader />
           <div className={`ContactUsMainContainer ${themeDetails.themeContactUsSubbMainContainer}`}>
             <div className={`ContactUsContentDataContainer ${themeDetails.themeContactUsContentsDataContainer}`}>
-              <h1>CONTACT US</h1>
+              <div className="contactt_us">
+                <h1><span><BsTelephoneFill /></span>CONTACT US</h1>
+              </div>
               <div className={`ContactUsMapContainer ${themeDetails.themeContactsUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
                 <div className={`ContactUsMapData ${themeDetails.themeContactUsMapData}`} key={index}>
                   <iframe src={Contact_data.map} frameBorder="0"></iframe>
                 </div>
               ))}
               </div>
- 
- 
+
+
               <div className={` ${themeDetails.themeContactUsFormAndAdressContainer}`}>
                 <div className={`ContactUsContentContainer ${themeDetails.themeContactUsContentContainer}`}>
                   {landingFooterData.map(item => (
                     <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.themeContactUsDataContainer}`}>
                       {item.Content_id === 1 ? (
                         <h2>ADDRESS
-                        <span><FaAddressCard /></span>
+                          <span><FaAddressCard /></span>
                         </h2>
                       ) : (
-                       <p>
-                        <span>  <BsArrowUpRightCircleFill /></span>{item.content_name}</p>
+                        <p>
+                          <span>  <BsArrowUpRightCircleFill /></span>{item.content_name}</p>
                       )}
                     </div>
                   ))}
                 </div>
- 
+
                 <div className={`ContactUsFormContainer ${themeDetails.themeContactUsFormContainer}`}>
                   <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.themeContactUsFormData}`}>
                     <label htmlFor="firstName"></label>
                     <input type="text" id="firstName" name="First_Name" value={formData.First_Name} onChange={handleChange} placeholder="    First Name" className={`ContactUsFormFirstName ${themeDetails.themeContactUsFormsFirstName}`} required /><br />
- 
+
                     <label htmlFor="lastName"></label>
                     <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="   Last Name" className={`ContactUsFormLasttName ${themeDetails.themeContactUsFormsLasttName}`} required /><br />
- 
+
                     <label htmlFor="email"></label>
                     <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="   Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.themeContactsUsFormemail}`} required /><br />
- 
+
                     <label htmlFor="category"></label>
                     <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.themeContactUsFormCategory}`} required>
                       <option value="">Select a category...</option>
@@ -231,16 +234,16 @@ const ContactUs = () => {
                         <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
                       ))}
                     </select>
- 
+
                     <label htmlFor="message"></label>
                     <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="   Message" className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`} required></textarea><br />
- 
+
                     <button type="submit">Submit</button>
                   </form>
- 
+
                 </div>
               </div>
- 
+
             </div>
             <Footer />
           </div>
@@ -248,30 +251,30 @@ const ContactUs = () => {
       }
       {themeColor === 'Theme-default' &&
         <div className={`ContactUsMainContainer ${themeDetails.themeContactUsMainContainer}`}>
- 
- 
+
+
           <div className={`AboutUsImgContainer ${themeDetails.AboutUsImgContainer}`} >
             {image ? (
               <img src={image} alt="Current" />
             ) : (
               <img src={defaultImage} alt="Default" />
             )}
- 
+
             <span>
               <Link to={`/`}><IoHome />Home</Link>
             </span>
           </div>
           <h1>CONTACT US</h1>
           <div className={`ContactUsContentDataContainer ${themeDetails.ContactUsContentDataContainer}`}>
- 
- 
+
+
             <div className={`ContactUsMapContainer ${themeDetails.ContactUsMapContainer}`}>{Contact_Map_Data.map((Contact_data, index) => (
               <div className={`ContactUsMapData ${themeDetails.ContactUsMapData}`} key={index}>
                 <iframe src={Contact_data.map} frameBorder="0"></iframe>
               </div>
             ))}
             </div>
- 
+
             <div className={`ContactUsContentContainer ${themeDetails.ContactUsContentContainer}`}>
               {landingFooterData.map(item => (
                 <div key={item.Content_id} className={`ContactUsDataContainer ${themeDetails.ContactUsDataContainer}`}>
@@ -283,19 +286,19 @@ const ContactUs = () => {
                 </div>
               ))}
             </div>
- 
- 
+
+
             <div className={`ContactUsFormContainer ${themeDetails.ContactUsFormContainer}`}>
               <form onSubmit={handleSubmit} className={`ContactUsFormData ${themeDetails.ContactUsFormData}`}>
                 <label htmlFor="firstName"></label>
                 <input type="text" id="firstName" name="First_Name" value={formData.First_Name} onChange={handleChange} placeholder="First Name" className={`ContactUsFormFirstName ${themeDetails.ContactUsFormFirstName}`} required /><br />
- 
+
                 <label htmlFor="lastName"></label>
                 <input type="text" id="lastName" name="Last_Name" value={formData.Last_Name} onChange={handleChange} placeholder="Last Name" className={`ContactUsFormLasttName ${themeDetails.ContactUsFormLasttName}`} required /><br />
- 
+
                 <label htmlFor="email"></label>
                 <input type="email" id="email" name="Email_Address" value={formData.Email_Address} placeholder="Email Address" onChange={handleChange} className={`ContactUsFormemail ${themeDetails.ContactUsFormemail}`} required /><br />
- 
+
                 <label htmlFor="category"></label>
                 <select id="category" name="Category_Id" value={formData.Category_Id} onChange={handleChange} className={`ContactUsFormCategory ${themeDetails.ContactUsFormCategory}`} required>
                   <option value="">Select a category...</option>
@@ -303,25 +306,25 @@ const ContactUs = () => {
                     <option key={category.Category_Id} value={category.Category_Id} data-categoryname={category.Category_Name}>{category.Category_Name}</option>
                   ))}
                 </select>
- 
+
                 <label htmlFor="message"></label>
                 <textarea id="message" name="Message" value={formData.Message} onChange={handleChange} placeholder="Message" className={`ContactUsForMessage ${themeDetails.ContactUsForMessage}`} required></textarea><br />
- 
+
                 <button type="submit">Submit</button>
               </form>
- 
+
             </div>
- 
- 
+
+
           </div>
           <Footer />
         </div>}
- 
- 
- 
+
+
+
     </>
- 
+
   )
 }
- 
+
 export default ContactUs

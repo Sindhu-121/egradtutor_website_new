@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 const WhychooseUsEdit = ({ type }) => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
@@ -11,6 +12,9 @@ const WhychooseUsEdit = ({ type }) => {
   });
   const [tabEditDetails, setTabEditDetails] = useState([]);
   const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
+  // for editing the existing data
+  const[isEditFlag,setIsEditFlag]=useState(false);
+  const[editIdForTabs,setEditIdForTabs]=useState(false)
   const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
   const getCourseTabButtonNames = async () => {
     try {
@@ -136,7 +140,8 @@ const WhychooseUsEdit = ({ type }) => {
       );
     }
   };
-
+  const {Portale_Id}=useParams()
+  console.log(Portale_Id,"portaleIdddddddddd")
   const handleEdit = (item) => {
     setFormData({
       title: item.WhyChooseUsTitle,
@@ -173,32 +178,99 @@ const WhychooseUsEdit = ({ type }) => {
       alert("An error occurred while deleting the item");
     }
   };
+
+  // const handleTabDataSubmit = async (e) => {
+  //   e.preventDefault();
+  //   const formData = new FormData();
+  //     formData.append('coursePortaleId', tabsData.coursePortaleId);
+  //     formData.append('courseTabId', tabsData.courseTabId);
+  //     formData.append('courseTabDescription', tabsData.courseTabDescription);
+  //     formData.append('courseTabImage', tabsData.courseTabImage);
+  //   if(isEditFlag){
+  //     try {
+  //      const response= await axios.put(`${BASE_URL}/courseTab/courseTabEditData`,formData,{
+  //       headers:{
+  //         'Content-Type':'multipart/form-data',
+  //       },
+  //       method:'PUT'
+  //      })
+  //      console.log(response)
+  //     } catch (error) {
+  //       console.log("error while editing the data into the table at front end")
+  //     }
+  //   }
+  //   else{
+  //   // first when submit is clicked
+  //   try {
+      
+  //     const response = await axios.post(`${BASE_URL}/courseTab/courseTabFormData`, formData, {
+  //       headers: {
+  //         'Content-Type': 'multipart/form-data'
+  //       }
+  //     });
+  //     if (response.data.exists) {
+  //       if (window.confirm("Data already exists.Do you want to over write it?")) {
+  //         handleOverwriteSubmit();
+  //       }
+  //       else {
+
+  //       }
+  //     }
+  //   } catch (error) {
+  //     console.log(error, "happened while posting the tabs data");
+  //   }
+  // }
+  // };
+  
   const handleTabDataSubmit = async (e) => {
     e.preventDefault();
-    // first when submit is clicked
-    try {
-      const formData = new FormData();
-      formData.append('coursePortaleId', tabsData.coursePortaleId);
-      formData.append('courseTabId', tabsData.courseTabId);
-      formData.append('courseTabDescription', tabsData.courseTabDescription);
-      formData.append('courseTabImage', tabsData.courseTabImage);
-      const response = await axios.post(`${BASE_URL}/courseTab/courseTabFormData`, formData, {
-        headers: {
-          'Content-Type': 'multipart/form-data'
+    const formData = new FormData();
+    formData.append('coursePortaleId', tabsData.coursePortaleId);
+    formData.append('courseTabId', tabsData.courseTabId);
+    formData.append('courseTabDescription', tabsData.courseTabDescription);
+    formData.append('courseTabImage', tabsData.courseTabImage);
+  
+    if (isEditFlag) {
+      try {
+        const response = await axios.put(`${BASE_URL}/courseTab/courseTabEditData`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+  
+        if (response.data.success) {
+          alert(response.data.message || "Tab updated successfully");
+        } else {
+          alert(response.data.message || "Failed to update tab");
         }
-      });
-      if (response.data.exists) {
-        if (window.confirm("Data already exists.Do you want to over write it?")) {
-          handleOverwriteSubmit();
-        }
-        else {
-
-        }
+      } catch (error) {
+        console.log("Error while editing the data into the table at front end", error);
+        alert("An error occurred while updating the tab");
       }
-    } catch (error) {
-      console.log(error, "happened while posting the tabs data");
+    } else {
+      try {
+        const response = await axios.post(`${BASE_URL}/courseTab/courseTabFormData`, formData, {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        });
+  
+        if (response.data.exists) {
+          if (window.confirm("Data already exists. Do you want to overwrite it?")) {
+            await handleOverwriteSubmit();
+          }
+        } else {
+          alert("Data inserted successfully");
+        }
+      } catch (error) {
+        console.log(error, "Error happened while posting the tabs data");
+        alert("An error occurred while inserting the tab data");
+      }
     }
   };
+  
+
+
   const handleOverwriteSubmit = async () => {
     try {
       const formData = new FormData();
@@ -236,9 +308,9 @@ const WhychooseUsEdit = ({ type }) => {
   useEffect(() => {
     const fetchTabDetailsForEdit = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/courseTab/fetchTabDetailsForEdit`);
+        const response = await axios.get(`${BASE_URL}/courseTab/fetchTabDetailsForEdit/${Portale_Id}`);
         setTabEditDetails(response.data);
-        console.log(response.data, "eeeeeeeeeeeeeeeeeee");
+        console.log(response.data, "response data ");
       } catch (error) {
         console.error("Error fetching tab details for edit:", error);
       }
@@ -246,6 +318,41 @@ const WhychooseUsEdit = ({ type }) => {
 
     fetchTabDetailsForEdit();
   }, []);
+  const handlePreFillDropDown = (objPre) => {
+    console.log(objPre)
+    setTabsData(
+     {coursePortaleId:objPre.course_portale_id,
+      courseTabId:objPre.course_tab_title_id,
+      courseTabDescription:objPre.course_tab_text,
+      // courseTabImage:objPre.course_tab_image,
+    }
+    )
+    setIsEditFlag(true);
+    console.log(isEditFlag,"isEditiing flag from the handle pre fill dropdown")
+
+  }
+const handleDeleteTab=async(objPre)=>{
+  console.log(objPre,"from the delete function");
+  const tabId=objPre.tab_id;
+  console.log(tabId);
+  const confirmDelete=window.confirm("Are you sure you want to delete this tab?");
+  if(!confirmDelete){
+      return;
+  }
+  try {
+    const response= await axios.delete(`${BASE_URL}/courseTab/courseTabDelete/${tabId}`)
+    console.log(response);
+    if(response.data.message){
+      alert(response.data.message);
+    }
+    else{
+      alert(response.data.message);
+    }
+  } catch (error) {
+    console.log(error,"Error while deleting the course tab")
+    alert("An error occurred while deleting the tab");
+  }
+}
   return (
     <div>
       {type === "WhyChooseUs" && (
@@ -365,25 +472,30 @@ const WhychooseUsEdit = ({ type }) => {
                   <input type="file" name='courseTabImage' onChange={handleTabImageChange} />
                 </div>
               )}
-              {tabsData.courseTabImage && (
+              {/* {tabsData.courseTabImage && ( */}
                 <button type='submit' >Submit</button>
-              )}
+              {/* )} */}
 
             </div>
           </form>
-        </div>
-      )}
-      {type === 'tabDetailsEditForm' && (
-        <form>
-          {/* div for image */}
-          <div>
-           {tabEditDetails.map(()=>(
+          <form>
             <div>
-              <img src={ `data:image/png;base64,${tabEditDetails.course_tab_image}`}alt="can't get the edit img"></img>
+              <div>
+                {tabEditDetails.map(objPre => (
+                  <div key={objPre.id} style={{ border: "1px solid black" }}>
+                    <button type="button" onClick={() => handlePreFillDropDown(objPre)}>Edit</button>
+                    <button type="button" onClick={()=>handleDeleteTab(objPre)}>Delete</button>
+                    <div style={{ width: "50%" }}>
+                      <img src={`data:image/png;base64,${objPre.course_tab_image}`} alt="nopeeeeee" />
+                    </div>
+                    <br />
+                    <span>{objPre.course_tab_text}</span>
+                  </div>
+                ))}
+              </div>
             </div>
-           ))}
-          </div>
-        </form>
+          </form>
+        </div>
       )}
     </div>
   );

@@ -14,9 +14,6 @@
     justify-content: space-between;
 }
 
-.t1UgHeaderLogoImg{
-
-}
 
 .t1UgDivLinksOfHeader li {
     border: none !important;
@@ -30,8 +27,9 @@
 
 .t1UgDivLinksOfHeader a {
     padding: 10px;
+    border: 0.1px solid #0080004d;
     border-radius: 5px;
-    background-color: #8fd9fc;
+    background: linear-gradient(to right, #a8e6cf57, var(--bs-white), #a8e6cf57);
     color: rgb(14, 6, 6);
     text-decoration: none;
     font-weight: bold;
@@ -40,7 +38,7 @@
 
 .t1UgDivLinksOfHeader a:hover {
     background-color: #2a5e82c2;
-    color: whitesmoke;
+    color: black;
 }
 
 .t1MarqData span {
@@ -59,15 +57,25 @@
     .t1ExamPageHeaderContainer {
         width: 80%;
         align-items: center;
+      
+    }
+
+    .t1ExamPageHeaderContainer .t1ExamPageHeaderHeading{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .t1TotalExamContainer .t1ExamPageHeaderHeading h1{
+        font-size: 20px;
     }
 
     .t1ExamPageHeaderMainContainer .t1ExamPageHeaderContainer img {
-        height: 50px;
-        width: 100px;
+        height: 58px;
+        width: 120px;
     }
 
     .t1ExamPageHeaderMainContainer .t1ExamPageHeaderContainer a {
-        background-color: #fef0f0;
+        /* background-color: #fef0f0; */
         width: 100px;
         height: 30px;
     }
@@ -129,17 +137,17 @@
     font-weight: bold;
 }
 
-.t1ExamPageHeaderContainer a:hover{
-    background-color: rgb(61 176 242);
-    color: white;
+.t1ExamPageHeaderContainer a:hover {
+    /* background-color: rgb(25 135 84 / 52%); */
+    color: #1fe3f1;
 }
-
 .t1ExamPageHeaderContainer a img {
     height: 100%;
     width:350px;
 }
+
 .t1TotalExamContainer{
-background-color:  #fff5d75c;
+    background: linear-gradient(353deg, #eeeff8 0, #fcefca0a 0, #fcefca00 19%, #52be8082);
 }
 
 .t1ExamPageHeaderHeading {
@@ -179,7 +187,7 @@ margin: 10px 0;
 
 /* Main container for the accordion */
 .t1ExamInfoMainContainer {
-    background-color: rgb(243, 238, 238);
+    /* background-color: rgb(243, 238, 238); */
     margin: 0 auto;
     width: 100%;
     padding: 10px;
@@ -202,7 +210,7 @@ margin: 10px 0;
 .t1ExamInfoBtns {
     display: flex;
     justify-content: space-evenly;
-    background-color: #f1f1f1;
+    background-color: #d9efdfc9;
     color: #333;
     cursor: pointer;
     padding: 18px;
@@ -238,14 +246,13 @@ margin: 10px 0;
 }
 
 .t1ExamInfoDivs {
-    background-color: #fef0f0;
+    background-color: #6692a9;
     height: 45px;
     border-radius: 35px;
     display: flex;
     width: 200px;
-    border: 1px solid rgb(238, 189, 189);
+    border: 1px solid rgb(199 215 224);
 }
-
 .t1ExamInfoDivs #info_title {
     text-align: center;
     font-size: 17px;
@@ -253,13 +260,13 @@ margin: 10px 0;
     font-weight: 800;
     width: 100%;
     padding: 10px;
-    color: rgb(20, 17, 17);
+   color: white;
     transition: all .8s ease-in-out;
 }
 
 .t1ExamInfoDivs:hover {
     color: #507284;
-    background-color: #44c4ff;
+    background-color: #4a565c;
 }
 .t1Toggles #info_title {
     font-size: 16px;
@@ -272,7 +279,7 @@ margin: 10px 0;
 }
 
 .t1Toggles #more_info {
-    background-color: #fcf8f8;
+    background-color: #d9efdf52;
     padding: 20px;
     line-break: anywhere;
     line-height: 28px;
@@ -361,7 +368,7 @@ margin: 10px 0;
     background-color: white;
     padding: 20px;
     margin: 5px;
-    box-shadow: -16px -12px 10px -8px #e0bab5;
+    box-shadow: -16px -12px 10px -8px #c0e5cb7a;
     border-radius: 10px;
     border: 1px solid rgb(185, 167, 167);
 }
@@ -401,8 +408,12 @@ margin: 10px 0;
     text-decoration: none;
 }
 
+.banner_section {
+    margin: 0px;
+}
+
 .t1PortalNames li a:hover {
-    background-color: rgb(179 234 255);
+    background-color: rgb(189 228 201);
     color: rgb(30 96 142);
 }
 

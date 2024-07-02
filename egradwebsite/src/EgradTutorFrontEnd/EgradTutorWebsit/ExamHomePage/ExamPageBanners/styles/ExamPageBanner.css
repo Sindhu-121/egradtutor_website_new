@@ -64,6 +64,7 @@ button.disable {
 .banner_section {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   /* border: 1px solid #b8b8b8; */
+  margin: 0px;
 }
 .banner_popup {
   position: fixed;

@@ -17,14 +17,15 @@
 }
 
 .t1SubContainer img {
-    width: 300px;
+    /* width: 320px; */
     height: 150px;
 }
 
 
 img.t1LogoImg {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
+    padding: 20px;
 }
 
 
@@ -59,15 +60,20 @@ img.t1LogoImg {
     background-position: inherit;
     background-repeat: no-repeat;
     display: flex;
-    height: 35vh;
-    background: linear-gradient(to right, #a8e6cf57, #ffcc5c52);
+    height: 32vh;
+    background: linear-gradient(to right, #a8e6cf57, var(--bs-white), #a8e6cf57);
 }
- 
+.t1UgAndPgButtons {
+    background: transparent;
+    margin: 10px;
+    border: 1px solid darkseagreen;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
  
 .landing_img_div.t1LCapImgDiv img {
     background: #fff;
-    box-shadow: 0px 1px 16px 0px #328990e6;
-    max-width: 200px;
+    box-shadow: 0px 1px 9px 0px #328990e6;
+    max-width: 270px;
     margin-right: 2rem;
     max-height: 310px;
 }
@@ -154,6 +160,7 @@ img.t1LogoImg {
         display: flex;
         flex-direction: row;
         justify-content: center;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     }
 
     .t1LCapImgDiv {
@@ -201,9 +208,8 @@ img.t1LogoImg {
 
 .theme1welcomecontainer {
     /* padding: 10px; */
-    background: #e7e7f7;
+   
 }
-
 
 /* For 2 containers */
 .theme1UGEntranceExamsContainer {
@@ -222,7 +228,7 @@ img.t1LogoImg {
     /* padding: 15px; */
     /* justify-content: space-around; */
     border: 2px solid aliceblue;
-    background-color: #d3c5e554;
+    background: (353deg, #eeeff8 0, #fcefca 0, #fcefca 19%, #52be8082)
 }
 
 
@@ -240,25 +246,29 @@ img.t1LogoImg {
 /* For heading and image ug and pg */
 .themeInBranchBox {
     display: flex;
-    background-color: #e7e7f8;
+  background: transparent;
     flex-direction: column;
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(1) {
     width: 90%;
     margin: 0 auto;
-    /* border: 1px solid rgb(156, 156, 177); */
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    margin-top: 50px;
+    margin-bottom: 30px;
+    background: linear-gradient(353deg, #eeeff8 0, #fcefca08 0, #fcefca05 19%, #52be8082);
+    box-shadow: 0 4px 8px rgb(241 15 15 / 23%);
 }
 
 .theme1UGEntranceExamsContainer .t1BranchBox:nth-child(2) {
     flex-direction: row-reverse;
-    /* border: 1px solid rgb(156, 156, 177); */
+    background: linear-gradient(353deg, #eeeff8 0, #fcefca08 0, #fcefca05 19%, #52be8082);
     width: 90%;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 50px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 8px rgb(249 9 9 / 21%);
 }
 
 /* .themeInBranchBox button.t1UgAndPgButtons {
@@ -274,7 +284,7 @@ img.t1LogoImg {
 
 .themeInBranchBox button.t1UgAndPgButtons a {
     color: rgb(25, 27, 26);
-    font-size: 15px;
+    font-size: 17px;
     font-weight: bold;
 }
 
@@ -299,7 +309,7 @@ img.t1LogoImg {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    color: white;
+    color: black;
     font-size: 20px;
     margin-bottom: 7px;
     text-align: center;
@@ -325,7 +335,7 @@ img.t1LogoImg {
     height: auto;
     margin-bottom: 10px;
     text-decoration: none;
-    background: #328990e6;
+    background: linear-gradient(to right, #a8e6cf57, var(--bs-white), #a8e6cf57);
     border-radius: 20px;
     color: #fff;
     box-shadow: 0 0 3px 3px rgb(0 0 0 / 5%);
@@ -363,6 +373,7 @@ img.t1LogoImg {
         flex-direction: row-reverse;
         width: 100%;
         height: auto;
+        background: linear-gradient(353deg, #eeeff8 0, #fcefca08 0, #fcefca05 19%, #52be8082);
     }
 }
 
@@ -384,8 +395,9 @@ img.t1LogoImg {
     }
 
     .t1LCapImgDiv {
-        width: 200px;
-        height: 200px;
+        width: 150px;
+        height: 165px;
+        margin-left: 30px;
     }
 
     .t1ExamImageBox img {
@@ -434,6 +446,7 @@ img.t1LogoImg {
         display: flex;
         justify-content: center;
         align-items: center;
+        background: linear-gradient(353deg, #eeeff8 0, #fcefca08 0, #fcefca05 19%, #52be8082);
     }
 
  
@@ -457,6 +470,21 @@ img.t1LogoImg {
         display: flex;
         flex-direction: column;
         justify-content: center;
+    }
+
+    .t1TextContainer h1 {
+        text-align: center;
+        font-size: 25px;
+        color: rgb(54 52 53);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .t1CapTextContainer p{
+            font-size: 10px;
+            text-align: end;
+            margin: 0px 45px;
+        
     }
 
 
@@ -547,7 +575,8 @@ img.t1LogoImg {
 }
 
 .themeInBranchBox button.t1UgAndPgButtons:hover {
-    background-color: rgb(54 109 168 / 71%);
+    background-color: rgb(207 249 237 / 55%);
+    border: 1px dashed green;
 }
 
 
@@ -574,7 +603,8 @@ img.t1LogoImg {
 
 
 .footer {
-    background-color: #004658;
+    background: linear-gradient(353deg, #eeeff8 0, #fcefca0a 0, #fcefca00 19%, #52be8082);
+margin-bottom: 0px;
     color: #fff;
 }
 
@@ -588,8 +618,9 @@ img.t1LogoImg {
 }
 
 .footer-wave-path {
-    fill: #f1f8ff;
+    fill: #ffffff;
 }
+
 
 
 
@@ -788,7 +819,7 @@ img.t1LogoImg {
 } */
 
 .t1FooterFirstContent #Footer_Heading {
-    color: #cceafb;
+    color:black;
 }
 
 .t1FooterFirstContent p {
@@ -797,7 +828,7 @@ img.t1LogoImg {
 }
 
 .t1FootereGRADTtutoContent .new_landingfooter_conatinerfristpart_item {
-    color: #efefef;
+    color: black;
 }
 
 .Footer_eGRADTtutor__Content.t1FootereGRADTtutoContent {
@@ -805,7 +836,7 @@ img.t1LogoImg {
 }
 
 .t1FooterLinksContent a:hover{
-color: rgb(245 92 106);
+color: rgb(25 73 135);;
 }
 
 
@@ -831,15 +862,18 @@ color: rgb(245 92 106);
 }
 
 .t1FooterContentColumn ul li a {
-    color: #fff;
+    color: black;
     text-decoration: none;
     padding: 15px;
 }
 
 .t1FooterContactData h2 {
-    color: #abd7f7;
+    color: black;
 }
 
+.t1FooterContactUsContent p.new_landingfooter_conatinersecondpart_item {
+    color: black;
+}
 
 .t1ContactFooterContentContainer {
     display: flex;
@@ -849,10 +883,15 @@ color: rgb(245 92 106);
 .t1FooterCopyrightData {
     display: flex;
     justify-content: center;
-    background-color: #027b9a;
-    color: #fff;
+    background-color:inherit;
+    color: black;
     padding: 15px 30px;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.3);
     text-align: center;
+    /* border-top: 5px solid transparent; */
+/* background-image: linear-gradient(to right, lightgreen, lightcoral); */
+background-size: 100% 2px;
+background-repeat: no-repeat;
 }
 
 .t1FooterCopyrightWrapperData {
@@ -862,14 +901,13 @@ color: rgb(245 92 106);
 }
 
 .t1FooterCopyrightTextData {
-    color: #fff;
+    color: black;
     font-size: 15px;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 18px;
     margin-bottom: 0;
     margin-top: 0;
 }
-
 .t1FooterContentColumn {
     box-sizing: border-box;
     float: left;
@@ -912,7 +950,7 @@ color: rgb(245 92 106);
     }
 
     .t1FootereGRADTtutoContent .new_landingfooter_conatinerfristpart_item {
-        color: #efefef;
+        color: black;
         font-size: 14px;
     }
 
@@ -958,7 +996,7 @@ color: rgb(245 92 106);
     }
 
     .t1FooterFirstContent #Footer_Heading {
-        color: #abd7f7;
+        color:black;
         font-size: 40px;
         font-weight: bold;
     }

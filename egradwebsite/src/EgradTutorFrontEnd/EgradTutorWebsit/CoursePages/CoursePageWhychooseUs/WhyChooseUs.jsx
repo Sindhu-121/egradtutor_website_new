@@ -9,11 +9,13 @@ const WhyChooseUs = ({ isEditMode }) => {
   const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
   const [showWhyChooseUsForm, setShowWhyChooseUsForm] = useState(false);
   const [showTabButtonForm, setShowTabButtonForm] = useState(false);
-  const [showTabDetailsEditForm, setShowTabDetailsEditForm]=useState(false)
+  const [showTabDetailsEditForm, setShowTabDetailsEditForm] = useState(false)
   const [selectedTabId, setSelectedTabId] = useState(null);
   const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
   const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
   const [selectedTabContent, setSelectedTabContent] = useState("")
+  const { Portale_Id } = useParams()
+  console.log(Portale_Id, "portaleIdddddddddd")
   useEffect(() => {
     // Fetch saved data from the backend when the component mounts
     const fetchWhyChooseUsData = async () => {
@@ -56,7 +58,7 @@ const WhyChooseUs = ({ isEditMode }) => {
   // getCourseTabButtonNames
   const getCourseTabButtonNames = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails`)
+      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails/${Portale_Id}`)
       setCourseTabButtonNames(response.data);
       console.log(courseTabButtonNames)
     } catch (error) {
@@ -80,25 +82,7 @@ const WhyChooseUs = ({ isEditMode }) => {
   return (
     <div >
       <div className='tabsDiv'>
-        {/* {isEditMode && (
-        <div>
-          <button onClick={() => setShowWhyChooseUsForm(!showWhyChooseUsForm)}>
-            {showWhyChooseUsForm ? "Close" : "Add WhyChooseUs"}
-          </button>
-          {showWhyChooseUsForm && <WhychooseUsEdit type="WhyChooseUs" />}
-        </div>
-      )} */}
-        {/* <ul>
-        {WhyChooseUsitems.map((WhyChooseUsitem) => (
-          <li key={WhyChooseUsitem.WhyChooseUsId} className='whyChooseUsLi'>
-            <div className='whyChooseUsImg'>
-              <img src={`data:image/png;base64,${WhyChooseUsitem.WhyChooseUsImeage}`} alt={WhyChooseUsitem.WhyChooseUsTitle} />
-            </div>
-            <p>{WhyChooseUsitem.WhyChooseUsTitle}  </p>
-            <p>{WhyChooseUsitem.WhyChooseUsDiscreption}</p>
-          </li>
-        ))}
-      </ul> */}
+       <div className='tabsSubContainer'>
         {isEditMode && (
           <div>
             <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
@@ -113,7 +97,7 @@ const WhyChooseUs = ({ isEditMode }) => {
               <li key={tabButtons.courseTabId} >
                 <div >
                   <button onClick={() => handleTabCClick(tabButtons)}
-                    className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : ''}
+                    className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
 
                   >{tabButtons.course_tab_title}</button>
                 </div>
@@ -123,23 +107,20 @@ const WhyChooseUs = ({ isEditMode }) => {
         </ul>
         {selectedTabContent && (
           <div className='tabDetailsDiv'>
-            <div className='tabImageDiv activatedTabContent' >
-              {/* <div className=''> */}
-              <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
-              {selectedTabContent.course_tab_text}
-              {/* </div> */}
+            <div className='tabDetailsSubDiv'>
+              <div className='tabImageDiv activatedTabContent' >
+                <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+                </div>
+                <div>
+                {selectedTabContent.course_tab_text}
+                <p></p>
+                </div>
+              
             </div>
           </div>
         )}
-      </div>
-      {isEditMode &&(
-        <div>
-          <button onClick={()=>setShowTabButtonForm(!showTabDetailsEditForm)}>
-            {showTabDetailsEditForm?"Close":"EditTabDetails"}
-          </button>
-          {showTabButtonForm && <WhychooseUsEdit type="tabDetailsEditForm"/>}
         </div>
-      )}
+      </div>
     </div>
 
   )

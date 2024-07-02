@@ -35,7 +35,7 @@
 }
 
 .t1UgHeaderLi:hover {
-    background-color: #3db0f3;
+    background: linear-gradient(to right, #a8e6cf57, var(--bs-white), #a8e6cf57);
     border-radius: 10px;
     transition: ease-in-out 1s;
 }
@@ -140,8 +140,9 @@
 /* ***************{styles for "BranchHome Marquee" in BHPNavbar.jsx} ****************************************************************** */
 
 .t1MarqData {
-    background-color: rgb(153 217 254);
+    background-color: #20c99740;
     height: 50px;
+    color: black;
     font-size: 20px;
     padding: 10px;
 }
@@ -228,7 +229,7 @@ justify-content: space-around;
     width: 100%;
 }
 
-.t1NewExploreExams_EachCard_Container ul .t1LinkToSpecificExam { 
+.t1NewExploreExams_EachCard_Container ul .t1LinkToSpecificExam {
     text-align: center;
     align-items: center;
     border-radius: 20px;
@@ -236,10 +237,11 @@ justify-content: space-around;
     width: 235px;
     outline-width: 1px;
     outline-offset: 0;
-    border: 1px solid rgba(0, 130, 206, 0.75) ;
-    outline-color: rgba(0, 130, 206, 0.75);
+    border: 1px solid rgb(42 94 130);
+    outline-color: rgb(42 94 130);
     outline-style: solid;
     animation: animateOutline 4s ease infinite;
+
 
 
     & 
@@ -295,10 +297,10 @@ font-size: 18px;
 }
 
 .t1NewExploreExams_PortalNames_Container li a:hover{
-    color: #088af5;
+    color: #2a5e82;
 }
 .t1ExploreExamsMainContainer h2#EXPLORE_Exam_Heading {
-    color: white;
+    color: black;
     font-size: 2rem;
     margin: 2rem auto;
 }
@@ -328,14 +330,14 @@ height: 100%;
     padding: 10px 40px;
     text-align: center;
     width: 400px;
-    background-color: rgb(29 94 129);
+    background-color: rgb(138 203 158);
 }
   
   .t1ExploreExamsMainContainer #EXPLORE_Exam_Heading::before, .t1ExploreExamsMainContainer #EXPLORE_Exam_Heading::after {
     content: '';
     width: 80px;
     height: 100%;
-    background-color:rgb(29 94 129);
+    background-color:rgb(138 203 158);
   
     position: absolute;
     z-index: -1;
@@ -388,7 +390,7 @@ height: 100%;
 }
 .bounce span {
     display: inline-flex;
-    color: #3a8fe7;
+    color: black;;
     font-family: "Play", sans-serif;
     animation: bounce 1s infinite;
 }
@@ -602,6 +604,7 @@ width: 100%;
 @media screen and (min-width:1400px){
     .t1NewExploreExams_ExamCard_Container{
         display: flex;
+        margin-top: 20px;
         justify-content: center;
         gap: 60px;
     }

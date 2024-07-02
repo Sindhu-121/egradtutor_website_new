@@ -89,9 +89,7 @@
   padding: 36px 0;
 }
 
-/* .purpleSectionContainer{
-  background: red !important;
-} */
+
 
 .theme-green {
   background-color: #ffffff;
@@ -174,7 +172,9 @@
 }
 
 .greenImgDiv {
+  padding: 10px;
   box-shadow: 0 2px 7px 0px #c3cf84;
+  height: auto;
 }
 
 span.greenThemeCourseInfo {
@@ -293,3 +293,29 @@ footer.greenthemefooter div {
   /* margin: 0 auto; */
 }
 
+
+/* ************************************ */
+.logo_Img_container.t1ThemeLogoImgC {
+  width: 400px;
+
+  height: 160px;
+}
+
+img.t1LogoImg {
+  height: 100%;
+  /* width: 100%; */
+  padding: 20px;
+}
+
+.before_start_now {
+  width: 50%;
+  background: radial-gradient(rgb(86, 141, 65), transparent);
+  text-align: center;
+  margin: 0 auto;
+  align-items: center;
+}
+
+.before_start_now a{
+  color: black;
+  font-weight: bold;
+}
