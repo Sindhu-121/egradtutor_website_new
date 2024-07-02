@@ -228,6 +228,7 @@ const JSONClasses = {
     themeTabsSubContainer:"themeTabsSubContainerDefault",
     themeTabsButtonContainer:"themeTabsButtonContainerDefault",
     themeTabButtonUl:"themeTabButtonUlDefault",
+    themeTabsChange:"themeTabsChangeDefault",
     themeTabDetailsDiv:"themeTabDetailsDivDefault",
     themeTabDetailsSubDiv:"themeTabDetailsSubDivDefault",
     themeTabImageDiv:"themeTabImageDivDefault",
@@ -458,6 +459,9 @@ const JSONClasses = {
     FaqData: "t1FaqData",
 
     // Popular Courses 
+    CoursePageHeaderContainer:"t1CoursePageHeaderContainer",
+    themeCoursePageHeaderContainer:"t1CoursePageHeaderContainer",
+    themeCPHeaderUl:"t1CPHeaderUl",
     themePopularCourses_container:"t1PopularCourses_container",
     themePopularCourses_Subcontainer:"t1PopularCourses_Subcontainer",
     themeCourseheader_continer:"t1Courseheader_continer",
@@ -469,6 +473,7 @@ const JSONClasses = {
     themeTabsSubContainer:"t1TabsSubContainer",
     themeTabsButtonContainer:"t1TabsButtonContainer",
     themeTabButtonUl:"t1TabButtonUl",
+    themeTabsChange:"t1TabsChange",
     themeTabDetailsDiv:"t1TabDetailsDiv",
     themeTabDetailsSubDiv:"t1TabDetailsSubDiv",
     themeTabImageDiv:"t1TabImageDiv",
@@ -667,6 +672,7 @@ const JSONClasses = {
     themeTabsSubContainer:"t2TabsSubContainer",
     themeTabsButtonContainer:"t2TabsButtonContainer",
     themeTabButtonUl:"t2TabButtonUl",
+    themeTabsChange:"t2TabsChange",
     themeTabDetailsDiv:"t2TabDetailsDiv",
     themeTabDetailsSubDiv:"t2TabDetailsSubDiv",
     themeTabImageDiv:"t2TabImageDiv",
