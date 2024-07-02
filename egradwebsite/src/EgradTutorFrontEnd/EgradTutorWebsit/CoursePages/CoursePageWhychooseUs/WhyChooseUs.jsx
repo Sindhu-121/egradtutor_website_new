@@ -5,6 +5,7 @@ import '../../../../styles/WhyChooseUsStyles/ThemeDefaultWCU.css'
 import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css'
 import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
 import axios from 'axios';
+import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { Link, useParams } from 'react-router-dom';
 import '../CourseTabButtonComponents/WhyChooseUsComponent'
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
@@ -124,8 +125,8 @@ const WhyChooseUs = ({ isEditMode }) => {
                     <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
                   </div>
                   <div className={` ${themeDetails.themeTabContentDiv}`}>
-                    {selectedTabContent.course_tab_text}
-                    <p></p>
+                    <p>  <span><VscDebugBreakpointLog /></span>
+                    {selectedTabContent.course_tab_text}</p>
                   </div>
                 </div>
               </div>
