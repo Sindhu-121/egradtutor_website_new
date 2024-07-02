@@ -1,0 +1,22 @@
+/* .t1TabsDivMainContainer{
+background-color: red;
+}
+
+.t1TabsDiv{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.t1TabsSubContainer{
+display: flex;
+flex-direction: row !important;
+background-color: #fff;
+width:100%;
+}
+
+.t1TabButtonUl{
+    display: flex;
+    flex-direction: column;
+} */

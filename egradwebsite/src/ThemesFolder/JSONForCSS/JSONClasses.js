@@ -456,6 +456,9 @@ const JSONClasses = {
     FaqData: "t1FaqData",
 
     // Popular Courses 
+    CoursePageHeaderContainer:"t1CoursePageHeaderContainer",
+    themeCoursePageHeaderContainer:"t1CoursePageHeaderContainer",
+    themeCPHeaderUl:"t1CPHeaderUl",
     themePopularCourses_container:"t1PopularCourses_container",
     themePopularCourses_Subcontainer:"t1PopularCourses_Subcontainer",
     themeCourseheader_continer:"t1Courseheader_continer",
