@@ -110,8 +110,12 @@ const WhyChooseUs = ({ isEditMode }) => {
             <div className='tabDetailsSubDiv'>
               <div className='tabImageDiv activatedTabContent' >
                 <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+                </div>
+                <div>
                 {selectedTabContent.course_tab_text}
-              </div>
+                <p></p>
+                </div>
+              
             </div>
           </div>
         )}

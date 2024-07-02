@@ -11,12 +11,18 @@ width: 100%;
     justify-content: center;
     background-color: rebeccapurple;
 }
-.tabImageDiv{
-    /* height: 230px; */
-    width: 200px;
+.tabImageDiv {
+  /* height: 230px; */
+  height: 249px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
-.tabImageDiv img{
-    width: 100%;
+.tabImageDiv img {
+  width: 100%;
+  height: inherit;
 }
 .tabsDiv{
     /* border: 1px solid black; */
@@ -44,9 +50,10 @@ width: 100%;
     /* padding-left: 2rem; */
     height: 400px;
     width: 400px;
-    background-color: red;
+    background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
     display: flex;
     /* align-items: center; */
+    padding: 2rem;
     justify-content: center;
 }
   .CoursePage_header_Container.CoursePageHeaderContainerDefault {
