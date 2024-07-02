@@ -709,6 +709,7 @@ ul.defaultCoursesUl li:hover {
     width:400px;
     border-radius: 15px;
     margin-bottom: 25px;
+    background-color: white;
 }
 .AboutUsImgVisionDataContentContainer.AboutUsImgDataContentContainerDefault img {
     width:100px;
