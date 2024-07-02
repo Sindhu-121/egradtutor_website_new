@@ -1,4 +1,4 @@
-import React, { useState, useEffect,useContext} from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import WhychooseUsEdit from './WhychooseUsEdit'
 import BASE_URL from "../../../../apiConfig";
 import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
@@ -91,43 +91,44 @@ const WhyChooseUs = ({ isEditMode }) => {
   return (
     <div className={`${themeDetails.themeTabsDivMainContainer}`} >
       <div className={`${themeDetails.themeTabsDiv}`}>
-       <div className={`tabsSubContainer${themeDetails.themeTabsSubContainer}`}>
-        {isEditMode && (
-          <div className={`tabs_buttons_container ${themeDetails.themeTabsButtonContainer}`}>
-            <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
-              {showTabButtonForm ? "Close" : "AddTabsForPortals"}
-            </button>
-            {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
-          </div>
-        )}
-        <ul className={`tabButtonUl ${themeDetails.themeTabButtonUl}`}>
-          {courseTabButtonNames.map((tabButtons) => (
-            <>
-              <li key={tabButtons.courseTabId} >
-                <div >
-                  <button onClick={() => handleTabCClick(tabButtons)}
-                    className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
-
-                  >{tabButtons.course_tab_title}</button>
-                </div>
-              </li>
-            </>
-          ))}
-        </ul>
-        {selectedTabContent && (
-          <div  className={`tabDetailsDiv ${themeDetails.themeTabDetailsDiv}`}>
-            <div className={`tabDetailsSubDiv ${themeDetails.themeTabDetailsSubDiv}`}>
-              <div className={`tabImageDiv activatedTabContent ${themeDetails.themeTabImageDiv}`} >
-                <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
-                </div>
-                <div>
-                {selectedTabContent.course_tab_text}
-                <p></p>
-                </div>
-              
+        <div className={`tabsSubContainer${themeDetails.themeTabsSubContainer}`}>
+          {isEditMode && (
+            <div className={`tabs_buttons_container ${themeDetails.themeTabsButtonContainer}`}>
+              <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
+                {showTabButtonForm ? "Close" : "AddTabsForPortals"}
+              </button>
+              {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
             </div>
-          </div>
-        )}
+          )}
+          <ul className={`tabButtonUl ${themeDetails.themeTabButtonUl}`}>
+            {courseTabButtonNames.map((tabButtons) => (
+              <>
+                <li key={tabButtons.courseTabId} >
+                  <div >
+                    <button onClick={() => handleTabCClick(tabButtons)}
+                      className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
+
+                    >{tabButtons.course_tab_title}</button>
+                  </div>
+                </li>
+              </>
+            ))}
+          </ul>
+          {selectedTabContent && (
+            <div className={`${themeDetails.themeSelectedTabContentDiv}`}>
+              <div className={` ${themeDetails.themeTabDetailsDiv}`}>
+                <div className={` ${themeDetails.themeTabDetailsSubDiv}`}>
+                  <div className={` ${themeDetails.themeTabImageDiv}`} >
+                    <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+                  </div>
+                  <div>
+                    {selectedTabContent.course_tab_text}
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>

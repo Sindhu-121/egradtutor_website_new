@@ -669,6 +669,8 @@ const JSONClasses = {
     themeTabDetailsDiv:"t2TabDetailsDiv",
     themeTabDetailsSubDiv:"t2TabDetailsSubDiv",
     themeTabImageDiv:"t2TabImageDiv",
+    themeSelectedTabContentDiv:"t2SelectedTabContentDiv",
+    
   },
 };
 
