@@ -17,14 +17,14 @@
 }
 
 .t1SubContainer img {
-    width: 300px;
+    /* width: 320px; */
     height: 150px;
 }
 
 
 img.t1LogoImg {
     height: 100%;
-    width: 100%;
+    /* width: 100%; */
     padding: 20px;
 }
 
