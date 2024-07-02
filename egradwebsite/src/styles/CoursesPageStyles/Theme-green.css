@@ -307,13 +307,13 @@ img.t1LogoImg {
   padding: 20px;
 }
 
-.before_start_now {
+/* .before_start_now {
   width: 50%;
   background: radial-gradient(rgb(86, 141, 65), transparent);
   text-align: center;
   margin: 0 auto;
   align-items: center;
-}
+} */
 
 .before_start_now a{
   color: black;
