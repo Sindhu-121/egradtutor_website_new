@@ -14,7 +14,41 @@ const AboutUsEdit = ({ type }) => {
   const [aboutUsData, setAboutUsData] = useState([]);
   const [aboutUsImage, setAboutUsImage] = useState(null);
 
-  const handleSubmit = async (e, type) => {
+  // const handleSubmit = async (e, type) => {
+  //   e.preventDefault();
+  
+  //   let formData = new FormData();
+  //   formData.append('Title', aboutUsTitle);
+  //   formData.append('Description', aboutUsDescription);
+  
+  //   if (aboutUsImage) {
+  //     formData.append('About_Us_Image', aboutUsImage); // Ensure this is a File object
+  //   }
+  
+  //   console.log('FormData contents:');
+  //   for (let [key, value] of formData.entries()) {
+  //     console.log(`${key}:`, value);
+  //   }
+  
+  //   let url = editAboutUsId
+  //     ? `${BASE_URL}/AboutUsEdit/about_us/${editAboutUsId}`
+  //     : `${BASE_URL}/AboutUsEdit/about_us`;
+  
+  //   try {
+  //     const response = await axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+  //     console.log("Response data:", response.data);
+  //     alert("About Us data saved successfully!");
+  //     setAboutUsTitle("");
+  //     setAboutUsDescription("");
+  //     setAboutUsImage(null);
+  //     setShowAboutUsForm(false);
+  //   } catch (error) {
+  //     console.error("Error saving About Us data:", error.message);
+  //     console.error("Error details:", error.response?.data || error);
+  //   }
+  // };
+  
+  const handleSubmit = async (e) => {
     e.preventDefault();
   
     let formData = new FormData();
@@ -30,24 +64,24 @@ const AboutUsEdit = ({ type }) => {
       console.log(`${key}:`, value);
     }
   
-    let url = editAboutUsId
-      ? `${BASE_URL}/AboutUsEdit/about_us/${editAboutUsId}`
-      : `${BASE_URL}/AboutUsEdit/about_us`;
+    const url = `${BASE_URL}/AboutUsEdit/about_us/${editAboutUsId}`;
   
     try {
-      const response = await axios.post(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
+      const response = await axios.put(url, formData, { headers: { 'Content-Type': 'multipart/form-data' } });
       console.log("Response data:", response.data);
-      alert("About Us data saved successfully!");
+      alert("About Us data updated successfully!");
       setAboutUsTitle("");
       setAboutUsDescription("");
       setAboutUsImage(null);
       setShowAboutUsForm(false);
+  
+      // Fetch updated data to reflect changes
+      fetchAboutUsData();
     } catch (error) {
-      console.error("Error saving About Us data:", error.message);
+      console.error("Error updating About Us data:", error.message);
       console.error("Error details:", error.response?.data || error);
     }
   };
-  
   
   
   
@@ -66,9 +100,25 @@ const AboutUsEdit = ({ type }) => {
     setEditAboutUsId(aboutUs.about_us_id);
     setAboutUsTitle(aboutUs.Title);
     setAboutUsDescription(aboutUs.Description);
+    setAboutUsImage(null); // Reset the image state first
+  
+    if (aboutUs.About_Us_Image) {
+      // Convert base64 to blob
+      const byteString = atob(aboutUs.About_Us_Image.split(',')[1]);
+      const mimeString = aboutUs.About_Us_Image.split(',')[0].split(':')[1].split(';')[0];
+      const ab = new ArrayBuffer(byteString.length);
+      const ia = new Uint8Array(ab);
+      for (let i = 0; i < byteString.length; i++) {
+        ia[i] = byteString.charCodeAt(i);
+      }
+      const blob = new Blob([ab], { type: mimeString });
+      const file = new File([blob], "image.jpg", { type: mimeString });
+      setAboutUsImage(file);
+    }
+  
     setShowAboutUsForm(true);
   };
-
+  
   const handleDeleteAboutegrad = async (about_egt_id) => {
     try {
       await axios.delete(`${BASE_URL}/AboutUsEdit/about_egt`);
@@ -125,52 +175,7 @@ const AboutUsEdit = ({ type }) => {
 
   return (
     <div>
-      {/* {type === "aboutUs" && (
-        <div className="about_egt_popup">
-          <div className="about_egt_form">
-            <form onSubmit={(e) => handleSubmit(e, "aboutUs")}>
-              <label htmlFor="aboutUsTitle">Title:</label>
-              <input
-                id="aboutUsTitle"
-                value={aboutUsTitle}
-                onChange={(e) => setAboutUsTitle(e.target.value)}
-              />
-              <label htmlFor="aboutUsDescription">Description:</label>
-              <textarea
-                id="aboutUsDescription"
-                value={aboutUsDescription}
-                onChange={(e) => setAboutUsDescription(e.target.value)}
-                placeholder="Description"
-                rows={10}
-                cols={20}
-              />
-              <button type="submit">Save About Us</button>
-            </form>
-          </div>
-          {aboutUsData.map((aboutUs) => (
-            <div key={aboutUs.about_us_id}>
-              <h2>{aboutUs.Title}</h2>
-              <p>{aboutUs.Description}</p>
-
-              <div>
-                <button
-                  onClick={() => handleEditAboutUs(aboutUs)}
-                  className="popup_edit_btn"
-                >
-                  {" "}
-                  <BiSolidEditAlt />
-                </button>
-                <button
-                  onClick={() => handleDeleteAboutUs(aboutUs.about_us_id)}
-                  className="popup_delete_btn"
-                >
-                  <MdDelete />
-                </button>
-              </div>
-            </div>
-          ))}
-        </div>
-      )} */}
+     
 
 {type === "aboutUs" && (
         <div className="about_egt_popup">
@@ -202,32 +207,34 @@ const AboutUsEdit = ({ type }) => {
             </form>
           </div>
           {aboutUsData.map((aboutUs) => (
-            <div key={aboutUs.about_us_id}>
-              <h2>{aboutUs.Title}</h2>
-              <p>{aboutUs.Description}</p>
-              {aboutUs.About_Us_Image && (
-                <img
-                  src={aboutUs.About_Us_Image}
-                  alt="About Us"
-                  style={{ width: '100px', height: 'auto' }}
-                />
-              )}
-              <div>
-                <button
-                  onClick={() => handleEditAboutUs(aboutUs)}
-                  className="popup_edit_btn"
-                >
-                  <BiSolidEditAlt />
-                </button>
-                <button
-                  onClick={() => handleDeleteAboutUs(aboutUs.about_us_id)}
-                  className="popup_delete_btn"
-                >
-                  <MdDelete />
-                </button>
-              </div>
-            </div>
-          ))}
+  <div key={aboutUs.about_us_id}>
+    <h2>{aboutUs.Title}</h2>
+    <p>{aboutUs.Description}</p>
+    {aboutUs.About_Us_Image && (
+      <img
+        src={aboutUs.About_Us_Image}
+        alt="About Us"
+        style={{ width: '100px', height: 'auto' }}
+      />
+    )}
+    <div>
+      <button
+        onClick={() => handleEditAboutUs(aboutUs)}
+        className="popup_edit_btn"
+      >
+        <BiSolidEditAlt />
+      </button>
+      <button
+        onClick={() => handleDeleteAboutUs(aboutUs.about_us_id)}
+        className="popup_delete_btn"
+      >
+        <MdDelete />
+      </button>
+    </div>
+  </div>
+))}
+
+
         </div>
       )}
 
