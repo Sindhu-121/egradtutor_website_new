@@ -22,7 +22,9 @@ const AboutUs = ({ isEditMode }) => {
   const [showAboutEgradForm, setShowAboutEgradForm] = useState(false);
   const themeFromContext = useContext(ThemeContext);
 
-
+  const [welcomeimage, setWelcomeImage] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const fetchImage = async () => {
     try {
       const response = await axios.get(`${BASE_URL}/Logo/image`, {
@@ -36,6 +38,23 @@ const AboutUs = ({ isEditMode }) => {
     }
   };
 
+  const fetchWelcomeImage = async () => {
+    try {
+      const response = await axios.get(
+        `${BASE_URL}/LandingPageHeader/welcomeimage`,
+        {
+          responseType: "arraybuffer",
+        }
+      );
+      const imageBlob = new Blob([response.data], { type: "image/png" });
+      const imageUrl = URL.createObjectURL(imageBlob);
+      setWelcomeImage(imageUrl);
+    } catch (error) {
+      console.error("Error fetching image:", error);
+    }
+  };
+  
+
   useEffect(() => {
     fetchAboutUsData();
     fetchAboutEgradData();
@@ -47,7 +66,10 @@ const AboutUs = ({ isEditMode }) => {
       const response = await axios.get(`${BASE_URL}/AboutUs/about_us`);
       setAboutUsData(response.data);
     } catch (error) {
-      console.error("Error fetching About Us data:", error);
+      console.error('Error fetching About Us data:', error);
+      setError('Failed to load data');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -233,7 +255,14 @@ const AboutUs = ({ isEditMode }) => {
 
                 {aboutEgradData.map((aboutEgrad) => (
                   <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
-                    <img src={capImg} alt="" />
+                    {/* <img src={capImg} alt="" /> */}
+
+                    {welcomeimage ? (
+              <img src={welcomeimage} alt="welcomeCurrent" />
+            ) : (
+              <img src={defaultImage} alt="Default" />
+            )}
+
                     <p>{aboutEgrad.about_egt}</p>
                   </div>
                 ))}
@@ -250,11 +279,17 @@ const AboutUs = ({ isEditMode }) => {
                   </div>
                 )}
 
-                {aboutUsData.map((aboutUs) => (
-                  <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
-                    <img src={Our_Vision_Img} alt="" />
+{aboutUsData.map((aboutUs) => (
+                   <div key={aboutUs.about_us_id} className={`AboutUsImgVisionDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
+                    {/* <img src={Our_Vision_Img} alt="" /> */}
+                    <img
+              src={aboutUs.About_Us_Image}
+              alt="About Us"
+              style={{ width: '100px', height: 'auto' }}
+            />
                     <h2>{aboutUs.Title}</h2>
-                    <p>{aboutUs.Description}</p>
+          <p>{aboutUs.Description}</p>
+                 
                   </div>
                 ))}
               </div>
