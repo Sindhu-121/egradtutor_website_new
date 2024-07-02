@@ -20,15 +20,36 @@ router.get('/image', async (req, res) => {
     }
 });
 
+// router.get('/welcome', async (req, res) => {
+//     try {
+//         const [rows] = await db.query('SELECT * FROM welcome_data ', [req.params.id]);
+//         if (rows.length > 0) {
+//             res.json(rows[0]);
+//         } else {
+//             res.status(404).json({ message: 'No data found' });
+//         }
+//     } catch (error) {
+//         res.status(500).json({ error: error.message });
+//     }
+// });
+
+
+
 router.get('/welcome', async (req, res) => {
     try {
-        const [rows] = await db.query('SELECT * FROM welcome_data ', [req.params.id]);
+        // Fetch the last row from the welcome_data table
+        const [rows] = await db.query('SELECT * FROM welcome_data ORDER BY welcome_id DESC LIMIT 1');
+        
+        // Check if any row was returned
         if (rows.length > 0) {
+            // Return the last row
             res.json(rows[0]);
         } else {
+            // If no data found, send a 404 status with a message
             res.status(404).json({ message: 'No data found' });
         }
     } catch (error) {
+        // In case of error, send a 500 status with the error message
         res.status(500).json({ error: error.message });
     }
 });

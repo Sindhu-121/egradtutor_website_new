@@ -14,6 +14,9 @@ const BHPNavBar = ({ isEditMode }) => {
   const [navItems, setNavItems] = useState([]);
   const [marqueeItems, setMarqueeItems] = useState([]);
   const navigate = useNavigate();
+  const [showMarqueeData, setShowMarqueeData] = useState(false);
+  const [branches, setBranches] = useState([]);
+
 
   useEffect(() => {
     const fetchNavItems = async () => {
@@ -34,6 +37,15 @@ const BHPNavBar = ({ isEditMode }) => {
 
     fetchNavItems();
   }, []);
+
+  const fetchAllBranches = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/BHPNavBar/branches`);
+      setBranches(response.data);
+    } catch (error) {
+      console.error("Error fetching branches:", error);
+    }
+  };
 
   const themeFromContext = useContext(ThemeContext);
   const refreshChannel = new BroadcastChannel("refresh_channel");
@@ -79,7 +91,8 @@ const BHPNavBar = ({ isEditMode }) => {
       );
     }
   };
-
+  const [showAddNavItems, setShowAddNavItems] = useState(false);
+  const [showEditNavItems, setShowEditNavItems] = useState(false);
   return (
     <div>
       <div className={`ug_header ${themeDetails.themeUgHeader}`}>
@@ -93,29 +106,53 @@ const BHPNavBar = ({ isEditMode }) => {
               ))}
             </ul>
           </div>
+          {isEditMode && (
+            <div>
+              <button onClick={() => setShowAddNavItems(!showAddNavItems)}>
+                {showAddNavItems ? "Close Form" : "Add/Edit NavItems"}
+              </button>
+              {showAddNavItems && <BHPNavBarEdit type="Add NavItems" />}
+              
+            </div>
+          )}
+
+
+
+
         </div>
       </div>
       <div className={`marquee_data ${themeDetails.themeMarqData}`}>
         <Marquee behavior="scroll" direction="left" scrollamount="5" scrolldelay="10" loop="infinite" pauseOnHover>
           {marqueeItems.map((item) => (
             <>
-            {themeColor==='Theme-2' ?
-            <>
-            <IoMdArrowDropright style={{fontSize:"30px",margin:0}}/> 
-            <span style={{color:'red',fontWeight:500}}  key={item.Marquee_Id}>{item.Marquee_data}</span>
-            </>
-            :
-            <span  key={item.Marquee_Id}>{item.Marquee_data}</span>}
+              {themeColor === 'Theme-2' ?
+                <>
+                  <IoMdArrowDropright style={{ fontSize: "30px", margin: 0 }} />
+                  <span style={{ color: 'red', fontWeight: 500 }} key={item.Marquee_Id}>{item.Marquee_data}</span>
+                </>
+                :
+                <span key={item.Marquee_Id}>{item.Marquee_data}</span>}
             </>
           ))}
         </Marquee>
+
       </div>
+
       {isEditMode && (
-          <div>
-           <BHPNavBarEdit />
-          </div>
-        )}
-     
+
+        <div>
+          <button onClick={() => setShowMarqueeData(!showMarqueeData)}>
+            {showMarqueeData ? 'Close' : 'Update Marquee Data'}
+          </button>
+          {showMarqueeData && <BHPNavBarEdit type="Update_Marquee_tag" />}
+        </div>
+      )}
+      {isEditMode && (
+        <div>
+          <BHPNavBarEdit />
+        </div>
+      )}
+
     </div>
   );
 }

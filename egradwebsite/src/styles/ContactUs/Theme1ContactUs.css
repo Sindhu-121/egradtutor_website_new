@@ -1,5 +1,5 @@
 .t1ContactusMainsContainer {
-    background-color: #FFF0E9;
+    background-color: #ffffff;
 }
 
 .t1ContactUsSubbMainContainer {
@@ -14,21 +14,61 @@
     width: 100%;
 }
 
+.contactt_us {
+    border: 1px solid rgb(184, 171, 171);
+    border-radius: 5px;
+    width: 300px;
+    margin: 0 auto;
+}
+
+.contactt_us span {
+    margin-right: 20px;
+}
+
+.t1ContactUsDataContainer svg{
+    margin: 10px;
+}
+
+input[type="text"], input[type="date"], input[type="email"], input[type="number"], select, textarea {
+    margin-top: 5px;
+    width: 349px;
+    height: 51px;
+    border-radius: 8px;
+}
+textarea#message.ContactUsForMessage.undefined{
+    margin-top: 20px;
+}
+
+.t1ContactUsFormData button{
+    background-color: #b8e2c4;
+    color: black;
+}
+
+.t1ContactUsFormData button:hover{
+    background: #504e4f;   
+    color: white;
+}
+
 .t1ContactUsContentsDataContainer h1 {
-    color: rgb(66, 59, 48);
+    color: black;
     font-size: 25px;
+    background: #bae2c659;
+    margin-bottom: 50px;
     font-weight: 600;
     padding: 10px;
     font-family: "Roboto";
     text-align: center;
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
 }
 
-
 .t1ContactsUsMapContainer {
-    background-color: tan;
     width: 90%;
     margin: 0 auto;
-
+    margin-top: 30px;
 }
 
 .t1ContactUsMapData iframe {
@@ -52,8 +92,8 @@
     flex-direction: column;
     background-color: white;
     border-radius: 10px;
-    box-shadow: 11px -9px 3px #efd0c1;
-    margin-top:3rem;
+    box-shadow: 3px -4px 3px #bae3c6;
+    margin-top: 3rem;
     height: 30%;
 }
 
@@ -70,101 +110,25 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #e8f5eb;
+    box-shadow: 3px -4px 3px #bae3c6;
+    width: 408px;
+    margin: 0 auto;
     justify-content: center;
 }
 
-
-
-.t1ContactUsDataContainer h2 {
-    color: #01202B;
-    font-size: 30px;
-    font: 24px poppins;
-    margin: 0px 0px 30px;
+.contactt_us {
+    margin-bottom: 30px;
 }
 
-.t1ContactUsDataContainer p {
-    margin-left: 20px;
-    color: #344E5A;
-}
-
-
-.t1ContactUsFormData input {
-    width: 60% !important;
-    height: 40px;
-    border-radius: 10px;
-}
-
-.t1ContactUsFormData select#category {
-    width: 60%;
-    padding: 10px;
-    margin-bottom: 20px;
-font-size: 13px;
-}
-
-.t1ContactUsFormData select#category option{
-    font-size: 17px;
-}
-
-.t1ContactUsFormData textarea#message {
-    width: 60%;
-}
-
-
-
-.t1ContactUsFormData button {
-    width: 30%;
-    text-align: center;
-    align-items: center;
-    background-color: #01202B;
-    color: white;
-    
-}
-
-.t1ContactUsFormData button:hover {
-    background-color: rgb(56, 49, 49);
-}
-
-@media(max-width:600px) {
-    .t1ContactUsFormAndAdressContainer {
+@media (max-width:600px){
+    .t1ContactUsFormAndAdressContainer{
         display: flex;
         flex-direction: column;
-        justify-content: center;
-    }
-
-    .t1ContactUsContentContainer {
         width: 100%;
     }
 
-    .t1ContactUsFormData {
-        width: 100% ;
-    }
-
-    .t1ContactUsFormData input {
-        width: 100% !important;
-    }
-    .t1ContactUsFormData select#category {
+    .t1ContactUsContentContainer{
         width: 100%;
-        padding: 10px;
-        margin-bottom: 20px;
-    
-    }
-    
-    .t1ContactUsFormData textarea#message {
-        width: 100%;
-    }
-    
-    .t1ContactUsFormContainer {
-        display: flex;
-        width: 100%;
-        flex-direction: column;
-        justify-content: center;
-        
-    }
-   
-}
-
-@media(min-width:640px) and (max-width:1024){
-    .t1ContactUsFormData input {
-        width: 100p ;
     }
 }

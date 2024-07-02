@@ -8,7 +8,7 @@ import { MdFileUpload } from "react-icons/md";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import BASE_URL from "../../../../apiConfig";
-const LandingPageExamdataEdit = ({ enableButton }) => {
+const LandingPageExamdataEdit = ({ enableButton, type }) => {
   const [selectedImageId, setSelectedImageId] = useState(null);
   const [examImageFile, setExamImageFile] = useState(null);
   const [examBranches, setExamBranches] = useState([]);
@@ -61,7 +61,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
   useEffect(() => {
     fetchExamImages();
   }, []);
-  
+
   const handleUpdateExamImage = async (selectedImageId) => {
     console.log(selectedImageId);
     const formData = new FormData();
@@ -102,7 +102,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
     if (selectedBranch) {
       setSelectedBranchName(selectedBranch.Branch_Name);
     } else {
-      setSelectedBranchName(''); 
+      setSelectedBranchName('');
     }
   };
   const handleEditClick = (branch) => {
@@ -195,13 +195,11 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
   console.log(themeDetails, "mapppping from json....")
   return (
     <div>
-      {/* LandingPageExamdataEdit */}
       {enableButton === 'Enable Edit' ?
         <button>Editing Button..........</button>
         : null}
 
-      {/* EXAM IMAGE UPLOAD */}
-      {openUgExamImageUpload &&
+      {type === "Upload Exam Image" &&
         <div>
           <h2>Upload Exam Image</h2>
           <form onSubmit={handleSubmitExamImage}>
@@ -231,86 +229,96 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
           </ul>
         </div>
       }
-      {/* EXAM IMage upload END */}
-      <div>
-        {branches.map((branch) => (
-          <>
-            {openAddExamForm === branch.Branch_Id && (
-              <div className="enableEditcontainerinlanding ">
-                <div className="enableEditsubcontainerinlanding">
-                  <h3> Add Exam </h3>
-                  <ul>
-                    <li>
+
+      {type === "Add Exams" &&
+        <div>
+          {branches.map((branch) => (
+            <>
+              {openAddExamForm === branch.Branch_Id && (
+                <div className="enableEditcontainerinlanding ">
+                  <div className="enableEditsubcontainerinlanding">
+                    <h3> Add Exam </h3>
+                    <ul>
+                      <li>
+                        <input
+                          type="text"
+                          value={newExamName}
+                          onChange={handleInputChange}
+                          placeholder="Enter exam name"
+                        />
+                      </li>
+                    </ul>
+                    <button onClick={() => handleAddExam(branch.Branch_Id)}>
+                      <IoMdAddCircleOutline />
+                      Add Exam
+                    </button>
+                    <button
+                      className="enableEditsubcontainerinlandingclosebtn"
+                      onClick={handleClosePopup}
+                    >
+                      &times;
+                    </button>
+                  </div>
+                </div>
+              )}
+            </>
+          ))}
+        </div>
+      }
+
+
+      {type = "Edit Exams" &&
+
+        <div>
+          {showPopup && selectedBranch && (
+            <div className="enableEditcontainerinlanding">
+              <div className="enableEditsubcontainerinlanding">
+                <h3>Entrance Exams</h3>
+                <ul>
+                  {selectedBranch.EntranceExams.map((exam, index) => (
+                    <li key={exam.EntranceExams_Id}>
                       <input
                         type="text"
-                        value={newExamName}
-                        onChange={handleInputChange}
-                        placeholder="Enter exam name"
+                        value={exam.EntranceExams_name}
+                        onChange={(e) => {
+                          const updatedExams = [
+                            ...selectedBranch.EntranceExams,
+                          ];
+                          updatedExams[index].EntranceExams_name =
+                            e.target.value;
+                          setSelectedBranch({
+                            ...selectedBranch,
+                            EntranceExams: updatedExams,
+                          });
+                        }}
                       />
+
+                      <button>
+                        {" "}
+                        <RiDeleteBin6Line
+                          onClick={() =>
+                            handleDeleteExam(exam.EntranceExams_Id)
+                          }
+                        />
+                      </button>
                     </li>
-                  </ul>
-                  <button onClick={() => handleAddExam(branch.Branch_Id)}>
-                    <IoMdAddCircleOutline />
-                    Add Exam
-                  </button>
-                  <button
-                    className="enableEditsubcontainerinlandingclosebtn"
-                    onClick={handleClosePopup}
-                  >
-                    &times;
-                  </button>
-                </div>
+                  ))}
+                </ul>
+                <button onClick={handleSaveChanges}>Update</button>
+                <button
+                  className="enableEditsubcontainerinlandingclosebtn"
+                  onClick={handleClosePopup}
+                >close
+                  &times;
+                </button>
               </div>
-            )}
-          </>
-        ))}
-        {showPopup && selectedBranch && (
-          <div className="enableEditcontainerinlanding">
-            <div className="enableEditsubcontainerinlanding">
-              <h3>Entrance Exams</h3>
-              <ul>
-                {selectedBranch.EntranceExams.map((exam, index) => (
-                  <li key={exam.EntranceExams_Id}>
-                    <input
-                      type="text"
-                      value={exam.EntranceExams_name}
-                      onChange={(e) => {
-                        const updatedExams = [
-                          ...selectedBranch.EntranceExams,
-                        ];
-                        updatedExams[index].EntranceExams_name =
-                          e.target.value;
-                        setSelectedBranch({
-                          ...selectedBranch,
-                          EntranceExams: updatedExams,
-                        });
-                      }}
-                    />
-
-                    <button>
-                      {" "}
-                      <RiDeleteBin6Line
-                        onClick={() =>
-                          handleDeleteExam(exam.EntranceExams_Id)
-                        }
-                      />
-                    </button>
-                  </li>
-                ))}
-              </ul>
-              <button onClick={handleSaveChanges}>Update</button>
-              <button
-                className="enableEditsubcontainerinlandingclosebtn"
-                onClick={handleClosePopup}
-              >close
-                &times;
-              </button>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      }
 
-      {branches.map((branch) => (
+
+      {/* {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
           <span onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</span>
           <button onClick={() => handleEditClick(branch)}>
@@ -324,7 +332,7 @@ const LandingPageExamdataEdit = ({ enableButton }) => {
           </button>
 
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }
