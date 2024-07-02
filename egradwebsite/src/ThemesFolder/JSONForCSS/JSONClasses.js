@@ -233,6 +233,7 @@ const JSONClasses = {
     themeTabDetailsDiv:"themeTabDetailsDivDefault",
     themeTabDetailsSubDiv:"themeTabDetailsSubDivDefault",
     themeTabImageDiv:"themeTabImageDivDefault",
+    themeTabContentDiv:"themeTabContentDivDefault",
     themeBuyButtonInCP:"defaultBuyButtonInCP",
 
   },
@@ -479,6 +480,7 @@ const JSONClasses = {
     themeTabDetailsDiv:"t1TabDetailsDiv",
     themeTabDetailsSubDiv:"t1TabDetailsSubDiv",
     themeTabImageDiv:"t1TabImageDiv",
+    themeTabContentDiv:"t1TabContentDiv",
     themeBuyButtonInCP:"t1BuyButtonInCP",
 
   },
@@ -679,6 +681,7 @@ const JSONClasses = {
     themeTabDetailsDiv:"t2TabDetailsDiv",
     themeTabDetailsSubDiv:"t2TabDetailsSubDiv",
     themeTabImageDiv:"t2TabImageDiv",
+    themeTabContentDiv:"t2TabContentDiv",
     themeSelectedTabContentDiv:"t2SelectedTabContentDiv",
 
   },
