@@ -11,7 +11,7 @@ width: 100%;
     justify-content: center;
     background-color: rebeccapurple;
 }
-.tabImageDiv {
+.t2TabImageDiv {
   /* height: 230px; */
   height: 249px;
   width: 250px;
@@ -20,7 +20,7 @@ width: 100%;
   justify-content: center;
   margin: auto;
 }
-.tabImageDiv img {
+.t2TabImageDiv img {
   width: 100%;
   height: inherit;
 }
@@ -37,16 +37,15 @@ width: 100%;
     /* border: 2px solid #4CAF50;  */
     padding: 10px;
   }
-  .activatedTabContent{
-    /* border:2px solid #4CAF50;  */
-  }  
+
 
   .tabButtonUl{
     display: flex;
     flex-wrap: wrap;
     margin: 0;
+    padding: 0;
   }
-  .tabDetailsDiv {
+  .t2TabDetailsDiv {
     /* padding-left: 2rem; */
     height: 400px;
     width: 400px;
@@ -163,7 +162,13 @@ h2.orangeContant {
     align-items: center;
     justify-self: center;
 }
-.tabDetailsSubDiv {
+.t2TabDetailsSubDiv {
   border: 1px solid black;
   padding: 1rem;
+}
+.tabsSubContainert2TabsSubContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
