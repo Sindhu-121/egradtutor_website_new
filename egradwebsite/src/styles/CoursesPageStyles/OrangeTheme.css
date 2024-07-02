@@ -232,6 +232,7 @@ h2#orange_examName{
     margin-bottom: 20px;
     color: white;
     border-radius: 20px;
+    text-align: center;
 }
 .before_start_now.t2BuyButtonInCP a{
 color: white;

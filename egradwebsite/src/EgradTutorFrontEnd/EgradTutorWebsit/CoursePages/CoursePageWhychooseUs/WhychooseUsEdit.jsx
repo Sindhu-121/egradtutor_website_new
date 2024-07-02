@@ -247,21 +247,22 @@ const WhychooseUsEdit = ({ type }) => {
         console.log("Error while editing the data into the table at front end", error);
         alert("An error occurred while updating the tab");
       }
-    } else {
+    } 
+    else {
       try {
         const response = await axios.post(`${BASE_URL}/courseTab/courseTabFormData`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
         });
-  
-        if (response.data.exists) {
-          if (window.confirm("Data already exists. Do you want to overwrite it?")) {
-            await handleOverwriteSubmit();
-          }
-        } else {
-          alert("Data inserted successfully");
-        }
+        console.log(response);
+        // if (response.data.exists) {
+        //   if (window.confirm("Data already exists. Do you want to overwrite it?")) {
+        //     // await handleOverwriteSubmit();
+        //   }
+        // } else {
+        //   alert("Data inserted successfully");
+        // }
       } catch (error) {
         console.log(error, "Error happened while posting the tabs data");
         alert("An error occurred while inserting the tab data");
@@ -271,22 +272,22 @@ const WhychooseUsEdit = ({ type }) => {
   
 
 
-  const handleOverwriteSubmit = async () => {
-    try {
-      const formData = new FormData();
-      formData.append('coursePortaleId', tabsData.coursePortaleId);
-      formData.append('courseTabId', tabsData.courseTabId);
-      formData.append('courseTabDescription', tabsData.courseTabDescription);
-      formData.append('courseTabImage', tabsData.courseTabImage);
+  // const handleOverwriteSubmit = async () => {
+  //   try {
+  //     const formData = new FormData();
+  //     formData.append('coursePortaleId', tabsData.coursePortaleId);
+  //     formData.append('courseTabId', tabsData.courseTabId);
+  //     formData.append('courseTabDescription', tabsData.courseTabDescription);
+  //     formData.append('courseTabImage', tabsData.courseTabImage);
 
-      const response = await axios.post(`${BASE_URL}/courseTab/overwriteCourseTabData`, formData);
-      if (response.status === 200) {
-        alert("Info overwritten successfully");
-      }
-    } catch (error) {
-      console.log("Error happened while overwriting the tabs data", error);
-    }
-  }
+  //     const response = await axios.post(`${BASE_URL}/courseTab/overwriteCourseTabData`, formData);
+  //     if (response.status === 200) {
+  //       alert("Info overwritten successfully");
+  //     }
+  //   } catch (error) {
+  //     console.log("Error happened while overwriting the tabs data", error);
+  //   }
+  // }
 
   const handleChangeTabData = (e) => {
     console.log(tabsData);

@@ -44,15 +44,12 @@ width: 100%;
     padding: 0;
   }
   .t2TabDetailsDiv {
-    /* padding-left: 2rem; */
-    height: 400px;
-    width: 400px;
     background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
     display: flex;
-    /* align-items: center; */
     padding: 1rem;
     justify-content: center;
-    border: 1px solid #456776;
+    /* border: 1px solid #456776; */
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
   .CoursePage_header_Container.CoursePageHeaderContainerDefault {
     background-color: rgb(19, 170, 230);
@@ -161,14 +158,14 @@ h2.orangeContant {
     justify-self: center;
 }
 .t2TabDetailsSubDiv {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   padding: 0 1rem;
 }
 .t2TabsSubContainer {
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 }
 @media (max-width: 425px) {
   .t2TabButtonUl li div button  {
@@ -195,4 +192,37 @@ h2.orangeContant {
   justify-content: center;
   border: 1px solid #456776;
  }
+}
+@media (max-width: 1024px) and (min-width: 768px) {
+  .t2CPHeaderUl {
+    display: flex;
+    align-items: center;
+    width: 95%;
+    padding: 5px 0;
+    gap: 2rem;
+    font-weight: 500;
+    margin: auto;
+    font-size: 18px;
+    color: white;
+    flex-wrap: wrap;
+   }
+}
+.t2TabContentSplittedText {
+  display: flex;
+  gap: 1rem;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-auto-rows: 250px;
+}
+.t2TabContentSplittedText div {
+  /* border: 1px solid black; */
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  /* height: 200px; */
+  text-align: center;
+  /* width: 500px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
 }

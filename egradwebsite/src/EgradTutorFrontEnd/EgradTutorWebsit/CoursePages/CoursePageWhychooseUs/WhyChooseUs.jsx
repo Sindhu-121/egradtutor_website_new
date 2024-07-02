@@ -1,28 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react';
-import WhychooseUsEdit from './WhychooseUsEdit'
+import WhychooseUsEdit from './WhychooseUsEdit';
 import BASE_URL from "../../../../apiConfig";
-import '../../../../styles/WhyChooseUsStyles/ThemeDefaultWCU.css'
-import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css'
-import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
+import '../../../../styles/WhyChooseUsStyles/ThemeDefaultWCU.css';
+import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css';
+import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css';
 import axios from 'axios';
-import { Link, useParams } from 'react-router-dom';
-import '../CourseTabButtonComponents/WhyChooseUsComponent'
+import { useParams } from 'react-router-dom';
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
+
 const WhyChooseUs = ({ isEditMode }) => {
-  const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
-  const [showWhyChooseUsForm, setShowWhyChooseUsForm] = useState(false);
+  const [whyChooseUsItems, setWhyChooseUsItems] = useState([]);
   const [showTabButtonForm, setShowTabButtonForm] = useState(false);
-  const [showTabDetailsEditForm, setShowTabDetailsEditForm] = useState(false)
   const [selectedTabId, setSelectedTabId] = useState(null);
-  const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
   const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
-  const [selectedTabContent, setSelectedTabContent] = useState("")
-  const { Portale_Id } = useParams()
-  console.log(Portale_Id, "portaleIdddddddddd")
+  const [selectedTabContent, setSelectedTabContent] = useState(null);
+  const { Portale_Id } = useParams();
   const themeFromContext = useContext(ThemeContext);
+
   useEffect(() => {
-    // Fetch saved data from the backend when the component mounts
     const fetchWhyChooseUsData = async () => {
       try {
         const response = await fetch(`${BASE_URL}/WhychooseUsEdit/getWhyChooseUsItems`);
@@ -34,61 +30,37 @@ const WhyChooseUs = ({ isEditMode }) => {
     };
     fetchWhyChooseUsData();
   }, []);
-  const [portales, setPortales] = useState([])
-  useEffect(() => {
-    fetchPortales();
-    fetchCourseTabTitles();
-    getCourseTabButtonNames();
-  }, []);
 
-  const fetchPortales = async () => {
+  useEffect(() => {
+    fetchCourseTabButtonNames();
+  }, [Portale_Id]);
+
+  const fetchCourseTabButtonNames = async () => {
     try {
-      const response = await axios.get(`${BASE_URL}/ExploreExam/portales`);
-      setPortales(response.data);
+      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails/${Portale_Id}`);
+      setCourseTabButtonNames(response.data);
     } catch (error) {
-      console.error("Error fetching portales:", error);
+      console.error("Error while getting course tab names", error);
     }
   };
-  // fetching the courses tab titles
-  const fetchCourseTabTitles = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabNames`)
-      setCourseTabTitlesData(response.data);
-      console.log(courseTabTitlesData)
-    } catch (error) {
-      console.log(error, "error happened while getting the course tab names in front end");
-    }
-  }
 
-  // getCourseTabButtonNames
-  const getCourseTabButtonNames = async () => {
-    try {
-      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails/${Portale_Id}`)
-      setCourseTabButtonNames(response.data);
-      console.log(courseTabButtonNames)
-    } catch (error) {
-      console.log(error, "error while getting course tab names");
-    }
-  }
-  const handleTabCClick = (totalTabButtonObj) => {
-    console.log(totalTabButtonObj)
-    setSelectedTabContent(totalTabButtonObj)
-    setSelectedTabId(totalTabButtonObj.course_tab_id);
-  }
-  // for default tab displaying
+  const handleTabCClick = (tab) => {
+    setSelectedTabId(tab.course_tab_title);
+    setSelectedTabContent(tab);
+  };
+
+  // Default tab displaying
   useEffect(() => {
     if (courseTabButtonNames.length > 0) {
-      const firstTab = courseTabButtonNames[0];
-      console.log(firstTab, "This is the first tab")
-      setSelectedTabId(firstTab.course_tab_id)
-      setSelectedTabContent(firstTab)
+      const firstPortal = courseTabButtonNames[0];
+      const firstTab = firstPortal.tabs[0];
+      setSelectedTabId(firstTab.course_tab_title);
+      setSelectedTabContent(firstTab);
     }
-  }, [courseTabButtonNames])
+  }, [courseTabButtonNames]);
 
   const themeColor = themeFromContext[0]?.current_theme;
-  console.log(themeColor, "this is the theme json classesssssss")
-  const themeDetails = JSONClasses[themeColor] || []
-  console.log(themeDetails, "mapppping from json....")
+  const themeDetails = JSONClasses[themeColor] || [];
 
   return (
     <div className={`${themeDetails.themeTabsDivMainContainer}`} >
@@ -97,35 +69,42 @@ const WhyChooseUs = ({ isEditMode }) => {
           {isEditMode && (
             <div className={` ${themeDetails.themeTabsButtonContainer}`}>
               <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
-                {showTabButtonForm ? "Close" : "AddTabsForPortals"}
+                {showTabButtonForm ? "Close" : "Add Tabs For Portals"}
               </button>
               {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
             </div>
           )}
           <ul className={`tabButtonUl ${themeDetails.themeTabButtonUl}`}>
-            {courseTabButtonNames.map((tabButtons) => (
-              <>
-                <li key={tabButtons.courseTabId} >
+            {courseTabButtonNames.flatMap(portal =>
+              portal.tabs.map(tab => (
+                <li key={tab.course_tab_title}>
                   <div className={`${themeDetails.themeTabsChange}`}>
-                    <button onClick={() => handleTabCClick(tabButtons)}
-                      className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
-
-                    >{tabButtons.course_tab_title}</button>
+                    <button
+                      onClick={() => handleTabCClick(tab)}
+                      className={tab.course_tab_title === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
+                    >
+                      {tab.course_tab_title}
+                    </button>
                   </div>
                 </li>
-              </>
-            ))}
+              ))
+            )}
           </ul>
           {selectedTabContent && (
             <div className={`${themeDetails.themeSelectedTabContentDiv}`}>
               <div className={` ${themeDetails.themeTabDetailsDiv}`}>
                 <div className={` ${themeDetails.themeTabDetailsSubDiv}`}>
-                  <div className={` ${themeDetails.themeTabImageDiv}`} >
-                    <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+                  <div className={` ${themeDetails.themeTabImageDiv}`}>
+                    <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="Tab content" />
                   </div>
-                  <div>
-                    {selectedTabContent.course_tab_text}
-                    <p></p>
+                  <div className={`${themeDetails.themeTabContentSplittedText}`}>
+                    {selectedTabContent.course_tab_text.map((text, index) => (
+                      <div key={index}>
+                        <p>
+                          {text}
+                        </p>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -134,8 +113,7 @@ const WhyChooseUs = ({ isEditMode }) => {
         </div>
       </div>
     </div>
+  );
+};
 
-  )
-}
-
-export default WhyChooseUs
+export default WhyChooseUs;
