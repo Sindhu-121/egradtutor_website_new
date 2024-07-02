@@ -182,7 +182,7 @@ const PoopularCourses = () => {
                                   {courseExamsDetails.totalPrice}/-
                                 </p>
 
-                                <div className="before_start_now">
+                                <div className={`before_start_now ${themeDetails.themeBuyButtonInCP}`}>
                                   <Link
                                     to={`/coursedataSRP/${courseExamsDetails.courseCreationId}`}
                                   >

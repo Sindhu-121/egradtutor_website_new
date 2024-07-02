@@ -32,14 +32,12 @@ width: 100%;
     background-color: #1f4c60;
     color: white;
   }
-  
+
   .selectedTabContent {
     /* border: 2px solid #4CAF50;  */
     padding: 10px;
   }
-
-
-  .tabButtonUl{
+  .t2TabButtonUl{
     display: flex;
     flex-wrap: wrap;
     margin: 0;
@@ -156,7 +154,7 @@ h2.orangeContant {
     border: 1px solid white;
     color: white;
 }
-.tabsSubContainer{
+.t2TabsSubContainer{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -164,11 +162,37 @@ h2.orangeContant {
 }
 .t2TabDetailsSubDiv {
   border: 1px solid black;
-  padding: 1rem;
+  padding: 0 1rem;
 }
-.tabsSubContainert2TabsSubContainer {
+.t2TabsSubContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 425px) {
+  .t2TabButtonUl li div button  {
+    padding: 5px 8px;
+    border: none;
+    font-size: 8px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.t2TabImageDiv {
+  height: 169px;
+  width: 219px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+ }
+ .t2TabDetailsDiv {
+  height: 400px;
+  width: 300px;
+  background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
+  display: flex;
+  padding: 1rem;
+  justify-content: center;
+  border: 1px solid #456776;
+ }
 }

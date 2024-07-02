@@ -232,6 +232,8 @@ const JSONClasses = {
     themeTabDetailsDiv:"themeTabDetailsDivDefault",
     themeTabDetailsSubDiv:"themeTabDetailsSubDivDefault",
     themeTabImageDiv:"themeTabImageDivDefault",
+    themeBuyButtonInCP:"defaultBuyButtonInCP",
+
   },
 
   "Theme-1": {
@@ -475,6 +477,8 @@ const JSONClasses = {
     themeTabDetailsDiv:"t1TabDetailsDiv",
     themeTabDetailsSubDiv:"t1TabDetailsSubDiv",
     themeTabImageDiv:"t1TabImageDiv",
+    themeBuyButtonInCP:"t1BuyButtonInCP",
+
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -658,11 +662,11 @@ const JSONClasses = {
     themeHeadingInCp:"t2HeadingInCp",
 
     // Popular Courses 
+    themeBuyButtonInCP:"t2BuyButtonInCP",
     themePopularCourses_container:"t2PopularCourses_container",
     themePopularCourses_Subcontainer:"t2PopularCourses_Subcontainer",
     themeCourseheader_continer:"t2Courseheader_continer",
     theme_COURSES:"theme_COURSES",
-
     themeTabsDivMainContainer:"t2TabsDivMainContainer",
     themeTabsDiv:"t2TabsDiv",
     themeTabsSubContainer:"t2TabsSubContainer",
@@ -673,7 +677,7 @@ const JSONClasses = {
     themeTabDetailsSubDiv:"t2TabDetailsSubDiv",
     themeTabImageDiv:"t2TabImageDiv",
     themeSelectedTabContentDiv:"t2SelectedTabContentDiv",
-    
+
   },
 };
 
