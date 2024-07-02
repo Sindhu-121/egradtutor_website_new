@@ -24,6 +24,7 @@
     font-optical-sizing: auto;
     font-style: normal;
 }
+
 .Ug_HeaderSection.t2UgHeaderSec {
     width: 80%;
     margin: 0 auto;
@@ -173,7 +174,7 @@ width: 100%;
 }
 
 .t2FeaturesContainer li {
-    font-size: 20px;
+    font-size: 18px;
     font-family: "LXGW WenKai TC", cursive;
     font-weight: 600;
     font-style: normal;
@@ -228,7 +229,7 @@ li.t2CourseLi {
 
 @media screen and (max-width: 1308px) {
     .t2FeaturesContainer li {
-        font-size: 16px;
+        font-size: 14px;
     }
     .t2CoursesHeadding {
         width:95%;
@@ -394,8 +395,10 @@ li.t2UgHeaderLi {
         font-weight: 500;
         font-size: 16px;
     }
+    .t2FeaturesContainer li {
+        font-size: 13px;
+    }
 }
-
 .t2CourseName strong{
     font-family: "Playfair Display", serif;
     font-optical-sizing: auto;

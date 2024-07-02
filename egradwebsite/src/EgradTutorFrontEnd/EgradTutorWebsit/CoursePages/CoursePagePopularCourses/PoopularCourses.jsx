@@ -14,7 +14,7 @@ import '../../../../styles/CoursesPageStyles/themeWhite.css'
 import '../../../../styles/CoursesPageStyles/Home.css'
 // theme-1 (green,yellow )
 import '../../../../styles/CoursesPageStyles/Theme-green.css';
-
+import '../../../../styles/CoursesPageStyles/CoursePage.css'
 
 const PoopularCourses = () => {
   const { Portale_Id } = useParams();
@@ -68,8 +68,14 @@ const PoopularCourses = () => {
     <div>
       <div>
         <div className="courseheader_continer">
-          <div className={themeDetails.theme_COURSES}>
-            <h2 className={themeDetails.themeContant}>BUY COURSES</h2>
+          <div
+            className={`${themeDetails.theme_COURSES} `}
+          >
+            <div className={`${themeDetails.themeHeadingInCp}`}>
+              <h2
+                className={`${themeDetails.themeContant} `}
+              >BUY COURSES</h2>
+            </div>
             <span>Choose your course and get started.</span>
           </div>
           <div className="beforelogin_Quiz_cards_cantainer_contain">

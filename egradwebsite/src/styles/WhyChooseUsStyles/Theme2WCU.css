@@ -40,6 +40,121 @@ width: 100%;
     flex-wrap: wrap;
     margin: 0;
   }
-  .tabDetailsDiv{
-    padding-left: 2rem;
-  }
+  .tabDetailsDiv {
+    /* padding-left: 2rem; */
+    height: 400px;
+    width: 400px;
+    background-color: red;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+}
+  .CoursePage_header_Container.CoursePageHeaderContainerDefault {
+    background-color: rgb(19, 170, 230);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 10vh;
+        padding: 3rem 4rem;
+}
+.logo_Img_container.themeLogoImgCDefault img {
+    width:225px;
+}
+
+img.defaultLogoImg::before {
+    left: auto;
+    right: 0;
+    top: 0px;
+    content: "";
+    z-index: -1;
+    width: 1000%;
+    bottom: 0px;
+    background: #fff;
+    position: absolute;
+    transform: skew(-25deg);
+    transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+}
+
+.img-container {
+    position: relative; /* Required to position the pseudo-element absolutely */
+}
+.CoursePageItemsContainer.CoursePageItemsContainerDefault ul {
+    display: flex;
+    flex-direction: row;
+    gap:2rem;
+}
+.CoursePageItemsContainer.CoursePageItemsContainerDefault a {
+    color: white !important;
+    text-transform: uppercase !important;
+    font-weight: bold;
+}
+
+.whiteCOURSES h2 {
+    color:black;
+}
+.whiteCOURSES span {
+    color:yellow;
+}
+.t2CPHeaderUl {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    padding: 5px 0;
+    gap: 3rem;
+    font-weight: 500;
+    margin: auto;
+    font-size: 18px;
+    color: white;
+    flex-wrap: wrap;
+}
+.t2CPHeaderUl li a{
+    color: white;
+}
+.CoursePageItemsContainer{
+    background-color: #144c5f;
+}
+  .t2HeadingInCp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: rebeccapurple; */
+    border-radius: 20px;
+}
+h2.orangeContant {
+    color: white;
+    border: 1px solid white;
+    margin: 0;
+    padding: 0 3rem;
+    background-color: #1f4c60;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    border-radius: 20px;
+}
+.orangeCOURSES {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+/* tabs css */
+.tabsDiv {
+    background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
+    padding: 2rem 0;
+    width: 90%;
+    margin: auto;
+}
+.notSelectedButton{
+    background-color: #124557;
+    border: 1px solid white;
+    color: white;
+}
+.tabsSubContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+}
+.tabDetailsSubDiv{
+  /* height: ; */
+}

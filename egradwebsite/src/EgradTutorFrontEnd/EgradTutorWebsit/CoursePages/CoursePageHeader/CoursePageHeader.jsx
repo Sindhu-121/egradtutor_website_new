@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses.js";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context.js";
 import CoursePageHeaderEdit from "./CoursePageHeaderEdit.jsx";
-// import '../../../../styles/CoursePage/CoursePageDefault.css'
+import '../../../../styles/CoursePage/CoursePageDefault.css'
 import '../../../../styles/CoursesPageStyles/themeWhite.css';
 import { RiLoginBoxLine } from "react-icons/ri";
 
@@ -47,7 +47,7 @@ const CoursePageHeader = ({ isEditMode }) => {
   const themeColor = themeFromContext[0]?.current_theme;
   const themeDetails = JSONClasses[themeColor] || [];
   return (
-    <div  className={`CoursePage_header_Container ${themeDetails.CoursePageHeaderContainer }`}>
+    <div className={`CoursePage_header_Container ${themeDetails.CoursePageHeaderContainer}`}>
       <div className={`logo_Img_container ${themeDetails.themeLogoImgC}`}>
         {image ? (
           <Link to="/">
@@ -72,8 +72,8 @@ const CoursePageHeader = ({ isEditMode }) => {
           </div>
         )}
       </div>
-      <div className={`CoursePageItemsContainer ${themeDetails.CoursePageItemsContainer }`}>
-        <ul>
+      <div className={`CoursePageItemsContainer ${themeDetails.themeCoursePageHeaderContainer}`}>
+        <ul className={`courseHeaderUl ${themeDetails.themeCPHeaderUl} `}>
           {headers.map((headeritem) => (
             <li key={headeritem.HeaderItem_Id}>
               <Link to={headeritem.HeaderItemLink}>
