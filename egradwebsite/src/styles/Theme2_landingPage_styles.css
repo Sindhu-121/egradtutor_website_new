@@ -30,8 +30,10 @@ img.t2LogoImg {
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    position: relative; 
-    overflow: hidden;  
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    margin: 3rem 0;
 }
 
 .landing_content_div_container.t2LandingParentContainer::before
@@ -353,6 +355,7 @@ color: black;
     flex-direction: column;
     right: -7%;
     top: 18%;
+    gap: 2rem;
 }
 .t2FooterSMIcons a{
 color: black;
@@ -404,6 +407,7 @@ color: black;
         /* right: 7%; */
         /* top: 94%; */
         /* bottom: -69%; */
+        padding-bottom: 20px;
     }
 }
 

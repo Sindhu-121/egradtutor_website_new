@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import BASE_URL from "../../../../apiConfig";
-const WhychooseUsEdit = ({type}) => {
+import axios from "axios";
+const WhychooseUsEdit = ({ type }) => {
   const [showForm, setShowForm] = useState(false);
   const [formData, setFormData] = useState({
     title: "",
@@ -8,9 +9,55 @@ const WhychooseUsEdit = ({type}) => {
     order: "",
     image: null,
   });
+  const [tabEditDetails, setTabEditDetails] = useState([]);
+  const [courseTabButtonNames, setCourseTabButtonNames] = useState([]);
+  const [courseTabTitlesData, setCourseTabTitlesData] = useState([]);
+  const getCourseTabButtonNames = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabButtonDetails`)
+      setCourseTabButtonNames(response.data);
+      console.log(courseTabButtonNames)
+    } catch (error) {
+      console.log(error, "error while getting course tab names");
+    }
+
+
+  }
+
   const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
   const [editMode, setEditMode] = useState(false);
   const [editId, setEditId] = useState(null);
+  const [tabsData, setTabsData] = useState({
+    coursePortaleId: "",
+    courseTabId: "",
+    // courseTabTitle: "",
+    courseTabDescription: "",
+    courseTabImage: null
+
+  })
+  const [portales, setPortales] = useState([])
+  useEffect(() => {
+    fetchPortales();
+    fetchCourseTabTitles();
+    getCourseTabButtonNames();
+  }, []);
+  const fetchCourseTabTitles = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/courseTab/getCourseTabNames`)
+      setCourseTabTitlesData(response.data);
+      console.log(courseTabTitlesData)
+    } catch (error) {
+      console.log(error, "error happened while getting the course tab names in front end");
+    }
+  }
+  const fetchPortales = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/ExploreExam/portales`);
+      setPortales(response.data);
+    } catch (error) {
+      console.error("Error fetching portales:", error);
+    }
+  };
 
   useEffect(() => {
     // Fetch saved data from the backend when the component mounts
@@ -126,7 +173,79 @@ const WhychooseUsEdit = ({type}) => {
       alert("An error occurred while deleting the item");
     }
   };
+  const handleTabDataSubmit = async (e) => {
+    e.preventDefault();
+    // first when submit is clicked
+    try {
+      const formData = new FormData();
+      formData.append('coursePortaleId', tabsData.coursePortaleId);
+      formData.append('courseTabId', tabsData.courseTabId);
+      formData.append('courseTabDescription', tabsData.courseTabDescription);
+      formData.append('courseTabImage', tabsData.courseTabImage);
+      const response = await axios.post(`${BASE_URL}/courseTab/courseTabFormData`, formData, {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      });
+      if (response.data.exists) {
+        if (window.confirm("Data already exists.Do you want to over write it?")) {
+          handleOverwriteSubmit();
+        }
+        else {
 
+        }
+      }
+    } catch (error) {
+      console.log(error, "happened while posting the tabs data");
+    }
+  };
+  const handleOverwriteSubmit = async () => {
+    try {
+      const formData = new FormData();
+      formData.append('coursePortaleId', tabsData.coursePortaleId);
+      formData.append('courseTabId', tabsData.courseTabId);
+      formData.append('courseTabDescription', tabsData.courseTabDescription);
+      formData.append('courseTabImage', tabsData.courseTabImage);
+
+      const response = await axios.post(`${BASE_URL}/courseTab/overwriteCourseTabData`, formData);
+      if (response.status === 200) {
+        alert("Info overwritten successfully");
+      }
+    } catch (error) {
+      console.log("Error happened while overwriting the tabs data", error);
+    }
+  }
+
+  const handleChangeTabData = (e) => {
+    console.log(tabsData);
+    setTabsData(prevState => {
+      const newState = { ...prevState, [e.target.name]: e.target.value };
+      console.log(newState);
+      return newState;
+    });
+  }
+  const handleTabImageChange = (e) => {
+    const file = e.target.files[0]
+    setTabsData(prevState => {
+      const newState = { ...prevState, [e.target.name]: file }
+      console.log(newState);
+      return newState;
+
+    })
+  }
+  useEffect(() => {
+    const fetchTabDetailsForEdit = async () => {
+      try {
+        const response = await axios.get(`${BASE_URL}/courseTab/fetchTabDetailsForEdit`);
+        setTabEditDetails(response.data);
+        console.log(response.data, "eeeeeeeeeeeeeeeeeee");
+      } catch (error) {
+        console.error("Error fetching tab details for edit:", error);
+      }
+    };
+
+    fetchTabDetailsForEdit();
+  }, []);
   return (
     <div>
       {type === "WhyChooseUs" && (
@@ -206,6 +325,65 @@ const WhychooseUsEdit = ({type}) => {
             </ul>
           </div>
         </div>
+      )}
+      {type === 'tabButtonForm' && (
+        <div>
+          <form action="" onSubmit={handleTabDataSubmit}>
+            <div>
+              <label htmlFor="">Select a Portale: </label>
+              <select name='coursePortaleId' onChange={handleChangeTabData} value={tabsData.coursePortaleId}>
+                <option disabled value=''>Select a Portale</option>
+                {portales.map((portale) => (
+                  <option key={portale.Portale_Id} value={portale.Portale_Id}>
+                    {portale.Portale_Name}
+                  </option>
+                ))}
+              </select>
+            </div>
+            <div>
+              {tabsData.coursePortaleId && (
+                <div>
+                  <label htmlFor="">Select tab :</label>
+                  <select name="courseTabId" id="" onChange={handleChangeTabData} value={tabsData.courseTabId}>
+                    <option disabled value=''>Select a tab name</option>
+                    {courseTabTitlesData.map((tabName) => (
+                      <option value={tabName.course_tab_id} >{tabName.course_tab_title}</option>
+                    ))}
+                  </select>
+
+                </div>
+              )}
+              {tabsData.courseTabId && (
+                <div>
+                  <label htmlFor="">Enter Course Tab Description : </label>
+                  <input type="text" name='courseTabDescription' onChange={handleChangeTabData} value={tabsData.courseTabDescription} placeholder='enter course tab description' />
+                </div>
+              )}
+              {tabsData.courseTabDescription && (
+                <div>
+                  <label htmlFor="">Choose a Image for tab :</label>
+                  <input type="file" name='courseTabImage' onChange={handleTabImageChange} />
+                </div>
+              )}
+              {tabsData.courseTabImage && (
+                <button type='submit' >Submit</button>
+              )}
+
+            </div>
+          </form>
+        </div>
+      )}
+      {type === 'tabDetailsEditForm' && (
+        <form>
+          {/* div for image */}
+          <div>
+           {tabEditDetails.map(()=>(
+            <div>
+              <img src={ `data:image/png;base64,${tabEditDetails.course_tab_image}`}alt="can't get the edit img"></img>
+            </div>
+           ))}
+          </div>
+        </form>
       )}
     </div>
   );

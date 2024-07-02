@@ -96,7 +96,7 @@
     align-items: center;
     justify-content: center;
     padding: 2rem;
-    background-color: #e8ebf4;
+    background: linear-gradient(45deg, #2e8c9282, #c7dade3d, #2e8c9214, transparent);
     transition: transform 0.3s ease;
 }
   
@@ -297,6 +297,7 @@
   font-family: "LXGW WenKai TC", cursive;
   font-weight: 600;
   font-style: normal;
+  color: white;
 }
 .toggles.t2Toggles h3#info_title {
   font-size: 1.2rem;
@@ -337,7 +338,7 @@
 }
 .infoButtonSpan {
   background-color: #3e8991;
-  /* padding: 5px; */
+  padding: 5px;
   color: white;
   font-size: 28px;
 }

@@ -25,4 +25,14 @@ router.get('/homepage_marqueedisply/:Branch_Id', async (req, res) => {
     }
   });
 
+  router.get('/branches', async (req, res) => {
+    try {
+        const [rows] = await db.query(`SELECT Branch_Id, Branch_Name FROM branches`);
+        res.json(rows);
+    } catch (err) {
+        console.error('Error fetching branches:', err);
+        res.status(500).json({ error: 'Internal Server Error' });
+    }
+  });
+
 module.exports = router;
