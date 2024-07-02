@@ -468,7 +468,7 @@ const JSONClasses = {
     themePopularCourses_container:"t1PopularCourses_container",
     themePopularCourses_Subcontainer:"t1PopularCourses_Subcontainer",
     themeCourseheader_continer:"t1Courseheader_continer",
-    theme_COURSES:"theme_COURSES",
+    theme_COURSES:"t1_COURSES",
     themeHeadingInCp:"t1HeadingInCp",
 
     themeTabsDivMainContainer:"t1TabsDivMainContainer",
