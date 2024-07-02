@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useState,} from "react";
 import BASE_URL from "../../../../apiConfig";
 import { Link, useParams } from "react-router-dom";
 import { GoChevronDown } from "react-icons/go";
@@ -65,9 +65,9 @@ const PoopularCourses = () => {
   };
 
   return (
-    <div>
-      <div>
-        <div className="courseheader_continer">
+    <div className={`${themeDetails.themePopularCourses_container}`}>
+      <div className={`${themeDetails.themePopularCourses_Subcontainer}`}>
+        <div className={`courseheader_continer ${themeDetails.themeCourseheader_continer }`}>
           <div
             className={`${themeDetails.theme_COURSES} `}
           >

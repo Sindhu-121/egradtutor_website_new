@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import WhychooseUsEdit from './WhychooseUsEdit'
 import BASE_URL from "../../../../apiConfig";
+import '../../../../styles/WhyChooseUsStyles/ThemeDefaultWCU.css'
+import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css'
 import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
 import '../CourseTabButtonComponents/WhyChooseUsComponent'
+import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
+import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 const WhyChooseUs = ({ isEditMode }) => {
   const [WhyChooseUsitems, setWhyChooseUsItems] = useState([]);
   const [showWhyChooseUsForm, setShowWhyChooseUsForm] = useState(false);
@@ -16,6 +20,7 @@ const WhyChooseUs = ({ isEditMode }) => {
   const [selectedTabContent, setSelectedTabContent] = useState("")
   const { Portale_Id } = useParams()
   console.log(Portale_Id, "portaleIdddddddddd")
+  const themeFromContext = useContext(ThemeContext);
   useEffect(() => {
     // Fetch saved data from the backend when the component mounts
     const fetchWhyChooseUsData = async () => {
@@ -75,50 +80,57 @@ const WhyChooseUs = ({ isEditMode }) => {
     if (courseTabButtonNames.length > 0) {
       const firstTab = courseTabButtonNames[0];
       console.log(firstTab, "This is the first tab")
+      setSelectedTabId(firstTab.course_tab_id)
       setSelectedTabContent(firstTab)
     }
   }, [courseTabButtonNames])
 
-  return (
-    <div >
-      <div className='tabsDiv'>
-       <div className='tabsSubContainer'>
-        {isEditMode && (
-          <div>
-            <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
-              {showTabButtonForm ? "Close" : "AddTabsForPortals"}
-            </button>
-            {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
-          </div>
-        )}
-        <ul className='tabButtonUl'>
-          {courseTabButtonNames.map((tabButtons) => (
-            <>
-              <li key={tabButtons.courseTabId} >
-                <div >
-                  <button onClick={() => handleTabCClick(tabButtons)}
-                    className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
+  const themeColor = themeFromContext[0]?.current_theme;
+  console.log(themeColor, "this is the theme json classesssssss")
+  const themeDetails = JSONClasses[themeColor] || []
+  console.log(themeDetails, "mapppping from json....")
 
-                  >{tabButtons.course_tab_title}</button>
-                </div>
-              </li>
-            </>
-          ))}
-        </ul>
-        {selectedTabContent && (
-          <div className='tabDetailsDiv'>
-            <div className='tabDetailsSubDiv'>
-              <div className='tabImageDiv activatedTabContent' >
-                <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
-                </div>
-                <div>
-                {selectedTabContent.course_tab_text}
-                <p></p>
-                </div>
-              
+  return (
+    <div className={`${themeDetails.themeTabsDivMainContainer}`} >
+      <div className={`${themeDetails.themeTabsDiv}`}>
+        <div className={`tabsSubContainer${themeDetails.themeTabsSubContainer}`}>
+          {isEditMode && (
+            <div className={`tabs_buttons_container ${themeDetails.themeTabsButtonContainer}`}>
+              <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
+                {showTabButtonForm ? "Close" : "AddTabsForPortals"}
+              </button>
+              {showTabButtonForm && <WhychooseUsEdit type="tabButtonForm" />}
             </div>
-          </div>
-        )}
+          )}
+          <ul className={`tabButtonUl ${themeDetails.themeTabButtonUl}`}>
+            {courseTabButtonNames.map((tabButtons) => (
+              <>
+                <li key={tabButtons.courseTabId} >
+                  <div >
+                    <button onClick={() => handleTabCClick(tabButtons)}
+                      className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
+
+                    >{tabButtons.course_tab_title}</button>
+                  </div>
+                </li>
+              </>
+            ))}
+          </ul>
+          {selectedTabContent && (
+            <div className={`${themeDetails.themeSelectedTabContentDiv}`}>
+              <div className={` ${themeDetails.themeTabDetailsDiv}`}>
+                <div className={` ${themeDetails.themeTabDetailsSubDiv}`}>
+                  <div className={` ${themeDetails.themeTabImageDiv}`} >
+                    <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="the tab not displayed" />
+                  </div>
+                  <div>
+                    {selectedTabContent.course_tab_text}
+                    <p></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
     </div>
