@@ -106,7 +106,7 @@ const WhyChooseUs = ({ isEditMode }) => {
             {courseTabButtonNames.map((tabButtons) => (
               <>
                 <li key={tabButtons.courseTabId} >
-                  <div >
+                  <div className={`${themeDetails.themeTabsChange}`}>
                     <button onClick={() => handleTabCClick(tabButtons)}
                       className={tabButtons.course_tab_id === selectedTabId ? 'selectedButton' : 'notSelectedButton'}
 
