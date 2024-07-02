@@ -29,16 +29,16 @@ width: 100%;
     
 }
 .selectedButton {
-    background-color: #4CAF50; /* Green */
+    background-color: #1f4c60;
     color: white;
   }
   
   .selectedTabContent {
-    border: 2px solid #4CAF50; /* Green border */
+    /* border: 2px solid #4CAF50;  */
     padding: 10px;
   }
   .activatedTabContent{
-    border:2px solid #4CAF50; ;
+    /* border:2px solid #4CAF50;  */
   }  
 
   .tabButtonUl{
@@ -53,8 +53,9 @@ width: 100%;
     background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
     display: flex;
     /* align-items: center; */
-    padding: 2rem;
+    padding: 1rem;
     justify-content: center;
+    border: 1px solid #456776;
 }
   .CoursePage_header_Container.CoursePageHeaderContainerDefault {
     background-color: rgb(19, 170, 230);
@@ -146,13 +147,13 @@ h2.orangeContant {
 }
 /* tabs css */
 .tabsDiv {
-    background: linear-gradient(45deg, #2e8c92, #e8ebf4, #2e8c9200, #124557);
+    background:linear-gradient(45deg, #2e8c9252, #e8ebf4, #2e8c9200, #1245576b);
     padding: 2rem 0;
     width: 90%;
     margin: auto;
 }
 .notSelectedButton{
-    background-color: #124557;
+    background-color: #88b5bd;
     border: 1px solid white;
     color: white;
 }
@@ -162,6 +163,7 @@ h2.orangeContant {
     align-items: center;
     justify-self: center;
 }
-.tabDetailsSubDiv{
-  /* height: ; */
+.tabDetailsSubDiv {
+  border: 1px solid black;
+  padding: 1rem;
 }

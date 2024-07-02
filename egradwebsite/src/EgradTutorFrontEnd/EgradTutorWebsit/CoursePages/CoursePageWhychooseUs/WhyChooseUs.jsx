@@ -75,6 +75,7 @@ const WhyChooseUs = ({ isEditMode }) => {
     if (courseTabButtonNames.length > 0) {
       const firstTab = courseTabButtonNames[0];
       console.log(firstTab, "This is the first tab")
+      setSelectedTabId(firstTab.course_tab_id)
       setSelectedTabContent(firstTab)
     }
   }, [courseTabButtonNames])
