@@ -56,6 +56,7 @@ const AboutUs = ({ isEditMode }) => {
   
 
   useEffect(() => {
+    fetchWelcomeImage();
     fetchAboutUsData();
     fetchAboutEgradData();
     fetchImage();
@@ -255,13 +256,8 @@ const AboutUs = ({ isEditMode }) => {
 
                 {aboutEgradData.map((aboutEgrad) => (
                   <div key={aboutEgrad.about_egt_id} className={`AboutUsImgDataContentContainer ${themeDetails.AboutUsImgDataContentContainer}`} >
-                    {/* <img src={capImg} alt="" /> */}
 
-                    {welcomeimage ? (
-              <img src={welcomeimage} alt="welcomeCurrent" />
-            ) : (
-              <img src={defaultImage} alt="Default" />
-            )}
+                    {welcomeimage && <img src={welcomeimage} alt="Welcome" />}
 
                     <p>{aboutEgrad.about_egt}</p>
                   </div>
@@ -285,7 +281,6 @@ const AboutUs = ({ isEditMode }) => {
                     <img
               src={aboutUs.About_Us_Image}
               alt="About Us"
-              style={{ width: '100px', height: 'auto' }}
             />
                     <h2>{aboutUs.Title}</h2>
           <p>{aboutUs.Description}</p>
