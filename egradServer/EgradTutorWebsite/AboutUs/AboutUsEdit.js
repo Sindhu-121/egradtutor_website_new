@@ -48,21 +48,54 @@ router.post('/about_us', upload.single('About_Us_Image'), async (req, res) => {
 });
 
 
-  router.put('/about_us/:about_us_id', async (req, res) => {
+  // router.put('/about_us/:about_us_id', async (req, res) => {
+  //   const { about_us_id } = req.params;
+  //   const { Title, Description } = req.body;
+  //   try {
+  //     await db.query(
+  //       'UPDATE about_us SET Title = ?, Description = ? WHERE about_us_id = ?',
+  //       [Title, Description, about_us_id]
+  //     );
+  //     res.json({ message: 'About Us data updated successfully' });
+  //   } catch (error) {
+  //     console.error('Error updating About Us data:', error);
+  //     res.status(500).json({ error: 'Failed to update About Us data' });
+  //   }
+  // });
+
+  router.put('/about_us/:about_us_id', upload.single('About_Us_Image'), async (req, res) => {
     const { about_us_id } = req.params;
     const { Title, Description } = req.body;
+    const About_Us_Image = req.file ? req.file.buffer : null;
+  
     try {
-      await db.query(
-        'UPDATE about_us SET Title = ?, Description = ? WHERE about_us_id = ?',
-        [Title, Description, about_us_id]
-      );
+      // Log the data to verify
+      console.log('Updating data:', { about_us_id, Title, Description, About_Us_Image });
+  
+      if (About_Us_Image) {
+        // Update with image
+        await db.query(
+          'UPDATE about_us SET Title = ?, Description = ?, About_Us_Image = ? WHERE about_us_id = ?',
+          [Title, Description, About_Us_Image, about_us_id]
+        );
+      } else {
+        // Update without image
+        await db.query(
+          'UPDATE about_us SET Title = ?, Description = ? WHERE about_us_id = ?',
+          [Title, Description, about_us_id]
+        );
+      }
+  
       res.json({ message: 'About Us data updated successfully' });
     } catch (error) {
       console.error('Error updating About Us data:', error);
       res.status(500).json({ error: 'Failed to update About Us data' });
     }
   });
-
+  
+  
+  
+  
   router.delete('/about_us/:about_us_id', async (req, res) => {
     const { about_us_id } = req.params;
     try {
