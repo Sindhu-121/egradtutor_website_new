@@ -215,6 +215,22 @@ const JSONClasses = {
     logoC: "logoCDefault",
     CoursePageItemsContainer: "CoursePageItemsContainerDefault",
     themeCourseAmountSpan: "themeCourseAmountSpanDefault",
+
+    // Popular Courses 
+    themePopularCourses_container:"themePopularCourses_containerDefault",
+    themePopularCourses_Subcontainer:"themePopularCourses_SubcontainerDefault",
+    themeCourseheader_continer:"themeCourseheader_continerDefault",
+    theme_COURSES:"theme_COURSES",
+    themeHeadingInCp:"HeadingInCp_default",
+
+    themeTabsDivMainContainer:"themeTabsDivMainContainerDefault",
+    themeTabsDiv:"themeTabsDivDefault",
+    themeTabsSubContainer:"themeTabsSubContainerDefault",
+    themeTabsButtonContainer:"themeTabsButtonContainerDefault",
+    themeTabButtonUl:"themeTabButtonUlDefault",
+    themeTabDetailsDiv:"themeTabDetailsDivDefault",
+    themeTabDetailsSubDiv:"themeTabDetailsSubDivDefault",
+    themeTabImageDiv:"themeTabImageDivDefault",
   },
 
   "Theme-1": {
@@ -438,6 +454,22 @@ const JSONClasses = {
     FaqSubContainer: "t1FaqSubContainer",
     FaqDataContainer: "t1FaqDataContainer",
     FaqData: "t1FaqData",
+
+    // Popular Courses 
+    themePopularCourses_container:"t1PopularCourses_container",
+    themePopularCourses_Subcontainer:"t1PopularCourses_Subcontainer",
+    themeCourseheader_continer:"t1Courseheader_continer",
+    theme_COURSES:"theme_COURSES",
+    themeHeadingInCp:"t1HeadingInCp",
+
+    themeTabsDivMainContainer:"t1TabsDivMainContainer",
+    themeTabsDiv:"t1TabsDiv",
+    themeTabsSubContainer:"t1TabsSubContainer",
+    themeTabsButtonContainer:"t1TabsButtonContainer",
+    themeTabButtonUl:"t1TabButtonUl",
+    themeTabDetailsDiv:"t1TabDetailsDiv",
+    themeTabDetailsSubDiv:"t1TabDetailsSubDiv",
+    themeTabImageDiv:"t1TabImageDiv",
   },
   "Theme-2": {
     id: "themeTwoId",
@@ -618,7 +650,22 @@ const JSONClasses = {
     ribbonInCP:"ribbonInCP",
     buttonInCP:"buttonInCP",
     ribbonContainerInCP:"ribbonContainerInCP",
-    themeHeadingInCp:"t2HeadingInCp"
+    themeHeadingInCp:"t2HeadingInCp",
+
+    // Popular Courses 
+    themePopularCourses_container:"t2PopularCourses_container",
+    themePopularCourses_Subcontainer:"t2PopularCourses_Subcontainer",
+    themeCourseheader_continer:"t2Courseheader_continer",
+    theme_COURSES:"theme_COURSES",
+
+    themeTabsDivMainContainer:"t2TabsDivMainContainer",
+    themeTabsDiv:"t2TabsDiv",
+    themeTabsSubContainer:"t2TabsSubContainer",
+    themeTabsButtonContainer:"t2TabsButtonContainer",
+    themeTabButtonUl:"t2TabButtonUl",
+    themeTabDetailsDiv:"t2TabDetailsDiv",
+    themeTabDetailsSubDiv:"t2TabDetailsSubDiv",
+    themeTabImageDiv:"t2TabImageDiv",
   },
 };
 
