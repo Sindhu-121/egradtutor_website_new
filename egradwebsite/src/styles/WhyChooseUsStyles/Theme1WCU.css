@@ -3,15 +3,20 @@
     flex-direction: row;
 }
 
+.t1CPHeaderUl {
+    background-color: #bae2c6;
+}
+
+
 .t1CPHeaderUl li {
     padding: 15px;
-    color: rgb(253, 250, 250);
+    color: rgb(247, 239, 239);
     display: flex;
     justify-content: space-around;
 }
 
 .t1CPHeaderUl li a {
-    color: white;
+    color: rgb(10, 10, 10);
     font-size: 18px;
 }
 
@@ -43,6 +48,7 @@
     text-align: center;
     width: 150px;
 }
+
 
 
 
@@ -112,6 +118,11 @@
 .t1TabContentDiv p span {
     margin-right: 10px;
     color: rgb(85, 50, 50);
+}
+
+.t1TabContentSplittedText{
+    padding: 20px;
+    
 }
 
 
