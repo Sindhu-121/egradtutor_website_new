@@ -1,6 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import WhychooseUsEdit from './WhychooseUsEdit'
 import BASE_URL from "../../../../apiConfig";
+import '../../../../styles/WhyChooseUsStyles/ThemeDefaultWCU.css'
+import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css'
 import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css'
 import axios from 'axios';
 import { Link, useParams } from 'react-router-dom';
