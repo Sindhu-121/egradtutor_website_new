@@ -12,8 +12,8 @@
   .Newlandingpage_logocontainer {
     width: 100%;
     top: 0px;
-    position: fixed;
-    background-color: white;
+    /* position: fixed; */
+  /* background: linear-gradient(90deg, #eeeff8 0, #ffffff 0, #ffff 19%, #52be80); */
     .Newlandingpage_logosubcontainer {
       width: 80%;
       margin: 0 auto;
