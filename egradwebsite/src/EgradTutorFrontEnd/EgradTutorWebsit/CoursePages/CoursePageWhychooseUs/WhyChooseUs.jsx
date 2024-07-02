@@ -91,9 +91,9 @@ const WhyChooseUs = ({ isEditMode }) => {
   return (
     <div className={`${themeDetails.themeTabsDivMainContainer}`} >
       <div className={`${themeDetails.themeTabsDiv}`}>
-        <div className={`tabsSubContainer${themeDetails.themeTabsSubContainer}`}>
+        <div className={`${themeDetails.themeTabsSubContainer}`}>
           {isEditMode && (
-            <div className={`tabs_buttons_container ${themeDetails.themeTabsButtonContainer}`}>
+            <div className={` ${themeDetails.themeTabsButtonContainer}`}>
               <button onClick={() => setShowTabButtonForm(!showTabButtonForm)}>
                 {showTabButtonForm ? "Close" : "AddTabsForPortals"}
               </button>

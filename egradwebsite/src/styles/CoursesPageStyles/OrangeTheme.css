@@ -226,3 +226,13 @@ h2#orange_examName{
 /* .before_start_now {
     background-color: red;
 } */
+.before_start_now.t2BuyButtonInCP {
+    width: 50%;
+    background-color: #1f4c60;
+    margin-bottom: 20px;
+    color: white;
+    border-radius: 20px;
+}
+.before_start_now.t2BuyButtonInCP a{
+color: white;
+}

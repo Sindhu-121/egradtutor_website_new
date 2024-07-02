@@ -274,14 +274,6 @@
   gap: 1.5rem;
   justify-content: space-between;
 }
-/* .toggles.t2Toggles {
-  padding: 10px;
-  background-color: #2d8990;
-  border: 1px solid #ffffff;
-  color: white;
-  cursor: pointer;
-  background: linear-gradient(133deg, #2b848d, #144a5dc7, #2e8d9275, #2c878f);
-} */
 .toggles.t2Toggles {
   padding: 10px;
   background-color: #2d8990;
