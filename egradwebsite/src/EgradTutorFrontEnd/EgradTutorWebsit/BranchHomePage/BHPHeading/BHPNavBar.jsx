@@ -144,9 +144,8 @@ const BHPNavBar = ({ isEditMode }) => {
           <button onClick={() => setShowMarqueeData(!showMarqueeData)}>
             {showMarqueeData ? 'Close' : 'Update Marquee Data'}
           </button>
-          {showMarqueeData && <BHPNavBarEdit type="Update Marquee tag" />}
+          {showMarqueeData && <BHPNavBarEdit type="Update_Marquee_tag" />}
         </div>
-
       )}
       {isEditMode && (
         <div>
