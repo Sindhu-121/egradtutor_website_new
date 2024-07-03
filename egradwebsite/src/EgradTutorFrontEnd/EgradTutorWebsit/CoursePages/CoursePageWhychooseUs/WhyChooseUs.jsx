@@ -98,6 +98,7 @@ const WhyChooseUs = ({ isEditMode }) => {
                   <div className={` ${themeDetails.themeTabImageDiv}`}>
                     <img src={`data:image/png;base64,${selectedTabContent.course_tab_image}`} alt="Tab content" />
                   </div>
+                  <div className={`${themeDetails.themeCardsToBeFlexed}`}>
                   <div className={`${themeDetails.themeTabContentSplittedText}`}>
                     {selectedTabContent.course_tab_text.map((text, index) => (
                       <div className={`${themeDetails.themeTabContentSplittedTextInDiv}`} key={index}>
@@ -106,6 +107,7 @@ const WhyChooseUs = ({ isEditMode }) => {
                         </p>
                       </div>
                     ))}
+                  </div>
                   </div>
                 </div>
               </div>
