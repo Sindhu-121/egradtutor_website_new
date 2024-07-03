@@ -76,7 +76,9 @@ const PoopularCourses = () => {
                 className={`${themeDetails.themeContant} `}
               >BUY COURSES</h2>
             </div>
+            <div className={`${themeDetails.themeBuyCourseSpan}`}>
             <span>Choose your course and get started.</span>
+            </div>
           </div>
           <div className="beforelogin_Quiz_cards_cantainer_contain">
             {Object.entries(coursesByPortalAndExam).map(

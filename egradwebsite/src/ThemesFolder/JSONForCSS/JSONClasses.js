@@ -221,6 +221,7 @@ const JSONClasses = {
     themePopularCourses_Subcontainer:"themePopularCourses_SubcontainerDefault",
     themeCourseheader_continer:"themeCourseheader_continerDefault",
     theme_COURSES:"theme_COURSES",
+    themeBuyCourseSpan:"themeBuyCourseSpanDefault",
     themeHeadingInCp:"HeadingInCp_default",
 
     themeTabsDivMainContainer:"themeTabsDivMainContainerDefault",
@@ -469,6 +470,7 @@ const JSONClasses = {
     themePopularCourses_Subcontainer:"t1PopularCourses_Subcontainer",
     themeCourseheader_continer:"t1Courseheader_continer",
     theme_COURSES:"t1_COURSES",
+    themeBuyCourseSpan:"t1BuyCourseSpan",
     themeHeadingInCp:"t1HeadingInCp",
 
     themeTabsDivMainContainer:"t1TabsDivMainContainer",
@@ -674,6 +676,7 @@ const JSONClasses = {
     themePopularCourses_Subcontainer:"t2PopularCourses_Subcontainer",
     themeCourseheader_continer:"t2Courseheader_continer",
     theme_COURSES:"theme_COURSES",
+    themeBuyCourseSpan:"t2BuyCourseSpan",
     themeTabsDivMainContainer:"t2TabsDivMainContainer",
     themeTabsDiv:"t2TabsDiv",
     themeTabsSubContainer:"t2TabsSubContainer",
