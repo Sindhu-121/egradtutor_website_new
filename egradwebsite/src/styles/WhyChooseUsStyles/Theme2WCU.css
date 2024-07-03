@@ -208,12 +208,14 @@ h2.orangeContant {
    }
 }
 .t2TabContentSplittedText {
-  display: flex;
   gap: 1rem;
   padding: 20px 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-auto-rows: 250px;
+  /* margin: 0 auto; */
+  /* width: 80%; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .t2TabContentSplittedText div {
   /* border: 1px solid black; */
@@ -225,4 +227,14 @@ h2.orangeContant {
   align-items: center;
   justify-content: center;
   font-weight: 500;
+  padding: 2rem;
+  width: 350px;
+  height: 350px;
+  transition: transform 0.3s ease-in-out;
+}
+.t2TabContentSplittedText div:hover {
+  transform: scale(1.03); 
+}
+.t2SelectedTabContentDiv {
+  width: 100%;
 }
