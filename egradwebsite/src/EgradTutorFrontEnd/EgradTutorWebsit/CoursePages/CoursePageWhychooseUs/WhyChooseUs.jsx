@@ -6,6 +6,7 @@ import '../../../../styles/WhyChooseUsStyles/Theme1WCU.css';
 import '../../../../styles/WhyChooseUsStyles/Theme2WCU.css';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
+import { VscDebugBreakpointLog } from "react-icons/vsc";
 import { ThemeContext } from "../../../../ThemesFolder/ThemeContext/Context";
 import JSONClasses from "../../../../ThemesFolder/JSONForCSS/JSONClasses";
 
@@ -101,7 +102,8 @@ const WhyChooseUs = ({ isEditMode }) => {
                   <div className={`${themeDetails.themeTabContentSplittedText}`}>
                     {selectedTabContent.course_tab_text.map((text, index) => (
                       <div key={index}>
-                        <p>
+                        <p> <span><VscDebugBreakpointLog /></span>
+
                           {text}
                         </p>
                       </div>
