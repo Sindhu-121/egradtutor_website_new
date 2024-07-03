@@ -1517,6 +1517,7 @@ p:nth-child(1){
 }
 /* =======hover effects====== */
 .card_container {
+  padding: 10px;
   transition: transform 0.3s ease-in-out; /* Smooth transition for the transform property */
 }
 

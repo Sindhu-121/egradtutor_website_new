@@ -2,7 +2,7 @@ import React from 'react'
 
 const CoursePageBanners = () => {
   return (
-    <div>CoursePageBanners</div>
+    <div></div>
   )
 }
 
