@@ -319,3 +319,14 @@ img.t1LogoImg {
   color: black;
   font-weight: bold;
 }
+
+
+
+.t1_COURSES{
+display: flex;
+justify-content: center;
+align-items: center;
+background: linear-gradient(to right, #a8e6cf57, var(--bs-white), #a8e6cf57);
+width: 60%;
+padding: 10px;
+}
