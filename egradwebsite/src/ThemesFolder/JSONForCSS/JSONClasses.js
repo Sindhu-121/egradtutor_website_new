@@ -484,6 +484,7 @@ const JSONClasses = {
     themeTabContentDiv:"t1TabContentDiv",
     themeBuyButtonInCP:"t1BuyButtonInCP",
     themeTabContentSplittedText:"t1TabContentSplittedText",
+    themeTabContentSplittedTextInDiv:"t1TabContentSplittedTextInDiv",
 
   },
   "Theme-2": {

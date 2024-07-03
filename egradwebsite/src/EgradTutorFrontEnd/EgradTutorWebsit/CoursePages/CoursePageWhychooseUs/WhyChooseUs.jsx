@@ -100,9 +100,8 @@ const WhyChooseUs = ({ isEditMode }) => {
                   </div>
                   <div className={`${themeDetails.themeTabContentSplittedText}`}>
                     {selectedTabContent.course_tab_text.map((text, index) => (
-                      <div key={index}>
+                      <div className={`${themeDetails.themeTabContentSplittedTextInDiv}`} key={index}>
                         <p> <span><VscDebugBreakpointLog /></span>
-
                           {text}
                         </p>
                       </div>
