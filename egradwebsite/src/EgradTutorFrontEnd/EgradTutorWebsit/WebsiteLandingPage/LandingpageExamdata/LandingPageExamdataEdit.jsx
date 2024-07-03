@@ -95,6 +95,15 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
     fetchBranches();
   }, []);
 
+  const fetchAllBranches = async () => {
+    try {
+      const response = await axios.get(`${BASE_URL}/BHPNavBar/branches`);
+      setBranches(response.data);
+    } catch (error) {
+      console.error("Error fetching branches:", error);
+    }
+  };
+
   const handleBranchIdChange = (e) => {
     const selectedId = e.target.value;
     setBranchId(selectedId);
@@ -199,7 +208,7 @@ const LandingPageExamdataEdit = ({ enableButton, type }) => {
         <button>Editing Button..........</button>
         : null}
 
-      {type === "Upload Exam Image" &&
+      {type === "UploadExamImage" &&
         <div>
           <h2>Upload Exam Image</h2>
           <form onSubmit={handleSubmitExamImage}>

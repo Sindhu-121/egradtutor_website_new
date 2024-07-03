@@ -201,10 +201,16 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
       </div>
     </div>
 
-
-    {branches.map((branch) => (
+    {isEditMode && (
+      <div>
+ {branches.map((branch) => (
         <div className={`${themeDetails.ThemeExamADD_EDIT_Buttons}`}>
-          <button onClick={OpenExamImageUplaod}><MdFileUpload /> Image Uplaod</button>
+
+          <button onClick={() => setOpenUgExamImageUpload(!openUgExamImageUpload)}><MdFileUpload /> Image Uplaod</button>
+
+          {openUgExamImageUpload && <LandingPageExamdataEdit type = "UploadExamImage" />}
+
+
           <button onClick={() => handleEditClick(branch)}>
             <LiaEditSolid />
             Edit
@@ -217,6 +223,9 @@ const LandingPageExamdata = ({ enableEditFromP,isEditMode }) => {
 
         </div>
       ))}
+      </div>
+   
+    )}
     {/* =======================Exam cards ends here============================== */}
 
   </div>
